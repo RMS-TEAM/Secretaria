@@ -1,0 +1,342 @@
+
+DROP PROCEDURE IF EXISTS alumnos;
+DELIMITER //
+
+CREATE PROCEDURE alumnos()
+BEGIN
+	
+	DECLARE a INTEGER;
+	DECLARE b INTEGER;
+	
+	#definicion cursor egen
+	DECLARE fp39i CURSOR FOR SELECT count(`p39_i`) FROM `clone_909-alumnos` group by p39_i, coddane;
+	DECLARE fp39k CURSOR FOR SELECT count(`p39_k`) FROM `clone_909-alumnos` group by p39_k, coddane;
+	DECLARE fp39r CURSOR FOR SELECT count(`p39_r`) FROM `clone_909-alumnos` group by p39_r, coddane;
+	DECLARE fp39t CURSOR FOR SELECT count(`p39_t`) FROM `clone_909-alumnos` group by p39_t, coddane;
+	DECLARE fp39v CURSOR FOR SELECT count(`p39_v`) FROM `clone_909-alumnos` group by p39_v, coddane;
+
+	DECLARE fp39ad CURSOR FOR SELECT count(`p39_ad`) FROM `clone_909-alumnos` group by p39_ad, coddane;
+	DECLARE fp39ae CURSOR FOR SELECT count(`p39_ae`) FROM `clone_909-alumnos` group by p39_ae, coddane;
+	DECLARE fp39af CURSOR FOR SELECT count(`p39_af`) FROM `clone_909-alumnos` group by p39_af, coddane;
+	DECLARE fp39ag CURSOR FOR SELECT count(`p39_ag`) FROM `clone_909-alumnos` group by p39_ag, coddane;
+	DECLARE fp39ah CURSOR FOR SELECT count(`p39_ah`) FROM `clone_909-alumnos` group by p39_ah, coddane;
+	
+	DECLARE fp39o CURSOR FOR SELECT count(`p39_o`) FROM `clone_909-alumnos` group by p39_o, coddane;
+	DECLARE fp39w CURSOR FOR SELECT count(`p39_w`) FROM `clone_909-alumnos` group by p39_w, coddane;
+	DECLARE fp39x CURSOR FOR SELECT count(`p39_x`) FROM `clone_909-alumnos` group by p39_x, coddane;
+	DECLARE fp39y CURSOR FOR SELECT count(`p39_y`) FROM `clone_909-alumnos` group by p39_y, coddane;
+	DECLARE fp39z CURSOR FOR SELECT count(`p39_z`) FROM `clone_909-alumnos` group by p39_z, coddane;
+
+	DECLARE fp39ay CURSOR FOR SELECT count(`p39_ay`) FROM `clone_909-alumnos` group by p39_ay, coddane;
+	DECLARE fp39az CURSOR FOR SELECT count(`p39_az`) FROM `clone_909-alumnos` group by p39_az, coddane;
+	DECLARE fp39ba CURSOR FOR SELECT count(`p39_ba`) FROM `clone_909-alumnos` group by p39_ba, coddane;
+	DECLARE fp39bb CURSOR FOR SELECT count(`p39_bb`) FROM `clone_909-alumnos` group by p39_bb, coddane;
+	DECLARE fp39bc CURSOR FOR SELECT count(`p39_bc`) FROM `clone_909-alumnos` group by p39_bc, coddane;
+
+	DECLARE id CURSOR FOR SELECT numero FROM `clone_909-alumnos`;
+	
+	DROP TABLE IF EXISTS`clone_909-alumnos`;
+	CREATE TABLE `clone_909-alumnos` (SELECT * FROM `909-alumnos`);
+
+	#gen
+	UPDATE `clone_909-alumnos` SET `p39_i`=10/3*(`p39_i`-1);
+	UPDATE `clone_909-alumnos` SET `p39_k`=10/3*(`p39_k`-1);
+	UPDATE `clone_909-alumnos` SET `p39_r`=10/3*(`p39_r`-1);
+	UPDATE `clone_909-alumnos` SET `p39_t`=10/3*(`p39_t`-1);
+	UPDATE `clone_909-alumnos` SET `p39_v`=10/3*(`p39_v`-1);
+		
+	UPDATE `clone_909-alumnos` SET `p39_ad`=10/3*(`p39_ad`-1);
+	UPDATE `clone_909-alumnos` SET `p39_ae`=10/3*(`p39_ae`-1);
+	UPDATE `clone_909-alumnos` SET `p39_af`=10/3*(`p39_af`-1);
+	UPDATE `clone_909-alumnos` SET `p39_ag`=10/3*(`p39_ag`-1);
+	UPDATE `clone_909-alumnos` SET `p39_ah`=10/3*(`p39_ah`-1);
+
+	UPDATE `clone_909-alumnos` SET `p39_o`=10/3*(`p39_o`-1);
+	UPDATE `clone_909-alumnos` SET `p39_w`=10/3*(`p39_w`-1);
+	UPDATE `clone_909-alumnos` SET `p39_x`=10/3*(`p39_x`-1);
+	UPDATE `clone_909-alumnos` SET `p39_y`=10/3*(`p39_y`-1);
+	UPDATE `clone_909-alumnos` SET `p39_z`=10/3*(`p39_z`-1);
+
+	UPDATE `clone_909-alumnos` SET `p39_ay`=10/3*(`p39_ay`-1);
+	UPDATE `clone_909-alumnos` SET `p39_az`=10/3*(`p39_az`-1);
+	UPDATE `clone_909-alumnos` SET `p39_ba`=10/3*(`p39_ba`-1);
+	UPDATE `clone_909-alumnos` SET `p39_bb`=10/3*(`p39_bb`-1);
+	UPDATE `clone_909-alumnos` SET `p39_bc`=10/3*(`p39_bc`-1);
+
+	#--------------------------------
+	#Aca va mas codigo de los egen  |
+	#--------------------------------
+	
+	#egen 1 ap39i
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_i` INT;
+	OPEN fp39i;
+	OPEN id;
+	fp39i_loop: LOOP
+		FETCH fp39i INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39i_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_i` = a WHERE `numero` = b;
+	END LOOP fp39i_loop;
+	CLOSE fp39i;
+	CLOSE id,
+	
+	#egen 2 ap39k
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_k` INT;
+	OPEN fp39k;
+	OPEN id
+	fp39k_loop: LOOP
+		FETCH fp39k INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39k_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_k` = a WHERE `numero` = b;
+	END LOOP fp39k_loop;
+	CLOSE fp39k;
+	CLOSE id;
+
+	#egen 3 ap39r
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_r` INT;
+	OPEN fp39r;
+	OPEN id
+	fp39r_loop: LOOP
+		FETCH fp39r INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39r_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_r` = a WHERE `numero` = b;
+	END LOOP fp39r_loop;
+	CLOSE fp39r;
+	CLOSE id;
+
+	#egen 4 ap39t
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_t` INT;
+	OPEN fp39t;
+	OPEN id;
+	fp39t_loop: LOOP
+		FETCH fp39t INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39t_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_t` = a WHERE `numero` = b;
+	END LOOP fp39t_loop;
+	CLOSE fp39t;
+	CLOSE id,
+	
+	#egen 5 ap39v
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_v` INT;
+	OPEN fp39v;
+	OPEN id
+	fp39v_loop: LOOP
+		FETCH fp39v INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39v_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_v` = a WHERE `numero` = b;
+	END LOOP fp39v_loop;
+	CLOSE fp39v;
+	CLOSE id;
+
+	#egen 6 ap39ad
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_ad` INT;
+	OPEN fp39ad;
+	OPEN id;
+	fp39ad_loop: LOOP
+		FETCH fp39ad INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39ad_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_ad` = a WHERE `numero` = b;
+	END LOOP fp39ad_loop;
+	CLOSE fp39ad;
+	CLOSE id,
+	
+	#egen 7 ap39ae
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_ae` INT;
+	OPEN fp39ae;
+	OPEN id
+	fp39ae_loop: LOOP
+		FETCH fp39ae INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39ae_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_ae` = a WHERE `numero` = b;
+	END LOOP fp39ae_loop;
+	CLOSE fp39ae;
+	CLOSE id;
+
+	#egen 8 ap39af
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_af` INT;
+	OPEN fp39af;
+	OPEN id
+	fp39af_loop: LOOP
+		FETCH fp39af INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39af_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_af` = a WHERE `numero` = b;
+	END LOOP fp39af_loop;
+	CLOSE fp39af;
+	CLOSE id;
+
+	#egen 9 ap39ag
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_ag` INT;
+	OPEN fp39ag;
+	OPEN id;
+	fp39ag_loop: LOOP
+		FETCH fp39ag INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39ag_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_ag` = a WHERE `numero` = b;
+	END LOOP fp39ag_loop;
+	CLOSE fp39ag;
+	CLOSE id,
+	
+	#egen 10 ap39ah
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_ah` INT;
+	OPEN fp39ah;
+	OPEN id
+	fp39ah_loop: LOOP
+		FETCH fp39ah INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39ah_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_ah` = a WHERE `numero` = b;
+	END LOOP fp39ah_loop;
+	CLOSE fp39ah;
+	CLOSE id;
+
+	#egen 11 ap39o
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_o` INT;
+	OPEN fp39o;
+	OPEN id;
+	fp39o_loop: LOOP
+		FETCH fp39o INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39o_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_o` = a WHERE `numero` = b;
+	END LOOP fp39o_loop;
+	CLOSE fp39o;
+	CLOSE id,
+	
+	#egen 12 ap39w
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_w` INT;
+	OPEN fp39w;
+	OPEN id
+	fp39w_loop: LOOP
+		FETCH fp39w INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39w_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_w` = a WHERE `numero` = b;
+	END LOOP fp39w_loop;
+	CLOSE fp39w;
+	CLOSE id;
+
+	#egen 13 ap39x
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_x` INT;
+	OPEN fp39x;
+	OPEN id
+	fp39x_loop: LOOP
+		FETCH fp39x INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39x_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_x` = a WHERE `numero` = b;
+	END LOOP fp39x_loop;
+	CLOSE fp39x;
+	CLOSE id;
+
+	#egen 14 ap39y
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_y` INT;
+	OPEN fp39y;
+	OPEN id;
+	fp39y_loop: LOOP
+		FETCH fp39y INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39y_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_y` = a WHERE `numero` = b;
+	END LOOP fp39y_loop;
+	CLOSE fp39y;
+	CLOSE id,
+	
+	#egen 15 ap39z
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_z` INT;
+	OPEN fp39z;
+	OPEN id
+	fp39z_loop: LOOP
+		FETCH fp39z INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39z_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_z` = a WHERE `numero` = b;
+	END LOOP fp39z_loop;
+	CLOSE fp39z;
+	CLOSE id;
+
+	#egen 16 ap39ay
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_ay` INT;
+	OPEN fp39ay;
+	OPEN id;
+	fp39ay_loop: LOOP
+		FETCH fp39ay INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39ay_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_ay` = a WHERE `numero` = b;
+	END LOOP fp39ay_loop;
+	CLOSE fp39ay;
+	CLOSE id,
+	
+	#egen 17 ap39az
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_az` INT;
+	OPEN fp39az;
+	OPEN id
+	fp39az_loop: LOOP
+		FETCH fp39az INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39az_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_az` = a WHERE `numero` = b;
+	END LOOP fp39az_loop;
+	CLOSE fp39az;
+	CLOSE id;
+
+	#egen 18 ap39ba
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_ba` INT;
+	OPEN fp39ba;
+	OPEN id
+	fp39ba_loop: LOOP
+		FETCH fp39ba INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39ba_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_ba` = a WHERE `numero` = b;
+	END LOOP fp39ba_loop;
+	CLOSE fp39ba;
+	CLOSE id;
+
+	#egen 19 ap39bb
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_bb` INT;
+	OPEN fp39bb;
+	OPEN id;
+	fp39bb_loop: LOOP
+		FETCH fp39bb INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39bb_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_bb` = a WHERE `numero` = b;
+	END LOOP fp39bb_loop;
+	CLOSE fp39bb;
+	CLOSE id,
+	
+	#egen 20 ap39bc
+	ALTER TABLE `clone_909-alumnos` ADD `f_p39_bc` INT;
+	OPEN fp39bc;
+	OPEN id
+	fp39bc_loop: LOOP
+		FETCH fp39bc INTO a;
+		FETCH id INTO b;	
+		IF a = null THEN LEAVE fp39bc_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_bc` = a WHERE `numero` = b;
+	END LOOP fp39bc_loop;
+	CLOSE fp39bc;
+	CLOSE id;
+
+	#-------------------------------
+	#Aca va mas codigo de collapse
+	#-------------------------------
+
+	#-------------------------------
+	#Aca va mas codigo de los egen
+	#-------------------------------	
+
+	#DROP TABLE `clone_909-alumnos`;
+
+END//
+
+DELIMITER ;
