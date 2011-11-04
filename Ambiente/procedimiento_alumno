@@ -371,6 +371,8 @@ BEGIN
 	FROM `clone_909-alumnos` 
 	GROUP BY `coddane`;
 
+	DROP TABLE `clone_909-alumnos`;
+
 	#-------------------------------
 	#   Aca va codigo de los egen  |
 	#-------------------------------	
@@ -398,7 +400,14 @@ BEGIN
 	UPDATE `909-alumnos-2` SET `p_p39_bb` = `e_p39_bb` / `f_p39_bb`;
 	UPDATE `909-alumnos-2` SET `p_p39_bc` = `e_p39_bc` / `f_p39_bc`;
 
-	#DROP TABLE `clone_909-alumnos`;
+	#-------------------------------
+	#   Aca va los ultimos egen    |
+	#-------------------------------
+
+	UPDATE `909-alumnos-2` SET `academic_exp_1` = (`p_p39_i` + `p_p39_k` + `p_p39_r` + `p_p39_t` + `p_p39_v`) / 5;
+	UPDATE `909-alumnos-2` SET `comunic_1` = (`p_p39_ad` + `p_p39_ae` + `p_p39_af` + `p_p39_ag` + `p_p39_ah`) / 5;
+	UPDATE `909-alumnos-2` SET `compro_1` = (`p_p39_o` + `p_p39_w` + `p_p39_x` + `p_p39_y` + `p_p39_z`) / 5;
+	UPDATE `909-alumnos-2` SET `seg_resp_1` = (`p_p39_ay` + `p_p39_az` + `p_p39_ba` + `p_p39_bb` + `p_p39_bc`) / 5;
 
 END//
 
