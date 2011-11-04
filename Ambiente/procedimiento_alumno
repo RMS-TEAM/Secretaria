@@ -4,27 +4,31 @@ DELIMITER //
 
 CREATE PROCEDURE alumnos()
 BEGIN
-	DECLARE numero INTEGER;	
-	DECLARE f_39i INTEGER;
-	DECLARE f_39k INTEGER;
-	DECLARE f_39r INTEGER;
-	DECLARE _39t INTEGER;
-	DECLARE _39v INTEGER;
-	DECLARE _39ad INTEGER;
-	DECLARE _39ae INTEGER;
-	DECLARE _39af INTEGER;
-	DECLARE _39ag INTEGER;
-	DECLARE _39ah INTEGER;
-	DECLARE _39o INTEGER;
-	DECLARE _39w INTEGER;
-	DECLARE _39x INTEGER;
-	DECLARE _39y INTEGER;
-	DECLARE _39z INTEGER;
-	DECLARE _39ay INTEGER;
-	DECLARE _39az INTEGER;
-	DECLARE _39ba INTEGER;
-	DECLARE _39bb INTEGER;
-	DECLARE _39bc INTEGER;
+	DECLARE fi INTEGER;	
+	DECLARE b INTEGER;
+	DECLARE fk INTEGER;
+	DECLARE fr INTEGER;
+	DECLARE ft INTEGER;
+	DECLARE fv INTEGER;
+
+	DECLARE fad INTEGER;
+	DECLARE fae INTEGER;
+	DECLARE faf INTEGER;
+	DECLARE fag INTEGER;
+	DECLARE fah INTEGER;
+
+	DECLARE fo INTEGER;
+	DECLARE fw INTEGER;
+	DECLARE fx INTEGER;
+	DECLARE fy INTEGER;
+	DECLARE fz INTEGER;
+
+	DECLARE fay INTEGER;
+	DECLARE faz INTEGER;
+	DECLARE fba INTEGER;
+	DECLARE fbb INTEGER;
+	DECLARE fbc INTEGER;
+	
 
 	#definicion cursor egen
 	DECLARE fp39i CURSOR FOR SELECT count(`p39_i`) FROM `clone_909-alumnos` group by p39_i, coddane;
@@ -108,86 +112,101 @@ BEGIN
 	ALTER TABLE `clone_909-alumnos` ADD `f_p39_bb` INT;
 	ALTER TABLE `clone_909-alumnos` ADD `f_p39_bc` INT;
 
-	OPEN fp39i;
+	OPEN fp39i;	
 	OPEN fp39k;
 	OPEN fp39r;
 	OPEN fp39t;
 	OPEN fp39v;
-	OPEN fp39ad;
+	
+	OPEN fp39ad;	
 	OPEN fp39ae;
 	OPEN fp39af;
 	OPEN fp39ag;
 	OPEN fp39ah;
-	OPEN fp39o;
+
+	OPEN fp39o;	
 	OPEN fp39w;
 	OPEN fp39x;
 	OPEN fp39y;
 	OPEN fp39z;
-	OPEN fp39ay;
+
+	OPEN fp39ay;	
 	OPEN fp39az;
 	OPEN fp39ba;
 	OPEN fp39bb;
-	OPEN fp39bc;	
-	OPEN id;
+	OPEN fp39bc;
+	OPEN id;	
+	
 	fp39i_loop: LOOP
-		FETCH fp39i INTO f_39i;
-		FETCH fp39k INTO f_39k;
-		FETCH fp39r INTO f_39r;
-		FETCH fp39t INTO _39t;
-		FETCH fp39v INTO _39v;
-		FETCH fp39ad INTO _39ad;
-		FETCH fp39ae INTO _39ae;
-		FETCH fp39af INTO _39af;
-		FETCH fp39ag INTO _39ag;
-		FETCH fp39ah INTO _39ah;
-		FETCH fp39o INTO _39o;
-		FETCH fp39w INTO _39w;
-		FETCH fp39x INTO _39x;
-		FETCH fp39y INTO _39y;
-		FETCH fp39z INTO _39z;
-		FETCH fp39ay INTO _39ay;
-		FETCH fp39az INTO _39az;
-		FETCH fp39ba INTO _39ba;
-		FETCH fp39bb INTO _39bb;
-		FETCH fp39bc INTO _39bc;
-		FETCH id INTO numero;	
-		IF numero = null THEN LEAVE fp39i_loop; END IF;
-		UPDATE `clone_909-alumnos` SET `f_p39_i` = f_39i WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_k` = f_39k WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_r` = f_39r WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_t` = _39t WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_v` = _39v WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_ad` = _39ad WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_ae` = _39ae WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_af` = _39af WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_ag` = _39ag WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_ah` = _39ah WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_o` = _39o WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_w` = _39w WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_x` = _39x WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_y` = _39y WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_z` = _39z WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_ay` = _39ay WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_az` = _39az WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_ba` = _39ba WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_bb` = _39bb WHERE `numero` = numero;
-		UPDATE `clone_909-alumnos` SET `f_p39_bc` = _39bc WHERE `numero` = numero;
+		FETCH fp39i INTO fi;
+		FETCH fp39k INTO fk;
+		FETCH fp39r INTO fr;
+		FETCH fp39t INTO ft;
+		FETCH fp39v INTO fv;
+		
+		FETCH fp39ad INTO fad;
+		FETCH fp39ae INTO fae;
+		FETCH fp39af INTO faf;
+		FETCH fp39ag INTO fag;
+		FETCH fp39ah INTO fah;
+
+		FETCH fp39o INTO fo;
+		FETCH fp39w INTO fw;
+		FETCH fp39x INTO fx;
+		FETCH fp39y INTO fy;
+		FETCH fp39z INTO fz;
+
+		FETCH fp39ay INTO fay;
+		FETCH fp39az INTO faz;
+		FETCH fp39ba INTO fba;
+		FETCH fp39bb INTO fbb;
+		FETCH fp39bc INTO fbc;
+		FETCH id INTO b;
+	
+		IF b = null THEN LEAVE fp39i_loop; END IF;
+		UPDATE `clone_909-alumnos` SET `f_p39_i` = fi WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_k` = fk WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_r` = fr WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_t` = ft WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_v` = fv WHERE `numero` = b;
+
+		UPDATE `clone_909-alumnos` SET `f_p39_ad` = fad WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_ae` = fae WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_af` = faf WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_ag` = fag WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_ah` = fah WHERE `numero` = b;
+
+		UPDATE `clone_909-alumnos` SET `f_p39_o` = fo WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_w` = fw WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_x` = fx WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_y` = fy WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_z` = fz WHERE `numero` = b;
+
+		UPDATE `clone_909-alumnos` SET `f_p39_ay` = fay WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_az` = faz WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_ba` = fba WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_bb` = fbb WHERE `numero` = b;
+		UPDATE `clone_909-alumnos` SET `f_p39_bc` = fbc WHERE `numero` = b;
+	
 	END LOOP fp39i_loop;
 	CLOSE fp39i;
 	CLOSE fp39k;
 	CLOSE fp39r;
 	CLOSE fp39t;
 	CLOSE fp39v;
+
 	CLOSE fp39ad;
 	CLOSE fp39ae;
 	CLOSE fp39af;
 	CLOSE fp39ag;
 	CLOSE fp39ah;
+
 	CLOSE fp39o;
 	CLOSE fp39w;
 	CLOSE fp39x;
 	CLOSE fp39y;
 	CLOSE fp39z;
+
 	CLOSE fp39ay;
 	CLOSE fp39az;
 	CLOSE fp39ba;
