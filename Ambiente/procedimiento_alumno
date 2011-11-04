@@ -106,15 +106,15 @@ BEGIN
 	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
 	#gen
-	DROP TABLE IF EXISTS`clone_909-alumnos`;
+	DROP TABLE IF EXISTS `clone_909-alumnos`;
 	CREATE TABLE `clone_909-alumnos` (SELECT * FROM `909-alumnos`);
-	ALTER TABLE `clone_909-alumnos` CHANGE `p39_i` `p39_i` DECIMAL( 7, 5 ), CHANGE `p39_k` `p39_k` DECIMAL(7,5), 
-	CHANGE `p39_r` `p39_r` DECIMAL(7,5), CHANGE `p39_t` `p39_t` DECIMAL(7,5), CHANGE `p39_v` `p39_v` DECIMAL(7,5),
-	CHANGE `p39_ad` `p39_ad` DECIMAL(7,5), CHANGE `p39_ae` `p39_ae` DECIMAL(7,5), CHANGE `p39_af` `p39_af` DECIMAL(7,5),
-	CHANGE `p39_ag` `p39_ag` DECIMAL(7,5), CHANGE `p39_ah` `p39_ah` DECIMAL(7,5), CHANGE `p39_o` `p39_o` DECIMAL(7,5),
-	CHANGE `p39_w` `p39_w` DECIMAL(7,5), CHANGE `p39_x` `p39_x` DECIMAL(7,5), CHANGE `p39_y` `p39_y` DECIMAL(7,5),
-	CHANGE `p39_z` `p39_z` DECIMAL(7,5), CHANGE `p39_ay` `p39_ay` DECIMAL(7,5), CHANGE `p39_az` `p39_az` DECIMAL(7,5),
-	CHANGE `p39_ba` `p39_ba` DECIMAL(7,5), CHANGE `p39_bb` `p39_bb` DECIMAL(7,5), CHANGE `p39_bc` `p39_bc` DECIMAL(7,5);
+	ALTER TABLE `clone_909-alumnos` CHANGE `p39_i` `p39_i` DECIMAL(8, 5), CHANGE `p39_k` `p39_k` DECIMAL(8,5), 
+	CHANGE `p39_r` `p39_r` DECIMAL(8,5), CHANGE `p39_t` `p39_t` DECIMAL(8,5), CHANGE `p39_v` `p39_v` DECIMAL(8,5),
+	CHANGE `p39_ad` `p39_ad` DECIMAL(8,5), CHANGE `p39_ae` `p39_ae` DECIMAL(8,5), CHANGE `p39_af` `p39_af` DECIMAL(8,5),
+	CHANGE `p39_ag` `p39_ag` DECIMAL(8,5), CHANGE `p39_ah` `p39_ah` DECIMAL(8,5), CHANGE `p39_o` `p39_o` DECIMAL(8,5),
+	CHANGE `p39_w` `p39_w` DECIMAL(8,5), CHANGE `p39_x` `p39_x` DECIMAL(8,5), CHANGE `p39_y` `p39_y` DECIMAL(8,5),
+	CHANGE `p39_z` `p39_z` DECIMAL(8,5), CHANGE `p39_ay` `p39_ay` DECIMAL(8,5), CHANGE `p39_az` `p39_az` DECIMAL(8,5),
+	CHANGE `p39_ba` `p39_ba` DECIMAL(8,5), CHANGE `p39_bb` `p39_bb` DECIMAL(8,5), CHANGE `p39_bc` `p39_bc` DECIMAL(8,5);
 
 
 	#gen

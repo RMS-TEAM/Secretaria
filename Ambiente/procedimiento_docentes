@@ -1,0 +1,43 @@
+DROP PROCEDURE IF EXISTS docentes;
+
+DELIMITER //
+
+CREATE PROCEDURE docentes()
+BEGIN
+	#--------------------------------
+	#   Aca va codigo de los gen    |
+	#--------------------------------
+
+	DROP TABLE IF EXISTS`clone_909-docentes`;
+	CREATE TABLE `clone_909-docentes` (SELECT * FROM `909-docentes`);
+	ALTER TABLE `clone_909-docentes` CHANGE `p23_a` `p23_a` DECIMAL(8, 5), CHANGE `p23_b` `p23_b` DECIMAL(8,5), 
+	CHANGE `p23_k` `p23_k` DECIMAL(8,5), CHANGE `p23_v` `p23_v` DECIMAL(8,5), CHANGE `p23_n` `p23_n` DECIMAL(8,5),
+	CHANGE `p23_e` `p23_e` DECIMAL(8,5), CHANGE `p23_o` `p23_o` DECIMAL(8,5), CHANGE `p23_j` `p23_j` DECIMAL(8,5),
+	CHANGE `p23_p` `p23_p` DECIMAL(8,5), CHANGE `p23_i` `p23_i` DECIMAL(8,5), CHANGE `p23_q` `p23_q` DECIMAL(8,5),
+	CHANGE `p23_r` `p23_r` DECIMAL(8,5), CHANGE `p23_s` `p23_s` DECIMAL(8,5), CHANGE `p47_aa` `p47_aa` DECIMAL(8,5),
+	CHANGE `p47_ab` `p47_ab` DECIMAL(8,5), CHANGE `p47_ac` `p47_ac` DECIMAL(8,5), CHANGE `p47_ad` `p47_ad` DECIMAL(8,5);
+
+	#gen
+	UPDATE `clone_909-docentes` SET `p23_a`=10/3*(`p23_a`-1);
+	UPDATE `clone_909-docentes` SET `p23_b`=10/3*(`p23_b`-1);
+	UPDATE `clone_909-docentes` SET `p23_k`=10/3*(`p23_k`-1);
+	UPDATE `clone_909-docentes` SET `p23_v`=10/3*(`p23_v`-1);
+	UPDATE `clone_909-docentes` SET `p23_n`=10/3*(`p23_n`-1);
+		
+	UPDATE `clone_909-docentes` SET `p23_e`=10/3*(`p23_e`-1);
+	UPDATE `clone_909-docentes` SET `p23_o`=10/3*(`p23_o`-1);
+	UPDATE `clone_909-docentes` SET `p23_j`=10/3*(`p23_j`-1);
+	UPDATE `clone_909-docentes` SET `p23_p`=10/3*(`p23_p`-1);
+
+	UPDATE `clone_909-docentes` SET `p23_i`=10/3*(`p23_i`-1);
+	UPDATE `clone_909-docentes` SET `p23_q`=10/3*(`p23_q`-1);
+	UPDATE `clone_909-docentes` SET `p23_r`=10/3*(`p23_r`-1);
+	UPDATE `clone_909-docentes` SET `p23_s`=10/3*(`p23_s`-1);
+
+	UPDATE `clone_909-docentes` SET `p47_aa`=10/3*(`p47_aa`-1);
+	UPDATE `clone_909-docentes` SET `p47_ab`=10/3*(`p47_ab`-1);
+	UPDATE `clone_909-docentes` SET `p47_ac`=10/3*(`p47_ac`-1);
+	UPDATE `clone_909-docentes` SET `p47_ad`=10/3*(`p47_ad`-1);
+END //
+
+DELIMITER ;
