@@ -334,8 +334,7 @@ BEGIN
 	UPDATE `padres 1108_1` SET `p_p16_26` = `e_p16_26` / `f_p16_26`;
 	UPDATE `padres 1108_1` SET `p_p16_27` = `e_p16_27` / `f_p16_27`;
 	UPDATE `padres 1108_1` SET `p_p16_28` = `e_p16_28` / `f_p16_28`;
-	UPDATE `padres 1108_1` SET `p_p16_29` = `e_p16_29` / `f_p16_29`;
-	UPDATE `padres 1108_1` SET `p_p16_30` = `e_p16_30` / `f_p16_30`;	
+	UPDATE `padres 1108_1` SET `p_p16_29` = `e_p16_29` / `f_p16_29`;	
 
 	#-------------------------------
 	#   Aca va los ultimos egen    |
@@ -344,7 +343,7 @@ BEGIN
 	UPDATE `padres 1108_1` SET `academic_exp_3` = (`p_p16_7` + `p_p16_9` + `p_p16_10` + `p_p16_11` + `p_p16_1`) / 5;
 	UPDATE `padres 1108_1` SET `comunic_3` = (`p_p16_4` + `p_p16_5` + `p_p16_6` + `p_p16_24`) / 4;
 	UPDATE `padres 1108_1` SET `compro_3` = (`p_p16_1` + `p_p16_2` + `p_p16_3` + `p_p16_8`) / 4;
-	UPDATE `padres 1108_1` SET `seg_resp_3` = (`p_p16_26` + `p_p16_27` + `p_p16_28` + `p_p16_29` + `p_p16_30`) / 5;
+	UPDATE `padres 1108_1` SET `seg_resp_3` = (`p_p16_26` + `p_p16_27` + `p_p16_28` + `p_p16_29`) / 4;
 
 END //
 
