@@ -107,7 +107,9 @@ BEGIN
 
 	#gen
 	DROP TABLE IF EXISTS `clone_909-alumnos`;
-	CREATE TABLE `clone_909-alumnos` (SELECT * FROM `909-alumnos`);
+	CREATE TABLE `clone_909-alumnos` (SELECT `coddane`, `p39_i`, `p39_k`, `p39_r`, `p39_t`, `p39_v`, `p39_ad`,
+	 `p39_ae`, `p39_af`, `p39_ag`, `p39_ah`, `p39_o`, `p39_w`, `p39_x`, `p39_y`, `p39_z`, `p39_ay`, `p39_az`, 
+	 `p39_ba`, `p39_bb`, `p39_bc` FROM `909-alumnos`);
 	ALTER TABLE `clone_909-alumnos` CHANGE `p39_i` `p39_i` DECIMAL(8, 5), CHANGE `p39_k` `p39_k` DECIMAL(8,5), 
 	CHANGE `p39_r` `p39_r` DECIMAL(8,5), CHANGE `p39_t` `p39_t` DECIMAL(8,5), CHANGE `p39_v` `p39_v` DECIMAL(8,5),
 	CHANGE `p39_ad` `p39_ad` DECIMAL(8,5), CHANGE `p39_ae` `p39_ae` DECIMAL(8,5), CHANGE `p39_af` `p39_af` DECIMAL(8,5),

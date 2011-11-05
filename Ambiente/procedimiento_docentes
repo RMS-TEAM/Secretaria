@@ -4,12 +4,105 @@ DELIMITER //
 
 CREATE PROCEDURE docentes()
 BEGIN
+
+	#definicion variables egen
+	DECLARE done INT DEFAULT 0;
+	DECLARE fa INTEGER;	
+	DECLARE fb INTEGER;
+	DECLARE fk INTEGER;
+	DECLARE fv INTEGER;
+	DECLARE fn INTEGER;
+
+	DECLARE fe INTEGER;
+	DECLARE fo INTEGER;
+	DECLARE fj INTEGER;
+	DECLARE fp INTEGER;
+
+	DECLARE fi INTEGER;
+	DECLARE fq INTEGER;
+	DECLARE fr INTEGER;
+	DECLARE fs INTEGER;
+
+	DECLARE faa INTEGER;
+	DECLARE fab INTEGER;
+	DECLARE fac INTEGER;
+	DECLARE fad INTEGER;
+	
+	DECLARE coddanea BIGINT(14);
+	DECLARE coddaneb BIGINT(14);
+	DECLARE coddanek BIGINT(14);
+	DECLARE coddanev BIGINT(14);
+	DECLARE coddanen BIGINT(14);
+	
+	DECLARE coddanee BIGINT(14);
+	DECLARE coddaneo BIGINT(14);
+	DECLARE coddanej BIGINT(14);
+	DECLARE coddanep BIGINT(14);
+
+	DECLARE coddanei BIGINT(14);
+	DECLARE coddaneq BIGINT(14);
+	DECLARE coddaner BIGINT(14);
+	DECLARE coddanes BIGINT(14);
+
+	DECLARE coddaneaa BIGINT(14);
+	DECLARE coddaneab BIGINT(14);
+	DECLARE coddaneac BIGINT(14);
+	DECLARE coddanead BIGINT(14);
+
+	DECLARE pa DECIMAL(7,5);	
+	DECLARE pb DECIMAL(7,5);
+	DECLARE pk DECIMAL(7,5);
+	DECLARE pv DECIMAL(7,5);
+	DECLARE pn DECIMAL(7,5);
+
+	DECLARE pe DECIMAL(7,5);
+	DECLARE po DECIMAL(7,5);
+	DECLARE pj DECIMAL(7,5);
+	DECLARE pp DECIMAL(7,5);
+
+	DECLARE pi DECIMAL(7,5);
+	DECLARE pq DECIMAL(7,5);
+	DECLARE pr DECIMAL(7,5);
+	DECLARE ps DECIMAL(7,5);
+
+	DECLARE paa DECIMAL(7,5);
+	DECLARE pab DECIMAL(7,5);
+	DECLARE pac DECIMAL(7,5);
+	DECLARE pad DECIMAL(7,5);
+
+
+	#definicion cursor egen
+	DECLARE fp23a CURSOR FOR SELECT count(`p23_a`), `coddane`, `p23_a` FROM `clone_909-docentes` group by `p23_a`, `coddane`;
+	DECLARE fp23b CURSOR FOR SELECT count(`p23_b`), coddane, `p23_b` FROM `clone_909-docentes` group by p23_b, coddane;
+	DECLARE fp23k CURSOR FOR SELECT count(`p23_k`), coddane, `p23_k` FROM `clone_909-docentes` group by p23_k, coddane;
+	DECLARE fp23v CURSOR FOR SELECT count(`p23_v`), coddane, `p23_v` FROM `clone_909-docentes` group by p23_v, coddane;
+	DECLARE fp23n CURSOR FOR SELECT count(`p23_n`), coddane, `p23_n` FROM `clone_909-docentes` group by p23_n, coddane;
+
+	DECLARE fp23e CURSOR FOR SELECT count(`p23_e`), coddane, `p23_e` FROM `clone_909-docentes` group by p23_e, coddane;
+	DECLARE fp23o CURSOR FOR SELECT count(`p23_o`), coddane, `p23_o` FROM `clone_909-docentes` group by p23_o, coddane;
+	DECLARE fp23j CURSOR FOR SELECT count(`p23_j`), coddane, `p23_j` FROM `clone_909-docentes` group by p23_j, coddane;
+	DECLARE fp23p CURSOR FOR SELECT count(`p23_p`), coddane, `p23_p` FROM `clone_909-docentes` group by p23_p, coddane;
+	
+	DECLARE fp23i CURSOR FOR SELECT count(`p23_i`), coddane, `p23_i` FROM `clone_909-docentes` group by p23_i, coddane;
+	DECLARE fp23q CURSOR FOR SELECT count(`p23_q`), coddane, `p23_q` FROM `clone_909-docentes` group by p23_q, coddane;
+	DECLARE fp23r CURSOR FOR SELECT count(`p23_r`), coddane, `p23_r` FROM `clone_909-docentes` group by p23_r, coddane;
+	DECLARE fp23s CURSOR FOR SELECT count(`p23_s`), coddane, `p23_s` FROM `clone_909-docentes` group by p23_s, coddane;
+
+	DECLARE fp47aa CURSOR FOR SELECT count(`p47_aa`), coddane, `p47_aa` FROM `clone_909-docentes` group by p47_aa, coddane;
+	DECLARE fp47ab CURSOR FOR SELECT count(`p47_ab`), coddane, `p47_ab` FROM `clone_909-docentes` group by p47_ab, coddane;
+	DECLARE fp47ac CURSOR FOR SELECT count(`p47_ac`), coddane, `p47_ac` FROM `clone_909-docentes` group by p47_ac, coddane;
+	DECLARE fp47ad CURSOR FOR SELECT count(`p47_ad`), coddane, `p47_ad` FROM `clone_909-docentes` group by p47_ad, coddane;
+
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+
+
 	#--------------------------------
 	#   Aca va codigo de los gen    |
 	#--------------------------------
 
 	DROP TABLE IF EXISTS`clone_909-docentes`;
-	CREATE TABLE `clone_909-docentes` (SELECT * FROM `909-docentes`);
+	CREATE TABLE `clone_909-docentes` (SELECT `coddane`, `p23_a`, `p23_b`, `p23_k`, `p23_v`, `p23_n`, `p23_e`, `p23_o`, 		 `p23_j`, `p23_p`, `p23_i`, `p23_q`, `p23_r`, `p23_s`, `p47_aa`, `p47_ab`, `p47_ac`, `p47_ad` FROM `909-docentes`);
 	ALTER TABLE `clone_909-docentes` CHANGE `p23_a` `p23_a` DECIMAL(8, 5), CHANGE `p23_b` `p23_b` DECIMAL(8,5), 
 	CHANGE `p23_k` `p23_k` DECIMAL(8,5), CHANGE `p23_v` `p23_v` DECIMAL(8,5), CHANGE `p23_n` `p23_n` DECIMAL(8,5),
 	CHANGE `p23_e` `p23_e` DECIMAL(8,5), CHANGE `p23_o` `p23_o` DECIMAL(8,5), CHANGE `p23_j` `p23_j` DECIMAL(8,5),
@@ -38,6 +131,236 @@ BEGIN
 	UPDATE `clone_909-docentes` SET `p47_ab`=10/3*(`p47_ab`-1);
 	UPDATE `clone_909-docentes` SET `p47_ac`=10/3*(`p47_ac`-1);
 	UPDATE `clone_909-docentes` SET `p47_ad`=10/3*(`p47_ad`-1);
+
+	#--------------------------------
+	#   Aca va codigo de los egen   |
+	#--------------------------------
+
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_a` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_b` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_k` INT; 
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_v` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_n` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_e` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_o` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_j` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_p` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_i` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_q` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_r` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p23_s` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p47_aa` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p47_ab` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p47_ac` INT;
+	ALTER TABLE `clone_909-docentes` ADD `f_p47_ad` INT;
+	
+	OPEN fp23a;
+	fp_loop: LOOP
+		FETCH fp23a INTO fa, coddanea, pa;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_a` = fa WHERE `coddane` = coddanea AND `p23_a` = pa;
+	END LOOP fp_loop;
+	CLOSE fp23a;
+
+	SET done = 0;
+	OPEN fp23b;
+	fp_loop: LOOP
+		FETCH fp23b INTO fb, coddaneb, pb;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_b` = fb WHERE `coddane` = coddaneb AND `p23_b` = pb;
+	END LOOP fp_loop;
+	CLOSE fp23b;
+
+	SET done = 0;
+	OPEN fp23k;
+	fp_loop: LOOP
+		FETCH fp23k INTO fk, coddanek, pk;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_k` = fk WHERE `coddane` = coddanek AND `p23_k` = pk;
+	END LOOP fp_loop;
+	CLOSE fp23k;
+
+	SET done = 0;
+	OPEN fp23v;
+	fp_loop: LOOP
+		FETCH fp23v INTO fv, coddanev, pv;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_v` = fv WHERE `coddane` = coddanev AND `p23_v` = pv;
+	END LOOP fp_loop;
+	CLOSE fp23v;
+
+	SET done = 0;
+	OPEN fp23n;
+	fp_loop: LOOP
+		FETCH fp23n INTO fn, coddanen, pn;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_n` = fn WHERE `coddane` = coddanen AND `p23_n` = pn;
+	END LOOP fp_loop;
+	CLOSE fp23n;
+
+	SET done = 0;
+	OPEN fp23e;
+	fp_loop: LOOP
+		FETCH fp23e INTO fe, coddanee, pe;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_e` = fe WHERE `coddane` = coddanee AND `p23_e` = pe;
+	END LOOP fp_loop;
+	CLOSE fp23e;
+
+	SET done = 0;
+	OPEN fp23o;
+	fp_loop: LOOP
+		FETCH fp23o INTO fo, coddaneo, po;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_o` = fo WHERE `coddane` = coddaneo AND `p23_o` = po;
+	END LOOP fp_loop;
+	CLOSE fp23o;
+
+	SET done = 0;
+	OPEN fp23j;
+	fp_loop: LOOP
+		FETCH fp23j INTO fj, coddanej, pj;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_j` = fj WHERE `coddane` = coddanej AND `p23_j` = pj;
+	END LOOP fp_loop;
+	CLOSE fp23j;
+
+	SET done = 0;
+	OPEN fp23p;
+	fp_loop: LOOP
+		FETCH fp23p INTO fp, coddanep, pp;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_p` = fp WHERE `coddane` = coddanep AND `p23_p` = pp;
+	END LOOP fp_loop;
+	CLOSE fp23p;
+
+	SET done = 0;
+	OPEN fp23i;
+	fp_loop: LOOP
+		FETCH fp23i INTO fi, coddanei, pi;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_i` = fi WHERE `coddane` = coddanei AND `p23_i` = pi;
+	END LOOP fp_loop;
+	CLOSE fp23i;
+
+	SET done = 0;
+	OPEN fp23q;
+	fp_loop: LOOP
+		FETCH fp23q INTO fq, coddaneq, pq;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_q` = fq WHERE `coddane` = coddaneq AND `p23_q` = pq;
+	END LOOP fp_loop;
+	CLOSE fp23q;
+
+	SET done = 0;
+	OPEN fp23r;
+	fp_loop: LOOP
+		FETCH fp23r INTO fr, coddaner, pr;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_r` = fr WHERE `coddane` = coddaner AND `p23_r` = pr;
+	END LOOP fp_loop;
+	CLOSE fp23r;
+
+	SET done = 0;
+	OPEN fp23s;
+	fp_loop: LOOP
+		FETCH fp23s INTO fs, coddanes, ps;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p23_s` = fs WHERE `coddane` = coddanes AND `p23_s` = ps;
+	END LOOP fp_loop;
+	CLOSE fp23s;
+
+	SET done = 0;
+	OPEN fp47aa;
+	fp_loop: LOOP
+		FETCH fp47aa INTO faa, coddaneaa, paa;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p47_aa` = faa WHERE `coddane` = coddaneaa AND `p47_aa` = paa;
+	END LOOP fp_loop;
+	CLOSE fp47aa;
+
+	SET done = 0;
+	OPEN fp47ab;
+	fp_loop: LOOP
+		FETCH fp47ab INTO fab, coddaneab, pab;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p47_ab` = fab WHERE `coddane` = coddaneab AND `p47_ab` = pab;
+	END LOOP fp_loop;
+	CLOSE fp47ab;
+
+	SET done = 0;
+	OPEN fp47ac;
+	fp_loop: LOOP
+		FETCH fp47ac INTO fac, coddaneac, pac;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p47_ac` = fac WHERE `coddane` = coddaneac AND `p47_ac` = pac;
+	END LOOP fp_loop;
+	CLOSE fp47ac;
+
+	SET done = 0;
+	OPEN fp47ad;
+	fp_loop: LOOP
+		FETCH fp47ad INTO fad, coddanead, pad;
+		IF done = 1 THEN LEAVE fp_loop; END IF;
+		UPDATE `clone_909-docentes` SET `f_p47_ad` = fad WHERE `coddane` = coddanead AND `p47_ad` = pad;
+	END LOOP fp_loop;
+	CLOSE fp47ad;
+
+	
+	#-------------------------------
+	#   Aca va codigo de collapse  |
+	#-------------------------------
+	DELETE FROM `909-docentes-1`;
+	INSERT INTO `909-docentes-1` (`coddane`, `e_p23_a`, `e_p23_b`, `e_p23_k`, `e_p23_v`, `e_p23_n`, `e_p23_e`, `e_p23_o`,
+	 `e_p23_j`, `e_p23_p`, `e_p23_i`, `e_p23_q`, `e_p23_r`, `e_p23_s`, `e_p47_aa`, `e_p47_ab`, `e_p47_ac`, `e_p47_ad`, 
+	 `f_p23_a`, `f_p23_b`, `f_p23_k`, `f_p23_v`, `f_p23_n`, `f_p23_e`, `f_p23_o`, `f_p23_j`, `f_p23_p`, `f_p23_i`,
+	 `f_p23_q`, `f_p23_r`, `f_p23_s`, `f_p47_aa`, `f_p47_ab`, `f_p47_ac`, `f_p47_ad`) 
+	SELECT `coddane` , SUM(`p23_a`) , SUM(`p23_b`),  SUM(`p23_k`), SUM(`p23_v`), SUM(`p23_n`), SUM(`p23_e`),
+	 SUM(`p23_o`), SUM(`p23_j`), SUM(`p23_p`), SUM(`p23_i`), SUM(`p23_q`), SUM(`p23_r`), SUM(`p23_s`),
+	 SUM(`p47_aa`), SUM(`p47_ab`), SUM(`p47_ac`), SUM(`p47_ad`), COUNT(`f_p23_a`), COUNT(`f_p23_b`), COUNT(`f_p23_k`), 
+	 COUNT(`f_p23_v`), COUNT(`f_p23_n`), COUNT(`f_p23_e`), COUNT(`f_p23_o`), COUNT(`f_p23_j`), COUNT(`f_p23_p`), 
+	 COUNT(`f_p23_i`), COUNT(`f_p23_q`), COUNT(`f_p23_r`), COUNT(`f_p23_s`), COUNT(`f_p47_aa`), COUNT(`f_p47_ab`), 
+	 COUNT(`f_p47_ac`), COUNT(`f_p47_ad`) 
+	FROM `clone_909-docentes` 
+	GROUP BY `coddane`;
+
+	DROP TABLE `clone_909-docentes`;
+
+	#-------------------------------
+	#   Aca va codigo de los egen  |
+	#-------------------------------	
+	UPDATE `909-docentes-1` SET `p_p23_a` = `e_p23_a` / `f_p23_a`;
+	UPDATE `909-docentes-1` SET `p_p23_b` = `e_p23_b` / `f_p23_b`;
+	UPDATE `909-docentes-1` SET `p_p23_k` = `e_p23_k` / `f_p23_k`;
+	UPDATE `909-docentes-1` SET `p_p23_v` = `e_p23_v` / `f_p23_v`;
+	UPDATE `909-docentes-1` SET `p_p23_n` = `e_p23_n` / `f_p23_n`;
+
+	UPDATE `909-docentes-1` SET `p_p23_e` = `e_p23_e` / `f_p23_e`;
+	UPDATE `909-docentes-1` SET `p_p23_o` = `e_p23_o` / `f_p23_o`;
+	UPDATE `909-docentes-1` SET `p_p23_j` = `e_p23_j` / `f_p23_j`;
+	UPDATE `909-docentes-1` SET `p_p23_p` = `e_p23_p` / `f_p23_p`;
+
+	UPDATE `909-docentes-1` SET `p_p23_i` = `e_p23_i` / `f_p23_i`;
+	UPDATE `909-docentes-1` SET `p_p23_q` = `e_p23_q` / `f_p23_q`;
+	UPDATE `909-docentes-1` SET `p_p23_r` = `e_p23_r` / `f_p23_r`;
+	UPDATE `909-docentes-1` SET `p_p23_s` = `e_p23_s` / `f_p23_s`;
+
+	UPDATE `909-docentes-1` SET `p_p47_aa` = `e_p47_aa` / `f_p47_aa`;
+	UPDATE `909-docentes-1` SET `p_p47_ab` = `e_p47_ab` / `f_p47_ab`;
+	UPDATE `909-docentes-1` SET `p_p47_ac` = `e_p47_ac` / `f_p47_ac`;
+	UPDATE `909-docentes-1` SET `p_p47_ad` = `e_p47_ad` / `f_p47_ad`;
+
+
+	#-------------------------------
+	#   Aca va los ultimos egen    |
+	#-------------------------------
+
+	UPDATE `909-docentes-1` SET `academic_exp_2` = (`p_p23_a` + `p_p23_b` + `p_p23_k` + `p_p23_v` + `p_p23_n`) / 5;
+	UPDATE `909-docentes-1` SET `comunic_2` = (`p_p23_e` + `p_p23_o` + `p_p23_j` + `p_p23_p`) / 4;
+	UPDATE `909-docentes-1` SET `compro_2` = (`p_p23_i` + `p_p23_q` + `p_p23_r` + `p_p23_s`) / 4;
+	UPDATE `909-docentes-1` SET `seg_resp_2` = (`p_p47_aa` + `p_p47_ab` + `p_p47_ac` + `p_p47_ad`) / 4;
+	
+
 END //
 
 DELIMITER ;
