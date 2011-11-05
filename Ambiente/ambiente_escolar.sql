@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-11-2011 a las 21:49:45
+-- Tiempo de generación: 05-11-2011 a las 21:55:30
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -1514,13 +1514,6 @@ BEGIN
 
 	
 END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllProducts`()
-BEGIN
-
-  SELECT *  FROM products;
-
-  END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `padres`()
 BEGIN
