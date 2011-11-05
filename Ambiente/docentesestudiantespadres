@@ -13,18 +13,18 @@ BEGIN
 	FROM  `padres 1108_1` ,  `909-alumnos-2` ,  `909-docentes-1` 
 	WHERE  `padres 1108_1`.coddane =  `909-alumnos-2`.coddane
 	AND  `padres 1108_1`.coddane =  `909-docentes-1`.coddane
-	AND  `909-alumnos-2`.coddane =  `909-docentes-1`.coddane
+	AND  `909-alumnos-2`.coddane =  `909-docentes-1`.coddane;
 
 	#------------------------------------
 	#   Aca va los ultimos egen rowmean |
 	#------------------------------------
 
 	UPDATE `909-docentesestudiantespadres` SET `academic_exp_total` = (`academic_exp_1`+`academic_exp_2`+`academic_exp_3`) / 3;
-	UPDATE `909-docentesestudiantespadres` SET `cominic_total` = (`cominic_1`+`cominic_2`+`cominic_3`) / 3;
+	UPDATE `909-docentesestudiantespadres` SET `comunic_total` = (`comunic_1`+`comunic_2`+`comunic_3`) / 3;
 	UPDATE `909-docentesestudiantespadres` SET `compro_total` = (`compro_1`+`compro_2`+`compro_3`) / 3;
 	UPDATE `909-docentesestudiantespadres` SET `seg_resp_total` = (`seg_resp_1`+`seg_resp_2`+`seg_resp_3`) / 3;
 
-	UPDATE `909-docentesestudiantespadres` SET `ambiente_esc` = (`academic_exp_total`+`cominic_total`+`compro_total`+ 		 `seg_resp_total`) / 4;
+	UPDATE `909-docentesestudiantespadres` SET `ambiente_esc` = (`academic_exp_total`+`comunic_total`+`compro_total`+ 		 `seg_resp_total`) / 4;
 
 	
 END //
