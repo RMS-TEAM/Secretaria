@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 06-11-2011 a las 20:26:15
+-- Tiempo de generación: 07-11-2011 a las 16:23:53
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -17,29 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `rendimiento`
+-- Base de datos: `rendimiento_progreso`
 --
-
-DELIMITER $$
---
--- Procedimientos
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_saber_5y9_09`()
-BEGIN
-
-	DELETE FROM escala5_9_09;
-	INSERT INTO escala5_9_09 (dane,institucion_nombre,l5,m5,cn5,l9,m9,cn9)
-	SELECT dane,institucion_nombre,l5,m5,cn5,l9,m9,cn9 FROM saber_5y9_09;
-
-	UPDATE escala5_9_09 SET l5r = (l5-100)/4 WHERE l5 != 0;
-	UPDATE escala5_9_09 SET m5r = (m5-100)/4 WHERE m5 != 0;
-	UPDATE escala5_9_09 SET cn5r = (cn5-100)/4 WHERE cn5 != 0;
-	UPDATE escala5_9_09 SET l9r = (l9-100)/4 WHERE l9 != 0;
-	UPDATE escala5_9_09 SET m9r = (m9-100)/4 WHERE m9 != 0;
-	UPDATE escala5_9_09 SET cn9r = (cn9-100)/4 WHERE cn9 != 0;
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -56,12 +35,12 @@ CREATE TABLE IF NOT EXISTS `escala5_9_09` (
   `l9` int(3) DEFAULT NULL,
   `m9` int(3) DEFAULT NULL,
   `cn9` int(3) DEFAULT NULL,
-  `l5r` decimal(5,2) DEFAULT NULL,
-  `m5r` decimal(5,2) DEFAULT NULL,
-  `cn5r` decimal(5,2) DEFAULT NULL,
-  `l9r` decimal(5,2) DEFAULT NULL,
-  `m9r` decimal(5,2) DEFAULT NULL,
-  `cn9r` decimal(5,2) DEFAULT NULL
+  `l5r` decimal(8,5) DEFAULT NULL,
+  `m5r` decimal(8,5) DEFAULT NULL,
+  `cn5r` decimal(8,5) DEFAULT NULL,
+  `l9r` decimal(8,5) DEFAULT NULL,
+  `m9r` decimal(8,5) DEFAULT NULL,
+  `cn9r` decimal(8,5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
