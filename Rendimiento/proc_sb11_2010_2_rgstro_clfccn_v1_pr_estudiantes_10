@@ -232,14 +232,6 @@ BEGIN
 
 	DROP TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,`;
 
-
-	ALTER TABLE `pr_estudiantes_10` ADD `prmat_bajo_10_p` DECIMAL(10,7);
-	ALTER TABLE `pr_estudiantes_10` ADD `prmat_medio_10_p` DECIMAL(10,7);
-	ALTER TABLE `pr_estudiantes_10` ADD `prmat_alto_10_p` DECIMAL(10,7);
-
-	ALTER TABLE `pr_estudiantes_10` ADD `prlen_bajo_10_p` DECIMAL(10,7);
-	ALTER TABLE `pr_estudiantes_10` ADD `prlen_medio_10_p` DECIMAL(10,7);
-	ALTER TABLE `pr_estudiantes_10` ADD `prlen_alto_10_p` DECIMAL(10,7);
 	
 	UPDATE `pr_estudiantes_10` SET `prmat_bajo_10_p` = `prmat_bajo_10` * 100;
 	UPDATE `pr_estudiantes_10` SET `prmat_medio_10_p` = `prmat_medio_10` * 100;
