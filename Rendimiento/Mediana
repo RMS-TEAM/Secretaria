@@ -1,0 +1,28 @@
+DELIMITER //
+DROP PROCEDURE IF EXISTS median //
+CREATE PROCEDURE median(IN tbl TEXT, IN col TEXT, OUT mediana DECIMAL(8,5))
+BEGIN
+    SET @s = CONCAT('SELECT COUNT(',col,')
+             FROM ',tbl,'
+             INTO @count;');
+    PREPARE stmt FROM @s;
+    EXECUTE stmt;
+
+    IF @count MOD 2 = 0 THEN
+        SET @lmt = 2;
+        SET @mid = (@count/2)-1;
+    ELSE
+        SET @lmt = 1;
+        SET @mid = FLOOR(@count/2);
+    END IF;
+
+    SET @s = CONCAT('SELECT AVG(',col,') INTO @med
+             FROM (SELECT ',col,' FROM ',tbl,'
+             ORDER BY ',col,'
+             LIMIT ?,?) a;');
+    PREPARE stmt FROM @s;
+    EXECUTE stmt USING @mid,@lmt;
+
+	SELECT @med INTO mediana;
+END //
+DELIMITER ;
