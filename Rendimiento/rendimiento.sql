@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-11-2011 a las 10:57:56
+-- Tiempo de generación: 17-11-2011 a las 20:22:02
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -79,24 +79,6 @@ CREATE TABLE IF NOT EXISTS `basetotalcluster` (
   `ProporcionEstrato5` decimal(9,7) DEFAULT NULL,
   `ProporcionEstrato6` decimal(9,7) DEFAULT NULL,
   `RazonHomicidios` varchar(8) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `clone_sb11-2010-2-rgstro-clfccn-v1,`
---
-
-CREATE TABLE IF NOT EXISTS `clone_sb11-2010-2-rgstro-clfccn-v1,` (
-  `cole_codigo_inst` int(7) DEFAULT NULL,
-  `cole_codigo_mcpio` int(7) DEFAULT NULL,
-  `cole_inst_nombre` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `tema_lenguaje` varchar(7) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `tema_matematica` varchar(7) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `cole_codigo_mcpio_d` int(11) DEFAULT NULL,
-  `cole_codigo_inst_d` int(11) DEFAULT NULL,
-  `tema_lenguaje_d` decimal(6,4) DEFAULT NULL,
-  `tema_matematica_d` decimal(6,4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -535,6 +517,18 @@ CREATE TABLE IF NOT EXISTS `informe_estudiante_grado_5` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `mediana11_07`
+--
+
+CREATE TABLE IF NOT EXISTS `mediana11_07` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tema_matematica` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje` decimal(8,5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `mediana11_10`
 --
 
@@ -598,6 +592,28 @@ CREATE TABLE IF NOT EXISTS `permed_5_9_03` (
   `p33_mat_5` int(1) DEFAULT NULL,
   `p50_mat_9` int(1) DEFAULT NULL,
   `p33_mat_9` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pr_estudiantes_10`
+--
+
+CREATE TABLE IF NOT EXISTS `pr_estudiantes_10` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `prmat_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10_p` decimal(10,7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
