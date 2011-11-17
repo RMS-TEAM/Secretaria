@@ -116,7 +116,7 @@ BEGIN
 
 
 	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prmat_alto_10` DECIMAL(8,5);
-	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prmat_alto_10` = `rmat11_a_2010` / `estu_matalto`;
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prmat_alto_10` = `prmat11_a_2010` / `estu_matalto`;
 
 
 	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `len11_bajo_2010` INT(11);

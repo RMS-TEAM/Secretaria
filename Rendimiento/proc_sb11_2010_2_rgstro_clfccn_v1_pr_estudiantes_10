@@ -180,7 +180,7 @@ BEGIN
 	DROP TABLE `egen_temp`;
 
 
-	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen_bajo_10` DECIMAL(8,5);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen_medio_10` DECIMAL(8,5);
 	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prlen_medio_10` = `prlen11_m_2010` / `estu_lenmedio`;
 
 
