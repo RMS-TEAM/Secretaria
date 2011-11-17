@@ -186,9 +186,6 @@ BEGIN
 
 
 
-
-gen prlen_alto_10 = prlen11_a_2010/estu_lenalto
-
 	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `len11_alto_2010` INT(11);
 
 	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `len11_alto_2010` = 1 WHERE `tema_lenguaje_d` > 70 AND `tema_lenguaje_d` IS NOT NULL;
@@ -222,7 +219,39 @@ gen prlen_alto_10 = prlen11_a_2010/estu_lenalto
 
 
 
-	#DROP TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+	#------------------
+	# Collapse        |
+	#------------------
+	DELETE FROM `pr_estudiantes_10`;
+	INSERT INTO `pr_estudiantes_10` (`cole_inst_nombre`, `prmat_bajo_10`, `prmat_medio_10`, `prmat_alto_10`, `prlen_bajo_10`, 
+	 `prlen_medio_10`, `prlen_alto_10`)
+	 SELECT `cole_inst_nombre`, AVG(`prmat_bajo_10`), AVG(`prmat_medio_10`), AVG(`prmat_alto_10`), AVG(`prlen_bajo_10`), 
+	 AVG(`prlen_medio_10`), AVG(`prlen_alto_10`)
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,`
+	 GROUP BY `cole_inst_nombre`;
+
+	DROP TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+
+
+	ALTER TABLE `pr_estudiantes_10` ADD `prmat_bajo_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prmat_medio_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prmat_alto_10_p` DECIMAL(10,7);
+
+	ALTER TABLE `pr_estudiantes_10` ADD `prlen_bajo_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prlen_medio_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prlen_alto_10_p` DECIMAL(10,7);
+	
+	UPDATE `pr_estudiantes_10` SET `prmat_bajo_10_p` = `prmat_bajo_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prmat_medio_10_p` = `prmat_medio_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prmat_alto_10_p` = `prmat_alto_10` * 100;
+
+	UPDATE `pr_estudiantes_10` SET `prlen_bajo_10_p` = `prlen_bajo_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prlen_medio_10_p` = `prlen_medio_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prlen_alto_10_p` = `prlen_alto_10` * 100;
+
+
+
+
 
 END //
 DELIMITER ;
