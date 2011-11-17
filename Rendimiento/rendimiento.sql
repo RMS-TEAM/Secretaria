@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-11-2011 a las 13:22:28
+-- Tiempo de generación: 17-11-2011 a las 10:57:56
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -79,6 +79,24 @@ CREATE TABLE IF NOT EXISTS `basetotalcluster` (
   `ProporcionEstrato5` decimal(9,7) DEFAULT NULL,
   `ProporcionEstrato6` decimal(9,7) DEFAULT NULL,
   `RazonHomicidios` varchar(8) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clone_sb11-2010-2-rgstro-clfccn-v1,`
+--
+
+CREATE TABLE IF NOT EXISTS `clone_sb11-2010-2-rgstro-clfccn-v1,` (
+  `cole_codigo_inst` int(7) DEFAULT NULL,
+  `cole_codigo_mcpio` int(7) DEFAULT NULL,
+  `cole_inst_nombre` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tema_lenguaje` varchar(7) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tema_matematica` varchar(7) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cole_codigo_mcpio_d` int(11) DEFAULT NULL,
+  `cole_codigo_inst_d` int(11) DEFAULT NULL,
+  `tema_lenguaje_d` decimal(6,4) DEFAULT NULL,
+  `tema_matematica_d` decimal(6,4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -517,6 +535,18 @@ CREATE TABLE IF NOT EXISTS `informe_estudiante_grado_5` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `mediana11_10`
+--
+
+CREATE TABLE IF NOT EXISTS `mediana11_10` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tema_lenguaje_d` decimal(6,4) DEFAULT NULL,
+  `tema_matematica_d` decimal(6,4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `nombrescolegiosicfes_11`
 --
 
@@ -568,6 +598,28 @@ CREATE TABLE IF NOT EXISTS `permed_5_9_03` (
   `p33_mat_5` int(1) DEFAULT NULL,
   `p50_mat_9` int(1) DEFAULT NULL,
   `p33_mat_9` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ran_ie07`
+--
+
+CREATE TABLE IF NOT EXISTS `ran_ie07` (
+  `cole_inst_nombre` varchar(75) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `categoria_07` int(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ran_ie10`
+--
+
+CREATE TABLE IF NOT EXISTS `ran_ie10` (
+  `cole_inst_nombre` varchar(75) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `categoria_10` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -644,6 +696,182 @@ CREATE TABLE IF NOT EXISTS `saber_5y9_09` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `sb11-2007-2-rgstro-clfccn-v-1-0`
+--
+
+CREATE TABLE IF NOT EXISTS `sb11-2007-2-rgstro-clfccn-v-1-0` (
+  `estu_consecutivo` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_genero` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_nacimiento_dia` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_nacimiento_mes` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_nacimiento_anno` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_invidente` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_sordo_con_interprete` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_sordo_sin_interprete` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_motriz` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_etnia` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `econ_zona` int(2) DEFAULT NULL,
+  `estu_reside_depto` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_anno_egreso` int(4) DEFAULT NULL,
+  `cole_codigo_colegio` int(8) DEFAULT NULL,
+  `cole_inst_nombre` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cole_inst_jornada` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_mpio_colegio` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cole_depto_colegio` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_inst_vlr_pension` int(1) DEFAULT NULL,
+  `estu_ies_cod_deseada` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_ies_razon_deseada` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_carr_cod_deseada` varchar(5) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_carr_razon_desea` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_exam_dpto_presentacion` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_lenguaje` decimal(5,2) DEFAULT NULL,
+  `tema_matematica` decimal(5,2) DEFAULT NULL,
+  `tema_ciencias_sociales` decimal(5,2) DEFAULT NULL,
+  `tema_filosofia` decimal(5,2) DEFAULT NULL,
+  `tema_biologia` decimal(5,2) DEFAULT NULL,
+  `tema_quimica` decimal(5,2) DEFAULT NULL,
+  `tema_fisica` decimal(5,2) DEFAULT NULL,
+  `tema2_profundizacion_cod` int(3) DEFAULT NULL,
+  `tema2_profundizacion_p` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
+  `tema2_profundizacion_d` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `tema3_idioma_cod` int(2) DEFAULT NULL,
+  `tema3_idioma_p` decimal(5,2) DEFAULT NULL,
+  `tema3_idioma_d` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `tema4_interdisciplinar_cod` int(5) DEFAULT NULL,
+  `tema4_interdisciplinar` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_puesto` varchar(5) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sb11-2010-2-rgstro-clfccn-v1,`
+--
+
+CREATE TABLE IF NOT EXISTS `sb11-2010-2-rgstro-clfccn-v1,` (
+  `estu_consecutivo` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_genero` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_nacimiento_dia` int(2) DEFAULT NULL,
+  `estu_nacimiento_mes` int(2) DEFAULT NULL,
+  `estu_nacimiento_anno` int(5) DEFAULT NULL,
+  `estu_disc_invidente` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_sordo_con_interprete` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_sordo_sin_interprete` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_motriz` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_sordoceguera` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_disc_cognitiva` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_etnia` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_codigo_reside_mcpio` int(5) DEFAULT NULL,
+  `estu_reside_depto` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `econ_area_vive` int(1) DEFAULT NULL,
+  `fami_cod_educa_padre` int(2) DEFAULT NULL,
+  `fami_cod_educa_madre` int(2) DEFAULT NULL,
+  `fami_cod_ocup_padre` int(2) DEFAULT NULL,
+  `fami_cod_ocup_madre` int(2) DEFAULT NULL,
+  `estu_estrato` int(1) DEFAULT NULL,
+  `fami_nivel_sisben` int(1) DEFAULT NULL,
+  `fami_num_pers_grup_fam` int(2) DEFAULT NULL,
+  `econ_dormitorios` int(2) DEFAULT NULL,
+  `econ_material_pisos` int(1) DEFAULT NULL,
+  `econ_sn_telefonia` int(1) DEFAULT NULL,
+  `econ_sn_celular` int(1) DEFAULT NULL,
+  `econ_sn_internet` int(1) DEFAULT NULL,
+  `econ_sn_servicio_tv` int(1) DEFAULT NULL,
+  `econ_sn_computador` int(1) DEFAULT NULL,
+  `econ_sn_dvd` int(1) DEFAULT NULL,
+  `econ_sn_lavadora` int(1) DEFAULT NULL,
+  `econ_sn_microondas` int(1) DEFAULT NULL,
+  `econ_sn_nevera` int(1) DEFAULT NULL,
+  `econ_sn_automovil` int(1) DEFAULT NULL,
+  `econ_sn_horno` int(1) DEFAULT NULL,
+  `fami_ing_fmiliar_mensual` int(1) DEFAULT NULL,
+  `estu_trabaja` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_inst_vlr_pension` int(2) DEFAULT NULL,
+  `cole_codigo_mcpio` int(7) DEFAULT NULL,
+  `cole_codigo_inst` int(7) DEFAULT NULL,
+  `cole_inst_nombre` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estu_veces_estdo` int(1) DEFAULT NULL,
+  `cole_inst_jornada` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `estu_exam_depto_presentacion` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `tema5_compflexible_cod` int(3) DEFAULT NULL,
+  `tema5_compflexible_d` varchar(5) CHARACTER SET utf8 DEFAULT NULL,
+  `tema5_compflexible_p` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tema_lenguaje` varchar(7) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tema_matematica` varchar(7) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tema_ciencias_sociales` varchar(7) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_filosofia` varchar(7) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_biologia` varchar(7) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_quimica` varchar(7) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_fisica` varchar(7) CHARACTER SET utf8 DEFAULT NULL,
+  `tema3_idioma_cod` int(3) DEFAULT NULL,
+  `tema_idioma_p` varchar(7) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_idioma_d` varchar(7) CHARACTER SET utf8 DEFAULT NULL,
+  `tema_puesto` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sb11-clasifi-planteles-2007-v-1-0`
+--
+
+CREATE TABLE IF NOT EXISTS `sb11-clasifi-planteles-2007-v-1-0` (
+  `cole_codigo_colegio` int(6) DEFAULT NULL,
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cole_codmpio_colegio` int(5) DEFAULT NULL,
+  `cole_mpio_colegio` varchar(27) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_depto_colegio` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_inst_jornada` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_calendario_colegio` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_generopoblacion` varchar(9) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_naturaleza` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_ciencias_sociales` int(2) DEFAULT NULL,
+  `cole_quimica` int(2) DEFAULT NULL,
+  `cole_fisica` int(2) DEFAULT NULL,
+  `cole_biologia` int(2) DEFAULT NULL,
+  `cole_filosofia` int(2) DEFAULT NULL,
+  `cole_matematicas` int(2) DEFAULT NULL,
+  `cole_lenguaje` int(2) DEFAULT NULL,
+  `cole_ingles` int(2) DEFAULT NULL,
+  `cole_geografia` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_historia` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_categoria` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_estudiantes_presentes` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sb11-clasifi-planteles-2010-v-1-0`
+--
+
+CREATE TABLE IF NOT EXISTS `sb11-clasifi-planteles-2010-v-1-0` (
+  `cole_codigo_colegio` int(6) DEFAULT NULL,
+  `cole_inst_nombre` varchar(81) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cole_codmpio_colegio` int(5) DEFAULT NULL,
+  `cole_mpio_colegio` varchar(27) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_depto_colegio` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_inst_jornada` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_calendario_colegio` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_generopoblacion` varchar(9) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_naturaleza` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_ciencias_sociales` int(2) DEFAULT NULL,
+  `cole_quimica` int(2) DEFAULT NULL,
+  `cole_fisica` int(2) DEFAULT NULL,
+  `cole_biologia` int(2) DEFAULT NULL,
+  `cole_filosofia` int(2) DEFAULT NULL,
+  `cole_matematicas` int(2) DEFAULT NULL,
+  `cole_lenguaje` int(2) DEFAULT NULL,
+  `cole_ingles` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_geografia` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_historia` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_categoria` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
+  `cole_estudiantes_presentes` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `taprob`
 --
 
@@ -653,6 +881,33 @@ CREATE TABLE IF NOT EXISTS `taprob` (
   `aprobacion9` decimal(9,7) DEFAULT NULL,
   `aprobacion11a` decimal(9,7) DEFAULT NULL,
   `aprobacion11t` decimal(9,7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `textra`
+--
+
+CREATE TABLE IF NOT EXISTS `textra` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Extraedad` int(4) DEFAULT NULL,
+  `cole_codigo_mcpio_d` int(5) DEFAULT NULL,
+  `textra` decimal(9,7) DEFAULT NULL,
+  `rtextra` decimal(9,7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `varcolegios11`
+--
+
+CREATE TABLE IF NOT EXISTS `varcolegios11` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `categoria_10` int(2) DEFAULT NULL,
+  `categoria_07` int(2) DEFAULT NULL,
+  `varcolegios11` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
