@@ -1,0 +1,257 @@
+DROP PROCEDURE IF EXISTS proc_sb11_2010_2_rgstro_clfccn_v1_pr_estudiantes_10;
+
+
+DELIMITER //
+
+CREATE PROCEDURE proc_sb11_2010_2_rgstro_clfccn_v1_pr_estudiantes_10()
+BEGIN
+
+	DROP TABLE IF EXISTS `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+	CREATE TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` 
+	 (SELECT `cole_codigo_mcpio`, `cole_inst_nombre`, `tema_lenguaje`, `tema_matematica` 
+	 FROM `sb11-2010-2-rgstro-clfccn-v1,` WHERE `cole_codigo_mcpio` = 5001);
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `cole_codigo_mcpio_d` INT(11);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_lenguaje_d` DECIMAL(6,4);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_matematica_d` DECIMAL(6,4);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `cole_codigo_mcpio_d` = CONVERT(`cole_codigo_mcpio`, SIGNED);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_lenguaje_d` = CONVERT(REPLACE(`tema_lenguaje`, ',', '.'), DECIMAL(6,4));
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_matematica_d` = CONVERT(REPLACE(`tema_matematica`, ',', '.'), DECIMAL(6,4));
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `mat11_bajo_2010` INT(11);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `mat11_bajo_2010` = 1 WHERE `tema_matematica_d` <= 30;
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `mat11_bajo_2010` = 0 WHERE `mat11_bajo_2010` IS NULL;
+
+	# egen prmat11_b_2010 = sum(mat11_bajo_2010), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT SUM(`mat11_bajo_2010`) AS suma, `cole_inst_nombre` FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prmat11_b_2010` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`prmat11_b_2010` = `egen_temp`.`suma`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `estu_consecnum` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `estu_consecnum` = 1;
+
+
+	# egen estu_mat_bajo = count(estu_consecnum), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`estu_consecnum`) AS cuenta, `cole_inst_nombre` 
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `estu_mat_bajo` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`estu_mat_bajo` = `egen_temp`.`cuenta`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prmat_bajo_10` DECIMAL(8,5);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prmat_bajo_10` = `prmat11_b_2010` / `estu_mat_bajo`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `mat11_medio_2010` INT(11);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `mat11_medio_2010` = 1 WHERE `tema_matematica_d` > 30 AND `tema_matematica_d` <= 70;
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `mat11_medio_2010` = 0 WHERE `mat11_medio_2010` IS NULL;
+
+	# egen prmat11_m_2010 = sum(mat11_medio_2010), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT SUM(`mat11_medio_2010`) AS suma, `cole_inst_nombre` FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prmat11_m_2010` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`prmat11_m_2010` = `egen_temp`.`suma`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	# egen estu_matmedio = count(estu_consecnum), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`estu_consecnum`) AS cuenta, `cole_inst_nombre` 
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `estu_matmedio` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`estu_matmedio` = `egen_temp`.`cuenta`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prmat_medio_10` DECIMAL(8,5);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prmat_medio_10` = `prmat11_m_2010` / `estu_matmedio`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `mat11_alto_2010` INT(11);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `mat11_alto_2010` = 1 WHERE `tema_matematica_d` > 70 AND `tema_matematica_d` IS NOT NULL;
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `mat11_alto_2010` = 0 WHERE `mat11_alto_2010` IS NULL;
+
+	# egen prmat11_a_2010 = sum(mat11_alto_2010), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT SUM(`mat11_alto_2010`) AS suma, `cole_inst_nombre` FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prmat11_a_2010` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`prmat11_a_2010` = `egen_temp`.`suma`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	# egen estu_matalto = count(estu_consecnum), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`estu_consecnum`) AS cuenta, `cole_inst_nombre` 
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `estu_matalto` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`estu_matalto` = `egen_temp`.`cuenta`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prmat_alto_10` DECIMAL(8,5);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prmat_alto_10` = `rmat11_a_2010` / `estu_matalto`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `len11_bajo_2010` INT(11);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `len11_bajo_2010` = 1 WHERE `tema_lenguaje_d` <= 30;
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `len11_bajo_2010` = 0 WHERE `len11_bajo_2010` IS NULL;
+
+	# egen prlen11_b_2010 = sum(len11_bajo_2010), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT SUM(`len11_bajo_2010`) AS suma, `cole_inst_nombre` FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen11_b_2010` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`prlen11_b_2010` = `egen_temp`.`suma`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	# egen estu_len_bajo = count(estu_consecnum), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`estu_consecnum`) AS cuenta, `cole_inst_nombre` 
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `estu_len_bajo` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`estu_len_bajo` = `egen_temp`.`cuenta`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen_bajo_10` DECIMAL(8,5);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prlen_bajo_10` = `prlen11_b_2010` / `estu_len_bajo`;
+
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `len11_medio_2010` INT(11);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `len11_medio_2010` = 1 WHERE `tema_lenguaje_d` > 30 AND `tema_lenguaje_d` <= 70;
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `len11_medio_2010` = 0 WHERE `len11_medio_2010` IS NULL;
+
+	# egen prlen11_m_2010 = sum(len11_medio_2010), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT SUM(`len11_medio_2010`) AS suma, `cole_inst_nombre` FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen11_m_2010` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`prlen11_m_2010` = `egen_temp`.`suma`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	# egen estu_lenmedio = count(estu_consecnum), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`estu_consecnum`) AS cuenta, `cole_inst_nombre` 
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `estu_lenmedio` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`estu_lenmedio` = `egen_temp`.`cuenta`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen_bajo_10` DECIMAL(8,5);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prlen_medio_10` = `prlen11_m_2010` / `estu_lenmedio`;
+
+
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `len11_alto_2010` INT(11);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `len11_alto_2010` = 1 WHERE `tema_lenguaje_d` > 70 AND `tema_lenguaje_d` IS NOT NULL;
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `len11_alto_2010` = 0 WHERE `len11_alto_2010` IS NULL;
+
+	# egen prlen11_a_2010 = sum(len11_alto_2010), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT SUM(`len11_alto_2010`) AS suma, `cole_inst_nombre` FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen11_a_2010` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`prlen11_a_2010` = `egen_temp`.`suma`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	# egen estu_lenalto = count(estu_consecnum), by(cole_inst_nombre)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`estu_consecnum`) AS cuenta, `cole_inst_nombre` 
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `estu_lenalto` INT(11);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,`, `egen_temp` 
+	 SET `clone_sb11-2010-2-rgstro-clfccn-v1,`.`estu_lenalto` = `egen_temp`.`cuenta`
+	 WHERE `clone_sb11-2010-2-rgstro-clfccn-v1,`.`cole_inst_nombre` = `egen_temp`.`cole_inst_nombre`;
+	DROP TABLE `egen_temp`;
+
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `prlen_alto_10` DECIMAL(8,5);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `prlen_alto_10` = `prlen11_a_2010` / `estu_lenalto`;
+
+
+
+	#------------------
+	# Collapse        |
+	#------------------
+	DELETE FROM `pr_estudiantes_10`;
+	INSERT INTO `pr_estudiantes_10` (`cole_inst_nombre`, `prmat_bajo_10`, `prmat_medio_10`, `prmat_alto_10`, `prlen_bajo_10`, 
+	 `prlen_medio_10`, `prlen_alto_10`)
+	 SELECT `cole_inst_nombre`, AVG(`prmat_bajo_10`), AVG(`prmat_medio_10`), AVG(`prmat_alto_10`), AVG(`prlen_bajo_10`), 
+	 AVG(`prlen_medio_10`), AVG(`prlen_alto_10`)
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,`
+	 GROUP BY `cole_inst_nombre`;
+
+	DROP TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+
+
+	ALTER TABLE `pr_estudiantes_10` ADD `prmat_bajo_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prmat_medio_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prmat_alto_10_p` DECIMAL(10,7);
+
+	ALTER TABLE `pr_estudiantes_10` ADD `prlen_bajo_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prlen_medio_10_p` DECIMAL(10,7);
+	ALTER TABLE `pr_estudiantes_10` ADD `prlen_alto_10_p` DECIMAL(10,7);
+	
+	UPDATE `pr_estudiantes_10` SET `prmat_bajo_10_p` = `prmat_bajo_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prmat_medio_10_p` = `prmat_medio_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prmat_alto_10_p` = `prmat_alto_10` * 100;
+
+	UPDATE `pr_estudiantes_10` SET `prlen_bajo_10_p` = `prlen_bajo_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prlen_medio_10_p` = `prlen_medio_10` * 100;
+	UPDATE `pr_estudiantes_10` SET `prlen_alto_10_p` = `prlen_alto_10` * 100;
+
+
+
+
+
+END //
+DELIMITER ;
