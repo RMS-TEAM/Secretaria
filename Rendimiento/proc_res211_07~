@@ -1,0 +1,21 @@
+use "NombresColegiosIcfes_11.dta", clear
+merge 1:1 cole_inst_nombre using "mediana11_07"
+drop if _merge ==2
+drop _merge
+save res211_07, replace
+outsheet using "D:\rendimiento\SQL\res211_07.csv", comma replace
+
+DROP PROCEDURE IF EXISTS proc_res211_07;
+
+DELIMITER //
+SELECT * 
+FROM  `mediana11_07` ,  `nombrescolegiosicfes_11` 
+WHERE  `mediana11_07`.`cole_inst_nombre` =  `nombrescolegiosicfes_11`.`cole_inst_nombre`
+CREATE PROCEDURE proc_nombrescolegiosicfes_11_mediana11_07()
+BEGIN
+	
+	
+
+END //
+
+DELIMITER ;
