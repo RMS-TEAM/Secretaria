@@ -1,0 +1,168 @@
+DROP PROCEDURE IF EXISTS proc_bonus11;
+
+DELIMITER //
+CREATE PROCEDURE proc_bonus11()
+BEGIN
+
+	# Variables para calcular el Percentil
+	DECLARE olimat_66 DECIMAL(10,7);
+	DECLARE olimat_50 DECIMAL(10,7);
+	DECLARE olimat_33 DECIMAL(10,7);
+	DECLARE olilen_66 DECIMAL(10,7);
+	DECLARE olilen_50 DECIMAL(10,7);
+	DECLARE olilen_33 DECIMAL(10,7);
+
+
+	DROP TABLE IF EXISTS `clone_Informeestudiantegrado10y11`;
+	CREATE TABLE `clone_Informeestudiantegrado10y11`
+	 (SELECT `dane`, `ie`, `total_matematicas`, `total_lenguaje`, `grado` 
+	 FROM `informeestudiantegrado10y11` WHERE `grado` != 10);
+
+	#------------------------
+	# Percentil 33 
+	SELECT MEDIAN(total_matematicas, 5, 33) INTO olimat_33 FROM `clone_Informeestudiantegrado10y11`;
+
+	#------------------------
+	# Percentil 66 
+	SELECT MEDIAN(total_matematicas, 5, 66) INTO olimat_66 FROM `clone_Informeestudiantegrado10y11`;
+
+	#------------------------
+	# Percentil 50 
+	SELECT MEDIAN(total_matematicas, 5) INTO olimat_50 FROM `clone_Informeestudiantegrado10y11`;
+
+	#------------------------
+	# Percentil 33 
+	SELECT MEDIAN(total_lenguaje, 5, 33) INTO olilen_33 FROM `clone_Informeestudiantegrado10y11`;
+
+	#------------------------
+	# Percentil 66 
+	SELECT MEDIAN(total_lenguaje, 5, 66) INTO olilen_66 FROM `clone_Informeestudiantegrado10y11`;
+
+	#------------------------
+	# Percentil 50 
+	SELECT MEDIAN(total_lenguaje, 5) INTO olilen_50 FROM `clone_Informeestudiantegrado10y11`;
+
+
+
+	# Collapse
+	DROP TABLE IF EXISTS `temp`;
+	CREATE TABLE `temp` 
+	 (SELECT `ie`, MEDIAN(`total_matematicas`) AS total_matematicas, MEDIAN(`total_lenguaje`) AS total_lenguaje, MEDIAN(`dane`) 
+	 FROM `clone_Informeestudiantegrado10y11` GROUP BY `ie`);
+
+	DROP TABLE `clone_Informeestudiantegrado10y11`;
+	
+
+	# Merge 1:1 ie using "basetotalcluster"
+	DELETE FROM `bonus11`;
+	INSERT INTO `bonus11` (`ie`, `total_matematicas`, `total_lenguaje`, `dane`, `ProporcionEstrato0`, `ProporcionEstrato1`, 
+	 `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6`)
+	 SELECT `temp`.`ie`, `total_matematicas`, `total_lenguaje`, `codigodane`, `ProporcionEstrato0`, `ProporcionEstrato1`, 
+	 `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6`
+	 FROM `temp`, `basetotalcluster`
+	 WHERE `basetotalcluster`.`ie` = `temp`.`ie`;
+
+	INSERT INTO `bonus11` (`ie`, `dane`, `ProporcionEstrato0`, `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, 
+	 `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6`)
+	 SELECT `ie`, `codigodane`, `ProporcionEstrato0`, `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, 
+	 `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6` 
+	 FROM `basetotalcluster` WHERE `ie` NOT IN (SELECT `ie` FROM `temp`);
+
+	DROP TABLE `temp`;
+
+	
+	
+	
+	UPDATE `bonus11` SET `bonus_matematica11` = 1 WHERE `ProporcionEstrato2` > `ProporcionEstrato0` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato1` AND `ProporcionEstrato2` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato4` AND `ProporcionEstrato2` > `ProporcionEstrato5` AND
+	 `ProporcionEstrato2` > `ProporcionEstrato6` AND `total_matematicas` >= olimat_33;
+
+	UPDATE `bonus11` SET `bonus_matematica11` = 2 WHERE `ProporcionEstrato1` > `ProporcionEstrato0` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato2` AND `ProporcionEstrato1` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato4` AND `ProporcionEstrato1` > `ProporcionEstrato5`  AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_matematicas` >= olimat_33 OR 
+	 `ProporcionEstrato2` > `ProporcionEstrato0` AND `ProporcionEstrato2` > `ProporcionEstrato1` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato3` AND `ProporcionEstrato2` > `ProporcionEstrato4` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato5` AND `ProporcionEstrato2` > `ProporcionEstrato6` AND 
+	 `total_matematicas` >= olimat_50;
+
+	UPDATE `bonus11` SET `bonus_matematica11` = 3 WHERE `ProporcionEstrato0` > `ProporcionEstrato1` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato2` AND `ProporcionEstrato0` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato4` AND `ProporcionEstrato0` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_matematicas` >= olimat_33 OR 
+	 `ProporcionEstrato1` > `ProporcionEstrato0` AND `ProporcionEstrato1` > `ProporcionEstrato2` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato3` AND `ProporcionEstrato1` > `ProporcionEstrato4` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato5` AND `ProporcionEstrato1` > `ProporcionEstrato6` AND 
+	 `total_matematicas` >= olimat_50 OR `ProporcionEstrato2` > `ProporcionEstrato0` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato1` AND `ProporcionEstrato2` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato4` AND `ProporcionEstrato2` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato6` AND `total_matematicas` >= olimat_66;
+
+	UPDATE `bonus11` SET `bonus_matematica11` = 4 WHERE `ProporcionEstrato0` > `ProporcionEstrato1` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato2` AND `ProporcionEstrato0` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato4` AND `ProporcionEstrato0` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_matematicas` >= olimat_50 OR 
+	 `ProporcionEstrato1` > `ProporcionEstrato0` AND `ProporcionEstrato1` > `ProporcionEstrato2` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato3` AND `ProporcionEstrato1` > `ProporcionEstrato4` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato5` AND `ProporcionEstrato1` > `ProporcionEstrato6` AND 
+	 `total_matematicas` >= olimat_66;
+
+	UPDATE `bonus11` SET `bonus_matematica11` = 5 WHERE `ProporcionEstrato0` > `ProporcionEstrato1` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato2` AND `ProporcionEstrato0` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato4` AND `ProporcionEstrato0` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_matematicas` >= olimat_66;
+
+
+
+
+	UPDATE `bonus11` SET `bonus_lenguaje11` = 1 WHERE `ProporcionEstrato2` > `ProporcionEstrato0` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato1` AND `ProporcionEstrato2` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato4` AND `ProporcionEstrato2` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_33;
+
+	UPDATE `bonus11` SET `bonus_lenguaje11` = 2 WHERE `ProporcionEstrato1` > `ProporcionEstrato0` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato2` AND `ProporcionEstrato1` > `ProporcionEstrato3` AND
+	 `ProporcionEstrato1` > `ProporcionEstrato4` AND `ProporcionEstrato1` > `ProporcionEstrato5` AND 	
+	 `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_33 | 
+	 `ProporcionEstrato2` > `ProporcionEstrato0` AND `ProporcionEstrato2` > `ProporcionEstrato1` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato3` AND `ProporcionEstrato2` > `ProporcionEstrato4` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato5` AND `ProporcionEstrato2` > `ProporcionEstrato6` AND 
+	 `total_lenguaje` >= olilen_50;
+
+	UPDATE `bonus11` SET `bonus_lenguaje11` = 3 WHERE `ProporcionEstrato0` > `ProporcionEstrato1` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato2` AND `ProporcionEstrato0` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato4` AND `ProporcionEstrato0` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_33 OR 
+	 `ProporcionEstrato1` > `ProporcionEstrato0` AND `ProporcionEstrato1` > `ProporcionEstrato2` AND 	
+	 `ProporcionEstrato1` > `ProporcionEstrato3` AND `ProporcionEstrato1` > `ProporcionEstrato4` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato5` AND `ProporcionEstrato1` > `ProporcionEstrato6` AND 
+	 `total_lenguaje` >= olilen_50 OR `ProporcionEstrato2` > `ProporcionEstrato0` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato1` AND `ProporcionEstrato2` > `ProporcionEstrato3` AND
+	 `ProporcionEstrato2` > `ProporcionEstrato4` AND `ProporcionEstrato2` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato2` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_66;
+
+	UPDATE `bonus11` SET `bonus_lenguaje11` = 4 WHERE `ProporcionEstrato0` > `ProporcionEstrato1` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato2` AND `ProporcionEstrato0` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato4` AND `ProporcionEstrato0` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_50 OR 
+	 `ProporcionEstrato1` > `ProporcionEstrato0` AND `ProporcionEstrato1` > `ProporcionEstrato2` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato3` AND `ProporcionEstrato1` > `ProporcionEstrato4` AND 
+	 `ProporcionEstrato1` > `ProporcionEstrato5` AND `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_66;
+
+	UPDATE `bonus11` SET `bonus_lenguaje11` = 5 WHERE `ProporcionEstrato0` > `ProporcionEstrato1` AND
+	 `ProporcionEstrato0` > `ProporcionEstrato2` AND `ProporcionEstrato0` > `ProporcionEstrato3` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato4` AND `ProporcionEstrato0` > `ProporcionEstrato5` AND 
+	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_66;
+
+	UPDATE `bonus11` SET `bonus_total11` = `bonus_lenguaje11` + `bonus_matematica11`;
+	UPDATE `bonus11` SET `bonus_total11` = `bonus_lenguaje11` WHERE `bonus_total11` IS NULL AND `bonus_matematica11` IS NULL;
+	UPDATE `bonus11` SET `bonus_total11` = `bonus_matematica11` WHERE `bonus_total11` IS NULL AND `bonus_lenguaje11` IS NULL;
+
+END //	
+
+
+
+
+
+
