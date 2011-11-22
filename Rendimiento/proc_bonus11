@@ -20,11 +20,11 @@ BEGIN
 
 	#------------------------
 	# Percentil 33 
-	SELECT MEDIAN(total_matematicas, 5, 33) INTO olimat_33 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_matematicas, 5, 33) INTO olimat_33 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 66 
-	SELECT MEDIAN(total_matematicas, 5, 66) INTO olimat_66 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_matematicas, 5, 66) INTO olimat_66 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 50 
@@ -32,11 +32,11 @@ BEGIN
 
 	#------------------------
 	# Percentil 33 
-	SELECT MEDIAN(total_lenguaje, 5, 33) INTO olilen_33 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_lenguaje, 5, 33) INTO olilen_33 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 66 
-	SELECT MEDIAN(total_lenguaje, 5, 66) INTO olilen_66 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_lenguaje, 5, 66) INTO olilen_66 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 50 
@@ -47,7 +47,7 @@ BEGIN
 	# Collapse
 	DROP TABLE IF EXISTS `temp`;
 	CREATE TABLE `temp` 
-	 (SELECT `ie`, MEDIAN(`total_matematicas`) AS total_matematicas, MEDIAN(`total_lenguaje`) AS total_lenguaje, MEDIAN(`dane`) 
+	 (SELECT `ie`, MEDIAN(`total_matematicas`,5) AS total_matematicas, MEDIAN(`total_lenguaje`,5) AS total_lenguaje, MEDIAN(`dane`) 
 	 FROM `clone_Informeestudiantegrado10y11` GROUP BY `ie`);
 
 	DROP TABLE `clone_Informeestudiantegrado10y11`;
@@ -124,7 +124,7 @@ BEGIN
 	UPDATE `bonus11` SET `bonus_lenguaje11` = 2 WHERE `ProporcionEstrato1` > `ProporcionEstrato0` AND 
 	 `ProporcionEstrato1` > `ProporcionEstrato2` AND `ProporcionEstrato1` > `ProporcionEstrato3` AND
 	 `ProporcionEstrato1` > `ProporcionEstrato4` AND `ProporcionEstrato1` > `ProporcionEstrato5` AND 	
-	 `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_33 | 
+	 `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_33 OR 
 	 `ProporcionEstrato2` > `ProporcionEstrato0` AND `ProporcionEstrato2` > `ProporcionEstrato1` AND 
 	 `ProporcionEstrato2` > `ProporcionEstrato3` AND `ProporcionEstrato2` > `ProporcionEstrato4` AND 
 	 `ProporcionEstrato2` > `ProporcionEstrato5` AND `ProporcionEstrato2` > `ProporcionEstrato6` AND 
@@ -148,7 +148,8 @@ BEGIN
 	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_50 OR 
 	 `ProporcionEstrato1` > `ProporcionEstrato0` AND `ProporcionEstrato1` > `ProporcionEstrato2` AND 
 	 `ProporcionEstrato1` > `ProporcionEstrato3` AND `ProporcionEstrato1` > `ProporcionEstrato4` AND 
-	 `ProporcionEstrato1` > `ProporcionEstrato5` AND `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_lenguaje` >= olilen_66;
+	 `ProporcionEstrato1` > `ProporcionEstrato5` AND `ProporcionEstrato1` > `ProporcionEstrato6` AND 
+	 `total_lenguaje` >= olilen_66;
 
 	UPDATE `bonus11` SET `bonus_lenguaje11` = 5 WHERE `ProporcionEstrato0` > `ProporcionEstrato1` AND
 	 `ProporcionEstrato0` > `ProporcionEstrato2` AND `ProporcionEstrato0` > `ProporcionEstrato3` AND 

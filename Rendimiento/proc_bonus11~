@@ -5,13 +5,6 @@ CREATE PROCEDURE proc_bonus11()
 BEGIN
 
 	# Variables para calcular el Percentil
-	DECLARE total INTEGER;
-	DECLARE fraccion DECIMAL(10,7);
-	DECLARE entera INTEGER;
-	DECLARE enteranemos INTEGER;
-	DECLARE deci DECIMAL(10,7);
-	DECLARE pos1 DECIMAL(10,7);
-	DECLARE pos2 DECIMAL(10,7);
 	DECLARE olimat_66 DECIMAL(10,7);
 	DECLARE olimat_50 DECIMAL(10,7);
 	DECLARE olimat_33 DECIMAL(10,7);
@@ -27,24 +20,23 @@ BEGIN
 
 	#------------------------
 	# Percentil 33 
-	SELECT MEDIAN(total_matematicas, 5, 33) INTO olimat_33 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_matematicas, 5, 33) INTO olimat_33 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 66 
-	SELECT MEDIAN(total_matematicas, 5, 66) INTO olimat_66 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_matematicas, 5, 66) INTO olimat_66 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 50 
 	SELECT MEDIAN(total_matematicas, 5) INTO olimat_50 FROM `clone_Informeestudiantegrado10y11`;
 
-	
 	#------------------------
 	# Percentil 33 
-	SELECT MEDIAN(total_lenguaje, 5, 33) INTO olilen_33 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_lenguaje, 5, 33) INTO olilen_33 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 66 
-	SELECT MEDIAN(total_lenguaje, 5, 66) INTO olilen_66 FROM `clone_Informeestudiantegrado10y11`;
+	SELECT PERC(total_lenguaje, 5, 66) INTO olilen_66 FROM `clone_Informeestudiantegrado10y11`;
 
 	#------------------------
 	# Percentil 50 
@@ -55,7 +47,7 @@ BEGIN
 	# Collapse
 	DROP TABLE IF EXISTS `temp`;
 	CREATE TABLE `temp` 
-	 (SELECT `ie`, MEDIAN(`total_matematicas`) AS total_matematicas, MEDIAN(`total_lenguaje`) AS total_lenguaje, MEDIAN(`dane`) 
+	 (SELECT `ie`, MEDIAN(`total_matematicas`,5) AS total_matematicas, MEDIAN(`total_lenguaje`,5) AS total_lenguaje, MEDIAN(`dane`) 
 	 FROM `clone_Informeestudiantegrado10y11` GROUP BY `ie`);
 
 	DROP TABLE `clone_Informeestudiantegrado10y11`;
