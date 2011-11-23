@@ -1,9 +1,11 @@
 class AlumnosController < ApplicationController
   def index
-    @usuarios = Alumno.all
+    @colegios = Alumno.find(:all, :select => 'DISTINCT colegio')
+	
+   
     respond_to do |format|
       format.html
-      format.xml {render :xml => @usuarios}
+      format.xml {render :xml => @colegios}
     end
   end
 end

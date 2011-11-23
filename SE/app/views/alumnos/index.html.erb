@@ -1,3 +1,6 @@
-<% @usuarios.each do |usuario| %>
-<%= usuario.colegio %>
-<%end%>
+<select>	
+	<% @colegios.each do |usuario| %>
+	<option value=<% usuario.colegio %>><%= usuario.colegio %></option>
+	<%end%>
+</select>
+
