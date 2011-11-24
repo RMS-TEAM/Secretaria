@@ -2,58 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-body{
-    background: #004b85;
-}
-
-.header{
-    background: white;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 20px;
-    -webkit-border-radius: 10px;
-    //padding: 5px;
-}
-.header .name{
-    position: relative;
-    //background: #004b85;
-    min-height: 110px;
-    width: 500px;
-}
-
-.images{
-    aling : center;
-    position:relative ;
-    background : white;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 40px;
-    -webkit-border-radius: 10px;
-}
-
-.images img{
-     width: 150px;
-     margin-left: 130px;
-    }
-
 .contenido{
-    background : white;
-    position: relative;
-    margin-left: 150px;
-    margin-right: 150px;
-    -webkit-border-radius: 10px;
-
+    width: 500px;
+    float: left;
 }
 
 .contenido p{
-    align: justify;
+    text-align: justify;
     font-family: arial;
     font-size: 12;
+    padding-left: 12px;
 }
 
-.contenido .bar ul li{
-    display: inline-block;
+.image{
+    width: 420px;
+    height: 350px;
+    float: right;
+
+
+}
+
+.image img{
+    width: 400px;
+    height: 350px;
+
 
 }
 

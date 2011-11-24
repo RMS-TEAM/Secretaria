@@ -8,7 +8,39 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="header">
+ <div id ="nav">
+    <div class="name">
+        <%= image_tag("FinalCal.png") %>
+
+    </div>
+    <div class="bar">
+             <ul>
+
+               <li><%=link_to "Acerca de","#" %></li>
+               <li><%=link_to "Reportes","#" %></li>
+               <li><%=link_to "Participantes","/pages/participantes" %></li>
+
+             </ul>
+    </div>
+ </div>
+</div>
+
+<div id="content">
+
+    <%= yield %>
+
+</div>
+
+
+
+<div class="images">
+     <p>Participantes</p>
+     <%=link_to( image_tag("eafit.png"),"http://www.eafit.edu.co") %>
+     <%=link_to( image_tag("cice.png"),"http://www.eafit.edu.co/cice/Paginas/inicio.aspx") %>
+     <%=link_to( image_tag("alcaldia_medellin.png"),"http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://9b271f06d3c5df950aef538cad9f510f") %>
+
+</div>
 
 </body>
 </html>
