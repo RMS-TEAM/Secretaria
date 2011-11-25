@@ -1,9 +1,9 @@
-DROP PROCEDURE IF EXISTS proc_sb11_2010_2_rgstro_clfccn_v1_pr_estudiantes_07;
+DROP PROCEDURE IF EXISTS proc_sb11_2007_2_rgstro_clfccn_v_1_0_pr_estudiantes_07;
 
 
 DELIMITER //
 
-CREATE PROCEDURE proc_sb11_2010_2_rgstro_clfccn_v1_pr_estudiantes_07()
+CREATE PROCEDURE proc_sb11_2007_2_rgstro_clfccn_v_1_0_pr_estudiantes_07()
 BEGIN
 
 	DROP TABLE IF EXISTS `clone_sb11-2007-2-rgstro-clfccn-v-1-0`;

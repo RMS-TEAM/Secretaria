@@ -1,0 +1,24 @@
+
+
+DROP PROCEDURE IF EXISTS proc_res11;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_res11()
+BEGIN
+
+	DELETE FROM `res11`;
+	INSERT INTO `res11` (cole_inst_nombre, dane, permed50len, permed33len, permed50mat, permedmat33, aprobacion5, aprobacion9, 
+	  aprobacion11a, aprobacion11t)
+	 SELECT res211.cole_inst_nombre, res211.dane, permed50len, permed33len, permed50mat, permedmat33, aprobacion5, aprobacion9, 
+	  aprobacion11a, aprobacion11t
+	 FROM `res211` 
+	 LEFT JOIN  `res111` ON  `res211`.`cole_inst_nombre` = `res111`.`cole_inst_nombre`;
+
+	INSERT INTO `res11` (cole_inst_nombre, dane, aprobacion5, aprobacion9, aprobacion11a, aprobacion11t)
+	 SELECT cole_inst_nombre, dane, aprobacion5, aprobacion9, aprobacion11a, aprobacion11t FROM `res111` 
+	 WHERE NOT EXISTS (SELECT `cole_inst_nombre` FROM `res211` WHERE res111.cole_inst_nombre = res211.cole_inst_nombre);
+
+END //
+
+DELIMITER ;

@@ -1,0 +1,117 @@
+DROP PROCEDURE IF EXISTS proc_permedianocr11;
+
+DELIMITER //
+CREATE PROCEDURE proc_permedianocr11()
+BEGIN
+	# total de datos utilizada para xtile
+	DECLARE total INT;
+
+
+	DROP TABLE IF EXISTS `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+	CREATE TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` 
+	 (SELECT `cole_codigo_inst`, `cole_codigo_mcpio`, `cole_inst_nombre`, `tema_lenguaje`, `tema_matematica` 
+	 FROM `sb11-2010-2-rgstro-clfccn-v1,` WHERE `cole_codigo_mcpio` = 5001);
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `cole_codigo_mcpio_d` INT(11);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `cole_codigo_inst_d` INT(11);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_lenguaje_d` DECIMAL(6,4);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_matematica_d` DECIMAL(6,4);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `cole_codigo_mcpio_d` = CONVERT(`cole_codigo_mcpio`, SIGNED);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `cole_codigo_inst_d` = CONVERT(`cole_codigo_inst`, SIGNED);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_lenguaje_d` = CONVERT(REPLACE(`tema_lenguaje`, ',', '.'), DECIMAL(6,4));
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_matematica_d` = CONVERT(REPLACE(`tema_matematica`, ',', '.'), DECIMAL(6,4));
+
+	#Collapse
+	DROP TABLE IF EXISTS `temp`;
+	CREATE TABLE `temp`
+	 SELECT `cole_inst_nombre`, MEDIAN(`tema_lenguaje_d`, 4) AS tema_lenguaje_d, MEDIAN(`tema_matematica_d`, 4) AS tema_matematica_d
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`;
+
+	DROP TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+
+
+	# Merge 1:1
+	DROP TABLE IF EXISTS `temp2`;
+	CREATE TABLE `temp2`
+	SELECT temp.cole_inst_nombre, tema_lenguaje_d, tema_matematica_d, tema_lenguaje, tema_matematica, p50_l11, 
+	 p33_l11, p50_m11, p33_m11 
+	FROM `temp` 
+	LEFT JOIN  `permed11_07` ON  `permed11_07`.`cole_inst_nombre` = `temp`.`cole_inst_nombre`;
+
+	INSERT INTO `temp2` (cole_inst_nombre, tema_lenguaje, tema_matematica, p50_l11, p33_l11, p50_m11, p33_m11)
+	SELECT cole_inst_nombre, tema_lenguaje, tema_matematica, p50_l11, p33_l11, p50_m11, p33_m11 FROM `permed11_07` 
+	 WHERE NOT EXISTS (SELECT `cole_inst_nombre` FROM `temp` WHERE permed11_07.cole_inst_nombre = temp.cole_inst_nombre);
+
+	DROP TABLE `temp`;
+
+	# xtile cr_medlen11_1 = tema_lenguaje if p50_l11 ==1, nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_lenguaje, 
+	 (SELECT COUNT(tema_lenguaje)+1 FROM temp2 b WHERE b.tema_lenguaje < t.tema_lenguaje AND b.p50_l11 = 1 
+	   AND tema_lenguaje IS NOT NULL) AS uno
+	FROM temp2 t WHERE p50_l11 = 1 AND tema_lenguaje IS NOT NULL
+	ORDER BY tema_lenguaje;
+	
+	ALTER TABLE temp2 ADD cr_medlen11_1 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET cr_medlen11_1 = uno*100/total where temp2.tema_lenguaje = xtile.tema_lenguaje AND p50_l11 = 1;
+	DROP TABLE xtile;
+
+	# xtile  cr_medlen11_2= tema_lenguaje if p50_l11 ==0, nquantiles (100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_lenguaje, 
+	 (SELECT COUNT(tema_lenguaje)+1 FROM temp2 b WHERE b.tema_lenguaje < t.tema_lenguaje AND b.p50_l11 = 0 
+	   AND tema_lenguaje IS NOT NULL) AS uno
+	FROM temp2 t WHERE p50_l11 = 0 AND tema_lenguaje IS NOT NULL
+	ORDER BY tema_lenguaje;
+	
+	ALTER TABLE temp2 ADD cr_medlen11_2 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET cr_medlen11_2 = uno*100/total where temp2.tema_lenguaje = xtile.tema_lenguaje AND p50_l11 = 0;
+	DROP TABLE xtile;
+
+	# xtile cr_medlen11_3 = tema_lenguaje if p33_l11 ==1, nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_lenguaje, 
+	 (SELECT COUNT(tema_lenguaje)+1 FROM temp2 b WHERE b.tema_lenguaje < t.tema_lenguaje AND b.p33_l11 = 1 
+	   AND tema_lenguaje IS NOT NULL) AS uno
+	FROM temp2 t WHERE p33_l11 = 1 AND tema_lenguaje IS NOT NULL
+	ORDER BY tema_lenguaje;
+	
+	ALTER TABLE temp2 ADD cr_medlen11_3 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET cr_medlen11_3 = uno*100/total where temp2.tema_lenguaje = xtile.tema_lenguaje AND p33_l11 = 1;
+	DROP TABLE xtile;
+
+	# xtile  cr_medlen11_4= tema_lenguaje if p33_l11 ==0, nquantiles (100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_lenguaje, 
+	 (SELECT COUNT(tema_lenguaje)+1 FROM temp2 b WHERE b.tema_lenguaje < t.tema_lenguaje AND b.p33_l11 = 0 
+	   AND tema_lenguaje IS NOT NULL) AS uno
+	FROM temp2 t WHERE p33_l11 = 0 AND tema_lenguaje IS NOT NULL
+	ORDER BY tema_lenguaje;
+	
+	ALTER TABLE temp2 ADD cr_medlen11_4 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET cr_medlen11_4 = uno*100/total where temp2.tema_lenguaje = xtile.tema_lenguaje AND p33_l11 = 0;
+	DROP TABLE xtile;
+
+
+	
+END //
+
+DELIMITER ;
+
+
+
+
+
+
+
+
+
