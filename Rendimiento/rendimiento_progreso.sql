@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-11-2011 a las 17:46:41
+-- Tiempo de generación: 25-11-2011 a las 18:17:46
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -756,6 +756,25 @@ CREATE TABLE IF NOT EXISTS `ran_ie10` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `res11`
+--
+
+CREATE TABLE IF NOT EXISTS `res11` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dane` bigint(12) DEFAULT NULL,
+  `permed50len` int(5) DEFAULT NULL,
+  `permed33len` int(5) DEFAULT NULL,
+  `permed50mat` int(5) DEFAULT NULL,
+  `permedmat33` int(5) DEFAULT NULL,
+  `aprobacion5` decimal(8,5) DEFAULT NULL,
+  `aprobacion9` decimal(8,5) DEFAULT NULL,
+  `aprobacion11a` decimal(8,5) DEFAULT NULL,
+  `aprobacion11t` decimal(8,5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `res11_07`
 --
 
@@ -1174,17 +1193,6 @@ CREATE TABLE IF NOT EXISTS `sb11-clasifi-planteles-2010-v-1-0` (
   `cole_historia` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   `cole_categoria` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
   `cole_estudiantes_presentes` int(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `t`
---
-
-CREATE TABLE IF NOT EXISTS `t` (
-  `l5r` decimal(8,5) DEFAULT NULL,
-  `uno` bigint(22) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
