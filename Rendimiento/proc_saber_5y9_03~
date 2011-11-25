@@ -1,0 +1,156 @@
+DROP PROCEDURE IF EXISTS proc_saber_5y9_03;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_saber_5y9_03()
+BEGIN
+
+	# Variables para calcular el Percentil
+	DECLARE total INTEGER;
+	DECLARE fraccion DECIMAL(8,5);
+	DECLARE entera INTEGER;
+	DECLARE enteranemos INTEGER;
+	DECLARE deci DECIMAL(8,5);
+	DECLARE pos1 DECIMAL(8,5);
+	DECLARE pos2 DECIMAL(8,5);
+	DECLARE percentil33_l5_03 DECIMAL(8,5);
+	DECLARE percentil50_l5_03 DECIMAL(8,5);
+	DECLARE percentil33_l9_03 DECIMAL(8,5);
+	DECLARE percentil50_l9_03 DECIMAL(8,5);
+	DECLARE percentil33_m5_03 DECIMAL(8,5);
+	DECLARE percentil50_m5_03 DECIMAL(8,5);
+	DECLARE percentil33_m9_03 DECIMAL(8,5);
+	DECLARE percentil50_m9_03 DECIMAL(8,5);
+
+	#------------------------
+	# copiar los datos 
+	DELETE FROM `permed_5_9_03`;
+	INSERT INTO `permed_5_9_03` (dane,nombre,com,nuc,l5_03,m5_03,cn5_03,l9_03,m9_03,cn9_03)
+	SELECT * FROM `saber_5y9_03`;
+
+	#------------------------
+	# Percentil 33 de l5_03
+	SELECT COUNT(l5_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 33*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT l5_03 INTO pos1 FROM saber_5y9_03 WHERE l5_03 IS NOT NULL ORDER BY l5_03 ASC LIMIT enteranemos, 1;
+	SELECT l5_03 INTO pos2 FROM saber_5y9_03 WHERE l5_03 IS NOT NULL ORDER BY l5_03 ASC LIMIT entera , 1;
+
+	SET percentil33_l5_03 = pos1+deci*(pos2-pos1);
+
+	#------------------------
+	# Percentil 50 de l5_03
+	SELECT COUNT(l5_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 50*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT l5_03 INTO pos1 FROM saber_5y9_03 WHERE l5_03 IS NOT NULL ORDER BY l5_03 ASC LIMIT enteranemos, 1;
+	SELECT l5_03 INTO pos2 FROM saber_5y9_03 WHERE l5_03 IS NOT NULL ORDER BY l5_03 ASC LIMIT entera , 1;
+
+	SET percentil50_l5_03 = pos1+deci*(pos2-pos1);
+
+	#------------------------
+	# Percentil 33 de l9_03
+	SELECT COUNT(l9_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 33*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT l9_03 INTO pos1 FROM saber_5y9_03 WHERE l9_03 IS NOT NULL ORDER BY l9_03 ASC LIMIT enteranemos, 1;
+	SELECT l9_03 INTO pos2 FROM saber_5y9_03 WHERE l9_03 IS NOT NULL ORDER BY l9_03 ASC LIMIT entera , 1;
+
+	SET percentil33_l9_03 = pos1+deci*(pos2-pos1);
+
+	#------------------------
+	# Percentil 50 de l9_03
+	SELECT COUNT(l9_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 50*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT l9_03 INTO pos1 FROM saber_5y9_03 WHERE l9_03 IS NOT NULL ORDER BY l9_03 ASC LIMIT enteranemos, 1;
+	SELECT l9_03 INTO pos2 FROM saber_5y9_03 WHERE l9_03 IS NOT NULL ORDER BY l9_03 ASC LIMIT entera , 1;
+
+	SET percentil50_l9_03 = pos1+deci*(pos2-pos1);
+	
+	#------------------------
+	# Percentil 33 de m5_03
+	SELECT COUNT(m5_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 33*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT m5_03 INTO pos1 FROM saber_5y9_03 WHERE m5_03 IS NOT NULL ORDER BY m5_03 ASC LIMIT enteranemos, 1;
+	SELECT m5_03 INTO pos2 FROM saber_5y9_03 WHERE m5_03 IS NOT NULL ORDER BY m5_03 ASC LIMIT entera , 1;
+
+	SET percentil33_m5_03 = pos1+deci*(pos2-pos1);
+
+	#------------------------
+	# Percentil 50 de m5_03
+	SELECT COUNT(m5_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 50*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT m5_03 INTO pos1 FROM saber_5y9_03 WHERE m5_03 IS NOT NULL ORDER BY m5_03 ASC LIMIT enteranemos, 1;
+	SELECT m5_03 INTO pos2 FROM saber_5y9_03 WHERE m5_03 IS NOT NULL ORDER BY m5_03 ASC LIMIT entera , 1;
+
+	SET percentil50_m5_03 = pos1+deci*(pos2-pos1);
+
+	#------------------------
+	# Percentil 33 de m9_03
+	SELECT COUNT(m9_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 33*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT m9_03 INTO pos1 FROM saber_5y9_03 WHERE m9_03 IS NOT NULL ORDER BY m9_03 ASC LIMIT enteranemos, 1;
+	SELECT m9_03 INTO pos2 FROM saber_5y9_03 WHERE m9_03 IS NOT NULL ORDER BY m9_03 ASC LIMIT entera , 1;
+
+	SET percentil33_m9_03 = pos1+deci*(pos2-pos1);
+
+	#------------------------
+	# Percentil 50 de m9_03
+	SELECT COUNT(m9_03) INTO total FROM saber_5y9_03;
+	SET fraccion = 50*(total+1)/100;
+	SELECT TRUNCATE(fraccion,0) INTO entera;
+	SET enteranemos = entera-1;
+	SET deci = fraccion - entera;
+	SELECT m9_03 INTO pos1 FROM saber_5y9_03 WHERE m9_03 IS NOT NULL ORDER BY m9_03 ASC LIMIT enteranemos, 1;
+	SELECT m9_03 INTO pos2 FROM saber_5y9_03 WHERE m9_03 IS NOT NULL ORDER BY m9_03 ASC LIMIT entera , 1;
+
+	SET percentil50_m9_03 = pos1+deci*(pos2-pos1);
+
+	UPDATE `permed_5_9_03` SET `p50_len_5` = 1 WHERE `l5_03` <= percentil50_l5_03 AND `l5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_len_5` = 0 WHERE `p50_len_5` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_len_5` = 1 WHERE `l5_03` <= percentil33_l5_03 AND `l5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_len_5` = 0 WHERE `p33_len_5` IS NULL;
+
+
+	UPDATE `permed_5_9_03` SET `p50_len_9` = 1 WHERE `l9_03` <= percentil50_l9_03 AND `l9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_len_9` = 0 WHERE `p50_len_9` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_len_9` = 1 WHERE `l9_03` <= percentil33_l9_03 AND `l9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_len_9` = 0 WHERE `p33_len_9` IS NULL;
+
+
+	UPDATE `permed_5_9_03` SET `p50_mat_5` = 1 WHERE `m5_03` <= percentil50_m5_03 AND `m5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_mat_5` = 0 WHERE `p50_mat_5` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_mat_5` = 1 WHERE `m5_03` <= percentil33_m5_03 AND `m5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_mat_5` = 0 WHERE `p33_mat_5` IS NULL;
+
+
+	UPDATE `permed_5_9_03` SET `p50_mat_9` = 1 WHERE `m9_03` <= percentil50_m9_03 AND `m9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_mat_9` = 0 WHERE `p50_mat_9` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_mat_9` = 1 WHERE `m9_03` <= percentil33_m9_03 AND `m9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_mat_9` = 0 WHERE `p33_mat_9` IS NULL;
+
+END //
+
+DELIMITER ;

@@ -156,8 +156,10 @@ BEGIN
 	 `ProporcionEstrato0` > `ProporcionEstrato4` AND `ProporcionEstrato0` > `ProporcionEstrato5` AND 
 	 `ProporcionEstrato0` > `ProporcionEstrato6` AND `total_lenguaje_5` >= olilen5_66;
 
-	UPDATE `bonus5` SET `bonus_total11` = `bonus_lenguaje5` + `bonus_matematica5`;
-	UPDATE `bonus5` SET `bonus_total11` = `bonus_lenguaje5` WHERE `bonus_total11` IS NULL AND `bonus_matematica5` IS NULL;
-	UPDATE `bonus5` SET `bonus_total11` = `bonus_matematica5` WHERE `bonus_total11` IS NULL AND `bonus_lenguaje5` IS NULL;
+	UPDATE `bonus5` SET `bonus_total5` = `bonus_lenguaje5` + `bonus_matematica5`;
+	UPDATE `bonus5` SET `bonus_total5` = `bonus_lenguaje5` WHERE `bonus_total5` IS NULL AND `bonus_matematica5` IS NULL;
+	UPDATE `bonus5` SET `bonus_total5` = `bonus_matematica5` WHERE `bonus_total5` IS NULL AND `bonus_lenguaje5` IS NULL;
 
 END //	
+
+
