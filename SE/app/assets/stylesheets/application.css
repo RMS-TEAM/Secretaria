@@ -27,7 +27,7 @@ body{
 }
 
 #header #nav .name {
-    min-height: 110px;
+
     width: 400px;
     float: left;
     padding: 0 0.7em;
@@ -61,16 +61,17 @@ body{
 }
 
 #content{
-	background : white;
-
+	background-color:  white;
     margin-left: 150px;
     margin-right: 150px;
 	margin-bottom: 20px;
 	margin-top: 20pt;
-	-webkit-border-radius: 10px;
-
-
-}
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+	border-radius: 12px;
+	padding-left: 30px;
+	padding-top: 20px;
+    }
 
 #images{
     aling : center;
@@ -79,7 +80,9 @@ body{
     margin-left: 150px;
     margin-right: 150px;
     margin-top: 40px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+	border-radius: 12px;
 
 }
 

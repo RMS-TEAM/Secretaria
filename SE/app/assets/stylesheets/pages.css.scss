@@ -5,6 +5,7 @@
 .contenido{
     width: 450px;
     float: left;
+    padding-left: 20px;
 }
 
 .contenido p{
@@ -14,19 +15,82 @@
     padding-left: 20px;
 }
 
-#content .image {
+.image {
     width: 420px;
     height: 350px;
     margin-left: 500px;
     padding-top: 20px;
-
+    padding-left: 40px;
 
 }
 
-#content .image img{
+.image img{
     width: 350px;
     height: 200px;
 
 
 }
 
+#cice{
+
+    clear:both;
+}
+
+#cice .cice-i{
+    width: 150px;
+    float: left;
+    padding-top: 20px;
+
+
+}
+
+#cice .cice-i img{
+    width: 150px;
+}
+
+#cice .cice-p{
+    text-align: justify;
+    font-family: arial;
+    font-size: 12;
+    width: 600px;
+    float: right;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+hr{
+    clear: both;
+    margin-right: 30px;
+}
+
+#alcaldia{
+
+    clear:both;
+
+}
+
+#alcaldia .alcaldia-i{
+   width:150px;
+   float: left;
+   clear: left;
+}
+
+#alcaldia .alcaldia-i img{
+   width: 150px;
+}
+
+#alcaldia .alcaldia-p{
+    text-align: justify;
+    font-family: arial;
+    font-size: 12;
+    width: 600px;
+    float: right;
+    margin-right: 30px;
+    padding-bottom: 20px;
+
+}
+
+
+.ajustar{
+   clear:both;
+}
