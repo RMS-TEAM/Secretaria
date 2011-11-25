@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .contenido{
+    text-align: justify;
     width: 500px;
     float: left;
+    padding-left: 20px;
 }
 
 .contenido p{
@@ -18,6 +20,9 @@
     width: 420px;
     height: 350px;
     float: right;
+    padding-top: 20px;
+
+	/*padding-right: 20px;    */
 
 
 }

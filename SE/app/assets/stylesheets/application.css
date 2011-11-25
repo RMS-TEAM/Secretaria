@@ -27,7 +27,7 @@ body{
 }
 
 #header #nav .name {
-    min-height: 110px;
+
     width: 400px;
     float: left;
     padding: 0 0.7em;
@@ -60,16 +60,17 @@ body{
 
 }
 
-#content{
-	background : white;
+.content{
     position: relative;
     margin-left: 150px;
     margin-right: 150px;
 	margin-bottom: 20px;
 	margin-top: 20pt;
-	-webkit-border-radius: 10px;
-
-
+    width: 965px;
+    height: 390px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background-color: #ffffff;
 }
 
 
@@ -93,5 +94,13 @@ body{
      width: 150px;
      margin-left: 130px;
 
+}
+
+.div{
+
+
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background-color: #ffffff;
 }
 
