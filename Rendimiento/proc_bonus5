@@ -20,11 +20,11 @@ BEGIN
 
 	#------------------------
 	# Percentil 33 
-	SELECT MEDIAN(total_matematicas, 5, 33) INTO olimat5_33 FROM `clone_Informe_estudiante_grado_5`;
+	SELECT PERC(total_matematicas, 5, 33) INTO olimat5_33 FROM `clone_Informe_estudiante_grado_5`;
 
 	#------------------------
 	# Percentil 66 
-	SELECT MEDIAN(total_matematicas, 5, 66) INTO olimat5_66 FROM `clone_Informe_estudiante_grado_5`;
+	SELECT PERC(total_matematicas, 5, 66) INTO olimat5_66 FROM `clone_Informe_estudiante_grado_5`;
 
 	#------------------------
 	# Percentil 50 
@@ -32,11 +32,11 @@ BEGIN
 
 	#------------------------
 	# Percentil 33 
-	SELECT MEDIAN(total_lenguaje, 5, 33) INTO olilen5_33 FROM `clone_Informe_estudiante_grado_5`;
+	SELECT PERC(total_lenguaje, 5, 33) INTO olilen5_33 FROM `clone_Informe_estudiante_grado_5`;
 
 	#------------------------
 	# Percentil 66 
-	SELECT MEDIAN(total_lenguaje, 5, 66) INTO olilen5_66 FROM `clone_Informe_estudiante_grado_5`;
+	SELECT PERC(total_lenguaje, 5, 66) INTO olilen5_66 FROM `clone_Informe_estudiante_grado_5`;
 
 	#------------------------
 	# Percentil 50 
@@ -124,7 +124,7 @@ BEGIN
 	UPDATE `bonus5` SET `bonus_lenguaje5` = 2 WHERE `ProporcionEstrato1` > `ProporcionEstrato0` AND 
 	 `ProporcionEstrato1` > `ProporcionEstrato2` AND `ProporcionEstrato1` > `ProporcionEstrato3` AND
 	 `ProporcionEstrato1` > `ProporcionEstrato4` AND `ProporcionEstrato1` > `ProporcionEstrato5` AND 	
-	 `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_lenguaje_5` >= olilen5_33 | 
+	 `ProporcionEstrato1` > `ProporcionEstrato6` AND `total_lenguaje_5` >= olilen5_33 OR 
 	 `ProporcionEstrato2` > `ProporcionEstrato0` AND `ProporcionEstrato2` > `ProporcionEstrato1` AND 
 	 `ProporcionEstrato2` > `ProporcionEstrato3` AND `ProporcionEstrato2` > `ProporcionEstrato4` AND 
 	 `ProporcionEstrato2` > `ProporcionEstrato5` AND `ProporcionEstrato2` > `ProporcionEstrato6` AND 

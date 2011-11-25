@@ -1,0 +1,24 @@
+DROP PROCEDURE IF EXISTS proc_indicadores_5_9;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_indicadores_5_9()
+BEGIN
+
+	DELETE FROM `indicadores_5_9`;
+	INSERT INTO `indicadores_5_9` (dane, aprobacion5, aprobacion9, permed50len_5, permedlen33_5, permed50len_9, permedlen33_9, 
+	 permed50mat_5, permedmat33_5, permed50mat_9, permedmat33_9)
+	 SELECT res_5_9.dane, aprobacion5, aprobacion9, permed50len_5, permedlen33_5, permed50len_9, permedlen33_9, 
+	 permed50mat_5, permedmat33_5, permed50mat_9, permedmat33_9 FROM `res_5_9`
+	 LEFT JOIN `codigosdane209_5_9` ON `res_5_9`.`dane` = `codigosdane209_5_9`.`dane`;
+
+
+	INSERT INTO `indicadores_5_9` (dane)
+	 SELECT dane FROM `codigosdane209_5_9` 
+	 WHERE NOT EXISTS (SELECT `dane` FROM `res_5_9` WHERE codigosdane209_5_9.dane = res_5_9.dane);
+
+
+
+END //
+
+DELIMITER ;
