@@ -1,5 +1,6 @@
 class Db1 < ActiveRecord::Base
+  #ambiente base de datos
   establish_connection :db1
   self.abstract_class = true
-  # To change this template use File | Settings | File Templates.
+
 end
