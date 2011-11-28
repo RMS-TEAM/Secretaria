@@ -177,40 +177,36 @@ public class InsertarDatosGUIView extends FrameView {
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTabla))
+                    .addComponent(txtTabla, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDbName, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)))
+                    .addComponent(txtDbName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(50, 50, 50)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(listo)
-                        .addContainerGap(378, Short.MAX_VALUE))
+                        .addContainerGap(453, Short.MAX_VALUE))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addContainerGap(346, Short.MAX_VALUE))
+                        .addContainerGap(421, Short.MAX_VALUE))
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(txtDbUser, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(txtPath))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(txtDbPass, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(46, Short.MAX_VALUE))))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtPath, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2)
+                                    .addComponent(txtDbUser, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                .addGap(27, 27, 27)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDbPass, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))))
+                        .addContainerGap(135, Short.MAX_VALUE))))
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(hagale)
-                .addContainerGap(533, Short.MAX_VALUE))
+                .addContainerGap(608, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,11 +271,11 @@ public class InsertarDatosGUIView extends FrameView {
         statusPanel.setLayout(statusPanelLayout);
         statusPanelLayout.setHorizontalGroup(
             statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(statusPanelSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+            .addComponent(statusPanelSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
             .addGroup(statusPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statusMessageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 497, Short.MAX_VALUE)
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(statusAnimationLabel)
@@ -310,7 +306,7 @@ public class InsertarDatosGUIView extends FrameView {
         String dbUser;
         String dbPass;
         
-       
+        listo.setText("");
        
         tabla = txtTabla.getText();
         pathArchivo = txtPath.getText();
@@ -322,6 +318,7 @@ public class InsertarDatosGUIView extends FrameView {
             InputStreamReader is = null;
             BufferedReader br = null;
             String query = "INSERT INTO `"+tabla+"` VALUES ";
+            String linea = "";
             int i = 0;
 
             try {
@@ -331,7 +328,7 @@ public class InsertarDatosGUIView extends FrameView {
                 is = new InputStreamReader(archivo, "ISO-8859-15");
                 br = new BufferedReader(is);
                 // Lectura del fichero
-                String linea;
+                
 
                 Connection con = JDBCConnection.getConexion(dbName, dbUser, dbPass);
                 Statement sentencia = con.createStatement();
@@ -354,6 +351,16 @@ public class InsertarDatosGUIView extends FrameView {
                         String linea2 = linea.replace(",\"\",", ",NULL,");
                         linea = linea2;
                     }
+                    if (linea.charAt(linea.length()-1) == ',')
+                        linea += "NULL";
+                    
+                    String nulo = "NULL";
+                    if (linea.charAt(0) == ','){
+                        nulo += linea;
+                        linea = nulo;
+                    }
+                    
+                    
                     char [] dos = linea.toCharArray();
                     for(int j = 1; j < dos.length-2; j++){
                         if(dos[j] == '\"' && !(dos[j-1] == ',' || dos[j+1] == ','))
@@ -380,6 +387,7 @@ public class InsertarDatosGUIView extends FrameView {
                 sentencia.close();
             }catch(Exception e){
                 System.out.println(i +" - "+ query);
+                System.out.println(linea);
                 e.printStackTrace();
             }finally{
                 // En el finally cerramos el fichero, para asegurarnos
@@ -390,6 +398,7 @@ public class InsertarDatosGUIView extends FrameView {
                         is.close();     
                     }         
                     listo.setText("Listo!!!!!!!!!");
+                    System.out.println("Listo!!!!!!");
                 }catch (Exception e2){ 
                     e2.printStackTrace();
                 }
