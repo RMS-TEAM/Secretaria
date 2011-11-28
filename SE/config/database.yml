@@ -19,6 +19,26 @@ db:
   password:
   socket: /opt/lampp/var/mysql/mysql.sock
 
+db1:
+  adapter: mysql2
+  encoding: UTF8
+  reconnect: false
+  database: ambiente_escolar
+  pool: 5
+  username: root
+  password:
+  socket: /opt/lampp/var/mysql/mysql.sock
+
+db2:
+  adapter: mysql2
+  encoding: UTF8
+  reconnect: false
+  database: rendimiento_progreso
+  pool: 5
+  username: root
+  password:
+  socket: /opt/lampp/var/mysql/mysql.sock
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.

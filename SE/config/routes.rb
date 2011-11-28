@@ -5,6 +5,7 @@ SE::Application.routes.draw do
 
   get "pages/participantes"
   get "alumnos/index"
+  get "rendimientos/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
