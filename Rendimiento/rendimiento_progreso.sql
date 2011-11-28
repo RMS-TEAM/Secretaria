@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-11-2011 a las 18:17:46
+-- Tiempo de generación: 28-11-2011 a las 18:23:47
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -374,6 +374,68 @@ CREATE TABLE IF NOT EXISTS `escala5_9_09` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `indicadores`
+--
+
+CREATE TABLE IF NOT EXISTS `indicadores` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dane` bigint(12) DEFAULT NULL,
+  `tema_matematica` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje_d` decimal(10,7) DEFAULT NULL,
+  `tema_matematica_d` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `permed50len` int(5) DEFAULT NULL,
+  `permed33len` int(5) DEFAULT NULL,
+  `permed50mat` int(5) DEFAULT NULL,
+  `permedmat33` int(5) DEFAULT NULL,
+  `aprobacion5` decimal(8,5) DEFAULT NULL,
+  `aprobacion9` decimal(8,5) DEFAULT NULL,
+  `aprobacion11a` decimal(8,5) DEFAULT NULL,
+  `aprobacion11t` decimal(8,5) DEFAULT NULL,
+  `Extraedad` int(5) DEFAULT NULL,
+  `cole_codigo_mcpio_d` int(5) DEFAULT NULL,
+  `textra` decimal(9,7) DEFAULT NULL,
+  `rtextra` decimal(9,7) DEFAULT NULL,
+  `categoria_10` int(5) DEFAULT NULL,
+  `categoria_07` int(5) DEFAULT NULL,
+  `varcolegios11` int(5) DEFAULT NULL,
+  `permed50len_5` int(5) DEFAULT NULL,
+  `permedlen33_5` int(5) DEFAULT NULL,
+  `permed50len_9` int(5) DEFAULT NULL,
+  `permedlen33_9` int(5) DEFAULT NULL,
+  `permed50mat_5` int(5) DEFAULT NULL,
+  `permedmat33_5` int(5) DEFAULT NULL,
+  `permed50mat_9` int(5) DEFAULT NULL,
+  `permedmat33_9` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `indicadores_5_9`
 --
 
@@ -389,6 +451,182 @@ CREATE TABLE IF NOT EXISTS `indicadores_5_9` (
   `permedmat33_5` int(3) DEFAULT NULL,
   `permed50mat_9` int(3) DEFAULT NULL,
   `permedmat33_9` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `indicadores_11`
+--
+
+CREATE TABLE IF NOT EXISTS `indicadores_11` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dane` bigint(12) DEFAULT NULL,
+  `tema_matematica` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje_d` decimal(10,7) DEFAULT NULL,
+  `tema_matematica_d` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `permed50len` int(5) DEFAULT NULL,
+  `permed33len` int(5) DEFAULT NULL,
+  `permed50mat` int(5) DEFAULT NULL,
+  `permedmat33` int(5) DEFAULT NULL,
+  `aprobacion5` decimal(8,5) DEFAULT NULL,
+  `aprobacion9` decimal(8,5) DEFAULT NULL,
+  `aprobacion11a` decimal(8,5) DEFAULT NULL,
+  `aprobacion11t` decimal(8,5) DEFAULT NULL,
+  `Extraedad` int(5) DEFAULT NULL,
+  `cole_codigo_mcpio_d` int(5) DEFAULT NULL,
+  `textra` decimal(9,7) DEFAULT NULL,
+  `rtextra` decimal(9,7) DEFAULT NULL,
+  `categoria_10` int(5) DEFAULT NULL,
+  `categoria_07` int(5) DEFAULT NULL,
+  `varcolegios11` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `indicadores_11i`
+--
+
+CREATE TABLE IF NOT EXISTS `indicadores_11i` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dane` bigint(12) DEFAULT NULL,
+  `tema_matematica` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje_d` decimal(10,7) DEFAULT NULL,
+  `tema_matematica_d` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `permed50len` int(5) DEFAULT NULL,
+  `permed33len` int(5) DEFAULT NULL,
+  `permed50mat` int(5) DEFAULT NULL,
+  `permedmat33` int(5) DEFAULT NULL,
+  `aprobacion5` decimal(8,5) DEFAULT NULL,
+  `aprobacion9` decimal(8,5) DEFAULT NULL,
+  `aprobacion11a` decimal(8,5) DEFAULT NULL,
+  `aprobacion11t` decimal(8,5) DEFAULT NULL,
+  `Extraedad` int(5) DEFAULT NULL,
+  `cole_codigo_mcpio_d` int(5) DEFAULT NULL,
+  `textra` decimal(9,7) DEFAULT NULL,
+  `rtextra` decimal(9,7) DEFAULT NULL,
+  `categoria_10` int(5) DEFAULT NULL,
+  `categoria_07` int(5) DEFAULT NULL,
+  `varcolegios11` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `indicadores_y_bonus`
+--
+
+CREATE TABLE IF NOT EXISTS `indicadores_y_bonus` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dane` bigint(12) DEFAULT NULL,
+  `tema_matematica` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje_d` decimal(10,7) DEFAULT NULL,
+  `tema_matematica_d` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `permed50len` int(5) DEFAULT NULL,
+  `permed33len` int(5) DEFAULT NULL,
+  `permed50mat` int(5) DEFAULT NULL,
+  `permedmat33` int(5) DEFAULT NULL,
+  `aprobacion5` decimal(8,5) DEFAULT NULL,
+  `aprobacion9` decimal(8,5) DEFAULT NULL,
+  `aprobacion11a` decimal(8,5) DEFAULT NULL,
+  `aprobacion11t` decimal(8,5) DEFAULT NULL,
+  `Extraedad` int(5) DEFAULT NULL,
+  `cole_codigo_mcpio_d` int(5) DEFAULT NULL,
+  `textra` decimal(9,7) DEFAULT NULL,
+  `rtextra` decimal(9,7) DEFAULT NULL,
+  `categoria_10` int(5) DEFAULT NULL,
+  `categoria_07` int(5) DEFAULT NULL,
+  `varcolegios11` int(5) DEFAULT NULL,
+  `permed50len_5` int(5) DEFAULT NULL,
+  `permedlen33_5` int(5) DEFAULT NULL,
+  `permed50len_9` int(5) DEFAULT NULL,
+  `permedlen33_9` int(5) DEFAULT NULL,
+  `permed50mat_5` int(5) DEFAULT NULL,
+  `permedmat33_5` int(5) DEFAULT NULL,
+  `permed50mat_9` int(5) DEFAULT NULL,
+  `permedmat33_9` int(5) DEFAULT NULL,
+  `bonus_matematica11` int(5) DEFAULT NULL,
+  `bonus_lenguaje11` int(5) DEFAULT NULL,
+  `bonus_total11` int(5) DEFAULT NULL,
+  `bonus_matematica5` int(5) DEFAULT NULL,
+  `bonus_lenguaje5` int(5) DEFAULT NULL,
+  `bonus_total5` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -770,6 +1008,104 @@ CREATE TABLE IF NOT EXISTS `res11` (
   `aprobacion9` decimal(8,5) DEFAULT NULL,
   `aprobacion11a` decimal(8,5) DEFAULT NULL,
   `aprobacion11t` decimal(8,5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `res11i`
+--
+
+CREATE TABLE IF NOT EXISTS `res11i` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dane` bigint(12) DEFAULT NULL,
+  `tema_matematica` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje_d` decimal(10,7) DEFAULT NULL,
+  `tema_matematica_d` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `permed50len` int(5) DEFAULT NULL,
+  `permed33len` int(5) DEFAULT NULL,
+  `permed50mat` int(5) DEFAULT NULL,
+  `permedmat33` int(5) DEFAULT NULL,
+  `aprobacion5` decimal(8,5) DEFAULT NULL,
+  `aprobacion9` decimal(8,5) DEFAULT NULL,
+  `aprobacion11a` decimal(8,5) DEFAULT NULL,
+  `aprobacion11t` decimal(8,5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `res11ii`
+--
+
+CREATE TABLE IF NOT EXISTS `res11ii` (
+  `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dane` bigint(12) DEFAULT NULL,
+  `tema_matematica` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07` decimal(8,5) DEFAULT NULL,
+  `prmat_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prmat_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_bajo_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_medio_07_p` decimal(8,5) DEFAULT NULL,
+  `prlen_alto_07_p` decimal(8,5) DEFAULT NULL,
+  `tema_lenguaje_d` decimal(10,7) DEFAULT NULL,
+  `tema_matematica_d` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10` decimal(10,7) DEFAULT NULL,
+  `prmat_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prmat_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_bajo_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_medio_10_p` decimal(10,7) DEFAULT NULL,
+  `prlen_alto_10_p` decimal(10,7) DEFAULT NULL,
+  `permed50len` int(5) DEFAULT NULL,
+  `permed33len` int(5) DEFAULT NULL,
+  `permed50mat` int(5) DEFAULT NULL,
+  `permedmat33` int(5) DEFAULT NULL,
+  `aprobacion5` decimal(8,5) DEFAULT NULL,
+  `aprobacion9` decimal(8,5) DEFAULT NULL,
+  `aprobacion11a` decimal(8,5) DEFAULT NULL,
+  `aprobacion11t` decimal(8,5) DEFAULT NULL,
+  `Extraedad` int(5) DEFAULT NULL,
+  `cole_codigo_mcpio_d` int(5) DEFAULT NULL,
+  `textra` decimal(8,7) DEFAULT NULL,
+  `rtextra` decimal(8,7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
