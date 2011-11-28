@@ -4,12 +4,42 @@ DELIMITER //
 
 CREATE PROCEDURE docentesestudiantespadres()
 BEGIN
-
+coddane, e_p16_7, e_p16_9, e_p16_10, e_p16_11, e_p16_12, e_p16_4, e_p16_5, e_p16_6, e_p16_24, e_p16_1, e_p16_2, e_p16_3, e_p16_8, e_p16_26, e_p16_27, e_p16_28, e_p16_29, e_p16_30, f_p16_7, f_p16_9, f_p16_10, f_p16_11, f_p16_12, f_p16_4, f_p16_5, f_p16_6, f_p16_24, f_p16_1, f_p16_2, f_p16_3, f_p16_8, f_p16_26, f_p16_27, f_p16_28, f_p16_29, f_p16_30, p_p16_7, p_p16_9, p_p16_10, p_p16_11, p_p16_12, p_p16_4, p_p16_5, p_p16_6, p_p16_24, p_p16_1, p_p16_2, p_p16_3, p_p16_8, p_p16_26, p_p16_27, p_p16_28, p_p16_29, academic_exp_3, comunic_3, compro_3, seg_resp_3, e_p39_i, e_p39_k, e_p39_r, e_p39_t, e_p39_v, e_p39_ad, e_p39_ae, e_p39_af, e_p39_ag, e_p39_ah, e_p39_o, e_p39_w, e_p39_x, e_p39_y, e_p39_z, e_p39_ay, e_p39_az, e_p39_ba, e_p39_bb, e_p39_bc, f_p39_i, f_p39_k, f_p39_r, f_p39_t, f_p39_v, f_p39_ad, f_p39_ae, f_p39_af, f_p39_ag, f_p39_ah, f_p39_o, f_p39_w, f_p39_x, f_p39_y, f_p39_z, f_p39_ay, f_p39_az, f_p39_ba, f_p39_bb, f_p39_bc, p_p39_i, p_p39_k, p_p39_r, p_p39_t, p_p39_v, p_p39_ad, p_p39_ae, p_p39_af, p_p39_ag, p_p39_ah, p_p39_o, p_p39_w, p_p39_x, p_p39_y, p_p39_z, p_p39_ay, p_p39_az, p_p39_ba, p_p39_bb, p_p39_bc, academic_exp_1, comunic_1, compro_1, seg_resp_1, _merge1, e_p23_a, e_p23_b, e_p23_k, e_p23_v, e_p23_n, e_p23_e, e_p23_o, e_p23_j, e_p23_p, e_p23_i, e_p23_q, e_p23_r, e_p23_s, e_p47_aa, e_p47_ab, e_p47_ac, e_p47_ad, f_p23_a, f_p23_b, f_p23_k, f_p23_v, f_p23_n, f_p23_e, f_p23_o, f_p23_j, f_p23_p, f_p23_i, f_p23_q, f_p23_r, f_p23_s, f_p47_aa, f_p47_ab, f_p47_ac, f_p47_ad, p_p23_a, p_p23_b, p_p23_k, p_p23_v, p_p23_n, p_p23_e, p_p23_o, p_p23_j, p_p23_p, p_p23_i, p_p23_q, p_p23_r, p_p23_s, p_p47_aa, p_p47_ab, p_p47_ac, p_p47_ad, academic_exp_2, comunic_2, compro_2, seg_resp_2, _merge2, _merge3, _merge, academic_exp_Total, comunic_Total, compro_Total, seg_resp_Total, ambiente_esc
 	DELETE FROM `909-docentesestudiantespadres`;
-	INSERT INTO `909-docentesestudiantespadres` (`coddane`, `academic_exp_3`, `comunic_3`,`compro_3`, `seg_resp_3`, 
-	 `academic_exp_1`, `comunic_1`, `compro_1`, `seg_resp_1`, `academic_exp_2`, `comunic_2`, `compro_2`, `seg_resp_2`)
-	SELECT `909-alumnos-2`.`coddane`, `academic_exp_3`, `comunic_3`,`compro_3`, `seg_resp_3`, `academic_exp_1`, 
-	 `comunic_1`, `compro_1`, `seg_resp_1`, `academic_exp_2`, `comunic_2`, `compro_2`, `seg_resp_2` 
+	INSERT INTO `909-docentesestudiantespadres` (coddane, e_p16_7, e_p16_9, e_p16_10, e_p16_11, e_p16_12, e_p16_4, e_p16_5, 
+	 e_p16_6, e_p16_24, e_p16_1, e_p16_2, e_p16_3, e_p16_8, e_p16_26, e_p16_27, e_p16_28, e_p16_29, e_p16_30, f_p16_7, 
+	 f_p16_9, f_p16_10, f_p16_11, f_p16_12, f_p16_4, f_p16_5, f_p16_6, f_p16_24, f_p16_1, f_p16_2, f_p16_3, f_p16_8, 
+	 f_p16_26, f_p16_27, f_p16_28, f_p16_29, f_p16_30, p_p16_7, p_p16_9, p_p16_10, p_p16_11, p_p16_12, p_p16_4, p_p16_5, 
+	 p_p16_6, p_p16_24, p_p16_1, p_p16_2, p_p16_3, p_p16_8, p_p16_26, p_p16_27, p_p16_28, p_p16_29, academic_exp_3, 
+	 comunic_3, compro_3, seg_resp_3, e_p39_i, e_p39_k, e_p39_r, e_p39_t, e_p39_v, e_p39_ad, e_p39_ae, e_p39_af, e_p39_ag, 
+	 e_p39_ah, e_p39_o, e_p39_w, e_p39_x, e_p39_y, e_p39_z, e_p39_ay, e_p39_az, e_p39_ba, e_p39_bb, e_p39_bc, f_p39_i, 
+	 f_p39_k, f_p39_r, f_p39_t, f_p39_v, f_p39_ad, f_p39_ae, f_p39_af, f_p39_ag, f_p39_ah, f_p39_o, f_p39_w, f_p39_x, 
+	 f_p39_y, f_p39_z, f_p39_ay, f_p39_az, f_p39_ba, f_p39_bb, f_p39_bc, p_p39_i, p_p39_k, p_p39_r, p_p39_t, p_p39_v, 
+	 p_p39_ad, p_p39_ae, p_p39_af, p_p39_ag, p_p39_ah, p_p39_o, p_p39_w, p_p39_x, p_p39_y, p_p39_z, p_p39_ay, p_p39_az, 
+	 p_p39_ba, p_p39_bb, p_p39_bc, academic_exp_1, comunic_1, compro_1, seg_resp_1, _merge1, e_p23_a, e_p23_b, e_p23_k, 
+	 e_p23_v, e_p23_n, e_p23_e, e_p23_o, e_p23_j, e_p23_p, e_p23_i, e_p23_q, e_p23_r, e_p23_s, e_p47_aa, e_p47_ab, e_p47_ac, 
+	 e_p47_ad, f_p23_a, f_p23_b, f_p23_k, f_p23_v, f_p23_n, f_p23_e, f_p23_o, f_p23_j, f_p23_p, f_p23_i, f_p23_q, f_p23_r, 
+	 f_p23_s, f_p47_aa, f_p47_ab, f_p47_ac, f_p47_ad, p_p23_a, p_p23_b, p_p23_k, p_p23_v, p_p23_n, p_p23_e, p_p23_o, 
+	 p_p23_j, p_p23_p, p_p23_i, p_p23_q, p_p23_r, p_p23_s, p_p47_aa, p_p47_ab, p_p47_ac, p_p47_ad, academic_exp_2, 
+	 comunic_2, compro_2, seg_resp_2, _merge2, _merge3, _merge, academic_exp_Total, comunic_Total, compro_Total, 
+	 seg_resp_Total, ambiente_esc)
+	SELECT `909-alumnos-2`.coddane, e_p16_7, e_p16_9, e_p16_10, e_p16_11, e_p16_12, e_p16_4, e_p16_5, e_p16_6, e_p16_24, 
+	 e_p16_1, e_p16_2, e_p16_3, e_p16_8, e_p16_26, e_p16_27, e_p16_28, e_p16_29, e_p16_30, f_p16_7, f_p16_9, f_p16_10, 
+	 f_p16_11, f_p16_12, f_p16_4, f_p16_5, f_p16_6, f_p16_24, f_p16_1, f_p16_2, f_p16_3, f_p16_8, f_p16_26, f_p16_27, 
+	 f_p16_28, f_p16_29, f_p16_30, p_p16_7, p_p16_9, p_p16_10, p_p16_11, p_p16_12, p_p16_4, p_p16_5, p_p16_6, p_p16_24, 
+	 p_p16_1, p_p16_2, p_p16_3, p_p16_8, p_p16_26, p_p16_27, p_p16_28, p_p16_29, academic_exp_3, comunic_3, compro_3, 
+	 seg_resp_3, e_p39_i, e_p39_k, e_p39_r, e_p39_t, e_p39_v, e_p39_ad, e_p39_ae, e_p39_af, e_p39_ag, e_p39_ah, e_p39_o, 
+	 e_p39_w, e_p39_x, e_p39_y, e_p39_z, e_p39_ay, e_p39_az, e_p39_ba, e_p39_bb, e_p39_bc, f_p39_i, f_p39_k, f_p39_r, 
+	 f_p39_t, f_p39_v, f_p39_ad, f_p39_ae, f_p39_af, f_p39_ag, f_p39_ah, f_p39_o, f_p39_w, f_p39_x, f_p39_y, f_p39_z, 
+	 f_p39_ay, f_p39_az, f_p39_ba, f_p39_bb, f_p39_bc, p_p39_i, p_p39_k, p_p39_r, p_p39_t, p_p39_v, p_p39_ad, p_p39_ae, 
+	 p_p39_af, p_p39_ag, p_p39_ah, p_p39_o, p_p39_w, p_p39_x, p_p39_y, p_p39_z, p_p39_ay, p_p39_az, p_p39_ba, p_p39_bb, 
+	 p_p39_bc, academic_exp_1, comunic_1, compro_1, seg_resp_1, _merge1, e_p23_a, e_p23_b, e_p23_k, e_p23_v, e_p23_n, 
+	 e_p23_e, e_p23_o, e_p23_j, e_p23_p, e_p23_i, e_p23_q, e_p23_r, e_p23_s, e_p47_aa, e_p47_ab, e_p47_ac, e_p47_ad, 
+	 f_p23_a, f_p23_b, f_p23_k, f_p23_v, f_p23_n, f_p23_e, f_p23_o, f_p23_j, f_p23_p, f_p23_i, f_p23_q, f_p23_r, f_p23_s, 
+	 f_p47_aa, f_p47_ab, f_p47_ac, f_p47_ad, p_p23_a, p_p23_b, p_p23_k, p_p23_v, p_p23_n, p_p23_e, p_p23_o, p_p23_j, 
+	 p_p23_p, p_p23_i, p_p23_q, p_p23_r, p_p23_s, p_p47_aa, p_p47_ab, p_p47_ac, p_p47_ad, academic_exp_2, comunic_2, 
+	 compro_2, seg_resp_2, _merge2, _merge3, _merge, academic_exp_Total, comunic_Total, compro_Total, seg_resp_Total, 
+	 ambiente_esc
 	FROM  `padres 1108_1` ,  `909-alumnos-2` ,  `909-docentes-1` 
 	WHERE  `padres 1108_1`.coddane =  `909-alumnos-2`.coddane
 	AND  `padres 1108_1`.coddane =  `909-docentes-1`.coddane
