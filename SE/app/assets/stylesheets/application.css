@@ -60,6 +60,17 @@ body{
 
 }
 
+#header a:visited {
+	color: #09c;
+}
+
+#header a:hover {
+	text-decoration: underline;
+}
+
+#header a:link{
+	text-decoration: none;
+}
 #content{
 	background-color:  white;
     margin-left: 150px;
@@ -83,6 +94,7 @@ body{
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
 	border-radius: 12px;
+	margin-bottom: 20px;
 
 }
 

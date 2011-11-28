@@ -11,9 +11,9 @@ development:
 
 db:
   adapter: mysql2
-  encoding: utf8
+  encoding: UTF8
   reconnect: false
-  database: ambientes
+  database: ambiente_escolar
   pool: 5
   username: root
   password:
