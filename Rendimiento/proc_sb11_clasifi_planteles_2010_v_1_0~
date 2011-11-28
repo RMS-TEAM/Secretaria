@@ -1,0 +1,40 @@
+DROP PROCEDURE IF EXISTS proc_sb11_clasifi_planteles_2010_v_1_0;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_sb11_clasifi_planteles_2010_v_1_0()
+BEGIN
+
+	DROP TABLE IF EXISTS `clone_sb11-clasifi-planteles-2010-v-1-0`;
+	CREATE TABLE `clone_sb11-clasifi-planteles-2010-v-1-0` 
+	(SELECT `cole_codmpio_colegio`, `cole_inst_nombre`, `cole_categoria` FROM `sb11-clasifi-planteles-2010-v-1-0`);
+
+	DELETE FROM `clone_sb11-clasifi-planteles-2010-v-1-0` WHERE `cole_codmpio_colegio` != 5001;
+	
+	ALTER TABLE `clone_sb11-clasifi-planteles-2010-v-1-0` ADD `categoria` INT( 11 ) ;
+	
+	UPDATE `clone_sb11-clasifi-planteles-2010-v-1-0` SET `categoria` = 1 WHERE `cole_categoria` = "MUY INFERIOR";	
+	UPDATE `clone_sb11-clasifi-planteles-2010-v-1-0` SET `categoria` = 2 WHERE `cole_categoria` = "INFERIOR";
+	UPDATE `clone_sb11-clasifi-planteles-2010-v-1-0` SET `categoria` = 3 WHERE `cole_categoria` = "BAJO";
+	UPDATE `clone_sb11-clasifi-planteles-2010-v-1-0` SET `categoria` = 4 WHERE `cole_categoria` = "MEDIO";
+	UPDATE `clone_sb11-clasifi-planteles-2010-v-1-0` SET `categoria` = 5 WHERE `cole_categoria` = "ALTO";
+	UPDATE `clone_sb11-clasifi-planteles-2010-v-1-0` SET `categoria` = 6 WHERE `cole_categoria` = "SUPERIOR";
+	UPDATE `clone_sb11-clasifi-planteles-2010-v-1-0` SET `categoria` = 7 WHERE `cole_categoria` = "MUY SUPERIOR";
+
+	DELETE FROM `ran_ie10`;
+	INSERT INTO `ran_ie10` (`cole_inst_nombre`, `categoria_10`)
+	SELECT `cole_inst_nombre`, AVG(`categoria`) 
+	FROM `clone_sb11-clasifi-planteles-2010-v-1-0` GROUP BY `cole_inst_nombre`;
+
+	DROP TABLE `clone_sb11-clasifi-planteles-2010-v-1-0`;
+
+	UPDATE `ran_ie10` SET `categoria_10` = 7 WHERE `categoria_10` >= 6.5;
+	UPDATE `ran_ie10` SET `categoria_10` = 6 WHERE `categoria_10` >= 5.5 AND `categoria_10` < 6.5;
+	UPDATE `ran_ie10` SET `categoria_10` = 5 WHERE `categoria_10` >= 4.5 AND `categoria_10` < 5.5;
+	UPDATE `ran_ie10` SET `categoria_10` = 4 WHERE `categoria_10` >= 3.5 AND `categoria_10` < 4.5;
+	UPDATE `ran_ie10` SET `categoria_10` = 3 WHERE `categoria_10` >= 2.5 AND `categoria_10` < 3.5;
+	UPDATE `ran_ie10` SET `categoria_10` = 2 WHERE `categoria_10` >= 1.5 AND `categoria_10` < 2.5;
+
+END //
+
+DELIMITER ;
