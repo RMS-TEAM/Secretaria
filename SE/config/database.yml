@@ -9,15 +9,6 @@ development:
   pool: 5
   timeout: 5000
 
-db:
-  adapter: mysql2
-  encoding: UTF8
-  reconnect: false
-  database: ambiente_escolar
-  pool: 5
-  username: root
-  password:
-  socket: /opt/lampp/var/mysql/mysql.sock
 
 db1:
   adapter: mysql2
