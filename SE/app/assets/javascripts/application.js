@@ -7,3 +7,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function prueba(string){
+	alert(string + fomularioJ.pruebita.options[fomularioJ.pruebita.selectedIndex].value);
+	alert("El id: " + fomularioJ.pruebita.options[fomularioJ.pruebita.selectedIndex].id);
+}
+
+
+$(function() {
+  $("#alumnos th a, #alumnos .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#alumnos_search input").keyup(function() {
+    $.get($("#alumnos_search").attr("action"), $("#alumnos_search").serialize(), null, "script");
+    return false;
+  });
+});
+

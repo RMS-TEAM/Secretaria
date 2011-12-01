@@ -1,6 +1,26 @@
-<select>	
+
+
+<select name="alumnos" >
 	<% @colegios.each do |usuario| %>
-	<option value= "<%= usuario.numero %>"><%= usuario.colegio %></option>
+	<option id='<%= usuario.coddane %>' value="<%= usuario.colegio%>"><%= usuario.colegio%></option>
 	<%end%>
 </select>
+
+
+<h1>El javascript</h1>
+<form name="fomularioJ">
+	<select name="pruebita">
+		<option id="1" value="oelo">Oelo</option>
+		<option id="2" value="Ramirito">Ramirito</option>
+		<option id="3" value="Mateo">Mateo</option>
+	</select>
+</form>
+<input type="button" value="tonces?" onclick="prueba('<%= hola%>')">
+<input type="button" value="fiuu" onclick="selectfunction(alumnos.value) ">
+
+
+
+<p>&nbsp;</p>
+
+
 

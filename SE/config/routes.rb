@@ -1,6 +1,7 @@
 SE::Application.routes.draw do
   get "pages/home"
 
+
   get "pages/antecedentes"
 
   get "pages/participantes"
