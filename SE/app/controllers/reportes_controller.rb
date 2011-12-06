@@ -11,6 +11,7 @@ class ReportesController < ApplicationController
   def show
     @colegio = Final.where("coddane = ?",params[:id])
     @nombre = Alumno.find(params[:id])
+    @rendimientos = 
 
      respond_to do |format|
        format.html # show.html.erb
