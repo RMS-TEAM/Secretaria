@@ -4,6 +4,6 @@
 
 #Ruben Dario Espinisa Roldan
 
-Jose Mateo Vidal Barrera - Alias Chepe
+#Jose Mateo Vidal Barrera - Alias Chepe
 
-Consultores de proyecto Universidad EAFIT
+#Consultores de proyecto Universidad EAFIT
