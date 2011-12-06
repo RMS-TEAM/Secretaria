@@ -1,0 +1,10 @@
+<table >
+  <%@colegios.each do |col|	  %>
+  <tr>
+    <td><%=link_to col.colegio, "reportes/#{col.coddane}"    %></td>
+  </tr>
+  <%end %>
+
+</table>
+
+

@@ -1,13 +1,22 @@
 SE::Application.routes.draw do
+  get "reportes/index"
+
+  get "reportes/show"
+
+  get "index/show"
+
   get "pages/home"
 
 
   get "pages/antecedentes"
 
   get "pages/participantes"
-  get "alumnos/index"
+  #get "alumnos/index"
+  #get "alumnos/show"
   get "rendimientos/index"
-
+  resources :alumnos
+  resources :final
+  resources :reportes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

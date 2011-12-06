@@ -14,14 +14,12 @@ function prueba(string){
 }
 
 
-$(function() {
-  $("#alumnos th a, #alumnos .pagination a").live("click", function() {
-    $.getScript(this.href);
-    return false;
-  });
-  $("#alumnos_search input").keyup(function() {
-    $.get($("#alumnos_search").attr("action"), $("#alumnos_search").serialize(), null, "script");
-    return false;
-  });
+$("#bo").live('onClic', function{
+    alert('hola');
 });
 
+
+$("#bo").click(function(){
+    alert("hola")
+
+});

@@ -1,0 +1,13 @@
+
+
+<%=	@nombre.colegio   %>
+<%	 @colegio.each do |resul| %>
+<%=	resul.coddane  %>
+<%=	 resul.academic_exp_Total %>
+<%=	 resul.comunic_Total %>
+<%=	 resul.compro_Total %>
+<%=  resul.seg_resp_Total %>
+<%=  resul.ambiente_esc %>
+<%	 end %>
+
+<%=	 link_to "Volver", reportes_path    %>
