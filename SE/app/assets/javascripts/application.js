@@ -8,11 +8,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-function prueba(string){
-	alert(string + fomularioJ.pruebita.options[fomularioJ.pruebita.selectedIndex].value);
-	alert("El id: " + fomularioJ.pruebita.options[fomularioJ.pruebita.selectedIndex].id);
-}
-
 
 $("#bo").live('onClic', function{
     alert('hola');

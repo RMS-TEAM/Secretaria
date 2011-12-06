@@ -1,4 +1,12 @@
-<h1>Colegios de ambiente escolar</h1>
+<script>
+	function redireccionColegio(){
+		var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
+		window.location = "reportes/" + id;
+	}
+</script>
+
+
+<h1>Colegios evaluados</h1>
 <p>Ingresar texto aqui (mateo)</p>
 <p>&nbsp;</p>
 
@@ -7,8 +15,18 @@
   <tr>
     <td><%=link_to col.colegio, "reportes/#{col.coddane}"    %></td>
   </tr>
-  <%end %>
+  <% end %>
 
 </table>
+
+<p>&nbsp;</p>
+<form name="nombreColegios"> 
+	<select NAME="colegios">
+		<%@colegios.each do |col|	  %>
+		 <OPTION id="<%= col.coddane %>" VALUE="<%= col.colegio %>"><%= col.colegio %></OPTION> 
+		<% end %>
+	</select>
+</form>
+<input type="button" value="tonces?" onclick='redireccionColegio()'>
 
 

@@ -94,12 +94,14 @@ body{
 }
 
 #content h1 {
+	color: #036163;
 	margin: 10px;
 	margin-left: 0px;		
 }
 
 #content p {
 	margin: 5px;
+	margin-left: 0px;	
 }
 
 #images{
