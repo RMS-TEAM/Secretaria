@@ -1,9 +1,4 @@
-<script>
-	function redireccionColegio(){
-		var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
-		window.location = "reportes/" + id;
-	}
-</script>
+
 
 
 <h1>Colegios evaluados</h1>
@@ -27,6 +22,19 @@
 		<% end %>
 	</select>
 </form>
-<input type="button" value="tonces?" onclick='redireccionColegio()'>
+<input type="button" value="tonces?" class="carro">
+<button>Oelo</button>
 
 
+<script>
+	function redireccionColegio(){
+		var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
+		window.location = "reportes/" + id;
+	}
+	
+	$("button").click(function () {
+			var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
+			window.location = "reportes/" + id;
+		}
+	);	
+</script>

@@ -18,3 +18,8 @@ $("#bo").click(function(){
     alert("hola")
 
 });
+
+$('.carro').bind('click', function(event) {
+  return alert("dfsdf");
+});
+

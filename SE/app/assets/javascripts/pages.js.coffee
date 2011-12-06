@@ -2,3 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $('#select_alumnos').click (event)=>  alert "holea"
+
+$('.carro').bind 'click', (event) =>
+      alert("dfsdf")
