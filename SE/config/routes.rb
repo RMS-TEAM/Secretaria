@@ -1,4 +1,6 @@
 SE::Application.routes.draw do
+  get "sessions/new"
+
   get "reportes/index"
 
   get "reportes/show"
@@ -18,6 +20,12 @@ SE::Application.routes.draw do
   resources :final
   resources :reportes
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+
+ match '/singin', :to => 'sessions#new'
+ match '/singout', :to => 'sessions#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
