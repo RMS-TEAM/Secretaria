@@ -1,3 +1,20 @@
 // Place all the styles related to the reportes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#content a {
+	color: #38343D;
+	text-decoration: none;
+}
+
+#content a:hover {
+	color: #069;
+	text-decoration: underline;
+}
+
+#content a:visited {
+	font-weight: bold;
+}
+

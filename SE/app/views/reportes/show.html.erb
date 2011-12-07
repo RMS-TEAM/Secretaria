@@ -1,6 +1,8 @@
+<h1>Reporte <%=	@nombre.colegio.capitalize  %></h1>
+<p>Ingresar texto aqui (mateo)</p>
+<p>&nbsp;</p>
 
-
-<%=	@nombre.colegio   %>
+<%=	@nombre.colegio.capitalize %>
 <%	 @colegio.each do |resul| %>
 <%=	resul.coddane  %>
 <%=	 resul.academic_exp_Total %>
@@ -10,4 +12,5 @@
 <%=  resul.ambiente_esc %>
 <%	 end %>
 
+<p>&nbsp;</p>
 <%=	 link_to "Volver", reportes_path    %>
