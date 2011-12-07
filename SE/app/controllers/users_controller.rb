@@ -1,0 +1,24 @@
+class UsersController < ApplicationController
+  def new
+          @title = "Sing up"
+          @user = User.new
+  end
+
+  def show
+          @user = User.find(params[:id])
+          @title = @user.nombre
+  end
+
+  def create
+          @user = User.new(params[:user])
+          if @user.save
+                  sing_in @user
+                  flash[:success] = "Wellcome to the best WebApp ever! " + @user.nombre
+                  redirect_to user_path(@user)
+          else
+                  @title = "Sing up"
+                  render 'new'
+          end
+  end
+
+end

@@ -17,6 +17,7 @@ SE::Application.routes.draw do
   resources :alumnos
   resources :final
   resources :reportes
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
