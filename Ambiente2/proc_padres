@@ -291,8 +291,225 @@ BEGIN
 
 
 
+	# Sección VI
+	ALTER TABLE  `clone_padres` CHANGE  `vi_1`  `vi_1` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_2`  `vi_2` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_3`  `vi_3` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_4`  `vi_4` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_5`  `vi_5` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_6`  `vi_6` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_7`  `vi_7` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_8`  `vi_8` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_9`  `vi_9` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_10`  `vi_10` DECIMAL(9, 6);
+	ALTER TABLE  `clone_padres` CHANGE  `vi_11`  `vi_11` DECIMAL(9, 6);
+
+	UPDATE `clone_padres` SET `vi_1`=10/3*(`vi_1`-1);
+	UPDATE `clone_padres` SET `vi_2`=10/3*(`vi_2`-1);
+	UPDATE `clone_padres` SET `vi_3`=10/3*(`vi_3`-1);
+	UPDATE `clone_padres` SET `vi_4`=10/3*(`vi_4`-1);
+	UPDATE `clone_padres` SET `vi_5`=10/3*(`vi_5`-1);
+	UPDATE `clone_padres` SET `vi_6`=10/3*(`vi_6`-1);
+	UPDATE `clone_padres` SET `vi_7`=10/3*(`vi_7`-1);
+	UPDATE `clone_padres` SET `vi_8`=10/3*(`vi_8`-1);
+	UPDATE `clone_padres` SET `vi_9`=10/3*(`vi_9`-1);
+	UPDATE `clone_padres` SET `vi_10`=10/3*(`vi_10`-1);
+	UPDATE `clone_padres` SET `vi_11`=10/3*(`vi_11`-1);
+
+	#-- Hallar las frecuencias
+
+	#------------------------------------
+	#Alter table para los egen
+	# egen f_vi_1_re_p=count(vi_1), by(vi_1 dane)
+	update clone_padres set f_vi_1_re_p =
+	 (select count(vi_1) from(select dane, vi_1 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_1 = clone_padres.vi_1 group by a.vi_1, a.dane);
+
+	# egen f_vi_2_re_p=count(vi_2), by(vi_2 dane)
+	update clone_padres set f_vi_2_re_p =
+	 (select count(vi_2) from(select dane, vi_2 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_2 = clone_padres.vi_2 group by a.vi_2, a.dane);
+
+	# egen f_vi_3_re_p=count(vi_3), by(vi_3 dane)
+	update clone_padres set f_vi_3_re_p =
+	 (select count(vi_3) from(select dane, vi_3 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_3 = clone_padres.vi_3 group by a.vi_3, a.dane);
+
+	# egen f_vi_4_re_p=count(vi_4), by(vi_4 dane)
+	update clone_padres set f_vi_4_re_p =
+	 (select count(vi_4) from(select dane, vi_4 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_4 = clone_padres.vi_4 group by a.vi_4, a.dane);
+
+	# egen f_vi_5_re_p=count(vi_5), by(vi_5 dane)
+	update clone_padres set f_vi_5_re_p =
+	 (select count(vi_5) from(select dane, vi_5 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_5 = clone_padres.vi_5 group by a.vi_5, a.dane);
+
+	# egen f_vi_6_re_p=count(vi_6), by(vi_6 dane)
+	update clone_padres set f_vi_6_re_p =
+	 (select count(vi_6) from(select dane, vi_6 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_6 = clone_padres.vi_6 group by a.vi_6, a.dane);
+
+	# egen f_vi_7_re_p=count(vi_7), by(vi_7 dane)
+	update clone_padres set f_vi_7_re_p =
+	 (select count(vi_7) from(select dane, vi_7 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_7 = clone_padres.vi_7 group by a.vi_7, a.dane);
+
+	# egen f_vi_8_re_p=count(vi_8), by(vi_8 dane)
+	update clone_padres set f_vi_8_re_p =
+	 (select count(vi_8) from(select dane, vi_8 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_8 = clone_padres.vi_8 group by a.vi_8, a.dane);
+
+	# egen f_vi_9_re_p=count(vi_9), by(vi_9 dane)
+	update clone_padres set f_vi_9_re_p =
+	 (select count(vi_9) from(select dane, vi_9 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_9 = clone_padres.vi_9 group by a.vi_9, a.dane);
+
+	# egen f_vi_10_re_p=count(vi_10), by(vi_10 dane)
+	update clone_padres set f_vi_10_re_p =
+	 (select count(vi_10) from(select dane, vi_10 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_10 = clone_padres.vi_10 group by a.vi_10, a.dane);
+
+	# egen f_vi_11_re_p=count(vi_11), by(vi_11 dane)
+	update clone_padres set f_vi_11_re_p =
+	 (select count(vi_11) from(select dane, vi_11 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vi_11 = clone_padres.vi_11 group by a.vi_11, a.dane);
+
+
+
+
+	# Sección VII
+	ALTER TABLE  `clone_padres` CHANGE  `vii_1`  `vii_1` DECIMAL(9, 6);
+
+	UPDATE `clone_padres` SET `vii_1`=5/2*(`vii_1`-1);
+
+	#------------------------------------
+	#Alter table para los egen
+
+	ALTER TABLE `clone_padres` ADD `f_vii_1_re_p` INT;
+
+	# egen f_vii_1_re_p=count(vii_1), by(vii_1 dane)
+	update clone_padres set f_vii_1_re_p =
+	 (select count(vii_1) from(select dane, vii_1 from clone_padres) as a 
+	 where a.dane = clone_padres.dane and a.vii_1 = clone_padres.vii_1 group by a.vii_1, a.dane);
+
+
+
+
+	#--------------------------------------------------------------
+	#   collapse (sum) $xlist_data (count) $xlist_frec, by(dane)  |
+	#--------------------------------------------------------------
+	DELETE FROM `padres1`;
+	INSERT INTO `padres1` (dane, iii_1_re_p, iii_2_re_p, iii_3_re_p, iii_4_re_p, iii_5_re_p, iii_6_re_p,
+	 iii_7_re_p, iii_8_re_p, iii_9_re_p, iv_1_re_p, iv_2_re_p, iv_3_re_p, iv_4_re_p, iv_5_re_p, iv_6_re_p,
+	 iv_7_re_p, iv_8_re_p, iv_9_re_p, iv_10_re_p, iv_11_re_p, iv_12_re_p, v_1_re_p, v_2_re_p, v_3_re_p,
+	 v_4_re_p, v_5_re_p, v_6_re_p, v_7_re_p, v_8_re_p, v_9_re_p, vi_1_re_p, vi_2_re_p, vi_3_re_p, vi_4_re_p,
+	 vi_5_re_p, vi_6_re_p, vi_7_re_p, vi_8_re_p, vi_9_re_p, vi_10_re_p, vi_11_re_p, vii_1_re_p,
+	 f_iii_1_re_p, f_iii_2_re_p, f_iii_3_re_p, f_iii_4_re_p, f_iii_5_re_p, f_iii_6_re_p, f_iii_7_re_p,
+	 f_iii_8_re_p, f_iii_9_re_p, f_iv_1_re_p, f_iv_2_re_p, f_iv_3_re_p, f_iv_4_re_p, f_iv_5_re_p,
+	 f_iv_6_re_p, f_iv_7_re_p, f_iv_8_re_p, f_iv_9_re_p, f_iv_10_re_p, f_iv_11_re_p, f_iv_12_re_p,
+	 f_v_1_re_p, f_v_2_re_p, f_v_3_re_p, f_v_4_re_p, f_v_5_re_p, f_v_6_re_p, f_v_7_re_p, f_v_8_re_p,
+	 f_v_9_re_p, f_vi_1_re_p, f_vi_2_re_p, f_vi_3_re_p, f_vi_4_re_p, f_vi_5_re_p, f_vi_6_re_p, f_vi_7_re_p,
+	 f_vi_8_re_p, f_vi_9_re_p, f_vi_10_re_p, f_vi_11_re_p, f_vii_1_re_p) 
+	SELECT `dane`, SUM(iii_1), SUM(iii_2), SUM(iii_3), SUM(iii_4), SUM(iii_5), SUM(iii_6), SUM(iii_7),
+	 SUM(iii_8), SUM(iii_9), SUM(iv_1), SUM(iv_2), SUM(iv_3), SUM(iv_4), SUM(iv_5), SUM(iv_6), SUM(iv_7),
+	 SUM(iv_8), SUM(iv_9), SUM(iv_10), SUM(iv_11), SUM(iv_12), SUM(v_1), SUM(v_2), SUM(v_3), SUM(v_4),
+	 SUM(v_5), SUM(v_6), SUM(v_7), SUM(v_8), SUM(v_9), SUM(vi_1), SUM(vi_2), SUM(vi_3), SUM(vi_4),
+	 SUM(vi_5), SUM(vi_6), SUM(vi_7), SUM(vi_8), SUM(vi_9), SUM(vi_10), SUM(vi_11), SUM(vii_1),
+	 COUNT(f_iii_1_re_p), COUNT(f_iii_2_re_p), COUNT(f_iii_3_re_p), COUNT(f_iii_4_re_p),
+	 COUNT(f_iii_5_re_p), COUNT(f_iii_6_re_p), COUNT(f_iii_7_re_p), COUNT(f_iii_8_re_p),
+	 COUNT(f_iii_9_re_p), COUNT(f_iv_1_re_p), COUNT(f_iv_2_re_p), COUNT(f_iv_3_re_p), COUNT(f_iv_4_re_p),
+	 COUNT(f_iv_5_re_p), COUNT(f_iv_6_re_p), COUNT(f_iv_7_re_p), COUNT(f_iv_8_re_p), COUNT(f_iv_9_re_p),
+	 COUNT(f_iv_10_re_p), COUNT(f_iv_11_re_p), COUNT(f_iv_12_re_p), COUNT(f_v_1_re_p), COUNT(f_v_2_re_p),
+	 COUNT(f_v_3_re_p), COUNT(f_v_4_re_p), COUNT(f_v_5_re_p), COUNT(f_v_6_re_p), COUNT(f_v_7_re_p),
+	 COUNT(f_v_8_re_p), COUNT(f_v_9_re_p), COUNT(f_vi_1_re_p), COUNT(f_vi_2_re_p), COUNT(f_vi_3_re_p),
+	 COUNT(f_vi_4_re_p), COUNT(f_vi_5_re_p), COUNT(f_vi_6_re_p), COUNT(f_vi_7_re_p), COUNT(f_vi_8_re_p),
+	 COUNT(f_vi_9_re_p), COUNT(f_vi_10_re_p), COUNT(f_vi_11_re_p), COUNT(f_vii_1_re_p)
+	FROM `clone_padres` 
+	GROUP BY `dane`;
+
+	DROP TABLE `clone_padres`;
+
+
+
+	#-- Generar variables promedios
+
+	# Sección III
+	UPDATE `padres1` SET `pro_iii_1_re_p`=`iii_1_re_p`/`f_iii_1_re_p`;
+	UPDATE `padres1` SET `pro_iii_2_re_p`=`iii_2_re_p`/`f_iii_2_re_p`;
+	UPDATE `padres1` SET `pro_iii_3_re_p`=`iii_3_re_p`/`f_iii_3_re_p`;
+	UPDATE `padres1` SET `pro_iii_4_re_p`=`iii_4_re_p`/`f_iii_4_re_p`;
+	UPDATE `padres1` SET `pro_iii_5_re_p`=`iii_5_re_p`/`f_iii_5_re_p`;
+	UPDATE `padres1` SET `pro_iii_6_re_p`=`iii_6_re_p`/`f_iii_6_re_p`;
+	UPDATE `padres1` SET `pro_iii_7_re_p`=`iii_7_re_p`/`f_iii_7_re_p`;
+	UPDATE `padres1` SET `pro_iii_8_re_p`=`iii_8_re_p`/`f_iii_8_re_p`;
+	UPDATE `padres1` SET `pro_iii_9_re_p`=`iii_9_re_p`/`f_iii_9_re_p`;
+
+	# Seccion IV
+	UPDATE `padres1` SET `pro_iv_1_re_p`=`iv_1_re_p`/`f_iv_1_re_p`;
+	UPDATE `padres1` SET `pro_iv_2_re_p`=`iv_2_re_p`/`f_iv_2_re_p`;
+	UPDATE `padres1` SET `pro_iv_3_re_p`=`iv_3_re_p`/`f_iv_3_re_p`;
+	UPDATE `padres1` SET `pro_iv_4_re_p`=`iv_4_re_p`/`f_iv_4_re_p`;
+	UPDATE `padres1` SET `pro_iv_5_re_p`=`iv_5_re_p`/`f_iv_5_re_p`;
+	UPDATE `padres1` SET `pro_iv_6_re_p`=`iv_6_re_p`/`f_iv_6_re_p`;
+	UPDATE `padres1` SET `pro_iv_7_re_p`=`iv_7_re_p`/`f_iv_7_re_p`;
+	UPDATE `padres1` SET `pro_iv_8_re_p`=`iv_8_re_p`/`f_iv_8_re_p`;
+	UPDATE `padres1` SET `pro_iv_9_re_p`=`iv_9_re_p`/`f_iv_9_re_p`;
+	UPDATE `padres1` SET `pro_iv_10_re_p`=`iv_10_re_p`/`f_iv_10_re_p`;
+	UPDATE `padres1` SET `pro_iv_11_re_p`=`iv_11_re_p`/`f_iv_11_re_p`;
+	UPDATE `padres1` SET `pro_iv_12_re_p`=`iv_12_re_p`/`f_iv_12_re_p`;
+
+	# Sección V
+	UPDATE `padres1` SET `pro_v_1_re_p`=`v_1_re_p`/`f_v_1_re_p`;
+	UPDATE `padres1` SET `pro_v_2_re_p`=`v_2_re_p`/`f_v_2_re_p`;
+	UPDATE `padres1` SET `pro_v_3_re_p`=`v_3_re_p`/`f_v_3_re_p`;
+	UPDATE `padres1` SET `pro_v_4_re_p`=`v_4_re_p`/`f_v_4_re_p`;
+	UPDATE `padres1` SET `pro_v_5_re_p`=`v_5_re_p`/`f_v_5_re_p`;
+	UPDATE `padres1` SET `pro_v_6_re_p`=`v_6_re_p`/`f_v_6_re_p`;
+	UPDATE `padres1` SET `pro_v_7_re_p`=`v_7_re_p`/`f_v_7_re_p`;
+	UPDATE `padres1` SET `pro_v_8_re_p`=`v_8_re_p`/`f_v_8_re_p`;
+	UPDATE `padres1` SET `pro_v_9_re_p`=`v_9_re_p`/`f_v_9_re_p`;
+
+	# Sección VI
+	UPDATE `padres1` SET `pro_vi_1_re_p`=`vi_1_re_p`/`f_vi_1_re_p`;
+	UPDATE `padres1` SET `pro_vi_2_re_p`=`vi_2_re_p`/`f_vi_2_re_p`;
+	UPDATE `padres1` SET `pro_vi_3_re_p`=`vi_3_re_p`/`f_vi_3_re_p`;
+	UPDATE `padres1` SET `pro_vi_4_re_p`=`vi_4_re_p`/`f_vi_4_re_p`;
+	UPDATE `padres1` SET `pro_vi_5_re_p`=`vi_5_re_p`/`f_vi_5_re_p`;
+	UPDATE `padres1` SET `pro_vi_6_re_p`=`vi_6_re_p`/`f_vi_6_re_p`;
+	UPDATE `padres1` SET `pro_vi_7_re_p`=`vi_7_re_p`/`f_vi_7_re_p`;
+	UPDATE `padres1` SET `pro_vi_8_re_p`=`vi_8_re_p`/`f_vi_8_re_p`;
+	UPDATE `padres1` SET `pro_vi_9_re_p`=`vi_9_re_p`/`f_vi_9_re_p`;
+	UPDATE `padres1` SET `pro_vi_10_re_p`=`vi_10_re_p`/`f_vi_10_re_p`;
+	UPDATE `padres1` SET `pro_vi_11_re_p`=`vi_11_re_p`/`f_vi_11_re_p`;
+	
+	# Sección VII
+	UPDATE `padres1` SET `pro_vii_1_re_p`=`vii_1_re_p`/`f_vii_1_re_p`;
+
+
+	#-- Medias por pregunta
+	#-------------------------------
+	#   egen rowmean		       |
+	#-------------------------------
+
+	UPDATE `padres1` SET `III_p` = (pro_iii_1_re_p + pro_iii_2_re_p + pro_iii_3_re_p + pro_iii_4_re_p
+	 + pro_iii_5_re_p + pro_iii_6_re_p + pro_iii_7_re_p + pro_iii_8_re_p + pro_iii_9_re_p) / 9;
+
+	UPDATE `padres1` SET `IV_p` = (pro_iv_1_re_p + pro_iv_2_re_p + pro_iv_3_re_p + pro_iv_4_re_p
+	 + pro_iv_5_re_p + pro_iv_6_re_p + pro_iv_7_re_p + pro_iv_8_re_p + pro_iv_9_re_p + pro_iv_10_re_p
+	 + pro_iv_11_re_p + pro_iv_12_re_p) / 12;
+
+	UPDATE `padres1` SET `V_p` = (pro_v_1_re_p + pro_v_2_re_p + pro_v_3_re_p + pro_v_4_re_p
+	 + pro_v_5_re_p + pro_v_6_re_p + pro_v_7_re_p + pro_v_8_re_p + pro_v_9_re_p) / 9;
+
+	UPDATE `padres1` SET `VI_p` = (pro_vi_1_re_p + pro_vi_2_re_p + pro_vi_3_re_p + pro_vi_4_re_p
+	 + pro_vi_5_re_p + pro_vi_6_re_p + pro_vi_7_re_p + pro_vi_8_re_p + pro_vi_9_re_p + pro_vi_10_re_p
+	 + pro_vi_11_re_p) / 11;
+
+	UPDATE `padres1` SET `VII_p` = (pro_vii_1_re_p) / 1;
+
 
 	
 END //
 
-DEIMITER ;
+DELIMITER ;
