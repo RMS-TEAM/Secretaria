@@ -1,0 +1,995 @@
+#----------------------------------------------------------------------------------------------------
+#---------------------------------------Docentes-----------------------------------------------------
+#----------------------------------------------------------------------------------------------------
+
+DROP PROCEDURE IF EXISTS proc_docentes;
+
+
+DELIMITER //
+
+CREATE PROCEDURE proc_docentes()
+BEGIN
+
+	DROP TABLE IF EXISTS`clone_docentes`;
+	CREATE TABLE `clone_docentes` (SELECT * FROM `docentes`);
+
+
+	#-- Reescalar las variables
+	
+	# Sección III
+	UPDATE `clone_docentes` SET `iii_1`=10/3*(`iii_1`-1);
+	UPDATE `clone_docentes` SET `iii_2`=10/3*(`iii_2`-1);
+	UPDATE `clone_docentes` SET `iii_3`=10/3*(`iii_3`-1);
+	UPDATE `clone_docentes` SET `iii_4`=10/3*(`iii_4`-1);
+	UPDATE `clone_docentes` SET `iii_5`=10/3*(`iii_5`-1);
+	UPDATE `clone_docentes` SET `iii_6`=10/3*(`iii_6`-1);
+	UPDATE `clone_docentes` SET `iii_7`=10/3*(`iii_7`-1);
+	UPDATE `clone_docentes` SET `iii_8`=10/3*(`iii_8`-1);
+	UPDATE `clone_docentes` SET `iii_9`=10/3*(`iii_9`-1);
+	UPDATE `clone_docentes` SET `iii_10`=10/3*(`iii_10`-1);
+	UPDATE `clone_docentes` SET `iii_11`=10/3*(`iii_11`-1);
+	UPDATE `clone_docentes` SET `iii_12`=10/3*(`iii_12`-1);
+	UPDATE `clone_docentes` SET `iii_13`=10/3*(`iii_13`-1);
+	UPDATE `clone_docentes` SET `iii_14`=10/3*(`iii_14`-1);
+	UPDATE `clone_docentes` SET `iii_15`=10/3*(`iii_15`-1);
+	UPDATE `clone_docentes` SET `iii_16`=10/3*(`iii_16`-1);
+	UPDATE `clone_docentes` SET `iii_17`=10/3*(`iii_17`-1);
+	UPDATE `clone_docentes` SET `iii_18`=10/3*(`iii_18`-1);
+	UPDATE `clone_docentes` SET `iii_19`=10/3*(`iii_19`-1);
+	UPDATE `clone_docentes` SET `iii_20`=10/3*(`iii_20`-1);
+	UPDATE `clone_docentes` SET `iii_21`=10/3*(`iii_21`-1);
+	UPDATE `clone_docentes` SET `iii_22`=10/3*(`iii_22`-1);
+	UPDATE `clone_docentes` SET `iii_23`=10/3*(`iii_23`-1);
+
+	#-- Hallar las frecuencias 
+
+	#------------------------------------
+	#Alter table para los egen
+
+	ALTER TABLE `clone_docentes` ADD `f_iii_1_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_2_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_3_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_4_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_5_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_6_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_7_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_8_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_9_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_10_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_11_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_12_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_13_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_14_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_15_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_16_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_17_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_18_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_19_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_20_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_21_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_22_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iii_23_re_d` INT;
+
+	# egen f_iii_1_re_d=count(iii_1), by(iii_1 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_1`) AS cuenta, `iii_1`, `dane` FROM `clone_docentes` GROUP BY `iii_1`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_1_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_1` = `egen_temp`.`iii_1` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_2_re_d=count(iii_2), by(iii_2 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_2`) AS cuenta, `iii_2`, `dane` FROM `clone_docentes` GROUP BY `iii_2`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_2_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_2` = `egen_temp`.`iii_2` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_3_re_d=count(iii_3), by(iii_3 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_3`) AS cuenta, `iii_3`, `dane` FROM `clone_docentes` GROUP BY `iii_3`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_3_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_3` = `egen_temp`.`iii_3` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_4_re_d=count(iii_4), by(iii_4 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_4`) AS cuenta, `iii_4`, `dane` FROM `clone_docentes` GROUP BY `iii_4`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_4_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_4` = `egen_temp`.`iii_4` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_5_re_d=count(iii_5), by(iii_5 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_5`) AS cuenta, `iii_5`, `dane` FROM `clone_docentes` GROUP BY `iii_5`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_5_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_5` = `egen_temp`.`iii_5` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_6_re_d=count(iii_6), by(iii_6 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_6`) AS cuenta, `iii_6`, `dane` FROM `clone_docentes` GROUP BY `iii_6`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_6_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_6` = `egen_temp`.`iii_6` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_7_re_d=count(iii_7), by(iii_7 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_7`) AS cuenta, `iii_7`, `dane` FROM `clone_docentes` GROUP BY `iii_7`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_7_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_7` = `egen_temp`.`iii_7` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_8_re_d=count(iii_8), by(iii_8 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_8`) AS cuenta, `iii_8`, `dane` FROM `clone_docentes` GROUP BY `iii_8`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_8_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_8` = `egen_temp`.`iii_8` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_9_re_d=count(iii_9), by(iii_9 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_9`) AS cuenta, `iii_9`, `dane` FROM `clone_docentes` GROUP BY `iii_9`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_9_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_9` = `egen_temp`.`iii_9` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_10_re_d=count(iii_10), by(iii_10 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_10`) AS cuenta, `iii_10`, `dane` FROM `clone_docentes` GROUP BY `iii_10`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_10_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_10` = `egen_temp`.`iii_10` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_11_re_d=count(iii_11), by(iii_11 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_11`) AS cuenta, `iii_11`, `dane` FROM `clone_docentes` GROUP BY `iii_11`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_11_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_11` = `egen_temp`.`iii_11` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_12_re_d=count(iii_12), by(iii_12 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_12`) AS cuenta, `iii_12`, `dane` FROM `clone_docentes` GROUP BY `iii_12`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_12_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_12` = `egen_temp`.`iii_12` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+	
+	# egen f_iii_13_re_d=count(iii_13), by(iii_13 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_13`) AS cuenta, `iii_13`, `dane` FROM `clone_docentes` GROUP BY `iii_13`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_13_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_13` = `egen_temp`.`iii_13` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_14_re_d=count(iii_14), by(iii_14 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_14`) AS cuenta, `iii_14`, `dane` FROM `clone_docentes` GROUP BY `iii_14`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_14_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_14` = `egen_temp`.`iii_14` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_15_re_d=count(iii_15), by(iii_15 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_15`) AS cuenta, `iii_15`, `dane` FROM `clone_docentes` GROUP BY `iii_15`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_15_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_15` = `egen_temp`.`iii_15` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+	
+	# egen f_iii_16_re_d=count(iii_16), by(iii_16 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_16`) AS cuenta, `iii_16`, `dane` FROM `clone_docentes` GROUP BY `iii_16`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_16_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_16` = `egen_temp`.`iii_16` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_17_re_d=count(iii_17), by(iii_17 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_17`) AS cuenta, `iii_17`, `dane` FROM `clone_docentes` GROUP BY `iii_17`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_17_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_17` = `egen_temp`.`iii_17` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_18_re_d=count(iii_18), by(iii_18 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_18`) AS cuenta, `iii_18`, `dane` FROM `clone_docentes` GROUP BY `iii_18`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_18_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_18` = `egen_temp`.`iii_18` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_19_re_d=count(iii_19), by(iii_19 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_19`) AS cuenta, `iii_19`, `dane` FROM `clone_docentes` GROUP BY `iii_19`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_19_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_19` = `egen_temp`.`iii_19` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_20_re_d=count(iii_20), by(iii_20 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_20`) AS cuenta, `iii_20`, `dane` FROM `clone_docentes` GROUP BY `iii_20`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_20_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_20` = `egen_temp`.`iii_20` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_21_re_d=count(iii_21), by(iii_21 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_21`) AS cuenta, `iii_21`, `dane` FROM `clone_docentes` GROUP BY `iii_21`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_21_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_21` = `egen_temp`.`iii_21` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_22_re_d=count(iii_22), by(iii_22 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_22`) AS cuenta, `iii_22`, `dane` FROM `clone_docentes` GROUP BY `iii_22`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_22_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_22` = `egen_temp`.`iii_22` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iii_23_re_d=count(iii_23), by(iii_23 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iii_23`) AS cuenta, `iii_23`, `dane` FROM `clone_docentes` GROUP BY `iii_23`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iii_23_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iii_23` = `egen_temp`.`iii_23` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+
+
+	# Sección IV
+
+	UPDATE `clone_docentes` SET `iv_1`=10/3*(`iv_1`-1);
+	UPDATE `clone_docentes` SET `iv_2`=10/3*(`iv_2`-1);
+	UPDATE `clone_docentes` SET `iv_3`=10/3*(`iv_3`-1);
+	UPDATE `clone_docentes` SET `iv_4`=10/3*(`iv_4`-1);
+	UPDATE `clone_docentes` SET `iv_5`=10/3*(`iv_5`-1);
+	UPDATE `clone_docentes` SET `iv_6`=10/3*(`iv_6`-1);
+	UPDATE `clone_docentes` SET `iv_7`=10/3*(`iv_7`-1);
+	UPDATE `clone_docentes` SET `iv_8`=10/3*(`iv_8`-1);
+	UPDATE `clone_docentes` SET `iv_9`=5/2*(`iv_9`-1);
+	UPDATE `clone_docentes` SET `iv_10`=5/2*(`iv_10`-1);
+	UPDATE `clone_docentes` SET `iv_11`=5/2*(`iv_11`-1);
+	UPDATE `clone_docentes` SET `iv_12`=5/2*(`iv_12`-1);
+	UPDATE `clone_docentes` SET `iv_13`=5/2*(`iv_13`-1);
+	UPDATE `clone_docentes` SET `iv_14`=5/2*(`iv_14`-1);
+
+	#-- Hallar las frecuencias
+
+	#------------------------------------
+	#Alter table para los egen
+
+	ALTER TABLE `clone_docentes` ADD `f_iv_1_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_2_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_3_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_4_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_5_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_6_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_7_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_8_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_9_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_10_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_11_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_12_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_13_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_iv_14_re_d` INT;
+
+	# egen f_iv_1_re_d=count(iv_1), by(iv_1 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_1`) AS cuenta, `iv_1`, `dane` FROM `clone_docentes` GROUP BY `iv_1`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_1_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_1` = `egen_temp`.`iv_1` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+ 
+	
+	# egen f_iv_2_re_d=count(iv_2), by(iv_2 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_2`) AS cuenta, `iv_2`, `dane` FROM `clone_docentes` GROUP BY `iv_2`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_2_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_2` = `egen_temp`.`iv_2` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_3_re_d=count(iv_3), by(iv_3 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_3`) AS cuenta, `iv_3`, `dane` FROM `clone_docentes` GROUP BY `iv_3`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_3_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_3` = `egen_temp`.`iv_3` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_4_re_d=count(iv_4), by(iv_4 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_4`) AS cuenta, `iv_4`, `dane` FROM `clone_docentes` GROUP BY `iv_4`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_4_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_4` = `egen_temp`.`iv_4` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_5_re_d=count(iv_5), by(iv_5 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_5`) AS cuenta, `iv_5`, `dane` FROM `clone_docentes` GROUP BY `iv_5`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_5_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_5` = `egen_temp`.`iv_5` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_6_re_d=count(iv_6), by(iv_6 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_6`) AS cuenta, `iv_6`, `dane` FROM `clone_docentes` GROUP BY `iv_6`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_6_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_6` = `egen_temp`.`iv_6` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_7_re_d=count(iv_7), by(iv_7 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_7`) AS cuenta, `iv_7`, `dane` FROM `clone_docentes` GROUP BY `iv_7`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_7_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_7` = `egen_temp`.`iv_7` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_8_re_d=count(iv_8), by(iv_8 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_8`) AS cuenta, `iv_8`, `dane` FROM `clone_docentes` GROUP BY `iv_8`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_8_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_8` = `egen_temp`.`iv_8` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_9_re_d=count(iv_9), by(iv_9 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_9`) AS cuenta, `iv_9`, `dane` FROM `clone_docentes` GROUP BY `iv_9`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_9_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_9` = `egen_temp`.`iv_9` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_10_re_d=count(iv_10), by(iv_10 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_10`) AS cuenta, `iv_10`, `dane` FROM `clone_docentes` GROUP BY `iv_10`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_10_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_10` = `egen_temp`.`iv_10` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_11_re_d=count(iv_11), by(iv_11 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_11`) AS cuenta, `iv_11`, `dane` FROM `clone_docentes` GROUP BY `iv_11`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_10_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_11` = `egen_temp`.`iv_11` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_12_re_d=count(iv_12), by(iv_12 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_12`) AS cuenta, `iv_12`, `dane` FROM `clone_docentes` GROUP BY `iv_12`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_12_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_12` = `egen_temp`.`iv_12` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_13_re_d=count(iv_13), by(iv_13 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_13`) AS cuenta, `iv_13`, `dane` FROM `clone_docentes` GROUP BY `iv_13`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_13_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_13` = `egen_temp`.`iv_13` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_iv_14_re_d=count(iv_14), by(iv_14 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`iv_14`) AS cuenta, `iv_14`, `dane` FROM `clone_docentes` GROUP BY `iv_14`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_iv_14_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`iv_14` = `egen_temp`.`iv_14` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+
+
+	# Sección V
+
+	UPDATE `clone_docentes` SET `v_1`=10/3*(`v_1`-1);
+	UPDATE `clone_docentes` SET `v_2`=10/3*(`v_2`-1);
+	UPDATE `clone_docentes` SET `v_3`=10/3*(`v_3`-1);
+	UPDATE `clone_docentes` SET `v_4`=10/3*(`v_4`-1);
+	UPDATE `clone_docentes` SET `v_5`=10/3*(`v_5`-1);
+	UPDATE `clone_docentes` SET `v_6`=10/3*(`v_6`-1);
+	UPDATE `clone_docentes` SET `v_7`=10/3*(`v_7`-1);
+	UPDATE `clone_docentes` SET `v_8`=10/3*(`v_8`-1);
+	UPDATE `clone_docentes` SET `v_9`=10/3*(`v_9`-1);
+	UPDATE `clone_docentes` SET `v_10`=10/3*(`v_10`-1);
+	UPDATE `clone_docentes` SET `v_11`=10/3*(`v_11`-1);
+	UPDATE `clone_docentes` SET `v_12`=10/3*(`v_12`-1);
+	UPDATE `clone_docentes` SET `v_13`=10/3*(`v_13`-1);
+	UPDATE `clone_docentes` SET `v_14`=10/3*(`v_14`-1);
+	UPDATE `clone_docentes` SET `v_15`=10/3*(`v_15`-1);
+
+	#-- Hallar las frecuencias
+
+	#------------------------------------
+	#Alter table para los egen
+
+	ALTER TABLE `clone_docentes` ADD `f_v_1_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_2_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_3_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_4_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_5_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_6_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_7_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_8_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_9_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_10_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_11_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_12_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_13_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_14_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_v_15_re_d` INT;
+
+	# egen f_v_1_re_d=count(v_1), by(v_1 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_1`) AS cuenta, `v_1`, `dane` FROM `clone_docentes` GROUP BY `v_1`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_1_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_1` = `egen_temp`.`v_1` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_2_re_d=count(v_2), by(v_2 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_2`) AS cuenta, `v_2`, `dane` FROM `clone_docentes` GROUP BY `v_2`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_2_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_2` = `egen_temp`.`v_2` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_3_re_d=count(v_3), by(v_3 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_3`) AS cuenta, `v_3`, `dane` FROM `clone_docentes` GROUP BY `v_3`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_3_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_3` = `egen_temp`.`v_3` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_4_re_d=count(v_4), by(v_4 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_4`) AS cuenta, `v_4`, `dane` FROM `clone_docentes` GROUP BY `v_4`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_4_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_4` = `egen_temp`.`v_4` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_5_re_d=count(v_5), by(v_5 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_5`) AS cuenta, `v_5`, `dane` FROM `clone_docentes` GROUP BY `v_5`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_5_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_5` = `egen_temp`.`v_5` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_6_re_d=count(v_6), by(v_6 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_6`) AS cuenta, `v_6`, `dane` FROM `clone_docentes` GROUP BY `v_6`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_6_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_6` = `egen_temp`.`v_6` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_7_re_d=count(v_7), by(v_7 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_7`) AS cuenta, `v_7`, `dane` FROM `clone_docentes` GROUP BY `v_7`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_7_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_7` = `egen_temp`.`v_7` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_8_re_d=count(v_8), by(v_8 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_8`) AS cuenta, `v_8`, `dane` FROM `clone_docentes` GROUP BY `v_8`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_8_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_8` = `egen_temp`.`v_8` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_9_re_d=count(v_9), by(v_9 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_9`) AS cuenta, `v_9`, `dane` FROM `clone_docentes` GROUP BY `v_9`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_9_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_9` = `egen_temp`.`v_9` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_10_re_d=count(v_10), by(v_10 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_10`) AS cuenta, `v_10`, `dane` FROM `clone_docentes` GROUP BY `v_10`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_10_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_10` = `egen_temp`.`v_10` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_11_re_d=count(v_11), by(v_1011dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_11`) AS cuenta, `v_11`, `dane` FROM `clone_docentes` GROUP BY `v_11`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_11_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_11` = `egen_temp`.`v_11` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_12_re_d=count(v_12), by(v_12 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_12`) AS cuenta, `v_12`, `dane` FROM `clone_docentes` GROUP BY `v_12`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_12_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_12` = `egen_temp`.`v_12` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_13_re_d=count(v_13), by(v_13 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_13`) AS cuenta, `v_13`, `dane` FROM `clone_docentes` GROUP BY `v_13`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_13_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_13` = `egen_temp`.`v_13` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_14_re_d=count(v_14), by(v_14 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_14`) AS cuenta, `v_14`, `dane` FROM `clone_docentes` GROUP BY `v_14`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_14_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_14` = `egen_temp`.`v_14` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_v_15_re_d=count(v_15), by(v_15 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`v_15`) AS cuenta, `v_15`, `dane` FROM `clone_docentes` GROUP BY `v_15`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_v_15_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`v_15` = `egen_temp`.`v_15` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+
+
+
+	# Sección VI
+
+	UPDATE `clone_docentes` SET `vi_1`=10/3*(`vi_1`-1);
+	UPDATE `clone_docentes` SET `vi_2`=10/3*(`vi_2`-1);
+	UPDATE `clone_docentes` SET `vi_3`=10/3*(`vi_3`-1);
+	UPDATE `clone_docentes` SET `vi_4`=10/3*(`vi_4`-1);
+	UPDATE `clone_docentes` SET `vi_5`=10/3*(`vi_5`-1);
+	UPDATE `clone_docentes` SET `vi_6`=10/3*(`vi_6`-1);
+	UPDATE `clone_docentes` SET `vi_7`=10/3*(`vi_7`-1);
+	UPDATE `clone_docentes` SET `vi_8`=10/3*(`vi_8`-1);
+	UPDATE `clone_docentes` SET `vi_9`=10/3*(`vi_9`-1);
+	UPDATE `clone_docentes` SET `vi_10`=10/3*(`vi_10`-1);
+	UPDATE `clone_docentes` SET `vi_11`=10/3*(`vi_11`-1);
+	UPDATE `clone_docentes` SET `vi_12`=10/3*(`vi_12`-1);
+	UPDATE `clone_docentes` SET `vi_13`=10/3*(`vi_13`-1);
+
+	#-- Hallar las frecuencias
+
+	#------------------------------------
+	#Alter table para los egen
+
+	ALTER TABLE `clone_docentes` ADD `f_vi_1_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_2_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_3_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_4_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_5_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_6_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_7_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_8_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_9_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_10_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_11_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_12_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vi_13_re_d` INT;
+
+
+	# egen f_vi_1_re_d=count(vi_1), by(vi_1 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_1`) AS cuenta, `vi_1`, `dane` FROM `clone_docentes` GROUP BY `vi_1`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_1_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_1` = `egen_temp`.`vi_1` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_2_re_d=count(vi_2), by(vi_2 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_2`) AS cuenta, `vi_2`, `dane` FROM `clone_docentes` GROUP BY `vi_2`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_2_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_2` = `egen_temp`.`vi_2` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_3_re_d=count(vi_3), by(vi_3 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_3`) AS cuenta, `vi_3`, `dane` FROM `clone_docentes` GROUP BY `vi_3`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_3_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_3` = `egen_temp`.`vi_3` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_4_re_d=count(vi_4), by(vi_4 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_4`) AS cuenta, `vi_4`, `dane` FROM `clone_docentes` GROUP BY `vi_4`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_4_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_4` = `egen_temp`.`vi_4` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_5_re_d=count(vi_5), by(vi_5 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_5`) AS cuenta, `vi_5`, `dane` FROM `clone_docentes` GROUP BY `vi_5`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_5_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_5` = `egen_temp`.`vi_5` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_6_re_d=count(vi_6), by(vi_6 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_6`) AS cuenta, `vi_6`, `dane` FROM `clone_docentes` GROUP BY `vi_6`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_6_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_6` = `egen_temp`.`vi_6` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_7_re_d=count(vi_7), by(vi_7 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_7`) AS cuenta, `vi_7`, `dane` FROM `clone_docentes` GROUP BY `vi_7`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_7_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_7` = `egen_temp`.`vi_7` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_8_re_d=count(vi_8), by(vi_8 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_8`) AS cuenta, `vi_8`, `dane` FROM `clone_docentes` GROUP BY `vi_8`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_8_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_8` = `egen_temp`.`vi_8` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_9_re_d=count(vi_9), by(vi_9 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_9`) AS cuenta, `vi_9`, `dane` FROM `clone_docentes` GROUP BY `vi_9`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_9_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_9` = `egen_temp`.`vi_9` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_10_re_d=count(vi_10), by(vi_10 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_10`) AS cuenta, `vi_10`, `dane` FROM `clone_docentes` GROUP BY `vi_10`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_10_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_10` = `egen_temp`.`vi_10` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_11_re_d=count(vi_11), by(vi_11 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_11`) AS cuenta, `vi_11`, `dane` FROM `clone_docentes` GROUP BY `vi_11`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_11_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_11` = `egen_temp`.`vi_11` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_12_re_d=count(vi_12), by(vi_12 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_12`) AS cuenta, `vi_12`, `dane` FROM `clone_docentes` GROUP BY `vi_12`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_12_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_12` = `egen_temp`.`vi_12` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vi_13_re_d=count(vi_13), by(vi_13 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vi_13`) AS cuenta, `vi_13`, `dane` FROM `clone_docentes` GROUP BY `vi_13`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vi_13_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vi_13` = `egen_temp`.`vi_13` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+
+
+
+	# Sección VII
+
+	UPDATE `clone_docentes` SET `vii_1`=10/3*(`vii_1`-1);
+	UPDATE `clone_docentes` SET `vii_2`=5/2*(`vii_2`-1);
+
+	#------------------------------------
+	#Alter table para los egen
+
+	ALTER TABLE `clone_docentes` ADD `f_vii_1_re_d` INT;
+	ALTER TABLE `clone_docentes` ADD `f_vii_2_re_d` INT;
+
+	# egen f_vii_1_re_d=count(vii_1), by(vii_1 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vii_1`) AS cuenta, `vii_1`, `dane` FROM `clone_docentes` GROUP BY `vii_1`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vii_1_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vii_1` = `egen_temp`.`vii_1` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	# egen f_vii_2_re_d=count(vii_2), by(vii_2 dane)
+	DROP TABLE IF EXISTS `egen_temp`;
+	CREATE TABLE `egen_temp`
+	 (SELECT COUNT(`vii_2`) AS cuenta, `vii_2`, `dane` FROM `clone_docentes` GROUP BY `vii_2`, `dane`);
+	UPDATE `clone_docentes`, `egen_temp` 
+	 SET `clone_docentes`.`f_vii_2_re_d` = `egen_temp`.`cuenta`
+	 WHERE `clone_docentes`.`vii_2` = `egen_temp`.`vii_2` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
+	DROP TABLE `egen_temp`;
+
+	#--------------------------------------------------------------
+	#   collapse (sum) $xlist_data (count) $xlist_frec, by(dane)  |
+	#--------------------------------------------------------------
+	DELETE FROM `docentes1`;
+	INSERT INTO `docentes1` (dane, iii_1_re_d, iii_2_re_d, iii_3_re_d, iii_4_re_d, iii_5_re_d, iii_6_re_d,
+	 iii_7_re_d, iii_8_re_d, iii_9_re_d, iii_10_re_d, iii_11_re_d, iii_12_re_d, iii_13_re_d, iii_14_re_d,
+	 iii_15_re_d, iii_16_re_d, iii_17_re_d, iii_18_re_d, iii_19_re_d, iii_20_re_d, iii_21_re_d, iii_22_re_d,
+	 iii_23_re_d, iv_1_re_d, iv_2_re_d, iv_3_re_d, iv_4_re_d, iv_5_re_d, iv_6_re_d, iv_7_re_d, iv_8_re_d,
+	 iv_9_re_d, iv_10_re_d, iv_11_re_d, iv_12_re_d, iv_13_re_d, iv_14_re_d, v_1_re_d, v_2_re_d, v_3_re_d,
+	 v_4_re_d, v_5_re_d, v_6_re_d, v_7_re_d, v_8_re_d, v_9_re_d, v_10_re_d, v_11_re_d, v_12_re_d, v_13_re_d,
+	 v_14_re_d, v_15_re_d, vi_1_re_d, vi_2_re_d, vi_3_re_d, vi_4_re_d, vi_5_re_d, vi_6_re_d, vi_7_re_d,
+	 vi_8_re_d, vi_9_re_d, vi_10_re_d, vi_11_re_d, vi_12_re_d, vi_13_re_d, vii_1_re_d, vii_2_re_d,
+	 f_iii_1_re_d, f_iii_2_re_d, f_iii_3_re_d, f_iii_4_re_d, f_iii_5_re_d, f_iii_6_re_d, f_iii_7_re_d,
+	 f_iii_8_re_d, f_iii_9_re_d, f_iii_10_re_d, f_iii_11_re_d, f_iii_12_re_d, f_iii_13_re_d, f_iii_14_re_d,
+	 f_iii_15_re_d, f_iii_16_re_d, f_iii_17_re_d, f_iii_18_re_d, f_iii_19_re_d, f_iii_20_re_d,
+	 f_iii_21_re_d, f_iii_22_re_d, f_iii_23_re_d, f_iv_1_re_d, f_iv_2_re_d, f_iv_3_re_d, f_iv_4_re_d,
+	 f_iv_5_re_d, f_iv_6_re_d, f_iv_7_re_d, f_iv_8_re_d, f_iv_9_re_d, f_iv_10_re_d, f_iv_11_re_d,
+	 f_iv_12_re_d, f_iv_13_re_d, f_iv_14_re_d, f_v_1_re_d, f_v_2_re_d, f_v_3_re_d, f_v_4_re_d, f_v_5_re_d,
+	 f_v_6_re_d, f_v_7_re_d, f_v_8_re_d, f_v_9_re_d, f_v_10_re_d, f_v_11_re_d, f_v_12_re_d, f_v_13_re_d,
+	 f_v_14_re_d, f_v_15_re_d, f_vi_1_re_d, f_vi_2_re_d, f_vi_3_re_d, f_vi_4_re_d, f_vi_5_re_d, f_vi_6_re_d,
+	 f_vi_7_re_d, f_vi_8_re_d, f_vi_9_re_d, f_vi_10_re_d, f_vi_11_re_d, f_vi_12_re_d, f_vi_13_re_d,
+	 f_vii_1_re_d, f_vii_2_re_d) 
+	SELECT `dane`, SUM(iii_1), SUM(iii_2), SUM(iii_3), SUM(iii_4), SUM(iii_5), SUM(iii_6), SUM(iii_7),
+	 SUM(iii_8), SUM(iii_9), SUM(iii_10), SUM(iii_11), SUM(iii_12), SUM(iii_13), SUM(iii_14), SUM(iii_15),
+	 SUM(iii_16), SUM(iii_17), SUM(iii_18), SUM(iii_19), SUM(iii_20), SUM(iii_21), SUM(iii_22), SUM(iii_23),
+	 SUM(iv_1), SUM(iv_2), SUM(iv_3), SUM(iv_4), SUM(iv_5), SUM(iv_6), SUM(iv_7), SUM(iv_8), SUM(iv_9),
+	 SUM(iv_10), SUM(iv_11), SUM(iv_12), SUM(iv_13), SUM(iv_14), SUM(v_1), SUM(v_2), SUM(v_3), SUM(v_4),
+	 SUM(v_5), SUM(v_6), SUM(v_7), SUM(v_8), SUM(v_9), SUM(v_10), SUM(v_11), SUM(v_12), SUM(v_13),
+	 SUM(v_14), SUM(v_15), SUM(vi_1), SUM(vi_2), SUM(vi_3), SUM(vi_4), SUM(vi_5), SUM(vi_6), SUM(vi_7),
+	 SUM(vi_8), SUM(vi_9), SUM(vi_10), SUM(vi_11), SUM(vi_12), SUM(vi_13), SUM(vii_1), SUM(vii_2),
+	 COUNT(f_iii_1_re_d), COUNT(f_iii_2_re_d), COUNT(f_iii_3_re_d), COUNT(f_iii_4_re_d),
+	 COUNT(f_iii_5_re_d), COUNT(f_iii_6_re_d), COUNT(f_iii_7_re_d), COUNT(f_iii_8_re_d),
+	 COUNT(f_iii_9_re_d), COUNT(f_iii_10_re_d), COUNT(f_iii_11_re_d), COUNT(f_iii_12_re_d),
+	 COUNT(f_iii_13_re_d), COUNT(f_iii_14_re_d), COUNT(f_iii_15_re_d), COUNT(f_iii_16_re_d),
+	 COUNT(f_iii_17_re_d), COUNT(f_iii_18_re_d), COUNT(f_iii_19_re_d), COUNT(f_iii_20_re_d),
+	 COUNT(f_iii_21_re_d), COUNT(f_iii_22_re_d), COUNT(f_iii_23_re_d), COUNT(f_iv_1_re_d),
+	 COUNT(f_iv_2_re_d), COUNT(f_iv_3_re_d), COUNT(f_iv_4_re_d), COUNT(f_iv_5_re_d), COUNT(f_iv_6_re_d),
+	 COUNT(f_iv_7_re_d), COUNT(f_iv_8_re_d), COUNT(f_iv_9_re_d), COUNT(f_iv_10_re_d), COUNT(f_iv_11_re_d),
+	 COUNT(f_iv_12_re_d), COUNT(f_iv_13_re_d), COUNT(f_iv_14_re_d), COUNT(f_v_1_re_d), COUNT(f_v_2_re_d),
+	 COUNT(f_v_3_re_d), COUNT(f_v_4_re_d), COUNT(f_v_5_re_d), COUNT(f_v_6_re_d), COUNT(f_v_7_re_d),
+	 COUNT(f_v_8_re_d), COUNT(f_v_9_re_d), COUNT(f_v_10_re_d), COUNT(f_v_11_re_d), COUNT(f_v_12_re_d),
+	 COUNT(f_v_13_re_d), COUNT(f_v_14_re_d), COUNT(f_v_15_re_d), COUNT(f_vi_1_re_d), COUNT(f_vi_2_re_d),
+	 COUNT(f_vi_3_re_d), COUNT(f_vi_4_re_d), COUNT(f_vi_5_re_d), COUNT(f_vi_6_re_d), COUNT(f_vi_7_re_d),
+	 COUNT(f_vi_8_re_d), COUNT(f_vi_9_re_d), COUNT(f_vi_10_re_d), COUNT(f_vi_11_re_d), COUNT(f_vi_12_re_d),
+	 COUNT(f_vi_13_re_d), COUNT(f_vii_1_re_d), COUNT(f_vii_2_re_d)
+	FROM `clone_docentes` 
+	GROUP BY `dane`;
+
+	DROP TABLE `clone_docentes`;
+
+	#-- Generar variables promedios
+
+	# Sección III
+
+	UPDATE `docentes1` SET `pro_iii_1_re_d`=`iii_1_re_d`/`f_iii_1_re_d`;
+	UPDATE `docentes1` SET `pro_iii_2_re_d`=`iii_2_re_d`/`f_iii_2_re_d`;
+	UPDATE `docentes1` SET `pro_iii_3_re_d`=`iii_3_re_d`/`f_iii_3_re_d`;
+	UPDATE `docentes1` SET `pro_iii_4_re_d`=`iii_4_re_d`/`f_iii_4_re_d`;
+	UPDATE `docentes1` SET `pro_iii_5_re_d`=`iii_5_re_d`/`f_iii_5_re_d`;
+	UPDATE `docentes1` SET `pro_iii_6_re_d`=`iii_6_re_d`/`f_iii_6_re_d`;
+	UPDATE `docentes1` SET `pro_iii_7_re_d`=`iii_7_re_d`/`f_iii_7_re_d`;
+	UPDATE `docentes1` SET `pro_iii_8_re_d`=`iii_8_re_d`/`f_iii_8_re_d`;
+	UPDATE `docentes1` SET `pro_iii_9_re_d`=`iii_9_re_d`/`f_iii_9_re_d`;
+	UPDATE `docentes1` SET `pro_iii_10_re_d`=`iii_10_re_d`/`f_iii_10_re_d`;
+	UPDATE `docentes1` SET `pro_iii_11_re_d`=`iii_11_re_d`/`f_iii_11_re_d`;
+	UPDATE `docentes1` SET `pro_iii_12_re_d`=`iii_12_re_d`/`f_iii_12_re_d`;
+	UPDATE `docentes1` SET `pro_iii_13_re_d`=`iii_13_re_d`/`f_iii_13_re_d`;
+	UPDATE `docentes1` SET `pro_iii_14_re_d`=`iii_14_re_d`/`f_iii_14_re_d`;
+	UPDATE `docentes1` SET `pro_iii_15_re_d`=`iii_15_re_d`/`f_iii_15_re_d`;
+	UPDATE `docentes1` SET `pro_iii_16_re_d`=`iii_16_re_d`/`f_iii_16_re_d`;
+	UPDATE `docentes1` SET `pro_iii_17_re_d`=`iii_17_re_d`/`f_iii_17_re_d`;
+	UPDATE `docentes1` SET `pro_iii_18_re_d`=`iii_18_re_d`/`f_iii_18_re_d`;
+	UPDATE `docentes1` SET `pro_iii_19_re_d`=`iii_19_re_d`/`f_iii_19_re_d`;
+	UPDATE `docentes1` SET `pro_iii_20_re_d`=`iii_20_re_d`/`f_iii_20_re_d`;
+	UPDATE `docentes1` SET `pro_iii_21_re_d`=`iii_21_re_d`/`f_iii_21_re_d`;
+	UPDATE `docentes1` SET `pro_iii_22_re_d`=`iii_22_re_d`/`f_iii_22_re_d`;
+	UPDATE `docentes1` SET `pro_iii_23_re_d`=`iii_23_re_d`/`f_iii_23_re_d`;
+
+	# Seccion IV
+
+	UPDATE `docentes1` SET `pro_iv_1_re_d`=`iv_1_re_d`/`f_iv_1_re_d`;
+	UPDATE `docentes1` SET `pro_iv_2_re_d`=`iv_2_re_d`/`f_iv_2_re_d`;
+	UPDATE `docentes1` SET `pro_iv_3_re_d`=`iv_3_re_d`/`f_iv_3_re_d`;
+	UPDATE `docentes1` SET `pro_iv_4_re_d`=`iv_4_re_d`/`f_iv_4_re_d`;
+	UPDATE `docentes1` SET `pro_iv_5_re_d`=`iv_5_re_d`/`f_iv_5_re_d`;
+	UPDATE `docentes1` SET `pro_iv_6_re_d`=`iv_6_re_d`/`f_iv_6_re_d`;
+	UPDATE `docentes1` SET `pro_iv_7_re_d`=`iv_7_re_d`/`f_iv_7_re_d`;
+	UPDATE `docentes1` SET `pro_iv_8_re_d`=`iv_8_re_d`/`f_iv_8_re_d`;
+	UPDATE `docentes1` SET `pro_iv_9_re_d`=`iv_9_re_d`/`f_iv_9_re_d`;
+	UPDATE `docentes1` SET `pro_iv_10_re_d`=`iv_10_re_d`/`f_iv_10_re_d`;
+	UPDATE `docentes1` SET `pro_iv_11_re_d`=`iv_11_re_d`/`f_iv_11_re_d`;
+	UPDATE `docentes1` SET `pro_iv_12_re_d`=`iv_12_re_d`/`f_iv_12_re_d`;
+	UPDATE `docentes1` SET `pro_iv_13_re_d`=`iv_13_re_d`/`f_iv_13_re_d`;
+	UPDATE `docentes1` SET `pro_iv_14_re_d`=`iv_14_re_d`/`f_iv_14_re_d`;
+
+	# Sección V
+
+	UPDATE `docentes1` SET `pro_v_1_re_d`=`v_1_re_d`/`f_v_1_re_d`;
+	UPDATE `docentes1` SET `pro_v_2_re_d`=`v_2_re_d`/`f_v_2_re_d`;
+	UPDATE `docentes1` SET `pro_v_3_re_d`=`v_3_re_d`/`f_v_3_re_d`;
+	UPDATE `docentes1` SET `pro_v_4_re_d`=`v_4_re_d`/`f_v_4_re_d`;
+	UPDATE `docentes1` SET `pro_v_5_re_d`=`v_5_re_d`/`f_v_5_re_d`;
+	UPDATE `docentes1` SET `pro_v_6_re_d`=`v_6_re_d`/`f_v_6_re_d`;
+	UPDATE `docentes1` SET `pro_v_7_re_d`=`v_7_re_d`/`f_v_7_re_d`;
+	UPDATE `docentes1` SET `pro_v_8_re_d`=`v_8_re_d`/`f_v_8_re_d`;
+	UPDATE `docentes1` SET `pro_v_9_re_d`=`v_9_re_d`/`f_v_9_re_d`;
+	UPDATE `docentes1` SET `pro_v_10_re_d`=`v_10_re_d`/`f_v_10_re_d`;
+	UPDATE `docentes1` SET `pro_v_11_re_d`=`v_11_re_d`/`f_v_11_re_d`;
+	UPDATE `docentes1` SET `pro_v_12_re_d`=`v_12_re_d`/`f_v_12_re_d`;
+	UPDATE `docentes1` SET `pro_v_13_re_d`=`v_13_re_d`/`f_v_13_re_d`;
+	UPDATE `docentes1` SET `pro_v_14_re_d`=`v_14_re_d`/`f_v_14_re_d`;
+	UPDATE `docentes1` SET `pro_v_15_re_d`=`v_15_re_d`/`f_v_15_re_d`;
+
+
+	# Sección VI
+
+	UPDATE `docentes1` SET `pro_vi_1_re_d`=`vi_1_re_d`/`f_vi_1_re_d`;
+	UPDATE `docentes1` SET `pro_vi_2_re_d`=`vi_2_re_d`/`f_vi_2_re_d`;
+	UPDATE `docentes1` SET `pro_vi_3_re_d`=`vi_3_re_d`/`f_vi_3_re_d`;
+	UPDATE `docentes1` SET `pro_vi_4_re_d`=`vi_4_re_d`/`f_vi_4_re_d`;
+	UPDATE `docentes1` SET `pro_vi_5_re_d`=`vi_5_re_d`/`f_vi_5_re_d`;
+	UPDATE `docentes1` SET `pro_vi_6_re_d`=`vi_6_re_d`/`f_vi_6_re_d`;
+	UPDATE `docentes1` SET `pro_vi_7_re_d`=`vi_7_re_d`/`f_vi_7_re_d`;
+	UPDATE `docentes1` SET `pro_vi_8_re_d`=`vi_8_re_d`/`f_vi_8_re_d`;
+	UPDATE `docentes1` SET `pro_vi_9_re_d`=`vi_9_re_d`/`f_vi_9_re_d`;
+	UPDATE `docentes1` SET `pro_vi_10_re_d`=`vi_10_re_d`/`f_vi_10_re_d`;
+	UPDATE `docentes1` SET `pro_vi_11_re_d`=`vi_11_re_d`/`f_vi_11_re_d`;
+	UPDATE `docentes1` SET `pro_vi_12_re_d`=`vi_12_re_d`/`f_vi_12_re_d`;
+	UPDATE `docentes1` SET `pro_vi_13_re_d`=`vi_13_re_d`/`f_vi_13_re_d`;
+
+	# Sección VII
+
+	UPDATE `docentes1` SET `pro_vii_1_re_d`=`vii_1_re_d`/`f_vii_1_re_d`;
+	UPDATE `docentes1` SET `pro_vii_2_re_d`=`vii_2_re_d`/`f_vii_2_re_d`;
+
+	#-- Medias por pregunta
+	#-------------------------------
+	#   egen rowmean		       |
+	#-------------------------------
+
+	UPDATE `docentes1` SET `III_d` = (pro_iii_1_re_d + pro_iii_2_re_d + pro_iii_3_re_d
+	 + pro_iii_4_re_d + pro_iii_5_re_d + pro_iii_6_re_d + pro_iii_7_re_d + pro_iii_8_re_d + pro_iii_9_re_d
+	 + pro_iii_10_re_d + pro_iii_11_re_d + pro_iii_12_re_d + pro_iii_13_re_d + pro_iii_14_re_d
+	 + pro_iii_15_re_d + pro_iii_16_re_d + pro_iii_17_re_d + pro_iii_18_re_d + pro_iii_19_re_d
+	 + pro_iii_20_re_d + pro_iii_21_re_d + pro_iii_22_re_d + pro_iii_23_re_d) / 23;
+
+	UPDATE `docentes1` SET `IV_d` = (pro_iv_1_re_d + pro_iv_2_re_d + pro_iv_3_re_d + pro_iv_4_re_d
+	 + pro_iv_5_re_d + pro_iv_6_re_d + pro_iv_7_re_d + pro_iv_8_re_d + pro_iv_9_re_d + pro_iv_10_re_d
+	 + pro_iv_11_re_d + pro_iv_12_re_d + pro_iv_13_re_d + pro_iv_14_re_d) / 14;
+
+	UPDATE `docentes1` SET `V_d` = (pro_v_1_re_d + pro_v_2_re_d + pro_v_3_re_d + pro_v_4_re_d + pro_v_5_re_d
+	 + pro_v_6_re_d + pro_v_7_re_d + pro_v_8_re_d + pro_v_9_re_d + pro_v_10_re_d + pro_v_11_re_d
+	 + pro_v_12_re_d + pro_v_13_re_d + pro_v_14_re_d + pro_v_15_re_d) / 15;
+
+	UPDATE `docentes1` SET `VI_d` = (pro_vi_1_re_d + pro_vi_2_re_d + pro_vi_3_re_d + pro_vi_4_re_d
+	 + pro_vi_5_re_d + pro_vi_6_re_d + pro_vi_7_re_d + pro_vi_8_re_d + pro_vi_9_re_d + pro_vi_10_re_d
+	 + pro_vi_11_re_d + pro_vi_12_re_d + pro_vi_13_re_d) / 13;
+
+	UPDATE `docentes1` SET `VII_d` = (pro_vii_1_re_d + pro_vii_2_re_d) / 2;
+
+
+END //
+
+DELIMITER ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
