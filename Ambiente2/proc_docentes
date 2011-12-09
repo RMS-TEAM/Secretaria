@@ -95,13 +95,9 @@ BEGIN
 	ALTER TABLE `clone_docentes` ADD `f_iii_23_re_d` INT;
 
 	# egen f_iii_1_re_d=count(iii_1), by(iii_1 dane)
-	DROP TABLE IF EXISTS `egen_temp`;
-	CREATE TABLE `egen_temp`
-	 (SELECT COUNT(`iii_1`) AS cuenta, `iii_1`, `dane` FROM `clone_docentes` GROUP BY `iii_1`, `dane`);
-	UPDATE `clone_docentes`, `egen_temp` 
-	 SET `clone_docentes`.`f_iii_1_re_d` = `egen_temp`.`cuenta`
-	 WHERE `clone_docentes`.`iii_1` = `egen_temp`.`iii_1` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
-	DROP TABLE `egen_temp`;
+	update clone_docentes set f_iii_1_re_d =
+	 (select count(iii_1) from(select * from clone_docentes) as a 
+	 where a.dane = clone_docentes.dane and a.iii_1 = clone_docentes.iii_1 group by a.iii_1, a.dane)
 
 	# egen f_iii_2_re_d=count(iii_2), by(iii_2 dane)
 	DROP TABLE IF EXISTS `egen_temp`;
