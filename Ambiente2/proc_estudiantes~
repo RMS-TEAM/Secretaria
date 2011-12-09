@@ -557,6 +557,97 @@ BEGIN
 	DROP TABLE `clone_estudiantes`;
 
 
+	#-- Generar variables promedios
+
+	# Sección III
+	UPDATE `estudiantes1` SET `pro_iii_1_re_e`=`iii_1_re_e`/`f_iii_1_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_2_re_e`=`iii_2_re_e`/`f_iii_2_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_3_re_e`=`iii_3_re_e`/`f_iii_3_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_4_re_e`=`iii_4_re_e`/`f_iii_4_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_5_re_e`=`iii_5_re_e`/`f_iii_5_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_6_re_e`=`iii_6_re_e`/`f_iii_6_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_7_re_e`=`iii_7_re_e`/`f_iii_7_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_8_re_e`=`iii_8_re_e`/`f_iii_8_re_e`;
+	UPDATE `estudiantes1` SET `pro_iii_9_re_e`=`iii_9_re_e`/`f_iii_9_re_e`;
+
+	# Seccion IV
+	UPDATE `estudiantes1` SET `pro_iv_1_re_e`=`iv_1_re_e`/`f_iv_1_re_e`;
+	UPDATE `estudiantes1` SET `pro_iv_2_re_e`=`iv_2_re_e`/`f_iv_2_re_e`;
+	UPDATE `estudiantes1` SET `pro_iv_3_re_e`=`iv_3_re_e`/`f_iv_3_re_e`;
+	UPDATE `estudiantes1` SET `pro_iv_4_re_e`=`iv_4_re_e`/`f_iv_4_re_e`;
+	UPDATE `estudiantes1` SET `pro_iv_5_re_e`=`iv_5_re_e`/`f_iv_5_re_e`;
+	UPDATE `estudiantes1` SET `pro_iv_6_re_e`=`iv_6_re_e`/`f_iv_6_re_e`;
+	UPDATE `estudiantes1` SET `pro_iv_7_re_e`=`iv_7_re_e`/`f_iv_7_re_e`;
+	UPDATE `estudiantes1` SET `pro_iv_8_re_e`=`iv_8_re_e`/`f_iv_8_re_e`;
+
+	# Sección V
+	UPDATE `estudiantes1` SET `pro_v_1_re_e`=`v_1_re_e`/`f_v_1_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_2_re_e`=`v_2_re_e`/`f_v_2_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_3_re_e`=`v_3_re_e`/`f_v_3_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_4_re_e`=`v_4_re_e`/`f_v_4_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_5_re_e`=`v_5_re_e`/`f_v_5_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_6_re_e`=`v_6_re_e`/`f_v_6_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_7_re_e`=`v_7_re_e`/`f_v_7_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_8_re_e`=`v_8_re_e`/`f_v_8_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_9_re_e`=`v_9_re_e`/`f_v_9_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_10_re_e`=`v_10_re_e`/`f_v_10_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_11_a_re_e`=`v_11_a_re_e`/`f_v_11_a_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_11_b_re_e`=`v_11_b_re_e`/`f_v_11_b_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_11_c_re_e`=`v_11_c_re_e`/`f_v_11_c_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_11_d_re_e`=`v_11_d_re_e`/`f_v_11_d_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_12_re_e`=`v_12_re_e`/`f_v_12_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_13_re_e`=`v_13_re_e`/`f_v_13_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_14_re_e`=`v_14_re_e`/`f_v_14_re_e`;
+	UPDATE `estudiantes1` SET `pro_v_15_re_e`=`v_15_re_e`/`f_v_15_re_e`;
+
+	# Sección VI
+	UPDATE `estudiantes1` SET `pro_vi_1_re_e`=`vi_1_re_e`/`f_vi_1_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_2_re_e`=`vi_2_re_e`/`f_vi_2_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_3_re_e`=`vi_3_re_e`/`f_vi_3_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_4_re_e`=`vi_4_re_e`/`f_vi_4_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_5_re_e`=`vi_5_re_e`/`f_vi_5_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_6_re_e`=`vi_6_re_e`/`f_vi_6_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_7_re_e`=`vi_7_re_e`/`f_vi_7_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_8_re_e`=`vi_8_re_e`/`f_vi_8_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_9_re_e`=`vi_9_re_e`/`f_vi_9_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_10_re_e`=`vi_10_re_e`/`f_vi_10_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_11_re_e`=`vi_11_re_e`/`f_vi_11_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_12_re_e`=`vi_12_re_e`/`f_vi_12_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_13_re_e`=`vi_13_re_e`/`f_vi_13_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_14_re_e`=`vi_14_re_e`/`f_vi_14_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_15_re_e`=`vi_15_re_e`/`f_vi_15_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_16_re_e`=`vi_16_re_e`/`f_vi_16_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_17_re_e`=`vi_17_re_e`/`f_vi_17_re_e`;
+	UPDATE `estudiantes1` SET `pro_vi_18_re_e`=`vi_18_re_e`/`f_vi_18_re_e`;
+
+	# Sección VII
+	UPDATE `estudiantes1` SET `pro_vii_1_re_e`=`vii_1_re_e`/`f_vii_1_re_e`;
+
+
+	#-- Medias por pregunta
+	#-------------------------------
+	#   egen rowmean		       |
+	#-------------------------------
+
+	UPDATE `estudiantes1` SET `III_e` = (pro_iii_1_re_e + pro_iii_2_re_e + pro_iii_3_re_e + pro_iii_4_re_e 
+	 + pro_iii_5_re_e + pro_iii_6_re_e + pro_iii_7_re_e + pro_iii_8_re_e + pro_iii_9_re_e) / 9;
+
+	UPDATE `estudiantes1` SET `IV_e` = (pro_iv_1_re_e + pro_iv_2_re_e + pro_iv_3_re_e + pro_iv_4_re_e
+	 + pro_iv_5_re_e + pro_iv_6_re_e + pro_iv_7_re_e + pro_iv_8_re_e) / 8;
+
+	UPDATE `estudiantes1` SET `V_e` = (pro_v_1_re_e + pro_v_2_re_e + pro_v_3_re_e + pro_v_4_re_e
+	 + pro_v_5_re_e + pro_v_6_re_e + pro_v_7_re_e + pro_v_8_re_e + pro_v_9_re_e + pro_v_10_re_e
+	 + pro_v_11_a_re_e + pro_v_11_b_re_e + pro_v_11_c_re_e + pro_v_11_d_re_e + pro_v_12_re_e
+	 + pro_v_13_re_e + pro_v_14_re_e + pro_v_15_re_e) / 18;
+
+	UPDATE `estudiantes1` SET `VI_e` = (pro_vi_1_re_e + pro_vi_2_re_e + pro_vi_3_re_e + pro_vi_4_re_e
+	 + pro_vi_5_re_e + pro_vi_6_re_e + pro_vi_7_re_e + pro_vi_8_re_e + pro_vi_9_re_e + pro_vi_10_re_e
+	 + pro_vi_11_re_e + pro_vi_12_re_e + pro_vi_13_re_e + pro_vi_14_re_e + pro_vi_15_re_e + pro_vi_16_re_e
+	 + pro_vi_17_re_e + pro_vi_18_re_e) / 18;
+
+	UPDATE `estudiantes1` SET `VII_e` = (pro_vii_1_re_e) / 1;
+
+
 END //
 
 DELIMITER ;
