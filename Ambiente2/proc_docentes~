@@ -412,7 +412,7 @@ BEGIN
 	CREATE TABLE `egen_temp`
 	 (SELECT COUNT(`iv_11`) AS cuenta, `iv_11`, `dane` FROM `clone_docentes` GROUP BY `iv_11`, `dane`);
 	UPDATE `clone_docentes`, `egen_temp` 
-	 SET `clone_docentes`.`f_iv_10_re_d` = `egen_temp`.`cuenta`
+	 SET `clone_docentes`.`f_iv_11_re_d` = `egen_temp`.`cuenta`
 	 WHERE `clone_docentes`.`iv_11` = `egen_temp`.`iv_11` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
 	DROP TABLE `egen_temp`;
 
@@ -947,11 +947,25 @@ BEGIN
 	#   egen rowmean		       |
 	#-------------------------------
 
-	UPDATE `docentes1` SET `III_d` = rowmean(pro_iii_1_re_d + pro_iii_2_re_d + pro_iii_3_re_d
+	UPDATE `docentes1` SET `III_d` = (pro_iii_1_re_d + pro_iii_2_re_d + pro_iii_3_re_d
 	 + pro_iii_4_re_d + pro_iii_5_re_d + pro_iii_6_re_d + pro_iii_7_re_d + pro_iii_8_re_d + pro_iii_9_re_d
 	 + pro_iii_10_re_d + pro_iii_11_re_d + pro_iii_12_re_d + pro_iii_13_re_d + pro_iii_14_re_d
 	 + pro_iii_15_re_d + pro_iii_16_re_d + pro_iii_17_re_d + pro_iii_18_re_d + pro_iii_19_re_d
 	 + pro_iii_20_re_d + pro_iii_21_re_d + pro_iii_22_re_d + pro_iii_23_re_d) / 23;
+
+	UPDATE `docentes1` SET `IV_d` = (pro_iv_1_re_d + pro_iv_2_re_d + pro_iv_3_re_d + pro_iv_4_re_d
+	 + pro_iv_5_re_d + pro_iv_6_re_d + pro_iv_7_re_d + pro_iv_8_re_d + pro_iv_9_re_d + pro_iv_10_re_d
+	 + pro_iv_11_re_d + pro_iv_12_re_d + pro_iv_13_re_d + pro_iv_14_re_d) / 14;
+
+	UPDATE `docentes1` SET `V_d` = (pro_v_1_re_d + pro_v_2_re_d + pro_v_3_re_d + pro_v_4_re_d + pro_v_5_re_d
+	 + pro_v_6_re_d + pro_v_7_re_d + pro_v_8_re_d + pro_v_9_re_d + pro_v_10_re_d + pro_v_11_re_d
+	 + pro_v_12_re_d + pro_v_13_re_d + pro_v_14_re_d + pro_v_15_re_d) / 15;
+
+	UPDATE `docentes1` SET `VI_d` = (pro_vi_1_re_d + pro_vi_2_re_d + pro_vi_3_re_d + pro_vi_4_re_d
+	 + pro_vi_5_re_d + pro_vi_6_re_d + pro_vi_7_re_d + pro_vi_8_re_d + pro_vi_9_re_d + pro_vi_10_re_d
+	 + pro_vi_11_re_d + pro_vi_12_re_d + pro_vi_13_re_d) / 13;
+
+	UPDATE `docentes1` SET `VII_d` = (pro_vii_1_re_d + pro_vii_2_re_d) / 2;
 
 
 END //

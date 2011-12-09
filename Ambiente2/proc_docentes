@@ -17,6 +17,30 @@ BEGIN
 	#-- Reescalar las variables
 	
 	# Sección III
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_1`  `iii_1` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_2`  `iii_2` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_3`  `iii_3` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_4`  `iii_4` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_5`  `iii_5` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_6`  `iii_6` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_7`  `iii_7` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_8`  `iii_8` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_9`  `iii_9` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_10`  `iii_10` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_11`  `iii_11` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_12`  `iii_12` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_13`  `iii_13` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_14`  `iii_14` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_15`  `iii_15` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_16`  `iii_16` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_17`  `iii_17` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_18`  `iii_18` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_19`  `iii_19` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_20`  `iii_20` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_21`  `iii_21` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_22`  `iii_22` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iii_23`  `iii_23` DECIMAL(9, 6);
+
 	UPDATE `clone_docentes` SET `iii_1`=10/3*(`iii_1`-1);
 	UPDATE `clone_docentes` SET `iii_2`=10/3*(`iii_2`-1);
 	UPDATE `clone_docentes` SET `iii_3`=10/3*(`iii_3`-1);
@@ -280,6 +304,20 @@ BEGIN
 
 
 	# Sección IV
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_1`  `iv_1` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_2`  `iv_2` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_3`  `iv_3` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_4`  `iv_4` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_5`  `iv_5` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_6`  `iv_6` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_7`  `iv_7` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_8`  `iv_8` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_9`  `iv_9` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_10`  `iv_10` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_11`  `iv_11` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_12`  `iv_12` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_13`  `iv_13` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `iv_14`  `iv_14` DECIMAL(9, 6);
 
 	UPDATE `clone_docentes` SET `iv_1`=10/3*(`iv_1`-1);
 	UPDATE `clone_docentes` SET `iv_2`=10/3*(`iv_2`-1);
@@ -412,7 +450,7 @@ BEGIN
 	CREATE TABLE `egen_temp`
 	 (SELECT COUNT(`iv_11`) AS cuenta, `iv_11`, `dane` FROM `clone_docentes` GROUP BY `iv_11`, `dane`);
 	UPDATE `clone_docentes`, `egen_temp` 
-	 SET `clone_docentes`.`f_iv_10_re_d` = `egen_temp`.`cuenta`
+	 SET `clone_docentes`.`f_iv_11_re_d` = `egen_temp`.`cuenta`
 	 WHERE `clone_docentes`.`iv_11` = `egen_temp`.`iv_11` AND `clone_docentes`.`dane` = `egen_temp`.`dane`;
 	DROP TABLE `egen_temp`;
 
@@ -446,6 +484,21 @@ BEGIN
 
 
 	# Sección V
+	ALTER TABLE  `clone_docentes` CHANGE  `v_1`  `v_1` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_2`  `v_2` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_3`  `v_3` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_4`  `v_4` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_5`  `v_5` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_6`  `v_6` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_7`  `v_7` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_8`  `v_8` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_9`  `v_9` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_10`  `v_10` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_11`  `v_11` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_12`  `v_12` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_13`  `v_13` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_14`  `v_14` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `v_15`  `v_15` DECIMAL(9, 6);
 
 	UPDATE `clone_docentes` SET `v_1`=10/3*(`v_1`-1);
 	UPDATE `clone_docentes` SET `v_2`=10/3*(`v_2`-1);
@@ -623,6 +676,19 @@ BEGIN
 
 
 	# Sección VI
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_1`  `vi_1` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_2`  `vi_2` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_3`  `vi_3` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_4`  `vi_4` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_5`  `vi_5` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_6`  `vi_6` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_7`  `vi_7` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_8`  `vi_8` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_9`  `vi_9` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_10`  `vi_10` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_11`  `vi_11` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_12`  `vi_12` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vi_13`  `vi_13` DECIMAL(9, 6);
 
 	UPDATE `clone_docentes` SET `vi_1`=10/3*(`vi_1`-1);
 	UPDATE `clone_docentes` SET `vi_2`=10/3*(`vi_2`-1);
@@ -779,6 +845,8 @@ BEGIN
 
 
 	# Sección VII
+	ALTER TABLE  `clone_docentes` CHANGE  `vii_1`  `vii_1` DECIMAL(9, 6);
+	ALTER TABLE  `clone_docentes` CHANGE  `vii_2`  `vii_2` DECIMAL(9, 6);
 
 	UPDATE `clone_docentes` SET `vii_1`=10/3*(`vii_1`-1);
 	UPDATE `clone_docentes` SET `vii_2`=5/2*(`vii_2`-1);
