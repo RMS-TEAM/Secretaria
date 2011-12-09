@@ -324,7 +324,7 @@ BEGIN
 	 where a.dane = clone_docentes.dane and a.iv_12 = clone_docentes.iv_12 group by a.iv_12, a.dane);
 
 	# egen f_iv_13_re_d=count(iv_13), by(iv_13 dane)
-	update clone_docentes set f_iv_13re_d =
+	update clone_docentes set f_iv_13_re_d =
 	 (select count(iv_13) from(select dane, iv_13 from clone_docentes) as a 
 	 where a.dane = clone_docentes.dane and a.iv_13 = clone_docentes.iv_13 group by a.iv_13, a.dane);
 
@@ -569,7 +569,7 @@ BEGIN
 	# egen f_vi_11_re_d=count(vi_11), by(vi_11 dane)
 	update clone_docentes set f_vi_11_re_d =
 	 (select count(vi_11) from(select dane, vi_11 from clone_docentes) as a 
-	 where a.dane = clone_docentes.dane and a.vi_11 = clone_docentes.vi_11 group by a.vi_1, a.dane);
+	 where a.dane = clone_docentes.dane and a.vi_11 = clone_docentes.vi_11 group by a.vi_11, a.dane);
 
 	# egen f_vi_12_re_d=count(vi_12), by(vi_12 dane)
 	update clone_docentes set f_vi_12_re_d =
@@ -600,12 +600,14 @@ BEGIN
 	# egen f_vii_1_re_d=count(vii_1), by(vii_1 dane)
 	update clone_docentes set f_vii_1_re_d =
 	 (select count(vii_1) from(select dane, vii_1 from clone_docentes) as a 
-	 where a.dane = clone_docentes.dane and a.vii_1 = clone_docentes.vii_ group by a.vii_1, a.dane);
+	 where a.dane = clone_docentes.dane and a.vii_1 = clone_docentes.vii_1 group by a.vii_1, a.dane);
 
 	# egen f_vii_2_re_d=count(vii_2), by(vii_2 dane)
 	update clone_docentes set f_vii_2_re_d =
 	 (select count(vii_2) from(select dane, vii_2 from clone_docentes) as a 
 	 where a.dane = clone_docentes.dane and a.vii_2 = clone_docentes.vii_2 group by a.vii_2, a.dane);
+
+
 
 	#--------------------------------------------------------------
 	#   collapse (sum) $xlist_data (count) $xlist_frec, by(dane)  |
