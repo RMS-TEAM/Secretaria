@@ -320,17 +320,17 @@ BEGIN
 
 	#------------------------------------
 	#Alter table para los egen
-	ALTER TABLE `clone_padres` ADD `f_vi_1_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_2_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_3_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_4_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_5_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_6_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_7_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_8_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_9_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_10_re_e` INT;
-	ALTER TABLE `clone_padres` ADD `f_vi_11_re_e` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_1_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_2_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_3_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_4_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_5_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_6_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_7_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_8_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_9_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_10_re_p` INT;
+	ALTER TABLE `clone_padres` ADD `f_vi_11_re_p` INT;
 
 	# egen f_vi_1_re_p=count(vi_1), by(vi_1 dane)
 	update clone_padres set f_vi_1_re_p =

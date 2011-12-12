@@ -623,7 +623,7 @@ BEGIN
 
 	#-- Medias por pregunta
 	#-------------------------------
-	#   egen rowmean		       |
+	#   egen rowmean	       |
 	#-------------------------------
 
 	UPDATE `estudiantes1` SET `III_e` = (pro_iii_1_re_e + pro_iii_2_re_e + pro_iii_3_re_e + pro_iii_4_re_e 
