@@ -1,0 +1,27 @@
+DROP FUNCTION IF EXISTS rowmean;
+
+DELIMITER //
+CREATE FUNCTION rowmean (uno DECIMAL(8,5), dos DECIMAL(8,5), tres DECIMAL(8,5))
+    RETURNS DECIMAL(8,5)
+BEGIN
+	DECLARE numero DECIMAL(8,5);
+
+	IF `uno` IS NULL AND `dos` IS NULL THEN
+		SET numero = tres;
+	ELSEIF `uno` IS NULL AND `tres` IS NULL THEN
+		SET numero = dos;
+	ELSEIF `uno` IS NULL THEN 
+		SET numero = (dos + tres) / 2;
+	ELSEIF `dos` IS NULL AND `tres` IS NULL THEN 
+		SET numero = uno;
+	ELSEIF `dos` IS NULL THEN
+		SET numero = (uno + tres) / 2;
+	ELSEIF `tres` IS NULL THEN 
+		SET numero = (uno + dos) / 2;
+	ELSE
+		SET numero = (uno + dos + tres) / 3;
+	END IF;
+	RETURN numero;
+END //
+
+DELIMITER ;
