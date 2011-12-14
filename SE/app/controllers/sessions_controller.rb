@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
           user = User.authenticate(params[:session][:email],
                                                            params[:session][:password])
           if user.nil?
-                  flash.now[:error] = "Nada mono! email/password combination"
+                  flash.now[:error] = "Error! email/password combination"
                   @title = "Sing in"
                   render 'new'
           else
                   sing_in user
-                  redirect_to user_path(user)
+                  redirect_to root_path
           end
   end
 

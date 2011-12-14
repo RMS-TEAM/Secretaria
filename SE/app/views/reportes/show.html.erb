@@ -1,16 +1,22 @@
-<h1>Reporte <%=	@nombre.colegio.capitalize  %></h1>
-<p>Ingresar texto aqui (mateo)</p>
-<p>&nbsp;</p>
+<% if signed_in? %>
+    <h1>Reporte <%=	@nombre.ie.capitalize  %></h1>
+    <p>Ingresar texto aqui (mateo)</p>
+    <p>&nbsp;</p>
 
-<%=	@nombre.colegio.capitalize %>
-<%	 @colegio.each do |resul| %>
-<%=	resul.coddane  %>
-<%=	 resul.academic_exp_Total %>
-<%=	 resul.comunic_Total %>
-<%=	 resul.compro_Total %>
-<%=  resul.seg_resp_Total %>
-<%=  resul.ambiente_esc %>
-<%	 end %>
+    <%=	@nombre.ie.capitalize %>
+    <%	 @colegio.each do |resul| %>
+        <%=	resul.dane  %>
+        <%=	 resul.III_total %>
+        <%=	 resul.IV_total %>
+        <%=	 resul.V_total %>
+        <%=  resul.VI_total %>
+        <%=  resul.VII_total %>
+        <%=  resul.Ambi_escol %>
+    <%	 end %>
 
-<p>&nbsp;</p>
-<%=	 link_to "Volver", reportes_path    %>
+
+    <p>&nbsp;</p>
+    <%=	 link_to "Volver", reportes_path    %>
+<% else %>
+      <h1>Sorry</h1>
+<% end %>

@@ -9,5 +9,6 @@
                        <strong>Name </strong> <%= @user.nombre %><br/>
                        <strong>URL </strong> <%= link_to user_path(@user), @user %>
                </td>
+                <%=link_to 'editar', edit_user_path(current_user)%>
        </tr>
 </table>

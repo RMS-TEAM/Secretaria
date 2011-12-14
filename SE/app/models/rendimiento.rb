@@ -4,3 +4,4 @@ class Rendimiento < Db2
   set_table_name :'indicadores_y_bonus'
   set_primary_key :'dane'
 
+end
