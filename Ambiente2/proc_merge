@@ -115,7 +115,7 @@ BEGIN
 
 
 	DELETE FROM `merge`;
-	INSERT INTO `res11ii` (dane, iii_1_re_p, iii_2_re_p, iii_3_re_p, iii_4_re_p, iii_5_re_p, iii_6_re_p,
+	INSERT INTO `merge` (dane, iii_1_re_p, iii_2_re_p, iii_3_re_p, iii_4_re_p, iii_5_re_p, iii_6_re_p,
 	 iii_7_re_p, iii_8_re_p, iii_9_re_p, iv_1_re_p, iv_2_re_p, iv_3_re_p, iv_4_re_p, iv_5_re_p,
 	 iv_6_re_p, iv_7_re_p, iv_8_re_p, iv_9_re_p, iv_10_re_p, iv_11_re_p, iv_12_re_p, v_1_re_p, v_2_re_p,
 	 v_3_re_p, v_4_re_p, v_5_re_p, v_6_re_p, v_7_re_p, v_8_re_p, v_9_re_p, vi_1_re_p, vi_2_re_p, vi_3_re_p,
@@ -298,11 +298,12 @@ BEGIN
 	#   Aca va los ultimos egen rowmean |
 	#------------------------------------
 
-	UPDATE `merge` SET `III_total` = (`III_d` + `III_e` + `III_p`) / 3;
-	UPDATE `merge` SET `IV_total` = (`IV_d` + `IV_e` + `IV_p`) / 3;
-	UPDATE `merge` SET `V_total` = (`V_d` + `V_e` + `V_p`) / 3;
-	UPDATE `merge` SET `VI_total` = (`VI_d` + `VI_e` + `VI_p`) / 3;
-	UPDATE `merge` SET `VII_total` = (`VII_d` + `VII_e` + `VII_p`) / 3;
+	
+	UPDATE `merge` SET `III_total` = (SELECT func_rowmean(`III_d`, `III_e`, `III_p`));
+	UPDATE `merge` SET `IV_total` = (SELECT func_rowmean(`IV_d`, `IV_e`, `IV_p`));
+	UPDATE `merge` SET `V_total` = (SELECT func_rowmean(`V_d`, `V_e`, `V_p`));
+	UPDATE `merge` SET `VI_total` = (SELECT func_rowmean(`VI_d`, `VI_e`, `VI_p`));
+	UPDATE `merge` SET `VII_total` = (SELECT func_rowmean(`VII_d`, `VII_e`, `VII_p`));
 
 	UPDATE `merge` SET `Ambi_escol` = (`III_total` + `IV_total` + `V_total` + `VI_total`) / 4;
 	
