@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
           @user = User.new(params[:user])
           if @user.save
-                  sing_in @user
+                 # sing_in @user
                   flash[:success] = "Wellcome to the best WebApp ever! " + @user.nombre
                   redirect_to user_path(@user)
           else

@@ -18,7 +18,7 @@ module SessionsHelper
 
          def current_user_name
                  nombre = @current_user.nombre.split(' ')
-                 nombre[1].capitalize
+                 nombre[0].capitalize
 
          end
 
