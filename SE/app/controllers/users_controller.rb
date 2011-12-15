@@ -34,7 +34,12 @@ class UsersController < ApplicationController
   def update
   	@user = User.find(params[:id])
   	if @user.update_attributes(params[:user])
-  		redirect_to @user
+      redirect_to @user
+    elsif !@user.id.eql?(current_user.id)
+      #@user.update_attribute(:tipo => params[:tipo])
+      @title = "mateo gay"
+      @jasinto = @user.save
+
   	else
   		@title = "Edit User"
   		render 'edit'

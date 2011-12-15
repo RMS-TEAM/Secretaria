@@ -16,6 +16,12 @@ module SessionsHelper
                  !current_user.nil?
          end
 
+         def current_user_name
+                 nombre = @current_user.nombre.split(' ')
+                 nombre[1].capitalize
+
+         end
+
          def admin?
                  if current_user.tipo.eql? "administrador"
                    true
