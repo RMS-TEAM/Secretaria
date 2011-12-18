@@ -16,7 +16,7 @@ BEGIN
 	
 	INSERT INTO `indicadores_5_9` (dane, nombre)
 	 SELECT l.dane, l.nombre FROM  `tabla identificadores` l
-	 LEFT JOIN  `res_5_9` r ON l.dane = r.dane WHERE r.dane IS NULL 
+	 LEFT JOIN  `res_5_9` r ON l.dane = r.dane WHERE r.dane IS NULL; 
 END //
 
 DELIMITER ;
