@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+        @users = User.all
+
+  end
+
   def new
           @title = "Sing up"
           @user = User.new
@@ -12,7 +17,7 @@ class UsersController < ApplicationController
   def create
           @user = User.new(params[:user])
           if @user.save
-                  sing_in @user
+                 # sing_in @user
                   flash[:success] = "Wellcome to the best WebApp ever! " + @user.nombre
                   redirect_to user_path(@user)
           else
@@ -21,4 +26,23 @@ class UsersController < ApplicationController
           end
   end
 
+   def edit
+  	@user = User.find(params[:id])
+  	@title = "Edit User"
+  end
+
+  def update
+  	@user = User.find(params[:id])
+  	if @user.update_attributes(params[:user])
+      redirect_to @user
+    elsif !@user.id.eql?(current_user.id)
+      #@user.update_attribute(:tipo => params[:tipo])
+      @title = "mateo gay"
+      @jasinto = @user.save
+
+  	else
+  		@title = "Edit User"
+  		render 'edit'
+  	end
+  end
 end

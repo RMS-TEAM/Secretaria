@@ -1,6 +1,6 @@
 class ReportesController < ApplicationController
   def index
-      @colegios = Alumno.find(:all, :group => "colegio")
+      @colegios = Alumno.find(:all, :group => "ie")
 
       respond_to do |format|
       format.html              #/alumnos/index
@@ -9,7 +9,7 @@ class ReportesController < ApplicationController
   end
 
   def show
-    @colegio = Final.where("coddane = ?",params[:id])
+    @colegio = Final.where("dane = ?",params[:id])
     @nombre = Alumno.find(params[:id])
     @rendimientos = Rendimiento.find(params[:id])
      respond_to do |format|

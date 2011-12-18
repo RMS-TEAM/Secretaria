@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SE</title>
+  <title><%= title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -13,36 +13,39 @@
  <div id ="nav">
     <div class="name">
         <%= link_to(image_tag("FinalCal.png"),root_path) %>
-
     </div>
     <div class="bar">
              <ul>
+               <% if signed_in? %>
+                  <li><%=link_to current_user_name, current_user	  %></li>
+               <%end %>
                <li><%=link_to "Inicio","/pages/home" %></li>
                <li><%=link_to "Acerca de","#" %></li>
                <li><%=link_to "Participantes","/pages/participantes" %></li>
-               <li><%=link_to "Reportes", reportes_path %></li>
-               <% if signed_in? %>
-                                                <li><%= link_to "Sing out", singout_path %></li>
-                                        <% else %>
-                                                <li><%= link_to "Sing in", singin_path %></li>
-                                        <% end %>
-
+                <% if signed_in? %>
+                    <li><%=link_to "Reportes", reportes_path %></li>
+                <% end %>
+                <% if signed_in? %>
+                     <li><%= link_to "Sing out", singout_path %></li>
+                <% else %>
+                     <li><%= link_to "Sing in", singin_path %></li>
+                <% end %>
              </ul>
     </div>
  </div>
 </div>
 
-<div id = "content">
-	<%= yield %>
-</div>
+        <div id = "content">
+	        <%= yield %>
+        </div>
 
 
 
-<div id="images">
-     <%=link_to( image_tag("eafit.png"),"http://www.eafit.edu.co") %>
-     <%=link_to( image_tag("cice.png"),"http://www.eafit.edu.co/cice/Paginas/inicio.aspx") %>
-     <%=link_to( image_tag("alcaldia_medellin.png"),"http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://9b271f06d3c5df950aef538cad9f510f") %>
-</div>
+        <div id="images">
+         <%=link_to( image_tag("eafit.png"),"http://www.eafit.edu.co") %>
+         <%=link_to( image_tag("cice.png"),"http://www.eafit.edu.co/cice/Paginas/inicio.aspx") %>
+         <%=link_to( image_tag("alcaldia_medellin.png"),"http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://9b271f06d3c5df950aef538cad9f510f") %>
+        </div>
 
-</body>
+    </body>
 </html>

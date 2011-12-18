@@ -1,0 +1,66 @@
+<%if signed_in?  %>
+
+    <h1>Edit User</h1>
+    <%if current_user.id.eql?(@user.id)	 %>
+        <%= form_for(@user) do |f| %>
+
+            <div class="field">
+                 <%= f.label :nombre %> <br />
+                 <%= f.text_field :nombre %>
+            </div>
+            <div class="field">
+                <%= f.label :email %> <br />
+                <%= f.text_field :email %>
+            </div>
+            <div class="field">
+                <%= f.label :password %> <br />
+                <%= f.password_field :password %>
+            </div>
+            <div class="field">
+                <%= f.label :password_confirmation, "Confirmation" %> <br />
+                <%= f.password_field :password_confirmation %>
+            </div>
+            <div class="actions">
+                    <%= f.submit "Update" %> <br />
+            </div>
+
+        <%end%>
+    <% elsif admin? %>
+             <%= form_for(@user) do |f| %>
+
+          <div class="field">
+                 <% f.label :nombre %> <br />
+                 <% f.text_field :nombre %>
+            </div>
+            <div class="field">
+                <% f.label :email %> <br />
+                <% f.text_field :email %>
+            </div>
+            <div class="field">
+                <% f.label :password %> <br />
+                <% f.password_field :password %>
+            </div>
+            <div class="field">
+                <% f.label :password_confirmation, "Confirmation" %> <br />
+                <% f.password_field :password_confirmation %>
+            </div>
+
+            <div class="field">
+                <%= f.label :tipo %> <br />
+                <%= f.text_field :tipo %>
+            </div>
+
+            <div class="actions">
+                    <%= f.submit "Update" %> <br />
+            </div>
+
+        <%end%>
+    <%end%>
+
+
+<%else%>
+     <script type="text/javascript">
+          window.location = "/singin"
+
+    </script>
+<%end%>

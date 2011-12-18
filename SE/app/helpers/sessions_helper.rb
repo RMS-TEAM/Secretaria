@@ -1,5 +1,5 @@
 module SessionsHelper
-  def sing_in(user)
+         def sing_in(user)
                  cookies.permanent.signed[:remember_token] = [user.id, user.salt]
                  current_user = user
          end
@@ -14,6 +14,20 @@ module SessionsHelper
 
          def signed_in?
                  !current_user.nil?
+         end
+
+         def current_user_name
+                 nombre = @current_user.nombre.split(' ')
+                 nombre[0].capitalize
+
+         end
+
+         def admin?
+                 if current_user.tipo.eql? "administrador"
+                   true
+                 else
+                   false
+                 end
          end
 
          def sing_out

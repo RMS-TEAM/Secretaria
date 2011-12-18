@@ -1,0 +1,26 @@
+<%if admin?  %>
+
+<table border="1">
+
+  <tr>
+    <th>Nombre</th>
+    <th>e-mail</th>
+    <th>Tipo</th>
+  </tr>
+  <%	@users.each do |user|  %>
+     <tr>
+       <td><%=	user.nombre  %></td>
+       <td><%=	 user.email %></td>
+       <td><%=	 user.tipo %></td>
+       <td><%=	 link_to 'Editar', edit_user_path(user) %></td>
+
+     </tr>
+  <%end %>
+</table>
+
+<%else %>
+    <script type="text/javascript">
+          window.location = "/users/"+<%=current_user.id%>
+
+    </script>
+<%end%>
