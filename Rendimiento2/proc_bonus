@@ -1,0 +1,19 @@
+DROP PROCEDURE IF EXISTS proc_bonus;
+
+DELIMITER //
+CREATE PROCEDURE proc_bonus()
+BEGIN
+
+	DELETE FROM `bonus`;
+
+	INSERT INTO `bonus` (`dane`, `bonus_matematica11`, `bonus_lenguaje11`, `bonus_total11`,
+	 `bonus_matematica5`, `bonus_lenguaje5`, `bonus_total5`)
+	 SELECT `bonus11`.`dane`, `bonus_matematica11`, `bonus_lenguaje11`, `bonus_total11`, `bonus_matematica5`,
+	 `bonus_lenguaje5`, `bonus_total5`
+	 FROM  `bonus11` , `bonus5`
+	 WHERE `bonus11`.`dane` = `bonus5`.`dane`;
+	
+END //
+
+DELIMITER ;
+
