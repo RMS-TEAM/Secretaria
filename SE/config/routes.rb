@@ -9,6 +9,7 @@ SE::Application.routes.draw do
 
   get "pages/home"
 
+  match "users/edit_admin/:id" => "users#edit_admin"
 
   get "pages/antecedentes"
 

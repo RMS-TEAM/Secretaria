@@ -1,25 +1,34 @@
    <h1>Edit User</h1>
+       <%if current_user.admin? %>
+           <%= form_for(@user) do |f| %>
+               <%=   @user.nombre.capitalize  %>
+              <div class="field">
+                   <%= f.label :admin %> <br />
+                   <%= f.text_field :admin %>
+              </div>
+           <%end %>
 
-        <%= form_for(@user) do |f| %>
+       <% else %>
+             <%= form_for(@user) do |f| %>
 
-            <div class="field">
-                 <%= f.label :nombre %> <br />
-                 <%= f.text_field :nombre %>
-            </div>
-            <div class="field">
-                <%= f.label :email %> <br />
-                <%= f.text_field :email %>
-            </div>
-            <div class="field">
-                <%= f.label :password %> <br />
-                <%= f.password_field :password %>
-            </div>
-            <div class="field">
-                <%= f.label :password_confirmation, "Confirmation" %> <br />
-                <%= f.password_field :password_confirmation %>
-            </div>
-            <div class="actions">
-                    <%= f.submit "Update" %> <br />
-            </div>
-
-        <%end%>
+                <div class="field">
+                     <%= f.label :nombre %> <br />
+                    <%= f.text_field :nombre %>
+                </div>
+                <div class="field">
+                    <%= f.label :email %> <br />
+                    <%= f.text_field :email %>
+                </div>
+                <div class="field">
+                    <%= f.label :password %> <br />
+                    <%= f.password_field :password %>
+                </div>
+                <div class="field">
+                    <%= f.label :password_confirmation, "Confirmation" %> <br />
+                    <%= f.password_field :password_confirmation %>
+                </div>
+                <div class="actions">
+                        <%= f.submit "Update" %> <br />
+                </div>
+            <%end%>
+        <%end %>

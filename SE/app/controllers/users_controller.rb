@@ -2,7 +2,8 @@ class UsersController < ApplicationController
    before_filter :authenticate, :only => [:edit, :update, :destroy, :new]
    before_filter :correct_user, :only => [:edit, :update]
    before_filter :admin_user, :only => :destroy
-   before_filter :admin_access, :only => [:index]
+   before_filter :admin_access, :only => :index
+
   def index
         @users = User.all
 
@@ -33,12 +34,12 @@ class UsersController < ApplicationController
    def edit
   	@user = User.find(params[:id])
   	@title = "Edit User"
-  end
+   end
 
-  def update
+   def update
   	@user = User.find(params[:id])
   	if params[:nombre].blank? && params[:tipo] && admin?
-      @user.update_attribute(:tipo => params[:tipo])
+      @user.update_attribute(:admin => params[:admin])
       redirect_to users_path
     elsif @user.update_attributes(params[:user])
        redirect_to users_path
@@ -75,5 +76,7 @@ class UsersController < ApplicationController
   def admin_access
     redirect_to (current_user) if (!current_user.admin?)
   end
+
+
 end
 
