@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
                   render 'new'
           else
                   sing_in user
-                  redirect_to root_path
+                  redirect_to user
           end
   end
 

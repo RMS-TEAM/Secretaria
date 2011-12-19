@@ -9,8 +9,11 @@
                        <strong>Name </strong> <%= @user.nombre %><br/>
                        <strong>URL </strong> <%= link_to user_path(@user), @user %>
                </td>
-                <%=link_to 'editar', edit_user_path(current_user)%>
-         wefjwaen
-         <%= @rr %>
+                <%if current_user.id.eql? @user.id %>
+                    <%=link_to 'Editar', edit_user_path(current_user)%>
+                <% else %>
+                    <%=link_to 'Volver', users_path%>
+                <%end%>
+
        </tr>
 </table>

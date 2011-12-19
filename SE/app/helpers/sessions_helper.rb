@@ -12,6 +12,12 @@ module SessionsHelper
                  @current_user ||= user_from_remember_token
          end
 
+         	def deny_access
+
+		            flash[:notice] = "Please sign in!!"
+		            redirect_to singin_path
+           end
+
          def signed_in?
                  !current_user.nil?
          end
@@ -22,18 +28,15 @@ module SessionsHelper
 
          end
 
-         def admin?
-                 if current_user.tipo.eql? "administrador"
-                   true
-                 else
-                   false
-                 end
-         end
-
          def sing_out
                  cookies.delete(:remember_token)
                  self.current_user = nil
          end
+
+          def current_user?(user)
+		        user == current_user
+        	end
+
 
          private
 
