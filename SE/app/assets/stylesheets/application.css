@@ -124,3 +124,58 @@ body{
 
 }
 
+#images #participantes ul
+{
+    text-align:right;
+    margin:1em 150;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    clear: left;
+    width: 150px;
+    margin-left: 700px;
+    float: left;
+}
+
+#images #participantes ul li
+{
+    list-style-type: none;
+}
+
+#images #participantes .tituloP
+{
+    color: black;
+    font-size: 25px;
+}
+
+#images #barra
+{
+    width: 5px;
+    float: right;
+    padding-right: 30px;
+
+}
+#images  #barra_vertical{
+    float:right;
+    border-left: 2px solid #999999;
+    width: 1px;
+    height: 100px;
+    margin-top: 30px;
+    border-width: 1px;
+}
+
+#images #participantes ul li a:visited {
+	color: black;
+}
+
+#images #participantes ul li a:hover {
+	color: #036163;
+	text-decoration: underline;
+}
+
+#images #participantes a{
+	color: #036163;
+	text-decoration: none;
+}
+
+
+
