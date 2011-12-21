@@ -16,6 +16,14 @@ BEGIN
 	 `ProporcionEstrato6`
 	FROM `taprob` , `tabla identificadores`
 	WHERE `tabla identificadores`.`dane` = `taprob`.`dane`;
+	
+	INSERT INTO `res111` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
+	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
+	 `ProporcionEstrato5`, `ProporcionEstrato6`)
+	 SELECT l.`dane`, l.`nombre`, l.`nombre_sb11_10`, l.`nombre_sb11_07`, `ProporcionEstrato0`,
+	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
+	 `ProporcionEstrato5`, `ProporcionEstrato6` FROM  `tabla identificadores` l
+	 LEFT JOIN  `taprob` r ON l.dane = r.dane WHERE r.dane IS NULL; 
 
 END //
 

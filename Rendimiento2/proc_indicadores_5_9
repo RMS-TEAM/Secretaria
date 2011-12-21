@@ -4,7 +4,7 @@ DELIMITER //
 
 CREATE PROCEDURE proc_indicadores_5_9()
 BEGIN
-
+	# merge 1:1 drop == 1
 	DELETE FROM `indicadores_5_9`;
 
 	INSERT INTO `indicadores_5_9` (`dane`, `aprobacion5`, `aprobacion9`, `permed50len_5`,

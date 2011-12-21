@@ -1,0 +1,38 @@
+DROP PROCEDURE IF EXISTS proc_res11_07;
+
+DELIMITER //
+CREATE PROCEDURE proc_res11_07()
+BEGIN
+
+	# merge 1:1
+	DELETE FROM `res11_07`;
+	INSERT INTO `res11_07` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
+	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_matematica`, `tema_lenguaje`, `prmat_bajo_07`,
+	 `prmat_medio_07`, `prmat_alto_07`, `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`,
+	 `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`,
+	 `prlen_alto_07_p`)
+	 SELECT l.`dane`, l.`nombre`, l.`nombre_sb11_10`, l.`nombre_sb11_07`, l.`ProporcionEstrato0`,
+	 l.`ProporcionEstrato1`, l.`ProporcionEstrato2`, l.`ProporcionEstrato3`, l.`ProporcionEstrato4`,
+	 l.`ProporcionEstrato5`, l.`ProporcionEstrato6`, `tema_matematica`, `tema_lenguaje`, `prmat_bajo_07`,
+	 `prmat_medio_07`, `prmat_alto_07`, `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`,
+	 `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`,
+	 `prlen_alto_07_p`
+	 FROM `res211_07` l
+	 LEFT JOIN  `res311_07` r ON  l.`dane` = r.`dane`;
+
+	INSERT INTO `res11_07` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
+	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`,
+	 `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`,
+	 `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p`)
+	 SELECT `dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`,
+	 `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`,
+	 `ProporcionEstrato6`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`, `prlen_bajo_07`,
+	 `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`,
+	 `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p`
+	 FROM `res311_07` WHERE `dane` NOT IN (SELECT `dane` FROM `res211_07`);
+	
+END //
+
+DELIMITER ;

@@ -1,0 +1,16 @@
+DROP PROCEDURE IF EXISTS proc_indicadores;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_indicadores()
+BEGIN
+	# merge 1:1 drop ==1 | ==2
+	DELETE FROM `indicadores`;
+	INSERT INTO `indicadores` ()
+	SELECT *
+	 FROM  `indicadores_11` a, `indicadores_5_9` b
+	 WHERE a.dane = b.dane;
+
+END //
+
+DELIMITER ;
