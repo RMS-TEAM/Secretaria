@@ -3,7 +3,7 @@
 
 #### UDF
     para instalar las funciones MEDIAN y PERC en MySQL se deben instalar
-    udf_median.cc y udf_perc.cc
+    udf_median.cc y udf_perc.cc, teniendo en cuenta que esto fue corrido en Ubuntu 11.10
     1. Compilar los .cc 
        s@linux:˜> gcc -Wall -I /home/jansen/mysql-4.0.20/include -I
          /usr/local/include -c udf_median.cc -o udf_median.o
