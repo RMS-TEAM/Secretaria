@@ -14,13 +14,13 @@ BEGIN
 
 	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `cole_codigo_mcpio_d` INT(11);
 	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `cole_codigo_inst_d` INT(11);
-	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_lenguaje_d` DECIMAL(6,4);
-	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_matematica_d` DECIMAL(6,4);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_lenguaje_d` DECIMAL(8,5);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_matematica_d` DECIMAL(8,5);
 
 	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `cole_codigo_mcpio_d` = CONVERT(`cole_codigo_mcpio`, SIGNED);
 	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `cole_codigo_inst_d` = CONVERT(`cole_codigo_inst`, SIGNED);
-	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_lenguaje_d` = CONVERT(REPLACE(`tema_lenguaje`, ',', '.'), DECIMAL(6,4));
-	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_matematica_d` = CONVERT(REPLACE(`tema_matematica`, ',', '.'), DECIMAL(6,4));
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_lenguaje_d` = CONVERT(REPLACE(`tema_lenguaje`, ',', '.'), DECIMAL(8,5));
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_matematica_d` = CONVERT(REPLACE(`tema_matematica`, ',', '.'), DECIMAL(8,5));
 
 	#Collapse
 	DROP TABLE IF EXISTS `temp`;
@@ -77,33 +77,34 @@ BEGIN
 	DROP TABLE `temp1`;
 
 
-
-	# xtile cr_medlen11_1 = tema_lenguaje if p50_l11 ==1, nquantiles(100)
+	# xtile cr_medlen11_1 = tema_lenguaje_d if p50_l11 ==1, nquantiles(100)
 	DROP TABLE IF EXISTS xtile;
 	CREATE TABLE xtile
-	SELECT tema_lenguaje, 
-	 (SELECT COUNT(tema_lenguaje)+1 FROM temp2 b WHERE b.tema_lenguaje < t.tema_lenguaje AND b.p50_l11 = 1 
-	   AND tema_lenguaje IS NOT NULL) AS uno
-	FROM temp2 t WHERE p50_l11 = 1 AND tema_lenguaje IS NOT NULL
-	ORDER BY tema_lenguaje;
+	SELECT tema_lenguaje_d, 
+	 (SELECT COUNT(tema_lenguaje_d)+1 FROM temp2 b WHERE b.tema_lenguaje_d < t.tema_lenguaje_d
+	  AND b.p50_l11 = 1 AND tema_lenguaje_d IS NOT NULL) AS uno
+	FROM temp2 t WHERE p50_l11 = 1 AND tema_lenguaje_d IS NOT NULL
+	ORDER BY tema_lenguaje_d;
 	
 	ALTER TABLE temp2 ADD cr_medlen11_1 INT;
 	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp2, xtile SET cr_medlen11_1 = uno*100/total where temp2.tema_lenguaje = xtile.tema_lenguaje AND p50_l11 = 1;
+	UPDATE temp2, xtile SET cr_medlen11_1 = uno*100/total
+	 WHERE temp2.tema_lenguaje_d = xtile.tema_lenguaje_d AND p50_l11 = 1;
 	DROP TABLE xtile;
 
-	# xtile  cr_medlen11_2= tema_lenguaje if p50_l11 ==0, nquantiles (100)
+	# xtile cr_medlen11_2 = tema_lenguaje_d if p50_l11 ==0, nquantiles(100)
 	DROP TABLE IF EXISTS xtile;
 	CREATE TABLE xtile
-	SELECT tema_lenguaje, 
-	 (SELECT COUNT(tema_lenguaje)+1 FROM temp2 b WHERE b.tema_lenguaje < t.tema_lenguaje AND b.p50_l11 = 0 
-	   AND tema_lenguaje IS NOT NULL) AS uno
-	FROM temp2 t WHERE p50_l11 = 0 AND tema_lenguaje IS NOT NULL
-	ORDER BY tema_lenguaje;
+	SELECT tema_lenguaje_d, 
+	 (SELECT COUNT(tema_lenguaje_d)+1 FROM temp2 b WHERE b.tema_lenguaje_d < t.tema_lenguaje_d
+	  AND b.p50_l11 = 0 AND tema_lenguaje_d IS NOT NULL) AS uno
+	FROM temp2 t WHERE p50_l11 = 0 AND tema_lenguaje_d IS NOT NULL
+	ORDER BY tema_lenguaje_d;
 	
 	ALTER TABLE temp2 ADD cr_medlen11_2 INT;
 	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp2, xtile SET cr_medlen11_2 = uno*100/total where temp2.tema_lenguaje = xtile.tema_lenguaje AND p50_l11 = 0;
+	UPDATE temp2, xtile SET cr_medlen11_2 = uno*100/total
+	 WHERE temp2.tema_lenguaje_d = xtile.tema_lenguaje_d AND p50_l11 = 0;
 	DROP TABLE xtile;
 
 	# xtile cr_medlen11_3 = tema_lenguaje if p33_l11 ==1, nquantiles(100)
@@ -212,10 +213,12 @@ BEGIN
 	UPDATE temp2 SET permedmat33 = cr_medmat11_4 WHERE cr_medmat11_3 IS NULL;
 
 
-
+	# keep  dane nombre nombre_sb11_07 nombre_sb11_10 permed50len permed33len permed50mat permedmat33
 	DELETE FROM permedianocr11;
-	INSERT INTO permedianocr11 (cole_inst_nombre, permed50len, permed33len, permed50mat, permedmat33) 
-	 SELECT cole_inst_nombre, permed50len, permed33len, permed50mat, permedmat33 FROM temp2;
+	INSERT INTO permedianocr11 (dane, nombre, nombre_sb11_07, nombre_sb11_10, permed50len, permed33len,
+	 permed50mat, permedmat33) 
+	 SELECT dane, nombre, nombre_sb11_07, nombre_sb11_10, permed50len, permed33len, permed50mat,
+	 permedmat33 FROM temp2;
 
 	DROP TABLE temp2;
 

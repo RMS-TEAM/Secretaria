@@ -10,9 +10,6 @@ class User < ActiveRecord::Base
         attr_accessible :nombre, :email, :password, :password_confirmation, :tipo
 
 
-
-
-
    before_save :encrypt_password
 
        def has_password?(submitted_password)

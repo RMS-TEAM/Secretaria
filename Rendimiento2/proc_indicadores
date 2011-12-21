@@ -1,0 +1,38 @@
+DROP PROCEDURE IF EXISTS proc_indicadores;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_indicadores()
+BEGIN
+	# merge 1:1 drop ==1 | ==2
+	DELETE FROM `indicadores`;
+	INSERT INTO `indicadores` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
+	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_matematica`, `tema_lenguaje`, `prmat_bajo_07`,
+	 `prmat_medio_07`, `prmat_alto_07`, `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`,
+	 `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`,
+	 `prlen_alto_07_p`, `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`, `prmat_medio_10`,
+	 `prmat_alto_10`, `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`, `prmat_bajo_10_p`,
+	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`,
+	 `permed50len`, `permed33len`, `permed50mat`, `permedmat33`, `aprobacion11a`, `aprobacion11t`,
+	 `Extraedad`, `cole_codigo_mcpio_d`, `textra`, `rtextra`, `categoria_10`, `categoria_07`,
+	 `varcolegios11`, `aprobacion5`, `aprobacion9`, `permed50len_5`, `permedlen33_5`, `permed50len_9`,
+	 `permedlen33_9`, `permed50mat_5`, `permedmat33_5`, `permed50mat_9`, `permedmat33_9`)
+	SELECT a.`dane`, a.`nombre`, a.`nombre_sb11_10`, a.`nombre_sb11_07`, a.`ProporcionEstrato0`,
+	 a.`ProporcionEstrato1`, a.`ProporcionEstrato2`, a.`ProporcionEstrato3`, a.`ProporcionEstrato4`,
+	 a.`ProporcionEstrato5`, a.`ProporcionEstrato6`, `tema_matematica`, `tema_lenguaje`, `prmat_bajo_07`,
+	 `prmat_medio_07`, `prmat_alto_07`, `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`,
+	 `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`,
+	 `prlen_alto_07_p`, `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`, `prmat_medio_10`,
+	 `prmat_alto_10`, `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`, `prmat_bajo_10_p`,
+	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`,
+	 `permed50len`, `permed33len`, `permed50mat`, `permedmat33`, a.`aprobacion5`, a.`aprobacion9`,
+	 `aprobacion11a`, `aprobacion11t`, `Extraedad`, `cole_codigo_mcpio_d`, `textra`, `rtextra`,
+	 `categoria_10`, `categoria_07`, `varcolegios11`,  `permed50len_5`, `permedlen33_5`, `permed50len_9`,
+	 `permedlen33_9`, `permed50mat_5`, `permedmat33_5`, `permed50mat_9`, `permedmat33_9`
+	 FROM  `indicadores_11` a, `indicadores_5_9` b
+	 WHERE a.dane = b.dane;
+
+END //
+
+DELIMITER ;
