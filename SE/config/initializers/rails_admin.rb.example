@@ -1,0 +1,796 @@
+# RailsAdmin config file. Generated on December 19, 2011 21:42
+# See github.com/sferik/rails_admin for more informations
+
+RailsAdmin.config do |config|
+
+  # If your default_local is different from :en, uncomment the following 2 lines and set your default locale here:
+  # require 'i18n'
+  # I18n.default_locale = :de
+
+  config.current_user_method { current_user } # auto-generated
+
+  # Set the admin name here (optional second array element will appear in a beautiful RailsAdmin red ©)
+  config.main_app_name = ['Se', 'Admin']
+  # or for a dynamic name:
+  # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
+
+  #  ==> Authentication (before_filter)
+  # This is run inside the controller instance so you can setup any authentication you need to.
+  # By default, the authentication will run via warden if available.
+  # and will run on the default user scope.
+  # If you use devise, this will authenticate the same as authenticate_user!
+  # Example Devise admin
+  # RailsAdmin.config do |config|
+  #   config.authenticate_with do
+  #     authenticate_admin!
+  #   end
+  # end
+  # Example Custom Warden
+  # RailsAdmin.config do |config|
+  #   config.authenticate_with do
+  #     warden.authenticate! :scope => :paranoid
+  #   end
+  # end
+
+  #  ==> Authorization
+  # Use cancan https://github.com/ryanb/cancan for authorization:
+  # config.authorize_with :cancan
+
+  # Or use simple custom authorization rule:
+  # config.authorize_with do
+  #   redirect_to root_path unless warden.user.is_admin?
+  # end
+
+  # Use a specific role for ActiveModel's :attr_acessible :attr_protected
+  # Default is :default
+  # config.attr_accessible_role { :default }
+  # _current_user is accessible in the block if you need to make it user specific:
+  # config.attr_accessible_role { _current_user.role.to_sym }
+
+  #  ==> Global show view settings
+  # Display empty fields in show views
+  # config.compact_show_view = false
+
+  #  ==> Global list view settings
+  # Number of default rows per-page:
+  # config.default_items_per_page = 20
+
+  #  ==> Included models
+  # Add all excluded models here:
+  # config.excluded_models = [Alumno, Final, Rendimiento]
+
+  # Add models here if you want to go 'whitelist mode':
+  # config.included_models = [Alumno, Final, Rendimiento]
+
+  # Application wide tried label methods for models' instances
+  # config.label_methods << :description # Default is [:name, :title]
+
+  #  ==> Global models configuration
+  # config.models do
+  #   # Configuration here will affect all included models in all scopes, handle with care!
+  #
+  #   list do
+  #     # Configuration here will affect all included models in list sections (same for show, export, edit, update, create)
+  #
+  #     fields_of_type :date do
+  #       # Configuration here will affect all date fields, in the list section, for all included models. See README for a comprehensive type list.
+  #     end
+  #   end
+  # end
+  #
+  #  ==> Model specific configuration
+  # Keep in mind that *all* configuration blocks are optional.
+  # RailsAdmin will try his best to provide the best defaults for each section, for each field!
+  # Try to override as few things as possible, in the most generic way. Try to avoid setting labels for models and attributes, use ActiveRecord I18n API instead.
+  # Less code is better code!
+  # config.model MyModel do
+  #   # Here goes your cross-section field configuration for ModelName.
+  #   object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName
+  #   label 'My model'              # Name of ModelName (smartly defaults to ActiveRecord's I18n API)
+  #   label_plural 'My models'      # Same, plural
+  #   weight -1                     # Navigation priority. Bigger is higher.
+  #   parent OtherModel             # Set parent model for navigation. MyModel will be nested below. OtherModel will be on first position of the dropdown
+  #   navigation_label              # Sets dropdown entry's name in navigation. Only for parents!
+  #   # Section specific configuration:
+  #   list do
+  #     filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
+  #     items_per_page 100    # Override default_items_per_page
+  #     sort_by :id           # Sort column (default is primary key)
+  #     sort_reverse true     # Sort direction (default is true for primary key, last created first)
+  #     # Here goes the fields configuration for the list view
+  #   end
+  #   show do
+  #     # Here goes the fields configuration for the show view
+  #   end
+  #   export do
+  #     # Here goes the fields configuration for the export view (CSV, yaml, XML)
+  #   end
+  #   edit do
+  #     # Here goes the fields configuration for the edit view (for create and update view)
+  #   end
+  #   create do
+  #     # Here goes the fields configuration for the create view, overriding edit section settings
+  #   end
+  #   update do
+  #     # Here goes the fields configuration for the update view, overriding edit section settings
+  #   end
+  # end
+
+  # Your model's configuration, to help you get started:
+
+  # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible.
+  # There can be different reasons for that:
+  #  - belongs_to _id and _type (polymorphic) columns are hidden in favor of their associations
+  #  - associations are hidden if they have no matchable model found (model not included or non-existant)
+  #  - they are part of a bigger plan in a plugin (Devise/Paperclip) and hidden by contract
+  # Some fields may be hidden depending on the section, if they aren't deemed suitable for display or edition on that section
+  #  - non-editable columns (:id, :created_at, ..) in edit sections
+  #  - has_many/has_one associations in list section (hidden by default for performance reasons)
+  # Fields may also be marked as read_only (and thus not editable) if they are not mass-assignable by current_user
+
+  # config.model Alumno do
+  #   # Found associations:
+  #     configure :final, :belongs_to_association   #   # Found columns:
+  #     configure :creado, :string 
+  #     configure :codigo, :string 
+  #     configure :ie, :string 
+  #     configure :dane, :integer 
+  #     configure :cs, :integer 
+  #     configure :ii_1, :string 
+  #     configure :ii_2, :string 
+  #     configure :iii_1, :integer 
+  #     configure :iii_2, :integer 
+  #     configure :iii_3, :integer 
+  #     configure :iii_4, :integer 
+  #     configure :iii_5, :integer 
+  #     configure :iii_6, :integer 
+  #     configure :iii_7, :integer 
+  #     configure :iii_8, :integer 
+  #     configure :iii_9, :integer 
+  #     configure :iv_1, :integer 
+  #     configure :iv_2, :integer 
+  #     configure :iv_3, :integer 
+  #     configure :iv_4, :integer 
+  #     configure :iv_5, :integer 
+  #     configure :iv_6, :integer 
+  #     configure :iv_7, :integer 
+  #     configure :iv_8, :integer 
+  #     configure :iv_9, :integer 
+  #     configure :v_1, :integer 
+  #     configure :v_2, :integer 
+  #     configure :v_3, :integer 
+  #     configure :v_4, :integer 
+  #     configure :v_5, :integer 
+  #     configure :v_6, :integer 
+  #     configure :v_7, :integer 
+  #     configure :v_8, :integer 
+  #     configure :v_9, :integer 
+  #     configure :v_10, :integer 
+  #     configure :v_11_a, :integer 
+  #     configure :v_11_b, :integer 
+  #     configure :v_11_c, :integer 
+  #     configure :v_11_d, :integer 
+  #     configure :v_12, :integer 
+  #     configure :v_13, :integer 
+  #     configure :v_14, :integer 
+  #     configure :v_15, :integer 
+  #     configure :vi_1, :integer 
+  #     configure :vi_2, :integer 
+  #     configure :vi_3, :integer 
+  #     configure :vi_4, :integer 
+  #     configure :vi_5, :integer 
+  #     configure :vi_6, :integer 
+  #     configure :vi_7, :integer 
+  #     configure :vi_8, :integer 
+  #     configure :vi_9, :integer 
+  #     configure :vi_10, :integer 
+  #     configure :vi_11, :integer 
+  #     configure :vi_12, :integer 
+  #     configure :vi_13, :integer 
+  #     configure :vi_14, :integer 
+  #     configure :vi_15, :integer 
+  #     configure :vi_16, :integer 
+  #     configure :vi_17, :integer 
+  #     configure :vi_18, :integer 
+  #     configure :vii_1, :integer 
+  #     configure :tipodeelemento, :string   #   # Sections:
+  #   list do; end
+  #   export do; end
+  #   show do; end
+  #   edit do; end
+  #   create do; end
+  #   update do; end
+  # end
+  # config.model Final do
+  #   # Found associations:
+  #     configure :alumnos, :has_many_association   #   # Found columns:
+  #     configure :dane, :integer 
+  #     configure :iii_1_re_p, :decimal 
+  #     configure :iii_2_re_p, :decimal 
+  #     configure :iii_3_re_p, :decimal 
+  #     configure :iii_4_re_p, :decimal 
+  #     configure :iii_5_re_p, :decimal 
+  #     configure :iii_6_re_p, :decimal 
+  #     configure :iii_7_re_p, :decimal 
+  #     configure :iii_8_re_p, :decimal 
+  #     configure :iii_9_re_p, :decimal 
+  #     configure :iv_1_re_p, :decimal 
+  #     configure :iv_2_re_p, :decimal 
+  #     configure :iv_3_re_p, :decimal 
+  #     configure :iv_4_re_p, :decimal 
+  #     configure :iv_5_re_p, :decimal 
+  #     configure :iv_6_re_p, :decimal 
+  #     configure :iv_7_re_p, :decimal 
+  #     configure :iv_8_re_p, :decimal 
+  #     configure :iv_9_re_p, :decimal 
+  #     configure :iv_10_re_p, :decimal 
+  #     configure :iv_11_re_p, :decimal 
+  #     configure :iv_12_re_p, :decimal 
+  #     configure :v_1_re_p, :decimal 
+  #     configure :v_2_re_p, :decimal 
+  #     configure :v_3_re_p, :decimal 
+  #     configure :v_4_re_p, :decimal 
+  #     configure :v_5_re_p, :decimal 
+  #     configure :v_6_re_p, :decimal 
+  #     configure :v_7_re_p, :decimal 
+  #     configure :v_8_re_p, :decimal 
+  #     configure :v_9_re_p, :decimal 
+  #     configure :vi_1_re_p, :decimal 
+  #     configure :vi_2_re_p, :decimal 
+  #     configure :vi_3_re_p, :decimal 
+  #     configure :vi_4_re_p, :decimal 
+  #     configure :vi_5_re_p, :decimal 
+  #     configure :vi_6_re_p, :decimal 
+  #     configure :vi_7_re_p, :decimal 
+  #     configure :vi_8_re_p, :decimal 
+  #     configure :vi_9_re_p, :decimal 
+  #     configure :vi_10_re_p, :decimal 
+  #     configure :vi_11_re_p, :decimal 
+  #     configure :vii_1_re_p, :decimal 
+  #     configure :f_iii_1_re_p, :integer 
+  #     configure :f_iii_2_re_p, :integer 
+  #     configure :f_iii_3_re_p, :integer 
+  #     configure :f_iii_4_re_p, :integer 
+  #     configure :f_iii_5_re_p, :integer 
+  #     configure :f_iii_6_re_p, :integer 
+  #     configure :f_iii_7_re_p, :integer 
+  #     configure :f_iii_8_re_p, :integer 
+  #     configure :f_iii_9_re_p, :integer 
+  #     configure :f_iv_1_re_p, :integer 
+  #     configure :f_iv_2_re_p, :integer 
+  #     configure :f_iv_3_re_p, :integer 
+  #     configure :f_iv_4_re_p, :integer 
+  #     configure :f_iv_5_re_p, :integer 
+  #     configure :f_iv_6_re_p, :integer 
+  #     configure :f_iv_7_re_p, :integer 
+  #     configure :f_iv_8_re_p, :integer 
+  #     configure :f_iv_9_re_p, :integer 
+  #     configure :f_iv_10_re_p, :integer 
+  #     configure :f_iv_11_re_p, :integer 
+  #     configure :f_iv_12_re_p, :integer 
+  #     configure :f_v_1_re_p, :integer 
+  #     configure :f_v_2_re_p, :integer 
+  #     configure :f_v_3_re_p, :integer 
+  #     configure :f_v_4_re_p, :integer 
+  #     configure :f_v_5_re_p, :integer 
+  #     configure :f_v_6_re_p, :integer 
+  #     configure :f_v_7_re_p, :integer 
+  #     configure :f_v_8_re_p, :integer 
+  #     configure :f_v_9_re_p, :integer 
+  #     configure :f_vi_1_re_p, :integer 
+  #     configure :f_vi_2_re_p, :integer 
+  #     configure :f_vi_3_re_p, :integer 
+  #     configure :f_vi_4_re_p, :integer 
+  #     configure :f_vi_5_re_p, :integer 
+  #     configure :f_vi_6_re_p, :integer 
+  #     configure :f_vi_7_re_p, :integer 
+  #     configure :f_vi_8_re_p, :integer 
+  #     configure :f_vi_9_re_p, :integer 
+  #     configure :f_vi_10_re_p, :integer 
+  #     configure :f_vi_11_re_p, :integer 
+  #     configure :f_vii_1_re_p, :integer 
+  #     configure :pro_iii_1_re_p, :decimal 
+  #     configure :pro_iii_2_re_p, :decimal 
+  #     configure :pro_iii_3_re_p, :decimal 
+  #     configure :pro_iii_4_re_p, :decimal 
+  #     configure :pro_iii_5_re_p, :decimal 
+  #     configure :pro_iii_6_re_p, :decimal 
+  #     configure :pro_iii_7_re_p, :decimal 
+  #     configure :pro_iii_8_re_p, :decimal 
+  #     configure :pro_iii_9_re_p, :decimal 
+  #     configure :pro_iv_1_re_p, :decimal 
+  #     configure :pro_iv_2_re_p, :decimal 
+  #     configure :pro_iv_3_re_p, :decimal 
+  #     configure :pro_iv_4_re_p, :decimal 
+  #     configure :pro_iv_5_re_p, :decimal 
+  #     configure :pro_iv_6_re_p, :decimal 
+  #     configure :pro_iv_7_re_p, :decimal 
+  #     configure :pro_iv_8_re_p, :decimal 
+  #     configure :pro_iv_9_re_p, :decimal 
+  #     configure :pro_iv_10_re_p, :decimal 
+  #     configure :pro_iv_11_re_p, :decimal 
+  #     configure :pro_iv_12_re_p, :decimal 
+  #     configure :pro_v_1_re_p, :decimal 
+  #     configure :pro_v_2_re_p, :decimal 
+  #     configure :pro_v_3_re_p, :decimal 
+  #     configure :pro_v_4_re_p, :decimal 
+  #     configure :pro_v_5_re_p, :decimal 
+  #     configure :pro_v_6_re_p, :decimal 
+  #     configure :pro_v_7_re_p, :decimal 
+  #     configure :pro_v_8_re_p, :decimal 
+  #     configure :pro_v_9_re_p, :decimal 
+  #     configure :pro_vi_1_re_p, :decimal 
+  #     configure :pro_vi_2_re_p, :decimal 
+  #     configure :pro_vi_3_re_p, :decimal 
+  #     configure :pro_vi_4_re_p, :decimal 
+  #     configure :pro_vi_5_re_p, :decimal 
+  #     configure :pro_vi_6_re_p, :decimal 
+  #     configure :pro_vi_7_re_p, :decimal 
+  #     configure :pro_vi_8_re_p, :decimal 
+  #     configure :pro_vi_9_re_p, :decimal 
+  #     configure :pro_vi_10_re_p, :decimal 
+  #     configure :pro_vi_11_re_p, :decimal 
+  #     configure :pro_vii_1_re_p, :decimal 
+  #     configure :III_p, :decimal 
+  #     configure :IV_p, :decimal 
+  #     configure :V_p, :decimal 
+  #     configure :VI_p, :decimal 
+  #     configure :VII_p, :decimal 
+  #     configure :iii_1_re_d, :decimal 
+  #     configure :iii_2_re_d, :decimal 
+  #     configure :iii_3_re_d, :decimal 
+  #     configure :iii_4_re_d, :decimal 
+  #     configure :iii_5_re_d, :decimal 
+  #     configure :iii_6_re_d, :decimal 
+  #     configure :iii_7_re_d, :decimal 
+  #     configure :iii_8_re_d, :decimal 
+  #     configure :iii_9_re_d, :decimal 
+  #     configure :iii_10_re_d, :decimal 
+  #     configure :iii_11_re_d, :decimal 
+  #     configure :iii_12_re_d, :decimal 
+  #     configure :iii_13_re_d, :decimal 
+  #     configure :iii_14_re_d, :decimal 
+  #     configure :iii_15_re_d, :decimal 
+  #     configure :iii_16_re_d, :decimal 
+  #     configure :iii_17_re_d, :decimal 
+  #     configure :iii_18_re_d, :decimal 
+  #     configure :iii_19_re_d, :decimal 
+  #     configure :iii_20_re_d, :decimal 
+  #     configure :iii_21_re_d, :decimal 
+  #     configure :iii_22_re_d, :decimal 
+  #     configure :iii_23_re_d, :decimal 
+  #     configure :iv_1_re_d, :decimal 
+  #     configure :iv_2_re_d, :decimal 
+  #     configure :iv_3_re_d, :decimal 
+  #     configure :iv_4_re_d, :decimal 
+  #     configure :iv_5_re_d, :decimal 
+  #     configure :iv_6_re_d, :decimal 
+  #     configure :iv_7_re_d, :decimal 
+  #     configure :iv_8_re_d, :decimal 
+  #     configure :iv_9_re_d, :decimal 
+  #     configure :iv_10_re_d, :decimal 
+  #     configure :iv_11_re_d, :decimal 
+  #     configure :iv_12_re_d, :decimal 
+  #     configure :iv_13_re_d, :decimal 
+  #     configure :iv_14_re_d, :decimal 
+  #     configure :v_1_re_d, :decimal 
+  #     configure :v_2_re_d, :decimal 
+  #     configure :v_3_re_d, :decimal 
+  #     configure :v_4_re_d, :decimal 
+  #     configure :v_5_re_d, :decimal 
+  #     configure :v_6_re_d, :decimal 
+  #     configure :v_7_re_d, :decimal 
+  #     configure :v_8_re_d, :decimal 
+  #     configure :v_9_re_d, :decimal 
+  #     configure :v_10_re_d, :decimal 
+  #     configure :v_11_re_d, :decimal 
+  #     configure :v_12_re_d, :decimal 
+  #     configure :v_13_re_d, :decimal 
+  #     configure :v_14_re_d, :decimal 
+  #     configure :v_15_re_d, :decimal 
+  #     configure :vi_1_re_d, :decimal 
+  #     configure :vi_2_re_d, :decimal 
+  #     configure :vi_3_re_d, :decimal 
+  #     configure :vi_4_re_d, :decimal 
+  #     configure :vi_5_re_d, :decimal 
+  #     configure :vi_6_re_d, :decimal 
+  #     configure :vi_7_re_d, :decimal 
+  #     configure :vi_8_re_d, :decimal 
+  #     configure :vi_9_re_d, :decimal 
+  #     configure :vi_10_re_d, :decimal 
+  #     configure :vi_11_re_d, :decimal 
+  #     configure :vi_12_re_d, :decimal 
+  #     configure :vi_13_re_d, :decimal 
+  #     configure :vii_1_re_d, :decimal 
+  #     configure :vii_2_re_d, :decimal 
+  #     configure :f_iii_1_re_d, :integer 
+  #     configure :f_iii_2_re_d, :integer 
+  #     configure :f_iii_3_re_d, :integer 
+  #     configure :f_iii_4_re_d, :integer 
+  #     configure :f_iii_5_re_d, :integer 
+  #     configure :f_iii_6_re_d, :integer 
+  #     configure :f_iii_7_re_d, :integer 
+  #     configure :f_iii_8_re_d, :integer 
+  #     configure :f_iii_9_re_d, :integer 
+  #     configure :f_iii_10_re_d, :integer 
+  #     configure :f_iii_11_re_d, :integer 
+  #     configure :f_iii_12_re_d, :integer 
+  #     configure :f_iii_13_re_d, :integer 
+  #     configure :f_iii_14_re_d, :integer 
+  #     configure :f_iii_15_re_d, :integer 
+  #     configure :f_iii_16_re_d, :integer 
+  #     configure :f_iii_17_re_d, :integer 
+  #     configure :f_iii_18_re_d, :integer 
+  #     configure :f_iii_19_re_d, :integer 
+  #     configure :f_iii_20_re_d, :integer 
+  #     configure :f_iii_21_re_d, :integer 
+  #     configure :f_iii_22_re_d, :integer 
+  #     configure :f_iii_23_re_d, :integer 
+  #     configure :f_iv_1_re_d, :integer 
+  #     configure :f_iv_2_re_d, :integer 
+  #     configure :f_iv_3_re_d, :integer 
+  #     configure :f_iv_4_re_d, :integer 
+  #     configure :f_iv_5_re_d, :integer 
+  #     configure :f_iv_6_re_d, :integer 
+  #     configure :f_iv_7_re_d, :integer 
+  #     configure :f_iv_8_re_d, :integer 
+  #     configure :f_iv_9_re_d, :integer 
+  #     configure :f_iv_10_re_d, :integer 
+  #     configure :f_iv_11_re_d, :integer 
+  #     configure :f_iv_12_re_d, :integer 
+  #     configure :f_iv_13_re_d, :integer 
+  #     configure :f_iv_14_re_d, :integer 
+  #     configure :f_v_1_re_d, :integer 
+  #     configure :f_v_2_re_d, :integer 
+  #     configure :f_v_3_re_d, :integer 
+  #     configure :f_v_4_re_d, :integer 
+  #     configure :f_v_5_re_d, :integer 
+  #     configure :f_v_6_re_d, :integer 
+  #     configure :f_v_7_re_d, :integer 
+  #     configure :f_v_8_re_d, :integer 
+  #     configure :f_v_9_re_d, :integer 
+  #     configure :f_v_10_re_d, :integer 
+  #     configure :f_v_11_re_d, :integer 
+  #     configure :f_v_12_re_d, :integer 
+  #     configure :f_v_13_re_d, :integer 
+  #     configure :f_v_14_re_d, :integer 
+  #     configure :f_v_15_re_d, :integer 
+  #     configure :f_vi_1_re_d, :integer 
+  #     configure :f_vi_2_re_d, :integer 
+  #     configure :f_vi_3_re_d, :integer 
+  #     configure :f_vi_4_re_d, :integer 
+  #     configure :f_vi_5_re_d, :integer 
+  #     configure :f_vi_6_re_d, :integer 
+  #     configure :f_vi_7_re_d, :integer 
+  #     configure :f_vi_8_re_d, :integer 
+  #     configure :f_vi_9_re_d, :integer 
+  #     configure :f_vi_10_re_d, :integer 
+  #     configure :f_vi_11_re_d, :integer 
+  #     configure :f_vi_12_re_d, :integer 
+  #     configure :f_vi_13_re_d, :integer 
+  #     configure :f_vii_1_re_d, :integer 
+  #     configure :f_vii_2_re_d, :integer 
+  #     configure :pro_iii_1_re_d, :decimal 
+  #     configure :pro_iii_2_re_d, :decimal 
+  #     configure :pro_iii_3_re_d, :decimal 
+  #     configure :pro_iii_4_re_d, :decimal 
+  #     configure :pro_iii_5_re_d, :decimal 
+  #     configure :pro_iii_6_re_d, :decimal 
+  #     configure :pro_iii_7_re_d, :decimal 
+  #     configure :pro_iii_8_re_d, :decimal 
+  #     configure :pro_iii_9_re_d, :decimal 
+  #     configure :pro_iii_10_re_d, :decimal 
+  #     configure :pro_iii_11_re_d, :decimal 
+  #     configure :pro_iii_12_re_d, :decimal 
+  #     configure :pro_iii_13_re_d, :decimal 
+  #     configure :pro_iii_14_re_d, :decimal 
+  #     configure :pro_iii_15_re_d, :decimal 
+  #     configure :pro_iii_16_re_d, :decimal 
+  #     configure :pro_iii_17_re_d, :decimal 
+  #     configure :pro_iii_18_re_d, :decimal 
+  #     configure :pro_iii_19_re_d, :decimal 
+  #     configure :pro_iii_20_re_d, :decimal 
+  #     configure :pro_iii_21_re_d, :decimal 
+  #     configure :pro_iii_22_re_d, :decimal 
+  #     configure :pro_iii_23_re_d, :decimal 
+  #     configure :pro_iv_1_re_d, :decimal 
+  #     configure :pro_iv_2_re_d, :decimal 
+  #     configure :pro_iv_3_re_d, :decimal 
+  #     configure :pro_iv_4_re_d, :decimal 
+  #     configure :pro_iv_5_re_d, :decimal 
+  #     configure :pro_iv_6_re_d, :decimal 
+  #     configure :pro_iv_7_re_d, :decimal 
+  #     configure :pro_iv_8_re_d, :decimal 
+  #     configure :pro_iv_9_re_d, :decimal 
+  #     configure :pro_iv_10_re_d, :decimal 
+  #     configure :pro_iv_11_re_d, :decimal 
+  #     configure :pro_iv_12_re_d, :decimal 
+  #     configure :pro_iv_13_re_d, :decimal 
+  #     configure :pro_iv_14_re_d, :decimal 
+  #     configure :pro_v_1_re_d, :decimal 
+  #     configure :pro_v_2_re_d, :decimal 
+  #     configure :pro_v_3_re_d, :decimal 
+  #     configure :pro_v_4_re_d, :decimal 
+  #     configure :pro_v_5_re_d, :decimal 
+  #     configure :pro_v_6_re_d, :decimal 
+  #     configure :pro_v_7_re_d, :decimal 
+  #     configure :pro_v_8_re_d, :decimal 
+  #     configure :pro_v_9_re_d, :decimal 
+  #     configure :pro_v_10_re_d, :decimal 
+  #     configure :pro_v_11_re_d, :decimal 
+  #     configure :pro_v_12_re_d, :decimal 
+  #     configure :pro_v_13_re_d, :decimal 
+  #     configure :pro_v_14_re_d, :decimal 
+  #     configure :pro_v_15_re_d, :decimal 
+  #     configure :pro_vi_1_re_d, :decimal 
+  #     configure :pro_vi_2_re_d, :decimal 
+  #     configure :pro_vi_3_re_d, :decimal 
+  #     configure :pro_vi_4_re_d, :decimal 
+  #     configure :pro_vi_5_re_d, :decimal 
+  #     configure :pro_vi_6_re_d, :decimal 
+  #     configure :pro_vi_7_re_d, :decimal 
+  #     configure :pro_vi_8_re_d, :decimal 
+  #     configure :pro_vi_9_re_d, :decimal 
+  #     configure :pro_vi_10_re_d, :decimal 
+  #     configure :pro_vi_11_re_d, :decimal 
+  #     configure :pro_vi_12_re_d, :decimal 
+  #     configure :pro_vi_13_re_d, :decimal 
+  #     configure :pro_vii_1_re_d, :decimal 
+  #     configure :pro_vii_2_re_d, :decimal 
+  #     configure :III_d, :decimal 
+  #     configure :IV_d, :decimal 
+  #     configure :V_d, :decimal 
+  #     configure :VI_d, :decimal 
+  #     configure :VII_d, :decimal 
+  #     configure :iii_1_re_e, :decimal 
+  #     configure :iii_2_re_e, :decimal 
+  #     configure :iii_3_re_e, :decimal 
+  #     configure :iii_4_re_e, :decimal 
+  #     configure :iii_5_re_e, :decimal 
+  #     configure :iii_6_re_e, :decimal 
+  #     configure :iii_7_re_e, :decimal 
+  #     configure :iii_8_re_e, :decimal 
+  #     configure :iii_9_re_e, :decimal 
+  #     configure :iv_1_re_e, :decimal 
+  #     configure :iv_2_re_e, :decimal 
+  #     configure :iv_3_re_e, :decimal 
+  #     configure :iv_4_re_e, :decimal 
+  #     configure :iv_5_re_e, :decimal 
+  #     configure :iv_6_re_e, :decimal 
+  #     configure :iv_7_re_e, :decimal 
+  #     configure :iv_8_re_e, :decimal 
+  #     configure :iv_9_re_e, :decimal 
+  #     configure :v_1_re_e, :decimal 
+  #     configure :v_2_re_e, :decimal 
+  #     configure :v_3_re_e, :decimal 
+  #     configure :v_4_re_e, :decimal 
+  #     configure :v_5_re_e, :decimal 
+  #     configure :v_6_re_e, :decimal 
+  #     configure :v_7_re_e, :decimal 
+  #     configure :v_8_re_e, :decimal 
+  #     configure :v_9_re_e, :decimal 
+  #     configure :v_10_re_e, :decimal 
+  #     configure :v_11_a_re_e, :decimal 
+  #     configure :v_11_b_re_e, :decimal 
+  #     configure :v_11_c_re_e, :decimal 
+  #     configure :v_11_d_re_e, :decimal 
+  #     configure :v_12_re_e, :decimal 
+  #     configure :v_13_re_e, :decimal 
+  #     configure :v_14_re_e, :decimal 
+  #     configure :v_15_re_e, :decimal 
+  #     configure :vi_1_re_e, :decimal 
+  #     configure :vi_2_re_e, :decimal 
+  #     configure :vi_3_re_e, :decimal 
+  #     configure :vi_4_re_e, :decimal 
+  #     configure :vi_5_re_e, :decimal 
+  #     configure :vi_6_re_e, :decimal 
+  #     configure :vi_7_re_e, :decimal 
+  #     configure :vi_8_re_e, :decimal 
+  #     configure :vi_9_re_e, :decimal 
+  #     configure :vi_10_re_e, :decimal 
+  #     configure :vi_11_re_e, :decimal 
+  #     configure :vi_12_re_e, :decimal 
+  #     configure :vi_13_re_e, :decimal 
+  #     configure :vi_14_re_e, :decimal 
+  #     configure :vi_15_re_e, :decimal 
+  #     configure :vi_16_re_e, :decimal 
+  #     configure :vi_17_re_e, :decimal 
+  #     configure :vi_18_re_e, :decimal 
+  #     configure :vii_1_re_e, :decimal 
+  #     configure :f_iii_1_re_e, :integer 
+  #     configure :f_iii_2_re_e, :integer 
+  #     configure :f_iii_3_re_e, :integer 
+  #     configure :f_iii_4_re_e, :integer 
+  #     configure :f_iii_5_re_e, :integer 
+  #     configure :f_iii_6_re_e, :integer 
+  #     configure :f_iii_7_re_e, :integer 
+  #     configure :f_iii_8_re_e, :integer 
+  #     configure :f_iii_9_re_e, :integer 
+  #     configure :f_iv_1_re_e, :integer 
+  #     configure :f_iv_2_re_e, :integer 
+  #     configure :f_iv_3_re_e, :integer 
+  #     configure :f_iv_4_re_e, :integer 
+  #     configure :f_iv_5_re_e, :integer 
+  #     configure :f_iv_6_re_e, :integer 
+  #     configure :f_iv_7_re_e, :integer 
+  #     configure :f_iv_8_re_e, :integer 
+  #     configure :f_iv_9_re_e, :integer 
+  #     configure :f_v_1_re_e, :integer 
+  #     configure :f_v_2_re_e, :integer 
+  #     configure :f_v_3_re_e, :integer 
+  #     configure :f_v_4_re_e, :integer 
+  #     configure :f_v_5_re_e, :integer 
+  #     configure :f_v_6_re_e, :integer 
+  #     configure :f_v_7_re_e, :integer 
+  #     configure :f_v_8_re_e, :integer 
+  #     configure :f_v_9_re_e, :integer 
+  #     configure :f_v_10_re_e, :integer 
+  #     configure :f_v_11_a_re_e, :integer 
+  #     configure :f_v_11_b_re_e, :integer 
+  #     configure :f_v_11_c_re_e, :integer 
+  #     configure :f_v_11_d_re_e, :integer 
+  #     configure :f_v_12_re_e, :integer 
+  #     configure :f_v_13_re_e, :integer 
+  #     configure :f_v_14_re_e, :integer 
+  #     configure :f_v_15_re_e, :integer 
+  #     configure :f_vi_1_re_e, :integer 
+  #     configure :f_vi_2_re_e, :integer 
+  #     configure :f_vi_3_re_e, :integer 
+  #     configure :f_vi_4_re_e, :integer 
+  #     configure :f_vi_5_re_e, :integer 
+  #     configure :f_vi_6_re_e, :integer 
+  #     configure :f_vi_7_re_e, :integer 
+  #     configure :f_vi_8_re_e, :integer 
+  #     configure :f_vi_9_re_e, :integer 
+  #     configure :f_vi_10_re_e, :integer 
+  #     configure :f_vi_11_re_e, :integer 
+  #     configure :f_vi_12_re_e, :integer 
+  #     configure :f_vi_13_re_e, :integer 
+  #     configure :f_vi_14_re_e, :integer 
+  #     configure :f_vi_15_re_e, :integer 
+  #     configure :f_vi_16_re_e, :integer 
+  #     configure :f_vi_17_re_e, :integer 
+  #     configure :f_vi_18_re_e, :integer 
+  #     configure :f_vii_1_re_e, :integer 
+  #     configure :pro_iii_1_re_e, :decimal 
+  #     configure :pro_iii_2_re_e, :decimal 
+  #     configure :pro_iii_3_re_e, :decimal 
+  #     configure :pro_iii_4_re_e, :decimal 
+  #     configure :pro_iii_5_re_e, :decimal 
+  #     configure :pro_iii_6_re_e, :decimal 
+  #     configure :pro_iii_7_re_e, :decimal 
+  #     configure :pro_iii_8_re_e, :decimal 
+  #     configure :pro_iii_9_re_e, :decimal 
+  #     configure :pro_iv_1_re_e, :decimal 
+  #     configure :pro_iv_2_re_e, :decimal 
+  #     configure :pro_iv_3_re_e, :decimal 
+  #     configure :pro_iv_4_re_e, :decimal 
+  #     configure :pro_iv_5_re_e, :decimal 
+  #     configure :pro_iv_6_re_e, :decimal 
+  #     configure :pro_iv_7_re_e, :decimal 
+  #     configure :pro_iv_8_re_e, :decimal 
+  #     configure :pro_v_1_re_e, :decimal 
+  #     configure :pro_v_2_re_e, :decimal 
+  #     configure :pro_v_3_re_e, :decimal 
+  #     configure :pro_v_4_re_e, :decimal 
+  #     configure :pro_v_5_re_e, :decimal 
+  #     configure :pro_v_6_re_e, :decimal 
+  #     configure :pro_v_7_re_e, :decimal 
+  #     configure :pro_v_8_re_e, :decimal 
+  #     configure :pro_v_9_re_e, :decimal 
+  #     configure :pro_v_10_re_e, :decimal 
+  #     configure :pro_v_11_a_re_e, :decimal 
+  #     configure :pro_v_11_b_re_e, :decimal 
+  #     configure :pro_v_11_c_re_e, :decimal 
+  #     configure :pro_v_11_d_re_e, :decimal 
+  #     configure :pro_v_12_re_e, :decimal 
+  #     configure :pro_v_13_re_e, :decimal 
+  #     configure :pro_v_14_re_e, :decimal 
+  #     configure :pro_v_15_re_e, :decimal 
+  #     configure :pro_vi_1_re_e, :decimal 
+  #     configure :pro_vi_2_re_e, :decimal 
+  #     configure :pro_vi_3_re_e, :decimal 
+  #     configure :pro_vi_4_re_e, :decimal 
+  #     configure :pro_vi_5_re_e, :decimal 
+  #     configure :pro_vi_6_re_e, :decimal 
+  #     configure :pro_vi_7_re_e, :decimal 
+  #     configure :pro_vi_8_re_e, :decimal 
+  #     configure :pro_vi_9_re_e, :decimal 
+  #     configure :pro_vi_10_re_e, :decimal 
+  #     configure :pro_vi_11_re_e, :decimal 
+  #     configure :pro_vi_12_re_e, :decimal 
+  #     configure :pro_vi_13_re_e, :decimal 
+  #     configure :pro_vi_14_re_e, :decimal 
+  #     configure :pro_vi_15_re_e, :decimal 
+  #     configure :pro_vi_16_re_e, :decimal 
+  #     configure :pro_vi_17_re_e, :decimal 
+  #     configure :pro_vi_18_re_e, :decimal 
+  #     configure :pro_vii_1_re_e, :decimal 
+  #     configure :III_e, :decimal 
+  #     configure :IV_e, :decimal 
+  #     configure :V_e, :decimal 
+  #     configure :VI_e, :decimal 
+  #     configure :VII_e, :decimal 
+  #     configure :III_total, :decimal 
+  #     configure :IV_total, :decimal 
+  #     configure :V_total, :decimal 
+  #     configure :VI_total, :decimal 
+  #     configure :VII_total, :decimal 
+  #     configure :Ambi_escol, :decimal   #   # Sections:
+  #   list do; end
+  #   export do; end
+  #   show do; end
+  #   edit do; end
+  #   create do; end
+  #   update do; end
+  # end
+  # config.model Rendimiento do
+  #   # Found associations:
+  #   # Found columns:
+  #     configure :cole_inst_nombre, :string 
+  #     configure :dane, :integer 
+  #     configure :tema_matematica, :decimal 
+  #     configure :tema_lenguaje, :decimal 
+  #     configure :prmat_bajo_07, :decimal 
+  #     configure :prmat_medio_07, :decimal 
+  #     configure :prmat_alto_07, :decimal 
+  #     configure :prlen_bajo_07, :decimal 
+  #     configure :prlen_medio_07, :decimal 
+  #     configure :prlen_alto_07, :decimal 
+  #     configure :prmat_bajo_07_p, :decimal 
+  #     configure :prmat_medio_07_p, :decimal 
+  #     configure :prmat_alto_07_p, :decimal 
+  #     configure :prlen_bajo_07_p, :decimal 
+  #     configure :prlen_medio_07_p, :decimal 
+  #     configure :prlen_alto_07_p, :decimal 
+  #     configure :tema_lenguaje_d, :decimal 
+  #     configure :tema_matematica_d, :decimal 
+  #     configure :prmat_bajo_10, :decimal 
+  #     configure :prmat_medio_10, :decimal 
+  #     configure :prmat_alto_10, :decimal 
+  #     configure :prlen_bajo_10, :decimal 
+  #     configure :prlen_medio_10, :decimal 
+  #     configure :prlen_alto_10, :decimal 
+  #     configure :prmat_bajo_10_p, :decimal 
+  #     configure :prmat_medio_10_p, :decimal 
+  #     configure :prmat_alto_10_p, :decimal 
+  #     configure :prlen_bajo_10_p, :decimal 
+  #     configure :prlen_medio_10_p, :decimal 
+  #     configure :prlen_alto_10_p, :decimal 
+  #     configure :permed50len, :integer 
+  #     configure :permed33len, :integer 
+  #     configure :permed50mat, :integer 
+  #     configure :permedmat33, :integer 
+  #     configure :aprobacion5, :decimal 
+  #     configure :aprobacion9, :decimal 
+  #     configure :aprobacion11a, :decimal 
+  #     configure :aprobacion11t, :decimal 
+  #     configure :Extraedad, :integer 
+  #     configure :cole_codigo_mcpio_d, :integer 
+  #     configure :textra, :decimal 
+  #     configure :rtextra, :decimal 
+  #     configure :categoria_10, :integer 
+  #     configure :categoria_07, :integer 
+  #     configure :varcolegios11, :integer 
+  #     configure :permed50len_5, :integer 
+  #     configure :permedlen33_5, :integer 
+  #     configure :permed50len_9, :integer 
+  #     configure :permedlen33_9, :integer 
+  #     configure :permed50mat_5, :integer 
+  #     configure :permedmat33_5, :integer 
+  #     configure :permed50mat_9, :integer 
+  #     configure :permedmat33_9, :integer 
+  #     configure :bonus_matematica11, :integer 
+  #     configure :bonus_lenguaje11, :integer 
+  #     configure :bonus_total11, :integer 
+  #     configure :bonus_matematica5, :integer 
+  #     configure :bonus_lenguaje5, :integer 
+  #     configure :bonus_total5, :integer   #   # Sections:
+  #   list do; end
+  #   export do; end
+  #   show do; end
+  #   edit do; end
+  #   create do; end
+  #   update do; end
+  # end
+end

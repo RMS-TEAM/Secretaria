@@ -4,21 +4,25 @@ class UsersController < ApplicationController
    before_filter :admin_user, :only => :destroy
    before_filter :admin_access, :only => :index
 
+  # GET /users
   def index
-        @users = User.all
+        @users = Usuario.all
 
   end
 
+  # GET /users/new
   def new
-          @title = "Sing up"
+          @title = "Sing up" #/users/new
           @user = User.new
   end
 
+  # GET /users/1
   def show
-          @user = User.find(params[:id])
+          @user = User.find(params[:id]) #/users/1
           @title = @user.nombre
   end
 
+  # POST /users
   def create
           @user = User.new(params[:user])
           if @user.save
@@ -31,11 +35,13 @@ class UsersController < ApplicationController
           end
   end
 
+
+  # GET /companies/1/edit
    def edit
   	@user = User.find(params[:id])
   	@title = "Edit User"
    end
-
+   #PUT /users/1
    def update
   	@user = User.find(params[:id])
   	if params[:nombre].blank? && params[:tipo] && admin?
@@ -49,7 +55,7 @@ class UsersController < ApplicationController
   	end
   end
 
-
+  # DELETE /users/1
   def destroy
   	User.find(params[:id]).destroy
   	flash[:success] = "User destroyed."

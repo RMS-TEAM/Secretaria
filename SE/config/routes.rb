@@ -1,26 +1,18 @@
 SE::Application.routes.draw do
+
   get "sessions/new"
 
-  get "reportes/index"
-
-  get "reportes/show"
-
-  get "index/show"
-
   get "pages/home"
-
-  match "users/edit_admin/:id" => "users#edit_admin"
 
   get "pages/antecedentes"
 
   get "pages/participantes"
-  #get "alumnos/index"
-  #get "alumnos/show"
-  get "rendimientos/index"
+
   resources :alumnos
   resources :final
   resources :reportes
   resources :users
+  resources :administrators
   resources :sessions, :only => [:new, :create, :destroy]
 
 
