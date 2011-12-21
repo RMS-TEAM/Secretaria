@@ -1,0 +1,25 @@
+DROP PROCEDURE IF EXISTS proc_res211_10;
+
+DELIMITER //
+CREATE PROCEDURE proc_res211_10()
+BEGIN
+
+	DELETE FROM `res211_10`;
+
+	INSERT INTO `res211_10` (`cole_inst_nombre`, `dane`, `tema_matematica_d`, `tema_lenguaje_d`)
+	 SELECT `nombrescolegiosicfes_11`.`cole_inst_nombre`, `dane`, `tema_matematica_d`, `tema_lenguaje_d` 
+	 FROM `nombrescolegiosicfes_11`, `mediana11_10`
+	 WHERE `nombrescolegiosicfes_11`.`cole_inst_nombre` = `mediana11_10`.`cole_inst_nombre`;
+	
+	INSERT INTO `res211_10` (`cole_inst_nombre`, `tema_matematica_d`, `tema_lenguaje_d`)
+	 SELECT `cole_inst_nombre`, `tema_matematica_d`, `tema_lenguaje_d` FROM `mediana11_10`
+	 WHERE `cole_inst_nombre` NOT IN (SELECT `cole_inst_nombre` FROM `nombrescolegiosicfes_11`);
+
+END //
+
+DELIMITER ;
+
+
+
+
+
