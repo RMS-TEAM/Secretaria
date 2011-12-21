@@ -21,7 +21,7 @@ BEGIN
 	 FROM `res211_07` l
 	 LEFT JOIN  `res311_07` r ON  l.`dane` = r.`dane`;
 
-	INSERT INTO `res11_07` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
+	INSERT INTO `res11` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
 	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
 	 `ProporcionEstrato5`, `ProporcionEstrato6`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`,
 	 `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`,
@@ -31,7 +31,8 @@ BEGIN
 	 `ProporcionEstrato6`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`, `prlen_bajo_07`,
 	 `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`,
 	 `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p`
-	 FROM `res311_07` WHERE `dane` NOT IN (SELECT `dane` FROM `res211_07`);
+	 FROM `res311_07`
+	WHERE `dane` NOT IN (SELECT `dane` FROM `res211_07`);
 	
 END //
 
