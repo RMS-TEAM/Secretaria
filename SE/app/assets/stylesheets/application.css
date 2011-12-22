@@ -134,19 +134,36 @@ body{
     width: 150px;
     margin-left: 700px;
     float: left;
+    text-align: left;
+}
+
+#images #contactenos ul li
+{
+    list-style-type: none;
+
 }
 
 #images #participantes ul li
 {
     list-style-type: none;
+
+}
+
+#images #participantes .abajo
+{
+    padding-top: 5px;
+
 }
 
 #images #participantes .tituloP
 {
     color: black;
-    font-size: 25px;
+    font-size: 23px;
+    border-bottom: 1px #989 dotted;
+    padding-bottom: 5px;
 }
 
+/*
 #images #barra
 {
     width: 5px;
@@ -161,7 +178,10 @@ body{
     height: 100px;
     margin-top: 30px;
     border-width: 1px;
+    background-color: gray;
+
 }
+*/
 
 #images #participantes ul li a:visited {
 	color: black;
@@ -175,6 +195,13 @@ body{
 #images #participantes a{
 	color: #036163;
 	text-decoration: none;
+}
+
+#by {
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    display: block
 }
 
 
