@@ -8,10 +8,10 @@
 
 #### Documentos
 	Aquí se encuentran todos los documentos que fueron realizados en el proyecto, tales como:
-		##### Casos de uso
-		##### Manual de usuario
-		##### Manual de administrador
-		##### Entre otros
+		 Casos de uso
+		 Manual de usuario
+		 Manual de administrador
+		 Entre otros
 		
 
 #Autores
