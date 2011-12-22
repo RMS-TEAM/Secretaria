@@ -21,10 +21,6 @@
                <%end %>
                <li><%=link_to "Inicio","/pages/home" %></li>
 
-               <!-- Esto va en el footer -->
-               <li><%=link_to "Acerca de","#" %></li>
-               <!-- Fin del footer-->
-
                <% if signed_in? %>
                     <li><%=link_to "Reportes", reportes_path %></li>
                 <% end %>
@@ -47,8 +43,9 @@
                 <ul>
                     <li class="tituloP"><%=link_to "Alianzas","/pages/participantes" %></li>
                     <li class="abajo"><%=link_to "Universidad EAFIT", "http://www.eafit.edu.co" %></li>
-                    <li><%=link_to "Alcaldia de Medellin", "http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://9b271f06d3c5df950aef538cad9f510f" %></li>
-                    <li><%=link_to "CICE", "http://www.eafit.edu.co/cice/Paginas/inicio.aspx" %></li>
+                    <li class="medio"><%=link_to "Alcaldia de Medellin", "http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://9b271f06d3c5df950aef538cad9f510f" %></li>
+                    <li class="last"><%=link_to "CICE", "http://www.eafit.edu.co/cice/Paginas/inicio.aspx" %></li>
+                    <li><%=link_to "Acerca de","#"%></li>
                 </ul>
             </div>
             <!--
@@ -57,11 +54,7 @@
             </div>
             -->
 
-            <div id="contactenos">
-              <ul>
-                   <li>oelo</li>
-              </ul>
-            </div>
+
             <div class="ajustar"></div>
         </div>
 

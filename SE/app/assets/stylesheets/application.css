@@ -152,7 +152,16 @@ body{
 #images #participantes .abajo
 {
     padding-top: 5px;
+    border-left: 1px #989 dotted;
+    border-right: 1px #989 dotted;
 
+}
+
+#images #participantes .last
+{
+    border-bottom: 1px #989 dotted;
+    border-left: 1px #989 dotted;
+    border-right: 1px #989 dotted;
 }
 
 #images #participantes .tituloP
@@ -161,6 +170,12 @@ body{
     font-size: 23px;
     border-bottom: 1px #989 dotted;
     padding-bottom: 5px;
+}
+
+#images #participantes .medio
+{
+    border-left: 1px #989 dotted;
+    border-right: 1px #989 dotted;
 }
 
 /*
