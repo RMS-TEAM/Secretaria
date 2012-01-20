@@ -1,19 +1,23 @@
  <table class="profile" summary="Profile information">
        <tr>
                <td class="main">
+                       <h1>Perfil</h1>
+
                        <h1>
                                <%= @user.nombre %>
                        </h1>
                </td>
                <td class="sidebar round">
-                       <strong>Name </strong> <%= @user.nombre %><br/>
-                       <strong>URL </strong> <%= link_to user_path(@user), @user %>
+                       <p >Nombre </p> <%= @user.nombre %><br/>
+                       <strong>e-mail </strong> <%= @user.email %>
                </td>
                 <%if current_user.id.eql? @user.id %>
                     <%=link_to 'Editar', edit_user_path(current_user)%>
                 <% else %>
                     <%=link_to 'Volver', users_path%>
                 <%end%>
-
+                <% if current_user.admin? %>
+                    <%= link_to "Administrar", administrators_path  %>
+                <%end%>
        </tr>
 </table>
