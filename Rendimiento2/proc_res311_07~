@@ -1,0 +1,20 @@
+DROP PROCEDURE IF EXISTS proc_res311_07;
+
+DELIMITER //
+CREATE PROCEDURE proc_res311_07()
+BEGIN
+
+	DELETE FROM `res311_07`;
+
+	INSERT INTO `res311_07` (`cole_inst_nombre`, `dane`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`, `prlen_bajo_07`, 
+	 `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`, `prlen_bajo_07_p`, 
+	 `prlen_medio_07_p`, `prlen_alto_07_p`)
+	 SELECT `nombrescolegiosicfes_11`.`cole_inst_nombre`, `dane`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`,
+	 `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`, 
+	 `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p` 
+	 FROM `nombrescolegiosicfes_11` LEFT JOIN `pr_estudiantes_07` 
+	 ON `nombrescolegiosicfes_11`.`cole_inst_nombre` = `pr_estudiantes_07`.`cole_inst_nombre`;
+
+END //
+
+DELIMITER ;

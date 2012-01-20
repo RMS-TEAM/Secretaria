@@ -1,18 +1,167 @@
 <% if signed_in? %>
-    <h1>Reporte <%=	@nombre.ie.capitalize  %></h1>
-    <p>Ingresar texto aqui (mateo)</p>
-    <p>&nbsp;</p>
-
-    <%=	@nombre.ie.capitalize %>
-    <%	 @colegio.each do |resul| %>
-        <%=	resul.dane  %>
-        <%=	 resul.III_total %>
-        <%=	 resul.IV_total %>
-        <%=	 resul.V_total %>
-        <%=  resul.VI_total %>
-        <%=  resul.VII_total %>
-        <%=  resul.Ambi_escol %>
-    <%	 end %>
+ <div id="big">
+        <div id="titulo">
+            <div id="tituloNombres">
+                <uno>Secretaria de Educacion de Medellin</uno>
+                <uno style="margin-left: 460px;">Reporte de progreso</uno>
+            </div>
+        </div>
+        <div id="col1">
+                <h3>Como los puntajes se transforman en calificaciones?</h3>
+                Las IE reciben un reporte basado en su puntaje total.<br />
+                IE con un puntaje entre X y XX reciben una E.<br />
+                W% de las IE consiguio una E en 2011-1.<br /><br /><br />
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th>Calificacion</th>
+                                <th>Puntajes y rango</th>
+                                <th>Situacion de la ciudad</th>
+                        </tr>
+                        <tr>
+                                <td>A</td>
+                                <td>0-20</td>
+                                <td>X% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>B</td>
+                                <td>20-40</td>
+                                <td>XX% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>C</td>
+                                <td>40-60</td>
+                                <td>XXX% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>D</td>
+                                <td>60-80</td>
+                                <td>XXXX% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>E</td>
+                                <td>80-100</td>
+                                <td>XXXXX% de las IE</td>
+                        </tr>
+                </table>
+        </div>
+        <div id="col2">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th style="background: #516c75; color: white;">Este reporte es para:</th>
+                        </tr>
+                        <tr>
+                                <td> <% current_ie_name.each do |name|  %>
+                                      <%= name.capitalize %>
+                                      <%end %>
+                                      .</td>
+                        </tr>
+                        <tr>
+                                <td>Rector: Alberto Jose</td>
+                        </tr>
+                        <tr>
+                                <td>Zona: ...</td>
+                        </tr>
+                        <tr>
+                                <td>Indice de pares: 000*e-10</td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table style="width: 100%; "  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th style="width: 20%;">Calificacion del avance</th>
+                                <th style="width: 40%;">Que significa esta calificacion?</th>
+                                <th style="width: 40%;">Como fue el rendimiento de esta institucion?</th>
+                        </tr>
+                        <tr>
+                                <td style="font-size:90px;font-weight:bold;text-align: center;">E</td>
+                                <td class="size">La calificación es asignada según su correspondencia con
+                                  el puntaje obtenido en el indicador multidimensional según
+                                  las siguientes categorías y ponderaciones: (INCLUIRLAS).
+                                  Los bonos serán entregados a los colegios y profesores en
+                                  los colegios en los niveles más altos; los colegios con
+                                  menores calificaciones enfrentarán sanciones del tipo (…).</td>
+                                <td class="size"><p>El puntaje de esta IE para el 2011 fue de 000*e-10.</p>
+                                  <p>Esta IE lo hizo mejor que el X% de todas las IE de la ciudad.</p>
+</td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th>Categoria</th>
+                                <th>Puntaje</th>
+                                <th>Calificacion</th>
+                        </tr>
+                        <tr>
+                                <td>Ambiente Escolar</td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Rendimiento</td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Progreso</td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Bonificacion</td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Puntaje Total</td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <td style="background: #516c75;color:white;padding-left:15px;">En este reporte:</td>
+                        </tr>
+                        <tr>
+                                <td class="size">Se mide el avance de la Institución Educativa año a año,
+                                  se compara este avance con el de Instituciones pares y se
+                                  asignan bonificaciones por el éxito de la Institución en
+                                  promover el logro académico, especialmente entre los
+                                  estudiantes con mayores necesidades. Para esto el reporte
+                                  mide el resultado en cuatro áreas:
+</td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Ambiente Escolar:  </b> usa los resultados de las
+                                  encuestas a padres, docentes y estudiantes para medir
+                                  las condiciones necesarias de aprendizaje: expectativas
+                                  académicas, comunicación, nivel de compromiso, seguridad
+                                  y respecto</td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Rendimiento: </b> mide los niveles alcanzados por
+                                  los estudiantes de la Institución en pruebas estandarizadas
+                                  de lenguaje y matemáticas: Saber 11, Saber 9 y Saber 5.</td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Progreso: </b> miden el progreso de la Institución
+                                  en percentiles de acuerdo a los resultados de pruebas
+                                  estandarizadas de lenguaje y matemáticas: Saber 11,
+                                  Saber 9 y Saber 5.</td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Bonificacion: </b> puntaje adicional a las Instituciones
+                                  Educativas por ganancias en el logro académico, especialmente
+                                  de los estudiantes con mayores necesidades (según el estrato),
+                                  medidas a través de los resultados de las Olimpiadas del Conocimiento.</td>
+                        </tr>
+                </table>
+        </div>
+</div>
 
 
     <p>&nbsp;</p>

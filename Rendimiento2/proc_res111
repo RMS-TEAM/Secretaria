@@ -4,7 +4,7 @@ DELIMITER //
 
 CREATE PROCEDURE proc_res111()
 BEGIN
-
+	# merge 1:1 drop ==2
 	DELETE FROM `res111`;
 	INSERT INTO `res111` (`dane`, `aprobacion5`, `aprobacion9`, `aprobacion11a`, `aprobacion11t`,
 	 `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`,

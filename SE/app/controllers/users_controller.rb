@@ -1,59 +1,33 @@
 class UsersController < ApplicationController
-   before_filter :authenticate, :only => [:edit, :update, :destroy, :new]
+   before_filter :authenticate, :only => [:edit, :update]
    before_filter :correct_user, :only => [:edit, :update]
-   before_filter :admin_user, :only => :destroy
+   #before_filter :admin_user, :only => :destroy
    before_filter :admin_access, :only => :index
 
-  def index
-        @users = User.all
-
-  end
-
-  def new
-          @title = "Sing up"
-          @user = User.new
-  end
-
+  # GET /users/1
   def show
-          @user = User.find(params[:id])
+          @user = User.find(params[:id]) #/users/1
           @title = @user.nombre
   end
 
-  def create
-          @user = User.new(params[:user])
-          if @user.save
-                 # sing_in @user
-                  flash[:success] = "Wellcome to the best WebApp ever! " + @user.nombre
-                  redirect_to user_path(@user)
-          else
-                  @title = "Sing up"
-                  render 'new'
-          end
-  end
-
+  # GET /companies/1/edit
    def edit
   	@user = User.find(params[:id])
   	@title = "Edit User"
    end
-
+   #PUT /users/1
    def update
-  	@user = User.find(params[:id])
-  	if params[:nombre].blank? && params[:tipo] && admin?
+    @user = User.find(params[:id])
+
+    if params[:nombre].blank? && params[:tipo] && admin?
       @user.update_attribute(:admin => params[:admin])
-      redirect_to users_path
+      redirect_to user_path
     elsif @user.update_attributes(params[:user])
-       redirect_to users_path
+       redirect_to root_path
   	else
   		@title = "Edit User"
   		render 'edit'
   	end
-  end
-
-
-  def destroy
-  	User.find(params[:id]).destroy
-  	flash[:success] = "User destroyed."
-  	redirect_to users_path
   end
 
   private

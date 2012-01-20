@@ -18,3 +18,57 @@
 	font-weight: bold;
 }
 
+.contenido p{
+    text-align: justify;
+    font-family: arial;
+
+    padding-left: 20px;
+}
+
+#big{
+        max-width: 1000px;
+        margin-left:auto;
+        margin-right:auto;
+}
+
+#content .size{
+        font-size: 13px;
+        text-align: justify;
+
+}
+
+td{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#titulo{
+        background: #516c75;
+        padding: 4px;
+        color: white;
+        padding-left:15px;
+}
+#tituloNombres{
+    text-decoration: none;
+    display:inline-block;
+}
+#col1{
+        width: 40%;
+}
+#col2{
+        float: right;
+        width: 50%;
+
+}
+#col1, #col2{
+        padding: 10px;
+        padding-bottom: 30px;
+        display:inline-block;
+        vertical-align: top;
+        font-size: 13px;
+}
+
+#content .tablas{
+        padding: 10px;
+
+}

@@ -3,7 +3,7 @@ DROP PROCEDURE IF EXISTS proc_bonus;
 DELIMITER //
 CREATE PROCEDURE proc_bonus()
 BEGIN
-
+	# merge 1:1
 	DELETE FROM `bonus`;
 
 	INSERT INTO `bonus` (`dane`, `bonus_matematica11`, `bonus_lenguaje11`, `bonus_total11`,
