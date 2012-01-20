@@ -46,7 +46,7 @@
 
 
 ###Instalación de SQL
-    Recomenndamos la instalacion del paquete *LAMPP*  distribucion de linux que
+    Recomenndamos la instalacion del paquete LAMPP  distribucion de linux que
     contiene apache, mySQL, Perl, Python y PHP; ya que este paquete es requerido
     para correr la aplicación y las bases de datos
 
