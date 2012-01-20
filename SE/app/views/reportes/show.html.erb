@@ -44,10 +44,10 @@
                         </tr>
                 </table>
         </div>
-        <div id="col2">
+        <div id="col2" class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
-                        <tr>
-                                <th style="background: #516c75; color: white;">Este reporte es para:</th>
+                        <tr class="titulo">
+                                <th>Este reporte es para:</th>
                         </tr>
                         <tr>
                                 <td> <% current_ie_name.each do |name|  %>
@@ -90,41 +90,41 @@
         <div class="tablas">
                 <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
                         <tr>
-                                <th>Categoria</th>
-                                <th>Puntaje</th>
-                                <th>Calificacion</th>
+                                <th style="width: 20%">Categoria</th>
+                                <th style="width: 50%">Puntaje</th>
+                                <th style="width: 30%">Calificacion</th>
                         </tr>
                         <tr>
                                 <td>Ambiente Escolar</td>
-                                <td></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Rendimiento</td>
-                                <td></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Progreso</td>
-                                <td></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Bonificacion</td>
-                                <td></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Puntaje Total</td>
-                                <td></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
                                 <td></td>
                         </tr>
                 </table>
         </div>
         <div class="tablas">
                 <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
-                        <tr>
-                                <td style="background: #516c75;color:white;padding-left:15px;">En este reporte:</td>
+                        <tr class="titulo">
+                                <td >En este reporte:</td>
                         </tr>
                         <tr>
                                 <td class="size">Se mide el avance de la Institución Educativa año a año,
@@ -133,7 +133,7 @@
                                   promover el logro académico, especialmente entre los
                                   estudiantes con mayores necesidades. Para esto el reporte
                                   mide el resultado en cuatro áreas:
-</td>
+                                </td>
                         </tr>
                         <tr>
                                 <td class="size"><b>Ambiente Escolar:  </b> usa los resultados de las
@@ -158,6 +158,26 @@
                                   Educativas por ganancias en el logro académico, especialmente
                                   de los estudiantes con mayores necesidades (según el estrato),
                                   medidas a través de los resultados de las Olimpiadas del Conocimiento.</td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <th>Informaci&oacute;n adicional:</th>
+
+                        </tr>
+                        <tr>
+                                <td>
+                                  <p >Instituciones pares: El rendimiento de cada Institución Educativa
+                                        (IE) es comparado con el rendimiento de otras Instituciones en su
+                                        grupo de comparación. Las IE pares son aquellas que ___________.
+                                  </p>
+                                  <p >Las IE pares de <% current_ie_name.each do |name|  %>
+                                      <%= name.capitalize %>
+                                      <%end %>. son:
+                                  </p>
+                                </td>
                         </tr>
                 </table>
         </div>
