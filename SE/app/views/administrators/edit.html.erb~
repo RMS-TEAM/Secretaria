@@ -2,7 +2,7 @@
        <%if current_user.admin? && current_user != @user %>
            <%= form_for(@user) do |f| %>
               <h3><%=   @user.nombre.capitalize  %></h3>
-		<%= select("admin", "id", { "Administrador" => true, "Usuario" => false}) %>
+		<%= select("post", "admin", "id", { "Administrador" => true, "Usuario" => false}) %>
            <%end %>
 
        <% else %>
