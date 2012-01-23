@@ -24,4 +24,6 @@ class AdministratorsController < ApplicationController
     redirect_to (current_user) if (!current_user.admin?)
   end
 
+
+
 end

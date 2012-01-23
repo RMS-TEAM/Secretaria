@@ -1,5 +1,5 @@
    <h1>Edit User</h1>
-       <%if current_user.admin? && current_user != @user %>
+       <%if current_user.admin? %>
            <%= form_for(@user) do |f| %>
                <%=   @user.nombre.capitalize  %>
               <div class="field">
