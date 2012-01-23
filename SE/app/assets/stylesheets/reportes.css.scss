@@ -88,12 +88,16 @@ td{
         padding-left: 35px;
 }
 
+#content .tablas .explicacion{
+        font-weight: bold;
+}
+
 /*inicia css grafico  */
 .grafico {
         position: relative; /* IE is dumb */
         width: 90%;
         border: 1px solid  #036163;
-        padding: 3px;
+        padding: 2px;
 }
 .grafico .barra {
         display: block;
