@@ -10,6 +10,7 @@ class ReportesController < ApplicationController
 
   def show
     @colegio = Final.where("dane = ?",params[:id])
+    @ambientes = Final.find(params[:id])
     @nombre = Alumno.find(params[:id])
     @rendimientos = Rendimiento.find(params[:id])
      respond_to do |format|
