@@ -1,3 +1,12 @@
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#tabla_usuarios .titulo{
+        background: #036163;
+        text-align: left;
+        color: white;
+}
+
+#tabla_usuarios .titulo .acciones{
+        text-align: center;
+}
