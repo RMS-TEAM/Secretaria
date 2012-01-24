@@ -1,21 +1,26 @@
 <h1>Lista de usuarios Registrados</h1>
 
 
-<table border="1">
+<table border=1 cellspacing=0 cellpadding=2 id="tabla_usuarios">
 
-  <tr>
-    <th>Nombre</th>
-    <th>e-mail</th>
-    <th>Tipo</th>
+  <tr class="titulo">
+    <td>Nombre</td>
+    <td>e-mail</td>
+    <td>Tipo</td>
+    <td colspan="3" class="acciones">Acciones</td>
   </tr>
   <%	@users.each do |user|  %>
      <tr>
        <td><%=	user.nombre  %></td>
        <td><%=	 user.email %></td>
+       <td><% if user.admin.eql? false%>
+              <%= "Usuario"%>
+              <% end %>
+       </td>
        <td><%=link_to 'Editar', edit_administrator_path(user) %></td>
 
        <td><%= link_to 'Mostrar', user_path(user) %></td>
-       <td><%= link_to 'Borrar', user, :confirm => 'Estas seguro que deseas borrar este usuario?', :method => :delete %></td>
+       <td><%= link_to 'Borrar', user, :confirm => 'Esta seguro que deseas borrar este usuario?', :method => :delete %></td>
 
      </tr>
   <%end %>
