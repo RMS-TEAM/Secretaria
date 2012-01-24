@@ -66,7 +66,7 @@
 
 #### Juan Sebastian Velez Posada
 
-#### Ruben Dario Espinisa Roldan
+#### Rubén Darío Espinosa Roldán
 
 #### Jose Mateo Vidal Barrera
 
