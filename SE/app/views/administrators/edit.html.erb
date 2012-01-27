@@ -1,9 +1,28 @@
   <h1>Editar Usuario</h1>
        <%if current_user.admin? && current_user != @user %>
-           <%= form_for(@user) do |f| %>
+
               <h3><%=   @user.nombre.capitalize  %></h3>
-		<%= select("admin", "id", { "Administrador" => true, "Usuario" => false}) %>
-           <%end %>
+              <!--<form name="administrador">-->
+              <%= form_for(@user) do |f| %>
+                    <%= f.select :admin, [true, false] %>
+	              <select NAME="tipo">
+                      <OPTION id="user" VALUE="Usuario">Usuario</OPTION>
+                      <OPTION id="admin" VALUE="Administrador">Administrador</OPTION>
+                  </select>
+                  <%= f.submit "Update" %>
+              <% end %>
+              <!--</form>-->
+              <button>Cambiar</button>
+              <script>
+                  $("button").click(function () {
+                      var id = administrador.tipo.options[administrador.tipo.selectedIndex].id
+                      window.location = "../../users/"+<%= @user.id %>+""+ id;
+                  }
+                  );
+              </script>
+              <br />  <br />
+              <a style="padding-right: 30px" href=javascript:history.back(1)>Volver</a>
+
 
        <% else %>
 		redirect_to(@user)

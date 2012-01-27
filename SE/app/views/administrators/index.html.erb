@@ -14,13 +14,21 @@
        <td><%=	user.nombre  %></td>
        <td><%=	 user.email %></td>
        <td><% if user.admin.eql? false%>
-              <%= "Usuario"%>
+                Usuario
+              <% else %>
+                Administrador
               <% end %>
        </td>
-       <td><%=link_to 'Editar', edit_administrator_path(user) %></td>
-
        <td><%= link_to 'Mostrar', user_path(user) %></td>
-       <td><%= link_to 'Borrar', user, :confirm => 'Esta seguro que deseas borrar este usuario?', :method => :delete %></td>
+       <td><% if user.admin.eql? false%>
+                <%=link_to 'Editar', edit_administrator_path(user) %>
+           <% end %>
+       </td>
+       <td><% if user.admin.eql? false%>
+             <%= link_to 'Borrar', user, :confirm => 'Esta seguro que deseas borrar este usuario?', :method => :delete %>
+           <% end %>
+       </td>
+
 
      </tr>
   <%end %>

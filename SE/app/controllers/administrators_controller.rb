@@ -2,7 +2,7 @@ class AdministratorsController < ApplicationController
   before_filter :admin_access, :only => [:index,:show,:new,:edit]
 
   def index
-    @users = User.find(:all, :conditions => {:admin=>false})
+    @users = User.find(:all, :order => "admin DESC")
   end
 
   def show

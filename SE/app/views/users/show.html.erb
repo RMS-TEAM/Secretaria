@@ -1,10 +1,10 @@
 <h1><%= @user.nombre.capitalize %></h1>
-<strong>e-mail </strong> <%= @user.email %>
+<strong>E-mail </strong> <%= @user.email %>
 <br /><br />
 <%if current_user.id.eql? @user.id %>
     <a style="padding-right: 30px" href=<%= edit_user_path(current_user) %>>Editar</a>
 <% else %>
-    <%=link_to 'Volver', users_path%>
+    <a style="padding-right: 30px" href=javascript:history.back(1)>Volver</a>
 <%end%>
 <% if current_user.admin? %>
     <%= link_to "Administrar", administrators_path  %>
