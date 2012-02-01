@@ -2,7 +2,7 @@ SE::Application.routes.draw do
 
   get "sessions/new"
 
-  get "pages/home"
+  #get "pages/home"
 
   get "pages/antecedentes"
 

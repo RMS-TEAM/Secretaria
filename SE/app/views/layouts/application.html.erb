@@ -19,7 +19,7 @@
                <% if signed_in? %>
                   <li><%=link_to current_user_name, current_user	  %></li>
                <%end %>
-               <li><%=link_to "Inicio","/pages/home" %></li>
+               <li><%=link_to "Inicio",root_path %></li>
 
                <% if signed_in? %>
                     <li><%=link_to "Reportes", reportes_path %></li>
