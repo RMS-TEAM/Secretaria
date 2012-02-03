@@ -1,6 +1,6 @@
-<h1>New user</h1>
+<h1>Nuevo Usuario</h1>
 
-<%= form_for(@administrator) do |f| %>
+<%= form_for(@mateo) do |f| %>
                 <div class="field">
                     <%= f.label :nombre %> <br />
                     <%= f.text_field :nombre %>
@@ -10,19 +10,19 @@
                     <%= f.text_field :email %>
                 </div>
                 <div class="field">
-                    <%= f.label :admin %> <br />
+                    <%= f.label :admin, "Tipo de usuario" %> <br />
                     <%= f.text_field :admin %>
                 </div>
                 <div class="field">
-                    <%= f.label :password %> <br />
+                    <%= f.label :password, "Contraseña" %> <br />
                     <%= f.password_field :password %>
                 </div>
                 <div class="field">
-                    <%= f.label :password_confirmation, "Confirmation" %> <br />
+                    <%= f.label :password_confirmation, "Confirme la contraseña" %> <br />
                     <%= f.password_field :password_confirmation %>
                 </div>
                 <div class="actions">
                         <%= f.submit "Create"%> <br />
                 </div>
             <%end%>
-<%= link_to 'Back', users_path %>
+<%= button_to 'Atras', :action => 'index' %>

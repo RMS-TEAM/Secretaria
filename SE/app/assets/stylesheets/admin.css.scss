@@ -10,3 +10,20 @@
 #tabla_usuarios .titulo .acciones{
         text-align: center;
 }
+
+#new_button{
+        margin-top: 13px;
+        padding: 10px;
+        background: whiteSmoke;
+        width: 200px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -webkit-box-shadow: 0px 1px 3px rgba(0,0, 0, 0.05);
+	    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#new_button a{
+        padding: 10px;
+        color: #036163;
+
+}
