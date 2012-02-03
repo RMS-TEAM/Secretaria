@@ -25,7 +25,7 @@ class AdministratorsController < ApplicationController
         format.html { redirect_to(@administrator, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @administrator, :status => :created, :location => @administrator }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to "/new"}
         format.xml  { render :xml => @administrator.errors, :status => :unprocessable_entity }
       end
     end
