@@ -133,7 +133,7 @@ a{
 }
 .module {
 	margin-top: 10px;
-	margin-left: 10px;
+	margin-left: 1px;
 	margin-right: 10px;
 	position: relative;
 	min-height: 180px;
@@ -146,7 +146,11 @@ p.header {
 	font-size: 16px;
 	margin-left: 10px;
 	padding: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: #666;
+    border-bottom-style: dotted;
 }
+
 
 #copyright{
 	margin-top: 20px;
