@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-12-2011 a las 19:13:21
+-- Tiempo de generación: 06-02-2012 a las 19:45:16
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -19,6 +19,55 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ambiente_escolar2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `directoria_medellin`
+--
+
+CREATE TABLE IF NOT EXISTS `directoria_medellin` (
+  `comuna` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `nuc` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `c_dane` bigint(12) DEFAULT NULL,
+  `nombre` varchar(61) CHARACTER SET utf8 DEFAULT NULL,
+  `prestacion_del_servicio` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
+  `sector` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
+  `zona` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `barrio` varchar(31) CHARACTER SET utf8 DEFAULT NULL,
+  `rector` varchar(41) CHARACTER SET utf8 DEFAULT NULL,
+  `direccio_sede` varchar(46) CHARACTER SET utf8 DEFAULT NULL,
+  `telefono_sede` varchar(53) CHARACTER SET utf8 DEFAULT NULL,
+  `subsidiado` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
+  `_0` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_1` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_2` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_3` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_4` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_5` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_6` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_7` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_8` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_9` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_10` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
+  `_11` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
+  `_12` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_13` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `_21` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_22` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_23` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_24` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_25` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_26` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `_99` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `total` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
+  `docpreesc` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `docbprim` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `docbsecymed` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `doc__en_blanco_` varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+  `total0` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `NULL` varchar(10) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
 
