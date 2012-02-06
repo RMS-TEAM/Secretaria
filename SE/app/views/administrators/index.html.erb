@@ -34,7 +34,10 @@
   <%end %>
 </table>
 
-<div id = "new_button">
- <%= link_to 'Nuevo Usuario', new_administrator_path %>
- <%= link_to 'Atras', user_path(current_user) %>
-</div>
+    <div id = "options">
+        <div ><%= link_to 'Nuevo Usuario', new_administrator_path, :class => "option_button" %></div>
+        <div ><%= link_to 'Atras', user_path(current_user), :class => "option_button" %></div>
+    </div>
+
+
+<div class="ajustar"></div>

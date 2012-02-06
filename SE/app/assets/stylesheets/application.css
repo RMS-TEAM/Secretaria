@@ -94,7 +94,51 @@ a{
 	border-radius: 12px;
 	padding: 30px;
 	font-family: "Arial, Helvetica, sans-serif";
+
 }
+
+#content a.option_button{
+    margin-top: 10px  ;
+	display: block;
+	text-align: center;
+	width: 150px;
+	color: #036163;
+	background: whiteSmoke;
+	font-size: 100%;
+	font-weight: bold;
+	padding: 20px;
+    float: left;
+     border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0,0, 0.05);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#content .actions input{
+	 margin-top: 10px  ;
+	display: block;
+	text-align: center;
+	width: 150px;
+	color: #036163;
+	background: whiteSmoke;
+	font-size: 100%;
+	font-weight: bold;
+	padding: 20px;
+    float: left;
+     border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0,0, 0.05);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
 
 #content h1 {
 	color: #036163;
