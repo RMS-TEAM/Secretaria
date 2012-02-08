@@ -1,0 +1,85 @@
+DROP PROCEDURE IF EXISTS proc_permed_5_9_03;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_permed_5_9_03()
+BEGIN
+	# Variables para almacenar el percentil
+	DECLARE percentil33_l5_03 DECIMAL(12,7);
+	DECLARE percentil50_l5_03 DECIMAL(12,7);
+	DECLARE percentil33_l9_03 DECIMAL(12,7);
+	DECLARE percentil50_l9_03 DECIMAL(12,7);
+	DECLARE percentil33_m5_03 DECIMAL(12,7);
+	DECLARE percentil50_m5_03 DECIMAL(12,7);
+	DECLARE percentil33_m9_03 DECIMAL(12,7);
+	DECLARE percentil50_m9_03 DECIMAL(12,7);
+
+	#------------------------
+	# copiar los datos 
+	DELETE FROM `permed_5_9_03`;
+	INSERT INTO `permed_5_9_03` (dane, l5_03, m5_03, l9_03, m9_03)
+	SELECT dane, l5_03, m5_03, l9_03, m9_03 FROM `saber_5y9_03`;
+
+	#------------------------
+	# Percentil 33 de l5_03
+	SELECT PERC(l5_03, 5, 33) INTO percentil33_l5_03 FROM saber_5y9_03;
+
+	#------------------------
+	# Percentil 50 de l5_03
+	SELECT MEDIAN(l5_03,5) INTO percentil50_l5_03 FROM saber_5y9_03;
+
+	#------------------------
+	# Percentil 33 de l9_03
+	SELECT PERC(l9_03, 5, 33) INTO percentil33_l9_03 FROM saber_5y9_03;
+
+	#------------------------
+	# Percentil 50 de l9_03
+	SELECT MEDIAN(l9_03,5) INTO percentil50_l9_03 FROM saber_5y9_03;
+	
+	#------------------------
+	# Percentil 33 de m5_03
+	SELECT PERC(m5_03, 5, 33) INTO percentil33_m5_03 FROM saber_5y9_03;
+
+	#------------------------
+	# Percentil 50 de m5_03
+	SELECT MEDIAN(m5_03,5) INTO percentil50_m5_03 FROM saber_5y9_03;
+
+	#------------------------
+	# Percentil 33 de m9_03
+	SELECT PERC(m9_03, 5, 33) INTO percentil33_m9_03 FROM saber_5y9_03;
+
+	#------------------------
+	# Percentil 50 de m9_03
+	SELECT MEDIAN(m9_03,5) INTO percentil50_m9_03 FROM saber_5y9_03;
+
+
+	UPDATE `permed_5_9_03` SET `p50_len_5` = 1 WHERE `l5_03` <= percentil50_l5_03 AND `l5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_len_5` = 0 WHERE `p50_len_5` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_len_5` = 1 WHERE `l5_03` <= percentil33_l5_03 AND `l5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_len_5` = 0 WHERE `p33_len_5` IS NULL;
+
+
+	UPDATE `permed_5_9_03` SET `p50_len_9` = 1 WHERE `l9_03` <= percentil50_l9_03 AND `l9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_len_9` = 0 WHERE `p50_len_9` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_len_9` = 1 WHERE `l9_03` <= percentil33_l9_03 AND `l9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_len_9` = 0 WHERE `p33_len_9` IS NULL;
+
+
+	UPDATE `permed_5_9_03` SET `p50_mat_5` = 1 WHERE `m5_03` <= percentil50_m5_03 AND `m5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_mat_5` = 0 WHERE `p50_mat_5` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_mat_5` = 1 WHERE `m5_03` <= percentil33_m5_03 AND `m5_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_mat_5` = 0 WHERE `p33_mat_5` IS NULL;
+
+
+	UPDATE `permed_5_9_03` SET `p50_mat_9` = 1 WHERE `m9_03` <= percentil50_m9_03 AND `m9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p50_mat_9` = 0 WHERE `p50_mat_9` IS NULL;
+
+	UPDATE `permed_5_9_03` SET `p33_mat_9` = 1 WHERE `m9_03` <= percentil33_m9_03 AND `m9_03` IS NOT NULL;
+	UPDATE `permed_5_9_03` SET `p33_mat_9` = 0 WHERE `p33_mat_9` IS NULL;
+
+END //
+
+DELIMITER ;

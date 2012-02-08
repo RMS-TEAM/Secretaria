@@ -1,0 +1,23 @@
+DROP PROCEDURE IF EXISTS proc_res5_9_1;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_res5_9_1()
+BEGIN
+	DELETE FROM `res5_9_1`;
+	INSERT INTO `res5_9_1` (`dane`,  `aprobacion5`,  `aprobacion9`,
+	 `permed50len_5`,  `permedlen33_5`,  `permed50len_9`, `permedlen33_9`,  `permed50mat_5`,
+	 `permedmat33_5`,  `permed50mat_9`,  `permedmat33_9`) 
+	SELECT l.`dane`,  `aprobacion5`,  `aprobacion9`,
+	 `permed50len_5`,  `permedlen33_5`,  `permed50len_9`, `permedlen33_9`,  `permed50mat_5`,
+	 `permedmat33_5`,  `permed50mat_9`,  `permedmat33_9`
+	FROM  `taprob` l
+	LEFT JOIN  `permedianocr` r ON  l.`dane` =  r.`dane`;
+	
+	INSERT INTO `res5_9_1` (`dane`)
+	SELECT `dane` FROM `permedianocr11`
+	WHERE `dane` NOT IN (SELECT `dane` FROM `taprob`);
+END //
+
+DELIMITER ;
+
