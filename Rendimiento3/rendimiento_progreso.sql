@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-02-2012 a las 21:59:25
+-- Tiempo de generación: 08-02-2012 a las 22:03:38
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -1099,6 +1099,86 @@ CREATE TABLE IF NOT EXISTS `ran_ie10` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `res5_9_1`
+--
+
+CREATE TABLE IF NOT EXISTS `res5_9_1` (
+  `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `aprobacion5` decimal(12,7) DEFAULT NULL,
+  `aprobacion9` decimal(12,7) DEFAULT NULL,
+  `permed50len_5` decimal(12,7) DEFAULT NULL,
+  `permedlen33_5` decimal(12,7) DEFAULT NULL,
+  `permed50len_9` decimal(12,7) DEFAULT NULL,
+  `permedlen33_9` decimal(12,7) DEFAULT NULL,
+  `permed50mat_5` decimal(12,7) DEFAULT NULL,
+  `permedmat33_5` decimal(12,7) DEFAULT NULL,
+  `permed50mat_9` decimal(12,7) DEFAULT NULL,
+  `permedmat33_9` decimal(12,7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `res5_9_2`
+--
+
+CREATE TABLE IF NOT EXISTS `res5_9_2` (
+  `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `aprobacion5` decimal(12,7) DEFAULT NULL,
+  `aprobacion9` decimal(12,7) DEFAULT NULL,
+  `permed50len_5` decimal(12,7) DEFAULT NULL,
+  `permedlen33_5` decimal(12,7) DEFAULT NULL,
+  `permed50len_9` decimal(12,7) DEFAULT NULL,
+  `permedlen33_9` decimal(12,7) DEFAULT NULL,
+  `permed50mat_5` decimal(12,7) DEFAULT NULL,
+  `permedmat33_5` decimal(12,7) DEFAULT NULL,
+  `permed50mat_9` decimal(12,7) DEFAULT NULL,
+  `permedmat33_9` decimal(12,7) DEFAULT NULL,
+  `rango1_l5r` decimal(12,7) DEFAULT NULL,
+  `rango2_l5r` decimal(12,7) DEFAULT NULL,
+  `rango3_l5r` decimal(12,7) DEFAULT NULL,
+  `rango4_l5r` decimal(12,7) DEFAULT NULL,
+  `rango5_l5r` decimal(12,7) DEFAULT NULL,
+  `rango6_l5r` decimal(12,7) DEFAULT NULL,
+  `rango1_m5r` decimal(12,7) DEFAULT NULL,
+  `rango2_m5r` decimal(12,7) DEFAULT NULL,
+  `rango3_m5r` decimal(12,7) DEFAULT NULL,
+  `rango4_m5r` decimal(12,7) DEFAULT NULL,
+  `rango5_m5r` decimal(12,7) DEFAULT NULL,
+  `rango6_m5r` decimal(12,7) DEFAULT NULL,
+  `rango1_l9r` decimal(12,7) DEFAULT NULL,
+  `rango2_l9r` decimal(12,7) DEFAULT NULL,
+  `rango3_l9r` decimal(12,7) DEFAULT NULL,
+  `rango4_l9r` decimal(12,7) DEFAULT NULL,
+  `rango5_l9r` decimal(12,7) DEFAULT NULL,
+  `rango6_l9r` decimal(12,7) DEFAULT NULL,
+  `rango1_m9r` decimal(12,7) DEFAULT NULL,
+  `rango2_m9r` decimal(12,7) DEFAULT NULL,
+  `rango3_m9r` decimal(12,7) DEFAULT NULL,
+  `rango4_m9r` decimal(12,7) DEFAULT NULL,
+  `rango5_m9r` decimal(12,7) DEFAULT NULL,
+  `rango6_m9r` decimal(12,7) DEFAULT NULL,
+  `insuficiente_m9` decimal(12,7) DEFAULT NULL,
+  `minimo_m9` decimal(12,7) DEFAULT NULL,
+  `satisfactorio_m9` decimal(12,7) DEFAULT NULL,
+  `avanzado_m9` decimal(12,7) DEFAULT NULL,
+  `insuficiente_m5` decimal(12,7) DEFAULT NULL,
+  `minimo_m5` decimal(12,7) DEFAULT NULL,
+  `satisfactorio_m5` decimal(12,7) DEFAULT NULL,
+  `avanzado_m5` decimal(12,7) DEFAULT NULL,
+  `insuficiente_l9` decimal(12,7) DEFAULT NULL,
+  `minimo_l9` decimal(12,7) DEFAULT NULL,
+  `satisfactorio_l9` decimal(12,7) DEFAULT NULL,
+  `avanzado_l9` decimal(12,7) DEFAULT NULL,
+  `insuficiente_l5` decimal(12,7) DEFAULT NULL,
+  `minimo_l5` decimal(12,7) DEFAULT NULL,
+  `satisfactorio_l5` decimal(12,7) DEFAULT NULL,
+  `avanzado_l5` decimal(12,7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `res11`
 --
 
@@ -1581,86 +1661,6 @@ CREATE TABLE IF NOT EXISTS `resultadosgrupales_plant(` (
   `promediopais` decimal(12,7) DEFAULT NULL,
   `desviacionpais` decimal(12,7) DEFAULT NULL,
   `npais` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `res_5_9_1`
---
-
-CREATE TABLE IF NOT EXISTS `res_5_9_1` (
-  `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `aprobacion5` decimal(12,7) DEFAULT NULL,
-  `aprobacion9` decimal(12,7) DEFAULT NULL,
-  `permed50len_5` decimal(12,7) DEFAULT NULL,
-  `permedlen33_5` decimal(12,7) DEFAULT NULL,
-  `permed50len_9` decimal(12,7) DEFAULT NULL,
-  `permedlen33_9` decimal(12,7) DEFAULT NULL,
-  `permed50mat_5` decimal(12,7) DEFAULT NULL,
-  `permedmat33_5` decimal(12,7) DEFAULT NULL,
-  `permed50mat_9` decimal(12,7) DEFAULT NULL,
-  `permedmat33_9` decimal(12,7) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `res_5_9_2`
---
-
-CREATE TABLE IF NOT EXISTS `res_5_9_2` (
-  `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `aprobacion5` decimal(12,7) DEFAULT NULL,
-  `aprobacion9` decimal(12,7) DEFAULT NULL,
-  `permed50len_5` decimal(12,7) DEFAULT NULL,
-  `permedlen33_5` decimal(12,7) DEFAULT NULL,
-  `permed50len_9` decimal(12,7) DEFAULT NULL,
-  `permedlen33_9` decimal(12,7) DEFAULT NULL,
-  `permed50mat_5` decimal(12,7) DEFAULT NULL,
-  `permedmat33_5` decimal(12,7) DEFAULT NULL,
-  `permed50mat_9` decimal(12,7) DEFAULT NULL,
-  `permedmat33_9` decimal(12,7) DEFAULT NULL,
-  `rango1_l5r` decimal(12,7) DEFAULT NULL,
-  `rango2_l5r` decimal(12,7) DEFAULT NULL,
-  `rango3_l5r` decimal(12,7) DEFAULT NULL,
-  `rango4_l5r` decimal(12,7) DEFAULT NULL,
-  `rango5_l5r` decimal(12,7) DEFAULT NULL,
-  `rango6_l5r` decimal(12,7) DEFAULT NULL,
-  `rango1_m5r` decimal(12,7) DEFAULT NULL,
-  `rango2_m5r` decimal(12,7) DEFAULT NULL,
-  `rango3_m5r` decimal(12,7) DEFAULT NULL,
-  `rango4_m5r` decimal(12,7) DEFAULT NULL,
-  `rango5_m5r` decimal(12,7) DEFAULT NULL,
-  `rango6_m5r` decimal(12,7) DEFAULT NULL,
-  `rango1_l9r` decimal(12,7) DEFAULT NULL,
-  `rango2_l9r` decimal(12,7) DEFAULT NULL,
-  `rango3_l9r` decimal(12,7) DEFAULT NULL,
-  `rango4_l9r` decimal(12,7) DEFAULT NULL,
-  `rango5_l9r` decimal(12,7) DEFAULT NULL,
-  `rango6_l9r` decimal(12,7) DEFAULT NULL,
-  `rango1_m9r` decimal(12,7) DEFAULT NULL,
-  `rango2_m9r` decimal(12,7) DEFAULT NULL,
-  `rango3_m9r` decimal(12,7) DEFAULT NULL,
-  `rango4_m9r` decimal(12,7) DEFAULT NULL,
-  `rango5_m9r` decimal(12,7) DEFAULT NULL,
-  `rango6_m9r` decimal(12,7) DEFAULT NULL,
-  `insuficiente_m9` decimal(12,7) DEFAULT NULL,
-  `minimo_m9` decimal(12,7) DEFAULT NULL,
-  `satisfactorio_m9` decimal(12,7) DEFAULT NULL,
-  `avanzado_m9` decimal(12,7) DEFAULT NULL,
-  `insuficiente_m5` decimal(12,7) DEFAULT NULL,
-  `minimo_m5` decimal(12,7) DEFAULT NULL,
-  `satisfactorio_m5` decimal(12,7) DEFAULT NULL,
-  `avanzado_m5` decimal(12,7) DEFAULT NULL,
-  `insuficiente_l9` decimal(12,7) DEFAULT NULL,
-  `minimo_l9` decimal(12,7) DEFAULT NULL,
-  `satisfactorio_l9` decimal(12,7) DEFAULT NULL,
-  `avanzado_l9` decimal(12,7) DEFAULT NULL,
-  `insuficiente_l5` decimal(12,7) DEFAULT NULL,
-  `minimo_l5` decimal(12,7) DEFAULT NULL,
-  `satisfactorio_l5` decimal(12,7) DEFAULT NULL,
-  `avanzado_l5` decimal(12,7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
