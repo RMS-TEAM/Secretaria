@@ -1,0 +1,40 @@
+DROP PROCEDURE IF EXISTS proc_saber_5y9_03;
+
+DELIMITER //
+CREATE PROCEDURE proc_saber_5y9_03()
+BEGIN
+
+	DROP TABLE IF EXISTS `clone_resultadosgrupales_plant(`;
+	CREATE TABLE `clone_resultadosgrupales_plant(` (
+	 SELECT `grado`, `prueba`, `promedio`, `codciudad`, `nombre`, `coddane` AS `dane`
+	 FROM `resultadosgrupales_plant(` WHERE `codciudad` = 5001 AND (`grado` = 5 OR `grado` = 9)
+	);
+
+	ALTER TABLE `clone_resultadosgrupales_plant(` ADD `l5_03` DECIMAL(12,7);
+	ALTER TABLE `clone_resultadosgrupales_plant(` ADD `m5_03` DECIMAL(12,7);
+	ALTER TABLE `clone_resultadosgrupales_plant(` ADD `l9_03` DECIMAL(12,7);
+	ALTER TABLE `clone_resultadosgrupales_plant(` ADD `m9_03` DECIMAL(12,7);
+
+	UPDATE `clone_resultadosgrupales_plant(` SET `l5_03` = `clone_resultadosgrupales_plant(`.`promedio` 	 	 WHERE `grado` = 5 AND `prueba` = "Lenguaje";
+	UPDATE `clone_resultadosgrupales_plant(` SET `m5_03` = `clone_resultadosgrupales_plant(`.`promedio`
+	 WHERE `grado` = 5 AND `prueba` = "Matemáticas";
+	UPDATE `clone_resultadosgrupales_plant(` SET `l9_03` = `clone_resultadosgrupales_plant(`.`promedio`
+	 WHERE `grado` = 9 AND `prueba` = "Lenguaje";
+	UPDATE `clone_resultadosgrupales_plant(` SET `m9_03` = `clone_resultadosgrupales_plant(`.`promedio`
+	 WHERE `grado` = 9 AND `prueba` = "Matemáticas";
+
+	#------------------
+	# Collapse        |
+	#------------------
+	DELETE FROM `saber_5y9_03`;
+	INSERT INTO `saber_5y9_03` (`dane`, `l5_03`, `m5_03`, `l9_03`, `m9_03`)
+	 SELECT `dane`, MEDIAN(`l5_03`), MEDIAN(`m5_03`), MEDIAN(`l9_03`), MEDIAN(`m9_03`)
+	 FROM `clone_resultadosgrupales_plant(`
+	 GROUP BY `dane`;
+
+	DROP TABLE `clone_resultadosgrupales_plant(`;
+	
+END //
+
+DELIMITER ;
+

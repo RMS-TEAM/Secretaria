@@ -1,0 +1,106 @@
+DROP PROCEDURE IF EXISTS proc_escala5_9_09;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_escala5_9_09()
+BEGIN
+
+	DROP TABLE IF EXISTS `clone_resultad`;
+	CREATE TABLE `clone_resultad` (
+	 SELECT `id_institucion` AS `dane`, `area`, `grado`, `promedio`, `rango1`, `rango2`, `rango3`, `rango4`,
+	 `rango5`, `rango6` FROM `resultad`
+	);
+
+	ALTER TABLE `clone_resultad` ADD `l5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `m5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `cn5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `l9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `m9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `cn9r` DECIMAL(12,7);
+
+	ALTER TABLE `clone_resultad` ADD `rango1_l5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango2_l5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango3_l5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango4_l5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango5_l5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango6_l5r` DECIMAL(12,7);
+
+	ALTER TABLE `clone_resultad` ADD `rango1_m5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango2_m5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango3_m5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango4_m5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango5_m5r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango6_m5r` DECIMAL(12,7);
+
+	ALTER TABLE `clone_resultad` ADD `rango1_l9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango2_l9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango3_l9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango4_l9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango5_l9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango6_l9r` DECIMAL(12,7);
+
+	ALTER TABLE `clone_resultad` ADD `rango1_m9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango2_m9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango3_m9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango4_m9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango5_m9r` DECIMAL(12,7);
+	ALTER TABLE `clone_resultad` ADD `rango6_m9r` DECIMAL(12,7);
+
+	UPDATE `clone_resultad` SET `l5r` = (`clone_resultad`.`promedio`-100)/4 WHERE `area` = 1 AND `grado` = 5;
+	UPDATE `clone_resultad` SET `m5r` = (`clone_resultad`.`promedio`-100)/4 WHERE `area` = 2 AND `grado` = 5;
+	UPDATE `clone_resultad` SET `cn5r` = (`clone_resultad`.`promedio`-100)/4 WHERE `area` = 3 AND `grado` = 5;
+	UPDATE `clone_resultad` SET `l9r` = (`clone_resultad`.`promedio`-100)/4 WHERE `area` = 1 AND `grado` = 9;
+	UPDATE `clone_resultad` SET `m9r` = (`clone_resultad`.`promedio`-100)/4 WHERE `area` = 2 AND `grado` = 9;
+	UPDATE `clone_resultad` SET `cn9r` = (`clone_resultad`.`promedio`-100)/4 WHERE `area` = 3 AND `grado` = 9;
+
+	UPDATE `clone_resultad` SET `rango1_l5r` = `clone_resultad`.`rango1` WHERE `grado` = 5 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l5r` = `clone_resultad`.`rango2` WHERE `grado` = 5 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l5r` = `clone_resultad`.`rango3` WHERE `grado` = 5 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l5r` = `clone_resultad`.`rango4` WHERE `grado` = 5 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l5r` = `clone_resultad`.`rango5` WHERE `grado` = 5 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l5r` = `clone_resultad`.`rango6` WHERE `grado` = 5 AND `area` = 1;
+
+	UPDATE `clone_resultad` SET `rango1_m5r` = `clone_resultad`.`rango1` WHERE `grado` = 5 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m5r` = `clone_resultad`.`rango2` WHERE `grado` = 5 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m5r` = `clone_resultad`.`rango3` WHERE `grado` = 5 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m5r` = `clone_resultad`.`rango4` WHERE `grado` = 5 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m5r` = `clone_resultad`.`rango5` WHERE `grado` = 5 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m5r` = `clone_resultad`.`rango6` WHERE `grado` = 5 AND `area` = 2;
+
+	UPDATE `clone_resultad` SET `rango1_l9r` = `clone_resultad`.`rango1` WHERE `grado` = 9 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l9r` = `clone_resultad`.`rango2` WHERE `grado` = 9 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l9r` = `clone_resultad`.`rango3` WHERE `grado` = 9 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l9r` = `clone_resultad`.`rango4` WHERE `grado` = 9 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l9r` = `clone_resultad`.`rango5` WHERE `grado` = 9 AND `area` = 1;
+	UPDATE `clone_resultad` SET `rango1_l9r` = `clone_resultad`.`rango6` WHERE `grado` = 9 AND `area` = 1;
+ 
+	UPDATE `clone_resultad` SET `rango1_m9r` = `clone_resultad`.`rango1` WHERE `grado` = 9 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m9r` = `clone_resultad`.`rango2` WHERE `grado` = 9 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m9r` = `clone_resultad`.`rango3` WHERE `grado` = 9 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m9r` = `clone_resultad`.`rango4` WHERE `grado` = 9 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m9r` = `clone_resultad`.`rango5` WHERE `grado` = 9 AND `area` = 2;
+	UPDATE `clone_resultad` SET `rango1_m9r` = `clone_resultad`.`rango6` WHERE `grado` = 9 AND `area` = 2;
+
+	#--------------
+	# Collapse
+	#--------------
+	DELETE FROM `escala5_9_09`;
+	INSERT INTO `escala5_9_09` (dane, l5r, m5r, cn5r, l9r, m9r, cn9r, rango1_l5r, rango2_l5r, rango3_l5r,
+	 rango4_l5r, rango5_l5r, rango6_l5r, rango1_m5r, rango2_m5r, rango3_m5r, rango4_m5r, rango5_m5r,
+	 rango6_m5r, rango1_l9r, rango2_l9r, rango3_l9r, rango4_l9r, rango5_l9r, rango6_l9r, rango1_m9r,
+	 rango2_m9r, rango3_m9r, rango4_m9r, rango5_m9r, rango6_m9r) 
+	 SELECT `dane`, MEDIAN(`l5r`, 5), MEDIAN(`m5r`, 5), MEDIAN(`cn5r`, 5), MEDIAN(`l9r`, 5),
+	 MEDIAN(`m9r`, 5), MEDIAN(`cn9r`, 5), MEDIAN(`rango1_l5r`, 5), MEDIAN(`rango2_l5r`, 5),
+	 MEDIAN(`rango3_l5r`, 5), MEDIAN(`rango4_l5r`, 5), MEDIAN(`rango5_l5r`, 5), MEDIAN(`rango6_l5r`, 5),
+	 MEDIAN(`rango1_m5r`, 5), MEDIAN(`rango2_m5r`, 5), MEDIAN(`rango3_m5r`, 5), MEDIAN(`rango4_m5r`, 5),
+	 MEDIAN(`rango5_m5r`, 5), MEDIAN(`rango6_m5r`, 5), MEDIAN(`rango1_l9r`, 5), MEDIAN(`rango2_l9r`, 5),
+	 MEDIAN(`rango3_l9r`, 5), MEDIAN(`rango4_l9r`, 5), MEDIAN(`rango5_l9r`, 5), MEDIAN(`rango6_l9r`, 5),
+	 MEDIAN(`rango1_m9r`, 5), MEDIAN(`rango2_m9r`, 5), MEDIAN(`rango3_m9r`, 5), MEDIAN(`rango4_m9r`, 5),
+	 MEDIAN(`rango5_m9r`, 5), MEDIAN(`rango6_m9r`, 5)
+	 FROM `clone_resultad` GROUP BY `dane`;
+
+	DROP TABLE `clone_resultad`;
+
+END //
+
+DELIMITER ;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-02-2012 a las 21:24:32
+-- Tiempo de generación: 08-02-2012 a las 21:59:25
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -1524,14 +1524,14 @@ CREATE TABLE IF NOT EXISTS `resultad` (
   `area` int(11) DEFAULT NULL,
   `grado` int(11) DEFAULT NULL,
   `peso` decimal(12,7) DEFAULT NULL,
-  `promedio` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `desviacion` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `rango1` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `rango2` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `rango3` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `rango4` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `rango5` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `rango6` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL
+  `promedio` int(10) DEFAULT NULL,
+  `desviacion` int(10) DEFAULT NULL,
+  `rango1` int(10) DEFAULT NULL,
+  `rango2` int(10) DEFAULT NULL,
+  `rango3` int(10) DEFAULT NULL,
+  `rango4` int(10) DEFAULT NULL,
+  `rango5` int(10) DEFAULT NULL,
+  `rango6` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -1542,19 +1542,19 @@ CREATE TABLE IF NOT EXISTS `resultad` (
 
 CREATE TABLE IF NOT EXISTS `resultadosgrupales_plant(` (
   `aplicacion` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `grado` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `grado` int(11) DEFAULT NULL,
   `codprueba` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `prueba` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `codplantel` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `coddpto` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `codciudad` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `codciudad` int(11) DEFAULT NULL,
   `nommunicipio` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nomdpto` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `consecutivoplantel` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombreintegrado` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `direccion` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `telefono` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `telefono` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
   `fax` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombredirector` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `codcalendario` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
