@@ -1,0 +1,10 @@
+  <h1>Editar Usuario</h1>
+       <%if current_user.admin? && current_user != @user %>
+           <%= form_for(@user) do |f| %>
+              <h3><%=   @user.nombre.capitalize  %></h3>
+		<%= select("post", "admin", "id", { "Administrador" => true, "Usuario" => false}) %>
+           <%end %>
+
+       <% else %>
+		redirect_to(@user)
+        <%end %>

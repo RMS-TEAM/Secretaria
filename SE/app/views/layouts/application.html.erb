@@ -2,7 +2,7 @@
 <html>
 <head>
   <title><%= title %></title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "application", :media => 'all' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   
@@ -19,7 +19,7 @@
                <% if signed_in? %>
                   <li><%=link_to current_user_name, current_user	  %></li>
                <%end %>
-               <li><%=link_to "Inicio","/pages/home" %></li>
+               <li><%=link_to "Inicio",root_path %></li>
 
                <% if signed_in? %>
                     <li><%=link_to "Reportes", reportes_path %></li>
@@ -38,29 +38,48 @@
 	        <%= yield %>
         </div>
 
-        <div id="images">
-            <div id="participantes">
-                <ul>
-                    <li class="tituloP"><%=link_to "Alianzas","/pages/participantes" %></li>
-                    <li class="abajo"><%=link_to "Universidad EAFIT", "http://www.eafit.edu.co" %></li>
-                    <li class="medio"><%=link_to "Alcaldia de Medellin", "http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://9b271f06d3c5df950aef538cad9f510f" %></li>
-                    <li class="last"><%=link_to "CICE", "http://www.eafit.edu.co/cice/Paginas/inicio.aspx" %></li>
-                    <li><%=link_to "Acerca de","#"%></li>
-                </ul>
-            </div>
-            <!--
-            <div id="barra">
-                    <hr id="barra_vertical"></hr>
-            </div>
-            -->
 
 
-            <div class="ajustar"></div>
+        <div id="footer">
+           <div class="float-left">
+                <div class="module">
+                    <p class="header">Idiomas</p>
+                    <ul style="margin: 0px 0px 0px 0px;" class="links">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Español</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="float-left ">
+                <div class="module">
+                    <p class="header">Información</p>
+                    <ul style="margin: 0px 0px 0px 0px;" class="links">
+                        <li><a href="/pages/participantes">Participantes</a></li>
+                        <li><a href="/pages/antecedentes">Antecedentes</a></li>
+                        <li><a href="/pages/acercade">Acerca de</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="float-left">
+                <div class="module">
+                    <p class="header">Contacto</p>
+                    <p>Telefono: <a><strong>(57+4) 555 55 55</strong></a><br>Hora local (GMT-5)<br>Medellín, Colombia</p>
+                    <p>Email: <br><strong><a href="mailto:jvidalba@gmail.com?subject=Correo desde el sitio web">correo@municipiodemedellin.com</a></strong></p><br>
+                </div>
+            </div>
+
+            <div class="float-left ">
+                <div class="module">
+                    <p class="header">Medios Sociales</p>
+                    <p><a target="_blank" href="#">Twitter</a></p>
+                    <p><a target="_blank" href="#">Facebook</a></p>
+                </div>
+            </div>
         </div>
 
-    <h5 id="by" align="center">By Universidad EAFIT</h5>
 
-
-
+        <p id="copyright">Copyright 1998-2012 Universidad EAFIT. Todos los derechos reservados. (Medellín - Colombia)</p>
     </body>
 </html>

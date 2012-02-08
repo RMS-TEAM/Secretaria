@@ -1,5 +1,5 @@
-   <h1>Edit User</h1>
-       <%if current_user.admin? %>
+   <h1>Editar datos: <%= @user.nombre %></h1>
+       <%if current_user.admin? && current_user != @user %>
            <%= form_for(@user) do |f| %>
                <%=   @user.nombre.capitalize  %>
               <div class="field">
@@ -10,11 +10,6 @@
 
        <% else %>
              <%= form_for(@user) do |f| %>
-
-                <div class="field">
-                     <%= f.label :nombre %> <br />
-                    <%= f.text_field :nombre %>
-                </div>
                 <div class="field">
                     <%= f.label :email %> <br />
                     <%= f.text_field :email %>

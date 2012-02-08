@@ -1,23 +1,13 @@
- <table class="profile" summary="Profile information">
-       <tr>
-               <td class="main">
-                       <h1>Perfil</h1>
+<h1><%= @user.nombre.capitalize %></h1>
+<strong>E-mail </strong> <%= @user.email %>
+<br /><br />
+<%if current_user.id.eql? @user.id %>
+    <%= link_to "Editar", edit_user_path(current_user), :class => "option_button" %>
+<% else %>
+    <%= link_to "Volver", root_path(), :class => "option_button" %>
+<%end%>
+<% if current_user.admin? %>
+    <%= link_to "Administrar", administrators_path,  :class => "option_button"  %>
+<%end%>
 
-                       <h1>
-                               <%= @user.nombre %>
-                       </h1>
-               </td>
-               <td class="sidebar round">
-                       <p >Nombre </p> <%= @user.nombre %><br/>
-                       <strong>e-mail </strong> <%= @user.email %>
-               </td>
-                <%if current_user.id.eql? @user.id %>
-                    <%=link_to 'Editar', edit_user_path(current_user)%>
-                <% else %>
-                    <%=link_to 'Volver', users_path%>
-                <%end%>
-                <% if current_user.admin? %>
-                    <%= link_to "Administrar", administrators_path  %>
-                <%end%>
-       </tr>
-</table>
+<div class="ajustar"></div>

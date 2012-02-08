@@ -1,23 +1,43 @@
 <h1>Lista de usuarios Registrados</h1>
 
 
-<table border="1">
+<table border=1 cellspacing=0 cellpadding=2 id="tabla_usuarios">
 
-  <tr>
-    <th>Nombre</th>
-    <th>e-mail</th>
-    <th>Tipo</th>
+  <tr class="titulo">
+    <td>Nombre</td>
+    <td>e-mail</td>
+    <td>Tipo</td>
+    <td colspan="3" class="acciones">Acciones</td>
   </tr>
   <%	@users.each do |user|  %>
      <tr>
        <td><%=	user.nombre  %></td>
        <td><%=	 user.email %></td>
-       <td><%=link_to 'Editar', edit_user_path(user) %></td>
-
+       <td><% if user.admin.eql? false%>
+                Usuario
+              <% else %>
+                Administrador
+              <% end %>
+       </td>
        <td><%= link_to 'Mostrar', user_path(user) %></td>
-       <td>Borrar</td>
+       <td><% if user.admin.eql? false%>
+                <%=link_to 'Editar', edit_administrator_path(user) %>
+           <% end %>
+       </td>
+       <td><% if user.admin.eql? false%>
+             <%= link_to 'Borrar', user, :confirm => 'Esta seguro que deseas borrar este usuario?', :method => :delete %>
+           <% end %>
+       </td>
+
 
      </tr>
   <%end %>
 </table>
 
+    <div id = "options">
+        <div ><%= link_to 'Nuevo Usuario', new_administrator_path, :class => "option_button" %></div>
+        <div ><%= link_to 'Atras', user_path(current_user), :class => "option_button" %></div>
+    </div>
+
+
+<div class="ajustar"></div>

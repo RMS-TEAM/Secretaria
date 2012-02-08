@@ -43,7 +43,7 @@ td{
 }
 
 #titulo{
-        background: #516c75;
+        background:  #036163;
         padding: 4px;
         color: white;
         padding-left:15px;
@@ -72,3 +72,46 @@ td{
         padding: 10px;
 
 }
+
+#content .tablas .titulo{
+        text-align: left;
+        padding-left: 3px;
+        background:  #036163;
+        color: white;
+}
+
+#content .tablas td{
+         font-size: 13px;
+         text-align: justify;
+}
+#content .tablas .puntaje{
+        padding-left: 35px;
+}
+
+#content .tablas .explicacion{
+        font-weight: bold;
+}
+
+#content .tablas .resulie{
+        text-align: center;
+}
+
+/*inicia css grafico  */
+.grafico {
+        position: relative; /* IE is dumb */
+        width: 90%;
+        border: 1px solid  #036163;
+        padding: 2px;
+}
+.grafico .barra {
+        display: block;
+        position: relative;
+        background: #036163;
+        text-align: center;
+        color: white;
+
+}
+.grafico .barra span {
+        position: absolute; left: 1em;
+}
+/* termina css grafico  */

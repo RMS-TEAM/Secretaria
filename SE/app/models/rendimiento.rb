@@ -5,3 +5,4 @@ class Rendimiento < Db2
   set_primary_key :'dane'
 
 end
+
