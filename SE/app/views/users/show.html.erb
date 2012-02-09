@@ -1,5 +1,6 @@
 <h1><%= @user.nombre.capitalize %></h1>
 <strong>E-mail </strong> <%= @user.email %>
+<strong></strong>
 <br /><br />
 <%if current_user.id.eql? @user.id %>
     <%= link_to "Editar", edit_user_path(current_user), :class => "option_button" %>
