@@ -2,23 +2,28 @@ DROP PROCEDURE IF EXISTS proc_res5_9_1;
 
 DELIMITER //
 
-CREATE PROCEDURE proc_res211()
+CREATE PROCEDURE proc_res5_9_1()
 BEGIN
-	DELETE FROM res211;
-	INSERT INTO res211 (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
-	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
-	 `ProporcionEstrato5`, `ProporcionEstrato6`, `permed50len`, `permed33len`, `permed50mat`, `permedmat33`) 
-	SELECT l.`dane`, l.`nombre`, l.`nombre_sb11_10`, l.`nombre_sb11_07`, `ProporcionEstrato0`,
-	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
-	 `ProporcionEstrato5`, `ProporcionEstrato6`, `permed50len`, `permed33len`, `permed50mat`, `permedmat33`
-	FROM  `tabla identificadores` l
-	LEFT JOIN  `permedianocr11` r ON  l.`dane` =  r.`dane`;
+	DELETE FROM `res5_9_1`;
+	INSERT INTO `res5_9_1` (`dane`,  `aprobacion5`,  `aprobacion9`,
+	 `permed50len_5`,  `permedlen33_5`,  `permed50len_9`, `permedlen33_9`,  `permed50mat_5`,
+	 `permedmat33_5`,  `permed50mat_9`,  `permedmat33_9`) 
+	SELECT l.`dane`, `aprobacion5`, `aprobacion9`,
+	 `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`, `permed50mat_5`,
+	 `permedmat33_5`, `permed50mat_9`, `permedmat33_9`
+	FROM  `taprob` l, `permedianocr` r WHERE l.`dane` =  r.`dane`;
 	
-	INSERT INTO res211 (`nombre_sb11_10`, `dane`, `nombre`, `nombre_sb11_07`, `permed50len`, `permed33len`,
-	 `permed50mat`, `permedmat33`)
-	SELECT `nombre_sb11_10`, `dane`, `nombre`, `nombre_sb11_07`, `permed50len`, `permed33len`, `permed50mat`,
-	 `permedmat33` FROM `permedianocr11`
-	WHERE `dane` NOT IN (SELECT `dane` FROM `tabla identificadores`);
+	INSERT INTO `res5_9_1` (dane, aprobacion5, aprobacion9)
+	SELECT dane, aprobacion5, aprobacion9 FROM `taprob`
+	WHERE NOT EXISTS (SELECT * FROM `permedianocr` where `permedianocr`.dane = `taprob`.dane)
+
+	INSERT INTO `res5_9_1` (`dane`, `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`,
+	 `permed50mat_5`, `permedmat33_5`, `permed50mat_9`, `permedmat33_9`)
+	SELECT `dane`, `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`, `permed50mat_5`,
+	 `permedmat33_5`, `permed50mat_9`, `permedmat33_9` FROM `permedianocr`
+	WHERE NOT EXISTS (SELECT * FROM `taprob` where `permedianocr`.dane = `taprob`.dane)
+
 END //
 
 DELIMITER ;
+

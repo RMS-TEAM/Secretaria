@@ -8,15 +8,21 @@ BEGIN
 	INSERT INTO `res5_9_1` (`dane`,  `aprobacion5`,  `aprobacion9`,
 	 `permed50len_5`,  `permedlen33_5`,  `permed50len_9`, `permedlen33_9`,  `permed50mat_5`,
 	 `permedmat33_5`,  `permed50mat_9`,  `permedmat33_9`) 
-	SELECT l.`dane`,  `aprobacion5`,  `aprobacion9`,
-	 `permed50len_5`,  `permedlen33_5`,  `permed50len_9`, `permedlen33_9`,  `permed50mat_5`,
-	 `permedmat33_5`,  `permed50mat_9`,  `permedmat33_9`
-	FROM  `taprob` l
-	LEFT JOIN  `permedianocr` r ON  l.`dane` =  r.`dane`;
+	SELECT l.`dane`, `aprobacion5`, `aprobacion9`,
+	 `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`, `permed50mat_5`,
+	 `permedmat33_5`, `permed50mat_9`, `permedmat33_9`
+	FROM  `taprob` l, `permedianocr` r WHERE l.`dane` =  r.`dane`;
 	
-	INSERT INTO `res5_9_1` (`dane`)
-	SELECT `dane` FROM `permedianocr11`
-	WHERE `dane` NOT IN (SELECT `dane` FROM `taprob`);
+	INSERT INTO `res5_9_1` (dane, aprobacion5, aprobacion9)
+	SELECT dane, aprobacion5, aprobacion9 FROM `taprob`
+	WHERE NOT EXISTS (SELECT * FROM `permedianocr` where `permedianocr`.dane = `taprob`.dane);
+
+	INSERT INTO `res5_9_1` (`dane`, `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`,
+	 `permed50mat_5`, `permedmat33_5`, `permed50mat_9`, `permedmat33_9`)
+	SELECT `dane`, `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`, `permed50mat_5`,
+	 `permedmat33_5`, `permed50mat_9`, `permedmat33_9` FROM `permedianocr`
+	WHERE NOT EXISTS (SELECT * FROM `taprob` where `permedianocr`.dane = `taprob`.dane);
+
 END //
 
 DELIMITER ;
