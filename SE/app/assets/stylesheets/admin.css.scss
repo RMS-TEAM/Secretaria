@@ -11,6 +11,49 @@
         text-align: center;
 }
 
+#content .even{
+
+        float: none;
+        border: 1px solid #DDD;
+        height: 100px;
+        border-width: thin;
+        background: white;
+        width: 70%;
+
+
+}
+
+#content .odd{
+       float: none;
+        border: 1px solid #DDD;
+        height: 100px;
+        border-width: thin;
+        background: #FAFAFA;
+        width: 70%;
+
+
+}
+
+
+#content .user_info{
+        width: 250px;
+        float: left;
+        padding-left:  18px;
+        padding-top: 8px;
+}
+
+#content .user_info .nombre {
+        color: #036163;
+        font-size: 18px;
+}
+
+#content .user_options{
+        width: 20px;
+        float: right;
+        padding-right: 50px;
+        padding-top: 12px;
+}
+
 
 
 

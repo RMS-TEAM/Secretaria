@@ -17,12 +17,26 @@ BEGIN
 	 `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`, `rango4_m5r`, `rango5_m5r`, `rango6_m5r`,
 	 `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`, `rango5_l9r`, `rango6_l9r`, `rango1_m9r`,
 	 `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`, `rango6_m9r`   
-	FROM  `permed_5_9_03` 
-	LEFT JOIN  `escala5_9_09` ON  `permed_5_9_03`.`dane` =  `escala5_9_09`.`dane`;
+	FROM  `permed_5_9_03`, `escala5_9_09` WHERE `permed_5_9_03`.`dane` =  `escala5_9_09`.`dane`;
 	
-	INSERT INTO temp (`dane`)
-	SELECT `dane` FROM `escala5_9_09`
-	WHERE `dane` NOT IN (SELECT `dane` FROM `permed_5_9_03`);
+	INSERT INTO temp (`dane`, `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, `rango1_l5r`, `rango2_l5r`,
+	 `rango3_l5r`, `rango4_l5r`, `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`,
+	 `rango4_m5r`, `rango5_m5r`, `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`,
+	 `rango5_l9r`, `rango6_l9r`, `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`,
+	 `rango6_m9r`)
+	(SELECT `dane`, `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, `rango1_l5r`, `rango2_l5r`, `rango3_l5r`,
+	 `rango4_l5r`, `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`, `rango4_m5r`,
+	 `rango5_m5r`, `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`, `rango5_l9r`,
+	 `rango6_l9r`, `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`, `rango6_m9r` FROM
+	 `escala5_9_09`
+	WHERE NOT EXISTS (SELECT * FROM `permed_5_9_03` where `escala5_9_09`.dane = `permed_5_9_03`.dane));
+
+	INSERT INTO temp (`dane`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `p50_len_5`, `p33_len_5`, `p50_len_9`,
+	 `p33_len_9`, `p50_mat_5`, `p33_mat_5`, `p50_mat_9`, `p33_mat_9`)
+	(SELECT `dane`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `p50_len_5`, `p33_len_5`, `p50_len_9`, `p33_len_9`,
+	 `p50_mat_5`, `p33_mat_5`, `p50_mat_9`, `p33_mat_9` FROM `permed_5_9_03`
+	WHERE NOT EXISTS (SELECT * FROM `escala5_9_09` where `escala5_9_09`.dane = `permed_5_9_03`.dane));
+
 
 	# xtile cr_medlen5_1 = l5r if p50_len_5 ==1, nquantiles(100)
 	DROP TABLE IF EXISTS xtile;
