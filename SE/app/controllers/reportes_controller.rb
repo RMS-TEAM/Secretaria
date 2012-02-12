@@ -13,7 +13,7 @@ class ReportesController < ApplicationController
     @ambientes = Final.find(params[:id])
     @nombre = Alumno.find(params[:id])
     @rendimientos = Rendimiento.find(params[:id])
-    @info_col = Directioria.find(params[:id])
+    @info_col = Directoria.find(params[:id])
      respond_to do |format|
        format.html # show.html.erb
        format.json  { render :json => @colegio }

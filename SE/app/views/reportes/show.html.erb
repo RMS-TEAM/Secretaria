@@ -47,31 +47,31 @@
         <div id="col2" class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
-                                <td>Este reporte es para:</td>
+                                <td colspan="2">Este reporte es para:</td>
                         </tr>
                         <tr>
-                                <td> <% current_ie_name.each do |name|  %>
+                                <td colspan="2" > <% current_ie_name.each do |name|  %>
                                       <%= name.capitalize %>
                                       <%end %>
                                       .</td>
                         </tr>
                         <tr>
-                                <td>DANE: <%= @rendimientos.dane %></td>
+                                <td colspan="2"><strong>DANE:</strong> <%= @rendimientos.dane %></td>
                         </tr>
                         <tr>
-                                <td>Rector: <%= @info_col.rector %></td>
+                                <td colspan="2"><strong>Rector:</strong> <%= @info_col.rector.upcase %></td>
                         </tr>
                         <tr>
-                                <td>Sector: <%= @info_col.sector %></td>
-                                <td>Zona: <%= @info_col.zona %></td>
+                                <td><strong>Sector:</strong> <%= @info_col.sector.upcase %></td>
+                                <td><strong>Zona:</strong> <%= @info_col.zona.upcase %></td>
                         </tr>
                         <tr>
-                                <td>Barrio: <%= @info_col.barrio %></td>
-                                <td>Direccion <%= @info_col.direccion_sede %></td>
+                                    <td><strong>Barrio:</strong> <%= @info_col.barrio.upcase %></td>
+                                <td><strong>Direccion:</strong> <%= @info_col.direccion_sede %></td>
                         </tr>
 
                         <tr>
-                                <td>Indice de pares: 000*e-10</td>
+                                <td colspan="2">Indice de pares: 000*e-10</td>
                         </tr>
                 </table>
         </div>
