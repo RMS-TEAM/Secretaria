@@ -22,13 +22,10 @@ class AdministratorsController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(@user, :notice => 'Company was successfully created.') }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
+         redirect_to(@user, :notice => 'Company was successfully created.')
+
       else
-        format.html { redirect_to "/new"}
-        format.xml  { render :xml => @administrator.errors, :status => :unprocessable_entity }
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+        redirect_to administrators_path
       end
     end
   end

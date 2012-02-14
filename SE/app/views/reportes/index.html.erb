@@ -14,7 +14,7 @@
     <form name="nombreColegios">
 	    <select NAME="colegios">
 		    <%@colegios.each do |col|	  %>
-		        <OPTION id="<%= col.dane %>" VALUE="<%= col.ie %>"><%= col.ie %></OPTION>
+		        <OPTION id="<%= col.dane %>" VALUE="<%= col.nombre %>"><%= col.nombre %></OPTION>
 		    <% end %>
 	    </select>
     </form>
