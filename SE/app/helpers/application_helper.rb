@@ -10,5 +10,14 @@ end
 		else
 			"#{base_title} | #{@title}"
 		end
-	end
+  end
+
+  def ambiente(variable)
+       if @ambiente.variable.eql? ""
+          "No Registra"
+       else
+          resul
+       end
+
+  end
 end
