@@ -98,6 +98,9 @@ a{
 	width: 80%;
 
 }
+#big{
+    padding: 30px;
+}
 
 #content a.option_button{
     margin-top: 10px  ;
