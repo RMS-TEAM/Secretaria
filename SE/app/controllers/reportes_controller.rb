@@ -1,7 +1,6 @@
 class ReportesController < ApplicationController
   def index
-      @colegios = Alumno.find(:all, :group => "ie")
-
+      @colegios = Indicador.find(:all, :order => 'nombre ASC')
       respond_to do |format|
       format.html              #/alumnos/index
       format.json {render :json => @colegios}
@@ -9,10 +8,9 @@ class ReportesController < ApplicationController
   end
 
   def show
-    @colegio = Final.where("dane = ?",params[:id])
-    @ambientes = Final.find(params[:id])
+    @ambientes = Merge.find(params[:id])
     @nombre = Alumno.find(params[:id])
-    @rendimientos = Rendimiento.find(params[:id])
+    @rendimientos = Indicador.find(params[:id])
     @info_col = Directoria.find(params[:id])
      respond_to do |format|
        format.html # show.html.erb
