@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/assets/stylesheets/application.css" line="144" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f19a90d4-c902-404e-a8b9-d6b2fa76ba38" name="Default" comment="" />
     <ignored path="SE.iws" />
@@ -23,10 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="14" selection-start="1798" selection-end="1798" vertical-scroll-proportion="0.7724458">
+            <state line="153" column="7" selection-start="2850" selection-end="2856" vertical-scroll-proportion="-7.357143">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.css.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="14" selection-start="204" selection-end="204" vertical-scroll-proportion="0.13931888">
               <folding />
             </state>
           </provider>
@@ -70,12 +82,12 @@
         <option value="$PROJECT_DIR$/app/views/administrators/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/administrators/new.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/pages.css.scss" />
         <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/administrators_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/pages.css.scss" />
       </list>
     </option>
   </component>
@@ -656,11 +668,6 @@
         <state line="18" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="12" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/administrators_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="10" selection-start="546" selection-end="546" vertical-scroll-proportion="0.16408668" />
@@ -694,7 +701,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="14" selection-start="1798" selection-end="1798" vertical-scroll-proportion="0.7724458">
+        <state line="153" column="7" selection-start="2850" selection-end="2856" vertical-scroll-proportion="-7.357143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="14" selection-start="204" selection-end="204" vertical-scroll-proportion="0.13931888">
           <folding />
         </state>
       </provider>
