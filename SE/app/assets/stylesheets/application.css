@@ -36,6 +36,10 @@ body{
 
 }
 
+#header #nav .name img{
+	width: 100%
+}
+
 #header #nav .bar   {
 	border-bottom-left-radius: 12px;
 	border-bottom-right-radius: 12px;
