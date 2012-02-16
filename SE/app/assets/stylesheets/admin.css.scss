@@ -11,19 +11,49 @@
         text-align: center;
 }
 
-#new_button{
-        margin-top: 13px;
-        padding: 10px;
-        background: whiteSmoke;
-        width: 200px;
-        -webkit-border-radius: 12px;
-        -moz-border-radius: 12px;
-        -webkit-box-shadow: 0px 1px 3px rgba(0,0, 0, 0.05);
-	    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+#content .even{
+
+        float: none;
+        border: 1px solid #DDD;
+        height: 100px;
+        border-width: thin;
+        background: white;
+        width: 70%;
+
+
 }
 
-#new_button a{
-        padding: 10px;
+#content .odd{
+       float: none;
+        border: 1px solid #DDD;
+        height: 100px;
+        border-width: thin;
+        background: #FAFAFA;
+        width: 70%;
+
+
+}
+
+
+#content .user_info{
+        width: 250px;
+        float: left;
+        padding-left:  18px;
+        padding-top: 8px;
+}
+
+#content .user_info .nombre {
         color: #036163;
-
+        font-size: 18px;
 }
+
+#content .user_options{
+        width: 20px;
+        float: right;
+        padding-right: 50px;
+        padding-top: 12px;
+}
+
+
+
+

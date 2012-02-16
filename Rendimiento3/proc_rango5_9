@@ -1,0 +1,42 @@
+DROP PROCEDURE IF EXISTS proc_rango5_9;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_rango5_9()
+BEGIN
+
+	DELETE FROM `rango5_9`;
+	INSERT INTO `rango5_9` (`dane`, `rango1_l5r`, `rango2_l5r`, `rango3_l5r`, `rango4_l5r`,
+	 `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`, `rango4_m5r`, `rango5_m5r`,
+	 `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`, `rango5_l9r`, `rango6_l9r`,
+	 `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`, `rango6_m9r`)
+	 (SELECT `dane`, `rango1_l5r`, `rango2_l5r`, `rango3_l5r`, `rango4_l5r`,
+	 `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`, `rango4_m5r`, `rango5_m5r`,
+	 `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`, `rango5_l9r`, `rango6_l9r`,
+	 `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`, `rango6_m9r`
+	 FROM `escala5_9_09`
+	);
+
+	UPDATE `rango5_9` SET `insuficiente_m9` = `rango5_9`.`rango1_m9r`;
+	UPDATE `rango5_9` SET `minimo_m9` = `rango5_9`.`rango2_m9r` + `rango5_9`.`rango3_m9r`;
+	UPDATE `rango5_9` SET `satisfactorio_m9` = `rango5_9`.`rango4_m9r` + `rango5_9`.`rango5_m9r`;
+	UPDATE `rango5_9` SET `avanzado_m9` = `rango5_9`.`rango6_m9r`;
+
+	UPDATE `rango5_9` SET `insuficiente_m5` = `rango5_9`.`rango1_m5r`;
+	UPDATE `rango5_9` SET `minimo_m5` = `rango5_9`.`rango2_m5r` + `rango5_9`.`rango3_m5r`;
+	UPDATE `rango5_9` SET `satisfactorio_m5` = `rango5_9`.`rango4_m5r` + `rango5_9`.`rango5_m5r`;
+	UPDATE `rango5_9` SET `avanzado_m5` = `rango5_9`.`rango6_m5r`;
+
+	UPDATE `rango5_9` SET `insuficiente_l9` = `rango5_9`.`rango1_l9r`;
+	UPDATE `rango5_9` SET `minimo_l9` = `rango5_9`.`rango2_l9r` + `rango5_9`.`rango3_l9r`;
+	UPDATE `rango5_9` SET `satisfactorio_l9` = `rango5_9`.`rango4_l9r` + `rango5_9`.`rango5_l9r`;
+	UPDATE `rango5_9` SET `avanzado_l9` = `rango5_9`.`rango6_l9r`;
+	 
+	UPDATE `rango5_9` SET `insuficiente_l5` = `rango5_9`.`rango1_l5r`;
+	UPDATE `rango5_9` SET `minimo_l5` = `rango5_9`.`rango2_l5r` + `rango5_9`.`rango3_l5r`;
+	UPDATE `rango5_9` SET `satisfactorio_l5` = `rango5_9`.`rango4_l5r` + `rango5_9`.`rango5_l5r`;
+	UPDATE `rango5_9` SET `avanzado_l5` = `rango5_9`.`rango6_l5r`;
+	
+END //
+
+DELIMITER ;

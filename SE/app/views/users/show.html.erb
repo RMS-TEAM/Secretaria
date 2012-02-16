@@ -1,11 +1,14 @@
 <h1><%= @user.nombre.capitalize %></h1>
 <strong>E-mail </strong> <%= @user.email %>
+<strong></strong>
 <br /><br />
 <%if current_user.id.eql? @user.id %>
-    <a style="padding-right: 30px" href=<%= edit_user_path(current_user) %>>Editar</a>
+    <%= link_to "Editar", edit_user_path(current_user), :class => "option_button" %>
 <% else %>
-    <a style="padding-right: 30px" href=javascript:history.back(1)>Volver</a>
+    <%= link_to "Volver", root_path(), :class => "option_button" %>
 <%end%>
 <% if current_user.admin? %>
-    <%= link_to "Administrar", administrators_path  %>
+    <%= link_to "Administrar", administrators_path,  :class => "option_button"  %>
 <%end%>
+
+<div class="ajustar"></div>
