@@ -8,18 +8,3 @@
 //= require jquery_ujs
 //= require_tree .
 
-
-$("#bo").live('onClic', function{
-    alert('hola');
-});
-
-
-$("#bo").click(function(){
-    alert("hola")
-
-});
-
-$('.carro').bind('click', function(event) {
-  return alert("dfsdf");
-});
-

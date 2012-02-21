@@ -14,7 +14,8 @@ class ReportesController < ApplicationController
     @info_col = Directoria.find(params[:id])
      respond_to do |format|
        format.html # show.html.erb
-       format.json  { render :json => @colegio }
+       format.json  { render :json => @rendimientos }
+
      end
 
   end
