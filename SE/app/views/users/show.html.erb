@@ -8,7 +8,7 @@
     <%= link_to "Volver", root_path(), :class => "option_button" %>
 <%end%>
 <% if current_user.admin? %>
-    <%= link_to "Administrar", administrators_path,  :class => "option_button"  %>
+    <%= link_to "Administrar", admin_users_path,  :class => "option_button"  %>
 <%end%>
 
 <div class="ajustar"></div>
