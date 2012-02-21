@@ -1,0 +1,39 @@
+<h1>Lista de usuarios Registrados</h1>
+
+
+
+
+  <%@users .each do |user|%>
+
+    <div class="<%= cycle("even", "odd") %>">
+        <div class="user_info">
+            <p class="nombre"><%=	user.nombre.capitalize  %></p>
+            <p>e-mail: <%=	 user.email %></p>
+            <p>Tipo: <% if user.admin.eql? false%>
+                Usuario
+            <% else %>
+                Administrador
+            <% end %></p>
+        </div>
+        <div class="user_options">
+            <p><%= link_to 'Mostrar', user_path(user) %></p>
+            <% if user.admin.eql? false%>
+                <p><%=link_to 'Editar', edit_admin_user_path(user) %></p>
+            <% end %>
+
+            <% if user.admin.eql? false%>
+                <p><%= link_to 'Borrar', user, :confirm => 'Esta seguro que deseas borrar este usuario?', :method => :delete %></p>
+            <% end %>
+
+        </div>
+
+  </div>
+  <%end%>
+
+    <div id = "options">
+        <div ><%= link_to 'Nuevo Usuario', new_admin_user_path, :class => "option_button" %></div>
+        <div ><%= link_to 'Atras', user_path(current_user), :class => "option_button" %></div>
+    </div>
+
+
+<div class="ajustar"></div>
