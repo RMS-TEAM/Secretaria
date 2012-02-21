@@ -1,10 +1,25 @@
   <h1>Editar Usuario</h1>
        <%if current_user.admin? && current_user != @user %>
-           <%= form_for(@user) do |f| %>
+
               <h3><%=   @user.nombre.capitalize  %></h3>
-		<%= select("post", "admin", "id", { "Administrador" => true, "Usuario" => false}) %>
-           <%end %>
+
+              <form accept-charset="UTF-8" action="/administrators/<%= @user.id %>" class="edit_user" id="edit_user_<%= @user.id %>" method="post">
+                <div style="margin:0;padding:0;display:inline">
+                  <input name="utf8" type="hidden" value="✓">
+                  <input name="_method" type="hidden" value="put">
+                </div>
+                      <select NAME="tipo">
+                          <OPTION id="admin" VALUE="Administrador">Administrador</OPTION>
+                      </select>
+
+                      <input name="commit" type="submit" value="Update">
+
+              </form>
+
+              <br />  <br />
+              <a style="padding-right: 30px" href=javascript:history.back(1)>Volver</a>
+
 
        <% else %>
-		redirect_to(@user)
-        <%end %>
+		 <h1>Sorry</h1>
+        <% end %>
