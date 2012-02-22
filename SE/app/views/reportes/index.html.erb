@@ -23,7 +23,7 @@
     <form name="nombreColegios">
 	    <select NAME="colegios" class="option_select">
 		    <%@colegios.each do |col|	  %>
-		        <OPTION id="<%= col.dane %>" VALUE="<%= col.nombre %>"><%= col.nombre %></OPTION>
+		        <OPTION id="<%= col.dane %>" VALUE="<%= col.nombre.downcase.titleize %>"><%= col.nombre.downcase.titleize %></OPTION>
 		    <% end %>
 	    </select>
     </form>
@@ -46,3 +46,4 @@
 
     </script>
 <% end %>
+<div class="ajustar"></div>
