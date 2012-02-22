@@ -14,7 +14,7 @@ db1:
   adapter: mysql2
   encoding: UTF8
   reconnect: false
-  database: ambiente_escolar
+  database: ambiente_escolar2
   pool: 5
   username: root
   password:
@@ -25,7 +25,7 @@ db2:
   adapter: mysql2
   encoding: UTF8
   reconnect: false
-  database: rendimiento_progreso
+  database: rendimiento_progreso3
   pool: 5
   username: root
   password:
