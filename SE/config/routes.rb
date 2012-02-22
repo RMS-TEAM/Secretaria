@@ -11,7 +11,7 @@ SE::Application.routes.draw do
   resources :alumnos
   resources :final
   resources :reportes
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index, :edit]
   resources :administrators
   resources :sessions, :only => [:new, :create, :destroy]
 

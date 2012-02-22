@@ -10,20 +10,29 @@
        eficiencia  y clima escolar de las IE intervenidas. Estos son:
     </p>
 
+
     <p>&nbsp;</p>
+
+    <h2>Ranking de las instituciones</h2>
+    <a class="option_button">Generar</a>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <h2>Reporte Individual</h2>
     <form name="nombreColegios">
-	    <select NAME="colegios">
+	    <select NAME="colegios" class="option_select">
 		    <%@colegios.each do |col|	  %>
 		        <OPTION id="<%= col.dane %>" VALUE="<%= col.nombre %>"><%= col.nombre %></OPTION>
 		    <% end %>
 	    </select>
     </form>
-    <button>Generar</button>
+    <a id="button" class="option_button">Generar</a>
 
 
     <script>
 
-	    $("button").click(function () {
+	    $("#button").click(function () {
 			var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
 			window.location = "reportes/" + id;
 		}
