@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.destroy
 		redirect_to(administrators_path)
-	end
+  end
 
   private
 

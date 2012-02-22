@@ -1,0 +1,15 @@
+<table>
+
+<% @ranking.each do |ins| %>
+
+    <tr>
+      <td>  <%= ins.nombre%>        </td>
+     <td>  <%= ins.dane%>        </td>
+     <td>  <%= ins.indicador%>        </td>
+     <td>  <%= ins.ambiente_escolar%> </td>
+     <td>  <%= ins.rendimiento%>      </td>
+     <td>  <%= ins.progreso%>         </td>
+   </tr>
+<% end %>
+
+</table>

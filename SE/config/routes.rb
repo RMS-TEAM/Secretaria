@@ -1,5 +1,6 @@
 SE::Application.routes.draw do
 
+
   get "sessions/new"
 
   #get "pages/home"
@@ -7,6 +8,7 @@ SE::Application.routes.draw do
   get "pages/antecedentes"
 
   get "pages/participantes"
+  get "reportes/ranking"
 
   resources :alumnos
   resources :final
