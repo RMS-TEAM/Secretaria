@@ -1,6 +1,6 @@
 <h1>Nuevo Usuario</h1>
 
-<%= form_for(@mateo) do |f| %>
+<%= form_for [:admin, @user] do |f| %>
                 <div class="field">
                     <%= f.label :nombre %> <br />
                     <%= f.text_field :nombre %>
@@ -22,11 +22,10 @@
                     <%= f.password_field :password_confirmation %>
                 </div>
                 <div class="actions">
-                        <%= f.submit "Crear"%> 
+                        <%= f.submit "Create"%> <br />
                 </div>
             <%end%>
-
-<%= link_to 'Atras', administrators_path, :class => "option_button" %>
+<%= link_to 'Atras', admin_users_path, :class => "option_button" %>
 
 <div class="ajustar"></div>
 

@@ -11,10 +11,13 @@ SE::Application.routes.draw do
   resources :alumnos
   resources :final
   resources :reportes
-  resources :users
+  resources :users, :only => [:show, :index]
   resources :administrators
   resources :sessions, :only => [:new, :create, :destroy]
 
+  namespace :admin do
+    resources :users
+  end
 
  match '/singin', :to => 'sessions#new'
  match '/singout', :to => 'sessions#destroy'
