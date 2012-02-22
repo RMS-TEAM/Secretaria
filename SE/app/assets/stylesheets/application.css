@@ -78,10 +78,7 @@ body{
 	text-decoration: underline;
 }
 
-#header a{
-	color: #036163;
-	text-decoration: none;
-}
+
 a{
     color: #036163;
     text-decoration: none;
@@ -96,7 +93,6 @@ a{
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
 	border-radius: 12px;
-	font-family: "Arial, Helvetica, sans-serif";
 	width: 80%;
 
 }
