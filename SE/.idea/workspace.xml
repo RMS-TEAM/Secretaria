@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="20" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
+            <state line="147" column="27" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.6965944">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/users/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="85" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.6028939">
+            <state line="25" column="85" selection-start="1136" selection-end="1136" vertical-scroll-proportion="-15.625">
               <folding />
             </state>
           </provider>
@@ -64,10 +64,10 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/reportes/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/admin/users.css.scss" />
         <option value="$PROJECT_DIR$/app/views/admin/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/admin/users/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
       </list>
     </option>
   </component>
@@ -501,16 +501,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/users/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="20" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
+        <state line="25" column="85" selection-start="1136" selection-end="1136" vertical-scroll-proportion="-15.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/users/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="85" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.6028939">
+        <state line="147" column="27" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.6965944">
           <folding />
         </state>
       </provider>
