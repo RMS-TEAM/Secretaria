@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#tabla_usuarios .titulo{
+#tabla_usuarios  .titulo{
         background: #036163;
         text-align: left;
         color: white;
@@ -12,7 +12,7 @@
         text-align: center;
 }
 
-#content .even{
+#content .users .even{
 
         float: none;
         border: 1px solid #DDD;
@@ -24,7 +24,7 @@
 
 }
 
-#content .odd{
+#content .users .odd{
        float: none;
         border: 1px solid #DDD;
         height: 100px;
