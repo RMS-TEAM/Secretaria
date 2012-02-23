@@ -105,17 +105,17 @@
                         </tr>
                         <tr>
                                 <td>Ambiente Escolar</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.ambiente_escolar.round(2) %>%;"><%=@totales.ambiente_escolar.round(2) %></strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Rendimiento</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.rendimiento.round(2)%>%;"><%=@totales.rendimiento.round(2)%></strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Progreso</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.progreso.round(2)%>%;"><%=@totales.progreso.round(2)%></strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
@@ -125,7 +125,7 @@
                         </tr>
                         <tr>
                                 <td>Puntaje Total</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.indicador.round(2)%>%;"><%=@totales.indicador.round(2)%></strong></div></td>
                                 <td></td>
                         </tr>
                 </table>
