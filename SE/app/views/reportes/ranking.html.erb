@@ -1,0 +1,28 @@
+<table class="tabla_ranking">
+ <tr class="titulo">
+   <td>Puesto</td>
+   <td>Nombre</td>
+   <td>Ambiente Escolar</td>
+   <td>Rendimiento</td>
+   <td>Progreso</td>
+   <td>Total</td>
+ </tr>
+<% contador = 1 %>
+<% @ranking.each do |ins| %>
+
+   <tr class="<%= cycle("even", "odd") %>">
+     <td>  <%= contador  %></td>
+     <td>  <%= ins.nombre.downcase.titleize%>        </td>
+     <td>  <%= ins.ambiente_escolar%> </td>
+     <td>  <%= ins.rendimiento%>      </td>
+     <td>  <%= ins.progreso%>         </td>
+     <td>  <%= ins.indicador%>        </td>
+   </tr>
+
+
+<%
+   contador = contador + 1
+   end
+%>
+
+</table>

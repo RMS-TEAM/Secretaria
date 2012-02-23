@@ -1,8 +1,7 @@
+
 <h1>Lista de usuarios Registrados</h1>
 
-
-
-
+<div class="users">
   <%@users .each do |user|%>
 
     <div class="<%= cycle("even", "odd") %>">
@@ -27,13 +26,10 @@
 
         </div>
 
-  </div>
+    </div>
   <%end%>
-
+</div>
     <div id = "options">
         <div ><%= link_to 'Nuevo Usuario', new_admin_user_path, :class => "option_button" %></div>
         <div ><%= link_to 'Atras', user_path(current_user), :class => "option_button" %></div>
     </div>
-
-
-<div class="ajustar"></div>

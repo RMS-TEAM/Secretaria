@@ -20,4 +20,11 @@ class ReportesController < ApplicationController
 
   end
 
+
+  def ranking
+    @ranking = Ranking.all(:order => "indicador DESC", :limit => 20)
+
+  end
+
+
 end
