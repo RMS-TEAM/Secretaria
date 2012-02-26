@@ -9,8 +9,8 @@
 
 
 body{
-    background: #036163;
-	margin: 0%;
+    background-image: url(<%= asset_path 'fondo.gif'%>);
+    margin: 0%;
 
 
 }
@@ -18,10 +18,11 @@ body{
 #header{
 	background-color: white;
 	min-height: 100px;
-    	margin-left: auto;
-    	margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 	-webkit-border-radius: 0px 0px 12px 12px;
 	width: 80%;
+    border: 1px solid  #dcdcdc;
 
 }
 
@@ -88,15 +89,16 @@ a:hover{
 }
 
 #content{
-	background-color:  white;
-    	margin-left: auto;
-    	margin-right: auto;
-    	margin-bottom: 20px;
+	//background-color:  white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
 	margin-top: 20pt;
-    	-webkit-border-radius: 12px;
-    	-moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
 	border-radius: 12px;
 	width: 80%;
+    border: 1px solid  #dcdcdc;
 
 }
 #big{
@@ -144,7 +146,9 @@ a:hover{
 
 #content select.option_select{
 	width: 80%;
+	color: #036163;
 	background: whiteSmoke;
+	font-size: 100%;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -214,7 +218,8 @@ a:hover{
     -moz-border-radius: 12px;
 	border-radius: 12px;
 	margin-bottom: 20px;
-    background: white;
+   // background: white;
+    border: 1px solid  #dcdcdc;
 }
 .float-left {
 	float: left;
