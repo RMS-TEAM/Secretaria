@@ -2,7 +2,7 @@
 <h2>Participantes</h2>
  <div id= alcaldia>
     <div class="alcaldia-i">
-        <%= image_tag("NewLogo.jpeg")%>
+        <%= image_tag("newLogo.jpeg")%>
     </div>
     <div class="alcaldia-p">
         <p>
