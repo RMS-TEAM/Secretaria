@@ -42,7 +42,7 @@ class Admin::UsersController < ApplicationController
 
       if @user.admin.eql? false
         @user.update_attribute(:admin, !@user.admin)
-        redirect_to administrators_path
+        redirect_to admin_path
     	else
     		@title = "Edit User"
     		render 'edit'
@@ -53,7 +53,7 @@ class Admin::UsersController < ApplicationController
   def destroy
  		@user = User.find(params[:id])
  		@user.destroy
- 		redirect_to(administrators_path)
+ 		redirect_to(admin_users_path)
    end
 
     private
