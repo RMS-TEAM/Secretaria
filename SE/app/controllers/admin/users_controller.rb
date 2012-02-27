@@ -1,5 +1,8 @@
 class Admin::UsersController < ApplicationController
-  before_filter :admin_access, :only => [:index,:show,:new,:edit]
+  before_filter :admin_access
+  before_filter :authenticate
+
+
 
     def index
       @users = User.find(:all, :order => "admin DESC")
@@ -21,6 +24,7 @@ class Admin::UsersController < ApplicationController
       @user = User.new(params[:user])
       respond_to do |format|
         if @user.save
+          UserMailer.registration_confirmation(@user).deliver
           format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         else
           format.html { render :action => "new" }
@@ -45,7 +49,19 @@ class Admin::UsersController < ApplicationController
     	end
     end
 
+
+  def destroy
+ 		@user = User.find(params[:id])
+ 		@user.destroy
+ 		redirect_to(administrators_path)
+   end
+
     private
+
+  def authenticate
+    	deny_access unless signed_in?
+    end
+
 
     def admin_access
       redirect_to (current_user) if (!current_user.admin?)

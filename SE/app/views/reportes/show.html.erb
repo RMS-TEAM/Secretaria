@@ -50,23 +50,20 @@
                                 <td colspan="2">Este reporte es para:</td>
                         </tr>
                         <tr>
-                                <td colspan="2" > <% current_ie_name.each do |name|  %>
-                                      <%= name.capitalize %>
-                                      <%end %>
-                                      .</td>
+                                <td colspan="2" > <%= @rendimientos.nombre.titleize%>.</td>
                         </tr>
                         <tr>
                                 <td colspan="2"><strong>DANE:</strong> <%= @rendimientos.dane %></td>
                         </tr>
                         <tr>
-                                <td colspan="2"><strong>Rector:</strong> <%= @info_col.rector.upcase %></td>
+                                <td colspan="2"><strong>Rector:</strong> <%= @info_col.rector.titleize %></td>
                         </tr>
                         <tr>
-                                <td><strong>Sector:</strong> <%= @info_col.sector.upcase %></td>
-                                <td><strong>Zona:</strong> <%= @info_col.zona.upcase %></td>
+                                <td><strong>Sector:</strong> <%= @info_col.sector.titleize %></td>
+                                <td><strong>Zona:</strong> <%= @info_col.zona.titleize %></td>
                         </tr>
                         <tr>
-                                    <td><strong>Barrio:</strong> <%= @info_col.barrio.upcase %></td>
+                                    <td><strong>Barrio:</strong> <%= @info_col.barrio.titleize %></td>
                                 <td><strong>Direccion:</strong> <%= @info_col.direccion_sede %></td>
                         </tr>
 
