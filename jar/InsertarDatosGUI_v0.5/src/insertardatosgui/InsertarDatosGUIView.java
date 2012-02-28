@@ -242,7 +242,7 @@ public class InsertarDatosGUIView extends FrameView {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(listo)
                     .addComponent(hagale))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         menuBar.setName("menuBar"); // NOI18N
@@ -284,7 +284,7 @@ public class InsertarDatosGUIView extends FrameView {
             .addGroup(statusPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statusMessageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 511, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 497, Short.MAX_VALUE)
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(statusAnimationLabel)
@@ -354,8 +354,11 @@ private void bExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 Statement sentencia = con.createStatement();
 
                 linea=br.readLine();
+                
+                sentencia.executeUpdate("DELETE FROM "+tabla+"");
+                
                 int k = 0;
-
+                
                 while((linea=br.readLine())!=null){
                     if(i%1000 == 0){
                         System.out.println(i);
@@ -389,6 +392,7 @@ private void bExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 
 
                     String insertar = String.valueOf(dos);
+
 
                     if(k == 0)
                         query += "("+insertar+")";

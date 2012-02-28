@@ -10,10 +10,13 @@ CREATE PROCEDURE proc_merge()
 BEGIN
 	DROP TABLE IF EXISTS `temp_merge`;
 	CREATE TABLE `temp_merge` 
-	SELECT `padres1 inv`.`dane`, `III_p`, `IV_p`, `V_p`, `VI_p`, `VII_p`, `Ambi_escol_p`, `III_d`, `IV_d`,
-	 `V_d`, `VI_d`, `VII_d`, `Ambi_escol_d`, `III_e`, `IV_e`, `V_e`, `VI_e`, `VII_e`, `Ambi_escol_e`,
-	 `padres1 inv`.`año` 
-	 FROM `padres1 inv`, `docentes1 inv`, `estudiantes1 inv`;
+	SELECT `padres1 inv`.`dane` , `III_p` , `IV_p` , `V_p` , `VI_p` , `VII_p` , `Ambi_escol_p` , 
+	 `III_d` , `IV_d` , `V_d` , `VI_d` , `VII_d` , `Ambi_escol_d` , `III_e` , `IV_e` , `V_e` , 
+	 `VI_e` , `VII_e` , `Ambi_escol_e` , `padres1 inv`.`año` 
+	 FROM `padres1 inv` , `docentes1 inv` , `estudiantes1 inv` 
+	 WHERE `padres1 inv`.`dane` = `docentes1 inv`.`dane` 
+	 AND `padres1 inv`.`dane` = `estudiantes1 inv`.`dane` 	
+	 AND `docentes1 inv`.`dane` = `estudiantes1 inv`.`dane`;
 
 	
 	#------------------------------------
