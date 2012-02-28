@@ -2,9 +2,8 @@
 <h1>Lista de usuarios Registrados</h1>
 
 <div class="users">
-  <%@users .each do |user|%>
-
-    <div class="<%= cycle("even", "odd") %>">
+  <% @users.each do |user|%>
+   <div class="<%= cycle("even", "odd") %>">
         <div class="user_info">
             <p class="nombre"><%=	user.nombre.capitalize  %></p>
             <p>e-mail: <%=	 user.email %></p>
@@ -21,7 +20,7 @@
             <% end %>
 
             <% if user.admin.eql? false%>
-                <p><%= link_to 'Borrar', user, :confirm => 'Esta seguro que deseas borrar este usuario?', :method => :delete %></p>
+                <p><%= link_to 'Borrar', [:admin,user], :confirm => 'Esta seguro que deseas borrar este usuario?', :method => :delete %></p>
             <% end %>
 
         </div>

@@ -2,8 +2,8 @@
  <div id="big">
         <div id="titulo">
             <div id="tituloNombres">
-                <uno>Secretaria de Educacion de Medellin</uno>
-                <uno style="margin-left: 460px;">Reporte de progreso</uno>
+                <div class="uno">Secretaria de Educacion de Medellin</div>
+                <div class="dos" >Reporte de progreso</div>
             </div>
         </div>
         <div id="col1">
@@ -50,23 +50,20 @@
                                 <td colspan="2">Este reporte es para:</td>
                         </tr>
                         <tr>
-                                <td colspan="2" > <% current_ie_name.each do |name|  %>
-                                      <%= name.capitalize %>
-                                      <%end %>
-                                      .</td>
+                                <td colspan="2" > <%= @rendimientos.nombre.titleize%>.</td>
                         </tr>
                         <tr>
                                 <td colspan="2"><strong>DANE:</strong> <%= @rendimientos.dane %></td>
                         </tr>
                         <tr>
-                                <td colspan="2"><strong>Rector:</strong> <%= @info_col.rector.upcase %></td>
+                                <td colspan="2"><strong>Rector:</strong> <%= @info_col.rector.titleize %></td>
                         </tr>
                         <tr>
-                                <td><strong>Sector:</strong> <%= @info_col.sector.upcase %></td>
-                                <td><strong>Zona:</strong> <%= @info_col.zona.upcase %></td>
+                                <td><strong>Sector:</strong> <%= @info_col.sector.titleize %></td>
+                                <td><strong>Zona:</strong> <%= @info_col.zona.titleize %></td>
                         </tr>
                         <tr>
-                                    <td><strong>Barrio:</strong> <%= @info_col.barrio.upcase %></td>
+                                    <td><strong>Barrio:</strong> <%= @info_col.barrio.titleize %></td>
                                 <td><strong>Direccion:</strong> <%= @info_col.direccion_sede %></td>
                         </tr>
 
@@ -105,17 +102,17 @@
                         </tr>
                         <tr>
                                 <td>Ambiente Escolar</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.ambiente_escolar.round(2) %>%;"><%=@totales.ambiente_escolar.round(2) %></strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Rendimiento</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.rendimiento.round(2)%>%;"><%=@totales.rendimiento.round(2)%></strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
                                 <td>Progreso</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.progreso.round(2)%>%;"><%=@totales.progreso.round(2)%></strong></div></td>
                                 <td></td>
                         </tr>
                         <tr>
@@ -125,7 +122,7 @@
                         </tr>
                         <tr>
                                 <td>Puntaje Total</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.indicador.round(2)%>%;"><%=@totales.indicador.round(2)%></strong></div></td>
                                 <td></td>
                         </tr>
                 </table>
