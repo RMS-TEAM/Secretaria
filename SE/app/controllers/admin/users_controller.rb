@@ -24,7 +24,7 @@ class Admin::UsersController < ApplicationController
       @user = User.new(params[:user])
       respond_to do |format|
         if @user.save
-          UserMailer.registration_confirmation(@user).deliver
+         # UserMailer.registration_confirmation(@user).deliver
           format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         else
           format.html { render :action => "new" }
@@ -42,7 +42,7 @@ class Admin::UsersController < ApplicationController
 
       if @user.admin.eql? false
         @user.update_attribute(:admin, !@user.admin)
-        redirect_to admin_path
+        redirect_to admin_users_path
     	else
     		@title = "Edit User"
     		render 'edit'
@@ -58,7 +58,7 @@ class Admin::UsersController < ApplicationController
 
     private
 
-  def authenticate
+    def authenticate
     	deny_access unless signed_in?
     end
 

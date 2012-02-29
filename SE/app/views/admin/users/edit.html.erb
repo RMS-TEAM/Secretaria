@@ -3,7 +3,7 @@
 
               <h3><%=   @user.nombre.capitalize  %></h3>
 
-              <form accept-charset="UTF-8" action="/administrators/<%= @user.id %>" class="edit_user" id="edit_user_<%= @user.id %>" method="post">
+              <form accept-charset="UTF-8" action="/admin/users/<%= @user.id %>" class="edit_user" id="edit_user_<%= @user.id %>" method="post">
                 <div style="margin:0;padding:0;display:inline">
                   <input name="utf8" type="hidden" value="✓">
                   <input name="_method" type="hidden" value="put">
