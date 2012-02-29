@@ -1,4 +1,7 @@
 class ReportesController < ApplicationController
+
+  before_filter :authenticate
+
   def index
       @colegios = Indicador.find(:all, :order => 'nombre ASC')
       respond_to do |format|
@@ -26,6 +29,16 @@ class ReportesController < ApplicationController
     @ranking = Ranking.all(:order => "indicador DESC", :limit => 20)
 
   end
+
+  private
+
+    def authenticate
+    	deny_access unless signed_in?
+    end
+
+
+
+
 
 
 end
