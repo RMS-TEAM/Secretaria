@@ -290,7 +290,7 @@ BEGIN
 	 pro_vi_5_re_p, pro_vi_6_re_p, pro_vi_7_re_p, pro_vi_8_re_p, pro_vi_9_re_p, pro_vi_10_re_p,
 	 pro_vi_11_re_p, pro_vii_1_re_p, III_p, IV_p, V_p, VI_p, VII_p FROM `padres1` 
 	 WHERE NOT EXISTS (SELECT `dane` FROM `temp_merge` WHERE temp_merge.dane = padres1.dane);
-	
+
 	DROP TABLE `temp_merge`;
 
 
@@ -298,7 +298,7 @@ BEGIN
 	#   Aca va los ultimos egen rowmean |
 	#------------------------------------
 
-	
+
 	UPDATE `merge` SET `III_total` = (SELECT func_rowmean(`III_d`, `III_e`, `III_p`));
 	UPDATE `merge` SET `IV_total` = (SELECT func_rowmean(`IV_d`, `IV_e`, `IV_p`));
 	UPDATE `merge` SET `V_total` = (SELECT func_rowmean(`V_d`, `V_e`, `V_p`));
@@ -306,7 +306,7 @@ BEGIN
 	UPDATE `merge` SET `VII_total` = (SELECT func_rowmean(`VII_d`, `VII_e`, `VII_p`));
 
 	UPDATE `merge` SET `Ambi_escol` = (`III_total` + `IV_total` + `V_total` + `VI_total`) / 4;
-	
+
 END //
 
 DELIMITER ;

@@ -1,0 +1,58 @@
+#-----------------------------------------------------------------------------------------------------
+#------------------------------Unir las diferentes Bases de datos-------------------------------------
+#-----------------------------------------------------------------------------------------------------
+
+DROP PROCEDURE IF EXISTS proc_merge;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_merge()
+BEGIN
+	DROP TABLE IF EXISTS `temp_merge`;
+	CREATE TABLE `temp_merge` 
+	SELECT `padres1 inv`.`dane`, `III_p`, `IV_p`, `V_p`, `VI_p`, `VII_p`, `Ambi_escol_p`, `III_e`,
+	 `IV_e`, `V_e`, `VI_e`, `VII_e`, `Ambi_escol_e`, `padres1 inv`.`año` 
+	FROM `padres1 inv` LEFT JOIN `estudiantes1 inv` ON `estudiantes1 inv`.dane = `padres1 inv`.`dane`;
+
+
+	DROP TABLE IF EXISTS `temp_merge1`;
+	CREATE TABLE `temp_merge1` 
+	SELECT `temp_merge`.`dane`, `III_p`, `IV_p`, `V_p`, `VI_p`, `VII_p`, `Ambi_escol_p`, 
+	 `III_d`, `IV_d`, `V_d`, `VI_d`, `VII_d`, `Ambi_escol_d`, `III_e`, `IV_e`, `V_e`, 
+	 `VI_e`, `VII_e`, `Ambi_escol_e`, `temp_merge`.`año` 
+	 FROM `temp_merge`, `docentes1 inv`
+	 WHERE `temp_merge`.`dane` = `docentes1 inv`.`dane`;
+
+	DROP TABLE `temp_merge`;
+
+	#------------------------------------
+	#   Aca va los ultimos egen rowmean |
+	#------------------------------------
+	ALTER TABLE `temp_merge1` ADD `III_total` DECIMAL(12, 7);
+	ALTER TABLE `temp_merge1` ADD `IV_total` DECIMAL(12, 7);
+	ALTER TABLE `temp_merge1` ADD `V_total` DECIMAL(12, 7);
+	ALTER TABLE `temp_merge1` ADD `VI_total` DECIMAL(12, 7);
+	ALTER TABLE `temp_merge1` ADD `VII_total` DECIMAL(12, 7);
+	ALTER TABLE `temp_merge1` ADD `Ambi_escol` DECIMAL(12, 7);
+	
+	UPDATE `temp_merge1` SET `III_total` = (SELECT func_rowmean(`III_d`, `III_e`, `III_p`));
+	UPDATE `temp_merge1` SET `IV_total` = (SELECT func_rowmean(`IV_d`, `IV_e`, `IV_p`));
+	UPDATE `temp_merge1` SET `V_total` = (SELECT func_rowmean(`V_d`, `V_e`, `V_p`));
+	UPDATE `temp_merge1` SET `VI_total` = (SELECT func_rowmean(`VI_d`, `VI_e`, `VI_p`));
+	UPDATE `temp_merge1` SET `VII_total` = (SELECT func_rowmean(`VII_d`, `VII_e`, `VII_p`));
+
+	UPDATE `temp_merge1` SET `Ambi_escol` = (`III_total` + `IV_total` + `V_total` + `VI_total`) / 4;
+	
+	
+	DELETE FROM `merge`;
+	INSERT INTO `merge` (`dane`, `III_total`, `IV_total`, `V_total`, `VI_total`, `VII_total`,
+	 `Ambi_escol`, `año`) 
+	SELECT `dane`, `III_total`, `IV_total`, `V_total`, `VI_total`, `VII_total`, `Ambi_escol`, `año`
+	FROM `temp_merge1`;
+
+
+	DROP TABLE `temp_merge1`;
+	
+END //
+
+DELIMITER ;
