@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
           @user = User.find(params[:id]) #/users/1
-          @title = @user.nombre
+          @title = @user.nombre.downcase.titleize
   end
 
   # GET /companies/1/edit

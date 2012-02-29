@@ -179,9 +179,8 @@
                                         (IE) es comparado con el rendimiento de otras Instituciones en su
                                         grupo de comparación. Las IE pares son aquellas que ___________.
                                   </p>
-                                  <p >Las IE pares de <% current_ie_name.each do |name|  %>
-                                      <%= name.capitalize %>
-                                      <%end %>. son:
+                                  <p >Las IE pares de <%=@nombre.insteducativa.downcase.titleize %>.
+                                     . son:
                                   </p>
                                 </td>
                         </tr>
@@ -693,7 +692,7 @@
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
                                 <td></td>
-                        </tr>
+                       </tr>
                         <!-- Percentil 33 matematica 9 -->
                         <tr>
                                 <td>Percentil 33 en matem&aacute;tica 9°</td>

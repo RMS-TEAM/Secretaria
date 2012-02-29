@@ -11,6 +11,7 @@ class ReportesController < ApplicationController
   end
 
   def show
+    @title = "Reporte"
     @ambientes = Merge.find(params[:id])
     @nombre = Alumno.find(params[:id])
     @rendimientos = Indicador.find(params[:id])
@@ -26,6 +27,7 @@ class ReportesController < ApplicationController
 
 
   def ranking
+    @title = "Ranking"
     @ranking = Ranking.all(:order => "indicador DESC", :limit => 20)
 
   end

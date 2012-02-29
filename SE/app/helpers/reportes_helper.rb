@@ -2,7 +2,7 @@ module ReportesHelper
 
 
   def current_ie_name
-          nombre = @nombre.ie.split(' ')
+          nombre = @nombre..split(' ')
 
   end
 
