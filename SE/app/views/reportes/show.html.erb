@@ -64,7 +64,7 @@
                         </tr>
                         <tr>
                                     <td><strong>Barrio:</strong> <%= @info_col.barrio.titleize %></td>
-                                <td><strong>Direccion:</strong> <%= @info_col.direccion_sede %></td>
+                                <td><strong>Direccion:</strong> <%= @info_col.direccion_sede.titleize %></td>
                         </tr>
 
                         <tr>
@@ -179,7 +179,7 @@
                                         (IE) es comparado con el rendimiento de otras Instituciones en su
                                         grupo de comparación. Las IE pares son aquellas que ___________.
                                   </p>
-                                  <p >Las IE pares de <%=@nombre.insteducativa.downcase.titleize %>.
+                                  <p >Las IE pares de <%=@totales.nombre.downcase.titleize %>.
                                      . son:
                                   </p>
                                 </td>
