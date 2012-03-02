@@ -19,25 +19,15 @@
     <p>&nbsp;</p>
 
     <h3>Reporte Individual</h3>
-    <form name="nombreColegios">
-	    <select name="colegios" class="option_select">
-		    <%@colegios.each do |col|	  %>
-		        <option id="<%= col.dane %>" value="<%= col.nombre.downcase.titleize %>"><%= col.nombre.downcase.titleize %></option>
-		    <% end %>
-	    </select>
-    </form>
+
     <a id="button" class="option_button">Generar</a>
 
 
-    <%#  select_tag "option_select", options_from_collection_for_select(@colegios, "dane", "nombre"),:prompt => "SELECCIONE UN COLEGIO", :class => "option_select"%>
+    <%= select_tag "option_select", options_from_collection_for_select(@colegios, "dane", "nombre"),:prompt => "SELECCIONE UN COLEGIO", :class => "option_select"%>
 
-   <script>
+    <a id="button" class="option_button">Generar</a>
 
-	 $("#button").click(function () {
-			var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id;
-			window.location = "reportes/"+ id;
-		});
-   </script>
+
 
 <% else %>
       <script type="text/javascript">
