@@ -22,8 +22,8 @@
 
     <%= select_tag "option_select", options_from_collection_for_select(@colegios, "dane", "nombre"),:prompt => "SELECCIONE UN COLEGIO", :class => "option_select"%>
 
-    <a id="button" class="option_button">Generar</a>
 
+    <a id="button" class="option_button">Generar</a>
 
     <%= content_for :javascript do %>
       <script type='text/javascript'>
