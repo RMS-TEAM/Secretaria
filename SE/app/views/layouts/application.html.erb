@@ -17,6 +17,16 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
+  <!-- Coloca esta petición de presentación donde creas oportuno. -->
+    <script type="text/javascript">
+       window.___gcfg = {lang: 'es-419'};
+          (function() {
+             var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+             po.src = 'https://apis.google.com/js/plusone.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+    </script>
+
   <%= yield(:javascript) if content_for?(:javascript) %>
 </head>
 <body>
@@ -71,9 +81,9 @@
                 <div class="module">
                     <p class="header">Información</p>
                     <ul style="margin: 0px 0px 0px 0px;" class="links">
-                        <li><a href="/pages/participantes">Participantes</a></li>
-                        <li><a href="/pages/antecedentes">Antecedentes</a></li>
-                        <li><a href="/pages/acercade">Acerca de</a></li>
+                        <li><%=link_to "Participantes", "#" %></li>
+                        <li><%=link_to "Antecedentes", "#" %></li>
+                        <li><%=link_to "Acerca De", "#" %></li>
                     </ul>
                 </div>
             </div>
@@ -81,7 +91,7 @@
             <div class="float-left">
                 <div class="module">
                     <p class="header">Contacto</p>
-                    <p>Telefono: <a><strong>(57+4) 555 55 55</strong></a><br>Hora local (GMT-5)<br>Medellín, Colombia</p>
+                    <p>Telefono: <a><strong>(574) 44 44 144</strong></a><br>Hora local (GMT-5)<br>Medellín, Colombia</p>
                     <p>Email: <br><strong><a href="mailto:jvidalba@gmail.com?subject=Correo desde el sitio web">correo@municipiodemedellin.com</a></strong></p><br>
                 </div>
             </div>
@@ -98,16 +108,7 @@
                   <!-- Coloca esta etiqueta donde quieras que se muestre el botón +1. -->
                   <g:plusone size="small" annotation="inline"></g:plusone>
 
-                  <!-- Coloca esta petición de presentación donde creas oportuno. -->
-                  <script type="text/javascript">
-                    window.___gcfg = {lang: 'es-419'};
 
-                    (function() {
-                      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                      po.src = 'https://apis.google.com/js/plusone.js';
-                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                    })();
-                  </script>
                 </div>
             </div>
         </div>
