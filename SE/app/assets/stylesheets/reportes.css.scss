@@ -112,14 +112,15 @@ td{
         position: relative; /* IE is dumb */
         width: 90%;
         border: 1px solid  #036163;
-        padding: 2px;
+        padding: auto;
+
 }
 .grafico .barra {
         display: block;
         position: relative;
         background: #036163;
         text-align: center;
-        color: white;
+        color: #036163;
 
 }
 .grafico .barra span {

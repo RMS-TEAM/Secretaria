@@ -80,7 +80,7 @@
                                 <th style="width: 40%;">Como fue el rendimiento de esta institucion?</th>
                         </tr>
                         <tr>
-                                <td style="font-size:90px;font-weight:bold;text-align: center;">E</td>
+                                <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@totales.indicador) %></td>
                                 <td class="size">La calificación es asignada según su correspondencia con
                                   el puntaje obtenido en el indicador multidimensional según
                                   las siguientes categorías y ponderaciones: (INCLUIRLAS).
@@ -96,34 +96,39 @@
         <div class="tablas">
                 <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
                         <tr>
-                                <th style="width: 20%">Categoria</th>
-                                <th style="width: 50%">Puntaje</th>
-                                <th style="width: 30%">Calificacion</th>
+                                <th style="width: 30%">Categoria</th>
+                                <th style="width: 50%" colspan="2">Puntaje</th>
+                                <th style="width: 20%">Calificacion</th>
                         </tr>
                         <tr>
                                 <td>Ambiente Escolar</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.ambiente_escolar.round(2) %>%;"><%=@totales.ambiente_escolar.round(2) %></strong></div></td>
-                                <td></td>
+                                <td width="15%" class="puntaje"><strong><%=@totales.ambiente_escolar.round(2) %> de 25</strong></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.ambiente_escolar.round(2) %>%;"> ''</strong></div></td>
+                                <td class="puntaje"><strong><%= grade_ambiente(@totales.ambiente_escolar) %></strong></td>
                         </tr>
                         <tr>
                                 <td>Rendimiento</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.rendimiento.round(2)%>%;"><%=@totales.rendimiento.round(2)%></strong></div></td>
-                                <td></td>
+                                <td class="puntaje"><strong><%=@totales.rendimiento.round(2)%> de 25</strong></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.rendimiento.round(2)%>%;">'</strong></div></td>
+                                <td class="puntaje"><strong><%= grade_rendimiento(@totales.rendimiento) %></strong></td>
                         </tr>
                         <tr>
                                 <td>Progreso</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.progreso.round(2)%>%;"><%=@totales.progreso.round(2)%></strong></div></td>
-                                <td></td>
+                                <td class="puntaje"><strong><%=@totales.progreso.round(2)%> de 25</strong></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.progreso.round(2)%>%;">'</strong></div></td>
+                                <td class="puntaje"><strong><%=grade_progreso(@totales.progreso)  %></strong></td>
                         </tr>
                         <tr>
                                 <td>Bonificacion</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td></td>
+                                <td class="puntaje">24 de 25</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">''</strong></div></td>
+                                <td class="puntaje"><strong><%=grade_ambiente(24)%></strong></td>
                         </tr>
                         <tr>
                                 <td>Puntaje Total</td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.indicador.round(2)%>%;"><%=@totales.indicador.round(2)%></strong></div></td>
-                                <td></td>
+                                <td class="puntaje"><strong><%=@totales.indicador.round(2)%> de 100</strong></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=@totales.indicador.round(2)%>%;">'</strong></div></td>
+                                <td class="puntaje"><strong><%= grade_total(@totales.indicador) %></strong></td>
                         </tr>
                 </table>
         </div>
