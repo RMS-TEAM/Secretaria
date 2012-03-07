@@ -64,5 +64,14 @@ module ReportesHelper
     end
   end
 
+  def verbose(word)
+      if word.blank?
+        "No Registra"
+      else
+        word
+      end
+
+  end
+
 
 end

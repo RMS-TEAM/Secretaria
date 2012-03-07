@@ -232,8 +232,8 @@
                         <tr class="titulo">
                                 <td width="20%" >Indicadores de Ambiente</td>
                                 <td rowspan="2" width="10%" >Puntaje de la IE</td>
-                                <td rowspan="2" width="30%" >IE respecto IE pares</td>
-                                <td rowspan="2" width="30%" >IE respecto a la ciudad</td>
+                                <td rowspan="2" width="30%" colspan="2">IE respecto IE pares</td>
+                                <td rowspan="2" width="30%" colspan="2" >IE respecto a la ciudad</td>
                                 <td rowspan="2" width="10%" >N&uacute;mero de estudiantes</td>
 
                         </tr>
@@ -246,8 +246,10 @@
                         <tr>
                                 <td>Expectativas acad&eacute;micas</td>
                                 <td class="resulie"><%=@ambientes.III_total %></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td width="5%">24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td width="5%">24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
@@ -255,8 +257,10 @@
                         <tr>
                                 <td>Comunicaci&oacute;n</td>
                                 <td class="resulie"><%=@ambientes.IV_total %></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
@@ -264,8 +268,10 @@
                         <tr>
                                 <td>Compromiso</td>
                                 <td class="resulie"><%=@ambientes.V_total %></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
@@ -273,10 +279,11 @@
                         <tr>
                                 <td>Seguridad y respeto</td>
                                 <td class="resulie"><%=@ambientes.VI_total %></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
-
 
                         </tr>
                         <!-- Asistencia
@@ -299,8 +306,8 @@
                         <tr class="titulo">
                                 <td width="20%" >Indicadores de Rendimiento</td>
                                 <td rowspan="2" width="10%" >Puntaje de la IE</td>
-                                <td rowspan="2" width="30%" >IE respecto IE pares</td>
-                                <td rowspan="2" width="30%" >IE respecto a la ciudad</td>
+                                <td rowspan="2" width="30%" colspan="2" >IE respecto IE pares</td>
+                                <td rowspan="2" width="30%" colspan="2" >IE respecto a la ciudad</td>
                                 <td rowspan="2" width="10%" >N&uacute;mero de estudiantes</td>
 
                         </tr>
@@ -310,7 +317,7 @@
 
                         </tr>
                         <tr>
-                                <td colspan="5" class="explicacion">Porcentaje de estudiantes en cada rango de calificaci&oacute;n de
+                                <td colspan="7" class="explicacion">Porcentaje de estudiantes en cada rango de calificaci&oacute;n de
                                     SABER 11 en lenguaje y matem&aacute;ticas.
 
                                 </td>
@@ -318,251 +325,178 @@
                         <!--Bajo lenguaje 2007 -->
                         <tr>
                                 <td>Bajo lenguaje (2007)</td>
-                                <td class="resulie">
-                                    <% if @rendimientos.prlen_bajo_07_p.blank? %>
-                                      No Registra
-                                    <% else %>
-                                      <%=@rendimientos.prlen_bajo_07_p%>
-
-                                    <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie">  <%=verbose(@rendimientos.prlen_bajo_07_p)%> </td>
+                                <td width="5%">24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td width="5%">24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!--Bajo lenguaje 2010 -->
                         <tr>
                                 <td>Bajo lenguaje (2010)</td>
-                                <td class="resulie">
-                                   <% if @rendimientos.prlen_bajo_10_p.blank?  %>
-                                        No Registra
-                                    <% else %>
-                                       <%=@rendimientos.prlen_bajo_10_p%>
-
-                                    <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%= verbose(@rendimientos.prlen_bajo_10_p)%> </td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!--Alto lenguaje 2007 -->
                         <tr>
                                 <td>Alto lenguaje (2007)</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.prlen_alto_07_p.blank? %>
-                                       No Registra
-                                  <% else %>
-                                      <%=@rendimientos.prlen_alto_07_p%>
-
-                                  <% end %>
-
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie">  <%=verbose(@rendimientos.prlen_alto_07_p)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!--Alto lenguaje 2010 -->
                         <tr>
                                 <td>Alto lenguaje (2010)</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.prlen_alto_10_p.blank? %>
-                                       No Registra
-                                  <% else %>
-                                       <%=@rendimientos.prlen_alto_10_p%>
-
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=  verbose(@rendimientos.prlen_alto_10_p)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- Bajo matematicas 2007-->
                         <tr>
                                 <td>Bajo matem&aacute;ticas (2007)</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.prmat_bajo_07_p.blank? %>
-                                        No Registra
-                                  <% else %>
-                                       <%=@rendimientos.prmat_bajo_07_p%>
-
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"> <%=verbose(@rendimientos.prmat_bajo_07_p)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- Bajo matematicas 2010 -->
                         <tr>
                                 <td>Bajo matem&aacute;ticas (2010)</td>
-                                <td class="resulie">
-                                <% if @rendimientos.prmat_bajo_10_p.blank? %>
-                                      No Registra
-                                <% else %>
-                                      <%=@rendimientos.prmat_bajo_10_p%>
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=verbose(@rendimientos.prmat_bajo_10_p)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- Alto matematicas 2007 -->
                         <tr>
                                 <td>Alto matem&aacute;ticas (2007)</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.prlen_alto_07_p.blank? %>
-                                       No Registra
-                                  <% else %>
-                                      <%=@rendimientos.prlen_alto_07_p%>
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"> <%=verbose(@rendimientos.prmat_alto_07_p)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- alto matematicas 2010 -->
                         <tr>
                                 <td>Alto matem&aacute;ticas (2010)</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.prmat_alto_10_p.blank? %>
-                                      No Registra
-                                  <% else %>
-                                      <%=@rendimientos.prmat_alto_10_p%>
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=verbose(@rendimientos.prmat_alto_10_p)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- explicacion mediana -->
                         <tr>
-                                <td colspan="5" class="explicacion">Mediana de los resultados de la IE en lenguaje y matem&aacute;tica
+                                <td colspan="7" class="explicacion">Mediana de los resultados de la IE en lenguaje y matem&aacute;tica
                                     en las pruebas SABER para el grado 11°
                                 </td
                         </tr>
                         <!--lenguaje 11 2007 -->
                         <tr>
                                 <td>Lenguaje 11°(2007)</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.tema_lenguaje.blank? %>
-                                       No Registra
-                                  <% else %>
-                                      <%=@rendimientos.tema_lenguaje%>
-
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"> <%=verbose(@rendimientos.tema_lenguaje)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- matematica 11 2007 -->
                         <tr>
                                 <td>Matem&aacute;ticas 11° (2007)</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.tema_matematica.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.tema_matematica%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"> <%=@rendimientos.tema_matematica%> </td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- Lenguaje 11 2010 -->
                         <tr>
                                 <td>Lenguaje 11° (2010)</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.tema_lenguaje_d.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.tema_lenguaje_d%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=@rendimientos.tema_lenguaje_d%> </td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- Matematica 11 2010 -->
                         <tr>
                                 <td>Matem&aacute;ticas 11° (2010)</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.tema_matematica_d.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.tema_matematica_d%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"> <%=@rendimientos.tema_matematica_d%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
-                        <!-- tasa aprobacion 5 y 11 -->
+                        <!-- Explicacion tasa aprobacion 5 y 11 -->
                         <tr>
-                                <td colspan="5" class="explicacion">Tasa de aprobaci&oacute;n de los grados 5° y 11°
+                                <td colspan="7" class="explicacion">Tasa de aprobaci&oacute;n de los grados 5° y 11°
                                 </td>
 
                         </tr>
                         <!-- Aprobacion 5 -->
                         <tr>
                                 <td>Aprobaci&oacute;n 5°</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.aprobacion5.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.aprobacion5%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie">  <%=@rendimientos.aprobacion5%> </td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- Aprobacion 11 -->
                          <tr>
                                 <td>Aprobaci&oacute;n 11°</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.aprobacion11a.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.aprobacion11a%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"> <%=@rendimientos.aprobacion11a%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
 
                         </tr>
                         <!-- tasa representacion saber 11 edad normal -->
                         <tr>
                                 <td class="explicacion" >Tasa de representaci&oacute;n de SABER 11° en edad normal</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.textra.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.textra%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td ></td>
+                                <td class="resulie"> <%=@rendimientos.textra%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td></td>
                         </tr>
                     <!-- Termina Tabla Rendimiento -->
                 </table>
@@ -573,8 +507,8 @@
                         <tr class="titulo">
                                 <td width="20%" >Indicadores de Progreso</td>
                                 <td rowspan="2" width="10%" >Puntaje de la IE</td>
-                                <td rowspan="2" width="30%" >IE respecto IE pares</td>
-                                <td rowspan="2" width="30%" >IE respecto a la ciudad</td>
+                                <td rowspan="2" width="30%" colspan="2" >IE respecto IE pares</td>
+                                <td rowspan="2" width="30%" colspan="2">IE respecto a la ciudad</td>
                                 <td rowspan="2" width="10%" >N&uacute;mero de estudiantes</td>
 
                         </tr>
@@ -583,7 +517,7 @@
                                 <td>Puntajes de Progreso (X% de Y%)</td>
                         </tr>
                         <tr>
-                                <td colspan="5" class="explicacion">Crecimiento respecto a la mediana y al percentil 33 para las IE
+                                <td colspan="7" class="explicacion">Crecimiento respecto a la mediana y al percentil 33 para las IE
                                     con puntajes inferiores y superiores a estos, en la &aacute;reas de
                                     matem&aacute;tica y lenguaje para los grados 5°, 9° y 11°
                                 </td>
@@ -593,125 +527,84 @@
                         <!-- Mediana lengueje 5 -->
                         <tr>
                                 <td>Mediana en lenguaje 5°</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.permed50len_5.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.permed50len_5%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-
+                                <td class="resulie"><%=verbose(@rendimientos.permed50len_5)%></td>
+                                <td width="5%">24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td width="5%">24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                         </tr>
                         <!-- Mediana matematica 5 -->
 
                         <tr>
                                 <td>Mediana en matem&aacute;tica 5°</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.permed50mat_5.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.permed50mat_5%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie">  <%=verbose(@rendimientos.permed50mat_5)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                         </tr>
 
                         <!-- Mediana lenguaje 9 -->
                         <tr>
                                 <td>Mediana en lenguaje 9°</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.permed50len_9.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.permed50len_9%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie">   <%=verbose(@rendimientos.permed50len_9)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                         </tr>
                         <!-- Mediana matematica 9 -->
                         <tr>
                                 <td>Mediana en matem&aacute;tica 9°</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.permed50mat_9.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.permed50mat_9%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"> <%=verbose(@rendimientos.permed50mat_9)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                         </tr>
 
                         <!-- Percentil 33 lenguaje 5 -->
                         <tr>
                                 <td>Percentil 33 en lenguaje 5°</td>
-                                <td class="resulie">
-                                 <% if @rendimientos.permedlen33_5.blank? %>
-                                       No Registra
-                                 <% else %>
-                                      <%=@rendimientos.permedlen33_5%>
-
-                                 <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=verbose(@rendimientos.permedlen33_5)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                         </tr>
                         <!-- Percentil 33 matematica 5 -->
                         <tr>
                                 <td>Percentil 33 en matem&aacute;tica 5°</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.permedmat33_5.blank? %>
-                                       No Registra
-                                  <% else %>
-                                      <%=@rendimientos.permedmat33_5%>
-
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=verbose(@rendimientos.permedmat33_5)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                         </tr>
                         <!-- Percentil 33 lenguaje 9 -->
                         <tr>
                                 <td>Percentil 33 en lenguaje 9°</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.permedlen33_9.blank? %>
-                                       No Registra
-                                  <% else %>
-                                      <%=@rendimientos.permedlen33_9%>
-
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=verbose(@rendimientos.permedlen33_9)%></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                        </tr>
                         <!-- Percentil 33 matematica 9 -->
                         <tr>
                                 <td>Percentil 33 en matem&aacute;tica 9°</td>
-                                <td class="resulie">
-                                  <% if @rendimientos.permedmat33_9.blank? %>
-                                       No Registra
-                                  <% else %>
-                                      <%=@rendimientos.permedmat33_9%>
-
-                                  <% end %>
-                                </td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
-                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="resulie"><%=verbose(@rendimientos.permedmat33_9)%> </td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+                                <td>24%</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
                                 <td></td>
                         </tr>
 

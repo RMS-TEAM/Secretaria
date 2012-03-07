@@ -13,7 +13,6 @@ class ReportesController < ApplicationController
   def show
     @title = "Reporte"
     @ambientes = Merge.find(params[:id])
-    #@nombre = Alumno.find(params[:id])
     @rendimientos = Indicador.find(params[:id])
     @info_col = Directoria.find(params[:id])
     @totales = Ranking.find(params[:id])
