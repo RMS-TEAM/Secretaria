@@ -7,7 +7,7 @@ SE::Application.routes.draw do
 
   get "pages/antecedentes"
 
-  get "pages/participantes"
+  match 'participantes', :to => 'pages#participantes'
   get "reportes/ranking"
 
   resources :alumnos

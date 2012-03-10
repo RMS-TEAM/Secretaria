@@ -2,20 +2,20 @@
  <div id="big">
         <div id="titulo">
             <div id="tituloNombres">
-                <div class="uno">Secretaria de Educacion de Medellin</div>
+                <div class="uno">Secretar&iacute;a de Educaci&oacute;n de Medell&iacute;n</div>
                 <div class="dos" >Reporte de progreso</div>
             </div>
         </div>
         <div id="col1">
-                <h3>Como los puntajes se transforman en calificaciones?</h3>
-                Las IE reciben un reporte basado en su puntaje total.<br />
-                IE con un puntaje entre X y XX reciben una E.<br />
-                W% de las IE consiguio una E en 2011-1.<br /><br /><br />
+                <h4>¿C&oacute;mo los puntajes se transform&aacute;n en calificaciones?</h4>
+                <ul><li>Las IE reciben un reporte basado en su puntaje total.</li>
+                <li>Las IE con un puntaje entre X y XX reciben una E.</li>
+                <li>W% de las IE consigui&oacute; una E en 2011-1.</li></ul>
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr>
-                                <th>Calificacion</th>
+                                <th>Calificaci&oacute;n</th>
                                 <th>Puntajes y rango</th>
-                                <th>Situacion de la ciudad</th>
+                                <th>Situaci&oacute;n de la ciudad</th>
                         </tr>
                         <tr>
                                 <td>A</td>
@@ -64,20 +64,20 @@
                         </tr>
                         <tr>
                                     <td><strong>Barrio:</strong> <%= @info_col.barrio.titleize %></td>
-                                <td><strong>Direccion:</strong> <%= @info_col.direccion_sede.titleize %></td>
+                                <td><strong>Direcci&oacute;n:</strong> <%= @info_col.direccion_sede.titleize %></td>
                         </tr>
 
                         <tr>
-                                <td colspan="2"><strong>Indice de pares:</strong> 000*e-10</td>
+                                <td colspan="2"><strong>&Iacute;ndice de pares:</strong> 000*e-10</td>
                         </tr>
                 </table>
         </div>
         <div class="tablas">
                 <table style="width: 100%; "  border=1 cellspacing=0 cellpadding=2 >
                         <tr>
-                                <th style="width: 20%;">Calificacion del avance</th>
-                                <th style="width: 40%;">Que significa esta calificacion?</th>
-                                <th style="width: 40%;">Como fue el rendimiento de esta institucion?</th>
+                                <th style="width: 20%;">Calificaci&oacute;n del avance</th>
+                                <th style="width: 40%;">¿Que significa esta calificaci&oacute;n?</th>
+                                <th style="width: 40%;">¿C&oacute;mo fue el rendimiento de esta instituci&oacute;n?</th>
                         </tr>
                         <tr>
                                 <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@totales.indicador) %></td>
@@ -87,7 +87,7 @@
                                   Los bonos serán entregados a los colegios y profesores en
                                   los colegios en los niveles más altos; los colegios con
                                   menores calificaciones enfrentarán sanciones del tipo (…).</td>
-                                <td class="size"><p>El puntaje de esta IE para el 2011 fue de 000*e-10.</p>
+                                <td class="size"><p>El puntaje de esta IE para el 2011 fue de <%=  @totales.indicador %></p>
                                   <p>Esta IE lo hizo mejor que el X% de todas las IE de la ciudad.</p>
 </td>
                         </tr>
@@ -96,9 +96,9 @@
         <div class="tablas">
                 <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
                         <tr>
-                                <th style="width: 30%">Categoria</th>
+                                <th style="width: 30%">Categor&iacute;a</th>
                                 <th style="width: 50%" colspan="2">Puntaje</th>
-                                <th style="width: 20%">Calificacion</th>
+                                <th style="width: 20%">Calificaci&oacute;n</th>
                         </tr>
                         <tr>
                                 <td>Ambiente Escolar</td>
@@ -119,7 +119,7 @@
                                 <td class="puntaje"><strong><%=grade_progreso(@totales.progreso)  %></strong></td>
                         </tr>
                         <tr>
-                                <td>Bonificacion</td>
+                                <td>Bonificaci&oacute;n</td>
                                 <td class="puntaje">24 de 25</td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">''</strong></div></td>
                                 <td class="puntaje"><strong><%=grade_ambiente(24)%></strong></td>
@@ -139,7 +139,7 @@
                         </tr>
                         <tr>
                                 <td class="size">Se mide el avance de la Institución Educativa año a año,
-                                  se compara este avance con el de Instituciones pares y se
+                                  se compara este avance con el de las instituciones pares y se
                                   asignan bonificaciones por el éxito de la Institución en
                                   promover el logro académico, especialmente entre los
                                   estudiantes con mayores necesidades. Para esto el reporte
@@ -147,25 +147,25 @@
                                 </td>
                         </tr>
                         <tr>
-                                <td class="size"><b>Ambiente Escolar:  </b> usa los resultados de las
+                                <td class="size"><b>Ambiente Escolar:  </b> Usa los resultados de las
                                   encuestas a padres, docentes y estudiantes para medir
                                   las condiciones necesarias de aprendizaje: expectativas
                                   académicas, comunicación, nivel de compromiso, seguridad
-                                  y respecto</td>
+                                  y respeto</td>
                         </tr>
                         <tr>
-                                <td class="size"><b>Rendimiento: </b> mide los niveles alcanzados por
-                                  los estudiantes de la Institución en pruebas estandarizadas
+                                <td class="size"><b>Rendimiento: </b> Mide los niveles alcanzados por
+                                  los estudiantes de la institución en pruebas estandarizadas
                                   de lenguaje y matemáticas: Saber 11, Saber 9 y Saber 5.</td>
                         </tr>
                         <tr>
-                                <td class="size"><b>Progreso: </b> miden el progreso de la Institución
+                                <td class="size"><b>Progreso: </b> Miden el progreso de la institución
                                   en percentiles de acuerdo a los resultados de pruebas
                                   estandarizadas de lenguaje y matemáticas: Saber 11,
                                   Saber 9 y Saber 5.</td>
                         </tr>
                         <tr>
-                                <td class="size"><b>Bonificacion: </b> puntaje adicional a las Instituciones
+                                <td class="size"><b>Bonificaci&oacute;n: </b> Puntaje adicional a las Instituciones
                                   Educativas por ganancias en el logro académico, especialmente
                                   de los estudiantes con mayores necesidades (según el estrato),
                                   medidas a través de los resultados de las Olimpiadas del Conocimiento.</td>
