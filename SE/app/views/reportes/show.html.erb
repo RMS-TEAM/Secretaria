@@ -1,4 +1,4 @@
-<%=link_to( "Download PDF", pdf_url('http://ec2-50-17-160-208.compute-1.amazonaws.com/reportes/download/'+(@rendimientos.dane.to_s)))%>
+
 
  <div id="big">
         <div id="titulo">
@@ -621,4 +621,5 @@
 
 
     <p>&nbsp;</p>
-    <%=	 link_to "Volver", reportes_path    %>
+    <%=	 link_to "Volver", reportes_path , :class => "option_button"   %>
+ <%=link_to("Descargar PDF", pdf_url('http://ec2-50-17-160-208.compute-1.amazonaws.com/reportes/download/'+(@rendimientos.dane.to_s),@rendimientos.nombre),:class => "option_button")%>
