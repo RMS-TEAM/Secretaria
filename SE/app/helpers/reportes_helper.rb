@@ -73,5 +73,9 @@ module ReportesHelper
 
   end
 
+  def pdf_url(url)
+    "http://pdfmyurl.com/?url=#{url}"
+  end
+
 
 end
