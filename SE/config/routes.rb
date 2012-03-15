@@ -9,6 +9,7 @@ SE::Application.routes.draw do
 
   match 'participantes', :to => 'pages#participantes'
   get "reportes/ranking"
+  match "reportes/download/:id", :to => 'reportes#download'
 
   resources :alumnos
   resources :final

@@ -1,6 +1,6 @@
 class ReportesController < ApplicationController
 
-  before_filter :authenticate
+  before_filter :authenticate, :only => [:ranking , :show, :index]
 
   def index
       @colegios = Indicador.find(:all, :order => 'nombre ASC')
@@ -29,6 +29,18 @@ class ReportesController < ApplicationController
     @title = "Ranking"
     @ranking = Ranking.all(:order => "indicador DESC", :limit => 20)
 
+  end
+
+  def download
+    @title = "Reporte"
+    @ambientes = Merge.find(params[:id])
+    @rendimientos = Indicador.find(params[:id])
+    @info_col = Directoria.find(params[:id])
+    @totales = Ranking.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json  { render :json => @rendimientos }
+    end
   end
 
   private
