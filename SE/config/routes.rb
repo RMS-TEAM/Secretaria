@@ -6,8 +6,9 @@ SE::Application.routes.draw do
   #get "pages/home"
 
   get "pages/antecedentes"
-
+  match 'antecedentes', :to => 'pages#antecedentes'
   match 'participantes', :to => 'pages#participantes'
+  match 'acerca', :to => 'pages#acerca'
   get "reportes/ranking"
   match "reportes/download/:id", :to => 'reportes#download'
 
