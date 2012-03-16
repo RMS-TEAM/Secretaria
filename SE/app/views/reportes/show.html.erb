@@ -82,12 +82,18 @@
                         </tr>
                         <tr>
                                 <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@totales.indicador) %></td>
-                                <td class="size">La calificación es asignada según su correspondencia con
-                                  el puntaje obtenido en el indicador multidimensional según
-                                  las siguientes categorías y ponderaciones: (INCLUIRLAS).
-                                  Los bonos serán entregados a los colegios y profesores en
-                                  los colegios en los niveles más altos; los colegios con
-                                  menores calificaciones enfrentarán sanciones del tipo (…).</td>
+                                <td class="size">La IE <%= @rendimientos.nombre.titleize %> obtuvo un puntaje total de <%= @totales.indicador %>. en ambiente escolar, rendimiento y progreso académico.
+                                Tres criterios por medio de los cuales se evalúa la calidad educativa de cada una de las IE oficiales del
+                                Municipio de Medellín. Para la obtención de dicho puntaje se estimo estadísticamente y de manera
+                                independiente cada criterio, luego se obtuvo un promedio ponderado de estos, el cual representa el
+                                puntaje total señalado para cada IE. Además, se le concedió un puntaje adicional o premio a aquellas IE
+                                que han logrado mejorar su calidad, a pesar de tener población estudiantil en condiciones
+                                vulnerables (la misma se considera que se encuentra en estado vulnerable si pertenece
+                                a los estratos uno, dos y si es población desplazada). Se premia la institución siempre y
+                                cuando tenga población estudiantil vulnerable y haya participado en las Olimpiadas del
+                                Conocimiento exitosamente. La finalidad de este indicador es disminuir la brecha existente
+                                entre las IE, que en medio de condiciones adversas deben impartir una educación de
+                                calidad, y aquellas que gozan de condiciones socioeconómicas relativamente superiores..</td>
                                 <td class="size"><p>El puntaje de esta IE para el 2011 fue de <%=  @totales.indicador %></p>
                                   <p>Esta IE lo hizo mejor que el X% de todas las IE de la ciudad.</p>
 </td>
