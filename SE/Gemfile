@@ -18,6 +18,7 @@ end
 
 gem 'jquery-rails'
 gem 'mysql2'
+gem 'pdf-my-url'
 
 
 #gem 'db-charmer', :require => 'db_charmer'
