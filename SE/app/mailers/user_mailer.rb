@@ -1,9 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default :from => "rms.new.solutions@gmail.com"
+  default :from => "example@from.com"
   
   def registration_confirmation(user)
     @user = user
-    attachments["rails.png"] = File.read("#{Rails.root}/assets/images/rails.png")
-    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
+    @url  = "http://example.com/login"
+    mail(:to => user.email, :subject => "Welcome to My Awesome Site")
+
   end
 end
