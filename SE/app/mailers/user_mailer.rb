@@ -4,7 +4,9 @@ class UserMailer < ActionMailer::Base
   def registration_confirmation(user)
     @user = user
     @url  = "http://example.com/login"
-    mail(:to => user.email, :subject => "Welcome to My Awesome Site")
+    mail(:to => user.email, :subject => "Registro en Medicion de La Calidad")
 
   end
+
+
 end
