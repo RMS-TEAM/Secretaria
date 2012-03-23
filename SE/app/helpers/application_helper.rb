@@ -1,7 +1,4 @@
 module ApplicationHelper
-def hola
-    @trivi = Alumno.all
-end
 
   def title
 		base_title = "SE"
