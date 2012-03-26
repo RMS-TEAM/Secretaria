@@ -25,9 +25,9 @@ class Admin::UsersController < ApplicationController
       respond_to do |format|
         if @user.save
           UserMailer.registration_confirmation(@user).deliver
-          format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+          format.html { redirect_to(@user, :notice => 'Usuario creado exitosamente') }
         else
-          format.html { render :action => "index" }
+          format.html { render "index" }
         end
       end
     end
