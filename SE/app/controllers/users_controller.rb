@@ -36,16 +36,16 @@ class UsersController < ApplicationController
   	deny_access unless signed_in?
   end
 
- # def correct_user
- # 	@user = User.find(params[:id])
- # 	redirect_to(current_user) unless current_user?(@user)
- # end
+  def correct_user
+  	@user = User.find(params[:id])
+  	redirect_to(current_user) unless current_user?(@user)
+  end
 
- # def admin_user
- # 	user = User.find(params[:id])
- # 	flash[:error] = "No te puedes borrar a ti mismo"
- # 	redirect_to(users_path) if (!current_user.admin? || current_user?(user))
- # end
+  def admin_user
+  	user = User.find(params[:id])
+  	flash[:error] = "No te puedes borrar a ti mismo"
+  	redirect_to(users_path) if (!current_user.admin? || current_user?(user))
+  end
 
 
 end
