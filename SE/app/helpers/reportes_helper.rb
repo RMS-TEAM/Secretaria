@@ -73,9 +73,12 @@ module ReportesHelper
 
   end
 
-  def pdf_url(url,name)
-    "http://pdfmyurl.com/?url=#{url}&--filename=#{name}"
+  def pdf_url
+    a = "http://ec2-107-22-95-239.compute-1.amazonaws.com/download/#{@rendimientos.dane}&-n&--filename=#{@rendimientos.nombre}"
+    b = "http://pdfmyurl.com/?url=#{a}"
   end
+
+
 
 
 end

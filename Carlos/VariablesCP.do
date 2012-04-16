@@ -1,14 +1,28 @@
  cd "C:\Users\Sebastian\Desktop\Trabajo\Carlos"
 
+
  use IDdane, clear
  outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\IDdane.csv", comma replace
+
+ use ClusterPI, clear
+ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\ClusterPI.csv", comma replace
+ 
+ use IndicadorRankingsNombres, clear
+ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\IndicadorRankingsNombres.csv", comma replace
+ 
+ use nombres, clear
+ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\nombres.csv", comma replace
+
+ use Pesos, clear
+ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\Pesos.csv", comma replace
+
  
  use indicadores_y_bonus,clear 
  outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\indicadores_y_bonus.csv", comma replace
  
  replace dane= 105001025844 if nombre=="INST EDUC ANTONIO DERKA - SANTO DOMINGO"
  save indicadores_y_bonus1,replace
-outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\indicadores_y_bonus1.csv", comma replace
+ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\indicadores_y_bonus1.csv", comma replace
  
 use indicadores_y_bonus1,clear
 
@@ -19,6 +33,7 @@ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\BaseCP.csv", comma rep
 
 use AmbienteEscolar,clear
 outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\AmbienteEscolar.csv", comma replace
+
 replace dane = 105001025780  if dane== 105001014869
 keep  dane   ExpectativasAcademicas  Comunicacion  Participacion  SeguridadRespeto
 merge 1:1  dane using  BaseCP
@@ -33,7 +48,6 @@ replace aprobación9=aprobación9*100
 
 save BaseParaCp,replace
 outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\BaseParaCp.csv", comma replace
-
 
 
 
@@ -136,6 +150,7 @@ drop _merge
 save BaseFinal,replace
 outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\BaseFinal.csv", comma replace
 
+
 use BaseFinal,clear
 
 append using Pesos
@@ -228,6 +243,65 @@ drop _merge
 rename dane1 dane 
 drop iden1
 save IndicadorMultivariado,replace
+outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\IndicadorMultivariado.csv", comma replace
 
- outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\IndicadorMultivariado.csv", comma replace
 
+ use indicadores_y_bonus1,clear
+ replace bonus_total5=0 if bonus_total5==.
+ replace bonus_total11=0 if bonus_total11==.
+ 
+ gen bonus=  bonus_total5 +bonus_total11
+ keep dane bonus
+ 
+ save bonus,replace
+ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\bonus.csv", comma replace
+ 
+ 
+ use IndicadorMultivariado,clear
+ 
+ merge 1:1 dane using bonus
+ drop if _merge==2
+ drop _merge
+  replace bonus=0 if bonus==.
+
+ gen IndicadorBonus=IndicadorEducacion+bonus
+ merge 1:1 dane using nombres
+ drop if _merge!=3
+ drop _merge
+ 
+ save IndicadorMultivariadoBonus,replace
+ outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\IndicadorMultivariadoBonus.csv", comma replace
+
+ 
+ use IndicadorMultivariadoBonus,clear
+ 
+ merge 1:1 dane using ClusterPI
+ drop if _merge !=3
+ 
+ drop _merge
+ 
+ xtile PosicionCluster1= IndicadorEducacion if Cluster==1, nquantiles(100) 
+ xtile PosicionCluster2= IndicadorEducacion if Cluster==2, nquantiles(100) 
+ xtile PosicionCluster3= IndicadorEducacion if Cluster==3, nquantiles(100) 
+ xtile PosicionCluster4= IndicadorEducacion if Cluster==4, nquantiles(100) 
+ xtile PosicionCluster5= IndicadorEducacion if Cluster==5, nquantiles(100) 
+ xtile PosicionCluster6= IndicadorEducacion if Cluster==6, nquantiles(100) 
+ xtile PosicionCluster7= IndicadorEducacion if Cluster==7, nquantiles(100) 
+ xtile PosicionCluster8= IndicadorEducacion if Cluster==8, nquantiles(100) 
+ 
+ 
+ gen PosicionCluster=PosicionCluster1
+ replace PosicionCluster=PosicionCluster2 if PosicionCluster==.
+ replace PosicionCluster=PosicionCluster3 if PosicionCluster==.
+ replace PosicionCluster=PosicionCluster4 if PosicionCluster==.
+ replace PosicionCluster=PosicionCluster5 if PosicionCluster==.
+ replace PosicionCluster=PosicionCluster6 if PosicionCluster==.
+ replace PosicionCluster=PosicionCluster7 if PosicionCluster==.
+ replace PosicionCluster=PosicionCluster8 if PosicionCluster==.
+
+
+ keep  AmbienteEscolar1 Rendimiento1 Progreso1 IndicadorEducacion dane bonus IndicadorBonus nombre Cluster colegio PosicionCluster
+ xtile PosicionTotal= IndicadorEducacion , nquantiles(100) 
+ 
+ save IndicadorConComparaciones,replace
+outsheet using "C:\Users\Sebastian\Desktop\Trabajo\Carlos\IndicadorConComparaciones.csv", comma replace

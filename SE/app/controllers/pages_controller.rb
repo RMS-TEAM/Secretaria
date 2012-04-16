@@ -4,9 +4,14 @@ class PagesController < ApplicationController
   end
 
   def antecedentes
+    @title = "Antecedentes"
   end
 
   def participantes
+    @title = "Participantes"
   end
 
+  def acerca
+    @title = "Acerca De"
+  end
 end

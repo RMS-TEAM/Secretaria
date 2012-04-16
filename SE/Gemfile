@@ -18,6 +18,10 @@ end
 
 gem 'jquery-rails'
 gem 'mysql2'
+gem 'pdf-my-url'
+gem 'pdfkit'
+gem "devise"
+
 
 
 #gem 'db-charmer', :require => 'db_charmer'
@@ -39,4 +43,4 @@ group :test do
   gem 'turn', :require => false
 end
 
-gem "devise"
+

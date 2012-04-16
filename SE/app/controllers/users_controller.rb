@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-   before_filter :authenticate, :only => [:edit, :update]
-   before_filter :correct_user, :only => [:edit, :update]
-   before_filter :admin_access, :only => :index
+   before_filter :authenticate, :only => [:edit, :update, :show]
+   before_filter :correct_user, :only => [:edit, :updatec]
+  # before_filter :admin_access, :only => :index
 
   # GET /users/1
   def show
@@ -45,10 +45,6 @@ class UsersController < ApplicationController
   	user = User.find(params[:id])
   	flash[:error] = "No te puedes borrar a ti mismo"
   	redirect_to(users_path) if (!current_user.admin? || current_user?(user))
-  end
-
-  def admin_access
-    redirect_to (current_user) if (!current_user.admin?)
   end
 
 

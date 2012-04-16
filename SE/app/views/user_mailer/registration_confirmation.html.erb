@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body style="font-size: 84%">
+	<div id="cuerpo" style="border: solid 1px #777; padding: 15px">
+    <h1 style="background: #036163; color: white; padding: 10px">Bienvenido a secretariase.tk <%= @user.nombre.titleize %></h1>
+        <div id="contenido" style="margin-left: 25px">
+            <p>
+              Usted ha sido exitosamente registrado a la plataforma de medición de la
+              calidad de la Alcaldia de Medellín y la Secretaría de Educación, para acceder
+              a los servicios de la plataforma utilice los siguientes datos:<br /><br />
+              <strong>e-mail</strong> <%= @user.email %>.<br/>
+              <strong>contrase&ntilde;a</strong>: <%= @user.password %>
+            </p>
+            <p>
+              <%= @user.nombre.titleize %> por favor cambie su contraseña para mayor seguridad.
+            </p>
+
+
+            <p>¡Gracias por su atención!</p>
+        </div>
+    </div>
+  </body>
+</html>

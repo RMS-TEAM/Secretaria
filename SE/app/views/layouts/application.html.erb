@@ -3,25 +3,9 @@
 <head>
 
   <title><%= title %></title>
-  <%= stylesheet_link_tag    "application", :media => 'all' %>
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-
-
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-  <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-    {lang: 'es-419'}
-  </script>
-
   <%= yield(:javascript) if content_for?(:javascript) %>
 
 </head>
@@ -59,6 +43,7 @@
           <div id="big">
 	        <%= yield %>
           </div>
+          <div class="ajustar"></div>
         </div>
 
 
@@ -78,9 +63,9 @@
                 <div class="module">
                     <p class="header">Información</p>
                     <ul style="margin: 0px 0px 0px 0px;" class="links">
-                        <li><%=link_to "Participantes", "participantes" %></li>
-                        <li><%=link_to "Antecedentes", "#" %></li>
-                        <li><%=link_to "Acerca De", "#"%></li>
+                        <li><%=link_to "Participantes", "/participantes" %></li>
+                        <!--<li><%=link_to "Antecedentes", "#" %></li>-->
+                        <li><%=link_to "Acerca De", "/acerca"%></li>
                     </ul>
                 </div>
             </div>
@@ -96,18 +81,6 @@
             <div class="float-left ">
                 <div class="module">
                     <p class="header">Medios Sociales</p>
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="es">Twittear</a>
-
-                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
-                         if(!d.getElementById(id)){js=d.createElement(s);
-                         js.id=id;js.src="//platform.twitter.com/widgets.js";
-                         fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                  </script>
-
-
-                 <p> <div class="fb-like" data-send="false" data-layout="button_count" data-width="400" data-show-faces="true" data-font="lucida grande"></div> </p>
-
-                  <g:plusone size="small"></g:plusone>
 
                 </div>
             </div>

@@ -63,6 +63,7 @@
 hr{
     clear: both;
     margin-right: 30px;
+
 }
 
 #alcaldia{
@@ -92,7 +93,44 @@ hr{
 
 }
 
+#laboratorio{
+
+    clear:both;
+}
+
+#laboratorio .laboratorio-i{
+    width: 150px;
+    float: left;
+    padding-top: 20px;
+
+
+}
+
+#laboratorio .laboratorio-i img{
+    width: 150px;
+}
+
+#laboratorio .laboratorio-p{
+    text-align: justify;
+    font-family: arial;
+    font-size: 12;
+    width: 600px;
+    float: right;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
 
 .ajustar{
    clear:both;
+}
+
+
+.bibliografia ul li, strong{
+    font-style: italic;
+}
+
+.acerca{
+  font-family: arial;
+  font-size: 12;
 }

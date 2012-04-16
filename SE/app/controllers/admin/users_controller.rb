@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
 
 
     def index
-      @users = User.find(:all, :order => "admin DESC")
+      @users = User.all(:order => "admin DESC")
     end
 
     def show
@@ -24,10 +24,10 @@ class Admin::UsersController < ApplicationController
       @user = User.new(params[:user])
       respond_to do |format|
         if @user.save
-         # UserMailer.registration_confirmation(@user).deliver
-          format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+          UserMailer.registration_confirmation(@user).deliver
+          format.html { redirect_to(@user, :notice => 'Usuario creado exitosamente') }
         else
-          format.html { render :action => "new" }
+          format.html { render "index" }
         end
       end
     end
