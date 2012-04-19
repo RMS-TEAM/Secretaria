@@ -2,13 +2,10 @@ SE::Application.routes.draw do
 
 
   get "sessions/new"
-
-  #get "pages/home"
-
-  get "pages/antecedentes"
   match 'antecedentes', :to => 'pages#antecedentes'
   match 'participantes', :to => 'pages#participantes'
   match 'acerca', :to => 'pages#acerca'
+  match 'sisas', :to => 'pages#sisas'
   get "reportes/ranking"
   match "download/:id", :to => 'reportes#download'
 
