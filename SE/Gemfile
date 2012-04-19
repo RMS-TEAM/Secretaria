@@ -21,6 +21,7 @@ gem 'mysql2'
 gem 'pdf-my-url'
 gem 'pdfkit'
 gem "devise"
+gem 'will_paginate'
 
 
 

@@ -27,6 +27,7 @@
 
     </div>
   <%end%>
+  <%= will_paginate @users %>
 </div>
     <div id = "options">
         <div ><%= link_to 'Nuevo Usuario', new_admin_user_path, :class => "option_button" %></div>
