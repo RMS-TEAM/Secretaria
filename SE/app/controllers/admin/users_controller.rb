@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
 
 
     def index
-      @users = User.all(:order => "admin DESC")
+      @users = User.paginate(:per_page => 10, :page => params[:page]) .order('admin DESC')
     end
 
     def show
