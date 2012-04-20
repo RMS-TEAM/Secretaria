@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
   def new
-          @title = "Sing in"
+          @title = "Ingresar"
   end
 
   def create
           user = User.authenticate(params[:session][:email],
                                                            params[:session][:password])
           if user.nil?
-                  #flash.now[:error] = "Error! email/contraseña combination"
-                  @title = "Sing in"
+                  flash[:error] = "Error: email o contraseña invalidos"
+                  @title = "Ingresar"
                   render 'new'
           else
                   sing_in user
