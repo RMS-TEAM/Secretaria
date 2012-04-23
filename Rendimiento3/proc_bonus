@@ -6,9 +6,9 @@ BEGIN
 	# merge 1:1
 	DELETE FROM `bonus`;
 
-	INSERT INTO `bonus` (`dane`, `bonus_matematica11`, `bonus_lenguaje11`, `bonus_total11`,
+	INSERT INTO `bonus` (`año_indicador`, `dane`, `bonus_matematica11`, `bonus_lenguaje11`, `bonus_total11`,
 	 `bonus_matematica5`, `bonus_lenguaje5`, `bonus_total5`)
-	 SELECT `bonus11`.`dane`, `bonus_matematica11`, `bonus_lenguaje11`, `bonus_total11`, `bonus_matematica5`,
+	 SELECT `bonus11`.`año_indicador`, `bonus11`.`dane`, `bonus_matematica11`, `bonus_lenguaje11`, `bonus_total11`, `bonus_matematica5`,
 	 `bonus_lenguaje5`, `bonus_total5`
 	 FROM  `bonus11` , `bonus5`
 	 WHERE `bonus11`.`dane` = `bonus5`.`dane`;

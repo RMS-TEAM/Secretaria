@@ -7,10 +7,10 @@ BEGIN
 
 	INSERT INTO `res211_10` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
 	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
-	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`)
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`, `año_indicador`)
 	 SELECT `dane`, `nombre`, l.`nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
 	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
-	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`, `año_indicador`
 	 FROM `tabla identificadores` l LEFT JOIN `mediana11_10` r
 	 ON l.`nombre_sb11_10` = r.`nombre_sb11_10`;
 END //

@@ -11,6 +11,7 @@ BEGIN
 	FROM `eficiencia_interna_oficial c600` 
 	GROUP BY dane;
 
+	UPDATE `taprob` SET `año_indicador`=2011;
 END //
 
 DELIMITER ;

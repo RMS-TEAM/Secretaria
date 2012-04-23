@@ -66,6 +66,7 @@ keep dane aprobación5 aprobación9 aprobación11a aprobación11t nombre_ie
 rename nombre_ie cole_inst_nombre
 save rev1, replace
 collapse (mean) aprobación5 aprobación9 aprobación11a aprobación11t, by (dane)
+gen año_indicador = 2011
 outsheet using "D:\rendimiento3\SQL\rev1.csv", comma replace
 save taprob, replace
 outsheet using "D:\rendimiento3\SQL\taprob.csv", comma replace
@@ -85,6 +86,7 @@ outsheet using "D:\rendimiento3\SQL\taprob.csv", comma replace
  gen textra=Extraedad/cole_codigo_mcpio
  gen rtextra = 1-textra
  rename cole_inst_nombre nombre_sb11_10
+	gen año_indicador = 2011
  save textra,replace
  outsheet using "D:\rendimiento3\SQL\textra.csv", comma replace
 
@@ -98,6 +100,7 @@ save rev3, replace
 outsheet using "D:\rendimiento3\SQL\rev3.csv", comma replace
 collapse (median) tema_matematica tema_lenguaje, by(cole_inst_nombre)
 rename cole_inst_nombre nombre_sb11_07
+gen año_indicador = 2011
 save mediana11_07, replace
 outsheet using "D:\rendimiento3\SQL\mediana11_07.csv", comma replace
 
@@ -110,6 +113,7 @@ save rev4, replace
 outsheet using "D:\rendimiento3\SQL\rev4.csv", comma replace
 collapse (median) tema_lenguaje_d tema_matematica_d, by(cole_inst_nombre)
 rename cole_inst_nombre nombre_sb11_10
+gen año_indicador = 2011
 save mediana11_10, replace
 outsheet using "D:\rendimiento3\SQL\mediana11_10.csv", comma replace
 
@@ -168,6 +172,7 @@ gen prlen_medio_07_p = prlen_medio_07*100
 gen prlen_alto_07_p = prlen_alto_07*100
 
 rename cole_inst_nombre nombre_sb11_07
+gen año_indicador = 2011
 save pr_estudiantes_07, replace
 outsheet using "D:\rendimiento3\SQL\pr_estudiantes_07.csv", comma replace
 
@@ -226,6 +231,7 @@ gen prlen_medio_10_p = prlen_medio_10*100
 gen prlen_alto_10_p = prlen_alto_10*100
 
 rename cole_inst_nombre nombre_sb11_10
+gen año_indicador = 2011
 save pr_estudiantes_10, replace
 outsheet using "D:\rendimiento3\SQL\pr_estudiantes_10.csv", comma replace
 
@@ -246,95 +252,55 @@ gen	 m9_03 = promedio if grado == 9 & prueba == "Matemáticas"
 collapse (median) l5_03 m5_03 l9_03 m9_03, by (dane)
 /*Algunas IE presentan varios resultados para una misma área en un mismo grado. 
 Para obtener un solo valor, se usó el valor mediano*/
+
+xtile orden_lenguaje5_03 = l5_03, nquantiles(100)
+ xtile orden_matematica5_03 = m5_03, nquantiles(100)
+ xtile orden_lenguaje9_03 = l9_03, nquantiles(100)
+ xtile orden_matematica9_03 = m9_03, nquantiles(100)
+
 save saber_5y9_03, replace
 
-use "saber_5y9_03.dta", clear
 outsheet using "D:\rendimiento3\SQL\saber_5y9_03.csv", comma replace
-centile l5_03, centile (33, 50)
-scalar c50_l5_03 = r(c_2)
-scalar c33_l5_03 = r(c_1)
 
-gen p50_len_5 = 1 if l5_03<=c50_l5_03 & l5_03 !=.
-replace p50_len_5 = 0 if  l5_03 > c50_l5_03
+use "escala5_9_09.dta", clear 
+keep  l5r m5r cn5r l9r m9r cn9r dane
 
-gen p33_len_5 = 1 if l5_03<= c33_l5_03 & l5_03 !=.
-replace p33_len_5 = 0 if  l5_03 > c33_l5_03 
+ xtile orden_lenguaje5_09 = l5r, nquantiles(100)
+ xtile orden_matematica5_09 = m5r, nquantiles(100)
+ xtile orden_lenguaje9_09 = l9r, nquantiles(100)
+ xtile orden_matematica9_09 = m9r, nquantiles(100)
 
-centile l9_03, centile (33, 50)
-scalar c50_l9_03 = r(c_2)
-scalar c33_l9_03 = r(c_1)
+merge 1:1 dane using "saber_5y9_03.dta"
+drop _merge 
+merge 1:1 dane using"tabla identificadores.dta"
+drop if _merge ==1 
+drop _merge nombre_sb11_10 nombre_sb11_07 ProporcionEstrato0 ProporcionEstrato1 ProporcionEstrato2 ///
+     ProporcionEstrato3 ProporcionEstrato4 ProporcionEstrato5 ProporcionEstrato6
 
-gen p50_len_9 = 1 if l9_03<=c50_l9_03 & l9_03 !=.
-replace p50_len_9 = 0 if  l9_03 > c50_l9_03
+gen diferencia_lenguaje_5 = orden_lenguaje5_09 - orden_lenguaje5_03
+gen diferencia_matematica_5 = orden_matematica5_09 - orden_matematica5_03
 
-gen p33_len_9 = 1 if l9_03<= c33_l9_03 & l9_03 !=.
-replace p33_len_9 = 0 if  l9_03 > c33_l9_03 
+gen diferencia_lenguaje_9 = orden_lenguaje9_09- orden_lenguaje9_03
+gen diferencia_matematica_9 = orden_matematica9_09 - orden_matematica9_03
 
-centile m5_03, centile (33, 50)
-scalar c50_m5_03 = r(c_2)
-scalar c33_m5_03 = r(c_1)
+gen Progresolen5= diferencia_lenguaje_5*( orden_lenguaje5_03)^1.5 if diferencia_lenguaje_5 > =0
+replace Progresolen5=diferencia_lenguaje_5*((101-orden_lenguaje5_03))^1.5 if diferencia_lenguaje_5  <0
 
-gen p50_mat_5 = 1 if m5_03<=c50_m5_03 & m5_03 !=.
-replace p50_mat_5 = 0 if  m5_03 > c50_m5_03
+gen Progresolen9= diferencia_lenguaje_9*( orden_lenguaje9_03)^1.5 if diferencia_lenguaje_9 > =0
+replace Progresolen9=diferencia_lenguaje_9*((101-orden_lenguaje9_03))^1.5 if diferencia_lenguaje_9 <0
 
-gen p33_mat_5 = 1 if m5_03<= c33_m5_03 & m5_03 !=.
-replace p33_mat_5 = 0 if  m5_03 > c33_m5_03 
+gen Progresomat5=  diferencia_matematica_5*(orden_matematica5_03)^1.5 if diferencia_matematica_5 > =0
+replace Progresomat5= diferencia_matematica_5*((101-orden_matematica5_03))^1.5 if diferencia_matematica_5 <0
 
-centile m9_03, centile (33, 50)
-scalar c50_m9_03 = r(c_2)
-scalar c33_m9_03 = r(c_1)
+gen Progresomat9=  diferencia_matematica_9*( orden_lenguaje9_03)^1.5 if diferencia_matematica_9 > =0
+replace Progresomat9= diferencia_matematica_9*((101-orden_lenguaje9_03))^1.5 if diferencia_matematica_9<0
 
-gen p50_mat_9 = 1 if m9_03<=c50_m9_03 & m9_03 !=.
-replace p50_mat_9 = 0 if  m9_03 > c50_m9_03
-
-gen p33_mat_9 = 1 if m9_03<= c33_m9_03 & m9_03 !=.
-replace p33_mat_9 = 0 if  m9_03 > c33_m9_03 
-
-save permed_5_9_03, replace
-outsheet using "D:\rendimiento3\SQL\permed_5_9_03.csv", comma replace
-
-merge 1:1 dane using "escala5_9_09.dta"
-
-**Actualmente en que percentil se encuentra si el año anterior se encuentra por debajo o igual al percentil 50% en el caso de que p50_len_5 ==1***
-**Actualmente en que percentil se encuentra si el año anterior se encuentra por encima o igual al percentil 50% en el caso de que p50_len_5 ==0***
-
-xtile cr_medlen5_1 =l5r if p50_len_5 ==1, nquantiles(100)
-xtile cr_medlen5_2 =l5r if p50_len_5 ==0, nquantiles(100)
-xtile cr_medlen5_3 =l5r if p33_len_5 ==1, nquantiles(100)
-xtile cr_medlen5_4 =l5r if p33_len_5 ==0, nquantiles(100)
-gen permed50len_5 = cr_medlen5_1
-replace permed50len_5 = cr_medlen5_2 if cr_medlen5_1==.
-gen permedlen33_5 = cr_medlen5_3
-replace permedlen33_5 = cr_medlen5_4 if permedlen33_5 ==.
-
-xtile cr_medlen9_1 = l9r if p50_len_9 ==1, nquantiles(100)
-xtile cr_medlen9_2 = l9r if p50_len_9 ==0, nquantiles(100)
-xtile cr_medlen9_3 = l9r if p33_len_9 ==1, nquantiles(100)
-xtile cr_medlen9_4 = l9r if p33_len_9 ==0, nquantiles(100)
-gen permed50len_9 = cr_medlen9_1
-replace permed50len_9 = cr_medlen9_2 if cr_medlen9_1 ==.
-gen permedlen33_9 = cr_medlen9_3
-replace permedlen33_9 = cr_medlen9_4 if permedlen33_9 ==.
-
-xtile cr_medmat5_1 = m5r if p50_mat_5 ==1, nquantiles(100)
-xtile cr_medmat5_2 = m5r if p50_mat_5 ==0, nquantiles(100)
-xtile cr_medmat5_3 = m5r if p33_mat_5 ==1, nquantiles(100)
-xtile cr_medmat5_4 = m5r if p33_mat_5 ==0, nquantiles(100)
-gen permed50mat_5 = cr_medmat5_1
-replace permed50mat_5 = cr_medmat5_2 if cr_medmat5_1==.
-gen permedmat33_5 = cr_medmat5_3
-replace permedmat33_5 = cr_medmat5_4 if permedmat33_5 ==.
-
-xtile cr_medmat9_1 = m9r if p50_mat_9 ==1, nquantiles(100)
-xtile cr_medmat9_2 = m9r if p50_mat_9 ==0, nquantiles(100)
-xtile cr_medmat9_3 = m9r if p33_mat_9 ==1, nquantiles(100)
-xtile cr_medmat9_4 = m9r if p33_mat_9 ==0, nquantiles(100)
-gen permed50mat_9 = cr_medmat9_1
-replace permed50mat_9 = cr_medmat9_2 if cr_medmat9_1==.
-gen permedmat33_9 = cr_medmat9_3
-replace permedmat33_9 = cr_medmat9_4 if permedmat33_9 ==.
-
-keep permed50len_5 permedlen33_5 permed50len_9 permedlen33_9 permed50mat_5 permedmat33_5 permed50mat_9 permedmat33_9 dane
+keep dane  nombre Progresolen5  Progresolen9  Progresomat5 Progresomat9  
+replace Progresolen9= (Progresolen9+18600)*100/37200
+replace Progresolen5= (Progresolen5+18600)*100/37200
+replace Progresomat9= (Progresomat9+18600)*100/37200
+replace Progresomat5= (Progresomat5+18600)*100/37200
+gen año_indicador = 2011
 save permedianocr, replace
 outsheet using "D:\rendimiento3\SQL\permedianocr.csv", comma replace
 
@@ -342,30 +308,13 @@ outsheet using "D:\rendimiento3\SQL\permedianocr.csv", comma replace
 use "sb11-2007-2-rgstro-clfccn-v-1-0.dta", clear
 drop if  cole_mpio_colegio != "MEDELLIN"
 collapse (median) tema_lenguaje tema_matematica, by (cole_inst_nombre)
- 
-centile tema_lenguaje, centile (33, 50)
-scalar c50_len_07 = r(c_2)
-scalar c33_len_07 = r(c_1)
-gen p50_l11 = 1 if tema_lenguaje<=c50_len_07 & tema_lenguaje !=.
-replace p50_l11 = 0 if  tema_lenguaje > c50_len_07
-
-gen p33_l11 = 1 if tema_lenguaje<= c33_len_07 & tema_lenguaje !=.
-replace p33_l11 = 0 if  tema_lenguaje > c33_len_07 
-
-centile tema_matematica, centile (33, 50)
-scalar c50_mat_07 = r(c_2)
-scalar c33_mat_07 = r(c_1)
-gen p50_m11 = 1 if tema_matematica<=c50_mat_07 & tema_matematica !=.
-replace p50_m11 = 0 if  tema_matematica > c50_mat_07
-
-gen p33_m11 = 1 if tema_matematica<= c33_mat_07 & tema_matematica !=.
-replace p33_m11 = 0 if  tema_matematica > c33_mat_07
-
 rename cole_inst_nombre nombre_sb11_07
+
 merge m:m nombre_sb11_07 using "tabla identificadores.dta"
 drop if _merge ==1
 drop _merge
-save permed11_07, replace 
+
+save permed11_07, replace
 outsheet using "D:\rendimiento3\SQL\permed11_07.csv", comma replace
 
 use "sb11-2010-2-rgstro-clfccn-v1,.dta", clear
@@ -375,31 +324,35 @@ destring  cole_codigo_mcpio cole_codigo_inst tema_lenguaje tema_matematica, gene
 drop if  cole_codigo_mcpio_d != 5001
 collapse (median) tema_lenguaje_d tema_matematica_d, by (cole_inst_nombre)
 rename cole_inst_nombre nombre_sb11_10
- 
+
 merge m:m nombre_sb11_10 using "tabla identificadores.dta"
 drop if _merge ==1
 drop _merge
+
 merge 1:1 dane using "permed11_07.dta"
+keep  dane nombre tema_lenguaje_d tema_matematica_d tema_lenguaje tema_matematica 
 
-xtile cr_medlen11_1 = tema_lenguaje_d if p50_l11 ==1, nquantiles(100)
-xtile cr_medlen11_2 = tema_lenguaje_d if p50_l11 ==0, nquantiles(100)
-xtile cr_medlen11_3 = tema_lenguaje_d if p33_l11 ==1, nquantiles(100)
-xtile cr_medlen11_4 = tema_lenguaje_d if p33_l11 ==0, nquantiles(100)
-gen permed50len = cr_medlen11_1
-replace permed50len = cr_medlen11_2 if cr_medlen11_1==.
-gen permed33len = cr_medlen11_3
-replace permed33len = cr_medlen11_4 if cr_medlen11_3 ==.
+order  dane nombre tema_lenguaje_d tema_lenguaje tema_matematica_d tema_matematica
 
-xtile cr_medmat11_1 = tema_matematica_d if p50_m11 ==1, nquantiles(100)
-xtile cr_medmat11_2 = tema_matematica_d if p50_m11 ==0, nquantiles(100)
-xtile cr_medmat11_3 = tema_matematica_d if p33_m11 ==1, nquantiles(100)
-xtile cr_medmat11_4 = tema_matematica_d if p33_m11 ==0, nquantiles(100)
-gen permed50mat = cr_medmat11_1
-replace permed50mat = cr_medmat11_2 if cr_medmat11_1==.
-gen permedmat33 = cr_medmat11_3
-replace permedmat33 = cr_medmat11_4 if cr_medmat11_3 ==.
+xtile len10 =   tema_lenguaje_d,nquantiles(100)
+xtile len07=  tema_lenguaje,nquantiles(100)
+xtile mat10=   tema_matematica_d,nquantiles(100)
+xtile mat07= tema_matematica,nquantiles(100)
 
-keep  dane nombre nombre_sb11_07 nombre_sb11_10 permed50len permed33len permed50mat permedmat33
+gen dlen= len10-len07
+gen dmat=mat10-mat07
+
+gen Progresolen11=dlen*(len07)^1.5 if dlen > =0
+replace Progresolen11=dlen*((101-len07))^1.5 if dlen <0
+
+gen Progresomat11=dmat*(mat07)^1.5 if dmat > =0
+replace Progresomat11=dmat*((101-mat07))^1.5 if dmat <0
+
+keep dane Progresolen11  Progresomat11
+replace Progresolen11= (Progresolen11+18600)*100/(37200)
+replace Progresomat11= (Progresomat11+18600)*100/37200
+
+gen año_indicador = 2011
 save permedianocr11, replace
 outsheet using "D:\rendimiento3\SQL\permedianocr11.csv", comma replace
 
@@ -431,6 +384,7 @@ gen minimo_l5 = rango2_l5+rango3_l5
 gen satisfactorio_l5 = rango4_l5+rango5_l5
 gen avanzado_l5 = rango6_l5
 
+gen año_indicador = 2011
 save rango5_9, replace
 
 outsheet using "D:\rendimiento3\SQL\rango5_9.csv", comma replace
@@ -463,6 +417,7 @@ rename  cole_inst_nombre nombre_sb11_07
 merge m:m nombre_sb11_07 using "tabla identificadores.dta"
 drop if _merge ==1
 drop _merge
+gen año_indicador = 2011
 save ran_ie07, replace
 outsheet using "D:\rendimiento3\SQL\ran_ie07.csv", comma replace
 
@@ -494,6 +449,7 @@ rename  cole_inst_nombre nombre_sb11_10
 merge m:m nombre_sb11_10 using "tabla identificadores.dta"
 drop if _merge ==1
 drop _merge
+gen año_indicador = 2011
 save ran_ie10, replace
 outsheet using "D:\rendimiento3\SQL\ran_ie10.csv", comma replace
 
@@ -582,6 +538,7 @@ replace bonus_lenguaje11 = 5 if ProporcionEstrato0>ProporcionEstrato1 & Proporci
 gen bonus_total11 = bonus_lenguaje11+bonus_matematica11
 replace bonus_total11 = bonus_lenguaje11 if bonus_total11 ==. & bonus_matematica11==.
 replace bonus_total11 = bonus_matematica11 if bonus_total11 ==. & bonus_lenguaje11==.
+gen año_indicador = 2011
 save bonus11,replace 
 outsheet using "D:\rendimiento3\SQL\bonus11.csv", comma replace
 
@@ -662,6 +619,7 @@ replace bonus_lenguaje5 = 5 if ProporcionEstrato0>ProporcionEstrato1 & Proporcio
 gen bonus_total5 = bonus_lenguaje5+bonus_matematica5	
 replace bonus_total5 = bonus_lenguaje5 if bonus_total5 ==. & bonus_matematica5==.
 replace bonus_total5 = bonus_matematica5 if bonus_total5 ==. & bonus_lenguaje5==.
+gen año_indicador = 2011
 save bonus5,replace 
 outsheet using "D:\rendimiento3\SQL\bonus5.csv", comma replace
 
@@ -800,7 +758,7 @@ outsheet using "D:\rendimiento3\SQL\indicadores.csv", comma replace
 
 use "bonus11.dta", clear
 merge 1:1 dane using "bonus5.dta"
-keep  bonus_matematica11 bonus_lenguaje11 bonus_total11 bonus_matematica5 bonus_lenguaje5 bonus_total5 dane
+keep  año_indicador bonus_matematica11 bonus_lenguaje11 bonus_total11 bonus_matematica5 bonus_lenguaje5 bonus_total5 dane
 format %15.0g dane
 save bonus, replace
 outsheet using "D:\rendimiento3\SQL\bonus.csv", comma replace

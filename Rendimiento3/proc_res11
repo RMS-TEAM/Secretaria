@@ -9,22 +9,21 @@ BEGIN
 	DELETE FROM `res11`;
 	INSERT INTO `res11` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
 	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
-	 `ProporcionEstrato5`, `ProporcionEstrato6`, `permed50len`, `permed33len`, `permed50mat`, `permedmat33`,
-	 `aprobacion5`, `aprobacion9`, `aprobacion11a`, `aprobacion11t`)
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `Progresolen11`, `Progresomat11`, 
+	 `aprobacion5`, `aprobacion9`, `aprobacion11a`, `aprobacion11t`, `año_indicador`)
 	 SELECT l.`dane`, l.`nombre`, l.`nombre_sb11_10`, l.`nombre_sb11_07`, l.`ProporcionEstrato0`,
 	 l.`ProporcionEstrato1`, l.`ProporcionEstrato2`, l.`ProporcionEstrato3`, l.`ProporcionEstrato4`,
-	 l.`ProporcionEstrato5`, l.`ProporcionEstrato6`, `permed50len`, `permed33len`, `permed50mat`,
-	 `permedmat33`, `aprobacion5`, `aprobacion9`, `aprobacion11a`, `aprobacion11t`
+	 l.`ProporcionEstrato5`, l.`ProporcionEstrato6`, `Progresolen11`, `Progresomat11`, `aprobacion5`, `aprobacion9`, `aprobacion11a`, `aprobacion11t`, l.`año_indicador`
 	 FROM `res211` l
 	 LEFT JOIN  `res111` r ON  l.`dane` = r.`dane`;
 
 	INSERT INTO `res11` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
 	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
 	 `ProporcionEstrato5`, `ProporcionEstrato6`, `aprobacion5`, `aprobacion9`, `aprobacion11a`,
-	 `aprobacion11t`)
+	 `aprobacion11t`, `año_indicador`)
 	 SELECT `dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`,
 	 `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`,
-	 `ProporcionEstrato6`, `aprobacion5`, `aprobacion9`, `aprobacion11a`, `aprobacion11t`
+	 `ProporcionEstrato6`, `aprobacion5`, `aprobacion9`, `aprobacion11a`, `aprobacion11t`, `año_indicador`
 	 FROM `res111`
 	WHERE `dane` NOT IN (SELECT `dane` FROM `res211`);
 

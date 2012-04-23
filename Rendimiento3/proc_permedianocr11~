@@ -1,0 +1,177 @@
+DROP PROCEDURE IF EXISTS proc_permedianocr11;
+
+DELIMITER //
+CREATE PROCEDURE proc_permedianocr11()
+BEGIN
+	# total de datos utilizada para xtile
+	DECLARE total INT;
+
+
+	DROP TABLE IF EXISTS `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+	CREATE TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` 
+	 (SELECT `cole_codigo_inst`, `cole_codigo_mcpio`, `cole_inst_nombre`, `tema_lenguaje`, `tema_matematica` 
+	 FROM `sb11-2010-2-rgstro-clfccn-v1,` WHERE `cole_codigo_mcpio` = 5001);
+
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `cole_codigo_mcpio_d` INT(11);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `cole_codigo_inst_d` INT(11);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_lenguaje_d` DECIMAL(8,5);
+	ALTER TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,` ADD `tema_matematica_d` DECIMAL(8,5);
+
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `cole_codigo_mcpio_d` = CONVERT(`cole_codigo_mcpio`, SIGNED);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `cole_codigo_inst_d` = CONVERT(`cole_codigo_inst`, SIGNED);
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_lenguaje_d` = CONVERT(REPLACE(`tema_lenguaje`, ',', '.'), DECIMAL(8,5));
+	UPDATE `clone_sb11-2010-2-rgstro-clfccn-v1,` SET `tema_matematica_d` = CONVERT(REPLACE(`tema_matematica`, ',', '.'), DECIMAL(8,5));
+
+	#Collapse
+	DROP TABLE IF EXISTS `temp`;
+	CREATE TABLE `temp`
+	 SELECT `cole_inst_nombre` AS nombre_sb11_10, MEDIAN(`tema_lenguaje_d`, 4) AS tema_lenguaje_d,
+	 MEDIAN(`tema_matematica_d`, 4) AS tema_matematica_d
+	 FROM `clone_sb11-2010-2-rgstro-clfccn-v1,` GROUP BY `cole_inst_nombre`;
+
+	DROP TABLE `clone_sb11-2010-2-rgstro-clfccn-v1,`;
+
+	# Merge m:m
+	DROP TABLE IF EXISTS `temp1`;
+	CREATE TABLE `temp1`
+	 SELECT `temp`.`nombre_sb11_10`, `tema_lenguaje_d`, `tema_matematica_d`, `dane`, `nombre`,
+	 `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`, `ProporcionEstrato2`,
+	 `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6` 
+	 FROM `temp`, `tabla identificadores`
+	 WHERE `temp`.`nombre_sb11_10` = `tabla identificadores`.`nombre_sb11_10`;
+
+	INSERT INTO `temp1` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
+	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`)
+	 SELECT `dane`, `nombre`, l.`nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`,
+	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
+	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`
+	 FROM `tabla identificadores` l
+	 LEFT JOIN  `temp` r ON l.nombre_sb11_10 = r.nombre_sb11_10
+	 WHERE r.nombre_sb11_10 IS NULL;
+
+	DROP TABLE `temp`;
+
+
+	# Merge 1:1
+	DROP TABLE IF EXISTS `temp2`;
+	CREATE TABLE `temp2`
+	SELECT `tema_lenguaje_d`, `tema_matematica_d`, l.`dane`, l.`nombre`, `tema_lenguaje`, `tema_matematica`
+	FROM `temp1` l
+	LEFT JOIN `permed11_07` r
+	 ON  l.`dane` = r.`dane`;
+
+	INSERT INTO temp2 (`tema_lenguaje`, `tema_matematica`,  `dane`, `nombre`)
+	SELECT `tema_lenguaje`, `tema_matematica`, `dane`, `nombre`
+	FROM `permed11_07`
+	WHERE `dane` NOT IN (SELECT `dane` FROM `temp1`);
+
+	DROP TABLE `temp1`;
+
+
+	# xtile len10 =   tema_lenguaje_d,nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_lenguaje_d, 
+	 (SELECT COUNT(tema_lenguaje_d)+1 FROM temp2 b WHERE b.tema_lenguaje_d < t.tema_lenguaje_d
+	  AND tema_lenguaje_d IS NOT NULL) AS uno
+	FROM temp2 t WHERE tema_lenguaje_d IS NOT NULL
+	ORDER BY tema_lenguaje_d;
+	
+	ALTER TABLE temp2 ADD len10 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET len10 = uno*100/total
+	 WHERE temp2.tema_lenguaje_d = xtile.tema_lenguaje_d;
+	DROP TABLE xtile;
+
+	# xtile len07=  tema_lenguaje,nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_lenguaje, 
+	 (SELECT COUNT(tema_lenguaje)+1 FROM temp2 b WHERE b.tema_lenguaje < t.tema_lenguaje
+	  AND tema_lenguaje IS NOT NULL) AS uno
+	FROM temp2 t WHERE tema_lenguaje IS NOT NULL
+	ORDER BY tema_lenguaje;
+	
+	ALTER TABLE temp2 ADD len07 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET len07 = uno*100/total
+	 WHERE temp2.tema_lenguaje = xtile.tema_lenguaje;
+	DROP TABLE xtile;
+
+	# xtile mat10 = tema_matematica_d,nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_matematica_d, 
+	 (SELECT COUNT(tema_matematica_d)+1 FROM temp2 b WHERE b.tema_matematica_d < t.tema_matematica_d
+	  AND tema_matematica_d IS NOT NULL) AS uno
+	FROM temp2 t WHERE tema_matematica_d IS NOT NULL
+	ORDER BY tema_matematica_d;
+	
+	ALTER TABLE temp2 ADD mat10 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET mat10 = uno*100/total
+	 WHERE temp2.tema_matematica_d = xtile.tema_matematica_d;
+	DROP TABLE xtile;
+	
+	# xtile mat07= tema_matematica,nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT tema_matematica, 
+	 (SELECT COUNT(tema_matematica)+1 FROM temp2 b WHERE b.tema_matematica < t.tema_matematica
+	  AND tema_matematica IS NOT NULL) AS uno
+	FROM temp2 t WHERE tema_matematica IS NOT NULL
+	ORDER BY tema_matematica;
+	
+	ALTER TABLE temp2 ADD mat07 INT;
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE temp2, xtile SET mat07 = uno*100/total
+	 WHERE temp2.tema_matematica = xtile.tema_matematica;
+	DROP TABLE xtile;
+
+
+
+	ALTER TABLE temp2 ADD dlen INT;
+	UPDATE temp2 SET dlen = len10-len07;
+
+	ALTER TABLE temp2 ADD dmat INT;
+	UPDATE temp2 SET dmat = mat10-mat07;
+
+
+	ALTER TABLE temp2 ADD `Progresolen11` DECIMAL(12,5);
+	UPDATE temp2 SET `Progresolen11` = dlen*pow(len07,1.5) 
+	WHERE dlen >= 0;
+	UPDATE temp2 SET `Progresolen11` = dlen*pow((101-len07),1.5) 	 WHERE dlen < 0;
+
+	ALTER TABLE temp2 ADD `Progresomat11` DECIMAL(12,5);
+	UPDATE temp2 SET `Progresomat11` = dmat*pow(mat07,1.5) 
+	WHERE dmat >= 0;
+	UPDATE temp2 SET `Progresomat11` = dmat*pow((101-mat07),1.5) 
+	WHERE dmat < 0;
+
+
+	UPDATE temp2 SET `Progresolen11` = (`Progresolen11`+18600)*100/(37200);
+	UPDATE temp2 SET `Progresomat11` = (`Progresomat11`+18600)*100/37200;
+
+
+	# keep dane Progresolen11  Progresomat11
+	DELETE FROM permedianocr11;
+	INSERT INTO permedianocr11 (dane, `Progresolen11`, `Progresomat11`) 
+	 SELECT dane, `Progresolen11`, `Progresomat11` FROM temp2;
+
+	DROP TABLE temp2;
+
+	UPDATE permedianocr11 SET `año_indicador` = 2011;
+
+END //
+
+DELIMITER ;
+
+
+
+
+
+
+
+
+

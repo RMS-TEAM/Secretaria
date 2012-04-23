@@ -10,12 +10,12 @@ BEGIN
 	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
 	 `ProporcionEstrato5`, `ProporcionEstrato6`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`,
 	 `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`,
-	 `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p`)
+	 `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p`, `año_indicador`)
 	 SELECT `dane`, `nombre`, `nombre_sb11_10`, l.`nombre_sb11_07`, `ProporcionEstrato0`,
 	 `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`,
 	 `ProporcionEstrato5`, `ProporcionEstrato6`, `prmat_bajo_07`, `prmat_medio_07`, `prmat_alto_07`,
 	 `prlen_bajo_07`, `prlen_medio_07`, `prlen_alto_07`, `prmat_bajo_07_p`, `prmat_medio_07_p`,
-	 `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p` 
+	 `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p`, `año_indicador`
 	 FROM `tabla identificadores` l LEFT JOIN `pr_estudiantes_07` r
 	 ON l.`nombre_sb11_07` = r.`nombre_sb11_07`;
 

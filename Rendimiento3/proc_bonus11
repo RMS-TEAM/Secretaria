@@ -176,6 +176,8 @@ BEGIN
 	UPDATE `bonus11` SET `bonus_total11` = `bonus_lenguaje11` WHERE `bonus_total11` IS NULL AND `bonus_matematica11` IS NULL;
 	UPDATE `bonus11` SET `bonus_total11` = `bonus_matematica11` WHERE `bonus_total11` IS NULL AND `bonus_lenguaje11` IS NULL;
 
+	UPDATE `bonus11` set año_indicador = 2011;
+
 END //	
 
 

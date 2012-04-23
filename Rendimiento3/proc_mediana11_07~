@@ -1,0 +1,24 @@
+DROP PROCEDURE IF EXISTS proc_mediana11_07;
+
+
+DELIMITER //
+
+CREATE PROCEDURE proc_mediana11_07()
+BEGIN
+
+	DROP TABLE IF EXISTS `clone_sb11-2007-2-rgstro-clfccn-v-1-0`;
+	CREATE TABLE `clone_sb11-2007-2-rgstro-clfccn-v-1-0` 
+	 (SELECT `cole_inst_nombre`, `cole_mpio_colegio`, `cole_codigo_colegio`, `tema_lenguaje`, `tema_matematica`
+	 FROM `sb11-2007-2-rgstro-clfccn-v-1-0` WHERE `cole_mpio_colegio` = "MEDELLIN");
+
+	# Collapse
+	DELETE FROM `mediana11_07`;
+	INSERT INTO `mediana11_07` (`nombre_sb11_07`, `tema_matematica`, `tema_lenguaje`) 
+	 SELECT `cole_inst_nombre`, MEDIAN(`tema_matematica`, 5), MEDIAN(`tema_lenguaje`, 5) 
+	 FROM `clone_sb11-2007-2-rgstro-clfccn-v-1-0` GROUP BY `cole_inst_nombre`;
+
+	UPDATE `mediana11_07` set gen año_indicador = 2011;
+	DROP TABLE `clone_sb11-2007-2-rgstro-clfccn-v-1-0`;
+
+END //
+DELIMITER ;

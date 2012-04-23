@@ -10,296 +10,137 @@ BEGIN
 	# Merge 1:1 dane
 	DROP TABLE IF EXISTS temp;
 	
-	CREATE TABLE temp
-	SELECT `permed_5_9_03`.`dane`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `p50_len_5`, `p33_len_5`,
-	 `p50_len_9`, `p33_len_9`, `p50_mat_5`, `p33_mat_5`, `p50_mat_9`, `p33_mat_9`, `l5r`, `m5r`, `cn5r`,
-	 `l9r`, `m9r`, `cn9r`, `rango1_l5r`, `rango2_l5r`, `rango3_l5r`, `rango4_l5r`, `rango5_l5r`,
-	 `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`, `rango4_m5r`, `rango5_m5r`, `rango6_m5r`,
-	 `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`, `rango5_l9r`, `rango6_l9r`, `rango1_m9r`,
-	 `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`, `rango6_m9r`   
-	FROM  `permed_5_9_03`, `escala5_9_09` WHERE `permed_5_9_03`.`dane` =  `escala5_9_09`.`dane`;
+	CREATE TABLE temp 
+	SELECT `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, `dane`   
+	FROM  `escala5_9_09`;
 	
-	INSERT INTO temp (`dane`, `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, `rango1_l5r`, `rango2_l5r`,
-	 `rango3_l5r`, `rango4_l5r`, `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`,
-	 `rango4_m5r`, `rango5_m5r`, `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`,
-	 `rango5_l9r`, `rango6_l9r`, `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`,
-	 `rango6_m9r`)
-	(SELECT `dane`, `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, `rango1_l5r`, `rango2_l5r`, `rango3_l5r`,
-	 `rango4_l5r`, `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`, `rango3_m5r`, `rango4_m5r`,
-	 `rango5_m5r`, `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`, `rango4_l9r`, `rango5_l9r`,
-	 `rango6_l9r`, `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`, `rango5_m9r`, `rango6_m9r` FROM
-	 `escala5_9_09`
-	WHERE NOT EXISTS (SELECT * FROM `permed_5_9_03` where `escala5_9_09`.dane = `permed_5_9_03`.dane));
-
-	INSERT INTO temp (`dane`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `p50_len_5`, `p33_len_5`, `p50_len_9`,
-	 `p33_len_9`, `p50_mat_5`, `p33_mat_5`, `p50_mat_9`, `p33_mat_9`)
-	(SELECT `dane`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `p50_len_5`, `p33_len_5`, `p50_len_9`, `p33_len_9`,
-	 `p50_mat_5`, `p33_mat_5`, `p50_mat_9`, `p33_mat_9` FROM `permed_5_9_03`
-	WHERE NOT EXISTS (SELECT * FROM `escala5_9_09` where `escala5_9_09`.dane = `permed_5_9_03`.dane));
-
-
-	# xtile cr_medlen5_1 = l5r if p50_len_5 ==1, nquantiles(100)
+	
+	# xtile orden_lenguaje5_09 = l5r, nquantiles(100)
 	DROP TABLE IF EXISTS xtile;
 	CREATE TABLE xtile
 	SELECT l5r, 
-		( SELECT COUNT(l5r)+1 FROM temp b WHERE b.l5r < t.l5r AND b.p50_len_5 = 1 AND l5r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_len_5 = 1 AND l5r IS NOT NULL
+		( SELECT COUNT(l5r)+1 FROM temp b WHERE b.l5r < t.l5r 
+			AND l5r IS NOT NULL) AS uno
+	FROM temp t WHERE l5r IS NOT NULL
 	ORDER BY l5r;
 	
-	ALTER TABLE temp ADD cr_medlen5_1 INT;
+	ALTER TABLE temp ADD orden_lenguaje5_09 INT;
 	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen5_1 = uno*100/total where temp.l5r = xtile.l5r AND p50_len_5 = 1;
+	UPDATE temp, xtile SET orden_lenguaje5_09 = uno*100/total 	
+	WHERE temp.l5r = xtile.l5r;
 	DROP TABLE xtile;
 
-	# xtile cr_medlen5_2= l5r if p50_len_5 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT l5r, 
-		( SELECT COUNT(l5r)+1 FROM temp b WHERE b.l5r < t.l5r AND b.p50_len_5 = 0 AND l5r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_len_5 = 0 AND l5r IS NOT NULL
-	ORDER BY l5r;
-	
-	ALTER TABLE temp ADD cr_medlen5_2 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen5_2 = uno*100/total where temp.l5r = xtile.l5r AND p50_len_5 = 0;
-	DROP TABLE xtile;
-
-	# xtile cr_medlen5_3 = l5r if p33_len_5 ==1, nquantiles(100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT l5r, 
-		( SELECT COUNT(l5r)+1 FROM temp b WHERE b.l5r < t.l5r AND b.p33_len_5 = 1 AND l5r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_len_5 = 1 AND l5r IS NOT NULL
-	ORDER BY l5r;
-	
-	ALTER TABLE temp ADD cr_medlen5_3 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen5_3 = uno*100/total where temp.l5r = xtile.l5r AND p33_len_5 = 1;
-	DROP TABLE xtile;
-
-	# xtile cr_medlen5_4= l5r if p33_len_5 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT l5r, 
-		( SELECT COUNT(l5r)+1 FROM temp b WHERE b.l5r < t.l5r AND b.p33_len_5 = 0 AND l5r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_len_5 = 0 AND l5r IS NOT NULL
-	ORDER BY l5r;
-	
-	ALTER TABLE temp ADD cr_medlen5_4 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen5_4 = uno*100/total where temp.l5r = xtile.l5r AND p33_len_5 = 0;
-	DROP TABLE xtile;
-
-	
-	ALTER TABLE temp ADD permed50len_5 INT;
-	UPDATE temp SET permed50len_5 = cr_medlen5_1;
-	UPDATE temp SET permed50len_5 = cr_medlen5_2 WHERE cr_medlen5_1 IS NULL;
-
-	ALTER TABLE temp ADD permedlen33_5 INT;
-	UPDATE temp SET permedlen33_5 = cr_medlen5_3;
-	UPDATE temp SET permedlen33_5 = cr_medlen5_4 WHERE permedlen33_5 IS NULL;
-
-
-
-
-
-	# xtile cr_medlen9_1 = l9r if p50_len_9 ==1, nquantiles(100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT l9r, 
-		( SELECT COUNT(l9r)+1 FROM temp b WHERE b.l9r < t.l9r AND b.p50_len_9 = 1  AND l9r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_len_9 = 1 AND l9r IS NOT NULL
-	ORDER BY l9r;
-
-	ALTER TABLE temp ADD cr_medlen9_1 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen9_1 = uno*100/total where temp.l9r = xtile.l9r AND p50_len_9 = 1;
-	DROP TABLE xtile;
-
-	# xtile cr_medlen9_2= l9r if p50_len_9 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT l9r, 
-		( SELECT COUNT(l9r)+1 FROM temp b WHERE b.l9r < t.l9r AND b.p50_len_9 = 0 AND l9r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_len_9 = 0 AND l9r IS NOT NULL
-	ORDER BY l9r;
-	
-	ALTER TABLE temp ADD cr_medlen9_2 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen9_2 = uno*100/total where temp.l9r = xtile.l9r AND p50_len_9 = 0;
-	DROP TABLE xtile;
-
-	# xtile cr_medlen9_3 = l9r if p33_len_9 ==1, nquantiles(100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT l9r, 
-		( SELECT COUNT(l9r)+1 FROM temp b WHERE b.l9r < t.l9r AND b.p33_len_9 = 1 AND l9r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_len_9 = 1 AND l9r IS NOT NULL
-	ORDER BY l9r;
-
-	ALTER TABLE temp ADD cr_medlen9_3 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen9_3 = uno*100/total where temp.l9r = xtile.l9r AND p33_len_9 = 1;
-	DROP TABLE xtile;
-
-	# xtile cr_medlen9_4= l9r if p33_len_9 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT l9r, 
-		( SELECT COUNT(l9r)+1 FROM temp b WHERE b.l9r < t.l9r AND b.p33_len_9 = 0 AND l9r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_len_9 = 0 AND l9r IS NOT NULL
-	ORDER BY l9r;
-
-	ALTER TABLE temp ADD cr_medlen9_4 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medlen9_4 = uno*100/total where temp.l9r = xtile.l9r AND p33_len_9 = 0;
-	DROP TABLE xtile;
-
-
-	ALTER TABLE temp ADD permed50len_9 INT;
-	UPDATE temp SET permed50len_9 = cr_medlen9_1;
-	UPDATE temp SET permed50len_9 = cr_medlen9_2 WHERE cr_medlen9_1 IS NULL;
-
-	ALTER TABLE temp ADD permedlen33_9 INT;
-	UPDATE temp SET permedlen33_9 = cr_medlen9_3;
-	UPDATE temp SET permedlen33_9 = cr_medlen9_4 WHERE permedlen33_9 IS NULL;
-
-
-
-
-	# xtile cr_medmat5_1 = m5r if p50_mat_5 ==1, nquantiles(100)
+	# xtile orden_matematica5_09 = m5r, nquantiles(100)
 	DROP TABLE IF EXISTS xtile;
 	CREATE TABLE xtile
 	SELECT m5r, 
-		( SELECT COUNT(m5r)+1 FROM temp b WHERE b.m5r < t.m5r AND b.p50_mat_5 = 1 AND m5r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_mat_5 = 1 AND m5r IS NOT NULL
-	ORDER BY m5r;
-
-	ALTER TABLE temp ADD cr_medmat5_1 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat5_1 = uno*100/total where temp.m5r = xtile.m5r AND p50_mat_5 = 1;
-	DROP TABLE xtile;
-
-	# xtile  cr_medmat5_2= m5r if p50_mat_5 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT m5r, 
-		( SELECT COUNT(m5r)+1 FROM temp b WHERE b.m5r < t.m5r AND b.p50_mat_5 = 0 AND m5r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_mat_5 = 0 AND m5r IS NOT NULL
+		( SELECT COUNT(m5r)+1 FROM temp b WHERE b.m5r < t.m5r 
+			AND m5r IS NOT NULL) AS uno
+	FROM temp t WHERE m5r IS NOT NULL
 	ORDER BY m5r;
 	
-	ALTER TABLE temp ADD cr_medmat5_2 INT;
+	ALTER TABLE temp ADD orden_matematica5_09 INT;
 	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat5_2 = uno*100/total where temp.m5r = xtile.m5r AND p50_mat_5 = 0;
+	UPDATE temp, xtile SET orden_matematica5_09 = uno*100/total
+	WHERE temp.m5r = xtile.m5r;
 	DROP TABLE xtile;
 
-	# xtile cr_medmat5_3 = m5r if p33_mat_5 ==1, nquantiles(100)
+	# xtile orden_lenguaje9_09 = l9r, nquantiles(100)
 	DROP TABLE IF EXISTS xtile;
 	CREATE TABLE xtile
-	SELECT m5r, 
-		( SELECT COUNT(m5r)+1 FROM temp b WHERE b.m5r < t.m5r AND b.p33_mat_5 = 1 AND m5r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_mat_5 = 1 AND m5r IS NOT NULL
-	ORDER BY m5r;
-
-	ALTER TABLE temp ADD cr_medmat5_3 INT;
+	SELECT l9r, 
+		( SELECT COUNT(l9r)+1 FROM temp b WHERE b.l9r < t.l9r 
+			AND l9r IS NOT NULL) AS uno
+	FROM temp t WHERE l9r IS NOT NULL
+	ORDER BY l9r;
+	
+	ALTER TABLE temp ADD orden_lenguaje9_09 INT;
 	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat5_3 = uno*100/total where temp.m5r = xtile.m5r AND p33_mat_5 = 1;
+	UPDATE temp, xtile SET orden_lenguaje9_09 = uno*100/total 	
+	WHERE temp.l9r = xtile.l9r;
 	DROP TABLE xtile;
 
-	# xtile  cr_medmat5_4= m5r if p33_mat_5 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT m5r, 
-		( SELECT COUNT(m5r)+1 FROM temp b WHERE b.m5r < t.m5r AND b.p33_mat_5 = 0 AND m5r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_mat_5 = 0 AND m5r IS NOT NULL
-	ORDER BY m5r;
-
-	ALTER TABLE temp ADD cr_medmat5_4 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat5_4 = uno*100/total where temp.m5r = xtile.m5r AND p33_mat_5 = 0;
-	DROP TABLE xtile;
-
-
-	ALTER TABLE temp ADD permed50mat_5 INT;
-	UPDATE temp SET permed50mat_5 = cr_medmat5_1;
-	UPDATE temp SET permed50mat_5 = cr_medmat5_2 WHERE cr_medmat5_1 IS NULL;
-
-	ALTER TABLE temp ADD permedmat33_5 INT;
-	UPDATE temp SET permedmat33_5 = cr_medmat5_3;
-	UPDATE temp SET permedmat33_5 = cr_medmat5_4 WHERE permedmat33_5 IS NULL;
-
-
-
-
-
-	# xtile cr_medmat9_1 = m9r if p50_mat_9 ==1, nquantiles(100)
+	# xtile orden_matematica9_09 = m9r, nquantiles(100)
 	DROP TABLE IF EXISTS xtile;
 	CREATE TABLE xtile
 	SELECT m9r, 
-		( SELECT COUNT(m9r)+1 FROM temp b WHERE b.m9r < t.m9r AND b.p50_mat_9 = 1 AND m9r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_mat_9 = 1 AND m9r IS NOT NULL
+		( SELECT COUNT(m9r)+1 FROM temp b WHERE b.m9r < t.m9r 
+			AND m9r IS NOT NULL) AS uno
+	FROM temp t WHERE m9r IS NOT NULL
 	ORDER BY m9r;
 	
-	ALTER TABLE temp ADD cr_medmat9_1 INT;
+	ALTER TABLE temp ADD orden_matematica9_09 INT;
 	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat9_1 = uno*100/total where temp.m9r = xtile.m9r AND p50_mat_9 = 1;
+	UPDATE temp, xtile SET orden_matematica9_09 = uno*100/total
+	WHERE temp.m9r = xtile.m9r;
 	DROP TABLE xtile;
 
-	# xtile  cr_medmat9_2= m9r if p50_mat_9 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT m9r, 
-		( SELECT COUNT(m9r)+1 FROM temp b WHERE b.m9r < t.m9r AND b.p50_mat_9 = 0 AND m9r IS NOT NULL) AS uno
-	FROM temp t WHERE p50_mat_9 = 0 AND m9r IS NOT NULL
-	ORDER BY m9r;
+	# merge 1:1 dane using "saber_5y9_03.dta"
+	DROP TABLE IF EXISTS temp1;
+	CREATE TABLE temp1 
+	SELECT `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, l.`dane`, `orden_lenguaje5_09`, `orden_matematica5_09`, `orden_lenguaje9_09`, `orden_matematica9_09`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `orden_lenguaje5_03`, `orden_matematica5_03`, `orden_lenguaje9_03`, `orden_matematica9_03`
+	 FROM `temp` l
+	 LEFT JOIN  `saber_5y9_03` r ON  l.`dane` = r.`dane`;
+	DROP TABLE temp;
 
-	ALTER TABLE temp ADD cr_medmat9_2 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat9_2 = uno*100/total where temp.m9r = xtile.m9r AND p50_mat_9 = 0;
-	DROP TABLE xtile;
+	# merge 1:1 dane using"tabla identificadores.dta"
+	DROP TABLE IF EXISTS temp2;
+	CREATE TABLE temp2
+	 SELECT temp1.`dane`, `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, `orden_lenguaje5_09`, `orden_matematica5_09`, `orden_lenguaje9_09`, `orden_matematica9_09`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `orden_lenguaje5_03`, `orden_matematica5_03`, `orden_lenguaje9_03`, `orden_matematica9_03`, `nombre`
+	 FROM `temp1`, `tabla identificadores`
+	 WHERE `tabla identificadores`.`dane` = `temp1`.`dane`;
+	
+	INSERT INTO `temp2` ()
+	 SELECT l.`dane`, `nombre`, `l5r`, `m5r`, `cn5r`, `l9r`, `m9r`, `cn9r`, `orden_lenguaje5_09`, `orden_matematica5_09`, `orden_lenguaje9_09`, `orden_matematica9_09`, `l5_03`, `m5_03`, `l9_03`, `m9_03`, `orden_lenguaje5_03`, `orden_matematica5_03`, `orden_lenguaje9_03`, `orden_matematica9_03`
+	 FROM  `tabla identificadores` l
+	 LEFT JOIN  `temp1` r ON l.dane = r.dane 
+	 WHERE r.dane IS NULL;
+	DROP TABLE temp1;
 
-	# xtile cr_medmat9_3 = m9r if p33_mat_9 ==1, nquantiles(100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT m9r, 
-		( SELECT COUNT(m9r)+1 FROM temp b WHERE b.m9r < t.m9r AND b.p33_mat_9 = 1 AND m9r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_mat_9 = 1 AND m9r IS NOT NULL
-	ORDER BY m9r;
+	ALTER TABLE temp2 ADD diferencia_lenguaje_5 INT;
+	ALTER TABLE temp2 ADD diferencia_matematica_5 INT;
+	ALTER TABLE temp2 ADD diferencia_lenguaje_9 INT;
+	ALTER TABLE temp2 ADD diferencia_matematica_9 INT;
 
-	ALTER TABLE temp ADD cr_medmat9_3 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat9_3 = uno*100/total where temp.m9r = xtile.m9r AND p33_mat_9 = 1;
-	DROP TABLE xtile;
-
-	# xtile  cr_medmat9_4= m9r if p33_mat_9 ==0, nquantiles (100)
-	DROP TABLE IF EXISTS xtile;
-	CREATE TABLE xtile
-	SELECT m9r, 
-		( SELECT COUNT(m9r)+1 FROM temp b WHERE b.m9r < t.m9r AND b.p33_mat_9 = 0 AND m9r IS NOT NULL) AS uno
-	FROM temp t WHERE p33_mat_9 = 0 AND m9r IS NOT NULL
-	ORDER BY m9r;
-
-	ALTER TABLE temp ADD cr_medmat9_4 INT;
-	SELECT COUNT(*) INTO total FROM xtile;
-	UPDATE temp, xtile SET cr_medmat9_4 = uno*100/total where temp.m9r = xtile.m9r AND p33_mat_9 = 0;
-	DROP TABLE xtile;
+	UPDATE temp2 SET diferencia_lenguaje_5 = orden_lenguaje5_09 - orden_lenguaje5_03;
+	UPDATE temp2 SET diferencia_matematica_5 = orden_matematica5_09 - orden_matematica5_03;
+	UPDATE temp2 SET diferencia_lenguaje_9 = orden_lenguaje9_09- orden_lenguaje9_03;
+	UPDATE temp2 SET diferencia_matematica_9 = orden_matematica9_09 - orden_matematica9_03;
 
 
-	ALTER TABLE temp ADD permed50mat_9 INT;
-	UPDATE temp SET permed50mat_9 = cr_medmat9_1;
-	UPDATE temp SET permed50mat_9 = cr_medmat9_2 WHERE cr_medmat9_1 IS NULL;
+	ALTER TABLE temp2 ADD `Progresolen5` DECIMAL(12,7);
+	ALTER TABLE temp2 ADD `Progresolen9` DECIMAL(12,7);
+	ALTER TABLE temp2 ADD `Progresomat5` DECIMAL(12,7);
+	ALTER TABLE temp2 ADD `Progresomat9` DECIMAL(12,7);
 
-	ALTER TABLE temp ADD permedmat33_9 INT;
-	UPDATE temp SET permedmat33_9 = cr_medmat9_3;
-	UPDATE temp SET permedmat33_9 = cr_medmat9_4 WHERE permedmat33_9 IS NULL;
+	UPDATE temp2 SET `Progresolen5` = diferencia_lenguaje_5 * pow(orden_lenguaje5_03,1.5) WHERE diferencia_lenguaje_5 >= 0;
+	UPDATE temp2 SET `Progresolen5` = diferencia_lenguaje_5 * pow((101-orden_lenguaje5_03),1.5) WHERE diferencia_lenguaje_5 < 0;
+
+	UPDATE temp2 SET `Progresolen9` = diferencia_lenguaje_9 * pow(orden_lenguaje9_03,1.5) WHERE diferencia_lenguaje_9 >= 0;
+	UPDATE temp2 SET `Progresolen9` = diferencia_lenguaje_9 * pow((101-orden_lenguaje9_03),1.5) WHERE diferencia_lenguaje_9 < 0;
+
+	UPDATE temp2 SET `Progresomat5` = diferencia_matematica_5 * pow(orden_matematica5_03,1.5) WHERE diferencia_matematica_5 >= 0;
+	UPDATE temp2 SET `Progresomat5` = diferencia_matematica_5 * pow((101-orden_matematica5_03),1.5) 
+	WHERE diferencia_matematica_5 < 0;
+
+	UPDATE temp2 SET `Progresomat9` = diferencia_matematica_9 * pow(orden_lenguaje9_03,1.5) WHERE diferencia_matematica_9 >= 0;
+	UPDATE temp2 SET `Progresomat9` = diferencia_matematica_9 * pow((101-orden_lenguaje9_03),1.5) 
+	WHERE diferencia_matematica_9 < 0;
+
+
+
+	UPDATE temp2 SET `Progresolen9` = (`Progresolen9`+18600)*100/37200;
+	UPDATE temp2 SET `Progresolen5` = (`Progresolen5`+18600)*100/37200;
+	UPDATE temp2 SET `Progresomat9` = (`Progresomat9`+18600)*100/37200;
+	UPDATE temp2 SET `Progresomat5` = (`Progresomat5`+18600)*100/37200;
+
 
 	DELETE FROM permedianocr;
-	INSERT INTO permedianocr (permed50len_5, permedlen33_5, permed50len_9, permedlen33_9, permed50mat_5, permedmat33_5,
-	 permed50mat_9, permedmat33_9, dane) 
-	 SELECT permed50len_5, permedlen33_5, permed50len_9, permedlen33_9, permed50mat_5, permedmat33_5, permed50mat_9, 
-	 permedmat33_9, dane FROM temp;
+	INSERT INTO permedianocr (`dane`, `nombre`, `Progresolen5`, `Progresolen9`, `Progresomat5`, `Progresomat9`) 
+	 SELECT `dane`, `nombre`, `Progresolen5`, `Progresolen9`, `Progresomat5`, `Progresomat9` FROM temp2;
+	DROP TABLE temp2;
 
-	DROP TABLE temp;
+	UPDATE permedianocr SET `año_indicador` = 2011;
 
 END //
 

@@ -244,7 +244,7 @@ BEGIN
 
 
 
-
+	UPDATE `pr_estudiantes_10` SET año_indicador = 2011;
 
 END //
 DELIMITER ;

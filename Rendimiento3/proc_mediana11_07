@@ -17,6 +17,7 @@ BEGIN
 	 SELECT `cole_inst_nombre`, MEDIAN(`tema_matematica`, 5), MEDIAN(`tema_lenguaje`, 5) 
 	 FROM `clone_sb11-2007-2-rgstro-clfccn-v-1-0` GROUP BY `cole_inst_nombre`;
 
+	UPDATE `mediana11_07` set año_indicador = 2011;
 	DROP TABLE `clone_sb11-2007-2-rgstro-clfccn-v-1-0`;
 
 END //

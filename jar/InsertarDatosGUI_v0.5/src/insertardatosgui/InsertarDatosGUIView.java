@@ -374,6 +374,10 @@ private void bExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                         String linea2 = linea.replace(",\"\",", ",NULL,");
                         linea = linea2;
                     }
+                    while(linea.contains("\"NULL\"")){
+                        String linea2 = linea.replace("\"NULL\"", "NULL");
+                        linea = linea2;
+                    }
                     if (linea.charAt(linea.length()-1) == ',')
                         linea += "NULL";
                     

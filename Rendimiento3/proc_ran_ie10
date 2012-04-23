@@ -59,6 +59,8 @@ BEGIN
 	
 	DROP TABLE `temp`;
 
+	UPDATE `ran_ie10` set año_indicador = 2011;
+
 END //
 
 DELIMITER ;
