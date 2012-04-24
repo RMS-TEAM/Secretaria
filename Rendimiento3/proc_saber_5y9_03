@@ -3,6 +3,8 @@ DROP PROCEDURE IF EXISTS proc_saber_5y9_03;
 DELIMITER //
 CREATE PROCEDURE proc_saber_5y9_03()
 BEGIN
+	# total de datos utilizada para xtile
+	DECLARE total INT;
 
 	DROP TABLE IF EXISTS `clone_resultadosgrupales_plant(`;
 	CREATE TABLE `clone_resultadosgrupales_plant(` (
@@ -34,7 +36,87 @@ BEGIN
 
 	DROP TABLE `clone_resultadosgrupales_plant(`;
 	
+
+	# xtile orden_lenguaje5_03 = l5_03, nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT l5_03, 
+		( SELECT COUNT(l5_03)+1 FROM saber_5y9_03 b 
+	    WHERE b.l5_03 < t.l5_03 AND l5_03 IS NOT NULL) AS uno
+	FROM saber_5y9_03 t WHERE l5_03 IS NOT NULL
+	ORDER BY l5_03;
+	
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE saber_5y9_03, xtile SET orden_lenguaje5_03 = uno*100/total WHERE saber_5y9_03.l5_03 = xtile.l5_03;
+	DROP TABLE xtile;
+
+	# xtile orden_matematica5_03 = m5_03, nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT m5_03, 
+		( SELECT COUNT(m5_03)+1 FROM saber_5y9_03 b 
+	    WHERE b.m5_03 < t.m5_03 AND m5_03 IS NOT NULL) AS uno
+	FROM saber_5y9_03 t WHERE m5_03 IS NOT NULL
+	ORDER BY m5_03;
+	
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE saber_5y9_03, xtile 
+	SET orden_matematica5_03 = uno*100/total 
+	WHERE saber_5y9_03.m5_03 = xtile.m5_03;
+	DROP TABLE xtile;
+
+	# xtile orden_lenguaje9_03 = l9_03, nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT l9_03, 
+		( SELECT COUNT(l9_03)+1 FROM saber_5y9_03 b 
+	    WHERE b.l9_03 < t.l9_03 AND l9_03 IS NOT NULL) AS uno
+	FROM saber_5y9_03 t WHERE l9_03 IS NOT NULL
+	ORDER BY l9_03;
+	
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE saber_5y9_03, xtile SET orden_lenguaje9_03 = uno*100/total WHERE saber_5y9_03.l9_03 = xtile.l9_03;
+	DROP TABLE xtile;
+
+	# xtile orden_matematica9_03 = m9_03, nquantiles(100)
+	DROP TABLE IF EXISTS xtile;
+	CREATE TABLE xtile
+	SELECT m9_03, 
+		( SELECT COUNT(m9_03)+1 FROM saber_5y9_03 b 
+	    WHERE b.m9_03 < t.m9_03 AND m9_03 IS NOT NULL) AS uno
+	FROM saber_5y9_03 t WHERE m9_03 IS NOT NULL
+	ORDER BY m9_03;
+	
+	SELECT COUNT(*) INTO total FROM xtile;
+	UPDATE saber_5y9_03, xtile 
+	SET orden_matematica9_03 = uno*100/total 
+	WHERE saber_5y9_03.m9_03 = xtile.m9_03;
+	DROP TABLE xtile;
+
 END //
 
 DELIMITER ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

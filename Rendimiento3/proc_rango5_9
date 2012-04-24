@@ -36,6 +36,8 @@ BEGIN
 	UPDATE `rango5_9` SET `minimo_l5` = `rango5_9`.`rango2_l5r` + `rango5_9`.`rango3_l5r`;
 	UPDATE `rango5_9` SET `satisfactorio_l5` = `rango5_9`.`rango4_l5r` + `rango5_9`.`rango5_l5r`;
 	UPDATE `rango5_9` SET `avanzado_l5` = `rango5_9`.`rango6_l5r`;
+
+	UPDATE `rango5_9` set año_indicador = 2011;
 	
 END //
 

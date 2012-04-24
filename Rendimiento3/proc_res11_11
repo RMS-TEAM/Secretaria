@@ -13,7 +13,7 @@ BEGIN
 	 `prmat_bajo_07_p`, `prmat_medio_07_p`, `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`,
 	 `prlen_alto_07_p`, `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`, `prmat_medio_10`,
 	 `prmat_alto_10`, `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`, `prmat_bajo_10_p`,
-	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`)
+	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`, `año_indicador`)
 	 SELECT `res11_07`.`dane`, `res11_07`.`nombre`, `res11_07`.`nombre_sb11_10`, `res11_07`.`nombre_sb11_07`,
 	 `res11_07`.`ProporcionEstrato0`, `res11_07`.`ProporcionEstrato1`, `res11_07`.`ProporcionEstrato2`,
 	 `res11_07`.`ProporcionEstrato3`, `res11_07`.`ProporcionEstrato4`, `res11_07`.`ProporcionEstrato5`,
@@ -22,7 +22,7 @@ BEGIN
 	 `prmat_medio_07_p`, `prmat_alto_07_p`, `prlen_bajo_07_p`, `prlen_medio_07_p`, `prlen_alto_07_p`,
 	 `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`, `prmat_medio_10`, `prmat_alto_10`,
 	 `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`, `prmat_bajo_10_p`, `prmat_medio_10_p`,
-	 `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`
+	 `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`, `res11_10`.`año_indicador`
 	 FROM `res11_07`, `res11_10`
 	 WHERE `res11_10`.`dane` = `res11_07`.`dane`;
 	
@@ -31,12 +31,12 @@ BEGIN
 	 `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`,
 	 `prmat_medio_10`, `prmat_alto_10`, `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`,
 	 `prmat_bajo_10_p`, `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`,
-	 `prlen_alto_10_p`)
+	 `prlen_alto_10_p`, `año_indicador`)
 	 SELECT l.`dane`, l.`nombre`, l.`nombre_sb11_10`, l.`nombre_sb11_07`, l.`ProporcionEstrato0`,
 	 l.`ProporcionEstrato1`, l.`ProporcionEstrato2`, l.`ProporcionEstrato3`, l.`ProporcionEstrato4`,
 	 l.`ProporcionEstrato5`, l.`ProporcionEstrato6`, `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`,
 	 `prmat_medio_10`, `prmat_alto_10`, `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`, `prmat_bajo_10_p`,
-	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`
+	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`, l.`año_indicador`
 	 FROM  `res11_10` l
 	 LEFT JOIN  `res11_07` r ON l.dane = r.dane WHERE r.dane IS NULL; 
 	

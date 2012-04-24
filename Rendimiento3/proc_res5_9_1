@@ -5,22 +5,16 @@ DELIMITER //
 CREATE PROCEDURE proc_res5_9_1()
 BEGIN
 	DELETE FROM `res5_9_1`;
-	INSERT INTO `res5_9_1` (`dane`,  `aprobacion5`,  `aprobacion9`,
-	 `permed50len_5`,  `permedlen33_5`,  `permed50len_9`, `permedlen33_9`,  `permed50mat_5`,
-	 `permedmat33_5`,  `permed50mat_9`,  `permedmat33_9`) 
-	SELECT l.`dane`, `aprobacion5`, `aprobacion9`,
-	 `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`, `permed50mat_5`,
-	 `permedmat33_5`, `permed50mat_9`, `permedmat33_9`
+	INSERT INTO `res5_9_1` (`dane`, `aprobacion5`, `aprobacion9`, `nombre`, `Progresolen5`, `Progresolen9`, `Progresomat5`, `Progresomat9`, `año_indicador`) 
+	SELECT l.`dane`, `aprobacion5`, `aprobacion9`, `nombre`, `Progresolen5`, `Progresolen9`, `Progresomat5`, `Progresomat9`, l.`año_indicador`
 	FROM  `taprob` l, `permedianocr` r WHERE l.`dane` =  r.`dane`;
 	
 	INSERT INTO `res5_9_1` (dane, aprobacion5, aprobacion9)
 	SELECT dane, aprobacion5, aprobacion9 FROM `taprob`
 	WHERE NOT EXISTS (SELECT * FROM `permedianocr` where `permedianocr`.dane = `taprob`.dane);
 
-	INSERT INTO `res5_9_1` (`dane`, `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`,
-	 `permed50mat_5`, `permedmat33_5`, `permed50mat_9`, `permedmat33_9`)
-	SELECT `dane`, `permed50len_5`, `permedlen33_5`, `permed50len_9`, `permedlen33_9`, `permed50mat_5`,
-	 `permedmat33_5`, `permed50mat_9`, `permedmat33_9` FROM `permedianocr`
+	INSERT INTO `res5_9_1` (`dane`, `nombre`, `Progresolen5`, `Progresolen9`, `Progresomat5`, `Progresomat9`, `año_indicador`)
+	SELECT `dane`, `nombre`, `Progresolen5`, `Progresolen9`, `Progresomat5`, `Progresomat9`, `año_indicador` FROM `permedianocr`
 	WHERE NOT EXISTS (SELECT * FROM `taprob` where `permedianocr`.dane = `taprob`.dane);
 
 END //

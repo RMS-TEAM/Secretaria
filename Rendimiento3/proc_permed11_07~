@@ -1,0 +1,56 @@
+DROP PROCEDURE IF EXISTS proc_permed11_07;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_permed11_07()
+BEGIN
+	# Variables el Percentil
+	DECLARE c50_len_07 DECIMAL(8,5);
+	DECLARE c33_len_07 DECIMAL(8,5);
+	DECLARE c50_mat_07 DECIMAL(8,5);
+	DECLARE c33_mat_07 DECIMAL(8,5);
+
+
+
+	DROP TABLE IF EXISTS `clone_sb11-2007-2-rgstro-clfccn-v-1-0`;
+	CREATE TABLE `clone_sb11-2007-2-rgstro-clfccn-v-1-0` 
+	 (SELECT `cole_inst_nombre`, `cole_mpio_colegio`, `cole_codigo_colegio`, `tema_lenguaje`, `tema_matematica`
+	 FROM `sb11-2007-2-rgstro-clfccn-v-1-0` WHERE `cole_mpio_colegio` = "MEDELLIN");
+
+	# Collapse
+	DROP TABLE IF EXISTS `temp_permed11_07`;
+	CREATE TABLE `temp_permed11_07` 
+	 SELECT `cole_inst_nombre` AS nombre_sb11_07, MEDIAN(`tema_matematica`, 5) AS tema_matematica,
+	 MEDIAN(`tema_lenguaje`, 5) AS tema_lenguaje
+	 FROM `clone_sb11-2007-2-rgstro-clfccn-v-1-0` GROUP BY `cole_inst_nombre`;
+
+	DROP TABLE `clone_sb11-2007-2-rgstro-clfccn-v-1-0`;
+
+	#-------------------
+	# Merge m:m
+	DELETE FROM `permed11_07`;
+
+	INSERT INTO `permed11_07` (`nombre_sb11_07`, `tema_matematica`, `tema_lenguaje`, `dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6`)
+	 SELECT `nombre_sb11_07`, `tema_matematica`, `tema_lenguaje`, `dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6`
+	 FROM `temp_permed11_07`, `tabla identificadores`
+	 WHERE `temp_permed11_07`.`nombre_sb11_07` = `tabla identificadores`.`nombre_sb11_07`;
+	
+	INSERT INTO `permed11_07` (`dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_matematica`, `tema_lenguaje`)
+	SELECT `dane`, `nombre`, `nombre_sb11_10`, `nombre_sb11_07`, `ProporcionEstrato0`, `ProporcionEstrato1`, `ProporcionEstrato2`, `ProporcionEstrato3`, `ProporcionEstrato4`, `ProporcionEstrato5`, `ProporcionEstrato6`, `tema_matematica`, `tema_lenguaje`
+	 FROM `tabla identificadores` l
+	 LEFT JOIN  `temp_permed11_07` r ON l.nombre_sb11_07 = r.nombre_sb11_07
+	 WHERE r.nombre_sb11_07 IS NULL; 
+
+	DROP TABLE `temp_permed11_07`;
+
+END //
+DELIMITER ;
+
+
+
+
+
+
+
+
+

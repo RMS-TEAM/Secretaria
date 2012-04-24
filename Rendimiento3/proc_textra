@@ -37,6 +37,7 @@ BEGIN
 
 	UPDATE `textra` SET `textra` = `extraedad` / `cole_codigo_mcpio_d`;
 	UPDATE `textra` SET `rtextra` = 1 - `textra`;
+	UPDATE `textra` SET `año_indicador` = 2011;
 
 END //
 

@@ -234,7 +234,7 @@ BEGIN
 	UPDATE `pr_estudiantes_07` SET `prlen_medio_07_p` = `prlen_medio_07` * 100;
 	UPDATE `pr_estudiantes_07` SET `prlen_alto_07_p` = `prlen_alto_07` * 100;
 
-
+	UPDATE `pr_estudiantes_07` SET año_indicador = 2011;
 END //
 DELIMITER ;
 

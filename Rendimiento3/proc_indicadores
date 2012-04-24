@@ -14,16 +14,16 @@ BEGIN
 	 `prlen_alto_07_p`, `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`, `prmat_medio_10`,
 	 `prmat_alto_10`, `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`, `prmat_bajo_10_p`,
 	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`,
-	 `permed50len`, `permed33len`, `permed50mat`, `permedmat33`, `aprobacion5`, `aprobacion9`,
+	 `Progresolen11`, `Progresomat11`, `aprobacion5`, `aprobacion9`,
 	 `aprobacion11a`, `aprobacion11t`, `Extraedad`, `cole_codigo_mcpio_d`, `textra`, `rtextra`,
-	 `categoria_10`, `categoria_07`, `varcolegios11`, `permed50len_5`, `permedlen33_5`, `permed50len_9`,
-	 `permedlen33_9`, `permed50mat_5`, `permedmat33_5`, `permed50mat_9`, `permedmat33_9`, `rango1_l5r`,
+	 `categoria_10`, `categoria_07`, `varcolegios11`, `Progresolen5`, `Progresolen9`, `Progresomat5`,
+	 `Progresomat9`, `rango1_l5r`,
 	 `rango2_l5r`, `rango3_l5r`, `rango4_l5r`, `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`,
 	 `rango3_m5r`, `rango4_m5r`, `rango5_m5r`, `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`,
 	 `rango4_l9r`, `rango5_l9r`, `rango6_l9r`, `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`,
 	 `rango5_m9r`, `rango6_m9r`, `insuficiente_m9`, `minimo_m9`, `satisfactorio_m9`, `avanzado_m9`,
 	 `insuficiente_m5`, `minimo_m5`, `satisfactorio_m5`, `avanzado_m5`, `insuficiente_l9`, `minimo_l9`,
-	 `satisfactorio_l9`, `avanzado_l9`, `insuficiente_l5`, `minimo_l5`, `satisfactorio_l5`, `avanzado_l5`)
+	 `satisfactorio_l9`, `avanzado_l9`, `insuficiente_l5`, `minimo_l5`, `satisfactorio_l5`, `avanzado_l5`, `año_indicador`)
 	SELECT a.`dane`, a.`nombre`, a.`nombre_sb11_10`, a.`nombre_sb11_07`, a.`ProporcionEstrato0`,
 	 a.`ProporcionEstrato1`, a.`ProporcionEstrato2`, a.`ProporcionEstrato3`, a.`ProporcionEstrato4`,
 	 a.`ProporcionEstrato5`, a.`ProporcionEstrato6`, `tema_matematica`, `tema_lenguaje`, `prmat_bajo_07`,
@@ -32,16 +32,16 @@ BEGIN
 	 `prlen_alto_07_p`, `tema_lenguaje_d`, `tema_matematica_d`, `prmat_bajo_10`, `prmat_medio_10`,
 	 `prmat_alto_10`, `prlen_bajo_10`, `prlen_medio_10`, `prlen_alto_10`, `prmat_bajo_10_p`,
 	 `prmat_medio_10_p`, `prmat_alto_10_p`, `prlen_bajo_10_p`, `prlen_medio_10_p`, `prlen_alto_10_p`,
-	 `permed50len`, `permed33len`, `permed50mat`, `permedmat33`, a.`aprobacion5`, a.`aprobacion9`,
+	 `Progresolen11`, `Progresomat11`, a.`aprobacion5`, a.`aprobacion9`,
 	 `aprobacion11a`, `aprobacion11t`, `Extraedad`, `cole_codigo_mcpio_d`, `textra`, `rtextra`,
-	 `categoria_10`, `categoria_07`, `varcolegios11`, `permed50len_5`, `permedlen33_5`, `permed50len_9`,
-	 `permedlen33_9`, `permed50mat_5`, `permedmat33_5`, `permed50mat_9`, `permedmat33_9`, `rango1_l5r`,
+	 `categoria_10`, `categoria_07`, `varcolegios11`, `Progresolen5`, `Progresolen9`, `Progresomat5`,
+	 `Progresomat9`, `rango1_l5r`,
 	 `rango2_l5r`, `rango3_l5r`, `rango4_l5r`, `rango5_l5r`, `rango6_l5r`, `rango1_m5r`, `rango2_m5r`,
 	 `rango3_m5r`, `rango4_m5r`, `rango5_m5r`, `rango6_m5r`, `rango1_l9r`, `rango2_l9r`, `rango3_l9r`,
 	 `rango4_l9r`, `rango5_l9r`, `rango6_l9r`, `rango1_m9r`, `rango2_m9r`, `rango3_m9r`, `rango4_m9r`,
 	 `rango5_m9r`, `rango6_m9r`, `insuficiente_m9`, `minimo_m9`, `satisfactorio_m9`, `avanzado_m9`,
 	 `insuficiente_m5`, `minimo_m5`, `satisfactorio_m5`, `avanzado_m5`, `insuficiente_l9`, `minimo_l9`,
-	 `satisfactorio_l9`, `avanzado_l9`, `insuficiente_l5`, `minimo_l5`, `satisfactorio_l5`, `avanzado_l5`
+	 `satisfactorio_l9`, `avanzado_l9`, `insuficiente_l5`, `minimo_l5`, `satisfactorio_l5`, `avanzado_l5`, a.`año_indicador`
 	 FROM  `indicadores_11` a, `indicadores_5_9` b
 	 WHERE a.dane = b.dane;
 
