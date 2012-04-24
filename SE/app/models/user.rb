@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :password
         attr_accessible :nombre, :email, :password, :password_confirmation, :admin, :nickname
 
-
+   validates_uniqueness_of :nickname
    before_save :encrypt_password
 
        def has_password?(submitted_password)
