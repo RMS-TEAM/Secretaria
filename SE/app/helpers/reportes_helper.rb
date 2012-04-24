@@ -78,6 +78,10 @@ module ReportesHelper
     b = "http://pdfmyurl.com/?url=#{a}"
   end
 
+  def percent(number, top)
+    (number * 100 )/top
+  end
+
 
 
 
