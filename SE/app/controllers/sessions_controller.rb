@@ -9,10 +9,8 @@ class SessionsController < ApplicationController
 
           if user.nil?
                 flash[:notice] = "Email o contraseña invalidos"
-               render action: "new"
-                  #:notice = "Error: email o contraseña invalidos"
                   @title = "Ingresar"
-                  #render 'new'
+                  render 'new'
           else
                   sing_in user
                   redirect_to user
