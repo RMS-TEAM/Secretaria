@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessor :password
-        attr_accessible :nombre, :email, :password, :password_confirmation, :admin
+        attr_accessible :nombre, :email, :password, :password_confirmation, :admin, :nickname
 
 
    before_save :encrypt_password
@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
                encrypted_password == encrypt(submitted_password)
        end
 
-       def User.authenticate(email, submitted_password)
-               user = User.find_by_email(email)
+       def User.authenticate(nick, submitted_password)
+               user = User.find_by_nickname(nick)
                return nil if user.nil?
                return user if user.has_password?(submitted_password)
        end

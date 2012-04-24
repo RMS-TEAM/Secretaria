@@ -1,15 +1,18 @@
+# coding = utf-8
 class SessionsController < ApplicationController
   def new
           @title = "Ingresar"
   end
 
   def create
-          user = User.authenticate(params[:session][:email],
-                                                           params[:session][:password])
+          user = User.authenticate(params[:session][:nickname],params[:session][:password])
+
           if user.nil?
-                  flash[:error] = "Error: email o contraseña invalidos"
+                flash[:notice] = "Email o contraseña invalidos"
+               render action: "new"
+                  #:notice = "Error: email o contraseña invalidos"
                   @title = "Ingresar"
-                  render 'new'
+                  #render 'new'
           else
                   sing_in user
                   redirect_to user
