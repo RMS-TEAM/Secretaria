@@ -1,18 +1,26 @@
+
+<div class="ingresar">
 <h1>Ingresar</h1>
 
    <%= form_for(:session, :url => sessions_path) do |f| %>
-      <div class="field">
-              <%= f.label :nickname %> <br />
-              <%= f.text_field :nickname %>
-      </div>
-      <div class="field">
-              <%= f.label :password %> <br />
-              <%= f.password_field :password %>
-      </div>
-      <div class="actions">
-              <%= f.submit "Aceptar" %> <br />
-      </div>
-<% end %>
+    <table>
+    <tr>
+       <td>   <%= f.label :nickname %> </td>
+       <td>   <%= f.text_field :nickname %>     </td>
+    </tr>
+    <tr>
+       <td><%= f.label :password %> </td>
+       <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+       <td></td>
+       <td class="actions"> <%= f.submit "Aceptar",:class => 'input' %> </td>
+
+    </tr>
+    </table>
+    <% end %>
+</div>
+
 
 
  
