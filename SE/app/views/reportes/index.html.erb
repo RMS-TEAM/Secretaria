@@ -31,18 +31,16 @@
     </p>
 
     <form name="nombreColegios">
-      <select name="colegios">
+      <select name="colegios" class="option_select " >
+        <option id= "1" value>SELECCIONE UN COLEGIO</option>
         <%@colegios.each do |col|	  %>
             <OPTION id="<%= col.dane %>" VALUE="<%= col.nombre %>"><%= col.nombre %></OPTION>
         <% end %>
       </select>
     </form>
 
-    <button  id="button" class="option_button">Oelo</button>
+    <button  id="button" class="option_button">Generar</button>
 
-
-
-    <a id="button" class="option_button">Generar</a>
 
     <script>
         function redireccionColegio(){
@@ -52,7 +50,12 @@
 
         $("button").click(function () {
                     var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
-                    window.location = "reportes/" + id;
+                    if (id === "1"){
+                        alert("Seleccione una Institucion Educativa" );
+                    }else{
+
+                    window.location = "/reportes/" + id;
+                    }
                 }
         );
     </script>
@@ -60,7 +63,7 @@
 <% else %>
       <script type="text/javascript">
           window.location = "/singin"
-
+              ;
     </script>
 <% end %>
 <div class="ajustar"></div>

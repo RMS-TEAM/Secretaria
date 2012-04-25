@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
           user = User.authenticate(params[:session][:nickname],params[:session][:password])
 
           if user.nil?
-                flash[:notice] = "Email o contraseña invalidos"
+                 flash[:notice] = "Email o contraseña invalidos"
                   @title = "Ingresar"
                   render 'new'
           else
