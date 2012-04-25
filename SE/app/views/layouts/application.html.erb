@@ -41,6 +41,9 @@
 
         <div id = "content">
           <div id="big">
+          	<% flash.each do |key, value| %>
+	            <div class="flash <%= key %>"><%= value %></div>
+	        <%  end %>
 	        <%= yield %>
           </div>
           <div class="ajustar"></div>
