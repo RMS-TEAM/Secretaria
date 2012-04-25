@@ -1,7 +1,7 @@
 SE::Application.routes.draw do
 
 
-  get "sessions/new"
+
   match 'antecedentes', :to => 'pages#antecedentes'
   match 'participantes', :to => 'pages#participantes'
   match 'acerca', :to => 'pages#acerca'
@@ -15,13 +15,14 @@ SE::Application.routes.draw do
   resources :users, :only => [:show, :index, :edit, :update]
   resources :administrators
   resources :sessions, :only => [:new, :create, :destroy]
-
+  match "remember", :to => 'sessions#remember'
+  match "ruperto", :to => 'sessions#ruperto'
   namespace :admin do
     resources :users
   end
 
- match '/singin', :to => 'sessions#new'
- match '/singout', :to => 'sessions#destroy'
+ match '/signin', :to => 'sessions#new'
+ match '/signout', :to => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

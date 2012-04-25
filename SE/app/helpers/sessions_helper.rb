@@ -1,5 +1,5 @@
 module SessionsHelper
-         def sing_in(user)
+         def sign_in(user)
                  cookies.permanent.signed[:remember_token] = [user.id, user.salt]
                  current_user = user
          end
@@ -14,8 +14,8 @@ module SessionsHelper
 
          	def deny_access
 
-		            flash[:notice] = "Please sign in!!"
-		            redirect_to singin_path
+
+		            redirect_to signin_path, :alert => "Debe estar registrado!!"
            end
 
          def signed_in?
@@ -28,7 +28,7 @@ module SessionsHelper
 
          end
 
-         def sing_out
+         def sign_out
                  cookies.delete(:remember_token)
                  self.current_user = nil
          end

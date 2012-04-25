@@ -8,18 +8,26 @@ class SessionsController < ApplicationController
           user = User.authenticate(params[:session][:nickname],params[:session][:password])
 
           if user.nil?
-                 flash[:notice] = "Email o contraseña invalidos"
-                  @title = "Ingresar"
-                  render 'new'
+              @title = "Ingresar"
+              redirect_to('/signin', :alert => 'Email o contraseña invalidos')
           else
-                  sing_in user
-                  redirect_to user
+              sign_in user
+              redirect_to user
           end
   end
 
   def destroy
-          sing_out
+          sign_out
           redirect_to root_path
+  end
+
+  def remember
+      @user = User.new
+  end
+
+  def ruperto
+      @user = User.new(params[:user])
+      User.find_by_nickname
   end
 
 

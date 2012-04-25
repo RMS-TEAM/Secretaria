@@ -20,7 +20,6 @@ class ReportesController < ApplicationController
        format.html # show.html.erb
        format.json  { render :json => @rendimientos }
 
-
      end
 
   end

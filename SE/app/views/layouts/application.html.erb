@@ -30,9 +30,9 @@
                     <li><%=link_to "Reportes", reportes_path %></li>
                 <% end %>
                 <% if signed_in? %>
-                     <li><%= link_to "Salir", singout_path %></li>
+                     <li><%= link_to "Salir", signout_path %></li>
                 <% else %>
-                     <li><%= link_to "Ingresar", singin_path %></li>
+                     <li><%= link_to "Ingresar", signin_path %></li>
                 <% end %>
              </ul>
     </div>
@@ -42,7 +42,7 @@
         <div id = "content">
           <div id="big">
           	<% flash.each do |key, value| %>
-	            <div class="flash <%= key %>"><%= value %></div>
+	            <div class="flash <%= key %>"><%= value.capitalize %></div>
 	        <%  end %>
 	        <%= yield %>
           </div>
