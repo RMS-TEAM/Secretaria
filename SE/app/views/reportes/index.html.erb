@@ -30,35 +30,32 @@
 
     </p>
 
-    <form name="nombreColegios">
-      <select name="colegios" class="option_select " >
-        <option id= "1" value>SELECCIONE UN COLEGIO</option>
-        <%@colegios.each do |col|	  %>
-            <OPTION id="<%= col.dane %>" VALUE="<%= col.nombre %>"><%= col.nombre %></OPTION>
-        <% end %>
-      </select>
-    </form>
-
-    <button  id="button" class="option_button">Generar</button>
+    <%= select_tag "option_select", options_from_collection_for_select(@colegios, "dane", "nombre"),:prompt => "SELECCIONE UN COLEGIO", :class => "option_select"%>
 
 
-    <script>
-        function redireccionColegio(){
-            var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
-            window.location = "reportes/" + id;
-        }
+    <a id="button" class="option_button">Generar</a>
 
-        $("button").click(function () {
-                    var id = nombreColegios.colegios.options[nombreColegios.colegios.selectedIndex].id
-                    if (id === "1"){
-                        alert("Seleccione una Institucion Educativa" );
-                    }else{
+    <%= content_for :javascript do %>
+        <script type='text/javascript'>
+            jQuery(function($) {
 
-                    window.location = "/reportes/" + id;
+                $("#button").live('click', function(e){
+                    var $select = $("#option_select");
+                    var school_id = $select.val();
+                    e.preventDefault();
+                    if( school_id != ""){
+                        // The URL where you want to redirect
+                        window.location = "<%= escape_javascript reportes_url %>/" + school_id;
                     }
-                }
-        );
-    </script>
+                    if (school_id == ""){
+                        alert("Seleccione un Colegio")
+                    }
+                    return false;
+                });
+            });
+
+        </script>
+    <% end %>
 
 <% else %>
       <script type="text/javascript">
