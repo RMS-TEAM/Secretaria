@@ -15,6 +15,10 @@ class PagesController < ApplicationController
   def acerca
     @title = "Acerca De"
   end
+
+  def administradores
+    @title = "Administradores"
+  end
   def sisas
     # coding: UTF-8
     @usuarios = Hash.new

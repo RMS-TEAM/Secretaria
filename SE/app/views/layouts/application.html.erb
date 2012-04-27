@@ -44,6 +44,10 @@
           	<% flash.each do |key, value| %>
 	            <div class="flash <%= key %>"><%= value.capitalize %></div>
 	        <%  end %>
+            <h1 style="margin: auto; text-align: center;">Sistema de Medición de la Calidad Educativa de la Ciudad de Medellín</h1>
+            <hr>
+            <br>
+            <br>
 	        <%= yield %>
           </div>
           <div class="ajustar"></div>
@@ -69,6 +73,12 @@
                         <li><%=link_to "Participantes", "/participantes" %></li>
                         <!--<li><%=link_to "Antecedentes", "#" %></li>-->
                         <li><%=link_to "Acerca De", "/acerca"%></li>
+                        <li>  Administradores</li>
+                        <li>Aliados estratégicos </li>
+                        <li>Más acerca del Sistema de Medición de la Calidad de la Educación</li>
+                        <li>Fuentes de información del Sistema</li>
+                        <li>Indicador Multidimensional de la Calidad Educativa</li>
+                        <li>Utilidad del Sistema</li>
                     </ul>
                 </div>
             </div>

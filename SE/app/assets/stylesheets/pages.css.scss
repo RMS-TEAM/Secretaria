@@ -51,7 +51,7 @@
     text-align: justify;
     font-family: arial;
     font-size: 12;
-    width: 600px;
+    width:60%;
     float: right;
     padding-right: 30px;
     padding-bottom: 20px;
@@ -83,7 +83,7 @@ hr{
     text-align: justify;
     font-family: arial;
     font-size: 12;
-    width: 600px;
+    width: 60%;
     float: right;
     margin-right: 30px;
     padding-bottom: 20px;
@@ -111,11 +111,39 @@ hr{
     text-align: justify;
     font-family: arial;
     font-size: 12;
-    width: 600px;
+    width: 60%;
     float: right;
     padding-right: 30px;
     padding-bottom: 20px;
 }
+
+
+#secretaria{
+  clear:both;
+}
+
+#secretaria .secretaria-i{
+  width: 150px;
+  float: left;
+  padding-top: 20px;
+
+
+}
+
+#secretaria .secretaria-i img{
+  width: 150px;
+}
+
+#secretaria .secretaria-p{
+  text-align: justify;
+  font-family: arial;
+  font-size: 12;
+  width: 60%;
+  float: right;
+  padding-right: 30px;
+  padding-bottom: 20px;
+}
+
 
 
 .ajustar{
