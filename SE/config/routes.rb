@@ -3,7 +3,7 @@ SE::Application.routes.draw do
 
 
   match 'antecedentes', :to => 'pages#antecedentes'
-  match 'participantes', :to => 'pages#participantes'
+  match 'aliados', :to => 'pages#participantes'
   match 'acerca', :to => 'pages#acerca'
   match 'administradores', :to => 'pages#administradores'
   #match 'sisas', :to => 'pages#sisas'
