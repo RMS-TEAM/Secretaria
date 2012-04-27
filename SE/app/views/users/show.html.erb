@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1><%= @user.nombre.downcase.titleize %></h1>
-<strong>Nickname:</strong> <%= @user.nickname %><br>
-<strong>E-mail </strong> <%= @user.email %>
+<strong>Nombre de usuario:</strong> <%= @user.nickname %><br>
+<strong>Correo electrónico: </strong> <%= @user.email %>
 <strong></strong>
 <br /><br />
 <%if current_user.id.eql? @user.id %>

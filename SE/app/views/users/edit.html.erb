@@ -11,16 +11,16 @@
        <% else %>
              <%= form_for(@user) do |f| %>
                 <div class="field">
-                    <%= f.label :email %> <br />
+                    <%= f.label :email, "Correo electrónico" %> <br />
                     <%= f.text_field :email %>
                 </div>
 
                 <div class="field">
-                    <%= f.label :password %> <br />
+                    <%= f.label :password, "Nueva contraseña" %> <br />
                     <%= f.password_field :password %>
                 </div>
                 <div class="field">
-                    <%= f.label :password_confirmation, "Confirmation" %> <br />
+                    <%= f.label :password_confirmation, "Confirmar contraseña" %> <br />
                     <%= f.password_field :password_confirmation %>
                 </div>
                 <div class="actions">

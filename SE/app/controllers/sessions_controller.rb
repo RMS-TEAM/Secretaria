@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
 
           if user.nil?
               @title = "Ingresar"
-              redirect_to('/signin', :alert => 'Email o contraseña invalidos')
+              redirect_to('/signin', :alert => 'Usuario o contraseña inválidos. Intente nuevamente.')
           else
               sign_in user
-              redirect_to user
+              redirect_to reportes_path
           end
   end
 

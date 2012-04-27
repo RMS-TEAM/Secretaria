@@ -77,6 +77,11 @@ module ReportesHelper
     a = "http://ec2-107-22-95-239.compute-1.amazonaws.com/download/#{@rendimientos.dane}&-n&--filename=#{@rendimientos.nombre}"
     b = "http://pdfmyurl.com/?url=#{a}"
   end
+  #Generar el pdf para el ranking (cambiar privilefios de admi a la pag)
+  def pdf_url1
+      a = "http://ec2-107-22-95-239.compute-1.amazonaws.com/download/#{@rendimientos.dane}&-n&--filename=#{@rendimientos.nombre}"
+      b = "http://pdfmyurl.com/?url=#{a}"
+    end
 
   def percent(number, top)
     (number * 100 )/top
