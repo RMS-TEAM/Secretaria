@@ -3,9 +3,10 @@ SE::Application.routes.draw do
 
 
   match 'antecedentes', :to => 'pages#antecedentes'
-  match 'participantes', :to => 'pages#participantes'
+  match 'aliados', :to => 'pages#participantes'
   match 'acerca', :to => 'pages#acerca'
-  match 'sisas', :to => 'pages#sisas'
+  match 'administradores', :to => 'pages#administradores'
+  #match 'sisas', :to => 'pages#sisas'
   get "reportes/ranking"
   match "download/:id", :to => 'reportes#download'
 
