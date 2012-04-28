@@ -268,7 +268,7 @@ a:hover{
 .float-left {
 	float: left;
 	overflow: hidden;
-	width: 33%;
+	width: 50%;
 }
 .module {
 	margin-top: 5%;
