@@ -39,7 +39,6 @@
     <%= content_for :javascript do %>
         <script type='text/javascript'>
 
-            jQuery.noConflict();
             jQuery(document).ready(function(){
                 $("#button").live('click', function(e){
                     var $select = $("#option_select");
@@ -61,8 +60,8 @@
 
 <% else %>
       <script type="text/javascript">
-          window.location = "/singin"
-              ;
+          window.location = "/singin";
+
     </script>
 <% end %>
 <div class="ajustar"></div>
