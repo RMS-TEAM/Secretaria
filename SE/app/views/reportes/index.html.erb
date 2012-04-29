@@ -38,7 +38,8 @@
 
     <%= content_for :javascript do %>
         <script type='text/javascript'>
-            jQuery(function($) {
+            jQuery.noConflict();
+            $(document).ready(function () {
 
                 $("#button").live('click', function(e){
                     var $select = $("#option_select");
