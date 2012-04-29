@@ -38,8 +38,9 @@
 
     <%= content_for :javascript do %>
         <script type='text/javascript'>
-             $(document).ready(function () {
 
+            jQuery.noConflict();
+            jQuery(document).ready(function(){
                 $("#button").live('click', function(e){
                     var $select = $("#option_select");
                     var school_id = $select.val();
