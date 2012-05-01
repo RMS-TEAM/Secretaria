@@ -24,7 +24,6 @@ gem "devise"
 gem 'will_paginate'
 
 
-
 #gem 'db-charmer', :require => 'db_charmer'
 
 # To use ActiveModel has_secure_password
