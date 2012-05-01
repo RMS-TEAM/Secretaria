@@ -10,34 +10,34 @@
 
 </head>
 
-<body>
+    <body>
 
 
 
-<div id="header">
- <div id ="nav">
-    <div class="name">
-        <%= link_to(image_tag("HFull.png"),root_path) %>
-    </div>
-    <div class="bar">
-             <ul>
-               <% if signed_in? %>
-                  <li><%=link_to current_user_name, current_user	  %></li>
-               <%end %>
-               <li><%=link_to "Inicio",root_path %></li>
+        <div id="header">
+         <div id ="nav">
+            <div class="name">
+                <%= link_to(image_tag("HFull.png"),root_path) %>
+            </div>
+            <div class="bar">
+                     <ul>
+                       <% if signed_in? %>
+                          <li><%=link_to current_user_name, current_user	  %></li>
+                       <%end %>
+                       <li><%=link_to "Inicio",root_path %></li>
 
-               <% if signed_in? %>
-                    <li><%=link_to "Reportes", reportes_path %></li>
-                <% end %>
-                <% if signed_in? %>
-                     <li><%= link_to "Salir", signout_path %></li>
-                <% else %>
-                     <li><%= link_to "Ingresar", signin_path %></li>
-                <% end %>
-             </ul>
-    </div>
- </div>
-</div>
+                       <% if signed_in? %>
+                            <li><%=link_to "Reportes", reportes_path %></li>
+                        <% end %>
+                        <% if signed_in? %>
+                             <li><%= link_to "Salir", signout_path %></li>
+                        <% else %>
+                             <li><%= link_to "Ingresar", signin_path %></li>
+                        <% end %>
+                     </ul>
+            </div>
+         </div>
+        </div>
 
         <div id = "content">
           <div id="big">
