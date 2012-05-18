@@ -30,32 +30,14 @@
       para ver el reporte.</p>
 
 
-
-    <%= select_tag "option_select", options_from_collection_for_select(@colegios, "dane", "nombre"),:prompt => "SELECCIONE UN COLEGIO", :class => "option_select"%>
-
-
-    <a id="button" class="option_button">Generar</a>
-
-    <%= content_for :javascript do %>
-        <script type='text/javascript'>
-
-            jQuery(document).ready(function(){
-                $("#button").live('click', function(e){
-                    var $select = $("#option_select");
-                    var school_id = $select.val();
-                    e.preventDefault();
-                    if( school_id != ""){
-                        // The URL where you want to redirect
-                        window.location = "<%= escape_javascript reportes_url %>/" + school_id;
-                    }
-                    if (school_id == ""){
-                        alert("Seleccione un Colegio")
-                    }
-                    return false;
-                });
-            });
-        </script>
+    <%= form_tag("/reportes/new", :method => "post") do %>
+        <%= select_tag "option_select", options_from_collection_for_select(@colegios, "dane", "nombre"),:prompt => "SELECCIONE UN COLEGIO", :class => "option_select"%><br />
+        <%= submit_tag("Generar", :class => "option_button", :id => "button" ) %>
     <% end %>
+
+
+
+
 
 <% else %>
       <script type="text/javascript">

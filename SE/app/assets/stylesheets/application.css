@@ -184,6 +184,24 @@ a:hover{
     border: 0;
 }
 
+#content input.option_button{
+    margin-top: 10px;
+    width: 19%;
+    color: #036163;
+    background: whiteSmoke;
+    font-size: 100%;
+    font-weight: bold;;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0,0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border: 0;
+}
+
 #content select.option_select{
 	width: 80%;
     background: whiteSmoke;

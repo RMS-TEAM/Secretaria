@@ -5,8 +5,9 @@
   <title><%= title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
   <%= yield(:javascript) if content_for?(:javascript) %>
+  <%= csrf_meta_tags %>
+
 
 </head>
 
@@ -29,7 +30,7 @@
                        <% if signed_in? %>
                             <li><%=link_to "Reportes", reportes_path %></li>
                         <% end %>
-                        <% if signed_in? %>
+                           <% if signed_in? %>
                              <li><%= link_to "Salir", signout_path %></li>
                         <% else %>
                              <li><%= link_to "Ingresar", signin_path %></li>
