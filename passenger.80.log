@@ -1,0 +1,1 @@
+2012/05/01 04:06:55 [error] 10826#0: *4 "/home/ubuntu/Trabajo/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "0.0.0.0"
