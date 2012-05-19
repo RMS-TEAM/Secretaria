@@ -12,6 +12,7 @@ class ReportesController < ApplicationController
 
   def show
     @title = "Reporte"
+    params[:option_select]
     @ambientes = Merge.find(params[:id])
     @rendimientos = Indicador.find(params[:id])
     @info_col = Directoria.find(params[:id])
@@ -24,10 +25,14 @@ class ReportesController < ApplicationController
 
   end
 
+  def new
+    id = params[:option_select]
+    redirect_to "/reportes/#{id}"
+  end
 
   def ranking
     @title = "Ranking"
-    @ranking = Ranking.all(:order => "indicador DESC", :limit => 20)
+    @ranking = Ranking.all(:order => "indicador DESC")
 
   end
 

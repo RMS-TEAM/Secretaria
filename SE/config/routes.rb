@@ -8,6 +8,7 @@ SE::Application.routes.draw do
   match 'administradores', :to => 'pages#administradores'
   #match 'sisas', :to => 'pages#sisas'
   get "reportes/ranking"
+  post "reportes/new"
   match "download/:id", :to => 'reportes#download'
 
   resources :alumnos

@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
 
   def create
           user = User.authenticate(params[:session][:nickname],params[:session][:password])
-
-          if user.nil?
+           if user.nil?
               @title = "Ingresar"
               redirect_to('/signin', :alert => 'Usuario o contraseña inválidos. Intente nuevamente.')
           else
