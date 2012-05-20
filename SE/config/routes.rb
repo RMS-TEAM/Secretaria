@@ -6,7 +6,7 @@ SE::Application.routes.draw do
   match 'aliados', :to => 'pages#participantes'
   match 'acerca', :to => 'pages#acerca'
   match 'administradores', :to => 'pages#administradores'
-  #match 'sisas', :to => 'pages#sisas'
+  match 'fuentes', :to => 'pages#fuentes'
   get "reportes/ranking"
   post "reportes/new"
   match "download/:id", :to => 'reportes#download'
