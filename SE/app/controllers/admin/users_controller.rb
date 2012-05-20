@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
-  before_filter :admin_access
   before_filter :authenticate
+  before_filter :admin_access
+
 
 
 
