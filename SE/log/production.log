@@ -1,0 +1,545 @@
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-03-06 16:47:55 -0500
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:8:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 16:51:20 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (59.0ms)
+Completed 500 Internal Server Error in 156ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__231614095_85017630'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 16:51:30 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__231614095_85017630'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 16:53:50 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__231614095_85017630'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:04:34 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (65.7ms)
+Completed 500 Internal Server Error in 124ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__679260860_84666230'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:04:40 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__679260860_84666230'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:04:41 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__679260860_84666230'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:04:42 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__679260860_84666230'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:04:42 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 1ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__679260860_84666230'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:04:42 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 1ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__679260860_84666230'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:04:42 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__679260860_84666230'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.5ms)
+Migrating to CreateUsers (20111207160408)
+Migrating to AddEmailUniquenessIndex (20111207160409)
+Migrating to AddPassconfirmToUsers (20111215160713)
+Migrating to AddAdminToUsers (20111216150121)
+Migrating to AddPasswordToUsers (201111207160410)
+Migrating to AddSaltToUsers (201111207160411)
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:13:20 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (54.1ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    11: </div>
+    12: 
+    13: <div class="image">
+    14:       <%= image_tag("ninios.jpg") %>
+    15: </div>
+  app/views/pages/home.html.erb:14:in `_app_views_pages_home_html_erb__772640086_76807020'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.3ms)
+Compiled application.js  (47ms)  (pid 11438)
+Compiled jquery.js  (25ms)  (pid 11438)
+Compiled jquery_ujs.js  (147ms)  (pid 11438)
+Compiled admin.js  (987ms)  (pid 11438)
+Compiled admin/users.js  (197ms)  (pid 11438)
+Compiled pages.js  (191ms)  (pid 11438)
+Compiled reportes.js  (269ms)  (pid 11438)
+Compiled sessions.js  (261ms)  (pid 11438)
+Compiled application.css  (39ms)  (pid 11438)
+Compiled admin.css  (55ms)  (pid 11438)
+Compiled admin/users.css  (20ms)  (pid 11438)
+Compiled pages.css  (72ms)  (pid 11438)
+Compiled reportes.css  (21ms)  (pid 11438)
+Compiled sessions.css  (29ms)  (pid 11438)
+Compiled application.js  (4ms)  (pid 11470)
+Compiled jquery.js  (3ms)  (pid 11470)
+Compiled jquery_ujs.js  (0ms)  (pid 11470)
+Compiled admin.js  (191ms)  (pid 11470)
+Compiled admin/users.js  (222ms)  (pid 11470)
+Compiled pages.js  (167ms)  (pid 11470)
+Compiled reportes.js  (166ms)  (pid 11470)
+Compiled sessions.js  (166ms)  (pid 11470)
+Compiled application.css  (8ms)  (pid 11470)
+Compiled admin.css  (11ms)  (pid 11470)
+Compiled admin/users.css  (8ms)  (pid 11470)
+Compiled pages.css  (12ms)  (pid 11470)
+Compiled reportes.css  (21ms)  (pid 11470)
+Compiled sessions.css  (1ms)  (pid 11470)
+Compiled application.js  (4ms)  (pid 11504)
+Compiled jquery.js  (3ms)  (pid 11504)
+Compiled jquery_ujs.js  (0ms)  (pid 11504)
+Compiled admin.js  (203ms)  (pid 11504)
+Compiled admin/users.js  (209ms)  (pid 11504)
+Compiled pages.js  (167ms)  (pid 11504)
+Compiled reportes.js  (170ms)  (pid 11504)
+Compiled sessions.js  (199ms)  (pid 11504)
+Compiled application.css  (8ms)  (pid 11504)
+Compiled admin.css  (11ms)  (pid 11504)
+Compiled admin/users.css  (7ms)  (pid 11504)
+Compiled pages.css  (12ms)  (pid 11504)
+Compiled reportes.css  (20ms)  (pid 11504)
+Compiled sessions.css  (1ms)  (pid 11504)
+Compiled application.js  (4ms)  (pid 11539)
+Compiled jquery.js  (3ms)  (pid 11539)
+Compiled jquery_ujs.js  (0ms)  (pid 11539)
+Compiled admin.js  (199ms)  (pid 11539)
+Compiled admin/users.js  (210ms)  (pid 11539)
+Compiled pages.js  (167ms)  (pid 11539)
+Compiled reportes.js  (165ms)  (pid 11539)
+Compiled sessions.js  (165ms)  (pid 11539)
+Compiled application.css  (8ms)  (pid 11539)
+Compiled admin.css  (11ms)  (pid 11539)
+Compiled admin/users.css  (8ms)  (pid 11539)
+Compiled pages.css  (12ms)  (pid 11539)
+Compiled reportes.css  (20ms)  (pid 11539)
+Compiled sessions.css  (1ms)  (pid 11539)
+Compiled application.js  (4ms)  (pid 11571)
+Compiled jquery.js  (3ms)  (pid 11571)
+Compiled jquery_ujs.js  (0ms)  (pid 11571)
+Compiled admin.js  (176ms)  (pid 11571)
+Compiled admin/users.js  (214ms)  (pid 11571)
+Compiled pages.js  (165ms)  (pid 11571)
+Compiled reportes.js  (166ms)  (pid 11571)
+Compiled sessions.js  (167ms)  (pid 11571)
+Compiled application.css  (8ms)  (pid 11571)
+Compiled admin.css  (11ms)  (pid 11571)
+Compiled admin/users.css  (7ms)  (pid 11571)
+Compiled pages.css  (12ms)  (pid 11571)
+Compiled reportes.css  (24ms)  (pid 11571)
+Compiled sessions.css  (1ms)  (pid 11571)
+Compiled application.js  (4ms)  (pid 11635)
+Compiled jquery.js  (3ms)  (pid 11635)
+Compiled jquery_ujs.js  (0ms)  (pid 11635)
+Compiled admin.js  (180ms)  (pid 11635)
+Compiled admin/users.js  (178ms)  (pid 11635)
+Compiled pages.js  (244ms)  (pid 11635)
+Compiled reportes.js  (181ms)  (pid 11635)
+Compiled sessions.js  (168ms)  (pid 11635)
+Compiled application.css  (8ms)  (pid 11635)
+Compiled admin.css  (11ms)  (pid 11635)
+Compiled admin/users.css  (8ms)  (pid 11635)
+Compiled pages.css  (12ms)  (pid 11635)
+Compiled reportes.css  (21ms)  (pid 11635)
+Compiled sessions.css  (1ms)  (pid 11635)
+Compiled application.js  (4ms)  (pid 11604)
+Compiled jquery.js  (3ms)  (pid 11604)
+Compiled jquery_ujs.js  (0ms)  (pid 11604)
+Compiled admin.js  (175ms)  (pid 11604)
+Compiled admin/users.js  (213ms)  (pid 11604)
+Compiled pages.js  (165ms)  (pid 11604)
+Compiled reportes.js  (166ms)  (pid 11604)
+Compiled sessions.js  (165ms)  (pid 11604)
+Compiled application.css  (7ms)  (pid 11604)
+Compiled admin.css  (12ms)  (pid 11604)
+Compiled admin/users.css  (8ms)  (pid 11604)
+Compiled pages.css  (12ms)  (pid 11604)
+Compiled reportes.css  (20ms)  (pid 11604)
+Compiled sessions.css  (1ms)  (pid 11604)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:23:09 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 189ms (Views: 187.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css" for 127.0.0.1 at 2012-03-06 17:23:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js" for 127.0.0.1 at 2012-03-06 17:23:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png" for 127.0.0.1 at 2012-03-06 17:23:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg" for 127.0.0.1 at 2012-03-06 17:23:09 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:23:11 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css" for 127.0.0.1 at 2012-03-06 17:23:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js" for 127.0.0.1 at 2012-03-06 17:23:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png" for 127.0.0.1 at 2012-03-06 17:23:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg" for 127.0.0.1 at 2012-03-06 17:23:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:23:13 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css" for 127.0.0.1 at 2012-03-06 17:23:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js" for 127.0.0.1 at 2012-03-06 17:23:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png" for 127.0.0.1 at 2012-03-06 17:23:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg" for 127.0.0.1 at 2012-03-06 17:23:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:23:15 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css" for 127.0.0.1 at 2012-03-06 17:23:15 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js" for 127.0.0.1 at 2012-03-06 17:23:15 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png" for 127.0.0.1 at 2012-03-06 17:23:15 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg" for 127.0.0.1 at 2012-03-06 17:23:15 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:23:27 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css" for 127.0.0.1 at 2012-03-06 17:23:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (55.9ms)
+
+
+Started GET "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js" for 127.0.0.1 at 2012-03-06 17:23:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png" for 127.0.0.1 at 2012-03-06 17:23:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg" for 127.0.0.1 at 2012-03-06 17:23:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-06 17:23:38 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css" for 127.0.0.1 at 2012-03-06 17:23:38 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8e700991df3207b2b5729fbbc7db93ea.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js" for 127.0.0.1 at 2012-03-06 17:23:38 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c3a391d0bc814db5dc1848044e422c7.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png" for 127.0.0.1 at 2012-03-06 17:23:38 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-049a30a48d5446bd7427047769b73ac7.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg" for 127.0.0.1 at 2012-03-06 17:23:38 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-89c20133e400bcef3e808f550944b4bc.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)

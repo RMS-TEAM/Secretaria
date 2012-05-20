@@ -2,14 +2,15 @@
 class PagesController < ApplicationController
 
   def home
+    @title = "Bienvenido"
   end
 
   def antecedentes
-    @title = "Antecedentes"
+    @title = "Indicador"
   end
 
   def participantes
-    @title = "Participantes"
+    @title = "Aliados"
   end
 
   def acerca
@@ -19,30 +20,14 @@ class PagesController < ApplicationController
   def administradores
     @title = "Administradores"
   end
-  def sisas
-    # coding: UTF-8
-    @usuarios = Hash.new
-    usuario = Directoria.all(:order => "nombre DESC")
-    usuario.each do |user|
-     nick = user.nombre.downcase
-     nick.sub!('inst educ','')
-     nick.sub!('instituciÓn educativa','')
-     nick.sub!('cent educ', ' ')
-     nick.gsub!('Ñ','n')
-     nick.gsub!('Ó','o')
-     nick.sub!('lic ','')
-     nick.sub!('inst tec ','')
-     nick.sub!('inst ','')
-     nick.sub!(/(\s[y]\s)|(\s\W\s)/,'')
-     nick.sub!(/^(\col)/,'')
-     nick.sub!(/^(\preesc)/,'')
-     nick.gsub!(/\s/,'')
 
+  def fuentes
+    @title = "Fuentes del Sistema"
 
-
-
-     @usuarios[user.nombre]= nick.slice(0..5)+(rand(70)+10+rand(9)).to_s
-    end
-    @usuarios
   end
+
+  def utilidad
+    @title = "Utilidad del Sistema"
+  end
+
 end
