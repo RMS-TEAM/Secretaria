@@ -6,6 +6,31 @@ module ReportesHelper
 
   end
 
+  def bonus
+    @left = 0
+    @right = 0
+    if @rendimientos.bonus_total11.nil?
+      @left = 0
+    else
+      @left = @rendimientos.bonus_total11
+    end
+
+
+    if@rendimientos.bonus_total5.nil?
+      @right = 0
+    else
+      @right = @rendimientos.bonus_total5
+    end
+    (@left + @right)/4
+  end
+
+  def total
+    @totales.ambiente_escolar.round(2) + @totales.rendimiento.round(2) + @totales.progreso.round(2)
+  end
+
+  def totalbonus
+    total + bonus
+  end
   def grade_ambiente(n)
         if n <= 18.95
           "E"

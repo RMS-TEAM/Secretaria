@@ -1,38 +1,39 @@
+<div id="big">
+    <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
+    <a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
+      <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
+    </a>
 
-<script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
-<a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
-  <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
-</a>
+    <table class="tabla_ranking">
+     <tr class="titulo">
+       <td>Puesto</td>
+       <td>Nombre</td>
+       <td>Ambiente Escolar</td>
+       <td>Rendimiento</td>
+       <td>Progreso</td>
+       <td>Total</td>
+     </tr>
+    <% contador = 1 %>
+    <% @ranking.each do |ins| %>
 
-<table class="tabla_ranking">
- <tr class="titulo">
-   <td>Puesto</td>
-   <td>Nombre</td>
-   <td>Ambiente Escolar</td>
-   <td>Rendimiento</td>
-   <td>Progreso</td>
-   <td>Total</td>
- </tr>
-<% contador = 1 %>
-<% @ranking.each do |ins| %>
-
-   <tr class="<%= cycle("even", "odd") %>">
-     <td>  <%= contador  %></td>
-     <td>  <%= ins.nombre.downcase.titleize%>        </td>
-     <td>  <%= ins.ambiente_escolar%> </td>
-     <td>  <%= ins.rendimiento%>      </td>
-     <td>  <%= ins.progreso%>         </td>
-     <td>  <%= ins.indicador%>        </td>
-   </tr>
+       <tr class="<%= cycle("even", "odd") %>">
+         <td>  <%= contador  %></td>
+         <td>  <%= ins.nombre.downcase.titleize%>        </td>
+         <td>  <%= ins.ambiente_escolar%> </td>
+         <td>  <%= ins.rendimiento%>      </td>
+         <td>  <%= ins.progreso%>         </td>
+         <td>  <%= ins.indicador%>        </td>
+       </tr>
 
 
-<%
-   contador = contador + 1
-   end
-%>
+    <%
+       contador = contador + 1
+       end
+    %>
 
-</table>
-<script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
-<a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
-  <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
-</a>
+    </table>
+    <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
+    <a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
+      <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
+    </a>
+</div>
