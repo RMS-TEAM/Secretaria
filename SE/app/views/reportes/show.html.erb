@@ -8,7 +8,7 @@
    <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
  </a>
 
-        <div id="titulo">
+ <div id="titulo">
             <div id="tituloNombres">
                 <div class="uno">Secretar&iacute;a de Educaci&oacute;n de Medell&iacute;n</div>
                 <div class="dos" >Reporte de progreso</div>
@@ -630,8 +630,13 @@
           </div>
  <p>&nbsp;</p>
  <%=	 link_to "Volver", reportes_path , :class => "option_button"   %>
- <%=  link_to "Descargar PDF", pdf_url, :class => "option_button" %>
-                    
-</div>
+ <%  link_to "Descargar PDF", pdf_url, :class => "option_button" %>
+ <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
+ <a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
+   <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
+ </a>
+
+
+ </div>
 
 
