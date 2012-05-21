@@ -32,7 +32,11 @@ class ReportesController < ApplicationController
 
   def ranking
     @title = "Ranking"
-    @ranking = Ranking.all(:order => "indicador DESC")
+    if current_user.admin?
+      @ranking = Ranking.all(:order => "indicador DESC")
+    else
+      @ranking = Ranking.all(:order => "indicador DESC", :limit => 20)
+    end
 
   end
 
