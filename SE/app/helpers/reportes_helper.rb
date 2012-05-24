@@ -21,7 +21,7 @@ module ReportesHelper
     else
       @right = @rendimientos.bonus_total5
     end
-    (@left + @right)/4
+    (@left.to_i + @right.to_i)/4
   end
 
   def total
