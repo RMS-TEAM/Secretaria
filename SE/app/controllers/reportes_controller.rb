@@ -40,23 +40,11 @@ class ReportesController < ApplicationController
 
   end
 
-  def download
-    @title = "Reporte"
-    @ambientes = Merge.find(params[:id])
-    @rendimientos = Indicador.find(params[:id])
-    @info_col = Directoria.find(params[:id])
-    @totales = Ranking.find(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json  { render :json => @rendimientos }
-    end
-  end
-
   private
 
-    def authenticate
-    	deny_access unless signed_in?
-    end
+  def authenticate
+   	deny_access unless signed_in?
+  end
 
 
 
