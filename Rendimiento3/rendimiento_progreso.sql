@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-05-2012 a las 22:42:04
+-- Tiempo de generación: 24-05-2012 a las 22:01:07
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `bonus`
 --
 
+DROP TABLE IF EXISTS `bonus`;
 CREATE TABLE IF NOT EXISTS `bonus` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `bonus_matematica11` int(4) DEFAULT NULL,
@@ -42,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `bonus` (
 -- Estructura de tabla para la tabla `bonus5`
 --
 
+DROP TABLE IF EXISTS `bonus5`;
 CREATE TABLE IF NOT EXISTS `bonus5` (
   `ie` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `total_matematicas_5` decimal(12,7) DEFAULT NULL,
@@ -65,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `bonus5` (
 -- Estructura de tabla para la tabla `bonus11`
 --
 
+DROP TABLE IF EXISTS `bonus11`;
 CREATE TABLE IF NOT EXISTS `bonus11` (
   `ie` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `total_matematicas` decimal(12,7) DEFAULT NULL,
@@ -88,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `bonus11` (
 -- Estructura de tabla para la tabla `eficiencia_interna_oficial c600`
 --
 
+DROP TABLE IF EXISTS `eficiencia_interna_oficial c600`;
 CREATE TABLE IF NOT EXISTS `eficiencia_interna_oficial c600` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `cons_sede` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -282,6 +286,7 @@ CREATE TABLE IF NOT EXISTS `eficiencia_interna_oficial c600` (
 -- Estructura de tabla para la tabla `escala5_9_09`
 --
 
+DROP TABLE IF EXISTS `escala5_9_09`;
 CREATE TABLE IF NOT EXISTS `escala5_9_09` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `l5r` decimal(12,7) DEFAULT NULL,
@@ -322,6 +327,7 @@ CREATE TABLE IF NOT EXISTS `escala5_9_09` (
 -- Estructura de tabla para la tabla `indicadores`
 --
 
+DROP TABLE IF EXISTS `indicadores`;
 CREATE TABLE IF NOT EXISTS `indicadores` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -433,6 +439,7 @@ CREATE TABLE IF NOT EXISTS `indicadores` (
 -- Estructura de tabla para la tabla `indicadores_5_9`
 --
 
+DROP TABLE IF EXISTS `indicadores_5_9`;
 CREATE TABLE IF NOT EXISTS `indicadores_5_9` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `aprobacion5` decimal(12,7) DEFAULT NULL,
@@ -503,6 +510,7 @@ CREATE TABLE IF NOT EXISTS `indicadores_5_9` (
 -- Estructura de tabla para la tabla `indicadores_11`
 --
 
+DROP TABLE IF EXISTS `indicadores_11`;
 CREATE TABLE IF NOT EXISTS `indicadores_11` (
   `dane` varchar(12) COLLATE latin1_spanish_ci NOT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -566,6 +574,7 @@ CREATE TABLE IF NOT EXISTS `indicadores_11` (
 -- Estructura de tabla para la tabla `indicadores_y_bonus`
 --
 
+DROP TABLE IF EXISTS `indicadores_y_bonus`;
 CREATE TABLE IF NOT EXISTS `indicadores_y_bonus` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -673,6 +682,7 @@ CREATE TABLE IF NOT EXISTS `indicadores_y_bonus` (
 -- Estructura de tabla para la tabla `informeestudiantegrado10y11`
 --
 
+DROP TABLE IF EXISTS `informeestudiantegrado10y11`;
 CREATE TABLE IF NOT EXISTS `informeestudiantegrado10y11` (
   `nucleo` int(3) DEFAULT NULL,
   `ie` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -767,6 +777,7 @@ CREATE TABLE IF NOT EXISTS `informeestudiantegrado10y11` (
 -- Estructura de tabla para la tabla `informe_estudiante_grado_5`
 --
 
+DROP TABLE IF EXISTS `informe_estudiante_grado_5`;
 CREATE TABLE IF NOT EXISTS `informe_estudiante_grado_5` (
   `nucleo` int(3) DEFAULT NULL,
   `ie` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -859,6 +870,7 @@ CREATE TABLE IF NOT EXISTS `informe_estudiante_grado_5` (
 -- Estructura de tabla para la tabla `mediana11_07`
 --
 
+DROP TABLE IF EXISTS `mediana11_07`;
 CREATE TABLE IF NOT EXISTS `mediana11_07` (
   `nombre_sb11_07` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `tema_matematica` decimal(12,7) DEFAULT NULL,
@@ -871,6 +883,7 @@ CREATE TABLE IF NOT EXISTS `mediana11_07` (
 -- Estructura de tabla para la tabla `mediana11_10`
 --
 
+DROP TABLE IF EXISTS `mediana11_10`;
 CREATE TABLE IF NOT EXISTS `mediana11_10` (
   `nombre_sb11_10` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `tema_lenguaje_d` decimal(12,7) DEFAULT NULL,
@@ -883,6 +896,7 @@ CREATE TABLE IF NOT EXISTS `mediana11_10` (
 -- Estructura de tabla para la tabla `permed11_07`
 --
 
+DROP TABLE IF EXISTS `permed11_07`;
 CREATE TABLE IF NOT EXISTS `permed11_07` (
   `nombre_sb11_07` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `tema_lenguaje` decimal(12,7) DEFAULT NULL,
@@ -909,6 +923,7 @@ CREATE TABLE IF NOT EXISTS `permed11_07` (
 -- Estructura de tabla para la tabla `permedianocr`
 --
 
+DROP TABLE IF EXISTS `permedianocr`;
 CREATE TABLE IF NOT EXISTS `permedianocr` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `permed50len_5` int(3) DEFAULT NULL,
@@ -927,6 +942,7 @@ CREATE TABLE IF NOT EXISTS `permedianocr` (
 -- Estructura de tabla para la tabla `permedianocr11`
 --
 
+DROP TABLE IF EXISTS `permedianocr11`;
 CREATE TABLE IF NOT EXISTS `permedianocr11` (
   `nombre_sb11_10` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -944,6 +960,7 @@ CREATE TABLE IF NOT EXISTS `permedianocr11` (
 -- Estructura de tabla para la tabla `permed_5_9_03`
 --
 
+DROP TABLE IF EXISTS `permed_5_9_03`;
 CREATE TABLE IF NOT EXISTS `permed_5_9_03` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `l5_03` decimal(12,7) DEFAULT NULL,
@@ -966,6 +983,7 @@ CREATE TABLE IF NOT EXISTS `permed_5_9_03` (
 -- Estructura de tabla para la tabla `pr_estudiantes_07`
 --
 
+DROP TABLE IF EXISTS `pr_estudiantes_07`;
 CREATE TABLE IF NOT EXISTS `pr_estudiantes_07` (
   `nombre_sb11_07` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `prmat_bajo_07` decimal(12,7) DEFAULT NULL,
@@ -988,6 +1006,7 @@ CREATE TABLE IF NOT EXISTS `pr_estudiantes_07` (
 -- Estructura de tabla para la tabla `pr_estudiantes_10`
 --
 
+DROP TABLE IF EXISTS `pr_estudiantes_10`;
 CREATE TABLE IF NOT EXISTS `pr_estudiantes_10` (
   `nombre_sb11_10` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `prmat_bajo_10` decimal(12,7) DEFAULT NULL,
@@ -1010,6 +1029,7 @@ CREATE TABLE IF NOT EXISTS `pr_estudiantes_10` (
 -- Estructura de tabla para la tabla `rango5_9`
 --
 
+DROP TABLE IF EXISTS `rango5_9`;
 CREATE TABLE IF NOT EXISTS `rango5_9` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `rango1_l5r` decimal(12,7) DEFAULT NULL,
@@ -1060,6 +1080,7 @@ CREATE TABLE IF NOT EXISTS `rango5_9` (
 -- Estructura de tabla para la tabla `ran_ie07`
 --
 
+DROP TABLE IF EXISTS `ran_ie07`;
 CREATE TABLE IF NOT EXISTS `ran_ie07` (
   `nombre_sb11_07` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `categoria_07` int(5) DEFAULT NULL,
@@ -1081,6 +1102,7 @@ CREATE TABLE IF NOT EXISTS `ran_ie07` (
 -- Estructura de tabla para la tabla `ran_ie10`
 --
 
+DROP TABLE IF EXISTS `ran_ie10`;
 CREATE TABLE IF NOT EXISTS `ran_ie10` (
   `nombre_sb11_10` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `categoria_10` int(5) DEFAULT NULL,
@@ -1102,6 +1124,7 @@ CREATE TABLE IF NOT EXISTS `ran_ie10` (
 -- Estructura de tabla para la tabla `res5_9_1`
 --
 
+DROP TABLE IF EXISTS `res5_9_1`;
 CREATE TABLE IF NOT EXISTS `res5_9_1` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `aprobacion5` decimal(12,7) DEFAULT NULL,
@@ -1122,6 +1145,7 @@ CREATE TABLE IF NOT EXISTS `res5_9_1` (
 -- Estructura de tabla para la tabla `res5_9_2`
 --
 
+DROP TABLE IF EXISTS `res5_9_2`;
 CREATE TABLE IF NOT EXISTS `res5_9_2` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `aprobacion5` decimal(12,7) DEFAULT NULL,
@@ -1182,6 +1206,7 @@ CREATE TABLE IF NOT EXISTS `res5_9_2` (
 -- Estructura de tabla para la tabla `res11`
 --
 
+DROP TABLE IF EXISTS `res11`;
 CREATE TABLE IF NOT EXISTS `res11` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1210,6 +1235,7 @@ CREATE TABLE IF NOT EXISTS `res11` (
 -- Estructura de tabla para la tabla `res11i`
 --
 
+DROP TABLE IF EXISTS `res11i`;
 CREATE TABLE IF NOT EXISTS `res11i` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1266,6 +1292,7 @@ CREATE TABLE IF NOT EXISTS `res11i` (
 -- Estructura de tabla para la tabla `res11ii`
 --
 
+DROP TABLE IF EXISTS `res11ii`;
 CREATE TABLE IF NOT EXISTS `res11ii` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1326,6 +1353,7 @@ CREATE TABLE IF NOT EXISTS `res11ii` (
 -- Estructura de tabla para la tabla `res11_07`
 --
 
+DROP TABLE IF EXISTS `res11_07`;
 CREATE TABLE IF NOT EXISTS `res11_07` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1360,6 +1388,7 @@ CREATE TABLE IF NOT EXISTS `res11_07` (
 -- Estructura de tabla para la tabla `res11_10`
 --
 
+DROP TABLE IF EXISTS `res11_10`;
 CREATE TABLE IF NOT EXISTS `res11_10` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1394,6 +1423,7 @@ CREATE TABLE IF NOT EXISTS `res11_10` (
 -- Estructura de tabla para la tabla `res11_11`
 --
 
+DROP TABLE IF EXISTS `res11_11`;
 CREATE TABLE IF NOT EXISTS `res11_11` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1442,6 +1472,7 @@ CREATE TABLE IF NOT EXISTS `res11_11` (
 -- Estructura de tabla para la tabla `res111`
 --
 
+DROP TABLE IF EXISTS `res111`;
 CREATE TABLE IF NOT EXISTS `res111` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1466,6 +1497,7 @@ CREATE TABLE IF NOT EXISTS `res111` (
 -- Estructura de tabla para la tabla `res211`
 --
 
+DROP TABLE IF EXISTS `res211`;
 CREATE TABLE IF NOT EXISTS `res211` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1490,6 +1522,7 @@ CREATE TABLE IF NOT EXISTS `res211` (
 -- Estructura de tabla para la tabla `res211_07`
 --
 
+DROP TABLE IF EXISTS `res211_07`;
 CREATE TABLE IF NOT EXISTS `res211_07` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1512,6 +1545,7 @@ CREATE TABLE IF NOT EXISTS `res211_07` (
 -- Estructura de tabla para la tabla `res211_10`
 --
 
+DROP TABLE IF EXISTS `res211_10`;
 CREATE TABLE IF NOT EXISTS `res211_10` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1534,6 +1568,7 @@ CREATE TABLE IF NOT EXISTS `res211_10` (
 -- Estructura de tabla para la tabla `res311_07`
 --
 
+DROP TABLE IF EXISTS `res311_07`;
 CREATE TABLE IF NOT EXISTS `res311_07` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1566,6 +1601,7 @@ CREATE TABLE IF NOT EXISTS `res311_07` (
 -- Estructura de tabla para la tabla `res311_10`
 --
 
+DROP TABLE IF EXISTS `res311_10`;
 CREATE TABLE IF NOT EXISTS `res311_10` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1598,6 +1634,7 @@ CREATE TABLE IF NOT EXISTS `res311_10` (
 -- Estructura de tabla para la tabla `resultad`
 --
 
+DROP TABLE IF EXISTS `resultad`;
 CREATE TABLE IF NOT EXISTS `resultad` (
   `id` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
   `id_institucion` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1620,6 +1657,7 @@ CREATE TABLE IF NOT EXISTS `resultad` (
 -- Estructura de tabla para la tabla `resultadosgrupales_plant(`
 --
 
+DROP TABLE IF EXISTS `resultadosgrupales_plant(`;
 CREATE TABLE IF NOT EXISTS `resultadosgrupales_plant(` (
   `aplicacion` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
   `grado` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1669,6 +1707,7 @@ CREATE TABLE IF NOT EXISTS `resultadosgrupales_plant(` (
 -- Estructura de tabla para la tabla `saber_5y9_03`
 --
 
+DROP TABLE IF EXISTS `saber_5y9_03`;
 CREATE TABLE IF NOT EXISTS `saber_5y9_03` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `l5_03` decimal(12,7) DEFAULT NULL,
@@ -1683,6 +1722,7 @@ CREATE TABLE IF NOT EXISTS `saber_5y9_03` (
 -- Estructura de tabla para la tabla `sb11-2007-2-rgstro-clfccn-v-1-0`
 --
 
+DROP TABLE IF EXISTS `sb11-2007-2-rgstro-clfccn-v-1-0`;
 CREATE TABLE IF NOT EXISTS `sb11-2007-2-rgstro-clfccn-v-1-0` (
   `estu_consecutivo` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
   `estu_genero` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
@@ -1732,6 +1772,7 @@ CREATE TABLE IF NOT EXISTS `sb11-2007-2-rgstro-clfccn-v-1-0` (
 -- Estructura de tabla para la tabla `sb11-2010-2-rgstro-clfccn-v1,`
 --
 
+DROP TABLE IF EXISTS `sb11-2010-2-rgstro-clfccn-v1,`;
 CREATE TABLE IF NOT EXISTS `sb11-2010-2-rgstro-clfccn-v1,` (
   `estu_consecutivo` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
   `estu_genero` varchar(1) CHARACTER SET utf8 DEFAULT NULL,
@@ -1799,6 +1840,7 @@ CREATE TABLE IF NOT EXISTS `sb11-2010-2-rgstro-clfccn-v1,` (
 -- Estructura de tabla para la tabla `sb11-clasifi-planteles-2007-v-1-0`
 --
 
+DROP TABLE IF EXISTS `sb11-clasifi-planteles-2007-v-1-0`;
 CREATE TABLE IF NOT EXISTS `sb11-clasifi-planteles-2007-v-1-0` (
   `cole_codigo_colegio` int(6) DEFAULT NULL,
   `cole_inst_nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1829,6 +1871,7 @@ CREATE TABLE IF NOT EXISTS `sb11-clasifi-planteles-2007-v-1-0` (
 -- Estructura de tabla para la tabla `sb11-clasifi-planteles-2010-v-1-0`
 --
 
+DROP TABLE IF EXISTS `sb11-clasifi-planteles-2010-v-1-0`;
 CREATE TABLE IF NOT EXISTS `sb11-clasifi-planteles-2010-v-1-0` (
   `cole_codigo_colegio` int(6) DEFAULT NULL,
   `cole_inst_nombre` varchar(81) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1859,6 +1902,7 @@ CREATE TABLE IF NOT EXISTS `sb11-clasifi-planteles-2010-v-1-0` (
 -- Estructura de tabla para la tabla `tabla identificadores`
 --
 
+DROP TABLE IF EXISTS `tabla identificadores`;
 CREATE TABLE IF NOT EXISTS `tabla identificadores` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -1879,6 +1923,7 @@ CREATE TABLE IF NOT EXISTS `tabla identificadores` (
 -- Estructura de tabla para la tabla `taprob`
 --
 
+DROP TABLE IF EXISTS `taprob`;
 CREATE TABLE IF NOT EXISTS `taprob` (
   `dane` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `aprobacion5` decimal(12,7) DEFAULT NULL,
@@ -1893,6 +1938,7 @@ CREATE TABLE IF NOT EXISTS `taprob` (
 -- Estructura de tabla para la tabla `textra`
 --
 
+DROP TABLE IF EXISTS `textra`;
 CREATE TABLE IF NOT EXISTS `textra` (
   `nombre_sb11_10` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `Extraedad` int(4) DEFAULT NULL,
@@ -1907,6 +1953,7 @@ CREATE TABLE IF NOT EXISTS `textra` (
 -- Estructura de tabla para la tabla `varcolegios11`
 --
 
+DROP TABLE IF EXISTS `varcolegios11`;
 CREATE TABLE IF NOT EXISTS `varcolegios11` (
   `nombre_sb11_10` varchar(80) COLLATE latin1_spanish_ci DEFAULT NULL,
   `categoria_10` int(5) DEFAULT NULL,
