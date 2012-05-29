@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(:version => 201111207160411) do
     t.datetime "updated_at"
     t.string   "password_confirmation"
     t.boolean  "admin",                 :default => false
-    t.string   "nickname"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.string   "nickname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -543,3 +543,1463 @@ ActionController::RoutingError (No route matches [GET] "/assets/ninios-89c20133e
   
 
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+Compiled application.js  (6ms)  (pid 23713)
+Compiled jquery.js  (5ms)  (pid 23713)
+Compiled jquery_ujs.js  (0ms)  (pid 23713)
+Compiled admin.js  (165ms)  (pid 23713)
+Compiled admin/users.js  (195ms)  (pid 23713)
+Compiled pages.js  (161ms)  (pid 23713)
+Compiled reportes.js  (199ms)  (pid 23713)
+Compiled sessions.js  (195ms)  (pid 23713)
+Compiled application.css  (8ms)  (pid 23713)
+Compiled admin.css  (3ms)  (pid 23713)
+Compiled admin/users.css  (13ms)  (pid 23713)
+Compiled pages.css  (104ms)  (pid 23713)
+Compiled reportes.css  (33ms)  (pid 23713)
+Compiled sessions.css  (7ms)  (pid 23713)
+Compiled application.js  (7ms)  (pid 23679)
+Compiled jquery.js  (25ms)  (pid 23679)
+Compiled jquery_ujs.js  (1ms)  (pid 23679)
+Compiled admin.js  (355ms)  (pid 23679)
+Compiled admin/users.js  (188ms)  (pid 23679)
+Compiled pages.js  (169ms)  (pid 23679)
+Compiled reportes.js  (172ms)  (pid 23679)
+Compiled sessions.js  (184ms)  (pid 23679)
+Compiled application.css  (21ms)  (pid 23679)
+Compiled admin.css  (249ms)  (pid 23679)
+Compiled admin/users.css  (194ms)  (pid 23679)
+Compiled pages.css  (220ms)  (pid 23679)
+Compiled reportes.css  (210ms)  (pid 23679)
+Compiled sessions.css  (198ms)  (pid 23679)
+
+
+Started GET "/reportes" for 181.129.186.67 at Sat May 26 02:42:56 +0000 2012
+  Processing by ReportesController#index as HTML
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 17ms
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 02:42:56 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3: <head>
+    4: 
+    5:   <title><%= title %></title>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___904987529__624055248'
+
+Migrating to CreateUsers (20111207160408)
+Migrating to AddEmailUniquenessIndex (20111207160409)
+Migrating to AddPassconfirmToUsers (20111215160713)
+Migrating to AddAdminToUsers (20111216150121)
+Migrating to AddNicknameUniquenessToUsers (20120411201900)
+Migrating to AddPasswordToUsers (201111207160410)
+Migrating to AddSaltToUsers (201111207160411)
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 02:45:05 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3: <head>
+    4: 
+    5:   <title><%= title %></title>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___904987529__624055248'
+
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 02:45:08 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3: <head>
+    4: 
+    5:   <title><%= title %></title>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___904987529__624055248'
+
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 02:47:28 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3: <head>
+    4: 
+    5:   <title><%= title %></title>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___904987529__624055248'
+
+
+
+Started GET "/" for 181.129.186.67 at Sat May 26 02:47:36 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    14: </div>
+    15: 
+    16: <div class="image">
+    17:       <%= image_tag("ninios.jpg") %>
+    18: </div>
+  app/views/pages/home.html.erb:17:in `_app_views_pages_home_html_erb___199180111__624458018'
+
+Compiled application.js  (6ms)  (pid 585)
+Compiled jquery.js  (6ms)  (pid 585)
+Compiled jquery_ujs.js  (0ms)  (pid 585)
+Compiled admin.js  (200ms)  (pid 585)
+Compiled admin/users.js  (194ms)  (pid 585)
+Compiled pages.js  (161ms)  (pid 585)
+Compiled reportes.js  (174ms)  (pid 585)
+Compiled sessions.js  (171ms)  (pid 585)
+Compiled application.css  (1476ms)  (pid 585)
+Compiled admin.css  (3ms)  (pid 585)
+Compiled admin/users.css  (13ms)  (pid 585)
+Compiled pages.css  (1013ms)  (pid 585)
+Compiled reportes.css  (35ms)  (pid 585)
+Compiled sessions.css  (7ms)  (pid 585)
+Compiled application.js  (6ms)  (pid 544)
+Compiled jquery.js  (5ms)  (pid 544)
+Compiled jquery_ujs.js  (0ms)  (pid 544)
+Compiled admin.js  (258ms)  (pid 544)
+Compiled admin/users.js  (166ms)  (pid 544)
+Compiled pages.js  (163ms)  (pid 544)
+Compiled reportes.js  (166ms)  (pid 544)
+Compiled sessions.js  (166ms)  (pid 544)
+Compiled application.css  (5ms)  (pid 544)
+Compiled admin.css  (273ms)  (pid 544)
+Compiled admin/users.css  (197ms)  (pid 544)
+Compiled pages.css  (222ms)  (pid 544)
+Compiled reportes.css  (241ms)  (pid 544)
+Compiled sessions.css  (192ms)  (pid 544)
+
+
+Started GET "/" for 181.129.186.67 at Sat May 26 02:49:17 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    14: </div>
+    15: 
+    16: <div class="image">
+    17:       <%= image_tag("ninios.jpg") %>
+    18: </div>
+  app/views/pages/home.html.erb:17:in `_app_views_pages_home_html_erb___199180111__624458018'
+
+Compiled application.js  (6ms)  (pid 706)
+Compiled jquery.js  (5ms)  (pid 706)
+Compiled jquery_ujs.js  (0ms)  (pid 706)
+Compiled admin.js  (196ms)  (pid 706)
+Compiled admin/users.js  (168ms)  (pid 706)
+Compiled pages.js  (176ms)  (pid 706)
+Compiled reportes.js  (5125ms)  (pid 706)
+Compiled sessions.js  (7576ms)  (pid 706)
+Compiled application.css  (7ms)  (pid 706)
+Compiled admin.css  (3ms)  (pid 706)
+Compiled admin/users.css  (14ms)  (pid 706)
+Compiled pages.css  (107ms)  (pid 706)
+Compiled reportes.css  (35ms)  (pid 706)
+Compiled sessions.css  (7ms)  (pid 706)
+Compiled application.js  (6ms)  (pid 670)
+Compiled jquery.js  (5ms)  (pid 670)
+Compiled jquery_ujs.js  (0ms)  (pid 670)
+Compiled admin.js  (166ms)  (pid 670)
+Compiled admin/users.js  (166ms)  (pid 670)
+Compiled pages.js  (164ms)  (pid 670)
+Compiled reportes.js  (164ms)  (pid 670)
+Compiled sessions.js  (163ms)  (pid 670)
+Compiled application.css  (5ms)  (pid 670)
+Compiled admin.css  (284ms)  (pid 670)
+Compiled admin/users.css  (193ms)  (pid 670)
+Compiled pages.css  (212ms)  (pid 670)
+Compiled reportes.css  (236ms)  (pid 670)
+Compiled sessions.css  (279ms)  (pid 670)
+
+
+Started GET "/" for 181.129.186.67 at Sat May 26 02:54:58 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (ninios.jpg isn't precompiled):
+    14: </div>
+    15: 
+    16: <div class="image">
+    17:       <%= image_tag("ninios.jpg") %>
+    18: </div>
+  app/views/pages/home.html.erb:17:in `_app_views_pages_home_html_erb___199180111__624458018'
+
+
+
+Started GET "/reportes" for 181.129.186.67 at Sat May 26 02:55:11 +0000 2012
+  Processing by ReportesController#index as HTML
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 02:55:12 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3: <head>
+    4: 
+    5:   <title><%= title %></title>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___904987529__624055248'
+
+Compiled application.js  (7ms)  (pid 838)
+Compiled jquery.js  (5ms)  (pid 838)
+Compiled jquery_ujs.js  (0ms)  (pid 838)
+Compiled admin.js  (8094ms)  (pid 838)
+Compiled admin/users.js  (6035ms)  (pid 838)
+Compiled pages.js  (5525ms)  (pid 838)
+Compiled reportes.js  (8520ms)  (pid 838)
+Compiled sessions.js  (7576ms)  (pid 838)
+Compiled application.css  (6ms)  (pid 838)
+Compiled admin.css  (3ms)  (pid 838)
+Compiled admin/users.css  (14ms)  (pid 838)
+Compiled pages.css  (116ms)  (pid 838)
+Compiled reportes.css  (35ms)  (pid 838)
+Compiled sessions.css  (7ms)  (pid 838)
+Compiled application.js  (7ms)  (pid 803)
+Compiled jquery.js  (4ms)  (pid 803)
+Compiled jquery_ujs.js  (0ms)  (pid 803)
+Compiled admin.js  (202ms)  (pid 803)
+Compiled admin/users.js  (165ms)  (pid 803)
+Compiled pages.js  (160ms)  (pid 803)
+Compiled reportes.js  (160ms)  (pid 803)
+Compiled sessions.js  (163ms)  (pid 803)
+Compiled application.css  (6ms)  (pid 803)
+Compiled admin.css  (302ms)  (pid 803)
+Compiled admin/users.css  (199ms)  (pid 803)
+Compiled pages.css  (275ms)  (pid 803)
+Compiled reportes.css  (237ms)  (pid 803)
+Compiled sessions.css  (290ms)  (pid 803)
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 02:57:52 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3: <head>
+    4: 
+    5:   <title><%= title %></title>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___904987529__624055248'
+
+Compiled application.js  (6ms)  (pid 1048)
+Compiled jquery.js  (6ms)  (pid 1048)
+Compiled jquery_ujs.js  (0ms)  (pid 1048)
+Compiled admin.js  (173ms)  (pid 1048)
+Compiled admin/users.js  (164ms)  (pid 1048)
+Compiled pages.js  (167ms)  (pid 1048)
+Compiled reportes.js  (163ms)  (pid 1048)
+Compiled sessions.js  (163ms)  (pid 1048)
+Compiled application.css  (6ms)  (pid 1048)
+Compiled admin.css  (3ms)  (pid 1048)
+Compiled admin/users.css  (13ms)  (pid 1048)
+Compiled pages.css  (104ms)  (pid 1048)
+Compiled reportes.css  (35ms)  (pid 1048)
+Compiled sessions.css  (6ms)  (pid 1048)
+Compiled application.js  (7ms)  (pid 1011)
+Compiled jquery.js  (5ms)  (pid 1011)
+Compiled jquery_ujs.js  (0ms)  (pid 1011)
+Compiled admin.js  (230ms)  (pid 1011)
+Compiled admin/users.js  (168ms)  (pid 1011)
+Compiled pages.js  (169ms)  (pid 1011)
+Compiled reportes.js  (168ms)  (pid 1011)
+Compiled sessions.js  (169ms)  (pid 1011)
+Compiled application.css  (6ms)  (pid 1011)
+Compiled admin.css  (297ms)  (pid 1011)
+Compiled admin/users.css  (260ms)  (pid 1011)
+Compiled pages.css  (251ms)  (pid 1011)
+Compiled reportes.css  (230ms)  (pid 1011)
+Compiled sessions.css  (300ms)  (pid 1011)
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 03:07:49 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 03:16:41 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 201.233.87.172 at Sat May 26 03:16:55 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 201.233.87.172 at Sat May 26 03:17:24 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 201.233.87.172 at Sat May 26 03:17:31 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/ruben.png" for 181.129.186.67 at Sat May 26 03:18:18 +0000 2012
+
+ActionController::RoutingError (No route matches [GET] "/assets/ruben.png"):
+  
+
+
+
+Started GET "/" for 181.129.186.67 at Sat May 26 04:35:40 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 181.129.186.67 at Sat May 26 04:47:00 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 181.129.186.67 at Sat May 26 04:47:05 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"password"=>"[FILTERED]", "nickname"=>"admin"}, "authenticity_token"=>"LgPSo0n379+g9od59nsVuHR0qbkPHmUdL57znOqzIVY=", "utf8"=>"✓", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 7ms
+
+
+Started GET "/reportes" for 181.129.186.67 at Sat May 26 04:47:05 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (63.4ms)
+Completed 200 OK in 114ms (Views: 71.3ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/reportes/ranking" for 181.129.186.67 at Sat May 26 04:47:09 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 48ms (Views: 36.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/reportes/ranking" for 181.129.186.67 at Sat May 26 04:47:14 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 39ms (Views: 30.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/reportes/ranking" for 181.129.186.67 at Sat May 26 04:47:15 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 129ms (Views: 118.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/reportes/new" for 181.129.186.67 at Sat May 26 04:47:19 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"option_select"=>"105001012696", "authenticity_token"=>"LgPSo0n379+g9od59nsVuHR0qbkPHmUdL57znOqzIVY=", "utf8"=>"✓", "commit"=>"Generar"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 181.129.186.67 at Sat May 26 04:47:19 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 52ms (Views: 38.2ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 181.129.186.67 at Sat May 26 04:47:26 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/aliados" for 181.129.186.67 at Sat May 26 05:01:01 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/aliados" for 181.129.186.67 at Sat May 26 05:02:08 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/administradores" for 181.129.186.67 at Sat May 26 05:02:11 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/administradores" for 200.12.179.200 at Sat May 26 13:20:53 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 200.12.179.192 at Sat May 26 14:26:29 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 200.12.179.192 at Sat May 26 14:26:33 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 200.12.179.192 at Sat May 26 14:26:39 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"password"=>"[FILTERED]", "nickname"=>"admin"}, "authenticity_token"=>"UAYqetrPCv2FVd5Hc0y0sdmeLhNqRnRQPPTlB/bhjPY=", "utf8"=>"✓", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 200.12.179.192 at Sat May 26 14:26:39 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 38ms (Views: 11.1ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/reportes/ranking" for 200.12.179.192 at Sat May 26 14:26:47 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (98.3ms)
+Completed 200 OK in 111ms (Views: 101.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1" for 200.12.179.192 at Sat May 26 14:27:22 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/users" for 200.12.179.192 at Sat May 26 14:27:24 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/usersfas" for 200.12.179.192 at Sat May 26 14:27:38 +0000 2012
+
+ActionController::RoutingError (No route matches [GET] "/admin/usersfas"):
+  
+
+
+
+Started GET "/" for 181.129.186.67 at Sat May 26 20:30:13 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 190.249.41.196 at Sat May 26 22:20:47 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 66.249.73.210 at Mon May 28 03:29:13 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 190.0.32.198 at Mon May 28 13:24:10 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 190.248.129.46 at Mon May 28 13:25:10 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.50 at Mon May 28 13:25:20 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 190.248.129.58 at Mon May 28 13:25:21 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.0.32.218 at Mon May 28 13:25:31 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.0.32.198 at Mon May 28 13:25:31 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.0.32.218 at Mon May 28 13:37:48 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"fernansil", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.0.32.218 at Mon May 28 13:37:48 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 82ms (Views: 81.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.54 at Mon May 28 13:38:00 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.54 at Mon May 28 13:38:00 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.46 at Mon May 28 14:06:54 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 190.248.129.50 at Mon May 28 14:08:10 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.50 at Mon May 28 14:09:57 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.50 at Mon May 28 14:09:57 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/administradores" for 190.248.129.46 at Mon May 28 14:10:10 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.54 at Mon May 28 14:10:16 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.50 at Mon May 28 14:10:22 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.0.32.198 at Mon May 28 15:12:31 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 190.0.32.198 at Mon May 28 15:12:34 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.58 at Mon May 28 15:42:21 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.58 at Mon May 28 15:44:23 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.58 at Mon May 28 15:44:32 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre.", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"jbTpO9ZU5ER/fCkFxy16eKM+rjXprYCeC9QaWijwsQQ=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.54 at Mon May 28 15:44:32 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.0.32.198 at Mon May 28 15:44:41 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"jbTpO9ZU5ER/fCkFxy16eKM+rjXprYCeC9QaWijwsQQ=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.46 at Mon May 28 15:44:41 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.50 at Mon May 28 15:48:41 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"jbTpO9ZU5ER/fCkFxy16eKM+rjXprYCeC9QaWijwsQQ=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.50 at Mon May 28 15:48:41 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 200.12.179.200 at Mon May 28 15:51:26 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 190.0.32.218 at Mon May 28 16:08:35 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"dorisre", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.0.32.218 at Mon May 28 16:08:35 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.54 at Mon May 28 16:37:36 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 48ms
+
+
+Started GET "/reportes" for 190.248.129.54 at Mon May 28 16:37:36 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (147.1ms)
+Completed 200 OK in 245ms (Views: 154.8ms | ActiveRecord: 68.5ms)
+
+
+Started GET "/users/1" for 190.0.32.198 at Mon May 28 16:38:59 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 190.248.129.50 at Mon May 28 16:39:08 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 190.248.129.50 at Mon May 28 16:39:13 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.248.129.50 at Mon May 28 16:39:15 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/users/new" for 190.248.129.50 at Mon May 28 16:39:17 +0000 2012
+  Processing by Admin::UsersController#new as HTML
+Rendered admin/users/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/users" for 190.248.129.46 at Mon May 28 16:52:42 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"nombre"=>"fernando.lopez", "email"=>"silviofercho@hotmail.com", "nickname"=>"Fernando López", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Crear"}
+Rendered user_mailer/registration_confirmation.html.erb (0.5ms)
+Rendered user_mailer/registration_confirmation.text.erb (0.1ms)
+
+Sent mail to silviofercho@hotmail.com (3038ms)
+Redirected to http://secretaria.respinos.com/users/2
+Completed 302 Found in 3232ms
+
+
+Started GET "/users/2" for 190.248.129.46 at Mon May 28 16:52:45 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 190.0.32.218 at Mon May 28 16:54:30 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.0.32.218 at Mon May 28 16:54:32 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/users/new" for 190.0.32.218 at Mon May 28 16:55:09 +0000 2012
+  Processing by Admin::UsersController#new as HTML
+Rendered admin/users/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signout" for 190.0.32.218 at Mon May 28 16:55:12 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 190.0.32.218 at Mon May 28 16:55:12 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.0.32.218 at Mon May 28 16:55:13 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.0.32.218 at Mon May 28 16:55:16 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.0.32.218 at Mon May 28 16:55:19 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.0.32.198 at Mon May 28 16:55:29 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"fernando.lopez", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.0.32.198 at Mon May 28 16:55:29 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.46 at Mon May 28 16:55:43 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"fernando.lopez", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 190.248.129.46 at Mon May 28 16:55:46 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.50 at Mon May 28 16:56:13 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"fernando.lopez", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.50 at Mon May 28 16:56:13 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.0.32.198 at Mon May 28 16:56:25 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"Fernando López", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 190.0.32.198 at Mon May 28 16:56:25 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.46 at Mon May 28 16:56:33 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Go4FgEnw8btP/f8n8SZ9n49bQmzl7OZXDR727O39jLs=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 190.248.129.46 at Mon May 28 16:56:33 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 36ms (Views: 11.1ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/users/1" for 190.248.129.46 at Mon May 28 16:56:35 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.248.129.46 at Mon May 28 16:56:37 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/users/2/edit" for 190.248.129.46 at Mon May 28 16:56:51 +0000 2012
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Rendered admin/users/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/admin/users/2" for 190.248.129.46 at Mon May 28 16:57:01 +0000 2012
+  Processing by Admin::UsersController#update as HTML
+  Parameters: {"id"=>"2", "utf8"=>"✓", "tipo"=>"Administrador", "commit"=>"Update"}
+Redirected to http://secretaria.respinos.com/admin/users
+Completed 302 Found in 25ms
+
+
+Started GET "/admin/users" for 190.248.129.46 at Mon May 28 16:57:01 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 190.248.129.54 at Mon May 28 16:57:09 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 90ms (Views: 88.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for 190.248.129.54 at Mon May 28 16:57:12 +0000 2012
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.248.129.46 at Mon May 28 16:57:18 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 190.248.129.46 at Mon May 28 16:57:21 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.0.32.218 at Mon May 28 16:57:28 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 190.248.129.50 at Mon May 28 16:57:41 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.248.129.50 at Mon May 28 16:57:45 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 190.0.32.218 at Mon May 28 16:58:05 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.0.32.218 at Mon May 28 16:58:15 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 190.0.32.218 at Mon May 28 16:58:18 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/users" for 190.0.32.218 at Mon May 28 16:58:21 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signout" for 190.0.32.198 at Mon May 28 16:58:31 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 190.0.32.198 at Mon May 28 16:58:31 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 190.0.32.198 at Mon May 28 16:58:34 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.46 at Mon May 28 16:58:42 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"Fernando López", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 190.248.129.46 at Mon May 28 16:58:42 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 35ms (Views: 9.8ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/users/2" for 190.248.129.58 at Mon May 28 16:58:54 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/edit" for 190.248.129.58 at Mon May 28 16:58:57 +0000 2012
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signout" for 190.0.32.198 at Mon May 28 17:00:09 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 190.0.32.198 at Mon May 28 17:00:09 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.54 at Mon May 28 17:00:19 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.54 at Mon May 28 17:00:24 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 190.248.129.54 at Mon May 28 17:00:24 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 124ms (Views: 12.2ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/users/1" for 190.248.129.46 at Mon May 28 17:00:32 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.248.129.46 at Mon May 28 17:00:35 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 190.0.32.198 at Mon May 28 17:01:08 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users" for 190.248.129.58 at Mon May 28 17:01:14 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users/new" for 190.248.129.54 at Mon May 28 17:01:24 +0000 2012
+  Processing by Admin::UsersController#new as HTML
+Rendered admin/users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin/users" for 190.0.32.198 at Mon May 28 17:02:09 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"nombre"=>"fernando.lopez", "email"=>"silviofercho@hotmail.com", "nickname"=>"fernando.lopez", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Crear"}
+Rendered admin/users/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <h1>Lista de usuarios Registrados</h1>
+    3: 
+    4: <div class="users">
+    5:   <% @users.each do |user|%>
+    6:    <div class="<%= cycle("even", "odd") %>">
+    7:         <div class="user_info">
+    8:             <p class="nombre"><%=	user.nombre.capitalize  %></p>
+  app/views/admin/users/index.html.erb:5:in `_app_views_admin_users_index_html_erb__971262420__624196898'
+  app/controllers/admin/users_controller.rb:31:in `create'
+  app/controllers/admin/users_controller.rb:26:in `create'
+
+
+
+Started POST "/admin/users" for 190.0.32.198 at Mon May 28 17:02:25 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"nombre"=>"fernando.lopez", "email"=>"silviofercho@hotmail.com", "nickname"=>"fernando.lopez", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Crear"}
+Rendered admin/users/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <h1>Lista de usuarios Registrados</h1>
+    3: 
+    4: <div class="users">
+    5:   <% @users.each do |user|%>
+    6:    <div class="<%= cycle("even", "odd") %>">
+    7:         <div class="user_info">
+    8:             <p class="nombre"><%=	user.nombre.capitalize  %></p>
+  app/views/admin/users/index.html.erb:5:in `_app_views_admin_users_index_html_erb__971262420__624196898'
+  app/controllers/admin/users_controller.rb:31:in `create'
+  app/controllers/admin/users_controller.rb:26:in `create'
+
+
+
+Started POST "/admin/users" for 190.0.32.218 at Mon May 28 17:03:32 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"nombre"=>"fernando.lopez", "email"=>"silviofercho@hotmail.com", "nickname"=>"fernando.lopez", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Crear"}
+Rendered admin/users/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <h1>Lista de usuarios Registrados</h1>
+    3: 
+    4: <div class="users">
+    5:   <% @users.each do |user|%>
+    6:    <div class="<%= cycle("even", "odd") %>">
+    7:         <div class="user_info">
+    8:             <p class="nombre"><%=	user.nombre.capitalize  %></p>
+  app/views/admin/users/index.html.erb:5:in `_app_views_admin_users_index_html_erb__971262420__624196898'
+  app/controllers/admin/users_controller.rb:31:in `create'
+  app/controllers/admin/users_controller.rb:26:in `create'
+
+
+
+Started POST "/admin/users" for 190.248.129.58 at Mon May 28 17:04:05 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"nombre"=>"Fernando López", "email"=>"silviofercho@hotmail.com", "nickname"=>"fernando.lopez", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Crear"}
+Rendered admin/users/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <h1>Lista de usuarios Registrados</h1>
+    3: 
+    4: <div class="users">
+    5:   <% @users.each do |user|%>
+    6:    <div class="<%= cycle("even", "odd") %>">
+    7:         <div class="user_info">
+    8:             <p class="nombre"><%=	user.nombre.capitalize  %></p>
+  app/views/admin/users/index.html.erb:5:in `_app_views_admin_users_index_html_erb__971262420__624196898'
+  app/controllers/admin/users_controller.rb:31:in `create'
+  app/controllers/admin/users_controller.rb:26:in `create'
+
+
+
+Started POST "/admin/users" for 190.248.129.50 at Mon May 28 17:05:25 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"nombre"=>"Fernando López", "email"=>"silviofercho@hotmail.com", "nickname"=>"fernandol", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Crear"}
+Rendered admin/users/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <h1>Lista de usuarios Registrados</h1>
+    3: 
+    4: <div class="users">
+    5:   <% @users.each do |user|%>
+    6:    <div class="<%= cycle("even", "odd") %>">
+    7:         <div class="user_info">
+    8:             <p class="nombre"><%=	user.nombre.capitalize  %></p>
+  app/views/admin/users/index.html.erb:5:in `_app_views_admin_users_index_html_erb__971262420__624196898'
+  app/controllers/admin/users_controller.rb:31:in `create'
+  app/controllers/admin/users_controller.rb:26:in `create'
+
+
+
+Started GET "/users/1" for 190.248.129.58 at Mon May 28 17:06:19 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Mon May 28 17:06:22 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 36ms (Views: 10.2ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/reportes/ranking" for 190.248.129.58 at Mon May 28 17:06:24 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 54ms (Views: 38.7ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Mon May 28 17:07:26 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"juf3hDtY0fe9O441yB1I4/qfeZi/9iZorLyeAQiius4=", "commit"=>"Generar", "option_select"=>"105001012696"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 190.0.32.198 at Mon May 28 17:07:26 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 51ms (Views: 37.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 200.12.179.127 at Mon May 28 17:11:32 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 200.12.179.127 at Mon May 28 17:11:34 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 35ms (Views: 10.1ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/users/1" for 200.12.179.127 at Mon May 28 17:11:36 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 96ms (Views: 93.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users" for 200.12.179.127 at Mon May 28 17:11:37 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 200.12.179.127 at Mon May 28 17:11:42 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.54 at Mon May 28 20:00:46 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"fernando.lopez", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.54 at Mon May 28 20:00:46 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.50 at Mon May 28 20:00:56 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"fernando.lopez", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.0.32.198 at Mon May 28 20:00:57 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.58 at Mon May 28 20:02:39 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"Fernando López", "password"=>"[FILTERED]"}, "utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 190.248.129.58 at Mon May 28 20:02:40 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 36ms (Views: 9.7ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Mon May 28 20:02:49 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Generar", "option_select"=>"105001000795"}
+Redirected to http://secretaria.respinos.com/reportes/105001000795
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000795" for 190.248.129.50 at Mon May 28 20:02:49 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000795"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reportes/105001000795" for 188.40.100.142 at Mon May 28 20:13:30 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001000795"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 188.40.100.142 at Mon May 28 20:13:30 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes/105001000795" for 66.249.71.106 at Mon May 28 20:14:01 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001000795"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 66.249.71.106 at Mon May 28 20:14:01 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes/105001000795" for 190.0.32.218 at Mon May 28 20:14:17 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000795"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Mon May 28 20:47:07 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 35ms (Views: 10.7ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Mon May 28 20:47:15 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Generar", "option_select"=>"105001003441"}
+Redirected to http://secretaria.respinos.com/reportes/105001003441
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001003441" for 190.248.129.46 at Mon May 28 20:47:18 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001003441"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 102ms (Views: 96.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Mon May 28 20:55:08 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 42ms (Views: 11.3ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Mon May 28 20:55:14 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Generar", "option_select"=>"205001010281"}
+Redirected to http://secretaria.respinos.com/reportes/205001010281
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001010281" for 190.248.129.46 at Mon May 28 20:55:15 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001010281"}
+Rendered reportes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 6.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Mon May 28 21:13:06 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 10.6ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/reportes/new" for 190.248.129.54 at Mon May 28 21:13:18 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Generar", "option_select"=>"105001000001"}
+Redirected to http://secretaria.respinos.com/reportes/105001000001
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000001" for 190.248.129.54 at Mon May 28 21:13:19 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000001"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Mon May 28 21:17:54 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 36ms (Views: 12.6ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Mon May 28 21:18:00 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Generar", "option_select"=>"105001000485"}
+Redirected to http://secretaria.respinos.com/reportes/105001000485
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000485" for 190.248.129.54 at Mon May 28 21:18:01 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000485"}
+Rendered reportes/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Mon May 28 21:18:07 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 133ms (Views: 11.5ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Mon May 28 21:18:23 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Generar", "option_select"=>"105001000001"}
+Redirected to http://secretaria.respinos.com/reportes/105001000001
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000001" for 190.248.129.50 at Mon May 28 21:18:23 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000001"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/signout" for 190.248.129.46 at Mon May 28 22:21:01 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 190.248.129.46 at Mon May 28 22:21:01 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Mon May 28 22:22:25 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 38ms (Views: 11.6ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/reportes/new" for 190.0.32.218 at Mon May 28 22:22:34 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dkfw6Lw2wLFYePKMXk+JDd5/ya3Xw0ZplQLOFPfnGvk=", "commit"=>"Generar", "option_select"=>"105001013013"}
+Redirected to http://secretaria.respinos.com/reportes/105001013013
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001013013" for 190.0.32.218 at Mon May 28 22:22:34 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001013013"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 2.7ms)
