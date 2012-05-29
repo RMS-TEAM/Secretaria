@@ -1,7 +1,9 @@
+# coding: UTF-8
+
 module ApplicationHelper
 
   def title
-		base_title = "SE"
+		base_title = "SIMCIE-Medellín"
 		if @title.nil?
 			base_title
 		else

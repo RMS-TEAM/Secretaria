@@ -10,19 +10,24 @@
 
  <div id="titulo">
             <div id="tituloNombres">
-                <div class="uno">Secretar&iacute;a de Educaci&oacute;n de Medell&iacute;n</div>
-                <div class="dos" >Reporte de progreso</div>
+                <div class="uno">Reporte individual de resultados en calidad</div>
+
             </div>
         </div>
         <div id="col1">
                 <h4>¿C&oacute;mo los puntajes se transform&aacute;n en calificaciones?</h4>
-                <ul><li>Las IE reciben un reporte basado en su puntaje total.</li>
-                <li>Las IE con un puntaje entre X y XX reciben una E.</li>
+                <ul><li>Las instituciones educativas disponen de un reporte individual de acuerdo
+                  con sus resultados en calidad.</li>
+                <li>Las instituciones educativas con un puntaje total entre X y XX reciben
+                  una calificación de E</li>
                 <li>W% de las IE consigui&oacute; una E en 2011-1.</li></ul>
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr>
+                            <th colspan="3">Cuadro de Calificación</th>
+                        </tr>
+                        <tr>
                                 <th>Calificaci&oacute;n</th>
-                                <th>Puntajes y rango</th>
+                                <th>Rangos del Puntaje</th>
                                 <th>Situaci&oacute;n de la ciudad</th>
                         </tr>
                         <tr>
@@ -61,7 +66,7 @@
                                 <td colspan="2" > <%= @rendimientos.nombre.titleize%>.</td>
                         </tr>
                         <tr>
-                                <td colspan="2"><strong>DANE:</strong> <%= @rendimientos.dane %></td>
+                                <td colspan="2"><strong>Codigo DANE:</strong> <%= @rendimientos.dane %></td>
                         </tr>
                         <tr>
                                 <td colspan="2"><strong>Rector:</strong> <%= @info_col.rector.titleize %></td>
@@ -76,31 +81,79 @@
                         </tr>
 
                         <tr>
-                                <td colspan="2"><strong>&Iacute;ndice de pares:</strong> 000*e-10</td>
+                              <!--  <td colspan="2"><strong>&Iacute;ndice de pares:</strong> 000*e-10</td>-->
                         </tr>
                 </table>
         </div>
+         <div class="tablas">
+           <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+             <tr>
+               <th>Dimensiones determinantes de la calidad educativa</th>
+             </tr>
+             <tr class="titulo">
+
+               <td >En este reporte:</td>
+             </tr>
+             <tr>
+               <td class="size">Se mide el avance de la Institución Educativa año a año,
+                 se compara este avance con el de las instituciones pares y se
+                 asignan bonificaciones por el éxito de la Institución en
+                 promover el logro académico, especialmente entre los
+                 estudiantes con mayores necesidades. Para esto el reporte
+                 mide el resultado en cuatro áreas:
+               </td>
+             </tr>
+             <tr>
+               <td class="size"><b>Ambiente Escolar:  </b> Usa los resultados de las
+                 encuestas a padres, docentes y estudiantes para medir
+                 las condiciones necesarias de aprendizaje: expectativas
+                 académicas, comunicación, nivel de compromiso, seguridad
+                 y respeto</td>
+             </tr>
+             <tr>
+               <td class="size"><b>Rendimiento: </b> Mide los niveles alcanzados por
+                 los estudiantes de la institución en pruebas estandarizadas
+                 de lenguaje y matemáticas: Saber 11, Saber 9 y Saber 5.</td>
+             </tr>
+             <tr>
+               <td class="size"><b>Progreso: </b> Miden el progreso de la institución
+                 en percentiles de acuerdo a los resultados de pruebas
+                 estandarizadas de lenguaje y matemáticas: Saber 11,
+                 Saber 9 y Saber 5.</td>
+             </tr>
+             <tr>
+               <td class="size"><b>Bonificaci&oacute;n: </b> Puntaje adicional a las Instituciones
+                 Educativas por ganancias en el logro académico, especialmente
+                 de los estudiantes con mayores necesidades (según el estrato),
+                 medidas a través de los resultados de las Olimpiadas del Conocimiento.</td>
+             </tr>
+           </table>
+         </div>
         <div class="tablas">
                 <table style="width: 100%; "  border=1 cellspacing=0 cellpadding=2 >
                         <tr>
-                                <th style="width: 20%;">Calificaci&oacute;n del avance</th>
+                            <th colspan="3">Resumen del Reporte de Evaluación</th>
+                        </tr>
+                        <tr>
+
+                                <th style="width: 20%;">Calificaci&oacute;n</th>
                                 <th style="width: 40%;">¿Que significa esta calificaci&oacute;n?</th>
                                 <th style="width: 40%;">¿C&oacute;mo fue el rendimiento de esta instituci&oacute;n?</th>
                         </tr>
                         <tr>
                                 <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@totales.indicador) %></td>
-                                <td class="size">La IE <%= @rendimientos.nombre.titleize %> obtuvo un puntaje total de <%= @totales.indicador %>. en ambiente escolar, rendimiento y progreso académico.
-                                Tres criterios por medio de los cuales se evalúa la calidad educativa de cada una de las IE oficiales del
-                                Municipio de Medellín. Para la obtención de dicho puntaje se estimo estadísticamente y de manera
-                                independiente cada criterio, luego se obtuvo un promedio ponderado de estos, el cual representa el
-                                puntaje total señalado para cada IE. Además, se le concedió un puntaje adicional o premio a aquellas IE
-                                que han logrado mejorar su calidad, a pesar de tener población estudiantil en condiciones
-                                vulnerables (la misma se considera que se encuentra en estado vulnerable si pertenece
-                                a los estratos uno, dos y si es población desplazada). Se premia la institución siempre y
-                                cuando tenga población estudiantil vulnerable y haya participado en las Olimpiadas del
-                                Conocimiento exitosamente. La finalidad de este indicador es disminuir la brecha existente
-                                entre las IE, que en medio de condiciones adversas deben impartir una educación de
-                                calidad, y aquellas que gozan de condiciones socioeconómicas relativamente superiores..</td>
+                                <td class="size">La IE <strong><%= @rendimientos.nombre.titleize %></strong> obtuvo un
+                                    puntaje total en calidad educativa, denominado Indicador Multidimensional de la
+                                    Calidad Educativa (IMCE) de <strong><%= @totales.indicador.round(2) %></strong>.
+                                    Para su cálculo se consideraron tres dimensiones (ambiente escolar, progreso y
+                                    rendimiento académico) que se reconocen como determinantes en la calidad educativa
+                                    de cada una de las instituciones educativas del Municipio de Medellín. El Sistema
+                                    de Medición incluye una bonificación como reconocimiento a aquellas instituciones
+                                    educativas oficiales, que teniendo un porcentaje relativamente alto de
+                                    estudiantes bajo condiciones socioeconómicas restrictivas, logran un buen desempeño agregado
+                                    en las Olimpiadas del Conocimiento del año 2011. Considerando el bonus, esta IE obtuvo un
+                                    puntaje total de <strong><%= totalbonus %></strong>
+                                </td>
                                 <td class="size"><p>El puntaje de esta IE para el 2011 fue de <%=  @totales.indicador %></p>
                                   <p>Esta IE lo hizo mejor que el X% de todas las IE de la ciudad.</p>
 </td>
@@ -109,6 +162,9 @@
         </div>
         <div class="tablas">
                 <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th colspan="4">Detalle de la puntuación por dimensión</th>
+                        </tr>
                         <tr>
                                 <th style="width: 30%">Categor&iacute;a</th>
                                 <th style="width: 50%" colspan="2">Puntaje</th>
@@ -121,19 +177,19 @@
                                 <td class="puntaje"><strong><%= grade_ambiente(@totales.ambiente_escolar) %></strong></td>
                         </tr>
                         <tr>
-                                <td>Rendimiento</td>
-                                <td class="puntaje"><strong><%=@totales.rendimiento.round(2)%> de 37</strong></td>
+                                <td>Rendimiento Académico”</td>
+                                <td class="puntaje"><strong><%=@totales.rendimiento.round(2)%> de 38</strong></td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@totales.rendimiento.round(2),37)%>%;">&nbsp;</strong></div></td>
                                 <td class="puntaje"><strong><%= grade_rendimiento(@totales.rendimiento) %></strong></td>
                         </tr>
                         <tr>
                                 <td>Progreso</td>
-                                <td class="puntaje"><strong><%=@totales.progreso.round(2)%> de 35</strong></td>
+                                <td class="puntaje"><strong><%=@totales.progreso.round(2)%> de 36</strong></td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@totales.progreso.round(2),35)%>%;">&nbsp;</strong></div></td>
                                 <td class="puntaje"><strong><%=grade_progreso(@totales.progreso)  %></strong></td>
                         </tr>
                         <tr>
-                                <td>Total</td>
+                                <td>Puntaje Total (IMCE)</td>
                                 <td class="puntaje"><strong><%=total%> de 100</strong></td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@totales.progreso.round(2),100)%>%;">&nbsp;</strong></div></td>
                                 <td class="puntaje"><strong><%=grade_progreso(@totales.progreso)  %></strong></td>
@@ -145,53 +201,14 @@
                                 <td class="puntaje"><strong><%=grade_ambiente(24)%></strong></td>
                         </tr>
                         <tr>
-                                <td>Puntaje Total</td>
+                                <td>“Puntaje Total (IMCE)” con bonus</td>
                                 <td class="puntaje"><strong><%=totalbonus%> de 100</strong></td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(totalbonus,100)%>%;">&nbsp;</strong></div></td>
                                 <td class="puntaje"><strong><%= grade_total(@totales.indicador) %></strong></td>
                         </tr>
                 </table>
         </div>
-        <div class="tablas">
-                <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
-                        <tr class="titulo">
-                                <td >En este reporte:</td>
-                        </tr>
-                        <tr>
-                                <td class="size">Se mide el avance de la Institución Educativa año a año,
-                                  se compara este avance con el de las instituciones pares y se
-                                  asignan bonificaciones por el éxito de la Institución en
-                                  promover el logro académico, especialmente entre los
-                                  estudiantes con mayores necesidades. Para esto el reporte
-                                  mide el resultado en cuatro áreas:
-                                </td>
-                        </tr>
-                        <tr>
-                                <td class="size"><b>Ambiente Escolar:  </b> Usa los resultados de las
-                                  encuestas a padres, docentes y estudiantes para medir
-                                  las condiciones necesarias de aprendizaje: expectativas
-                                  académicas, comunicación, nivel de compromiso, seguridad
-                                  y respeto</td>
-                        </tr>
-                        <tr>
-                                <td class="size"><b>Rendimiento: </b> Mide los niveles alcanzados por
-                                  los estudiantes de la institución en pruebas estandarizadas
-                                  de lenguaje y matemáticas: Saber 11, Saber 9 y Saber 5.</td>
-                        </tr>
-                        <tr>
-                                <td class="size"><b>Progreso: </b> Miden el progreso de la institución
-                                  en percentiles de acuerdo a los resultados de pruebas
-                                  estandarizadas de lenguaje y matemáticas: Saber 11,
-                                  Saber 9 y Saber 5.</td>
-                        </tr>
-                        <tr>
-                                <td class="size"><b>Bonificaci&oacute;n: </b> Puntaje adicional a las Instituciones
-                                  Educativas por ganancias en el logro académico, especialmente
-                                  de los estudiantes con mayores necesidades (según el estrato),
-                                  medidas a través de los resultados de las Olimpiadas del Conocimiento.</td>
-                        </tr>
-                </table>
-        </div>
+
         <div class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
