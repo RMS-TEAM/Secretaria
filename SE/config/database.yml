@@ -32,6 +32,17 @@ db2:
   socket: /opt/lampp/var/mysql/mysql.sock
   host: localhost
 
+db3:
+  adapter: mysql2
+  encoding: UTF8
+  reconnect: false
+  database: clusters
+  pool: 5
+  username: root
+  password:
+  socket: /opt/lampp/var/mysql/mysql.sock
+  host: localhost
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
