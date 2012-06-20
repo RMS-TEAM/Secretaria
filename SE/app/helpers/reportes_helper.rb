@@ -109,7 +109,7 @@ module ReportesHelper
     end
 
   def percent(number, top)
-    ((number * 100 )/top).round(2)
+    ((number.to_f * 100 )/top).round(2)
   end
 
 
