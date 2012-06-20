@@ -5355,3 +5355,302 @@ ActionView::Template::Error (wrong number of arguments (1 for 0)):
   app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
   app/controllers/reportes_controller.rb:24:in `show'
 
+
+
+Started GET "/reportes/105001012696" for 181.129.160.184 at Wed Jun 20 03:44:29 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%= @multivariadob.bonus%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 03:44:36 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 150ms (Views: 11.2ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/reportes/new" for 181.129.160.184 at Wed Jun 20 03:44:40 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"oVuL4ZHvHT37QjyvxN3qIAKdLJ06w5J3mRzeu0j/DLE=", "option_select"=>"105001019925", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001019925
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 03:44:40 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%= @multivariadob.bonus%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 04:10:35 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%= @multivariadob.bonus%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 04:36:06 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Completed 500 Internal Server Error in 33ms
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/opt/lampp/var/mysql/mysql.sock' (2)):
+  app/controllers/reportes_controller.rb:16:in `show'
+
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 04:36:09 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Completed 500 Internal Server Error in 2ms
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/opt/lampp/var/mysql/mysql.sock' (2)):
+  app/controllers/reportes_controller.rb:16:in `show'
+
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 04:38:24 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Completed 500 Internal Server Error in 2ms
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/opt/lampp/var/mysql/mysql.sock' (2)):
+  app/controllers/reportes_controller.rb:16:in `show'
+
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 04:38:25 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Completed 500 Internal Server Error in 2ms
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/opt/lampp/var/mysql/mysql.sock' (2)):
+  app/controllers/reportes_controller.rb:16:in `show'
+
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 05:02:12 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Completed 500 Internal Server Error in 18ms
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/opt/lampp/var/mysql/mysql.sock' (2)):
+  app/controllers/reportes_controller.rb:16:in `show'
+
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 05:03:52 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (223.3ms)
+Completed 200 OK in 494ms (Views: 295.4ms | ActiveRecord: 101.8ms)
+Compiled application.js  (10ms)  (pid 6256)
+Compiled jquery.js  (13ms)  (pid 6256)
+Compiled jquery_ujs.js  (0ms)  (pid 6256)
+Compiled admin.js  (479ms)  (pid 6256)
+Compiled admin/users.js  (340ms)  (pid 6256)
+Compiled pages.js  (370ms)  (pid 6256)
+Compiled reportes.js  (339ms)  (pid 6256)
+Compiled sessions.js  (327ms)  (pid 6256)
+Compiled application.css  (4ms)  (pid 6256)
+Compiled admin.css  (2ms)  (pid 6256)
+Compiled admin/users.css  (13ms)  (pid 6256)
+Compiled pages.css  (36ms)  (pid 6256)
+Compiled reportes.css  (33ms)  (pid 6256)
+Compiled sessions.css  (6ms)  (pid 6256)
+Compiled application.js  (12ms)  (pid 6218)
+Compiled jquery.js  (20ms)  (pid 6218)
+Compiled jquery_ujs.js  (1ms)  (pid 6218)
+Compiled admin.js  (375ms)  (pid 6218)
+Compiled admin/users.js  (159ms)  (pid 6218)
+Compiled pages.js  (194ms)  (pid 6218)
+Compiled reportes.js  (262ms)  (pid 6218)
+Compiled sessions.js  (174ms)  (pid 6218)
+Compiled application.css  (16ms)  (pid 6218)
+Compiled admin.css  (185ms)  (pid 6218)
+Compiled admin/users.css  (271ms)  (pid 6218)
+Compiled pages.css  (440ms)  (pid 6218)
+Compiled reportes.css  (600ms)  (pid 6218)
+Compiled sessions.css  (378ms)  (pid 6218)
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 05:06:13 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 20ms (Views: 7.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 05:20:16 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 39ms (Views: 14.4ms | ActiveRecord: 7.4ms)
+Compiled application.js  (73ms)  (pid 8769)
+Compiled jquery.js  (5ms)  (pid 8769)
+Compiled jquery_ujs.js  (0ms)  (pid 8769)
+Compiled admin.js  (182ms)  (pid 8769)
+Compiled admin/users.js  (165ms)  (pid 8769)
+Compiled pages.js  (4640ms)  (pid 8769)
+Compiled reportes.js  (10020ms)  (pid 8769)
+Compiled sessions.js  (5460ms)  (pid 8769)
+Compiled application.css  (6ms)  (pid 8769)
+Compiled admin.css  (3ms)  (pid 8769)
+Compiled admin/users.css  (14ms)  (pid 8769)
+Compiled pages.css  (36ms)  (pid 8769)
+Compiled reportes.css  (40ms)  (pid 8769)
+Compiled sessions.css  (7ms)  (pid 8769)
+Compiled application.js  (6ms)  (pid 8733)
+Compiled jquery.js  (5ms)  (pid 8733)
+Compiled jquery_ujs.js  (0ms)  (pid 8733)
+Compiled admin.js  (164ms)  (pid 8733)
+Compiled admin/users.js  (171ms)  (pid 8733)
+Compiled pages.js  (193ms)  (pid 8733)
+Compiled reportes.js  (155ms)  (pid 8733)
+Compiled sessions.js  (157ms)  (pid 8733)
+Compiled application.css  (6ms)  (pid 8733)
+Compiled admin.css  (188ms)  (pid 8733)
+Compiled admin/users.css  (292ms)  (pid 8733)
+Compiled pages.css  (225ms)  (pid 8733)
+Compiled reportes.css  (215ms)  (pid 8733)
+Compiled sessions.css  (183ms)  (pid 8733)
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 05:26:41 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 3578ms (Views: 11.4ms | ActiveRecord: 3547.0ms)
+
+
+Started GET "/reportes/105001019925" for 181.129.160.184 at Wed Jun 20 05:35:33 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (227.4ms)
+Completed 200 OK in 400ms (Views: 250.9ms | ActiveRecord: 63.8ms)
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 05:37:50 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 138ms (Views: 55.4ms | ActiveRecord: 68.3ms)
+
+
+Started GET "/signout" for 181.129.160.184 at Wed Jun 20 05:37:58 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 181.129.160.184 at Wed Jun 20 05:37:59 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 181.129.160.184 at Wed Jun 20 05:38:01 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 181.129.160.184 at Wed Jun 20 05:38:15 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"password"=>"[FILTERED]", "nickname"=>"admin"}, "authenticity_token"=>"lf2cfyRnr4EZaBTBc0P4/0x+KxszkjgvczjYG5LSRBU=", "utf8"=>"✓", "commit"=>"Entrar"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 31ms
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 05:38:15 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 38ms (Views: 11.1ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/" for 181.129.160.184 at Wed Jun 20 05:53:21 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 70ms (Views: 69.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 181.129.160.184 at Wed Jun 20 05:53:28 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 181.129.160.184 at Wed Jun 20 05:53:49 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 05:54:08 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 39ms (Views: 10.2ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/reportes/new" for 181.129.160.184 at Wed Jun 20 05:54:10 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"option_select"=>"105001012696", "authenticity_token"=>"oVuL4ZHvHT37QjyvxN3qIAKdLJ06w5J3mRzeu0j/DLE=", "utf8"=>"✓", "commit"=>"Generar"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 181.129.160.184 at Wed Jun 20 05:54:10 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 19ms (Views: 7.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/reportes/105001012696" for 181.129.160.184 at Wed Jun 20 05:54:26 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 20ms (Views: 8.2ms | ActiveRecord: 5.6ms)
