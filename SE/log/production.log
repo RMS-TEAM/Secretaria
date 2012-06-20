@@ -2003,3 +2003,3355 @@ Started GET "/reportes/105001013013" for 190.0.32.218 at Mon May 28 22:22:34 +00
   Parameters: {"id"=>"105001013013"}
 Rendered reportes/show.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 181.129.186.67 at Tue May 29 01:18:01 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reportes" for 181.129.186.67 at Tue May 29 01:18:14 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (191.8ms)
+Completed 200 OK in 241ms (Views: 199.5ms | ActiveRecord: 17.6ms)
+
+
+Started POST "/reportes/new" for 181.129.186.67 at Tue May 29 01:18:22 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"J5QxiN/wKcHC3VX0u+fiOm1ckKPkjREAhRMEFQbuix8=", "option_select"=>"105001012696"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 181.129.186.67 at Tue May 29 01:18:22 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 58ms (Views: 40.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Tue May 29 13:46:24 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (203.8ms)
+Completed 200 OK in 287ms (Views: 223.1ms | ActiveRecord: 23.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Tue May 29 13:47:09 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>"105001000001"}
+Redirected to http://secretaria.respinos.com/reportes/105001000001
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000001" for 190.248.129.46 at Tue May 29 13:47:09 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000001"}
+Rendered reportes/show.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 56ms (Views: 39.9ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 13:48:24 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/administradores" for 190.248.129.58 at Tue May 29 13:48:30 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.58 at Tue May 29 13:48:34 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/aliados" for 190.248.129.46 at Tue May 29 13:48:45 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.0.32.198 at Tue May 29 13:48:56 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/acerca" for 190.0.32.198 at Tue May 29 13:48:58 +0000 2012
+  Processing by PagesController#acerca as HTML
+Rendered pages/acerca.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.0.32.218 at Tue May 29 13:49:04 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fuentes" for 190.0.32.218 at Tue May 29 13:49:06 +0000 2012
+  Processing by PagesController#fuentes as HTML
+Rendered pages/fuentes.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 13:49:16 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/indicador" for 190.248.129.54 at Tue May 29 13:49:18 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.46 at Tue May 29 13:49:24 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 77ms (Views: 76.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/indicador" for 190.248.129.46 at Tue May 29 13:49:27 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.46 at Tue May 29 13:49:28 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/utilidad" for 190.248.129.46 at Tue May 29 13:49:30 +0000 2012
+  Processing by PagesController#utilidad as HTML
+Rendered pages/utilidad.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.46 at Tue May 29 13:49:34 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 190.248.129.50 at Tue May 29 13:51:16 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2/edit" for 190.248.129.50 at Tue May 29 13:51:18 +0000 2012
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/2" for 190.248.129.58 at Tue May 29 13:51:33 +0000 2012
+  Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"silviofercho@hotmail.com"}, "id"=>"2", "commit"=>"Actualizar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI="}
+Rendered users/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/2" for 190.248.129.50 at Tue May 29 13:51:43 +0000 2012
+  Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"silviofercho@hotmail.com"}, "id"=>"2", "commit"=>"Actualizar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI="}
+Rendered users/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 190.0.32.218 at Tue May 29 13:51:48 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/users" for 190.0.32.218 at Tue May 29 13:51:50 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 190.0.32.198 at Tue May 29 13:52:02 +0000 2012
+  Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 190.0.32.198 at Tue May 29 13:52:06 +0000 2012
+  Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.0.32.198 at Tue May 29 13:52:10 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Tue May 29 13:52:12 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 38ms (Views: 10.8ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/reportes/ranking" for 190.0.32.198 at Tue May 29 13:52:14 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (130.1ms)
+Completed 200 OK in 143ms (Views: 134.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Tue May 29 13:52:41 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 39ms (Views: 10.2ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 13:52:46 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 13:52:50 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/administradores" for 190.248.129.58 at Tue May 29 13:52:53 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.46 at Tue May 29 13:52:58 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 190.248.129.54 at Tue May 29 13:53:08 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signout" for 190.248.129.54 at Tue May 29 13:53:11 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 13:53:11 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.54 at Tue May 29 13:53:13 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.46 at Tue May 29 13:53:23 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"password"=>"[FILTERED]", "nickname"=>"Fernando López"}, "commit"=>"Entrar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI="}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 7ms
+
+
+Started GET "/reportes" for 190.0.32.218 at Tue May 29 13:53:23 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 45ms (Views: 15.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 13:53:38 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Tue May 29 14:05:15 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 139ms (Views: 113.8ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/reportes/ranking" for 190.248.129.46 at Tue May 29 14:05:18 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 42ms (Views: 31.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Tue May 29 14:05:22 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 38ms (Views: 10.4ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Tue May 29 14:05:24 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>""}
+Redirected to http://secretaria.respinos.com/reportes/
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/" for 190.248.129.46 at Tue May 29 14:05:24 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 37ms (Views: 11.2ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Tue May 29 14:05:34 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>"105001000001"}
+Redirected to http://secretaria.respinos.com/reportes/105001000001
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000001" for 190.248.129.46 at Tue May 29 14:05:34 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000001"}
+Rendered reportes/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Tue May 29 14:07:47 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 35ms (Views: 9.9ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Tue May 29 14:09:12 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>"205001002199"}
+Redirected to http://secretaria.respinos.com/reportes/205001002199
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001002199" for 190.0.32.198 at Tue May 29 14:09:12 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001002199"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Tue May 29 14:16:39 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 128ms (Views: 11.4ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/reportes/ranking" for 190.248.129.46 at Tue May 29 14:16:43 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 45ms (Views: 35.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/reportes/ranking" for 66.249.71.106 at Tue May 29 14:16:52 +0000 2012
+  Processing by ReportesController#ranking as */*
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes" for 190.248.129.58 at Tue May 29 14:16:58 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 36ms (Views: 10.0ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 14:17:07 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/administradores" for 190.248.129.54 at Tue May 29 14:25:55 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.58 at Tue May 29 14:32:46 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/aliados" for 190.248.129.58 at Tue May 29 14:32:49 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.0.32.198 at Tue May 29 14:33:05 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 190.248.129.50 at Tue May 29 14:33:09 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/edit" for 190.248.129.50 at Tue May 29 14:33:11 +0000 2012
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 190.248.129.50 at Tue May 29 14:33:13 +0000 2012
+  Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.0.32.198 at Tue May 29 14:33:15 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users/new" for 190.248.129.50 at Tue May 29 14:33:16 +0000 2012
+  Processing by Admin::UsersController#new as HTML
+Rendered admin/users/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin/users" for 190.248.129.50 at Tue May 29 14:33:37 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "nombre"=>"coco", "password_confirmation"=>"[FILTERED]", "nickname"=>"coco", "email"=>"silvio@"}, "commit"=>"Crear", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI="}
+Rendered admin/users/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <h1>Lista de usuarios Registrados</h1>
+    3: 
+    4: <div class="users">
+    5:   <% @users.each do |user|%>
+    6:    <div class="<%= cycle("even", "odd") %>">
+    7:         <div class="user_info">
+    8:             <p class="nombre"><%=	user.nombre.capitalize  %></p>
+  app/views/admin/users/index.html.erb:5:in `_app_views_admin_users_index_html_erb__991171659__623536248'
+  app/controllers/admin/users_controller.rb:31:in `create'
+  app/controllers/admin/users_controller.rb:26:in `create'
+
+
+
+Started GET "/admin/users/new" for 190.0.32.198 at Tue May 29 14:33:42 +0000 2012
+  Processing by Admin::UsersController#new as */*
+Rendered admin/users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/users" for 190.248.129.46 at Tue May 29 14:34:19 +0000 2012
+  Processing by Admin::UsersController#index as */*
+Rendered admin/users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Tue May 29 14:34:22 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 41ms (Views: 11.5ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/acerca" for 190.0.32.218 at Tue May 29 14:37:16 +0000 2012
+  Processing by PagesController#acerca as HTML
+Rendered pages/acerca.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fuentes" for 190.248.129.58 at Tue May 29 14:37:54 +0000 2012
+  Processing by PagesController#fuentes as HTML
+Rendered pages/fuentes.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/acerca" for 190.248.129.46 at Tue May 29 14:42:40 +0000 2012
+  Processing by PagesController#acerca as */*
+Rendered pages/acerca.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/indicador" for 190.248.129.46 at Tue May 29 14:43:01 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 190.0.32.198 at Tue May 29 14:44:54 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/edit" for 190.0.32.198 at Tue May 29 14:44:55 +0000 2012
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2" for 190.0.32.198 at Tue May 29 14:45:13 +0000 2012
+  Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"madaw@"}, "id"=>"2", "commit"=>"Actualizar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI="}
+Rendered users/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for 190.248.129.50 at Tue May 29 14:45:50 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.58 at Tue May 29 14:50:21 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signout" for 190.248.129.58 at Tue May 29 14:50:26 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 190.248.129.58 at Tue May 29 14:50:26 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.0.32.218 at Tue May 29 14:52:08 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.54 at Tue May 29 14:52:18 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"password"=>"[FILTERED]", "nickname"=>"Fernando López"}, "commit"=>"Entrar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI="}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 190.248.129.54 at Tue May 29 14:52:18 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 33ms (Views: 9.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/reportes/new" for 190.0.32.218 at Tue May 29 14:52:30 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>"105001003441"}
+Redirected to http://secretaria.respinos.com/reportes/105001003441
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001003441" for 190.0.32.198 at Tue May 29 14:52:30 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001003441"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/reportes/105001003441" for 66.249.71.106 at Tue May 29 14:52:40 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001003441"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001003441" for 188.40.100.142 at Tue May 29 14:52:44 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001003441"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 188.40.100.142 at Tue May 29 14:52:44 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes/105001003441" for 190.248.129.54 at Tue May 29 14:53:01 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001003441"}
+Rendered reportes/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Tue May 29 15:00:38 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 36ms (Views: 10.1ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Tue May 29 15:00:47 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>"105001000001"}
+Redirected to http://secretaria.respinos.com/reportes/105001000001
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000001" for 190.0.32.218 at Tue May 29 15:00:47 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000001"}
+Rendered reportes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Tue May 29 15:04:59 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 34ms (Views: 10.5ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/reportes/ranking" for 190.248.129.54 at Tue May 29 15:05:04 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 39ms (Views: 30.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Tue May 29 15:09:23 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 122ms (Views: 12.8ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/reportes/new" for 190.0.32.218 at Tue May 29 15:09:26 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>"105001000001"}
+Redirected to http://secretaria.respinos.com/reportes/105001000001
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001000001" for 190.248.129.50 at Tue May 29 15:09:26 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000001"}
+Rendered reportes/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Tue May 29 15:21:17 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 37ms (Views: 10.8ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Tue May 29 15:21:34 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"QLuyBogN4s5eKgRu+yecw3im0D6jWGvBS7MFsd/5/rI=", "option_select"=>"105001019925"}
+Redirected to http://secretaria.respinos.com/reportes/105001019925
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001019925" for 190.248.129.50 at Tue May 29 15:21:34 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 181.129.186.67 at Tue May 29 18:57:12 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 181.129.186.67 at Tue May 29 18:57:20 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 181.129.186.67 at Tue May 29 18:57:25 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"password"=>"[FILTERED]", "nickname"=>"admin"}, "commit"=>"Entrar", "utf8"=>"✓", "authenticity_token"=>"9qIi3a5zrgIUnb426ZBatRl55Ewr+tEULGQsI7/P16o="}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 181.129.186.67 at Tue May 29 18:57:26 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 10.7ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/reportes/new" for 181.129.186.67 at Tue May 29 18:57:31 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"9qIi3a5zrgIUnb426ZBatRl55Ewr+tEULGQsI7/P16o=", "option_select"=>"105001012696"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 181.129.186.67 at Tue May 29 18:57:31 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reportes/105001012696" for 66.249.71.106 at Tue May 29 18:57:37 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001012696"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001012696" for 181.129.186.67 at Tue May 29 18:57:39 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 100ms (Views: 93.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reportes" for 181.129.186.67 at Tue May 29 18:57:41 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 41ms (Views: 10.6ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/reportes/ranking" for 181.129.186.67 at Tue May 29 18:57:44 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 42ms (Views: 32.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/reportes/ranking" for 181.129.186.67 at Tue May 29 18:57:47 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 37ms (Views: 28.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reportes/ranking" for 181.129.186.67 at Tue May 29 18:57:49 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 37ms (Views: 28.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 200.12.179.200 at Tue May 29 20:04:48 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Tue May 29 20:37:07 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 37ms (Views: 11.2ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/reportes/ranking" for 190.0.32.218 at Tue May 29 20:37:09 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (116.9ms)
+Completed 200 OK in 129ms (Views: 120.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Tue May 29 20:37:14 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 39ms (Views: 10.4ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue May 29 21:04:52 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Wed May 30 13:35:20 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 34ms (Views: 9.7ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/reportes/new" for 190.248.129.54 at Wed May 30 13:35:25 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"105001000795"}
+Redirected to http://secretaria.respinos.com/reportes/105001000795
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000795" for 190.248.129.58 at Wed May 30 13:35:25 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000795"}
+Rendered reportes/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 14ms (Views: 5.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 190.0.32.218 at Wed May 30 13:35:33 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Wed May 30 14:16:59 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 36ms (Views: 10.1ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 190.0.32.198 at Wed May 30 14:17:10 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Wed May 30 14:37:48 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (112.7ms)
+Completed 200 OK in 145ms (Views: 116.8ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/reportes/ranking" for 190.248.129.50 at Wed May 30 14:43:51 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 46ms (Views: 35.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Wed May 30 14:45:13 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 10.5ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Wed May 30 14:45:25 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"105001019674"}
+Redirected to http://secretaria.respinos.com/reportes/105001019674
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001019674" for 190.248.129.54 at Wed May 30 14:45:25 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019674"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 190.0.32.218 at Wed May 30 14:46:36 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/administradores" for 190.0.32.218 at Wed May 30 14:46:41 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.58 at Wed May 30 14:46:58 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/aliados" for 190.248.129.58 at Wed May 30 14:47:00 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.0.32.218 at Wed May 30 14:47:03 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/acerca" for 190.0.32.218 at Wed May 30 14:47:05 +0000 2012
+  Processing by PagesController#acerca as HTML
+Rendered pages/acerca.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.58 at Wed May 30 14:48:21 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fuentes" for 190.248.129.58 at Wed May 30 14:48:24 +0000 2012
+  Processing by PagesController#fuentes as HTML
+Rendered pages/fuentes.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.46 at Wed May 30 14:48:30 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/indicador" for 190.248.129.46 at Wed May 30 14:48:32 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.50 at Wed May 30 14:48:43 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/utilidad" for 190.248.129.50 at Wed May 30 14:48:45 +0000 2012
+  Processing by PagesController#utilidad as HTML
+Rendered pages/utilidad.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.46 at Wed May 30 14:48:46 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Wed May 30 14:52:26 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 141ms (Views: 12.1ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Wed May 30 14:52:30 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"105001003441"}
+Redirected to http://secretaria.respinos.com/reportes/105001003441
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001003441" for 190.0.32.198 at Wed May 30 14:52:30 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001003441"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Wed May 30 14:55:06 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 36ms (Views: 10.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/administradores" for 190.248.129.50 at Wed May 30 14:56:18 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Wed May 30 14:56:20 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 34ms (Views: 10.0ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/aliados" for 190.248.129.58 at Wed May 30 14:56:21 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Wed May 30 14:56:33 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 36ms (Views: 10.1ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/reportes/new" for 190.248.129.54 at Wed May 30 14:56:54 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"105001004791"}
+Redirected to http://secretaria.respinos.com/reportes/105001004791
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001004791" for 190.0.32.198 at Wed May 30 14:56:54 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001004791"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 106ms (Views: 100.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Wed May 30 14:57:38 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 41ms (Views: 10.8ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Wed May 30 14:57:43 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"105001009652"}
+Redirected to http://secretaria.respinos.com/reportes/105001009652
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001009652" for 190.248.129.46 at Wed May 30 14:57:43 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001009652"}
+Rendered reportes/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 200.12.179.200 at Wed May 30 14:59:47 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Wed May 30 15:01:05 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 35ms (Views: 10.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/reportes/ranking" for 190.0.32.218 at Wed May 30 15:01:08 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 37ms (Views: 28.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Wed May 30 15:13:57 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 11.0ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/reportes/new" for 190.0.32.218 at Wed May 30 15:14:03 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"105001010367"}
+Redirected to http://secretaria.respinos.com/reportes/105001010367
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001010367" for 190.0.32.218 at Wed May 30 15:14:03 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001010367"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 98ms (Views: 92.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Wed May 30 15:18:43 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 41ms (Views: 12.1ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/reportes/ranking" for 190.248.129.50 at Wed May 30 15:18:45 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 40ms (Views: 29.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Wed May 30 16:27:28 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 36ms (Views: 10.3ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/" for 190.0.32.198 at Wed May 30 16:42:46 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Wed May 30 16:42:50 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 36ms (Views: 10.5ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Wed May 30 17:03:55 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"205001009916"}
+Redirected to http://secretaria.respinos.com/reportes/205001009916
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001009916" for 190.248.129.50 at Wed May 30 17:03:56 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001009916"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Wed May 30 17:04:00 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 131ms (Views: 11.0ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/reportes/new" for 190.0.32.218 at Wed May 30 17:04:10 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"205001009916"}
+Redirected to http://secretaria.respinos.com/reportes/205001009916
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001009916" for 190.248.129.58 at Wed May 30 17:04:10 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001009916"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Wed May 30 20:30:14 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 10.5ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for 190.0.32.198 at Wed May 30 20:30:21 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Wed May 30 20:41:31 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 36ms (Views: 10.5ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Wed May 30 20:41:36 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>""}
+Redirected to http://secretaria.respinos.com/reportes/
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/" for 190.248.129.46 at Wed May 30 20:41:36 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 34ms (Views: 10.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Wed May 30 20:41:43 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"V8hToEWEUbJbd1GDOFELdoVVZBKpGQUe3+eBaDDgg9k=", "option_select"=>"205001001966"}
+Redirected to http://secretaria.respinos.com/reportes/205001001966
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001001966" for 190.248.129.58 at Wed May 30 20:41:43 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001001966"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 66.249.71.106 at Thu May 31 03:29:21 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 98ms (Views: 97.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Thu May 31 13:28:33 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 51ms (Views: 14.7ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Thu May 31 13:28:36 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 35ms (Views: 9.8ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Thu May 31 13:30:17 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"ye5GXu429kAJShRPtAmWOxvu02JS0kKt5QYNP4QGDZo=", "option_select"=>"205001019491"}
+Redirected to http://secretaria.respinos.com/reportes/205001019491
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001019491" for 190.248.129.50 at Thu May 31 13:30:17 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001019491"}
+Rendered reportes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Thu May 31 14:21:04 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 35ms (Views: 9.9ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/reportes/ranking" for 190.248.129.50 at Thu May 31 14:21:06 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 36ms (Views: 27.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 200.12.179.200 at Thu May 31 15:10:05 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/acerca" for 66.249.71.106 at Thu May 31 16:50:21 +0000 2012
+  Processing by PagesController#acerca as */*
+Rendered pages/acerca.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Thu May 31 20:28:50 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 127ms (Views: 10.4ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Thu May 31 20:29:02 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "utf8"=>"✓", "authenticity_token"=>"ye5GXu429kAJShRPtAmWOxvu02JS0kKt5QYNP4QGDZo=", "option_select"=>"105001000001"}
+Redirected to http://secretaria.respinos.com/reportes/105001000001
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001000001" for 190.248.129.58 at Thu May 31 20:29:02 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001000001"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/aliados" for 66.249.71.106 at Thu May 31 22:40:28 +0000 2012
+  Processing by PagesController#participantes as */*
+Rendered pages/participantes.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 181.129.186.67 at Fri Jun 01 05:25:16 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 200.12.181.3 at Fri Jun 01 13:47:35 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/indicador" for 200.12.181.3 at Fri Jun 01 13:50:34 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 200.12.181.3 at Fri Jun 01 13:50:55 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 200.12.181.3 at Fri Jun 01 13:50:57 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 200.12.181.3 at Fri Jun 01 13:55:05 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "session"=>{"nickname"=>"claraisabelster@gmail.com", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 200.12.181.3 at Fri Jun 01 13:55:05 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 200.12.181.3 at Fri Jun 01 13:55:23 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "session"=>{"nickname"=>"clopezvi", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 200.12.181.3 at Fri Jun 01 13:55:23 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 200.12.181.3 at Fri Jun 01 13:55:59 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "session"=>{"nickname"=>" doris.restrepo@medellin.gov.co.", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 200.12.181.3 at Fri Jun 01 13:55:59 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 200.12.181.3 at Fri Jun 01 13:56:42 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "session"=>{"nickname"=>"doris.restrepo", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 200.12.181.3 at Fri Jun 01 13:56:42 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 150.70.64.195 at Fri Jun 01 14:09:43 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 150.70.64.195 at Fri Jun 01 14:09:59 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 200.12.181.3 at Fri Jun 01 14:13:01 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 62ms
+
+
+Started GET "/reportes" for 200.12.181.3 at Fri Jun 01 14:13:02 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 146ms (Views: 84.0ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/reportes/ranking" for 200.12.181.3 at Fri Jun 01 14:16:04 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 102ms (Views: 37.2ms | ActiveRecord: 57.4ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Fri Jun 01 14:17:12 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "option_select"=>"105001008486", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001008486
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001008486" for 200.12.181.3 at Fri Jun 01 14:17:12 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001008486"}
+Rendered reportes/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 144ms (Views: 50.7ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/reportes/105001008486" for 66.249.71.106 at Fri Jun 01 14:17:40 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001008486"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes/105001008486" for 188.40.100.142 at Fri Jun 01 14:17:40 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001008486"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 188.40.100.142 at Fri Jun 01 14:17:40 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 66.249.71.106 at Fri Jun 01 14:17:41 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes/105001008486" for 200.12.181.3 at Fri Jun 01 14:17:59 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001008486"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Fri Jun 01 14:18:11 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "option_select"=>"105001006718", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001006718
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001006718" for 200.12.181.3 at Fri Jun 01 14:18:12 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001006718"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/reportes/105001006718" for 66.249.71.106 at Fri Jun 01 14:18:18 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001006718"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001006718" for 188.40.100.142 at Fri Jun 01 14:18:19 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001006718"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 188.40.100.142 at Fri Jun 01 14:18:19 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes/105001006718" for 200.12.181.3 at Fri Jun 01 14:18:31 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001006718"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Fri Jun 01 14:18:56 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "option_select"=>"205001019491", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001019491
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001019491" for 200.12.181.3 at Fri Jun 01 14:18:57 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001019491"}
+Rendered reportes/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reportes/205001019491" for 66.249.71.106 at Fri Jun 01 14:19:06 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"205001019491"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/205001019491" for 188.40.100.142 at Fri Jun 01 14:19:07 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"205001019491"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 188.40.100.142 at Fri Jun 01 14:19:07 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Fri Jun 01 14:19:44 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"sEBpPv/dPonvV3vIefjGDob4YR/yfR2Ex+MV260lQ/g=", "option_select"=>"205001019491", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001019491
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001019491" for 200.12.181.3 at Fri Jun 01 14:19:44 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001019491"}
+Rendered reportes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reportes/205001019491" for 200.12.181.3 at Fri Jun 01 14:22:19 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001019491"}
+Rendered reportes/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 82ms (Views: 5.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/reportes/ranking" for 150.70.75.37 at Fri Jun 01 14:23:43 +0000 2012
+  Processing by ReportesController#ranking as */*
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes/205001019491" for 200.12.181.3 at Fri Jun 01 14:28:59 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001019491"}
+Rendered reportes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/reportes/205001019491" for 150.70.64.195 at Fri Jun 01 14:42:07 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"205001019491"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 200.12.181.3 at Fri Jun 01 19:32:04 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.50 at Fri Jun 01 19:42:53 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Fri Jun 01 19:43:42 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 38ms (Views: 10.4ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/" for 200.12.179.200 at Sat Jun 02 01:42:43 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 181.129.186.67 at Sat Jun 02 12:28:50 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 2491ms (Views: 2489.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 181.129.186.67 at Sat Jun 02 12:29:43 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 181.129.186.67 at Sat Jun 02 12:31:05 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (66.2ms)
+Completed 200 OK in 1586ms (Views: 134.2ms | ActiveRecord: 365.8ms)
+
+
+Started GET "/" for 150.70.97.43 at Sat Jun 02 17:42:37 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 152ms (Views: 147.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 150.70.97.43 at Sat Jun 02 17:45:46 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 66.249.73.210 at Sun Jun 03 03:29:23 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 4.9ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/" for 190.248.129.54 at Mon Jun 04 13:17:57 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Mon Jun 04 13:18:03 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 483ms (Views: 102.4ms | ActiveRecord: 59.3ms)
+
+
+Started POST "/reportes/new" for 190.0.32.218 at Mon Jun 04 13:18:08 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"option_select"=>"105001025798", "authenticity_token"=>"p2v9NmoOZjVAgJgyZnz68y2/kAgwQItawhDyGlFG5mk=", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001025798
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001025798" for 190.248.129.54 at Mon Jun 04 13:18:08 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001025798"}
+Rendered reportes/show.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 131ms (Views: 57.4ms | ActiveRecord: 65.5ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Mon Jun 04 13:44:56 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 36ms (Views: 10.8ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/reportes/ranking" for 190.0.32.198 at Mon Jun 04 13:45:02 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (115.9ms)
+Completed 200 OK in 149ms (Views: 140.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Mon Jun 04 13:45:09 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 39ms (Views: 10.6ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Mon Jun 04 15:10:06 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"option_select"=>"105001025798", "authenticity_token"=>"p2v9NmoOZjVAgJgyZnz68y2/kAgwQItawhDyGlFG5mk=", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001025798
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001025798" for 190.248.129.50 at Mon Jun 04 15:10:06 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001025798"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Mon Jun 04 16:06:35 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 36ms (Views: 11.1ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Mon Jun 04 16:06:37 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"option_select"=>"105001025798", "authenticity_token"=>"p2v9NmoOZjVAgJgyZnz68y2/kAgwQItawhDyGlFG5mk=", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001025798
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001025798" for 190.248.129.54 at Mon Jun 04 16:06:37 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001025798"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Mon Jun 04 20:54:58 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 38ms (Views: 10.9ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Mon Jun 04 20:55:04 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"option_select"=>"105001012696", "authenticity_token"=>"p2v9NmoOZjVAgJgyZnz68y2/kAgwQItawhDyGlFG5mk=", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 190.0.32.218 at Mon Jun 04 20:55:04 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 200.12.179.192 at Mon Jun 04 21:30:17 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/administradores" for 66.249.72.211 at Tue Jun 05 18:45:28 +0000 2012
+  Processing by PagesController#administradores as */*
+Rendered pages/administradores.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 66.249.72.211 at Wed Jun 06 03:29:22 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 45ms (Views: 44.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 190.248.129.54 at Wed Jun 06 18:41:16 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Wed Jun 06 18:41:19 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (71.1ms)
+Completed 200 OK in 580ms (Views: 102.4ms | ActiveRecord: 121.7ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Wed Jun 06 18:50:42 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"kwypLzJyojUDeu1cNtbppROMi/8c2mrbv1G1yL8exJk=", "commit"=>"Generar", "option_select"=>"105001019062", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001019062
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001019062" for 190.248.129.58 at Wed Jun 06 18:50:42 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019062"}
+Rendered reportes/show.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 139ms (Views: 53.5ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Wed Jun 06 18:59:33 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 39ms (Views: 12.2ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/" for 190.0.32.218 at Wed Jun 06 19:03:21 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Wed Jun 06 19:26:51 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 122ms (Views: 10.8ms | ActiveRecord: 93.0ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Wed Jun 06 19:27:03 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"kwypLzJyojUDeu1cNtbppROMi/8c2mrbv1G1yL8exJk=", "commit"=>"Generar", "option_select"=>"105001012696", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 190.0.32.198 at Wed Jun 06 19:27:03 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Wed Jun 06 20:05:58 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 35ms (Views: 9.6ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/reportes/new" for 190.248.129.54 at Wed Jun 06 20:33:46 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"kwypLzJyojUDeu1cNtbppROMi/8c2mrbv1G1yL8exJk=", "commit"=>"Generar", "option_select"=>"105001012696", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 190.248.129.54 at Wed Jun 06 20:33:46 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Wed Jun 06 20:40:56 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 36ms (Views: 11.4ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/reportes/new" for 190.0.32.218 at Wed Jun 06 20:41:00 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"kwypLzJyojUDeu1cNtbppROMi/8c2mrbv1G1yL8exJk=", "commit"=>"Generar", "option_select"=>"105001012696", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 190.248.129.46 at Wed Jun 06 20:41:00 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Wed Jun 06 22:01:33 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 129ms (Views: 11.9ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/" for 190.0.32.218 at Thu Jun 07 21:07:50 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Thu Jun 07 21:07:52 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 39ms (Views: 11.0ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Thu Jun 07 21:07:56 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"PC/XI5lK+AVaesTk8VoVh4wybJ/2zXkeneT1XLrKAl4=", "commit"=>"Generar", "option_select"=>"105001010855", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001010855
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001010855" for 190.248.129.46 at Thu Jun 07 21:07:57 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001010855"}
+Rendered reportes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Thu Jun 07 21:08:21 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 35ms (Views: 10.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for 190.248.129.50 at Fri Jun 08 13:37:21 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Fri Jun 08 14:21:03 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 33ms (Views: 9.8ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.54 at Fri Jun 08 14:21:07 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"/dXdvNpe7igExGffkE8nMJOfvxpruN1cRbzF9w2foVU=", "commit"=>"Generar", "option_select"=>"305001022232", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/305001022232
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/305001022232" for 190.248.129.54 at Fri Jun 08 14:21:07 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"305001022232"}
+Rendered reportes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Fri Jun 08 16:29:24 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 161ms (Views: 10.5ms | ActiveRecord: 133.2ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Fri Jun 08 16:29:27 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"/dXdvNpe7igExGffkE8nMJOfvxpruN1cRbzF9w2foVU=", "commit"=>"Generar", "option_select"=>"305001022232", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/305001022232
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/305001022232" for 190.0.32.218 at Fri Jun 08 16:29:27 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"305001022232"}
+Rendered reportes/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 190.0.32.218 at Fri Jun 08 16:43:07 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Fri Jun 08 18:56:05 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 37ms (Views: 10.9ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/reportes/new" for 190.248.129.54 at Fri Jun 08 18:57:45 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"/dXdvNpe7igExGffkE8nMJOfvxpruN1cRbzF9w2foVU=", "commit"=>"Generar", "option_select"=>"305001022232", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/305001022232
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/305001022232" for 190.248.129.54 at Fri Jun 08 18:57:45 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"305001022232"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Fri Jun 08 18:57:49 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 34ms (Views: 9.9ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Fri Jun 08 19:05:43 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"/dXdvNpe7igExGffkE8nMJOfvxpruN1cRbzF9w2foVU=", "commit"=>"Generar", "option_select"=>"305001022232", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/305001022232
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/305001022232" for 190.248.129.46 at Fri Jun 08 19:05:44 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"305001022232"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/signout" for 190.0.32.218 at Fri Jun 08 19:40:47 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 190.0.32.218 at Fri Jun 08 19:40:47 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 114ms (Views: 113.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.50 at Fri Jun 08 19:40:49 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.50 at Fri Jun 08 19:40:58 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"fernan", "password"=>"[FILTERED]"}, "authenticity_token"=>"/dXdvNpe7igExGffkE8nMJOfvxpruN1cRbzF9w2foVU=", "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 190.248.129.50 at Fri Jun 08 19:40:58 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.0.32.198 at Fri Jun 08 19:41:20 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"Fernando.López", "password"=>"[FILTERED]"}, "authenticity_token"=>"/dXdvNpe7igExGffkE8nMJOfvxpruN1cRbzF9w2foVU=", "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.46 at Fri Jun 08 19:41:21 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 190.248.129.54 at Fri Jun 08 19:41:31 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"nickname"=>"Fernando.López", "password"=>"[FILTERED]"}, "authenticity_token"=>"/dXdvNpe7igExGffkE8nMJOfvxpruN1cRbzF9w2foVU=", "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.46 at Fri Jun 08 19:41:31 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 190.248.129.46 at Fri Jun 08 19:42:05 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.46 at Fri Jun 08 19:42:06 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes/305001022232" for 190.0.32.218 at Fri Jun 08 19:42:07 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"305001022232"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 2ms
+
+
+Started GET "/signin" for 190.248.129.46 at Fri Jun 08 19:42:07 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.218 at Fri Jun 08 19:42:08 +0000 2012
+  Processing by ReportesController#index as */*
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 190.248.129.46 at Fri Jun 08 19:42:08 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.46 at Fri Jun 08 19:42:09 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.46 at Fri Jun 08 19:42:13 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.46 at Fri Jun 08 19:42:14 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.46 at Fri Jun 08 19:42:16 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 66.249.72.211 at Sat Jun 09 03:29:21 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 66.249.72.211 at Sat Jun 09 06:20:43 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 66.249.72.211 at Tue Jun 12 03:29:25 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 190.248.129.50 at Tue Jun 12 13:28:18 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 190.0.32.218 at Tue Jun 12 13:28:23 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.46 at Tue Jun 12 13:28:54 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"HvAJ26KgD3g5djr0grWFoBl+7x0QzoJwneVOifdTTZA=", "session"=>{"nickname"=>"Fernando López", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 125ms
+
+
+Started GET "/reportes" for 190.248.129.46 at Tue Jun 12 13:28:54 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (71.2ms)
+Completed 200 OK in 406ms (Views: 96.4ms | ActiveRecord: 127.0ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Tue Jun 12 13:29:02 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"HvAJ26KgD3g5djr0grWFoBl+7x0QzoJwneVOifdTTZA=", "option_select"=>"105001011886", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001011886
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001011886" for 190.248.129.46 at Tue Jun 12 13:29:02 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001011886"}
+Rendered reportes/show.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 108ms (Views: 48.8ms | ActiveRecord: 51.7ms)
+
+
+Started GET "/" for 190.248.129.54 at Tue Jun 12 20:07:39 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Tue Jun 12 20:08:14 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 121ms (Views: 11.7ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Tue Jun 12 20:08:18 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"HvAJ26KgD3g5djr0grWFoBl+7x0QzoJwneVOifdTTZA=", "option_select"=>"205001021452", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001021452
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001021452" for 190.0.32.198 at Tue Jun 12 20:08:18 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001021452"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Tue Jun 12 20:23:09 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 37ms (Views: 10.5ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/" for 190.248.129.58 at Wed Jun 13 19:37:25 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Wed Jun 13 19:37:30 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 39ms (Views: 12.3ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Wed Jun 13 19:37:35 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"gkbsc1LWQC57dl1o6mrVOXc6MC28OBgEJPGTcwvPk+U=", "option_select"=>"105001001023", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001023
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001023" for 190.0.32.218 at Wed Jun 13 19:37:35 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001023"}
+Rendered reportes/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 7.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 190.248.129.58 at Wed Jun 13 19:38:25 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 200.12.179.192 at Wed Jun 13 19:45:22 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 200.12.179.192 at Wed Jun 13 19:45:38 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 40ms (Views: 11.4ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/reportes/new" for 200.12.179.192 at Wed Jun 13 19:45:46 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"bD8BDlzRFWWCe5KAz+r64lgA+vKZQmrqbbc/LxJJ76s=", "option_select"=>"205001006232", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001006232
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001006232" for 200.12.179.192 at Wed Jun 13 19:45:46 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001006232"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 200.12.181.3 at Wed Jun 13 20:08:26 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 200.12.181.3 at Wed Jun 13 20:08:32 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 200.12.181.3 at Wed Jun 13 20:08:46 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"+0RZLNHCcG+h4Le6qq4EJrm9U935d7qrvYYPfAl6IcY=", "session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 200.12.181.3 at Wed Jun 13 20:08:46 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 43ms (Views: 12.0ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Wed Jun 13 20:08:59 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"+0RZLNHCcG+h4Le6qq4EJrm9U935d7qrvYYPfAl6IcY=", "option_select"=>"205001002768", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001002768
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001002768" for 200.12.181.3 at Wed Jun 13 20:08:59 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001002768"}
+Rendered reportes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Wed Jun 13 20:09:10 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"+0RZLNHCcG+h4Le6qq4EJrm9U935d7qrvYYPfAl6IcY=", "option_select"=>"105001010855", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001010855
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001010855" for 200.12.181.3 at Wed Jun 13 20:09:11 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001010855"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reportes/105001010855" for 66.249.72.211 at Wed Jun 13 20:09:24 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001010855"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 66.249.72.211 at Wed Jun 13 20:09:25 +0000 2012
+  Processing by SessionsController#new as */*
+Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes/105001010855" for 200.12.181.3 at Wed Jun 13 20:10:14 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001010855"}
+Rendered reportes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 13ms (Views: 5.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Wed Jun 13 20:20:46 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 38ms (Views: 10.3ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Wed Jun 13 20:20:49 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"gkbsc1LWQC57dl1o6mrVOXc6MC28OBgEJPGTcwvPk+U=", "option_select"=>"105001001198", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001198
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001198" for 190.248.129.50 at Wed Jun 13 20:20:49 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001198"}
+Rendered reportes/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 124ms (Views: 9.7ms | ActiveRecord: 14.9ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Wed Jun 13 20:20:54 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"gkbsc1LWQC57dl1o6mrVOXc6MC28OBgEJPGTcwvPk+U=", "option_select"=>"105001001198", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001198
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001198" for 190.0.32.198 at Wed Jun 13 20:20:54 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001198"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Wed Jun 13 20:21:00 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 42ms (Views: 10.5ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/reportes/ranking" for 200.12.179.192 at Wed Jun 13 20:25:12 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 54ms (Views: 45.0ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Wed Jun 13 20:36:54 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"gkbsc1LWQC57dl1o6mrVOXc6MC28OBgEJPGTcwvPk+U=", "option_select"=>"105001001198", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001198
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001198" for 190.0.32.198 at Wed Jun 13 20:36:54 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001198"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reportes/105001001198" for 190.248.129.50 at Wed Jun 13 21:10:58 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001001198"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reportes" for 200.12.181.3 at Wed Jun 13 22:20:09 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 34ms (Views: 10.6ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Wed Jun 13 22:20:16 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"+0RZLNHCcG+h4Le6qq4EJrm9U935d7qrvYYPfAl6IcY=", "option_select"=>"205001006232", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001006232
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001006232" for 200.12.181.3 at Wed Jun 13 22:20:17 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001006232"}
+Rendered reportes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 111ms (Views: 10.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reportes/205001006232" for 66.249.72.211 at Wed Jun 13 22:20:54 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"205001006232"}
+Redirected to http://secretaria.respinos.com/signin
+Completed 302 Found in 1ms
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Wed Jun 13 22:21:45 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"+0RZLNHCcG+h4Le6qq4EJrm9U935d7qrvYYPfAl6IcY=", "option_select"=>"205001006232", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001006232
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001006232" for 200.12.181.3 at Wed Jun 13 22:21:45 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001006232"}
+Rendered reportes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 18ms (Views: 6.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 190.248.129.58 at Thu Jun 14 20:38:11 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 190.248.129.46 at Thu Jun 14 20:38:37 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/users" for 190.248.129.46 at Thu Jun 14 20:38:41 +0000 2012
+  Processing by Admin::UsersController#index as HTML
+Rendered admin/users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/users/new" for 190.248.129.50 at Thu Jun 14 20:38:43 +0000 2012
+  Processing by Admin::UsersController#new as HTML
+Rendered admin/users/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/users" for 190.248.129.50 at Thu Jun 14 20:39:34 +0000 2012
+  Processing by Admin::UsersController#create as HTML
+  Parameters: {"commit"=>"Crear", "authenticity_token"=>"H6ABs0i2MY0n9zW0XnZktbmDoOqtWp5CzlBupaidqi0=", "user"=>{"password_confirmation"=>"[FILTERED]", "nombre"=>"Jorge García", "nickname"=>"jorgei.garcia", "password"=>"[FILTERED]", "email"=>"jorgei.garcia@medellin.gov.co"}, "utf8"=>"✓"}
+Rendered user_mailer/registration_confirmation.html.erb (0.6ms)
+Rendered user_mailer/registration_confirmation.text.erb (0.1ms)
+
+Sent mail to jorgei.garcia@medellin.gov.co (6754ms)
+Redirected to http://secretaria.respinos.com/users/3
+Completed 302 Found in 7096ms
+
+
+Started GET "/users/3" for 190.248.129.50 at Thu Jun 14 20:39:42 +0000 2012
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signout" for 190.248.129.50 at Thu Jun 14 20:39:46 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 190.248.129.50 at Thu Jun 14 20:39:46 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 190.248.129.50 at Thu Jun 14 20:39:50 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 190.248.129.50 at Thu Jun 14 20:40:00 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"H6ABs0i2MY0n9zW0XnZktbmDoOqtWp5CzlBupaidqi0=", "session"=>{"nickname"=>"jorgei.garcia", "password"=>"[FILTERED]"}, "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 190.248.129.54 at Thu Jun 14 20:40:00 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 40ms (Views: 10.6ms | ActiveRecord: 13.1ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Thu Jun 14 20:40:13 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"H6ABs0i2MY0n9zW0XnZktbmDoOqtWp5CzlBupaidqi0=", "option_select"=>"105001019925", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001019925
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001019925" for 190.248.129.50 at Thu Jun 14 20:40:14 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019925"}
+Rendered reportes/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 7.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Thu Jun 14 20:40:44 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 37ms (Views: 10.4ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Thu Jun 14 20:40:54 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"H6ABs0i2MY0n9zW0XnZktbmDoOqtWp5CzlBupaidqi0=", "option_select"=>"105001013340", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001013340
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001013340" for 190.248.129.46 at Thu Jun 14 20:40:54 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001013340"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Thu Jun 14 20:41:35 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 35ms (Views: 10.0ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Thu Jun 14 20:41:41 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"H6ABs0i2MY0n9zW0XnZktbmDoOqtWp5CzlBupaidqi0=", "option_select"=>"105001015229", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001015229
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001015229" for 190.0.32.218 at Thu Jun 14 20:41:41 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001015229"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 201.232.137.145 at Thu Jun 14 23:56:09 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/administradores" for 201.232.137.145 at Fri Jun 15 00:03:09 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (1.1ms)
+Completed 200 OK in 112ms (Views: 108.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/aliados" for 201.232.137.145 at Fri Jun 15 00:07:59 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/acerca" for 201.232.137.145 at Fri Jun 15 00:09:54 +0000 2012
+  Processing by PagesController#acerca as HTML
+Rendered pages/acerca.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fuentes" for 201.232.137.145 at Fri Jun 15 00:14:14 +0000 2012
+  Processing by PagesController#fuentes as HTML
+Rendered pages/fuentes.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 201.232.137.145 at Fri Jun 15 00:28:49 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/aliados" for 201.232.137.145 at Fri Jun 15 00:28:57 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/acerca" for 201.232.137.145 at Fri Jun 15 00:29:04 +0000 2012
+  Processing by PagesController#acerca as HTML
+Rendered pages/acerca.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fuentes" for 201.232.137.145 at Fri Jun 15 00:31:51 +0000 2012
+  Processing by PagesController#fuentes as HTML
+Rendered pages/fuentes.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/indicador" for 201.232.137.145 at Fri Jun 15 00:38:46 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/indicador" for 201.232.137.145 at Fri Jun 15 00:38:50 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/utilidad" for 201.232.137.145 at Fri Jun 15 00:40:36 +0000 2012
+  Processing by PagesController#utilidad as HTML
+Rendered pages/utilidad.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 201.232.137.145 at Fri Jun 15 00:41:50 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.58 at Fri Jun 15 20:54:49 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Fri Jun 15 20:55:10 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 35ms (Views: 9.9ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Fri Jun 15 20:55:13 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"commit"=>"Generar", "authenticity_token"=>"1jgj5lekGCtkTkT+b6Ty2ZxbXjotXqapJOz//EnKy6M=", "option_select"=>"205001019491", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001019491
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001019491" for 190.248.129.54 at Fri Jun 15 20:55:14 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001019491"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/aliados" for 66.249.72.211 at Sun Jun 17 21:25:19 +0000 2012
+  Processing by PagesController#participantes as */*
+Rendered pages/participantes.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 66.249.72.211 at Sun Jun 17 21:52:11 +0000 2012
+  Processing by PagesController#home as */*
+Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/acerca" for 66.249.72.211 at Mon Jun 18 03:10:36 +0000 2012
+  Processing by PagesController#acerca as */*
+Rendered pages/acerca.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 190.248.129.50 at Tue Jun 19 13:51:12 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 113ms (Views: 112.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Tue Jun 19 13:51:22 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 450ms (Views: 90.9ms | ActiveRecord: 159.8ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Tue Jun 19 13:51:28 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"UO/AXFASVQ6HbovU0nmfymMpdFsC/Bi1IwzpffJpdoc=", "commit"=>"Generar", "option_select"=>"105001001368", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001368
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001368" for 190.248.129.54 at Tue Jun 19 13:51:28 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 135ms (Views: 55.6ms | ActiveRecord: 71.6ms)
+
+
+Started GET "/reportes" for 190.248.129.50 at Tue Jun 19 14:42:20 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (111.5ms)
+Completed 200 OK in 143ms (Views: 115.8ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/reportes/new" for 190.248.129.50 at Tue Jun 19 14:42:24 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"UO/AXFASVQ6HbovU0nmfymMpdFsC/Bi1IwzpffJpdoc=", "commit"=>"Generar", "option_select"=>"105001001368", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001368
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001368" for 190.0.32.198 at Tue Jun 19 14:42:24 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Tue Jun 19 14:42:33 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 38ms (Views: 11.8ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/reportes/new" for 190.0.32.198 at Tue Jun 19 15:51:01 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"UO/AXFASVQ6HbovU0nmfymMpdFsC/Bi1IwzpffJpdoc=", "commit"=>"Generar", "option_select"=>"105001001368", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001368
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001368" for 190.0.32.198 at Tue Jun 19 15:51:01 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 200.12.179.200 at Tue Jun 19 17:46:54 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 200.12.179.200 at Tue Jun 19 17:47:12 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 200.12.179.200 at Tue Jun 19 17:47:30 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 200.12.179.200 at Tue Jun 19 17:47:34 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 56.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 200.12.179.200 at Tue Jun 19 17:47:51 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qmB7RzIuMtbwW7ZSzIu/T3YdvXitBcIGmYIiXjs+xb4=", "session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 48ms
+
+
+Started GET "/reportes" for 200.12.179.200 at Tue Jun 19 17:47:51 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 41ms (Views: 12.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/reportes/ranking" for 200.12.179.200 at Tue Jun 19 17:48:07 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 154ms (Views: 129.6ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/signout" for 200.12.179.200 at Tue Jun 19 17:48:20 +0000 2012
+  Processing by SessionsController#destroy as HTML
+Redirected to http://secretaria.respinos.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 200.12.179.200 at Tue Jun 19 17:48:20 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 200.12.179.200 at Tue Jun 19 17:48:21 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 200.12.179.200 at Tue Jun 19 17:48:26 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qmB7RzIuMtbwW7ZSzIu/T3YdvXitBcIGmYIiXjs+xb4=", "session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 200.12.179.200 at Tue Jun 19 17:48:26 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 37ms (Views: 9.9ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/reportes" for 200.12.179.200 at Tue Jun 19 17:48:34 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 10.6ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/reportes/new" for 200.12.179.200 at Tue Jun 19 17:48:39 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"qmB7RzIuMtbwW7ZSzIu/T3YdvXitBcIGmYIiXjs+xb4=", "commit"=>"Generar", "option_select"=>"205001021452", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001021452
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001021452" for 200.12.179.200 at Tue Jun 19 17:48:39 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001021452"}
+Rendered reportes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 181.129.160.184 at Tue Jun 19 18:54:49 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 181.129.160.184 at Tue Jun 19 18:54:54 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 181.129.160.184 at Tue Jun 19 18:55:05 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"duoCqJYrAVZaHvxeuGOXC+BNkk0rgUZRqe5vRAXJIOI=", "session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 2ms
+
+
+Started GET "/reportes" for 181.129.160.184 at Tue Jun 19 18:55:06 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 36ms (Views: 11.0ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 181.129.160.184 at Tue Jun 19 19:18:57 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 181.129.160.184 at Tue Jun 19 19:19:07 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 181.129.160.184 at Tue Jun 19 19:19:57 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"lf2cfyRnr4EZaBTBc0P4/0x+KxszkjgvczjYG5LSRBU=", "session"=>{"nickname"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 3ms
+
+
+Started GET "/reportes" for 181.129.160.184 at Tue Jun 19 19:19:57 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 41ms (Views: 10.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/reportes" for 190.248.129.58 at Tue Jun 19 20:06:17 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 36ms (Views: 10.1ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Tue Jun 19 20:06:20 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"UO/AXFASVQ6HbovU0nmfymMpdFsC/Bi1IwzpffJpdoc=", "commit"=>"Generar", "option_select"=>"105001001368", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001368
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001368" for 190.0.32.198 at Tue Jun 19 20:06:20 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 6.3ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/reportes" for 190.0.32.198 at Tue Jun 19 20:11:35 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 34ms (Views: 10.0ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for 181.129.160.184 at Tue Jun 19 20:13:59 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 181.129.160.184 at Tue Jun 19 20:14:21 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 35ms (Views: 10.2ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/reportes/new" for 181.129.160.184 at Tue Jun 19 20:14:28 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"oVuL4ZHvHT37QjyvxN3qIAKdLJ06w5J3mRzeu0j/DLE=", "commit"=>"Generar", "option_select"=>"105001012696", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 181.129.160.184 at Tue Jun 19 20:14:28 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 5.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/reportes/new" for 190.248.129.58 at Tue Jun 19 21:01:24 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"UO/AXFASVQ6HbovU0nmfymMpdFsC/Bi1IwzpffJpdoc=", "commit"=>"Generar", "option_select"=>"105001001368", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001368
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001368" for 190.248.129.58 at Tue Jun 19 21:01:24 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/reportes" for 190.248.129.46 at Tue Jun 19 21:27:00 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 47ms (Views: 13.8ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/reportes/new" for 190.248.129.46 at Tue Jun 19 21:27:02 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"UO/AXFASVQ6HbovU0nmfymMpdFsC/Bi1IwzpffJpdoc=", "commit"=>"Generar", "option_select"=>"105001001368", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001368
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001001368" for 190.0.32.198 at Tue Jun 19 21:27:02 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 200.12.181.3 at Tue Jun 19 21:29:46 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 200.12.181.3 at Tue Jun 19 21:29:50 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 33ms (Views: 9.3ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/reportes/new" for 200.12.181.3 at Tue Jun 19 21:29:58 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"Wlx+NRii0ICXn7E4FXKhQ3ujeqgtv6ECDqkLOfKiiac=", "commit"=>"Generar", "option_select"=>"105001019798", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001019798
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001019798" for 200.12.181.3 at Tue Jun 19 21:29:58 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019798"}
+Rendered reportes/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reportes" for 190.248.129.54 at Tue Jun 19 21:46:23 +0000 2012
+  Processing by ReportesController#index as */*
+Rendered reportes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 130ms (Views: 106.0ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/reportes/new" for 190.248.129.54 at Tue Jun 19 21:46:26 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"UO/AXFASVQ6HbovU0nmfymMpdFsC/Bi1IwzpffJpdoc=", "commit"=>"Generar", "option_select"=>"105001001368", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001001368
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001001368" for 190.0.32.198 at Tue Jun 19 21:46:26 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/reportes/105001001368" for 190.248.129.54 at Tue Jun 19 22:14:02 +0000 2012
+  Processing by ReportesController#show as */*
+  Parameters: {"id"=>"105001001368"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 201.232.137.145 at Wed Jun 20 03:22:42 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 84ms (Views: 78.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 181.129.160.184 at Wed Jun 20 03:22:43 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 35.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/decbh" for 181.129.160.184 at Wed Jun 20 03:22:47 +0000 2012
+
+ActionController::RoutingError (No route matches [GET] "/decbh"):
+  
+
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 03:22:52 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (70.4ms)
+Completed 200 OK in 239ms (Views: 79.3ms | ActiveRecord: 17.7ms)
+
+
+Started POST "/reportes/new" for 181.129.160.184 at Wed Jun 20 03:22:57 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"oVuL4ZHvHT37QjyvxN3qIAKdLJ06w5J3mRzeu0j/DLE=", "commit"=>"Generar", "utf8"=>"✓", "option_select"=>"105001012696"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 181.129.160.184 at Wed Jun 20 03:22:57 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (44.5ms)
+Completed 500 Internal Server Error in 81ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%=(@multivariadob.bonus)%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___879378919__623619388'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/" for 201.232.137.145 at Wed Jun 20 03:23:15 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 80ms (Views: 78.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 03:23:15 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (193.4ms)
+Completed 200 OK in 275ms (Views: 207.9ms | ActiveRecord: 19.4ms)
+
+
+Started POST "/reportes/new" for 181.129.160.184 at Wed Jun 20 03:23:19 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"oVuL4ZHvHT37QjyvxN3qIAKdLJ06w5J3mRzeu0j/DLE=", "option_select"=>"105001019798", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001019798
+Completed 302 Found in 1ms
+
+
+Started GET "/reportes/105001019798" for 181.129.160.184 at Wed Jun 20 03:23:19 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001019798"}
+Rendered reportes/show.html.erb within layouts/application (47.1ms)
+Completed 500 Internal Server Error in 88ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%=(@multivariadob.bonus)%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/signin" for 201.232.137.145 at Wed Jun 20 03:23:24 +0000 2012
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 201.232.137.145 at Wed Jun 20 03:23:50 +0000 2012
+  Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"password"=>"[FILTERED]", "nickname"=>"jorgei.garcia"}, "authenticity_token"=>"MMbXu6D0TSWPjpZm53ROAYfB06SBrYw6OkfRWuInSWE=", "commit"=>"Entrar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes
+Completed 302 Found in 5ms
+
+
+Started GET "/reportes" for 201.232.137.145 at Wed Jun 20 03:23:50 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 140ms (Views: 108.7ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/reportes/new" for 201.232.137.145 at Wed Jun 20 03:24:36 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"MMbXu6D0TSWPjpZm53ROAYfB06SBrYw6OkfRWuInSWE=", "option_select"=>"105001003441", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001003441
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001003441" for 201.232.137.145 at Wed Jun 20 03:24:36 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001003441"}
+Rendered reportes/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%=(@multivariadob.bonus)%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes/ranking" for 201.232.137.145 at Wed Jun 20 03:24:44 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reportes" for 201.232.137.145 at Wed Jun 20 03:25:34 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 41ms (Views: 11.0ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/reportes/new" for 201.232.137.145 at Wed Jun 20 03:25:50 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"MMbXu6D0TSWPjpZm53ROAYfB06SBrYw6OkfRWuInSWE=", "option_select"=>"205001009916", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001009916
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001009916" for 201.232.137.145 at Wed Jun 20 03:25:50 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001009916"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%=(@multivariadob.bonus)%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes" for 201.232.137.145 at Wed Jun 20 03:26:07 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 39ms (Views: 10.9ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 03:26:15 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 39ms (Views: 12.7ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/reportes/new" for 181.129.160.184 at Wed Jun 20 03:26:18 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"oVuL4ZHvHT37QjyvxN3qIAKdLJ06w5J3mRzeu0j/DLE=", "option_select"=>"205001021452", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/205001021452
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/205001021452" for 181.129.160.184 at Wed Jun 20 03:26:18 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001021452"}
+Rendered reportes/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%=(@multivariadob.bonus)%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes" for 201.232.137.145 at Wed Jun 20 03:26:19 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 40ms (Views: 10.2ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/" for 201.232.137.145 at Wed Jun 20 03:26:24 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/aliados" for 201.232.137.145 at Wed Jun 20 03:26:38 +0000 2012
+  Processing by PagesController#participantes as HTML
+Rendered pages/participantes.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reportes" for 201.232.137.145 at Wed Jun 20 03:27:00 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 36ms (Views: 11.1ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/reportes/ranking" for 201.232.137.145 at Wed Jun 20 03:27:23 +0000 2012
+  Processing by ReportesController#ranking as HTML
+Rendered reportes/ranking.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reportes" for 201.232.137.145 at Wed Jun 20 03:27:37 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 35ms (Views: 10.5ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/reportes" for 201.232.137.145 at Wed Jun 20 03:27:38 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 131ms (Views: 106.8ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for 201.232.137.145 at Wed Jun 20 03:27:40 +0000 2012
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/indicador" for 201.232.137.145 at Wed Jun 20 03:27:46 +0000 2012
+  Processing by PagesController#antecedentes as HTML
+Rendered pages/antecedentes.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/administradores" for 201.232.137.145 at Wed Jun 20 03:27:59 +0000 2012
+  Processing by PagesController#administradores as HTML
+Rendered pages/administradores.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/phpmyadmin/sql.php?db=clusters&token=ef67da43eca3c495fbe0b5805f7fb9f9&table=bonus&pos=0" for 181.129.160.184 at Wed Jun 20 03:29:30 +0000 2012
+
+ActionController::RoutingError (No route matches [GET] "/phpmyadmin/sql.php"):
+  
+
+
+
+Started GET "/reportes/205001021452" for 181.129.160.184 at Wed Jun 20 03:32:10 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001021452"}
+Rendered reportes/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%=(puts @multivariadob.bonus)%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes/205001021452" for 181.129.160.184 at Wed Jun 20 03:39:47 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001021452"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%= @multivariadob.bonus%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes/205001021452" for 181.129.160.184 at Wed Jun 20 03:39:49 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"205001021452"}
+Rendered reportes/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%= @multivariadob.bonus%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
+
+
+Started GET "/reportes" for 181.129.160.184 at Wed Jun 20 03:39:51 +0000 2012
+  Processing by ReportesController#index as HTML
+Rendered reportes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 35ms (Views: 10.4ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/reportes/new" for 181.129.160.184 at Wed Jun 20 03:39:54 +0000 2012
+  Processing by ReportesController#new as HTML
+  Parameters: {"authenticity_token"=>"oVuL4ZHvHT37QjyvxN3qIAKdLJ06w5J3mRzeu0j/DLE=", "option_select"=>"105001012696", "commit"=>"Generar", "utf8"=>"✓"}
+Redirected to http://secretaria.respinos.com/reportes/105001012696
+Completed 302 Found in 0ms
+
+
+Started GET "/reportes/105001012696" for 181.129.160.184 at Wed Jun 20 03:39:54 +0000 2012
+  Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"105001012696"}
+Rendered reportes/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    245:                                 <td>Bonificaci&oacute;n</td>
+    246:                                 <td class="puntaje"><strong><%= @multivariadob.bonus%> de 20</strong></td>
+    247:                                 <td width="2%"> 0% </td>
+    248:                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+    249:                                 <td width="2%">100%</td>
+    250:                                 <td class="puntaje"></td>
+    251:                         </tr>
+  app/helpers/reportes_helper.rb:112:in `round'
+  app/helpers/reportes_helper.rb:112:in `percent'
+  app/views/reportes/show.html.erb:248:in `_app_views_reportes_show_html_erb___105706965__622854098'
+  app/controllers/reportes_controller.rb:24:in `show'
+
