@@ -1,19 +1,20 @@
 
 
 
-
+<!-- Reporte Individual -->
  <div id="big">
  <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
  <a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
    <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
  </a>
 
- <div id="titulo">
+        <div id="titulo">
             <div id="tituloNombres">
                 <div class="uno">Reporte individual de resultados en calidad</div>
 
             </div>
         </div>
+        <!-- Como se convierten los puntajes -->
         <div id="col1">
                 <h4>¿C&oacute;mo los puntajes se transform&aacute;n en calificaciones?</h4>
                 <ul><li>Las instituciones educativas disponen de un reporte individual de acuerdo
@@ -21,9 +22,10 @@
                 <li>Las instituciones educativas con un puntaje total entre X y XX reciben
                   una calificación de E</li>
                 <li>W% de las IE consigui&oacute; una E en 2011-1.</li></ul>
-                <table  border=1 cellspacing=0 cellpadding=2 >
-                        <tr>
-                            <th colspan="3">Cuadro de Calificación</th>
+                <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2  >
+                        <tr class="titulo">
+                            <th colspan="3" style="text-align: center">Cuadro de Calificación</th>
                         </tr>
                         <tr>
                                 <th>Calificaci&oacute;n</th>
@@ -56,7 +58,10 @@
                                 <td>XXXXX% de las IE</td>
                         </tr>
                 </table>
+                </div>
         </div>
+        <!-- Como se convierten los puntajes -->
+        <!-- Informacion Colegio -->
         <div id="col2" class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
@@ -85,6 +90,7 @@
                         </tr>
                 </table>
         </div>
+        <!-- Fin Informacion Colegio -->
         <!-- Dimensiones determinantes de la calidad -->
          <div class="tablas">
            <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
@@ -172,7 +178,7 @@
                                 <td class="size">
                                    <p>La IE <strong><%= @rendimientos.nombre.titleize %></strong> obtuvo un
                                     puntaje total en calidad educativa, denominado Indicador Multidimensional de la
-                                    Calidad Educativa (IMCE) de <strong><%= @totales.indicador.round(2) %></strong>.
+                                    Calidad Educativa (IMCE) de <strong><%= @multivariados.IndicadorEducacion.round(2) %></strong>.
                                     Para su cálculo se consideraron tres dimensiones (ambiente escolar, progreso y
                                     rendimiento académico) que se reconocen como determinantes en la calidad educativa
                                     de cada una de las instituciones educativas del Municipio de Medellín.
@@ -181,7 +187,7 @@
                                     educativas oficiales, que teniendo un porcentaje relativamente alto de
                                     estudiantes bajo condiciones socioeconómicas restrictivas, logran un buen desempeño agregado
                                     en las Olimpiadas del Conocimiento del año 2010. Considerando el bonus, esta IE obtuvo un
-                                    puntaje total de <strong><%= totalbonus %></strong>
+                                    puntaje total de <strong><%= @multivariadob.IndicadorBonus.round(2) %></strong>
                                    </p>
                                 </td>
                                 <td class="size"><p>El puntaje sin bonus de esta IE para el 2011 fue de <%= total %>.
@@ -254,26 +260,57 @@
                 </table>
         </div>
         <!-- Fin Detalle de la puntuacion por dimencion -->
-
+        <!-- Informacion Adicional -->
         <div class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
-                                <td>Informaci&oacute;n adicional:</td>
+                                <td colspan="5">Informaci&oacute;n adicional:</td>
 
                         </tr>
                         <tr>
-                                <td>
-                                  <p >Instituciones pares: El rendimiento de cada Institución Educativa
-                                        (IE) es comparado con el rendimiento de otras Instituciones en su
-                                        grupo de comparación. Las IE pares son aquellas que ___________.
+                                <td colspan="5">
+                                  <p><b>Instituciones pares:</b> El rendimiento de cada Institución Educativa (IE)
+                                    es comparado con el rendimiento de otras Instituciones en su grupo de comparación.
+                                    Las IE pares son aquellas que tienen características similares en cuanto a
+                                    variables demográficas del entorno de la IE  y variables socioeconómicas de los
+                                    hogares de sus estudiantes.
+                                    Aquellas IE similares se reúnen en un grupo denominado clúster de IE.
                                   </p>
-                                  <p >Las IE pares de <%=@totales.nombre.downcase.titleize %>.
-                                     . son:
+                                  <p>Se conformaron en total 9 clusters mediante una herramienta estadística que
+                                    considera las variables socioeconómicas de los hogares de los estudiantes
+                                    (estrato socioeconómico, nivel de sisbén, con acceso a computador e internet, etc.)
+                                    y variables de entorno de la institución (cobertura de servicios públicos en el
+                                    barrio en el que se encuentra la IE, densidad poblacional, etc.).
+                                  </p>
+                                  <p> <%=@totales.nombre.downcase.titleize %> pertence al cluster <b><%= @cluster.Cluster %>.</b>
+                                     Las siguientes <%= @pares.count %> instituciones pertencen este cluster
                                   </p>
                                 </td>
+
                         </tr>
+
+
+                        <% iter = 0 %>
+                        <% @pares.each do |par| %>
+                              <% if iter == 0  %>
+                                 <tr>
+                              <% end %>
+                              <% if iter <= 5  %>
+                                 <td width="20%">
+                                    <%= par.colegio.titleize %>
+                                 </td>
+                                     <% iter = iter.next %>
+                              <% end %>
+                              <% if iter == 5  %>
+                                  </tr>
+                                  <% iter = 0 %>
+                              <% end %>
+                        <% end %>
+
+
                 </table>
         </div>
+        <!-- Informacion Adicional -->
          <div class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
@@ -707,5 +744,5 @@
 
 
  </div>
-
+<!-- Fin Reporte Individual -->
 
