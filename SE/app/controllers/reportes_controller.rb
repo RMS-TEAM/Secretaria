@@ -17,6 +17,10 @@ class ReportesController < ApplicationController
     @rendimientos = Indicador.find(params[:id])
     @info_col = Directoria.find(params[:id])
     @totales = Ranking.find(params[:id])
+    @multivariados = Multivariado.find(params[:id])
+    @multivariadob = Multivariadob.find(params[:id])
+    @cluster = Cluster.find(params[:id])
+    @pares = Cluster.find_all_by_Cluster(@cluster.Cluster)
      respond_to do |format|
        format.html # show.html.erb
        format.json  { render :json => @rendimientos }
