@@ -1,9 +1,25 @@
+# encoding = utf-8
 class ReportesController < ApplicationController
 
   before_filter :authenticate, :only => [:ranking , :show, :index]
 
   def index
-      @colegios = Indicador.find(:all, :order => 'nombre ASC')
+      colegios = Indicador.find(:all, :order => 'nombre ASC')
+      # trae los colegios para desplegarlos es la lista, eliminando los 11 colegios no incluidos
+      @colegios = colegios.delete_if{|x| x.dane ==  105001005380 or
+                                          x.dane == 305001022640 or
+                                          x.dane == 105001025771 or
+                                          x.dane == 105001025763 or
+                                          x.dane == 105001026131 or
+                                          x.dane == 105001025992 or
+                                          x.dane == 105001025798 or
+                                          x.dane == 105001025984 or
+                                          x.dane == 105001001881 or
+                                          x.dane == 105001026000 or
+                                          x.dane == 105001019143
+                                    }
+
+
       respond_to do |format|
       format.html              #/alumnos/index
       format.json {render :json => @colegios}
