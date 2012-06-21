@@ -99,9 +99,6 @@ td{
          font-size: 13px;
          text-align: justify;
 }
-#content .tablas .puntaje{
-        padding-left: 35px;
-}
 
 #content .tablas .explicacion{
         font-weight: bold;
@@ -114,7 +111,7 @@ td{
 /*inicia css grafico  */
 .grafico {
         position: relative; /* IE is dumb */
-        width: 90%;
+        width: 100%;
         border: 1px solid  #036163;
         padding: auto;
 

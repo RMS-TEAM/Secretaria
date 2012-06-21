@@ -98,6 +98,27 @@ module ReportesHelper
 
   end
 
+  def categoria(categoria)
+    case categoria
+      when 1 then
+        "Muy inferior"
+      when 2 then
+        "Inferior"
+      when 3 then
+        "Bajo"
+      when 4 then
+        "Medio"
+      when 5 then
+        "Alto"
+      when 6 then
+        "Superior"
+      when 7 then
+        "Muy superior"
+    else
+       "No Registra"
+    end
+  end
+
   def pdf_url
     a = "http://ec2-107-22-95-239.compute-1.amazonaws.com/download/#{@rendimientos.dane}&-n&--filename=#{@rendimientos.nombre}"
     b = "http://pdfmyurl.com/?url=#{a}"
