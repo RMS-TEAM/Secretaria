@@ -47,8 +47,12 @@ class ReportesController < ApplicationController
   end
 
   def new
-    id = params[:option_select]
-    redirect_to "/reportes/#{id}"
+    if params[:option_select].blank?
+      redirect_to reportes_path, :alert => "Debe seleccionar una institución educativa"
+    else
+      id = params[:option_select]
+      redirect_to "/reportes/#{id}"
+    end
   end
 
   def ranking
