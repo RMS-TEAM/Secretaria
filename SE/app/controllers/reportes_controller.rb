@@ -40,6 +40,7 @@ class ReportesController < ApplicationController
     @pares = Cluster.find_all_by_Cluster(@cluster.Cluster)
     @bonus5 = Bonus5.find(params[:id])
     @bonus11 = Bonus11.find(params[:id])
+    @taprob = Taprob.find(params[:id])
      respond_to do |format|
        format.html # show.html.erb
        format.json  { render :json => @rendimientos }
