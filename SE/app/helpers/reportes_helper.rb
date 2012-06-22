@@ -117,7 +117,7 @@ module ReportesHelper
   end
 
   def categoria(categoria)
-    case categoria
+    case categoria.to_i
       when 1 then
         "Muy inferior"
       when 2 then
