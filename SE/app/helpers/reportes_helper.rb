@@ -93,8 +93,26 @@ module ReportesHelper
       if word.blank?
         "No Registra"
       else
-        word
+        "#{word}"
       end
+
+  end
+
+  def verbosesim(word)
+    if word.blank?
+      "No Registra"
+    else
+      "#{word.to_f.round(2)}% "
+    end
+
+  end
+
+  def verbosecal(word)
+    if word.blank?
+      "No Registra"
+    else
+      "#{word.to_f.round(2) * 100}%"
+    end
 
   end
 
