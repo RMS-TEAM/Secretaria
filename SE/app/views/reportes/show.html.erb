@@ -431,14 +431,22 @@
                      <th colspan="11" class="titulo" style="text-align: center">Dimensión Rendimiento Académico</th>
                    </tr>
                    <tr>
-                     <th width="5%">Año</th>
-                     <th width="5%">Grado</th>
-                     <th>Área de conocimiento</th>
-                     <th>Indicador</th>
-                     <th>Resultado</th>
+                     <th width="5%" rowspan="2">Año</th>
+                     <th width="5%" rowspan="2">Grado</th>
+                     <th rowspan="2">Área de conocimiento</th>
+                     <th rowspan="2">Indicador</th>
+                     <th rowspan="2">Resultado</th>
                      <th  width="30% " colspan="3">IE respecto a IE pares</th>
                      <th  width="30%"  colspan="3">IE respecto a la ciudad</th>
 
+                   </tr>
+                   <tr>
+                     <td>Min</td>
+                     <td style="text-align: center ">Gráfico</td>
+                     <td>Max</td>
+                     <td>Min</td>
+                     <td style="text-align: center ">Gráfico</td>
+                     <td>Max</td>
                    </tr>
                    <tr>
                      <td colspan="11">Porcentaje de estudiantes en cada nivel de desempeño (bajo, medio, alto) en Pruebas
@@ -884,7 +892,7 @@
                     <!-- Tasa aprobacion 5 -->
                     <tr>
                       <td rowspan="5"> 2011</td>
-                      <td>5</td>
+                      <td style="text-align: center ">5</td>
                       <td colspan="2">Tasa de aprobación 5°</td>
                       <td class="resulie"><%=verbosecal(@taprob.aprobacion5)%></td>
                       <td>0%</td>
@@ -897,7 +905,7 @@
                     <!-- Fin Tasa aprobacion 5 -->
                     <!-- Tasa aprobacion 9 -->
                     <tr>
-                      <td>9</td>
+                      <td style="text-align: center ">9</td>
                       <td colspan="2">Tasa de aprobación 9°</td>
                       <td class="resulie"><%=verbosecal(@taprob.aprobacion9)%></td>
                       <td>0%</td>
@@ -911,7 +919,7 @@
                     <!-- Fin Tasa aprobacion 9 -->
                     <!-- Tasa aprobacion 11 (academico) -->
                     <tr>
-                       <td rowspan="3">11</td>
+                       <td style="text-align: center " rowspan="3">11</td>
                        <td colspan="2">Tasa de aprobación 11° (Académico)</td>
                        <td class="resulie"><%=verbosecal(@taprob.aprobacion11a)%></td>
                        <td>0%</td>
@@ -973,14 +981,22 @@
              </tr>
 
              <tr>
-               <th width="5%">Año</th>
-               <th width="5%">Grado</th>
-               <th>Área de conocimiento</th>
-               <th>Indicador</th>
-               <th>Resultado</th>
+               <th rowspan ="2" width="5%">Año</th>
+               <th rowspan ="2" width="5%">Grado</th>
+               <th rowspan ="2">Área de conocimiento</th>
+               <th rowspan ="2">Indicador</th>
+               <th rowspan ="2">Resultado</th>
                <th  width="30% " colspan="3">IE respecto a IE pares</th>
                <th  width="30%"  colspan="3">IE respecto a la ciudad</th>
 
+             </tr>
+             <tr>
+               <td>Min</td>
+               <td style="text-align: center ">Gráfico</td>
+               <td>Max</td>
+               <td>Min</td>
+               <td style="text-align: center ">Gráfico</td>
+               <td>Max</td>
              </tr>
              <tr>
                <td rowspan="2" style="text-align: center">2009 - 2003</td>
