@@ -93,7 +93,7 @@ module ReportesHelper
       if word.blank?
         "No Registra"
       else
-        "#{word}"
+        word
       end
 
   end

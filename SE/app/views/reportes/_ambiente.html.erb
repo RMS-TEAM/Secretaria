@@ -1,0 +1,282 @@
+<table  border=1 cellspacing=0 cellpadding=2 >
+<tr>
+  <th class="titulo" style="text-align: center" colspan="8">Dimensión Ambiente Escolar de Aprendizaje</th>
+</tr>
+<tr>
+  <th width="20%" rowspan="2">Componentes</th>
+  <th width="10%" rowspan="2">Resultado <p style="text-align: center">(Máx = 10)</p></th>
+  <th width="30%" colspan="3">IE respecto IE pares</th>
+  <th width="30%" colspan="3" >IE respecto a la ciudad</th>
+
+
+</tr>
+<!-- Resultados Ambiente Escolar -->
+<tr>
+  <td>Min</td>
+  <td style="text-align: center">Gráfico</td>
+  <td>Max</td>
+  <td>Min</td>
+  <td style="text-align: center">Gráfico</td>
+  <td>Max</td>
+
+</tr>
+<tr>
+  <td colspan="8">Percepción de la comunidad educativa (agregada) según componente de Ambiente Escolar</td>
+</tr>
+<!-- Expectativas academicas -->
+<tr>
+  <td>Expectativas acad&eacute;micas</td>
+  <td class="resulie"><%=verbose(@ambientes.III_total.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Comunicacion -->
+<tr>
+  <td>Comunicaci&oacute;n</td>
+  <td class="resulie"><%=verbose(@ambientes.IV_total.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Compromiso -->
+<tr>
+  <td>Compromiso</td>
+  <td class="resulie"><%=verbose(@ambientes.V_total.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Seguridad y respeto -->
+<tr>
+  <td>Seguridad y respeto</td>
+  <td class="resulie"><%=verbose(@ambientes.VI_total.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Total dimension -->
+<tr>
+  <td><b>Total Dimensión</b></td>
+  <td class="resulie"><%=verbose(@ambientes.Ambi_escol.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<tr>
+  <td colspan="8">Percepción de los estudiantes según componente de Ambiente Escolar</td>
+</tr>
+<!-- Estudiantes -->
+<tr>
+  <td>Expectativas acad&eacute;micas</td>
+  <td class="resulie"><%=verbose(@ambientes.III_e.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Comunicacion -->
+<tr>
+  <td>Comunicaci&oacute;n</td>
+  <td class="resulie"><%=verbose(@ambientes.IV_e.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Compromiso -->
+<tr>
+  <td>Compromiso</td>
+  <td class="resulie"><%=verbose(@ambientes.V_e.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Seguridad y respeto -->
+<tr>
+  <td>Seguridad y respeto</td>
+  <td class="resulie"><%=verbose(@ambientes.VI_e.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Total dimension -->
+<tr>
+  <td><b>Total Dimensión</b></td>
+  <td class="resulie"><%=verbose(@ambientes.Ambi_escol_e.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Fin Estudiantes -->
+<tr>
+  <td colspan="8">Percepción de los docentes según componente de Ambiente Escolar</td>
+</tr>
+<!-- Docentes -->
+<tr>
+  <td>Expectativas acad&eacute;micas</td>
+  <td class="resulie"><%=verbose(@ambientes.III_d.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Comunicacion -->
+<tr>
+  <td>Comunicaci&oacute;n</td>
+  <td class="resulie"><%=verbose(@ambientes.IV_d.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Compromiso -->
+<tr>
+  <td>Compromiso</td>
+  <td class="resulie"><%=verbose(@ambientes.V_d.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Seguridad y respeto -->
+<tr>
+  <td>Seguridad y respeto</td>
+  <td class="resulie"><%=verbose(@ambientes.VI_d.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Total dimension -->
+<tr>
+  <td><b>Total Dimensión</b></td>
+  <td class="resulie"><%=verbose(@ambientes.Ambi_escol_d.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+
+<!-- Fin Docentes -->
+<tr>
+  <td colspan="8">Percepción de los padres de familia según componente de Ambiente Escolar</td>
+</tr>
+<!-- Padres -->
+<tr>
+  <td>Expectativas acad&eacute;micas</td>
+  <td class="resulie"><%=verbose(@ambientes.III_p.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Comunicacion -->
+<tr>
+  <td>Comunicaci&oacute;n</td>
+  <td class="resulie"><%=verbose(@ambientes.IV_p.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Compromiso -->
+<tr>
+  <td>Compromiso</td>
+  <td class="resulie"><%=verbose(@ambientes.V_p.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Seguridad y respeto -->
+<tr>
+  <td>Seguridad y respeto</td>
+  <td class="resulie"><%=verbose(@ambientes.VI_p.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Total dimension -->
+<tr>
+  <td><b>Total Dimensión</b></td>
+  <td class="resulie"><%=verbose(@ambientes.Ambi_escol_p.to_f).round(2) %></td>
+  <td width="3%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+  <td width="5%">0%</td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">'</strong></div></td>
+  <td width="3%">100%</td>
+
+</tr>
+<!-- Fin Padres -->
+
+<!-- Termina Ambiente Escolar -->
+
+</table>
