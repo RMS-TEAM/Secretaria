@@ -4,6 +4,7 @@ class ReportesController < ApplicationController
   before_filter :authenticate, :only => [:ranking , :show, :index]
 
   def index
+      @title = "Reportes"
       colegios = Indicador.find(:all, :order => 'nombre ASC')
       # trae los colegios para desplegarlos es la lista, eliminando los 11 colegios no incluidos
       @colegios = colegios.delete_if{|x| x.dane ==  105001005380 or
@@ -27,7 +28,7 @@ class ReportesController < ApplicationController
   end
 
   def show
-    @title = "Reporte"
+    @title = "Reporte Individual"
     params[:option_select]
     @ambientes = Merge.find(params[:id])
     @rendimientos = Indicador.find(params[:id])
