@@ -25,6 +25,7 @@
                         <tr class="titulo">
                             <th colspan="3" style="text-align: center">Cuadro de Calificación</th>
                         </tr>
+                        <% @porcentajes = calificacion_ciudad(@consolidado) %>
                         <tr>
                                 <th>Calificaci&oacute;n</th>
                                 <th>Rangos del Puntaje</th>
@@ -33,27 +34,27 @@
                         <tr>
                                 <td>A</td>
                                 <td>43.09 - 46.49</td>
-                                <td>X% de las IE</td>
+                                <td><%=percent(@porcentajes[:A],209) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>B</td>
                                 <td>40.89 - 43.08</td>
-                                <td>XX% de las IE</td>
+                                <td><%=percent(@porcentajes[:B],209) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>C</td>
                                 <td>38.26 - 40.88</td>
-                                <td>XXX% de las IE</td>
+                                <td><%=percent(@porcentajes[:C],209) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>D</td>
                                 <td>34.24 - 38.25</td>
-                                <td>XXXX% de las IE</td>
+                                <td><%=percent(@porcentajes[:D],209) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>E</td>
                                 <td>0 - 34.23</td>
-                                <td>XXXXX% de las IE</td>
+                                <td><%=percent(@porcentajes[:E],209) %>% de las IE</td>
                         </tr>
                 </table>
                 </div>

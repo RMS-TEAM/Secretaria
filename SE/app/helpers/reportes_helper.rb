@@ -137,6 +137,27 @@ module ReportesHelper
     end
   end
 
+  def calificacion_ciudad(arr)
+    resul = Hash.new
+    resul[:A],resul[:B],resul[:C],resul[:D],resul[:E] = 0,0,0,0,0
+    arr.each {|indicador| if grade_total(indicador) == "A"
+                           resul[:A] +=1
+                          elsif grade_total(indicador)== "B"
+                            resul[:B] +=1
+                          elsif grade_total(indicador)== "C"
+                            resul[:C] +=1
+                          elsif grade_total(indicador)== "D"
+                            resul[:D] +=1
+                          elsif grade_total(indicador)== "E"
+                            resul[:E] +=1
+                          end
+
+              }
+    resul
+
+
+  end
+
   def pdf_url
     a = "http://ec2-107-22-95-239.compute-1.amazonaws.com/download/#{@rendimientos.dane}&-n&--filename=#{@rendimientos.nombre}"
     b = "http://pdfmyurl.com/?url=#{a}"
