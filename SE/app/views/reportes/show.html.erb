@@ -32,27 +32,27 @@
                         </tr>
                         <tr>
                                 <td>A</td>
-                                <td>46.87 - 100</td>
+                                <td>43.09 - 46.49</td>
                                 <td>X% de las IE</td>
                         </tr>
                         <tr>
                                 <td>B</td>
-                                <td>45.09 - 46.86</td>
+                                <td>40.89 - 43.08</td>
                                 <td>XX% de las IE</td>
                         </tr>
                         <tr>
                                 <td>C</td>
-                                <td>43.25 - 45.08</td>
+                                <td>38.26 - 40.88</td>
                                 <td>XXX% de las IE</td>
                         </tr>
                         <tr>
                                 <td>D</td>
-                                <td>42.82 - 43.24</td>
+                                <td>34.24 - 38.25</td>
                                 <td>XXXX% de las IE</td>
                         </tr>
                         <tr>
                                 <td>E</td>
-                                <td>0 - 42.81</td>
+                                <td>0 - 34.23</td>
                                 <td>XXXXX% de las IE</td>
                         </tr>
                 </table>
@@ -171,8 +171,8 @@
                                 <th style="width: 40%;">¿C&oacute;mo fue el rendimiento de esta instituci&oacute;n?</th>
                         </tr>
                         <tr>
-                                <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@totales.indicador) %></td>
-                                <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@totales.indicador) %></td>
+                                <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@multivariados.IndicadorEducacion) %></td>
+                                <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@multivariadob.IndicadorBonus) %></td>
                                 <td class="size">
                                    <p>La IE <strong><%= @rendimientos.nombre.titleize %></strong> obtuvo un
                                     puntaje total en calidad educativa, denominado Indicador Multidimensional de la
@@ -325,10 +325,7 @@
                                   En los gráficos, se muestra ese resultado en porcentaje.
                                   Si la IE está en el rango de las mejores,la barra del gráfico estará más sombreada.
                                 </td>
-                                <td style="width: 10%">
-                                      Expectativas académicas
-
-                                </td>
+                                <td style="width: 10%">Ambiente Escolar</td>
                                 <td width="3%">0%</td>
                                 <td class="puntaje" style="width: 20%">
 

@@ -76,13 +76,13 @@ module ReportesHelper
   end
 
   def grade_total(n)
-    if n <= 42.81
+    if n <= 34.23
         "E"
-        elsif n <= 43.24
+        elsif n <= 38.25
            "D"
-        elsif n <= 45.08
+        elsif n <= 40.88
            "C"
-        elsif n <= 46.86
+        elsif n <= 43.08
            "B"
         else
            "A"
