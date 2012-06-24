@@ -1,5 +1,6 @@
 # coding: UTF-8
 class PagesController < ApplicationController
+  caches_page :home
 
   def home
     @title = "Bienvenido"
