@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @title = "Bienvenido"
-    expire_page :action => :home
+
   end
 
   def antecedentes
