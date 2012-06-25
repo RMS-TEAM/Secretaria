@@ -67,7 +67,7 @@
                                 <td colspan="2">Este reporte es para:</td>
                         </tr>
                         <tr>
-                                <td colspan="2" > <%= @rendimientos.nombre.titleize%>.</td>
+                                <td colspan="2" > <%= nombre_correc(@rendimientos.nombre.titleize)%>.</td>
                         </tr>
                         <tr>
                                 <td colspan="2"><strong>Codigo DANE:</strong> <%= @rendimientos.dane %></td>
@@ -80,7 +80,7 @@
                                 <td><strong>Zona:</strong> <%= @info_col.zona.titleize %></td>
                         </tr>
                         <tr>
-                                    <td><strong>Barrio:</strong> <%= @info_col.barrio.titleize %></td>
+                                <td><strong>Barrio:</strong> <%= nombre_correc(@info_col.barrio.titleize) %></td>
                                 <td><strong>Direcci&oacute;n:</strong> <%= @info_col.direccion_sede.titleize %></td>
                         </tr>
 
@@ -281,7 +281,7 @@
                                     y variables de entorno de la institución (cobertura de servicios públicos en el
                                     barrio en el que se encuentra la IE, densidad poblacional, etc.).
                                   </p>
-                                  <p>La<strong> <%=@totales.nombre.downcase.titleize %></strong> pertence al cluster <b><%= @cluster.Cluster %>.</b>
+                                  <p>La<strong> <%=nombre_correc(@rendimientos.nombre.downcase.titleize) %></strong> pertence al cluster <b><%= @cluster.Cluster %>.</b>
                                      Las siguientes <%= @pares.count %> instituciones pertencen a este clúster
                                   </p>
                                 </td>
@@ -362,7 +362,7 @@
  <p>&nbsp;</p>
  <p>&nbsp;</p>
  <%=	 link_to "Volver", reportes_path , :class => "option_button"   %>
- <%  link_to "Descargar PDF", pdf_url, :class => "option_button" %>
+
  <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
  <a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
    <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>

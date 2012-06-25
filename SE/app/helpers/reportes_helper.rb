@@ -75,6 +75,13 @@ module ReportesHelper
     end
 
   end
+  def nombre_correc(nombre)
+    nombre = nombre.gsub('Ñ','ñ')
+    nombre = nombre.gsub('Ó','ó')
+    nombre = nombre.gsub('Í','í')
+    nombre = nombre.gsub('Á','á')
+    nombre = nombre.gsub('É','é')
+  end
 
   def nombre_comp(nombre)
     nombre = nombre.gsub('Inst Educ','IE')
@@ -167,15 +174,6 @@ module ReportesHelper
 
   end
 
-  def pdf_url
-    a = "http://ec2-107-22-95-239.compute-1.amazonaws.com/download/#{@rendimientos.dane}&-n&--filename=#{@rendimientos.nombre}"
-    b = "http://pdfmyurl.com/?url=#{a}"
-  end
-  #Generar el pdf para el ranking (cambiar privilefios de admi a la pag)
-  def pdf_url1
-      a = "http://ec2-107-22-95-239.compute-1.amazonaws.com/download/#{@rendimientos.dane}&-n&--filename=#{@rendimientos.nombre}"
-      b = "http://pdfmyurl.com/?url=#{a}"
-    end
 
   def percent(number, top)
     ((number.to_f * 100 )/top).round(2)
