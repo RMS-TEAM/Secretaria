@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.hiden{
+  display: none;
+  color: red;
+}
+.tit{
+  width: 20px;
+}
 
 #content a {
 	color: #38343D;

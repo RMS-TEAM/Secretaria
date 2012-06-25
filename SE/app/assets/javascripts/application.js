@@ -8,3 +8,19 @@
 //= require jquery_ujs
 //= require_tree .
 
+
+$(function(){
+    var hid = true;
+    $('.tit').click(function(){
+    if (hid == true){
+
+        $('.hiden').slideDown("slow");
+        hid = false;
+        console.log("hola");
+    }else{
+        $('.hiden').hide("slow");
+        console.log("chao")
+        hid = true;
+    }
+    });
+});

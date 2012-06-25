@@ -12,6 +12,7 @@
 
             </div>
         </div>
+
         <!-- Como se convierten los puntajes -->
         <div id="col1">
                 <h4>¿C&oacute;mo los puntajes se transform&aacute;n en calificaciones?</h4>
@@ -293,14 +294,14 @@
                         <% @pares.each do |par| %>
                               <% if iter == 0  %>
                                  <tr>
-                                      <% end %>
-                                      <% if iter <= 5  %>
-                                         <td width="20%">
-                                            <%= nombre_comp(par.colegio.titleize) %>
-                                         </td>
-                                             <% iter = iter.next %>
-                                      <% end %>
-                                      <% if iter == 5  %>
+                              <% end %>
+                                    <% if iter <= 5  %>
+                                       <td width="20%">
+                                          <%= nombre_comp(par.colegio.titleize) %>
+                                       </td>
+                                          <% iter = iter.next %>
+                                    <% end %>
+                              <% if iter == 5  %>
                                  </tr>
                                   <% iter = 0 %>
                               <% end %>
