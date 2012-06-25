@@ -113,6 +113,13 @@ module ReportesHelper
       end
 
   end
+  def verbose_progreso(word)
+    if word.blank?
+      "No Registra"
+    else
+      "#{word.to_f.round(2)} "
+    end
+  end
 
   def verbosesim(word)
     if word.blank?
