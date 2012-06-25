@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @title = "Bienvenido"
-
   end
 
   def antecedentes

@@ -5654,3 +5654,444 @@ Started GET "/reportes/105001012696" for 181.129.160.184 at Wed Jun 20 05:54:26 
   Parameters: {"id"=>"105001012696"}
 Rendered reportes/show.html.erb within layouts/application (4.5ms)
 Completed 200 OK in 20ms (Views: 8.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/acerca" for 127.0.0.1 at 2012-06-24 20:32:11 -0500
+  Processing by PagesController#acerca as HTML
+Rendered pages/acerca.html.erb within layouts/application (41.7ms)
+Rendered errors/error_500.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 260ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3: <head>
+    4: 
+    5:   <title><%= title %></title>
+    6:   <%= stylesheet_link_tag    "application" %>
+    7:   <%= javascript_include_tag "application" %>
+    8:   <%= csrf_meta_tags %>
+    9:   <script type="text/javascript">
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___676374809_85567590'
+  app/controllers/application_controller.rb:25:in `block (2 levels) in render_500'
+  app/controllers/application_controller.rb:24:in `render_500'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.4ms)
+Compiled application.js  (4ms)  (pid 31769)
+Compiled jquery.js  (3ms)  (pid 31769)
+Compiled jquery_ujs.js  (0ms)  (pid 31769)
+Compiled admin.js  (182ms)  (pid 31769)
+Compiled admin/users.js  (235ms)  (pid 31769)
+Compiled errors.js  (186ms)  (pid 31769)
+Compiled pages.js  (181ms)  (pid 31769)
+Compiled reportes.js  (183ms)  (pid 31769)
+Compiled sessions.js  (195ms)  (pid 31769)
+Compiled application.css  (2ms)  (pid 31769)
+Compiled admin.css  (12ms)  (pid 31769)
+Compiled admin/users.css  (8ms)  (pid 31769)
+Compiled errors.css  (1ms)  (pid 31769)
+Compiled pages.css  (23ms)  (pid 31769)
+Compiled reportes.css  (22ms)  (pid 31769)
+Compiled sessions.css  (5ms)  (pid 31769)
+Compiled application.js  (18ms)  (pid 31692)
+Compiled jquery.js  (26ms)  (pid 31692)
+Compiled jquery_ujs.js  (11ms)  (pid 31692)
+Compiled admin.js  (529ms)  (pid 31692)
+Compiled admin/users.js  (206ms)  (pid 31692)
+Compiled errors.js  (190ms)  (pid 31692)
+Compiled pages.js  (233ms)  (pid 31692)
+Compiled reportes.js  (208ms)  (pid 31692)
+Compiled sessions.js  (197ms)  (pid 31692)
+Compiled application.css  (6ms)  (pid 31692)
+Compiled admin.css  (225ms)  (pid 31692)
+Compiled admin/users.css  (221ms)  (pid 31692)
+Compiled errors.css  (207ms)  (pid 31692)
+Compiled pages.css  (300ms)  (pid 31692)
+Compiled reportes.css  (279ms)  (pid 31692)
+Compiled sessions.css  (217ms)  (pid 31692)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-24 20:35:24 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 187ms (Views: 185.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:35:25 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:35:25 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:35:25 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f.jpg" for 127.0.0.1 at 2012-06-24 20:35:25 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-24 20:35:27 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:35:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:35:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:35:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.5ms)
+
+
+Started GET "/assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f.jpg" for 127.0.0.1 at 2012-06-24 20:35:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-24 20:35:28 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:35:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:35:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:35:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f.jpg" for 127.0.0.1 at 2012-06-24 20:35:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/wdc" for 127.0.0.1 at 2012-06-24 20:35:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/wdc"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/wdc" for 127.0.0.1 at 2012-06-24 20:36:26 -0500
+
+ActionController::RoutingError (No route matches [GET] "/wdc"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+Compiled application.js  (4ms)  (pid 32141)
+Compiled jquery.js  (3ms)  (pid 32141)
+Compiled jquery_ujs.js  (0ms)  (pid 32141)
+Compiled admin.js  (179ms)  (pid 32141)
+Compiled admin/users.js  (168ms)  (pid 32141)
+Compiled errors.js  (167ms)  (pid 32141)
+Compiled pages.js  (172ms)  (pid 32141)
+Compiled reportes.js  (168ms)  (pid 32141)
+Compiled sessions.js  (170ms)  (pid 32141)
+Compiled application.css  (2ms)  (pid 32141)
+Compiled admin.css  (12ms)  (pid 32141)
+Compiled admin/users.css  (8ms)  (pid 32141)
+Compiled errors.css  (1ms)  (pid 32141)
+Compiled pages.css  (21ms)  (pid 32141)
+Compiled reportes.css  (23ms)  (pid 32141)
+Compiled sessions.css  (5ms)  (pid 32141)
+Compiled application.js  (4ms)  (pid 32082)
+Compiled jquery.js  (3ms)  (pid 32082)
+Compiled jquery_ujs.js  (0ms)  (pid 32082)
+Compiled admin.js  (180ms)  (pid 32082)
+Compiled admin/users.js  (168ms)  (pid 32082)
+Compiled errors.js  (169ms)  (pid 32082)
+Compiled pages.js  (176ms)  (pid 32082)
+Compiled reportes.js  (173ms)  (pid 32082)
+Compiled sessions.js  (168ms)  (pid 32082)
+Compiled application.css  (3ms)  (pid 32082)
+Compiled admin.css  (209ms)  (pid 32082)
+Compiled admin/users.css  (206ms)  (pid 32082)
+Compiled errors.css  (197ms)  (pid 32082)
+Compiled pages.css  (273ms)  (pid 32082)
+Compiled reportes.css  (221ms)  (pid 32082)
+Compiled sessions.css  (209ms)  (pid 32082)
+
+
+Started GET "/wdc" for 127.0.0.1 at 2012-06-24 20:39:02 -0500
+  Processing by ErrorsController#error_404 as HTML
+  Parameters: {"not_found"=>"wdc"}
+Rendered errors/error_404.html.erb within layouts/application (458.0ms)
+Rendered errors/error_500.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 543ms (Views: 18.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:39:02 -0500
+  Processing by ErrorsController#error_404 as CSS
+  Parameters: {"not_found"=>"assets/application-66f0a1ed6ea08fbe583c7487bc12fed2"}
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 47ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:39:03 -0500
+  Processing by ErrorsController#error_404 as JS
+  Parameters: {"not_found"=>"assets/application-2385d4fa52b5838061e1f200e9a2afce"}
+Rendered errors/error_404.html.erb within layouts/application (361.8ms)
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 366ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:39:03 -0500
+  Processing by ErrorsController#error_404 as 
+  Parameters: {"not_found"=>"assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6"}
+Rendered errors/error_404.html.erb within layouts/application (383.8ms)
+Completed 406 Not Acceptable in 400ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-24 20:39:59 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:39:59 -0500
+  Processing by ErrorsController#error_404 as CSS
+  Parameters: {"not_found"=>"assets/application-66f0a1ed6ea08fbe583c7487bc12fed2"}
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:39:59 -0500
+  Processing by ErrorsController#error_404 as JS
+  Parameters: {"not_found"=>"assets/application-2385d4fa52b5838061e1f200e9a2afce"}
+Rendered errors/error_404.html.erb within layouts/application (325.2ms)
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 328ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:39:59 -0500
+  Processing by ErrorsController#error_404 as 
+  Parameters: {"not_found"=>"assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6"}
+Rendered errors/error_404.html.erb within layouts/application (333.3ms)
+Completed 406 Not Acceptable in 335ms
+
+
+Started GET "/assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f.jpg" for 127.0.0.1 at 2012-06-24 20:40:00 -0500
+  Processing by ErrorsController#error_404 as 
+  Parameters: {"not_found"=>"assets/ninios-33cbd91c3296c73ec84b13a5d5347d2f"}
+Rendered errors/error_404.html.erb within layouts/application (366.4ms)
+Completed 406 Not Acceptable in 368ms
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-06-24 20:40:02 -0500
+  Processing by ErrorsController#error_404 as HTML
+  Parameters: {"not_found"=>"signin"}
+Rendered errors/error_404.html.erb within layouts/application (363.1ms)
+Rendered errors/error_500.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 368ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:40:03 -0500
+  Processing by ErrorsController#error_404 as CSS
+  Parameters: {"not_found"=>"assets/application-66f0a1ed6ea08fbe583c7487bc12fed2"}
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:40:03 -0500
+  Processing by ErrorsController#error_404 as JS
+  Parameters: {"not_found"=>"assets/application-2385d4fa52b5838061e1f200e9a2afce"}
+Rendered errors/error_404.html.erb within layouts/application (337.3ms)
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 339ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:40:03 -0500
+  Processing by ErrorsController#error_404 as 
+  Parameters: {"not_found"=>"assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6"}
+Rendered errors/error_404.html.erb within layouts/application (328.1ms)
+Completed 406 Not Acceptable in 330ms
+Migrating to CreateUsers (20111207160408)
+Migrating to AddEmailUniquenessIndex (20111207160409)
+Migrating to AddPassconfirmToUsers (20111215160713)
+Migrating to AddAdminToUsers (20111216150121)
+Migrating to AddNicknameUniquenessToUsers (20120411201900)
+Migrating to AddPasswordToUsers (201111207160410)
+Migrating to AddSaltToUsers (201111207160411)
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-06-24 20:41:36 -0500
+  Processing by ErrorsController#error_404 as HTML
+  Parameters: {"not_found"=>"signin"}
+Rendered errors/error_404.html.erb within layouts/application (411.9ms)
+Rendered errors/error_500.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 552ms (Views: 16.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:41:37 -0500
+  Processing by ErrorsController#error_404 as CSS
+  Parameters: {"not_found"=>"assets/application-66f0a1ed6ea08fbe583c7487bc12fed2"}
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 17ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:41:37 -0500
+  Processing by ErrorsController#error_404 as JS
+  Parameters: {"not_found"=>"assets/application-2385d4fa52b5838061e1f200e9a2afce"}
+Rendered errors/error_404.html.erb within layouts/application (357.0ms)
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 361ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:41:37 -0500
+  Processing by ErrorsController#error_404 as 
+  Parameters: {"not_found"=>"assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6"}
+Rendered errors/error_404.html.erb within layouts/application (405.6ms)
+Completed 406 Not Acceptable in 412ms
+
+
+Started GET "/acerca" for 127.0.0.1 at 2012-06-24 20:45:30 -0500
+  Processing by ErrorsController#error_404 as HTML
+  Parameters: {"not_found"=>"acerca"}
+Rendered errors/error_404.html.erb within layouts/application (368.4ms)
+Rendered errors/error_500.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 375ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:45:30 -0500
+  Processing by ErrorsController#error_404 as CSS
+  Parameters: {"not_found"=>"assets/application-66f0a1ed6ea08fbe583c7487bc12fed2"}
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:45:30 -0500
+  Processing by ErrorsController#error_404 as JS
+  Parameters: {"not_found"=>"assets/application-2385d4fa52b5838061e1f200e9a2afce"}
+Rendered errors/error_404.html.erb within layouts/application (356.3ms)
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 358ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:45:31 -0500
+  Processing by ErrorsController#error_404 as 
+  Parameters: {"not_found"=>"assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6"}
+Rendered errors/error_404.html.erb within layouts/application (439.9ms)
+Completed 406 Not Acceptable in 445ms
+Compiled application.js  (5ms)  (pid 32584)
+Compiled jquery.js  (3ms)  (pid 32584)
+Compiled jquery_ujs.js  (0ms)  (pid 32584)
+Compiled admin.js  (175ms)  (pid 32584)
+Compiled admin/users.js  (169ms)  (pid 32584)
+Compiled errors.js  (167ms)  (pid 32584)
+Compiled pages.js  (169ms)  (pid 32584)
+Compiled reportes.js  (170ms)  (pid 32584)
+Compiled sessions.js  (172ms)  (pid 32584)
+Compiled application.css  (2ms)  (pid 32584)
+Compiled admin.css  (12ms)  (pid 32584)
+Compiled admin/users.css  (8ms)  (pid 32584)
+Compiled errors.css  (1ms)  (pid 32584)
+Compiled pages.css  (20ms)  (pid 32584)
+Compiled reportes.css  (23ms)  (pid 32584)
+Compiled sessions.css  (5ms)  (pid 32584)
+Compiled application.js  (4ms)  (pid 32525)
+Compiled jquery.js  (3ms)  (pid 32525)
+Compiled jquery_ujs.js  (0ms)  (pid 32525)
+Compiled admin.js  (178ms)  (pid 32525)
+Compiled admin/users.js  (171ms)  (pid 32525)
+Compiled errors.js  (169ms)  (pid 32525)
+Compiled pages.js  (172ms)  (pid 32525)
+Compiled reportes.js  (170ms)  (pid 32525)
+Compiled sessions.js  (171ms)  (pid 32525)
+Compiled application.css  (3ms)  (pid 32525)
+Compiled admin.css  (212ms)  (pid 32525)
+Compiled admin/users.css  (207ms)  (pid 32525)
+Compiled errors.css  (200ms)  (pid 32525)
+Compiled pages.css  (274ms)  (pid 32525)
+Compiled reportes.css  (222ms)  (pid 32525)
+Compiled sessions.css  (201ms)  (pid 32525)
+
+
+Started GET "/acerca" for 127.0.0.1 at 2012-06-24 20:47:04 -0500
+  Processing by ErrorsController#error_404 as HTML
+  Parameters: {"not_found"=>"acerca"}
+Rendered errors/error_404.html.erb within layouts/application (471.1ms)
+Rendered errors/error_500.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 554ms (Views: 18.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-66f0a1ed6ea08fbe583c7487bc12fed2.css" for 127.0.0.1 at 2012-06-24 20:47:05 -0500
+  Processing by ErrorsController#error_404 as CSS
+  Parameters: {"not_found"=>"assets/application-66f0a1ed6ea08fbe583c7487bc12fed2"}
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 28ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2385d4fa52b5838061e1f200e9a2afce.js" for 127.0.0.1 at 2012-06-24 20:47:05 -0500
+  Processing by ErrorsController#error_404 as JS
+  Parameters: {"not_found"=>"assets/application-2385d4fa52b5838061e1f200e9a2afce"}
+Rendered errors/error_404.html.erb within layouts/application (427.2ms)
+Rendered text template (0.0ms)
+Completed 500 Internal Server Error in 432ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6.png" for 127.0.0.1 at 2012-06-24 20:47:05 -0500
+  Processing by ErrorsController#error_404 as 
+  Parameters: {"not_found"=>"assets/HFull-b90b05f3f77309aafa5f1bc4ce5afaa6"}
+Rendered errors/error_404.html.erb within layouts/application (373.5ms)
+Completed 406 Not Acceptable in 382ms
