@@ -1,3 +1,4 @@
+# coding = UTF-8
 module ReportesHelper
 
 
@@ -72,6 +73,14 @@ module ReportesHelper
         else
            "A"
     end
+
+  end
+
+  def nombre_comp(nombre)
+    nombre = nombre.gsub('Inst Educ','IE')
+    nombre = nombre.gsub('Ñ','ñ')
+    nombre = nombre.gsub('Cent Educ', 'CE')
+
 
   end
 

@@ -293,15 +293,15 @@
                         <% @pares.each do |par| %>
                               <% if iter == 0  %>
                                  <tr>
-                              <% end %>
-                              <% if iter <= 5  %>
-                                 <td width="20%">
-                                    <%= par.colegio.titleize %>
-                                 </td>
-                                     <% iter = iter.next %>
-                              <% end %>
-                              <% if iter == 5  %>
-                                  </tr>
+                                      <% end %>
+                                      <% if iter <= 5  %>
+                                         <td width="20%">
+                                            <%= nombre_comp(par.colegio.titleize) %>
+                                         </td>
+                                             <% iter = iter.next %>
+                                      <% end %>
+                                      <% if iter == 5  %>
+                                 </tr>
                                   <% iter = 0 %>
                               <% end %>
                         <% end %>
