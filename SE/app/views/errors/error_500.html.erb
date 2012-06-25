@@ -1,10 +1,13 @@
+<div id="error">
+    <h1>Error 500</h1>
+    <div>
+      <h2> Lo sentimos, hemos hecho algo mal, !La página <%= @not_found_path %> no existe ó
+        esta temporalmente fuera de
+        servicio!
+      </h2>
 
-<h1>Error 500</h1>
-<div>
-  <h3> Lo sentimos, hemos hecho algo mal, !La página <%= @not_found_path %> no existe ó esta temporalmente fuera de
-    servicio!</h3>
-
-  <h2>Quieres volver a el  <%= link_to "Inicio", root_path %>  go back to our home page and try again?</h2>
+      <h3>Quieres volver a el  <%= link_to "Inicio", root_path %>  go back to our home page and try again?</h3>
 
 
+    </div>
 </div>
