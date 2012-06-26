@@ -11,7 +11,6 @@ SE::Application.routes.draw do
   match 'fuentes', :to => 'pages#fuentes'
   get "reportes/ranking"
   post "reportes/new"
-  match "download/:id", :to => 'reportes#download'
 
   resources :reportes
   resources :users, :only => [:show, :index, :edit, :update]

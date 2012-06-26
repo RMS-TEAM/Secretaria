@@ -65,7 +65,7 @@
         <div id="col2" class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
-                                <td colspan="2">Este reporte es para:</td>
+                                <th colspan="2">Este reporte es para:</th>
                         </tr>
                         <tr>
                                 <td colspan="2" > <%= nombre_correc(@rendimientos.nombre.titleize)%>.</td>
@@ -99,7 +99,7 @@
              </tr>
              <tr class="titulo">
 
-               <td >En este reporte:</td>
+               <th >En este reporte:</th>
              </tr>
              <tr>
                <td class="size">
@@ -264,7 +264,7 @@
         <div class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
-                                <td colspan="5">Informaci&oacute;n adicional:</td>
+                                <th colspan="5">Informaci&oacute;n adicional:</th>
 
                         </tr>
                         <tr>
@@ -282,7 +282,7 @@
                                     y variables de entorno de la institución (cobertura de servicios públicos en el
                                     barrio en el que se encuentra la IE, densidad poblacional, etc.).
                                   </p>
-                                  <p>La<strong> <%=nombre_correc(@rendimientos.nombre.downcase.titleize) %></strong> pertence al cluster <b><%= @cluster.Cluster %>.</b>
+                                  <p><strong> <%=nombre_correc(@rendimientos.nombre.downcase.titleize) %></strong> pertence al cluster <b><%= @cluster.Cluster %>.</b>
                                      Las siguientes <%= @pares.count %> instituciones pertencen a este clúster
                                   </p>
                                 </td>
@@ -315,7 +315,7 @@
          <div class="tablas">
                 <table  border=1 cellspacing=0 cellpadding=2 >
                         <tr class="titulo">
-                                <td colspan="6">Resultado por dimensión</td>
+                                <th colspan="6">Resultado por dimensión</th>
 
                         </tr>
                         <tr>
@@ -345,6 +345,27 @@
 
                                 </td>
 
+                        </tr>
+                        <tr class="titulo">
+                          <th colspan="6">Ayuda e Información Adicional</th>
+                        </tr>
+                        <tr>
+                          <td colspan="6">
+                            <p>En cada tabla de resultados por dimensión que a continuación se muestran, usted encontrará el ícono
+                            que haciendo clic en el, aparecerá información adicional suficiente con respecto a los resultados generales de la dimensión. Volviendo a hacer clic sobre el icono       la informacion desaparecerá y volverá a visualizar los cuadros como se encontraban originalmente.
+                            Esta información le da respuesta a los siguientes interrogantes o elementos:</p>
+                            - ¿Cuál es la definición del indicador o variable?<br>
+                            - ¿Cómo leer los resultados para la IE de su interés?<br>
+                            - ¿Qué debo tener en cuenta?<br>
+                            - Utilice esta informacion para analizar, entre otros, los siguientes aspectos.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="6">Haga <%=  link_to "clic aquí", "/a.docx", :style => "color: #036163; font-weight:bold"  %>
+                            para ver el glosario completo de la
+                            ficha de reporte de resultados
+                            por dimensión y así obtener una mayor ayuda para la lectura y analisis de los indicadores y
+                            variables por dimensión			</td>
                         </tr>
                 </table>
          </div>

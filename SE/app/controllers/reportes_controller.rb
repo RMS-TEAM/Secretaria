@@ -70,6 +70,8 @@ class ReportesController < ApplicationController
 
   end
 
+
+
   private
 
   def authenticate

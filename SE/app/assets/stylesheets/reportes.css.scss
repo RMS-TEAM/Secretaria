@@ -4,6 +4,9 @@
 
 .hiden{
   display: none;
+  background: #f5f5f5;
+  box-shadow: 3px solid;
+
 
 }
 .ayuda{
@@ -103,6 +106,9 @@ td{
         padding-left: 3px;
         background:  #036163;
         color: white;
+}
+#content .tablas th{
+   font-size: 13px;
 }
 
 #content .tablas td{

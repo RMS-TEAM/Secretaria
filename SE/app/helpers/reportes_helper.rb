@@ -139,6 +139,7 @@ module ReportesHelper
 
   end
 
+
   def categoria(categoria)
     case categoria.to_i
       when 1 then
