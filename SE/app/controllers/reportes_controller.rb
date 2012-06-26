@@ -33,7 +33,6 @@ class ReportesController < ApplicationController
     @ambientes = Merge.find(params[:id])
     @rendimientos = Indicador.find(params[:id])
     @info_col = Directoria.find(params[:id])
-    #@totales = Ranking.find(params[:id])
     @multivariados = Multivariado.find(params[:id])
     @multivariadob = Multivariadob.find(params[:id])
     @cluster = Cluster.find(params[:id])

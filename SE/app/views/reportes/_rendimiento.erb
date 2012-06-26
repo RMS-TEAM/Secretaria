@@ -1,7 +1,29 @@
 <!-- tabla de rendimiento academico -->
 <table  border=1 cellspacing=0 cellpadding=2 >
 <tr>
-  <th colspan="11" class="titulo" style="text-align: center">Dimensión Rendimiento Académico</th>
+  <th colspan="11" class="titulo" style="text-align: center">Dimensión Rendimiento Académico
+    <%= image_tag "question1.png", :class => 'ayuda',:id => 'rendimiento', :title => "clic para informacion", :align => "right" %>
+  </th>
+</tr>
+<tr class="hiden rend">
+  <td colspan="11">
+    <b>¿Cómo leer el resultado para la IE de su interés?</b>
+    <p>
+    En cuanto a las variables de porcentajes por niveles desempeño en las Pruebas Saber, mayores porcentajes en los
+    últimos niveles de desempeño sugieren mejores resultados de los estudiantes en las pruebas del ICFES.</p>
+
+    <p>Para las variables de medianas del número de aciertos y de puntajes en pruebas estándar, el resultado mínimo es 0
+    y el máximo es 24 y 100 respectivamente. Si la IE tiene registra una mediana en puntaje cercano al máximo posible,
+    significa que la mayoría de los estudiantes de esta institución obtuvieron un alto desempeño en las pruebas.
+    Caso contrario si es cercano a 0.</p>
+
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b><br>
+    Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la institución educativa que estoy consultando?<br>
+    ¿En qué niveles de desempeño se encuentran los porcentajes más altos/bajos de estudiantes?<br>
+    ¿Cuál es el nivel de desempeño dominante por área del conocimiento y por año?<br>
+    ¿Cuál es el porcentaje de estudiantes ubicados por nivel según área del conocimiento y año?
+
+  </td>
 </tr>
 <tr>
   <th width="5%" rowspan="2">Año</th>

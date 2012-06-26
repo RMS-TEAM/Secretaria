@@ -4,10 +4,14 @@
 
 .hiden{
   display: none;
-  color: red;
+
 }
-.tit{
+.ayuda{
   width: 20px;
+  &:hover{
+    border-radius: 8px;
+    background: white;
+  }
 }
 
 #content a {

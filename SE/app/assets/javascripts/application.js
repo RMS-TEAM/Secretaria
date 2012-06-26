@@ -11,16 +11,41 @@
 
 $(function(){
     var hid = true;
-    $('.tit').click(function(){
-    if (hid == true){
+    $('#progreso').click(function(){
 
-        $('.hiden').slideDown("slow");
-        hid = false;
-        console.log("hola");
-    }else{
-        $('.hiden').hide("slow");
-        console.log("chao")
-        hid = true;
-    }
+        if (hid == true){
+            $('.hiden.prog').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.prog').hide("slow");
+            hid = true;
+        }
+    });
+});
+
+$(function(){
+    var hid = true;
+    $('#ambiente').click(function(){
+
+        if (hid == true){
+            $('.hiden.ambi').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.ambi').hide("slow");
+            hid = true;
+        }
+    });
+});
+
+$(function(){
+    var hid = true;
+    $('#rendimiento').click(function(){
+        if (hid == true){
+            $('.hiden.rend').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.rend').hide("slow");
+            hid = true;
+        }
     });
 });
