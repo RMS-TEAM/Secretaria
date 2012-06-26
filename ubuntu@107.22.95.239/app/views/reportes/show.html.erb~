@@ -1,0 +1,563 @@
+<% if signed_in? %>
+ <div id="big">
+        <div id="titulo">
+            <div id="tituloNombres">
+                <uno>Secretaria de Educacion de Medellin</uno>
+                <uno style="margin-left: 460px;">Reporte de progreso</uno>
+            </div>
+        </div>
+        <div id="col1">
+                <h3>Como los puntajes se transforman en calificaciones?</h3>
+                Las IE reciben un reporte basado en su puntaje total.<br />
+                IE con un puntaje entre X y XX reciben una E.<br />
+                W% de las IE consiguio una E en 2011-1.<br /><br /><br />
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th>Calificacion</th>
+                                <th>Puntajes y rango</th>
+                                <th>Situacion de la ciudad</th>
+                        </tr>
+                        <tr>
+                                <td>A</td>
+                                <td>0-20</td>
+                                <td>X% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>B</td>
+                                <td>20-40</td>
+                                <td>XX% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>C</td>
+                                <td>40-60</td>
+                                <td>XXX% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>D</td>
+                                <td>60-80</td>
+                                <td>XXXX% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>E</td>
+                                <td>80-100</td>
+                                <td>XXXXX% de las IE</td>
+                        </tr>
+                </table>
+        </div>
+        <div id="col2" class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td>Este reporte es para:</td>
+                        </tr>
+                        <tr>
+                                <td> <% current_ie_name.each do |name|  %>
+                                      <%= name.capitalize %>
+                                      <%end %>
+                                      .</td>
+                        </tr>
+                        <tr>
+                                <td>Rector: Alberto Jose</td>
+                        </tr>
+                        <tr>
+                                <td>Zona: ...</td>
+                        </tr>
+                        <tr>
+                                <td>Indice de pares: 000*e-10</td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table style="width: 100%; "  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th style="width: 20%;">Calificacion del avance</th>
+                                <th style="width: 40%;">Que significa esta calificacion?</th>
+                                <th style="width: 40%;">Como fue el rendimiento de esta institucion?</th>
+                        </tr>
+                        <tr>
+                                <td style="font-size:90px;font-weight:bold;text-align: center;">E</td>
+                                <td class="size">La calificación es asignada según su correspondencia con
+                                  el puntaje obtenido en el indicador multidimensional según
+                                  las siguientes categorías y ponderaciones: (INCLUIRLAS).
+                                  Los bonos serán entregados a los colegios y profesores en
+                                  los colegios en los niveles más altos; los colegios con
+                                  menores calificaciones enfrentarán sanciones del tipo (…).</td>
+                                <td class="size"><p>El puntaje de esta IE para el 2011 fue de 000*e-10.</p>
+                                  <p>Esta IE lo hizo mejor que el X% de todas las IE de la ciudad.</p>
+</td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+                        <tr>
+                                <th style="width: 20%">Categoria</th>
+                                <th style="width: 50%">Puntaje</th>
+                                <th style="width: 30%">Calificacion</th>
+                        </tr>
+                        <tr>
+                                <td>Ambiente Escolar</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Rendimiento</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Progreso</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Bonificacion</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <tr>
+                                <td>Puntaje Total</td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td >En este reporte:</td>
+                        </tr>
+                        <tr>
+                                <td class="size">Se mide el avance de la Institución Educativa año a año,
+                                  se compara este avance con el de Instituciones pares y se
+                                  asignan bonificaciones por el éxito de la Institución en
+                                  promover el logro académico, especialmente entre los
+                                  estudiantes con mayores necesidades. Para esto el reporte
+                                  mide el resultado en cuatro áreas:
+                                </td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Ambiente Escolar:  </b> usa los resultados de las
+                                  encuestas a padres, docentes y estudiantes para medir
+                                  las condiciones necesarias de aprendizaje: expectativas
+                                  académicas, comunicación, nivel de compromiso, seguridad
+                                  y respecto</td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Rendimiento: </b> mide los niveles alcanzados por
+                                  los estudiantes de la Institución en pruebas estandarizadas
+                                  de lenguaje y matemáticas: Saber 11, Saber 9 y Saber 5.</td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Progreso: </b> miden el progreso de la Institución
+                                  en percentiles de acuerdo a los resultados de pruebas
+                                  estandarizadas de lenguaje y matemáticas: Saber 11,
+                                  Saber 9 y Saber 5.</td>
+                        </tr>
+                        <tr>
+                                <td class="size"><b>Bonificacion: </b> puntaje adicional a las Instituciones
+                                  Educativas por ganancias en el logro académico, especialmente
+                                  de los estudiantes con mayores necesidades (según el estrato),
+                                  medidas a través de los resultados de las Olimpiadas del Conocimiento.</td>
+                        </tr>
+                </table>
+        </div>
+        <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td>Informaci&oacute;n adicional:</td>
+
+                        </tr>
+                        <tr>
+                                <td>
+                                  <p >Instituciones pares: El rendimiento de cada Institución Educativa
+                                        (IE) es comparado con el rendimiento de otras Instituciones en su
+                                        grupo de comparación. Las IE pares son aquellas que ___________.
+                                  </p>
+                                  <p >Las IE pares de <% current_ie_name.each do |name|  %>
+                                      <%= name.capitalize %>
+                                      <%end %>. son:
+                                  </p>
+                                </td>
+                        </tr>
+                </table>
+        </div>
+         <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td colspan="4">Resultado por categor&iacute;a:</td>
+
+                        </tr>
+                        <tr>
+                                <td style="width: 20%">  ¿Cómo interpretar estos resultados?Cada IE es evaluada de
+                                      acuerdo a su progreso en cada categoría respecto al rango de
+                                      puntajes de las IE pares y de todas las IE de la ciudad. En
+                                      los gráficos, se muestra ese resultado en porcentaje.Si la
+                                      IE está en el rango de las mejores, entonces la barra estará
+                                      totalmente sombreada.
+                                </td>
+                                <td style="width: 10%">
+                                      Nivel de participaci&oacute;n
+
+                                </td>
+                                <td class="puntaje" style="width: 20%">
+                                  <div class="grafico">
+                                    <strong class="barra" style="width: 24%;">24%</strong>
+                                  </div>
+                                </td>
+                                <td style="width: 20%">
+                                       En el ejemplo al lado izquierdo, el puntaje de la IE en ambiente
+                                       escolar es 9.0, que es el 75% de la diferencia entre el menor y
+                                       el mayor puntaje en nivel de participación de las IE de Medellín.
+                                       Los puntajes obtenidos frente a las IE pares tendrán una ponderación
+                                       tres veces mayor al obtenido frente a todas las IE.
+
+                                </td>
+
+                        </tr>
+                </table>
+         </div>
+
+         <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td width="20%" >Indicadores de Ambiente</td>
+                                <td rowspan="2" width="10%" >Puntaje de la IE</td>
+                                <td rowspan="2" width="30%" >IE respecto IE pares</td>
+                                <td rowspan="2" width="30%" >IE respecto a la ciudad</td>
+                                <td rowspan="2" width="10%" >N&uacute;mero de estudiantes</td>
+
+                        </tr>
+           <!-- Resultados Ambiente Escolar -->
+                        <tr>
+                                <td>Puntajes de Ambiente (X% de Y%)</td>
+
+                        </tr>
+                        <!-- Expectativas academicas -->
+                        <tr>
+                                <td>Expectativas acad&eacute;micas</td>
+                                <td class="resulie"><%=@ambientes.III_total.round(2) %></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Comunicacion -->
+                        <tr>
+                                <td>Comunicaci&oacute;n</td>
+                                <td class="resulie"><%=@ambientes.IV_total.round(2) %></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Compromiso -->
+                        <tr>
+                                <td>Compromiso</td>
+                                <td class="resulie"><%=@ambientes.V_total.round(2) %></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Seguridad y respeto -->
+                        <tr>
+                                <td>Seguridad y respeto</td>
+                                <td class="resulie"><%=@ambientes.VI_total.round(2) %></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+
+                        </tr>
+                        <!-- Asistencia -->
+                        <tr>
+                                <td>Asistencia</td>
+                                <td class="resulie"></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+           <!-- Termina Ambiente Escolar -->
+
+                </table> 
+         </div>
+
+         <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td width="20%" >Indicadores de Rendimiento</td>
+                                <td rowspan="2" width="10%" >Puntaje de la IE</td>
+                                <td rowspan="2" width="30%" >IE respecto IE pares</td>
+                                <td rowspan="2" width="30%" >IE respecto a la ciudad</td>
+                                <td rowspan="2" width="10%" >N&uacute;mero de estudiantes</td>
+
+                        </tr>
+                    <!-- Resultados Rendimiento -->
+                        <tr>
+                                <td>Puntajes de Rendimiento (X% de Y%)</td>
+
+                        </tr>
+                        <tr>
+                                <td colspan="5" class="explicacion">Porcentaje de estudiantes en cada rango de calificaci&oacute;n de
+                                    SABER 11 en lengueje y matem&aacute;ticas.
+
+                                </td>
+                        </tr>
+                        <!--Bajo lenguaje 2007 -->
+                        <tr>
+                                <td>Bajo lenguaje (2007)</td>
+                                <td class="resulie"><%=@rendimientos.prlen_bajo_07_p%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!--Bajo lenguaje 2010 -->
+                        <tr>
+                                <td>Bajo lenguaje (2010)</td>
+                                <td class="resulie"><%=@rendimientos.prlen_bajo_10_p.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!--Alto lenguaje 2007 -->
+                        <tr>
+                                <td>Alto lenguaje (2007)</td>
+                                <td class="resulie"><%=@rendimientos.prlen_alto_07_p%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!--Alto lenguaje 2010 -->
+                        <tr>
+                                <td>Alto lenguaje (2010)</td>
+                                <td class="resulie"><%=@rendimientos.prlen_alto_10_p.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Bajo matematicas 2007-->
+                        <tr>
+                                <td>Bajo matem&aacute;ticas (2007)</td>
+                                <td class="resulie"><%=@rendimientos.prmat_bajo_07_p%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Bajo matematicas 2010 -->
+                        <tr>
+                                <td>Bajo matem&aacute;ticas (2010)</td>
+                                <td class="resulie"><%=@rendimientos.prmat_bajo_10_p.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Alto matematicas 2007 -->
+                        <tr>
+                                <td>Alto matem&aacute;ticas (2007)</td>
+                                <td class="resulie"><%=@rendimientos.prlen_alto_07_p%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- alto matematicas 2010 -->
+                        <tr>
+                                <td>Alto matem&aacute;ticas (2010)</td>
+                                <td class="resulie"><%=@rendimientos.prmat_alto_10_p.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- explicacion mediana -->
+                        <tr>
+                                <td colspan="5" class="explicacion">Mediana de los resultados de la IE en lenguaje y matem&aacute;tica
+                                    en las pruebas SABER para los grados 5°, 9° y 11°
+                                </td
+                        </tr>
+                        <!--lenguaje 11 2007 -->
+                        <tr>
+                                <td>Lenguaje 11°(2007)</td>
+                                <td class="resulie"><%=@rendimientos.tema_lenguaje%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- matematica 11 2007 -->
+                        <tr>
+                                <td>Matem&aacute;ticas 11° (2007)</td>
+                                <td class="resulie"><%=@rendimientos.tema_matematica%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Lenguaje 11 2010 -->
+                        <tr>
+                                <td>Lenguaje 11° (2010)</td>
+                                <td class="resulie"><%=@rendimientos.tema_lenguaje_d.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Matematica 11 2010 -->
+                        <tr>
+                                <td>Matem&aacute;ticas 11° (2010)</td>
+                                <td class="resulie"><%=@rendimientos.tema_matematica_d.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- tasa aprobacion 5 y 11 -->
+                        <tr>
+                                <td colspan="5" class="explicacion">Tasa de aprobaci&oacute;n de los grados 5° y 11°
+                                </td>
+
+                        </tr>
+                        <!-- Aprobacion 5 -->
+                        <tr>
+                                <td>Aprobaci&oacute;n 5°</td>
+                                <td class="resulie"><%=@rendimientos.aprobacion5.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- Aprobacion 11 -->
+                         <tr>
+                                <td>Aprobaci&oacute;n 11°</td>
+                                <td class="resulie"><%=@rendimientos.aprobacion11a.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+
+                        </tr>
+                        <!-- tasa representacion saber 11 edad normal -->
+                        <tr>
+                                <td class="explicacion" >Tasa de representaci&oacute;n de SABER 11° en edad normal</td>
+                                <td class="resulie"><%=@rendimientos.textra.round(2)%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td ></td>
+                        </tr>
+                    <!-- Termina Tabla Rendimiento -->
+                </table>
+         </div>
+
+          <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td width="20%" >Indicadores de Progreso</td>
+                                <td rowspan="2" width="10%" >Puntaje de la IE</td>
+                                <td rowspan="2" width="30%" >IE respecto IE pares</td>
+                                <td rowspan="2" width="30%" >IE respecto a la ciudad</td>
+                                <td rowspan="2" width="10%" >N&uacute;mero de estudiantes</td>
+
+                        </tr>
+                    <!-- Resultados Progreso -->
+                        <tr>
+                                <td>Puntajes de Progreso (X% de Y%)</td>
+                        </tr>
+                        <tr>
+                                <td colspan="5" class="explicacion">Crecimiento respecto a la mediana y al percentil 33 para las IE
+                                    con puntajes inferiores y superiores a estos, en la &aacute;reas de
+                                    matem&aacute;tica y lenguaje para los grados 5°, 9° y 11°
+                                </td>
+
+
+                        </tr>
+                        <!-- Mediana lengueje 5 -->
+                        <tr>
+                                <td>Mediana en lenguaje 5°</td>
+                                <td class="resulie"><%=@rendimientos.permed50len_5%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+
+                                <td></td>
+                        </tr>
+                        <!-- Mediana matematica 5 -->
+
+                        <tr>
+                                <td>Mediana en matem&aacute;tica 5°</td>
+                                <td class="resulie"><%=@rendimientos.permed50mat_5%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+
+                        <!-- Mediana lenguaje 9 -->
+                        <tr>
+                                <td>Mediana en lenguaje 9°</td>
+                                <td class="resulie"><%=@rendimientos.permed50len_9%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <!-- Mediana matematica 9 -->
+                        <tr>
+                                <td>Mediana en matem&aacute;tica 9°</td>
+                                <td class="resulie"><%=@rendimientos.permed50mat_9%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+
+                        <!-- Percentil 33 lenguaje 5 -->
+                        <tr>
+                                <td>Percentil 33 en lenguaje 5°</td>
+                                <td class="resulie"><%=@rendimientos.permedlen33_5%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <!-- Percentil 33 matematica 5 -->
+                        <tr>
+                                <td>Percentil 33 en matem&aacute;tica 5°</td>
+                                <td class="resulie"><%=@rendimientos.permedmat33_5%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <!-- Percentil 33 lenguaje 9 -->
+                        <tr>
+                                <td>Percentil 33 en lenguaje 9°</td>
+                                <td class="resulie"><%=@rendimientos.permedlen33_9%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+                        <!-- Percentil 33 matematica 9 -->
+                        <tr>
+                                <td>Percentil 33 en matem&aacute;tica 9°</td>
+                                <td class="resulie"><%=@rendimientos.permedmat33_9%></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+                                <td></td>
+                        </tr>
+
+
+
+                     <!-- Temina tabla Pogreso -->
+                </table>
+
+          </div>
+                    
+                    
+</div>
+
+
+    <p>&nbsp;</p>
+    <%=	 link_to "Volver", reportes_path    %>
+<% else %>
+      <h1>Sorry</h1>
+<% end %>

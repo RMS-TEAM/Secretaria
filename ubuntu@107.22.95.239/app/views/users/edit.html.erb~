@@ -1,0 +1,29 @@
+   <h1>Editar datos: <%= @user.nombre %></h1>
+       <%if current_user.admin? && current_user != @user %>
+           <%= form_for(@user) do |f| %>
+               <%=   @user.nombre.capitalize  %>
+              <div class="field">
+                   <%= f.label :admin %> <br />
+                   <%= f.text_field :admin %>
+              </div>
+           <%end %>
+
+       <% else %>
+             <%= form_for(@user) do |f| %>
+                <div class="field">
+                    <%= f.label :email %> <br />
+                    <%= f.text_field :email %>
+                </div>
+                <div class="field">
+                    <%= f.label :password %> <br />
+                    <%= f.password_field :password %>
+                </div>
+                <div class="field">
+                    <%= f.label :password_confirmation, "Confirmation" %> <br />
+                    <%= f.password_field :password_confirmation %>
+                </div>
+                <div class="actions">
+                        <%= f.submit "Actualizar" %> <br />
+                </div>
+            <%end%>
+        <%end %>

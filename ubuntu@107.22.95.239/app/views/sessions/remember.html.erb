@@ -1,0 +1,22 @@
+<div class="ingresar">
+  <h1>Recordar contraseña</h1>
+
+  <%= form_for @user, :url => { :controller => "sessions", :action => "ruperto" }  do |f| %>
+      <table>
+        <tr>
+          <td>   <%= f.label :nickname %> </td>
+          <td>   <%= f.text_field :nickname, :autocomplete => :off %>     </td>
+        </tr>
+        <tr>
+          <td><%= f.label :email %> </td>
+          <td><%= f.password_field :email, :autocomplete => :off %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="actions"> <%= f.submit "Aceptar",:class => 'input' %> </td>
+
+        </tr>
+      </table>
+  <% end %>
+</div>
+

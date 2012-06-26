@@ -1,0 +1,14 @@
+<h1><%= @user.nombre.capitalize %></h1>
+<strong>E-mail </strong> <%= @user.email %>
+<strong></strong>
+<br /><br />
+<%if current_user.id.eql? @user.id %>
+    <%= link_to "Editar", edit_user_path(current_user), :class => "option_button" %>
+<% else %>
+    <%= link_to "Volver", root_path(), :class => "option_button" %>
+<%end%>
+<% if current_user.admin? %>
+    <%= link_to "Administrar", administrators_path,  :class => "option_button"  %>
+<%end%>
+
+<div class="ajustar"></div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body style="font-size: 84%">
+	<div id="cuerpo" style="border: solid 1px #777; padding: 15px">
+    <h1 style="background: #036163; color: white; padding: 10px ">Bienvenido <%= @user.nombre.titleize %></h1>
+        <div id="contenido" style="margin-left: 25px">
+            <p>
+              Usted ha sido exitosamente registrado a la plataforma del Sistema
+              de Medición de la Calidad de la Educación de Medellín. Para acceder
+              a los servicios de la plataforma recuerde utilizar la siguiente información:<br /><br />
+              <strong>Nombre de Usuario: </strong> <%= @user.nickname %>.<br/>
+              <strong>Contrase&ntilde;a: </strong>: <%= @user.password %>
+            </p>
+
+            <p >
+              Por favor cambie su contraseña para mayor seguridad. Para ello ingrese a <%= link_to "www.secretariase.tk","www.secretariase.tk", :title => "Ir a la plataforma"%><br><br>
+              Cualquier inquietud, si aún no se ha registrado o no ha solicitado el ingreso a la plataforma
+              puede notificarlo al correo electrónico: correo@municipiodemedellin.com (pendiente)<br><br>
+            </p>
+
+            <p>¡Gracias por su atención!</p><br><br>
+            <p>Laboratorio de Calidad Educativa<br>
+               Secretaría de Educación de Medellín</p>
+        </div>
+    </div>
+  </body>
+</html>

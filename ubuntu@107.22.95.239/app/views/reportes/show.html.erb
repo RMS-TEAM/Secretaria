@@ -1,0 +1,375 @@
+
+<!-- Reporte Individual -->
+ <div id="big">
+ <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
+ <a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
+   <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
+ </a>
+
+        <div id="titulo">
+            <div id="tituloNombres">
+                <div class="uno">Reporte individual de resultados en calidad</div>
+
+            </div>
+        </div>
+
+        <!-- Como se convierten los puntajes -->
+        <div id="col1">
+                <h4>¿C&oacute;mo los puntajes se transform&aacute;n en calificaciones?</h4>
+                <ul><li>Las instituciones educativas disponen de un reporte individual de acuerdo
+                  con sus resultados en calidad.</li>
+                <li>Las instituciones educativas con un puntaje total entre X y XX reciben
+                  una calificación de E</li>
+                <li>W% de las IE consigui&oacute; una E en 2011-1.</li></ul>
+                <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2  >
+                        <tr class="titulo">
+                            <th colspan="3" style="text-align: center">Cuadro de Calificación</th>
+                        </tr>
+                        <% @porcentajes = calificacion_ciudad(@consolidado) %>
+                        <tr>
+                                <th>Calificaci&oacute;n</th>
+                                <th>Rangos del Puntaje</th>
+                                <th>Situaci&oacute;n de la ciudad</th>
+                        </tr>
+                        <tr>
+                                <td>A</td>
+                                <td>43.09 - 46.49</td>
+                                <td><%=percent(@porcentajes[:A],209) %>% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>B</td>
+                                <td>40.89 - 43.08</td>
+                                <td><%=percent(@porcentajes[:B],209) %>% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>C</td>
+                                <td>38.26 - 40.88</td>
+                                <td><%=percent(@porcentajes[:C],209) %>% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>D</td>
+                                <td>34.24 - 38.25</td>
+                                <td><%=percent(@porcentajes[:D],209) %>% de las IE</td>
+                        </tr>
+                        <tr>
+                                <td>E</td>
+                                <td>0 - 34.23</td>
+                                <td><%=percent(@porcentajes[:E],209) %>% de las IE</td>
+                        </tr>
+                </table>
+                </div>
+        </div>
+        <!-- Como se convierten los puntajes -->
+        <!-- Informacion Colegio -->
+        <div id="col2" class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td colspan="2">Este reporte es para:</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2" > <%= nombre_correc(@rendimientos.nombre.titleize)%>.</td>
+                        </tr>
+                        <tr>
+                                <td colspan="2"><strong>Codigo DANE:</strong> <%= @rendimientos.dane %></td>
+                        </tr>
+                        <tr>
+                                <td colspan="2"><strong>Rector:</strong> <%= nombre_correc(@info_col.rector.titleize) %></td>
+                        </tr>
+                        <tr>
+                                <td><strong>Sector:</strong> <%= @info_col.sector.titleize %></td>
+                                <td><strong>Zona:</strong> <%= @info_col.zona.titleize %></td>
+                        </tr>
+                        <tr>
+                                <td><strong>Barrio:</strong> <%= nombre_correc(@info_col.barrio.titleize) %></td>
+                                <td><strong>Direcci&oacute;n:</strong> <%= @info_col.direccion_sede.titleize %></td>
+                        </tr>
+
+                        <tr>
+                              <!--  <td colspan="2"><strong>&Iacute;ndice de pares:</strong> 000*e-10</td>-->
+                        </tr>
+                </table>
+        </div>
+        <!-- Fin Informacion Colegio -->
+        <!-- Dimensiones determinantes de la calidad -->
+         <div class="tablas">
+           <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+             <tr class="titulo" style="text-align: center">
+               <th>Dimensiones determinantes de la calidad educativa</th>
+             </tr>
+             <tr class="titulo">
+
+               <td >En este reporte:</td>
+             </tr>
+             <tr>
+               <td class="size">
+                 <p>Se mide el avance de la Institución Educativa año a año
+                     , se compara este avance con el de las instituciones pares o similares
+                     y se asignan bonificaciones por el éxito de la Institución en promover
+                     el logro académico, especialmente entre los estudiantes con mayores necesidades.
+                 </p>
+                 <p>
+                    El Sistema de Medición estima el resultado en tres dimensiones que se consideran
+                   determinan la calidad del sistema educativo de la ciudad y de cada institución.
+                   Adicionalmente se considera una bonificación que varía de institución a institución
+                 </p>
+               </td>
+             </tr>
+             <tr>
+               <td class="size"><p><b>Ambiente Escolar:</b> El ambiente escolar se constituye como la
+                   forma en que se relacionan y se comunican
+                   los miembros de la IE (profesores, estudiantes y padres de familia), como también la
+                   manera en que la misma involucra a los actores en el proceso de aprendizaje de los estudiantes.
+                 </p>
+                 <p>El Sistema de Medición utiliza los resultados de las encuestas de percepción a padres,
+                   docentes y estudiantes de últimos grados, para medir las condiciones necesarias de
+                   aprendizaje en cuatro componentes esenciales: expectativas académicas, comunicación,
+                   nivel de compromiso, seguridad y respeto.
+                 </p>
+               </td>
+             </tr>
+             <tr>
+               <td class="size"><b>Rendimiento Académico:</b> Mide los resultados alcanzados por los estudiantes
+                 de la institución en evaluaciones estandarizadas en las áreas de lenguaje y matemáticas
+                 (Pruebas Saber 11, Saber 9 y Saber 5 del ICFES.)
+               </td>
+             </tr>
+             <tr>
+               <td class="size"><b>Progreso Académico: </b> Miden el progreso de la institución
+                 en percentiles de acuerdo a los resultados de pruebas
+                 estandarizadas de lenguaje y matemáticas: Saber 11,
+                 Saber 9 y Saber 5.</td>
+             </tr>
+             <tr class="titulo"><td>&nbsp;</td> </tr>
+             <tr>
+               <td class="size"><b>Bonificaci&oacute;n: </b>Puntaje adicional que el Sistema da a las
+                 Instituciones Educativas por ganancias en el logro académico, especialmente de los
+                 estudiantes con mayores necesidades (según el estrato socioeconómico en el que se ubica
+                 el hogar), medidas a través de los resultados agregados de las Olimpiadas del Conocimiento.
+               </td>
+             </tr>
+             <tr>
+               <td class="size"><b>Indicador Multidimensional de la Calidad Educativa (IMCE):</b>
+                 Indica el nivel de calidad de la educación que tiene la Institución Educativa y que está
+                 determinada por el rendimiento y el progreso académico y por el nivel de ambiente escolar.
+
+               </td>
+             </tr>
+           </table>
+         </div>
+        <!-- Fin Dimensiones determinantes de la calidad -->
+
+        <!-- Resumen del reporte de evaluacion -->
+        <div class="tablas">
+                <table style="width: 100%; "  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo" style="text-align: center">
+                            <th colspan="4">Resumen del Reporte de Evaluación</th>
+                        </tr>
+                        <tr>
+
+                                <th style="width: 10%;">Calificaci&oacute;n sin bonus</th>
+                                <th style="width: 10%;">Calificaci&oacute;n con bonus</th>
+                                <th style="width: 40%;">¿Que significa esta calificaci&oacute;n?</th>
+                                <th style="width: 40%;">¿C&oacute;mo fue el rendimiento de esta instituci&oacute;n?</th>
+                        </tr>
+                        <tr>
+                                <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@multivariados.IndicadorEducacion) %></td>
+                                <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@multivariadob.IndicadorBonus) %></td>
+                                <td class="size">
+                                   <p>La IE <strong><%= @rendimientos.nombre.titleize %></strong> obtuvo un
+                                    puntaje total en calidad educativa, denominado Indicador Multidimensional de la
+                                    Calidad Educativa (IMCE) de <strong><%= @multivariados.IndicadorEducacion.round(2) %></strong>.
+                                    Para su cálculo se consideraron tres dimensiones (ambiente escolar, progreso y
+                                    rendimiento académico) que se reconocen como determinantes en la calidad educativa
+                                    de cada una de las instituciones educativas del Municipio de Medellín.
+                                   </p>
+                                   <p>El Sistema de Medición incluye una bonificación como reconocimiento a aquellas instituciones
+                                    educativas oficiales, que teniendo un porcentaje relativamente alto de
+                                    estudiantes bajo condiciones socioeconómicas restrictivas, logran un buen desempeño agregado
+                                    en las Olimpiadas del Conocimiento del año 2010. Considerando el bonus, esta IE obtuvo un
+                                    puntaje total de <strong><%= @multivariadob.IndicadorBonus.round(2) %></strong>
+                                   </p>
+                                </td>
+                                <td class="size"><p>El puntaje sin bonus de esta IE para el 2011 fue de  <strong><%= @multivariados.IndicadorEducacion.round(2) %></strong>.
+                                  Con bonus, este puntaje es de <strong><%= @multivariadob.IndicadorBonus.round(2) %></strong>.</p>
+                                  <p>Esta IE lo hizo mejor que el <strong><%= @cluster.PosicionTotal %></strong>% de todas las IE de la ciudad.</p>
+                                </td>
+                        </tr>
+                </table>
+        </div>
+        <!-- Fin resumen del reporte de evaluacion -->
+        <!-- Detalle de la puntuacion por dimencion -->
+        <div class="tablas">
+                <table style="width: 100%;"  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo" style="text-align: center">
+                                <th colspan="6">Detalle de la puntuación por dimensión</th>
+                        </tr>
+                        <tr>
+                                <th style="width: 20%">Dimensión</th>
+                                <th style="width: 50%" colspan="4">Puntaje</th>
+                                <th style="width: 20%">Calificaci&oacute;n</th>
+                        </tr>
+                        <tr>
+                                <td>Ambiente Escolar</td>
+                                <td width="10%" class="puntaje" style="padding-left: 0; text-align: center"><strong><%=@multivariados.AmbienteEscolar1.round(2) %> de 26</strong></td>
+                                <td width="2%"> 0% </td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.AmbienteEscolar1.round(2),26) %>%;"> <%=  percent(@multivariados.AmbienteEscolar1.round(2),26) %>%</strong></div></td>
+                                <td width="2%">100%</td>
+                                <td class="puntaje"><strong><%= grade_ambiente(@multivariados.AmbienteEscolar1) %></strong></td>
+                        </tr>
+                        <tr>
+                                <td>Rendimiento Académico</td>
+                                <td class="puntaje" style="padding-left: 0; text-align: center"><strong><%=@multivariados.Rendimiento1.round(2)%> de 38</strong></td>
+                                <td width="2%"> 0% </td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.Rendimiento1.round(2),37)%>%;"><%=percent(@multivariados.Rendimiento1.round(2),37)%>%</strong></div></td>
+                                <td width="2%">100%</td>
+                                <td class="puntaje"><strong><%= grade_rendimiento(@multivariados.Rendimiento1) %></strong></td>
+                        </tr>
+                        <tr>
+                                <td>Progreso Académico</td>
+                                <td class="puntaje" style="padding-left: 0; text-align: center"><strong><%=@multivariados.Progreso1.round(2)%> de 36</strong></td>
+                                <td width="2%"> 0% </td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.Progreso1.round(2),35)%>%;"><%=percent(@multivariados.Progreso1.round(2),35)%>%</strong></div></td>
+                                <td width="2%">100%</td>
+                                <td class="puntaje"><strong><%=grade_progreso(@multivariados.Progreso1)  %></strong></td>
+                        </tr>
+                        <tr>
+                                <td>Puntaje Total (IMCE)</td>
+                                <td class="puntaje" style="padding-left: 0; text-align: center"><strong><%=@multivariados.IndicadorEducacion.round(2)%> de 100</strong></td>
+                                <td width="2%"> 0% </td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.IndicadorEducacion,100)%>%;"><%=percent(@multivariados.IndicadorEducacion,100)%>%</strong></div></td>
+                                <td width="2%">100%</td>
+                                <td class="puntaje"><strong><%=grade_total(@multivariados.IndicadorEducacion)  %></strong></td>
+                        </tr>
+                        <tr>
+                                <td>Bonificaci&oacute;n</td>
+                                <td class="puntaje" style="padding-left: 0; text-align: center"><strong><%= @multivariadob.bonus%> de 20</strong></td>
+                                <td width="2%"> 0% </td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.bonus,20)%>%;"><%=percent(@multivariadob.bonus,20)%>%</strong></div></td>
+                                <td width="2%">100%</td>
+                                <td class="puntaje" style=""> <strong>No Aplica</strong></td>
+                        </tr>
+                        <tr>
+                                <td>Puntaje Total (IMCE) con bonus</td>
+                                <td class="puntaje" style="padding-left: 0; text-align: center"><strong><%=@multivariadob.IndicadorBonus.round(2)%> de 100</strong></td>
+                                <td width="2%"> 0% </td>
+                                <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.IndicadorBonus.round(2),100)%>%;"> <%=percent(@multivariadob.IndicadorBonus.round(2),100)%>%</strong></div></td>
+                                <td width="2%">100%</td>
+                                <td class="puntaje"><strong><%= grade_total(@multivariadob.IndicadorBonus.round(2)) %></strong></td>
+                        </tr>
+                </table>
+        </div>
+        <!-- Fin Detalle de la puntuacion por dimencion -->
+        <!-- Informacion Adicional -->
+        <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td colspan="5">Informaci&oacute;n adicional:</td>
+
+                        </tr>
+                        <tr>
+                                <td colspan="5">
+                                  <p><b>Instituciones pares:</b> El rendimiento de cada Institución Educativa (IE)
+                                    es comparado con el rendimiento de otras Instituciones en su grupo de comparación.
+                                    Las IE pares son aquellas que tienen características similares en cuanto a
+                                    variables demográficas del entorno de la IE  y variables socioeconómicas de los
+                                    hogares de sus estudiantes.
+                                    Aquellas IE similares se reúnen en un grupo denominado clúster de IE.
+                                  </p>
+                                  <p>Se conformaron en total 9 clusters mediante una herramienta estadística que
+                                    considera las variables socioeconómicas de los hogares de los estudiantes
+                                    (estrato socioeconómico, nivel de sisbén, con acceso a computador e internet, etc.)
+                                    y variables de entorno de la institución (cobertura de servicios públicos en el
+                                    barrio en el que se encuentra la IE, densidad poblacional, etc.).
+                                  </p>
+                                  <p>La<strong> <%=nombre_correc(@rendimientos.nombre.downcase.titleize) %></strong> pertence al cluster <b><%= @cluster.Cluster %>.</b>
+                                     Las siguientes <%= @pares.count %> instituciones pertencen a este clúster
+                                  </p>
+                                </td>
+
+                        </tr>
+
+
+                        <% iter = 0 %>
+                        <% @pares.each do |par| %>
+                              <% if iter == 0  %>
+                                 <tr>
+                              <% end %>
+                                    <% if iter <= 5  %>
+                                       <td width="20%">
+                                          <%= nombre_comp(par.colegio.titleize) %>
+                                       </td>
+                                          <% iter = iter.next %>
+                                    <% end %>
+                              <% if iter == 5  %>
+                                 </tr>
+                                  <% iter = 0 %>
+                              <% end %>
+                        <% end %>
+
+
+                </table>
+        </div>
+        <!-- Fin Informacion Adicional -->
+        <!-- Resultado por dimension -->
+         <div class="tablas">
+                <table  border=1 cellspacing=0 cellpadding=2 >
+                        <tr class="titulo">
+                                <td colspan="6">Resultado por dimensión</td>
+
+                        </tr>
+                        <tr>
+                                <td colspan="6" style="text-align: center; font-weight: bold;">¿Cómo interpretar los
+                                  resultados de la IE por dimensión que a continuación se muestran?</td>
+                        </tr>
+                        <tr >
+                                <td style="width: 20%">  Cada institución educativa es evaluada de acuerdo a su nivel en términos de calidad en cada variable por dimensión, respecto al rango de resultados de las IE pares o similares y de todas las IE de la ciudad según el sector.
+                                  En los gráficos, se muestra ese resultado en porcentaje.
+                                  Si la IE está en el rango de las mejores,la barra del gráfico estará más sombreada.
+                                </td>
+                                <td style="width: 10%">Ambiente Escolar</td>
+                                <td width="3%">0%</td>
+                                <td class="puntaje" style="width: 20%">
+
+                                  <div class="grafico">
+                                    <strong class="barra" style="width: 24%;">24%</strong>
+                                  </div>
+                                </td>
+                                <td width="3%">100% </td>
+                                <td  style="width: 20%">
+                                       En el ejemplo al lado izquierdo, el puntaje de la IE en ambiente
+                                       escolar es 9.0, que es el 24% de la diferencia entre el menor y
+                                       el mayor puntaje en nivel de participación de las IE de Medellín.
+                                       Los puntajes obtenidos frente a las IE pares tendrán una ponderación
+                                       tres veces mayor al obtenido frente a todas las IE.
+
+                                </td>
+
+                        </tr>
+                </table>
+         </div>
+        <!-- Fin Resultado por dimension -->
+         <div id="ambiente" class="tablas">
+             <%= render 'ambiente' %>
+         </div>
+
+         <div id="rendimiento" class="tablas">
+           <%= render 'rendimiento' %>
+         </div>
+
+         <div class="tablas">
+           <%= render 'progreso' %>
+         </div>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+ <%=	 link_to "Volver", reportes_path , :class => "option_button"   %>
+
+ <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
+ <a href="http://www.printfriendly.com" style=" color:#000000; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Imprimir o generar PDF">
+   <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Imprimir o generar PDF"/>
+ </a>
+
+
+ </div>
+<!-- Fin Reporte Individual -->
+

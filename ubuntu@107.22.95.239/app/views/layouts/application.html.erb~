@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <%= stylesheet_link_tag    "application", :media => 'all' %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+
+<div id="header">
+ <div id ="nav">
+    <div class="name">
+        <%= link_to(image_tag("FinalCal.png"),root_path) %>
+    </div>
+    <div class="bar">
+             <ul>
+               <% if signed_in? %>
+                  <li><%=link_to current_user_name, current_user	  %></li>
+               <%end %>
+               <li><%=link_to "Inicio",root_path %></li>
+
+               <% if signed_in? %>
+                    <li><%=link_to "Reportes", reportes_path %></li>
+                <% end %>
+                <% if signed_in? %>
+                     <li><%= link_to "Sign out", singout_path %></li>
+                <% else %>
+                     <li><%= link_to "Sign in", singin_path %></li>
+                <% end %>
+             </ul>
+    </div>
+ </div>
+</div>
+
+        <div id = "content">
+          <div id="big">
+	        <%= yield %>
+          </div>
+        </div>
+
+
+
+        <div id="footer">
+           <div class="float-left">
+                <div class="module">
+                    <p class="header">Idiomas</p>
+                    <ul style="margin: 0px 0px 0px 0px;" class="links">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Español</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="float-left ">
+                <div class="module">
+                    <p class="header">Información</p>
+                    <ul style="margin: 0px 0px 0px 0px;" class="links">
+                        <li><a href="/pages/participantes">Participantes</a></li>
+                        <li><a href="/pages/antecedentes">Antecedentes</a></li>
+                        <li><a href="/pages/acercade">Acerca de</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="float-left">
+                <div class="module">
+                    <p class="header">Contacto</p>
+                    <p>Telefono: <a><strong>(57+4) 555 55 55</strong></a><br>Hora local (GMT-5)<br>Medellín, Colombia</p>
+                    <p>Email: <br><strong><a href="mailto:jvidalba@gmail.com?subject=Correo desde el sitio web">correo@municipiodemedellin.com</a></strong></p><br>
+                </div>
+            </div>
+
+            <div class="float-left ">
+                <div class="module">
+                    <p class="header">Medios Sociales</p>
+                    <p><a target="_blank" href="#">Twitter</a></p>
+                    <p><a target="_blank" href="#">Facebook</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <p id="copyright">Copyright 1998-2012 Universidad EAFIT. Todos los derechos reservados. (Medellín - Colombia)</p>
+    </body>
+</html>

@@ -1,0 +1,183 @@
+// Place all the styles related to the reportes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hiden{
+  display: none;
+
+}
+.ayuda{
+  width: 20px;
+  &:hover{
+    border-radius: 8px;
+    background: white;
+  }
+}
+
+#content a {
+	color: #38343D;
+	text-decoration: none;
+}
+
+#content a:hover {
+	color: #069;
+	text-decoration: underline;
+}
+
+#content a:visited {
+	font-weight: bold;
+}
+
+.contenido p{
+    text-align: justify;
+    font-family: arial;
+    padding-left: 20px;
+}
+
+#big{
+    max-width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#content .size{
+    font-size: 13px;
+    text-align: justify;
+
+}
+
+td{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#titulo{
+        background:  #036163;
+        padding: 4px;
+        color: white;
+        padding-left:15px;
+}
+#tituloNombres{
+    text-decoration: none;
+    display:inline-block;
+    width: 99%;
+}
+
+#tituloNombres .uno{
+  float: left;
+
+}
+
+#tituloNombres .dos{
+  float: right;
+  width: 17%;
+}
+
+#col1{
+  width: 40%;
+}
+#col2{
+
+  width: 50%;
+
+}
+
+#content #col2.tablas table{
+  float: right;
+}
+#col1, #col2{
+        padding: 10px;
+        padding-bottom: 30px;
+        display:inline-block;
+        vertical-align: top;
+        font-size: 13px;
+}
+
+#content .tablas{
+        padding: 10px;
+
+}
+
+#content .tablas .titulo{
+        text-align: left;
+        padding-left: 3px;
+        background:  #036163;
+        color: white;
+}
+
+#content .tablas td{
+         font-size: 13px;
+         text-align: justify;
+
+}
+
+#content .tablas .explicacion{
+        font-weight: bold;
+}
+
+#content .tablas .resulie{
+        text-align: center;
+}
+
+
+
+/*inicia css grafico  */
+.grafico {
+        position: relative; /* IE is dumb */
+        width: 100%;
+        border: 1px solid  #036163;
+        padding: auto;
+
+}
+.grafico .barra {
+        display: block;
+        position: relative;
+        background: #036163;
+        text-align: center;
+        color: #000000;
+
+}
+.grafico .barra span {
+        position: absolute; left: 1em;
+}
+/* termina css grafico  */
+
+#content .tabla_ranking{
+  width: 90%;
+  padding: auto;
+  margin: auto;
+}
+
+#content .tabla_ran{
+  width: 100%
+}
+
+#content .tabla_ranking td{
+
+          font-size: 13px;
+          text-align: justify;
+
+}
+
+#content .tabla_ranking .titulo{
+        background: #036163;
+        text-align: left;
+        color: white;
+}
+
+#content .tabla_ranking tr.even{
+        background: white;
+        width: 70%;
+        height: 30px;
+
+}
+
+#content .tabla_ranking tr.odd{
+
+        border: 1px solid #DDD;
+        border-width: thin;
+        background: #FAFAFA;
+        width: 70%;
+        height: 30px;
+
+}

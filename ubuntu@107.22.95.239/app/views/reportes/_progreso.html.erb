@@ -1,0 +1,127 @@
+<!-- tabla de progreso academico -->
+<table border=1 cellspacing=0 cellpadding=2 >
+  <tr class="titulo" style="text-align: center" >
+    <th colspan="11">
+      Dimensión Progreso Académico
+      <%= image_tag "question1.png", :class => 'ayuda',:id => 'progreso', :title => "clic para informacion", :align => "right" %>
+    </th>
+  </tr>
+  <tr class="hiden prog">
+    <td colspan="11">
+      <p>Estos indicadores miden la variación, positiva o negativa, en el rendimiento académico de los estudiantes
+        de la IE a través del tiempo, en dos años distintos. Estos muestran el mejoramiento o deterioro del rendimiento
+        académico (resultados agregados) de la IE en las Pruebas Saber 5, 9 y 11.
+      </p>
+
+      <p><b>¿Cómo leer el resultado para la IE de su interés?</b></p>
+      <p>El máximo posible es 100. Si el resultado de la IE es cercano a este valor máximo, se registró en los
+        dos años de comparación, un progreso considerable en el rendimiento académico de los estudiantes medido a
+        través de los puntajes obtenidos en las Pruebas Saber del ICFES.</p>
+
+      <p><b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b></p>
+
+      Según los resultados, ¿la IE tuvo progreso en rendimiento académico o no?<br>
+      ¿En qué grado y área de conocimiento se registra el mayor progreso o deterioro del rendimiento académico de la IE
+      que consulto?<br>
+      Con respecto a las IE pares o similares y oficiales, ¿cómo se encuentra la institución educativa que estoy consultando en el tema de progreso?<br>
+
+    </td>
+  </tr>
+  <tr >
+    <td style="text-align: center" colspan="11">
+      <p><b>
+        Progreso en el rendimiento académico en las áreas de matemáticas y lenguaje para los grados 5°, 9° y 11°.
+      </b></p>
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan ="2" width="10%">Año</th>
+    <th rowspan ="2" width="5%">Grado</th>
+    <th rowspan ="2">Área de conocimiento</th>
+    <th rowspan ="2">Indicador</th>
+    <th rowspan ="2">Resultado</th>
+    <th  width="30% " colspan="3">IE respecto a IE pares</th>
+    <th  width="30%"  colspan="3">IE respecto a la ciudad</th>
+
+  </tr>
+  <tr>
+    <th>Min</th>
+    <th style="text-align: center ">Gráfico</th>
+    <th>Max</th>
+    <th>Min</th>
+    <th style="text-align: center ">Gráfico</th>
+    <th>Max</th>
+  </tr>
+  <tr>
+    <td rowspan="2" style="text-align: center">2009 - 2003</td>
+    <td rowspan="2"style="text-align: center">5</td>
+    <td>Lenguaje</td>
+    <td rowspan="6">Progreso en el rendimiento académico de los estudiantes</td>
+    <td class="resulie"><%= verbose_progreso(@rendimientos.Progresolen5) %></td>
+    <td width="3%">0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td width="3%">100%</td>
+    <td width="3%">0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td width="3%">100%</td>
+  </tr>
+  <tr>
+    <td>Matemáticas</td>
+    <td class="resulie"><%= verbose_progreso(@rendimientos.Progresomat5) %></td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="text-align: center">2009 - 2003</td>
+    <td rowspan="2" style="text-align: center">9</td>
+    <td>Lenguaje</td>
+    <td class="resulie"><%= verbose_progreso(@rendimientos.Progresolen9) %></td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td>Matemáticas</td>
+    <td class="resulie"><%= verbose_progreso(@rendimientos.Progresomat9) %></td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2" style="text-align: center">2010 - 2007</td>
+    <td rowspan="2" style="text-align: center">11</td>
+    <td>Lenguaje</td>
+    <td class="resulie"><%= verbose_progreso(@rendimientos.Progresolen11) %></td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td>Matemáticas</td>
+    <td class="resulie"><%= verbose_progreso(@rendimientos.Progresomat11) %></td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+    <td>0%</td>
+    <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+    <td>100%</td>
+  </tr>
+
+
+</table>
+<!-- Fin tabla de progreso academico -->
