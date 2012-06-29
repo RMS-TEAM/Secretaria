@@ -2,7 +2,7 @@
 <table  border=1 cellspacing=0 cellpadding=2 >
 <tr>
   <th colspan="11" class="titulo" style="text-align: center">Dimensión Rendimiento Académico
-    <%= image_tag "question1.png", :class => 'ayuda',:id => 'rendimiento', :title => "clic para informacion", :align => "right" %>
+    <% image_tag "question1.png", :class => 'ayuda',:id => 'rendimiento', :title => "clic para informacion", :align => "right" %>
   </th>
 </tr>
 <tr class="hiden rend">
@@ -17,12 +17,13 @@
     significa que la mayoría de los estudiantes de esta institución obtuvieron un alto desempeño en las pruebas.
     Caso contrario si es cercano a 0.</p>
 
-    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b><br>
-    Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la institución educativa que estoy consultando?<br>
-    ¿En qué niveles de desempeño se encuentran los porcentajes más altos/bajos de estudiantes?<br>
-    ¿Cuál es el nivel de desempeño dominante por área del conocimiento y por año?<br>
-    ¿Cuál es el porcentaje de estudiantes ubicados por nivel según área del conocimiento y año?
-
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b>
+    <ul>
+        <li>Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la institución educativa que estoy consultando?</li>
+        <li>¿En qué niveles de desempeño se encuentran los porcentajes más altos/bajos de estudiantes?</li>
+        <li>¿Cuál es el nivel de desempeño dominante por área del conocimiento y por año?</li>
+        <li>¿Cuál es el porcentaje de estudiantes ubicados por nivel según área del conocimiento y año?</li>
+    </ul>
   </td>
 </tr>
 <tr>
@@ -36,16 +37,50 @@
 
 </tr>
 <tr>
-  <th>Mín</th>
+  <th>Min</th>
   <th style="text-align: center ">Gráfico</th>
-  <th>Máx</th>
-  <th>Mín</th>
+  <th>Max</th>
+  <th>Min</th>
   <th style="text-align: center ">Gráfico</th>
-  <th>Máx</th>
+  <th>Max</th>
 </tr>
 <tr>
-  <td colspan="11"><b>Porcentaje de estudiantes en cada nivel de desempeño (bajo, medio, alto) en Pruebas
+  <td colspan="10"><b>Porcentaje de estudiantes en cada nivel de desempeño (bajo, medio, alto) en Pruebas
     SABER 11 por área de conocimiento según año</b></td>
+  <td><%= image_tag 'question1.png',:class => 'ayuda', :id => "rendimiento_0" %></td>
+</tr>
+
+
+<tr class="hiden rend 0">
+  <td colspan="11">
+    <b>Definición</b>
+    <p>
+    Proporción de estudiantes de último grado de secundaria media clasificada en niveles de
+    desempeño definidos según su puntaje alcanzado en las Pruebas Saber 11 del ICFES en las áreas
+    de matemáticas y lenguaje. La clasificación por nivel de desempeño es de acuerdo con el puntaje
+    conseguido, con la siguiente distribución:
+    </p>
+    <i style="text-align: center; font-weight: bold;">Nivel Bajo: Puntaje ≤ 30; Nivel Medio: 30 > Puntaje ≤ 70; Nivel Alto: Puntaje ≥ 70</i><br>
+
+    <b>¿Qué debo tener en cuenta?</b>
+    <p>
+    El nivel de desempeño dominante, tanto en las IE similares como en las IE de la ciudad, es
+    el “medio”. El nivel que le sigue en dominancia es el “bajo” y por último el “alto”. Para usted
+    calcular el porcentaje de estudiantes en nivel “alto”, es cual no se muestra en la tabla, debe
+    realizar el siguiente cálculo: 100% - %Nivel bajo - %Nivel medio.
+    </p>
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b>
+    <ul>
+      <li> Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la
+        institución educativa que estoy consultando en cuanto al porcentaje de estudiantes en
+        cada nivel de desempeño por año?</li>
+      <li>- ¿En qué niveles de desempeño se encuentran los porcentajes más altos/bajos de
+        estudiantes?</li>
+      <li> ¿Cuál es el nivel de desempeño dominante por área del conocimiento y por año?</li>
+      <li> ¿Cuál es el porcentaje de estudiantes ubicados en el nivel “alto” por área del conocimiento
+        y año?</li>
+    </ul>
+  </td>
 </tr>
 <!-- Lenguaje bajo 2007 -->
 <tr >
@@ -74,9 +109,9 @@
   <td>100%</td>
 </tr>
 <!-- Fin Lenguaje medio 2007 -->
-<!-- Matematicas bajo 2007 -->
+<!--Matemáticasbajo 2007 -->
 <tr>
-  <td rowspan="2"> Matematicas</td>
+  <td rowspan="2">Matemáticas</td>
   <td>Bajo</td>
   <td class="resulie"><%=verbosesim(@rendimientos.prmat_bajo_07_p)%></td>
   <td>0%</td>
@@ -86,8 +121,8 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas bajo 2007 -->
-<!-- Matematicas medio 2007 -->
+<!-- FinMatemáticasbajo 2007 -->
+<!--Matemáticasmedio 2007 -->
 <tr>
   <td>Medio</td>
   <td class="resulie"><%=verbosesim(@rendimientos.prmat_medio_07_p)%></td>
@@ -98,7 +133,7 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas medio 2007 -->
+<!-- FinMatemáticasmedio 2007 -->
 <!-- Lenguaje bajo 2011 -->
 <tr>
   <td rowspan="4">2010</td>
@@ -125,9 +160,9 @@
   <td>100%</td>
 </tr>
 <!-- Fin Lenguaje medio 2011 -->
-<!-- Matematicas bajo 2011 -->
+<!--Matemáticasbajo 2011 -->
 <tr>
-  <td rowspan="2">Matematicas</td>
+  <td rowspan="2">Matemáticas</td>
   <td>Bajo</td>
   <td class="resulie"><%=verbosesim(@rendimientos.prmat_bajo_10_p)%></td>
   <td>0%</td>
@@ -137,8 +172,8 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas bajo 2010 -->
-<!-- Matematicas  medio 2011 -->
+<!-- FinMatemáticasbajo 2010 -->
+<!--Matemáticas medio 2011 -->
 <tr>
   <td>Medio</td>
   <td class="resulie"><%=verbosesim(@rendimientos.prmat_medio_10_p)%></td>
@@ -149,12 +184,49 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas medio 2011 -->
+<!-- FinMatemáticasmedio 2011 -->
 
 
 <tr>
-  <td colspan="11"><b>Porcentaje de estudiantes en cada nivel de desempeño (insuficiente, mínimo, satisfactorio, avanzado)
+  <td colspan="10"><b>Porcentaje de estudiantes en cada nivel de desempeño (insuficiente, mínimo, satisfactorio, avanzado)
     en Pruebas SABER 5 y 9 por área de conocimiento según año</b>
+  </td>
+  <td><%= image_tag 'question1.png',:class => 'ayuda', :id => "rendimiento_1" %></td>
+</tr>
+<tr class="hiden rend 1">
+  <td colspan="11">
+    <b>Definición</b>
+    <p>
+    Proporción de estudiantes de grado 5 y 9 clasificados clasificada según unos niveles de desempeño
+    definidos por el ICFES de acuerdo con el puntaje alcanzado en las Pruebas Saber 5 y 9 del ICFES en
+    las áreas de matemáticas y lenguaje. La clasificación de estos niveles por área del conocimiento
+    son en su orden de peor a mejor, los siguientes:
+    </p>
+    <b><i>Nivel insuficiente; Nivel Mínimo; Nivel Satisfactorio; Nivel Avanzado</i></b><br>
+
+    <b>¿Cómo leer el resultado para la IE de su interés?</b>
+    <p>
+    La suma de los porcentajes en cada nivel debe dar un total de 100%. No se muestra el porcentaje
+    obtenido en el nivel avanzado, pues este es el complemento del 100%. Es decir, para usted
+    calcular dicho porcentaje, debe realizar el siguiente cálculo: 100% - %Nivel insuficiente - %Nivel
+    Mínimo - %Nivel Satisfactorio. Mayores porcentajes en los dos últimos niveles de desempeño
+    sugieren mejores resultados de los estudiantes en las pruebas.
+    </p>
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b>
+    <ul>
+      <li> Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la
+        institución educativa que estoy consultando en cuanto al porcentaje de estudiantes en
+        cada nivel de desempeño por año?</li>
+      <li> ¿En qué niveles de desempeño se encuentran los porcentajes más altos/bajos de
+        estudiantes?</li>
+      <li> ¿Cuál es el nivel de desempeño dominante por área del conocimiento y por año?
+      <li> ¿Cuál es el porcentaje de estudiantes ubicados en el nivel “avanzado” por área del
+        conocimiento y año?</li>
+      <li> Según la descripción vista, ¿qué les falta a los estudiantes del nivel insuficiente para pasar
+        a mínimo?</li>
+      <li> ¿Cuál es el porcentaje de estudiantes que se ubicó en el nivel mínimo de la IE que
+        consulto?</li>
+    </ul>
   </td>
 </tr>
 
@@ -198,10 +270,10 @@
   <td>100%</td>
 </tr>
 <!-- Fin Lenguaje satisfactorio 5 2009 -->
-<!-- Matematicas infuficiente 5 2009 -->
+<!--Matemáticasinfuficiente 5 2009 -->
 <tr>
 
-  <td rowspan="3"> Matematicas</td>
+  <td rowspan="3">Matemáticas</td>
   <td>Insuficiente</td>
   <td class="resulie"><%=verbosesim(@rendimientos.insuficiente_m5)%></td>
   <td>0%</td>
@@ -211,8 +283,8 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas infuficiente 5 2009 -->
-<!-- Matematicas minimo 5 2009 -->
+<!-- FinMatemáticasinfuficiente 5 2009 -->
+<!--Matemáticasminimo 5 2009 -->
 <tr>
   <td>Mínimo</td>
   <td class="resulie"><%=verbosesim(@rendimientos.minimo_m5)%></td>
@@ -223,8 +295,8 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas minimo 5 2009 -->
-<!-- Matematicas satisfactorio 5 2009 -->
+<!-- FinMatemáticasminimo 5 2009 -->
+<!--Matemáticassatisfactorio 5 2009 -->
 <tr>
   <td>Satisfactorio</td>
   <td class="resulie"><%=verbosesim(@rendimientos.satisfactorio_m5)%></td>
@@ -235,7 +307,7 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas satisfactorio 5 2009 -->
+<!-- FinMatemáticassatisfactorio 5 2009 -->
 
 <!-- Fin desempeño 2009 5 -->
 
@@ -280,10 +352,10 @@
   <td>100%</td>
 </tr>
 <!-- Fin Lenguaje satisfactorio 9 2009 -->
-<!-- Matematicas infuficiente 9 2009 -->
+<!--Matemáticasinfuficiente 9 2009 -->
 <tr>
 
-  <td rowspan="3"> Matematicas</td>
+  <td rowspan="3">Matemáticas</td>
   <td>Insuficiente</td>
   <td class="resulie"><%=verbosesim(@rendimientos.insuficiente_m9)%></td>
   <td>0%</td>
@@ -293,8 +365,8 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas infuficiente 9 2009 -->
-<!-- Matematicas minimo 9 2009 -->
+<!-- FinMatemáticasinfuficiente 9 2009 -->
+<!--Matemáticasminimo 9 2009 -->
 <tr>
   <td>Mínimo</td>
   <td class="resulie"><%=verbosesim(@rendimientos.minimo_m9)%></td>
@@ -305,8 +377,8 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas minimo 9 2009 -->
-<!-- Matematicas satisfactorio 9 2009 -->
+<!-- FinMatemáticasminimo 9 2009 -->
+<!--Matemáticassatisfactorio 9 2009 -->
 <tr>
   <td>Satisfactorio</td>
   <td class="resulie"><%=verbosesim(@rendimientos.satisfactorio_m9)%></td>
@@ -317,13 +389,54 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Matematicas satisfactorio 9 2009 -->
+<!-- FinMatemáticassatisfactorio 9 2009 -->
 
 <!-- Fin desempeño 9 2009  -->
 
 <tr>
-  <td colspan="11"><b>Mediana de los resultados (puntaje) de la IE en las pruebas SABER 11 por área del conocimiento
+  <td colspan="10"><b>Mediana de los resultados (puntaje) de la IE en las pruebas SABER 11 por área del conocimiento
     según año</b>
+  </td>
+  <td><%= image_tag 'question1.png',:class => 'ayuda', :id => "rendimiento_2" %></td>
+</tr>
+<tr class="hiden rend 2">
+  <td colspan="11">
+    <b>Definición</b>
+    <p>
+    Es una medida estadística de los puntajes obtenidos por los estudiantes de una institución
+    educativa en las Pruebas Saber 11. Corresponde al valor del puntaje que deja el mismo número de
+    datos antes y después de él, es decir, es el valor medio de la selección de los puntajes logrados por
+    los estudiantes de la IE una vez se ordenan de menor a mayor.
+    </p>
+    <b>¿Cómo leer el resultado para la IE de su interés?</b>
+    <p>
+    El resultado mínimo es 0 y el máximo es 100. Si la IE tiene registra una mediana en puntaje
+    cercano a 100, significa que la mayoría de los estudiantes de esta institución obtuvieron un alto
+    desempeño en las pruebas Saber. Caso contrario si es cercano a 0.
+    </p>
+    <b>¿Qué debo tener en cuenta?</b>
+    <p>
+    En 2007 y a nivel de todas las instituciones educativas oficiales de Medellín, el promedio de las
+    medianas del puntaje en matemáticas por institución en las Pruebas Saber 11 se ubicó en 44,94. El
+    mismo promedio para el área de lenguaje es 47,01. Para el 2010, estos resultados se ubicaron en
+    43,29 y 46,17, respectivamente.
+    </p>
+    <p>
+    En 2007 y a nivel de ciudad (colegios oficiales y privados), el promedio de las medianas del puntaje
+    en matemáticas por institución en las Pruebas Saber 11 se ubicó en 45,76. El mismo promedio
+    para el área de lenguaje es 47,71. Para el 2010, estos resultados se ubicaron en 44,89 y 47,04,
+    respectivamente.
+    </p>
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b>
+    <ul>
+      <li> Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la
+        institución educativa que estoy consultando en cuanto al rendimiento de los estudiantes
+        en las Pruebas Saber 11 en cada año?</li>
+      <li> ¿En qué área del conocimiento evaluada en las Pruebas Saber 11 le ha ido mejor a la
+        institución consultada? ¿En cuál no tanto?</li>
+      <li> ¿Qué tan alejado o cercano se encuentra la mediana de la IE que consulto al promedio de
+        medianas de IE oficiales y de la ciudad?</li>
+    </ul>
   </td>
 </tr>
 
@@ -343,7 +456,7 @@
   <td>100%</td>
 </tr>
 <!-- Fin Mediana lenguaje 2007 -->
-<!-- Mediana Matematicas 2007 -->
+<!-- MedianaMatemáticas2007 -->
 <tr>
   <td>Matemáticas</td>
   <td class="resulie"><%=verbose(@rendimientos.tema_matematica)%></td>
@@ -354,7 +467,7 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Mediana Matematicas 2007 -->
+<!-- Fin MedianaMatemáticas2007 -->
 <!-- Mediana Lenguaje 2011 -->
 <tr>
   <td rowspan="2">2010</td>
@@ -368,7 +481,7 @@
   <td>100%</td>
 </tr>
 <!-- Fin Mediana Lenguaje 2011 -->
-<!-- Mediana Matematicas 2011 -->
+<!-- MedianaMatemáticas2011 -->
 <tr>
   <td>Matemáticas</td>
   <td class="resulie"><%=verbose(@rendimientos.tema_matematica_d)%></td>
@@ -379,15 +492,56 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Mediana Matematicas 2011 -->
+<!-- MedianaMatemáticas2011 -->
 <!-- Fin Mediana de los resultados -->
 
 <tr>
-  <td colspan="11">
+  <td colspan="10">
     <b>Mediana del número de aciertos en las Olimpiadas del Conocimiento para 5° y 11° por área del conocimiento</b>
   </td>
+  <td><%= image_tag 'question1.png',:class => 'ayuda', :id => "rendimiento_3" %></td>
 </tr>
+<tr class="hiden rend 3">
+  <td colspan="11">
+    <b>Definición</b>
+    <p>
+    Es una medida estadística del número de aciertos obtenidos por los estudiantes de una institución
+    educativa en las Olimpiadas del Conocimiento. Corresponde al número de aciertos que deja el
+    mismo número de datos antes y después de él, es decir, es el valor medio de la selección del
+    número de aciertos logrados por los estudiantes de la IE una vez se ordenan de menor a mayor.
+    </p>
 
+    <b>¿Cómo leer el resultado para la IE de su interés?</b>
+    <p>
+    El resultado mínimo es 0 y el máximo es 24. Si la IE registra una mediana en el número de aciertos
+    cercana a 24, significa que la mayoría de los estudiantes de esta institución obtuvieron un alto
+    desempeño en las Olimpiadas. Caso contrario si es cercano a 0.
+    </p>
+
+    <b>¿Qué debo tener en cuenta?</b>
+    <p>
+    El promedio de las medianas del número de aciertos por cada institución educativa oficial de
+    Medellín en las Olimpiadas del Conocimiento de 2010 en matemáticas fue de 6,6 aciertos,
+    mientras que en lenguaje fue de 9 aciertos. A nivel de ciudad (colegios oficiales y privados) el
+    mismo promedio en matemáticas se ubicó en 6,9 aciertos, mientras que en lenguaje el promedio
+    fue de 9,8. Nótese que los resultados en lenguaje son en los dos casos de análisis, superiores a los
+    registrados en el área de matemáticas.
+    </p>
+
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b>
+    <ul>
+      <li> Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la
+        institución educativa que estoy consultando en cuanto al rendimiento de los estudiantes
+        en las Olimpiadas del Conocimiento?</li>
+      <li> ¿En qué área del conocimiento le ha ido mejor a la institución consultada? ¿En cuál no
+        tanto?</li>
+      <li> ¿La mediana del número de aciertos de la IE que consulto se encuentra por encima o por
+        debajo del promedio de las medianas a nivel de ciudad o IE oficiales?</li>
+      <li> ¿Qué tan alejado o cercano se encuentra la mediana de la IE que consulto al promedio de
+        medianas de IE oficiales y de la ciudad?</li>
+    </ul>
+  </td>
+</tr>
 
 <!-- Mediana de las olimpiadas -->
 <!-- Mediana lenguaje 2010 5 -->
@@ -405,7 +559,7 @@
   <td>100%</td>
 </tr>
 <!-- Fin Mediana bonus lenguaje 2010 5 -->
-<!-- Mediana bonus Matematicas 2010 5 -->
+<!-- Mediana bonusMatemáticas2010 5 -->
 <tr>
   <td>Matemáticas</td>
   <td class="resulie"><%=verbose(@bonus5.total_matematicas_5.to_f)%></td>
@@ -416,7 +570,7 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Mediana bonus Matematicas 2010 5 -->
+<!-- Fin Mediana bonusMatemáticas2010 5 -->
 <!-- Mediana bonus Lenguaje 2010 11 -->
 <tr>
   <td rowspan="2" style="text-align: center">11</td>
@@ -430,7 +584,7 @@
   <td>100%</td>
 </tr>
 <!-- Fin Mediana bonus Lenguaje 2010 11 -->
-<!-- Mediana bonus Matematicas 2010 11 -->
+<!-- Mediana bonusMatemáticas2010 11 -->
 <tr>
   <td>Matemáticas</td>
   <td class="resulie"><%=verbose(@bonus11.total_matematicas.to_f)%></td>
@@ -441,16 +595,52 @@
   <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
   <td>100%</td>
 </tr>
-<!-- Fin Mediana bonus Matematicas 2010 11 -->
+<!-- Fin Mediana bonusMatemáticas2010 11 -->
 
 <!-- Fin Mediana de las olimpiadas -->
 
 <tr>
-  <td colspan="11">
+  <td colspan="10">
     <b>Ubicación de la IE en pruebas Saber 11 según categoría de rendimiento (Muy inferior, inferior, bajo,
     medio, alto, superior, muy superior) por año</b>
   </td>
+  <td><%= image_tag 'question1.png',:class => 'ayuda', :id => "rendimiento_4" %></td>
 </tr>
+<tr class="hiden rend 4">
+  <td colspan="11">
+    <b>Definición</b>
+    <p>En la resolución 489 de octubre 20 de 2008 está descrita la metodología vigente a la fecha para la
+    clasificación de las instituciones educativas según categorías de rendimiento. Esta clasificación se
+    hace a partir de los puntajes (y su variabilidad) de los estudiantes en las pruebas del núcleo común
+    de Saber 11: lenguaje, matemáticas, biología, física, química, ciencias sociales, filosofía e inglés.
+    </p>
+    <p>Así, la clasificación busca “premiar” tanto los puntajes altos como la homogeneidad de los mismos
+    en la IE. Las categorías definidas en su orden de peor a mejor, son:
+    </p>
+    <ol>
+      <li>Muy Inferior</li>
+      <li>Inferior</li>
+      <li>Bajo</li>
+      <li>Medio</li>
+      <li>Alto</li>
+      <li>Superior</li>
+      <li>Muy Superior</li>
+    </ol>
+
+    <b>¿Qué debo tener en cuenta?</b>
+    <p>En ambos años, la mayoría de las instituciones oficiales de la ciudad se ubican en la categoría
+    media, siguiéndole la categoría baja y luego alta.
+    </p>
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b>
+    <ul>
+        <li> Con respecto a las IE similares o pares y oficiales de la ciudad, ¿cómo se encuentra la IE
+        que consulto?</li>
+        <li> ¿La IE de mi interés continua en la misma categoría?</li>
+    </ul>
+  </td>
+
+</tr>
+
 
 <!-- Ubicacion en saber 11 -->
 <tr>
@@ -479,10 +669,58 @@
 <!-- Fin Ubicacion en saber 11 -->
 
 <tr>
-  <td colspan="11">
+  <td colspan="10">
     <b>Indicadores de eficiencia interna por grado educativo según año</b>
   </td>
+
+  <td><%= image_tag 'question1.png',:class => 'ayuda', :id => "rendimiento_5" %></td>
+
 </tr>
+<tr class="hiden rend 5" >
+  <td colspan="11">
+    <b>Tasas de aprobación</b>
+    <p>Proporción de estudiantes de la institución educativa de determinado grado que al culminar el año
+    lectivo cumplen los requisitos académicos para matricularse al año siguiente en un grado superior.
+    En este sentido, este indicador se refiere número de estudiantes que durante el año escolar,
+    cumplen con los requisitos académicos y aspiran a ingresar al grado siguiente, como proporción de
+    los alumnos evaluados durante el año lectivo.
+    </p>
+    <b>¿Cómo leer el resultado para la IE de su interés?</b>
+    <p>
+    Una tasa de aprobación escolar cercana al 100% sugiere que en la IE la mayoría de los estudiantes
+    de determinado grado educativo cumplieron con los requisitos mínimos en cada asignatura de la
+    malla curricular exigidos por la institución.
+    </p>
+
+    <b>¿Qué debo tener en cuenta?</b>
+    <p>
+    La tasa de aprobación promedio de 2010 para las IE oficiales de la ciudad fue del orden del 93% en
+    grado 5, mientras que en 10 y 11 dicha tasa se ubicó en 86% y 95%, respectivamente.
+    </p>
+    <b>Tasa de representación en Saber 11 en extra-edad</b>
+    <p>
+    Proporción de estudiantes de la institución educativa que en el momento de ser evaluados en las
+    Pruebas Saber 11 tenían 19 o más años de edad.
+    </p>
+    <b>¿Cómo leer el resultado para la IE de su interés?</b>
+    <p>
+    Una tasa de presentación en Saber 11 en extraedad alta sugiere que una parte importante de
+    los estudiantes evaluados en las Pruebas Saber 11 tienen más de 18 años de edad. Si la tasa de
+    presentación es del orden del 0%, ningún estudiante tiene más de 18 años edad.
+    </p>
+    <b>Utilice esta información para analizar, entre otros, los siguientes aspectos:</b>
+    <ul>
+      <li> Con respecto a las IE pares o similares y oficiales de la ciudad, ¿cómo se encuentra la
+        institución educativa que estoy consultando?</li>
+      <li> ¿Qué tan alejada o cercana es la tasa de presentación de la IE que consulto a la tasa de IE
+        oficiales?</li>
+      <li> ¿En qué grado educativo se presenta mayor/menor aprobación de los estudiantes?</li>
+      <li> ¿La IE que consulto tiene grado 5? ¿Grado 10? ¿Grado 11?</li>
+    </ul>
+  </td>
+
+</tr>
+
 <!-- Indicador de eficiencia -->
 <!-- Tasa aprobacion 5 -->
 <tr>

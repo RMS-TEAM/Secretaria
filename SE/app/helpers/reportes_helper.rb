@@ -92,16 +92,16 @@ module ReportesHelper
   end
 
   def grade_total(n)
-    if n <= 34.23
+    if n <= 38.24
         "E"
-        elsif n <= 38.25
-           "D"
-        elsif n <= 40.88
-           "C"
-        elsif n <= 43.08
-           "B"
-        else
-           "A"
+    elsif n <= 40.87
+        "D"
+    elsif n <= 43.07
+        "C"
+    elsif n <= 46.48
+        "B"
+    elsif n >= 46.49
+        "A"
     end
   end
 
@@ -139,6 +139,23 @@ module ReportesHelper
 
   end
 
+  def jornada(completa,manana,tarde,noche)
+    jornada = ""
+    if completa == "X"
+      jornada = "Completa"
+    end
+    if manana.eql? "X"
+      jornada = "#{jornada} Mañana"
+    end
+    if tarde.eql? "X"
+      jornada = "#{jornada} Tarde"
+    end
+    if noche == "X"
+      jornada = "#{jornada} Noche"
+    end
+
+    jornada
+  end
 
   def categoria(categoria)
     case categoria.to_i

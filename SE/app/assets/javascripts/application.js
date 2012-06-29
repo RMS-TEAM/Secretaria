@@ -8,11 +8,10 @@
 //= require jquery_ujs
 //= require_tree .
 
-
 $(function(){
     var hid = true;
-    $('#progreso').click(function(){
 
+    $('#progreso').click(function(){
         if (hid == true){
             $('.hiden.prog').show("slow");
             hid = false;
@@ -39,12 +38,77 @@ $(function(){
 
 $(function(){
     var hid = true;
-    $('#rendimiento').click(function(){
+    $('#rendimiento_0').click(function(){
         if (hid == true){
-            $('.hiden.rend').show("slow");
+            $('.hiden.rend.0').show("slow");
             hid = false;
         }else{
-            $('.hiden.rend').hide("slow");
+            $('.hiden.rend.0').hide("slow");
+            hid = true;
+        }
+    });
+});
+
+$(function(){
+    var hid = true;
+    $('#rendimiento_5').click(function(){
+        if (hid == true){
+            $('.hiden.rend.5').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.rend.5').hide("slow");
+            hid = true;
+        }
+    });
+});
+
+$(function(){
+    var hid = true;
+    $('#rendimiento_4').click(function(){
+        if (hid == true){
+            $('.hiden.rend.4').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.rend.4').hide("slow");
+            hid = true;
+        }
+    });
+});
+
+$(function(){
+    var hid = true;
+    $('#rendimiento_3').click(function(){
+        if (hid == true){
+            $('.hiden.rend.3').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.rend.3').hide("slow");
+            hid = true;
+        }
+    });
+});
+
+$(function(){
+    var hid = true;
+    $('#rendimiento_2').click(function(){
+        if (hid == true){
+            $('.hiden.rend.2').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.rend.2').hide("slow");
+            hid = true;
+        }
+    });
+});
+
+$(function(){
+    var hid = true;
+    $('#rendimiento_1').click(function(){
+        if (hid == true){
+            $('.hiden.rend.1').show("slow");
+            hid = false;
+        }else{
+            $('.hiden.rend.1').hide("slow");
             hid = true;
         }
     });

@@ -3,26 +3,37 @@
   <a href="http://www.printfriendly.com" style=" color:#6D9F00; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Printer Friendly and PDF">
     <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Print Friendly and PDF"/>
   </a>
-
-    <table class="tabla_ran" >
+   <div class="tablas">
+    <table border=1 cellspacing=0 cellpadding=2>
      <tr class="titulo">
-       <td>Puesto</td>
-       <td>Nombre</td>
-       <td>Ambiente Escolar</td>
-       <td>Rendimiento</td>
-       <td>Progreso</td>
-       <td>Total</td>
+       <th colspan="8">Rankig de instituciones educativas oficiales según su puntaje total (sin bonus) </th>
      </tr>
+     <tr class="titulo">
+       <th rowspan="2" width="5%">Puesto</th>
+       <th rowspan="2" width="30%">Nombre</th>
+       <th colspan="3" width="30%">Dimensiones determinantes</th>
+       <th rowspan="2" width="10%">Bonus</th>
+       <th colspan="2" width="25%">Puntajes (IMCE) </th>
+     </tr>
+      <tr class="titulo">
+        <th width="10%">Ambiente Escolar</th>
+        <th width="10%">Rendimiento</th>
+        <th width="10%">Progreso</th>
+        <th>Puntaje Total<br> (con bonus)</th>
+        <th>Puntaje Total<br> (sin bonus)</th>
+      </tr>
     <% contador = 1 %>
     <% @ranking.each do |ins| %>
 
-       <tr class="<%= cycle("even", "odd") %>">
-         <td>  <%= contador  %></td>
-         <td>  <%= ins.nombre.downcase.titleize%>        </td>
-         <td>  <%= ins.ambiente_escolar%> </td>
-         <td>  <%= ins.rendimiento%>      </td>
-         <td>  <%= ins.progreso%>         </td>
-         <td>  <%= ins.indicador%>        </td>
+       <tr>
+          <td>  <%= contador  %></td>
+         <td>  <%= nombre_correc(ins.nombre.downcase.titleize)%> </td>
+         <td>  <%= ins.AmbienteEscolar1%> </td>
+         <td>  <%= ins.Rendimiento1%>      </td>
+         <td>  <%= ins.Progreso1%>         </td>
+         <td> <%= ins.bonus%></td>
+         <td>  <%= ins.IndicadorBonus%>        </td>
+         <td> <%= ins.IndicadorEducacion%></td>
        </tr>
 
 
@@ -32,5 +43,51 @@
     %>
 
     </table>
+
+   </div>
+
+  <div class="tablas">
+    <table border=1 cellspacing=0 cellpadding=2>
+      <tr class="titulo">
+        <th colspan="8">Rankig de instituciones educativas oficiales según su puntaje total (con bonus)</th>
+      </tr>
+      <tr class="titulo">
+        <th rowspan="2" width="5%">Puesto</th>
+        <th rowspan="2" width="30%">Nombre</th>
+        <th colspan="3" width="30%">Dimensiones determinantes</th>
+        <th rowspan="2" width="10%">Bonus</th>
+        <th colspan="2" width="25%">Puntajes (IMCE) </th>
+      </tr>
+      <tr class="titulo">
+        <th width="10%">Ambiente Escolar</th>
+        <th width="10%">Rendimiento</th>
+        <th width="10%">Progreso</th>
+        <th>Puntaje Total<br> (sin bonus)</th>
+        <th>Puntaje Total<br> (con bonus)</th>
+
+      </tr>
+      <% contador = 1 %>
+      <% @rankingb.each do |ins| %>
+
+          <tr>
+            <td>  <%= contador  %></td>
+            <td>  <%= nombre_correc(ins.nombre.downcase.titleize)%> </td>
+            <td>  <%= ins.AmbienteEscolar1%> </td>
+            <td>  <%= ins.Rendimiento1%>      </td>
+            <td>  <%= ins.Progreso1%>         </td>
+            <td> <%= ins.bonus%></td>
+            <td> <%= ins.IndicadorEducacion%></td>
+            <td>  <%= ins.IndicadorBonus%>        </td>
+
+          </tr>
+
+
+      <%
+         contador = contador + 1
+         end
+      %>
+
+    </table>
+   </div>
 
 </div>

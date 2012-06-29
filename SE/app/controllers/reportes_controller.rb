@@ -63,9 +63,11 @@ class ReportesController < ApplicationController
   def ranking
     @title = "Ranking"
     if current_user.admin?
-      @ranking = Ranking.all(:order => "indicador DESC")
+      @ranking = Multivariadob.all(:order => "IndicadorEducacion DESC")
+      @rankingb = Multivariadob.all(:order => "IndicadorBonus DESC")
     else
-      @ranking = Ranking.all(:order => "indicador DESC", :limit => 20)
+      @ranking = Multivariadob.all(:order => "indicador DESC", :limit => 20)
+      @rankingb = Multivariadob.all(:order => "IndicadorBonus DESC", :limit => 20)
     end
 
   end

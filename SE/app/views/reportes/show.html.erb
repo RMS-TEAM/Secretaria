@@ -34,28 +34,28 @@
                         </tr>
                         <tr>
                                 <td>A</td>
-                                <td>43.09 - 46.49</td>
-                                <td><%=percent(@porcentajes[:A],209) %>% de las IE</td>
+                                <td>46.49 - 100</td>
+                                <td><%=percent(@porcentajes[:A],198) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>B</td>
-                                <td>40.89 - 43.08</td>
-                                <td><%=percent(@porcentajes[:B],209) %>% de las IE</td>
+                                <td>43.08 - 46.48</td>
+                                <td><%=percent(@porcentajes[:B],198) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>C</td>
-                                <td>38.26 - 40.88</td>
-                                <td><%=percent(@porcentajes[:C],209) %>% de las IE</td>
+                                <td>40.88 - 43.07</td>
+                                <td><%=percent(@porcentajes[:C],198) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>D</td>
-                                <td>34.24 - 38.25</td>
-                                <td><%=percent(@porcentajes[:D],209) %>% de las IE</td>
+                                <td>38.25 - 40.87</td>
+                                <td><%=percent(@porcentajes[:D],198) %>% de las IE</td>
                         </tr>
                         <tr>
                                 <td>E</td>
-                                <td>0 - 34.23</td>
-                                <td><%=percent(@porcentajes[:E],209) %>% de las IE</td>
+                                <td>34.23 - 38.24</td>
+                                <td><%=percent(@porcentajes[:E],198) %>% de las IE</td>
                         </tr>
                 </table>
                 </div>
@@ -68,25 +68,50 @@
                                 <th colspan="2">Este reporte es para:</th>
                         </tr>
                         <tr>
-                                <td colspan="2" > <%= nombre_correc(@rendimientos.nombre.titleize)%>.</td>
+                                <td colspan="2" style="text-align: center" > <b><%= @rendimientos.nombre%>.</b></td>
                         </tr>
                         <tr>
                                 <td colspan="2"><strong>Codigo DANE:</strong> <%= @rendimientos.dane %></td>
                         </tr>
                         <tr>
-                                <td colspan="2"><strong>Rector:</strong> <%= nombre_correc(@info_col.rector.titleize) %></td>
+                                <td width="50%"><strong>Sector:</strong> <%= @info_col.Sector.titleize %>.</td>
+                                <td ><strong>Núcleo Educativo:</strong> <%= @info_col.Nucleo_Educativo%></td>
+
                         </tr>
                         <tr>
-                                <td><strong>Sector:</strong> <%= @info_col.sector.titleize %></td>
-                                <td><strong>Zona:</strong> <%= @info_col.zona.titleize %></td>
+                                <td colspan="2"><strong>Rector:</strong> <%= nombre_correc(@info_col.Rector.titleize) %>.</td>
+                        </tr>
+                        <tr class="titulo" >
+                                <th colspan="2">Información de la sede principal</th>
                         </tr>
                         <tr>
-                                <td><strong>Barrio:</strong> <%= nombre_correc(@info_col.barrio.titleize) %></td>
-                                <td><strong>Direcci&oacute;n:</strong> <%= @info_col.direccion_sede.titleize %></td>
+                                <td><strong>Zona:</strong> <%= @info_col.Zona.titleize %></td>
+                                <td><strong>Comuna:</strong> <%= @info_col.Comuna.titleize %></td>
                         </tr>
 
                         <tr>
-                              <!--  <td colspan="2"><strong>&Iacute;ndice de pares:</strong> 000*e-10</td>-->
+                                <td><strong>Barrio:</strong> <%= nombre_correc(@info_col.Barrio.titleize) %></td>
+                                <td><strong>Direcci&oacute;n:</strong> <%= @info_col.Direccion_Sede.titleize %></td>
+                        </tr>
+
+                        <tr>
+                                <td><strong>Jornada(s):</strong>  <%= jornada(@info_col.Jornada_Completa, @info_col.Jornada_Manana,@info_col.Jornada_Tarde,@info_col.Jornada_Nocturna ) %></td>
+                                <td><strong>Género Población:</strong>  <%= nombre_correc(@info_col.Genero_Poblacion.titleize) %></td>
+                        </tr>
+                        <tr>
+                                <td><strong>Calendario:</strong>  <%= @info_col.Calendario.titleize %></td>
+                                <td><strong>Número de sedes:</strong>  <%= @info_col.Numero_De_Sedes %></td>
+                        </tr>
+                        <tr>
+                                <td><strong>Teléfono 1:</strong>  <%= @info_col.Telefono_1 %></td>
+                                <td><strong>Teléfono 2:</strong>  <%= @info_col.Telefono_2 %></td>
+                        </tr>
+                        <tr>
+                                <td colspan="2"><strong>Correo Electrónico 1:</strong>  <%= @info_col.Correo_Electronico_1 %></td>
+
+                        </tr>
+                        <tr>
+                                <td colspan="2"><strong>Correo Electrónico 2:</strong>  <%= @info_col.Correo_Electronico_2 %></td>
                         </tr>
                 </table>
         </div>
@@ -176,23 +201,39 @@
                                 <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@multivariados.IndicadorEducacion) %></td>
                                 <td style="font-size:90px;font-weight:bold;text-align: center;"><%= grade_total(@multivariadob.IndicadorBonus) %></td>
                                 <td class="size">
-                                   <p>La IE <strong><%= @rendimientos.nombre.titleize %></strong> obtuvo un
-                                    puntaje total en calidad educativa, denominado Indicador Multidimensional de la
-                                    Calidad Educativa (IMCE) de <strong><%= @multivariados.IndicadorEducacion.round(2) %></strong>.
-                                    Para su cálculo se consideraron tres dimensiones (ambiente escolar, progreso y
-                                    rendimiento académico) que se reconocen como determinantes en la calidad educativa
-                                    de cada una de las instituciones educativas del Municipio de Medellín.
+                                   <p>Para identificar en qué nivel se encuentra cada institución y qué tanto ha avanzado
+                                     con respecto a cada dimensión y puntaje total el Sistema de Medición define unos
+                                     rankings de carácter cualitativo, donde cada letra representa un porcentaje o parte
+                                     del total de las IE de la ciudad.
                                    </p>
-                                   <p>El Sistema de Medición incluye una bonificación como reconocimiento a aquellas instituciones
-                                    educativas oficiales, que teniendo un porcentaje relativamente alto de
-                                    estudiantes bajo condiciones socioeconómicas restrictivas, logran un buen desempeño agregado
-                                    en las Olimpiadas del Conocimiento del año 2010. Considerando el bonus, esta IE obtuvo un
-                                    puntaje total de <strong><%= @multivariadob.IndicadorBonus.round(2) %></strong>
+                                   <p>Para su construcción se ordenó de menor a mayor los puntajes obtenidos por IE para
+                                     luego agruparlos en 5 grupos (clasificados con letras). Así, las IE que se clasifican
+                                     dentro del grupo E son el 5% del total de IE que tienen los menores puntajes y las IE
+                                     que se encuentran en el grupo A son el 25% del total de las IE que tienen los mayores
+                                     puntajes. A, B, C, D y E representan respectivamente lo puntajes de mayor a menor
+                                     valor.
                                    </p>
                                 </td>
-                                <td class="size"><p>El puntaje sin bonus de esta IE para el 2011 fue de  <strong><%= @multivariados.IndicadorEducacion.round(2) %></strong>.
-                                  Con bonus, este puntaje es de <strong><%= @multivariadob.IndicadorBonus.round(2) %></strong>.</p>
-                                  <p>Esta IE lo hizo mejor que el <strong><%= @cluster.PosicionTotal %></strong>% de todas las IE de la ciudad.</p>
+                                <td class="size">
+                                  <p>La (El) <strong><%= nombre_correc(@rendimientos.nombre.titleize) %></strong>
+                                    obtuvo un puntaje total en calidad educativa,
+                                  denominado Indicador Multidimensional de la Calidad Educativa (IMCE) de
+                                    <strong><%= @multivariados.IndicadorEducacion.round(2) %></strong>. Para
+                                  su cálculo se consideraron tres dimensiones (ambiente escolar, progreso y rendimiento
+                                  académico) que se reconocen como determinantes en la calidad educativa de cada una de
+                                  las instituciones educativas del Municipio de Medellín. La calificación de la IE de acuerdo
+                                  con este puntaje se observa en “Calificación sin bonus”.
+                                  </p>
+                                  <p>
+                                  El Sistema de Medición incluye una bonificación como reconocimiento a aquellas
+                                  instituciones educativas oficiales, que teniendo un porcentaje relativamente alto de
+                                  estudiantes bajo condiciones socioeconómicas restrictivas, imparten una educación de
+                                  calidad. Considerando el bonus, esta IE obtuvo un puntaje total de
+                                    <strong><%= @multivariadob.IndicadorBonus.round(2) %></strong>. La calificación de
+                                  la IE de acuerdo con este puntaje se observa en “Calificación con bonus”.
+                                  </p>
+                                  <p>Esta IE lo hizo mejor que el <strong><%= @cluster.PosicionTotal %></strong>% de
+                                    todas las IE de la ciudad.</p>
                                 </td>
                         </tr>
                 </table>
@@ -350,18 +391,27 @@
                           <th colspan="6">Ayuda e Información Adicional</th>
                         </tr>
                         <tr>
-                          <td colspan="6">
-                            <p>En cada tabla de resultados por dimensión que a continuación se muestran, usted encontrará el ícono
-                            que haciendo clic en el, aparecerá información adicional suficiente con respecto a los resultados generales de la dimensión. Volviendo a hacer clic sobre el icono       la informacion desaparecerá y volverá a visualizar los cuadros como se encontraban originalmente.
+                          <td style="text-align: center">
+                            <%= image_tag "question1.png", :width => '80px', :style => 'margin-left: auto;' %><br>
+                            <b>¿Ayuda e Información Adicional?</b>
+                          </td>
+                          <td colspan="5">
+                            <p>En cada tabla de resultados por dimensión que a continuación se muestran, usted encontrará
+                              el ícono <%= image_tag "question1.png", :class => 'ayuda' %>
+                            que haciendo clic en el, aparecerá información adicional suficiente con respecto a los
+                              resultados generales de la dimensión. Volviendo a hacer clic sobre el icono  <%= image_tag "question1.png", :class => 'ayuda' %>
+                              la informacion desaparecerá y volverá a visualizar los cuadros como se encontraban originalmente.
                             Esta información le da respuesta a los siguientes interrogantes o elementos:</p>
-                            - ¿Cuál es la definición del indicador o variable?<br>
-                            - ¿Cómo leer los resultados para la IE de su interés?<br>
-                            - ¿Qué debo tener en cuenta?<br>
-                            - Utilice esta informacion para analizar, entre otros, los siguientes aspectos.
+                            <ul>
+                              <li> ¿Cuál es la definición del indicador o variable?</li>
+                              <li> ¿Cómo leer los resultados para la IE de su interés?</li>
+                              <li> ¿Qué debo tener en cuenta?</li>
+                              <li>Utilice esta informacion para analizar, entre otros, los siguientes aspectos.</li>
+                            </ul>
                           </td>
                         </tr>
                         <tr>
-                          <td colspan="6">Haga <%=  link_to "clic aquí", "/a.docx", :style => "color: #036163; font-weight:bold"  %>
+                          <td colspan="6">Haga <%=  link_to "clic aquí", "/Glosario_SIMCIE.PDF",:target => "_blank", :style => "color: #036163; font-weight:bold"  %>
                             para ver el glosario completo de la
                             ficha de reporte de resultados
                             por dimensión y así obtener una mayor ayuda para la lectura y analisis de los indicadores y
@@ -370,17 +420,21 @@
                 </table>
          </div>
         <!-- Fin Resultado por dimension -->
-         <div id="ambiente" class="tablas">
+        <!-- Tabla de ambiente -->
+        <div id="ambiente_table" class="tablas">
              <%= render 'ambiente' %>
          </div>
-
-         <div id="rendimiento" class="tablas">
+        <!-- Fin Tabla de ambiente -->
+        <!-- Tabla de rendimiento -->
+         <div id="rendimiento_table" class="tablas">
            <%= render 'rendimiento' %>
          </div>
-
-         <div class="tablas">
+        <!-- Fin Tabla de rendimiento -->
+        <!-- Tabla de progreso -->
+         <div id="progreso_table" class="tablas">
            <%= render 'progreso' %>
          </div>
+        <!-- Fin Tabla de progreso -->
  <p>&nbsp;</p>
  <p>&nbsp;</p>
  <%=	 link_to "Volver", reportes_path , :class => "option_button"   %>
