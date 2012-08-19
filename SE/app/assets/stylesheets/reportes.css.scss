@@ -111,7 +111,7 @@ td{
   .explicacion{
     font-weight: bold;
   }
-  .resulie{
+  .resulie, .puntaje{
     text-align: center;
   }
 }
@@ -122,57 +122,47 @@ td{
         width: 100%;
         border: 1px solid  #036163;
         padding: auto;
+        .barra{
+          display: block;
+          position: relative;
+          background: #036163;
+          text-align: center;
+          color: #000000;
+          span{
+            position: absolute; left: 1em;
+          }
+        }
+}
 
-}
-.grafico .barra {
-        display: block;
-        position: relative;
-        background: #036163;
-        text-align: center;
-        color: #000000;
 
-}
-.grafico .barra span {
-        position: absolute; left: 1em;
-}
 /* termina css grafico  */
 
 #content .tabla_ranking{
   width: 90%;
   padding: auto;
   margin: auto;
+  td{
+    font-size: 13px;
+    text-align: justify;
+  }
+  .titulo{
+    background: #036163;
+    text-align: left;
+    color: white;
+  }
 }
 
 #content .tabla_ran{
   width: 100%
 }
 
-#content .tabla_ranking td{
 
-          font-size: 13px;
-          text-align: justify;
 
+#content .tablas.ranking td,th{
+    text-align: center;
 }
 
-#content .tabla_ranking .titulo{
-        background: #036163;
-        text-align: left;
-        color: white;
-}
-
-#content .tabla_ranking tr.even{
-        background: white;
-        width: 70%;
-        height: 30px;
-
-}
-
-#content .tabla_ranking tr.odd{
-
-        border: 1px solid #DDD;
-        border-width: thin;
-        background: #FAFAFA;
-        width: 70%;
-        height: 30px;
-
+#content .tablas.ranking .nombre, .resultado{
+    text-align: left;
+    font-weight: bold;
 }

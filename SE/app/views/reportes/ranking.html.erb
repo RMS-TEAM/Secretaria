@@ -3,7 +3,7 @@
   <a href="http://www.printfriendly.com" style=" color:#6D9F00; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Printer Friendly and PDF">
     <img style="border:none;" src="http://cdn.printfriendly.com/button-print-gry20.png" alt="Print Friendly and PDF"/>
   </a>
-   <div class="tablas">
+   <div class="tablas ranking">
     <table border=1 cellspacing=0 cellpadding=2>
      <tr class="titulo">
        <th colspan="8">Rankig de instituciones educativas oficiales según su puntaje total (sin bonus) </th>
@@ -27,13 +27,13 @@
 
        <tr>
           <td>  <%= contador  %></td>
-         <td>  <%= nombre_correc(ins.nombre.downcase.titleize)%> </td>
-         <td>  <%= ins.AmbienteEscolar1%> </td>
-         <td>  <%= ins.Rendimiento1%>      </td>
-         <td>  <%= ins.Progreso1%>         </td>
-         <td> <%= ins.bonus%></td>
-         <td>  <%= ins.IndicadorBonus%>        </td>
-         <td> <%= ins.IndicadorEducacion%></td>
+         <td class="nombre">  <%= nombre_correc(ins.nombre.downcase.titleize)%> </td>
+         <td>  <%= verbose_progreso(ins.AmbienteEscolar1)%></td>
+         <td>  <%= verbose_progreso(ins.Rendimiento1)%></td>
+         <td>  <%= verbose_progreso(ins.Progreso1)%></td>
+         <td>  <%= ins.bonus%></td>
+         <td>  <%= verbose_progreso(ins.IndicadorBonus)%></td>
+         <td class="resultado"> <%= verbose_progreso(ins.IndicadorEducacion)%></td>
        </tr>
 
 
@@ -46,7 +46,7 @@
 
    </div>
 
-  <div class="tablas">
+  <div class="tablas ranking">
     <table border=1 cellspacing=0 cellpadding=2>
       <tr class="titulo">
         <th colspan="8">Rankig de instituciones educativas oficiales según su puntaje total (con bonus)</th>
@@ -71,13 +71,13 @@
 
           <tr>
             <td>  <%= contador  %></td>
-            <td>  <%= nombre_correc(ins.nombre.downcase.titleize)%> </td>
-            <td>  <%= ins.AmbienteEscolar1%> </td>
-            <td>  <%= ins.Rendimiento1%>      </td>
-            <td>  <%= ins.Progreso1%>         </td>
+            <td class="nombre">  <%= nombre_correc(ins.nombre.downcase.titleize)%> </td>
+            <td>  <%= verbose_progreso(ins.AmbienteEscolar1)%> </td>
+            <td>  <%= verbose_progreso(ins.Rendimiento1)%></td>
+            <td>  <%= verbose_progreso(ins.Progreso1)%></td>
             <td> <%= ins.bonus%></td>
-            <td> <%= ins.IndicadorEducacion%></td>
-            <td>  <%= ins.IndicadorBonus%>        </td>
+            <td> <%= verbose_progreso(ins.IndicadorEducacion)%></td>
+            <td class="resultado">  <%= verbose_progreso(ins.IndicadorBonus)%>        </td>
 
           </tr>
 

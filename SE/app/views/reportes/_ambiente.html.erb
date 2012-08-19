@@ -63,22 +63,38 @@
   <td>Expectativas acad&eacute;micas</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.III_total) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width:<%=comparar_ancho("PosicionClusterExpectativasA") %>;">
+        <%=comparar_valor("PosicionClusterExpectativasA") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionTotalExpectativasA") %>;">
+      <%=comparar_valor("PosicionTotalExpectativasA") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
 <!-- Comunicacion -->
 <tr>
-  <td>Comunicaci&oacute;n</td>
+  <td>Comunicación</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.IV_total) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionClusterComunicacion") %>;">
+      <%=comparar_valor("PosicionClusterComunicacion") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionTotalComunicacion") %>;">
+      <%=comparar_valor("PosicionTotalComunicacion") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -87,10 +103,18 @@
   <td>Compromiso</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.V_total) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionClusterParticipacion") %>;">
+      <%=comparar_valor("PosicionClusterParticipacion") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionTotalParticipacion") %>;">
+      <%=comparar_valor("PosicionTotalParticipacion") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -99,10 +123,18 @@
   <td>Seguridad y respeto</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VI_total) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionClusterSeguridadRespeto") %>;">
+      <%=comparar_valor("PosicionClusterSeguridadRespeto") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionTotalSeguridadRespeto") %>;">
+      <%=comparar_valor("PosicionTotalSeguridadRespeto") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -111,10 +143,10 @@
   <td>Calificación del servicio educativo</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VII_total) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0;"></strong></div></td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0;"></strong></div></td>
   <td width="3%">100%</td>
 
 </tr>
@@ -123,10 +155,18 @@
   <td><b>Total Dimensión</b></td>
   <td class="resulie"><%=verbose_progreso(@ambientes.Ambi_escol) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionClusterAmbienteEscolar1") %>;">
+      <%=comparar_valor("PosicionClusterAmbienteEscolar1") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho('PosicionTotalAmbienteEscolar') %>;">
+      <%=comparar_valor("PosicionTotalAmbienteEscolar") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -138,11 +178,20 @@
   <td>Expectativas acad&eacute;micas</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.III_e) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width:<%= comparar_ancho("PosicionClusterExpectativasAE") %>;">
+        <%=comparar_valor("PosicionClusterExpectativasAE") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
-  <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td width="3%">0%</td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%=comparar_ancho("PosicionTotalExpectativasAE") %>;">
+      <%=comparar_valor("PosicionTotalExpectativasAE") %></strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
+
 
 </tr>
 <!-- Comunicacion -->
@@ -150,10 +199,20 @@
   <td>Comunicaci&oacute;n</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.IV_e) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterComunicacionE")%>;">
+        <%= comparar_valor("PosicionClusterComunicacionE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalComunicacionE")%>;">
+      <%= comparar_valor("PosicionTotalComunicacionE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -162,10 +221,20 @@
   <td>Compromiso</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.V_e) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterParticipacionE")%>;">
+      <%= comparar_valor("PosicionClusterParticipacionE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalParticipacionE")%>;">
+      <%= comparar_valor("PosicionTotalParticipacionE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -174,10 +243,20 @@
   <td>Seguridad y respeto</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VI_e) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterSeguridadResE")%>;">
+      <%= comparar_valor("PosicionClusterSeguridadResE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalSeguridadResE")%>;">
+      <%= comparar_valor("PosicionTotalSeguridadResE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -186,10 +265,10 @@
   <td>Calificación del servicio educativo</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VII_e) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0%;"></strong></div></td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0%;"></strong></div></td>
   <td width="3%">100%</td>
 
 </tr>
@@ -198,10 +277,20 @@
   <td><b>Total Dimensión</b></td>
   <td class="resulie"><%=verbose_progreso(@ambientes.Ambi_escol_e) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterAmbienteEscolarE")%>;">
+      <%= comparar_valor("PosicionClusterAmbienteEscolarE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalAmbienteEscolarE")%>;">
+      <%= comparar_valor("PosicionTotalAmbienteEscolarE") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -214,10 +303,20 @@
   <td>Expectativas acad&eacute;micas</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.III_d) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterExpectativasAD")%>;">
+      <%= comparar_valor("PosicionClusterExpectativasAD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalExpectativasAD")%>;">
+      <%= comparar_valor("PosicionTotalExpectativasAD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -226,10 +325,20 @@
   <td>Comunicaci&oacute;n</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.IV_d) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterComunicacionD")%>;">
+      <%= comparar_valor("PosicionClusterComunicacionD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalComunicacionD")%>;">
+      <%= comparar_valor("PosicionTotalComunicacionD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -238,10 +347,20 @@
   <td>Compromiso</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.V_d) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterParticipacionD")%>;">
+      <%= comparar_valor("PosicionClusterParticipacionD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalParticipacionD")%>;">
+      <%= comparar_valor("PosicionTotalParticipacionD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -250,10 +369,20 @@
   <td>Seguridad y respeto</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VI_d) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterSeguridadResD")%>;">
+      <%= comparar_valor("PosicionClusterSeguridadResD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalSeguridadResD")%>;">
+      <%= comparar_valor("PosicionTotalSeguridadResD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -262,10 +391,10 @@
   <td>Calificación del servicio educativo</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VII_d) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0%;"></strong></div></td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0%;"></strong></div></td>
   <td width="3%">100%</td>
 
 </tr>
@@ -274,10 +403,20 @@
   <td><b>Total Dimensión</b></td>
   <td class="resulie"><%=verbose_progreso(@ambientes.Ambi_escol_d) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterAmbienteEscolarD")%>;">
+      <%= comparar_valor("PosicionClusterAmbienteEscolarD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalAmbienteEscolarD")%>;">
+      <%= comparar_valor("PosicionTotalAmbienteEscolarD") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -291,10 +430,20 @@
   <td>Expectativas acad&eacute;micas</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.III_p) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterExpectativasAP")%>;">
+      <%= comparar_valor("PosicionClusterExpectativasAP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalExpectativasAP")%>;">
+      <%= comparar_valor("PosicionTotalExpectativasAP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -303,10 +452,20 @@
   <td>Comunicaci&oacute;n</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.IV_p) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterComunicacionP")%>;">
+      <%= comparar_valor("PosicionClusterComunicacionP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalComunicacionP")%>;">
+      <%= comparar_valor("PosicionTotalComunicacionP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -315,10 +474,20 @@
   <td>Compromiso</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.V_p) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterParticipacionP")%>;">
+      <%= comparar_valor("PosicionClusterParticipacionP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalParticipacionP")%>;">
+      <%= comparar_valor("PosicionTotalParticipacionP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -327,10 +496,20 @@
   <td>Seguridad y respeto</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VI_p) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterSeguridadResP")%>;">
+      <%= comparar_valor("PosicionClusterSeguridadResP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalSeguridadResP")%>;">
+      <%= comparar_valor("PosicionTotalSeguridadResP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>
@@ -339,10 +518,10 @@
   <td>Calificación del servicio educativo</td>
   <td class="resulie"><%=verbose_progreso(@ambientes.VII_p) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0%;"></strong></div></td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 0%;"></strong></div></td>
   <td width="3%">100%</td>
 
 </tr>
@@ -351,10 +530,20 @@
   <td><b>Total Dimensión</b></td>
   <td class="resulie"><%=verbose_progreso(@ambientes.Ambi_escol_p) %></td>
   <td width="3%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionClusterAmbienteEscolarP")%>;">
+      <%= comparar_valor("PosicionClusterAmbienteEscolarP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
   <td width="5%">0%</td>
-  <td class="puntaje"><div class="grafico"><strong class="barra" style="width: 24%;">24%</strong></div></td>
+  <td class="puntaje">
+    <div class="grafico"><strong class="barra" style="width: <%= comparar_ancho("PosicionTotalAmbienteEscolarP")%>;">
+      <%= comparar_valor("PosicionTotalAmbienteEscolarP") %>
+    </strong>
+    </div>
+  </td>
   <td width="3%">100%</td>
 
 </tr>

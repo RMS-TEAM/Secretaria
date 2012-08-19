@@ -134,7 +134,7 @@ module ReportesHelper
     if word.blank?
       "No Registra"
     else
-      "#{word.to_f.round(2) * 100}%"
+      "#{(word.to_f.round(4) * 100).round(3)}%"
     end
 
   end
@@ -204,7 +204,35 @@ module ReportesHelper
     ((number.to_f * 100 )/top).round(2)
   end
 
+  def posicion(arr, id)
+    posicion = 0
+    arr.each do |resultado|
+      posicion += 1
+      break if resultado.dane.to_s.eql? id
 
+    end
+    posicion
+
+  end
+
+  def comparar_ancho(metod)
+    resultado = eval("@comparaciones"+"."+metod)
+    if resultado.blank?
+      "0%"
+    else
+      "#{resultado}%"
+    end
+
+  end
+
+  def comparar_valor(metod)
+    resultado = eval("@comparaciones"+"."+metod)
+    if resultado.blank?
+      " "
+    else
+      "#{resultado}%"
+    end
+  end
 
 
 end

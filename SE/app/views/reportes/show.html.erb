@@ -256,7 +256,7 @@
                                 <td width="2%"> 0% </td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.AmbienteEscolar1.round(2),26) %>%;"> <%=  percent(@multivariados.AmbienteEscolar1.round(2),26) %>%</strong></div></td>
                                 <td width="2%">100%</td>
-                                <td class="puntaje"><strong><%= grade_ambiente(@multivariados.AmbienteEscolar1) %></strong></td>
+                                <td class="puntaje"><strong><%= @educacionr.AmbienteEscolarR %></strong></td>
                         </tr>
                         <tr>
                                 <td>Rendimiento Académico</td>
@@ -264,7 +264,7 @@
                                 <td width="2%"> 0% </td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.Rendimiento1.round(2),37)%>%;"><%=percent(@multivariados.Rendimiento1.round(2),37)%>%</strong></div></td>
                                 <td width="2%">100%</td>
-                                <td class="puntaje"><strong><%= grade_rendimiento(@multivariados.Rendimiento1) %></strong></td>
+                                <td class="puntaje"><strong><%= @educacionr.RendimientoR %></strong></td>
                         </tr>
                         <tr>
                                 <td>Progreso Académico</td>
@@ -272,7 +272,7 @@
                                 <td width="2%"> 0% </td>
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.Progreso1.round(2),35)%>%;"><%=percent(@multivariados.Progreso1.round(2),35)%>%</strong></div></td>
                                 <td width="2%">100%</td>
-                                <td class="puntaje"><strong><%=grade_progreso(@multivariados.Progreso1)  %></strong></td>
+                                <td class="puntaje"><strong><%= @educacionr.ProgresoR  %></strong></td>
                         </tr>
                         <tr>
                                 <td>Puntaje Total (IMCE)</td>
@@ -281,6 +281,15 @@
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariados.IndicadorEducacion,100)%>%;"><%=percent(@multivariados.IndicadorEducacion,100)%>%</strong></div></td>
                                 <td width="2%">100%</td>
                                 <td class="puntaje"><strong><%=grade_total(@multivariados.IndicadorEducacion)  %></strong></td>
+                        </tr>
+                        <tr>
+                                <td>Ubicación en el ranking total</td>
+                                <td class="puntaje" colspan="4"><b>Puesto No. <%= posicion(@posiciones[0],@posiciones.last) %> de 198</b></td>
+                                <td class="puntaje" rowspan="2"><b>No aplica</b></td>
+                        </tr>
+                        <tr>
+                                <td>Ubicación en el ranking de IE pares</td>
+                                <td colspan="4" class="puntaje"><b>Puesto No.<%= posicion(@posiciones[2],@posiciones.last) %> de <%=@posiciones[2].count %></b></td>
                         </tr>
                         <tr>
                                 <td>Bonificaci&oacute;n</td>
@@ -297,6 +306,15 @@
                                 <td class="puntaje"><div class="grafico"><strong class="barra" style="width: <%=percent(@multivariadob.IndicadorBonus.round(2),100)%>%;"> <%=percent(@multivariadob.IndicadorBonus.round(2),100)%>%</strong></div></td>
                                 <td width="2%">100%</td>
                                 <td class="puntaje"><strong><%= grade_total(@multivariadob.IndicadorBonus.round(2)) %></strong></td>
+                        </tr>
+                        <tr>
+                                <td>Ubicación en el ranking total</td>
+                                <td class="puntaje" colspan="4"><b>Puesto No. <%= posicion(@posiciones[1],@posiciones.last) %> de 198</b></td>
+                                <td class="puntaje" rowspan="2"><b>No aplica</b></td>
+                        </tr>
+                        <tr>
+                                <td>Ubicación en el ranking de IE pares</td>
+                                <td colspan="4" class="puntaje"><b>Puesto No.<%= posicion(@posiciones[3],@posiciones.last) %> de <%=@posiciones[3].count %></b></td>
                         </tr>
                 </table>
         </div>

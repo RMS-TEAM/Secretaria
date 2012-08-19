@@ -43,6 +43,13 @@ class ReportesController < ApplicationController
     @taprob = Taprob.find(params[:id])
     @consolidado = []
     Multivariado.all.each {|resul| @consolidado << resul.IndicadorEducacion.to_f}
+    @comparaciones = Comparacion.find(params[:id])
+    @educacionr = Indicadorr.find(params[:id])
+    @posiciones = [Multivariadob.all(:order => "IndicadorEducacion DESC"),
+                   Multivariadob.all(:order => "IndicadorBonus DESC"),
+                   Cluster.find_all_by_Cluster(@cluster.Cluster, :order => "IndicadorEducacion DESC"),
+                   Cluster.find_all_by_Cluster(@cluster.Cluster, :order => "IndicadorBonus DESC"),
+                   params[:id]]
     respond_to do |format|
        format.html # show.html.erb
        format.json  { render :json => @rendimientos }
