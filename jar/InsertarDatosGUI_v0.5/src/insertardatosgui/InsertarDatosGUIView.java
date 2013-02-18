@@ -4,24 +4,24 @@
 
 package insertardatosgui;
 
-import org.jdesktop.application.Action;
-import org.jdesktop.application.ResourceMap;
-import org.jdesktop.application.SingleFrameApplication;
-import org.jdesktop.application.FrameView;
-import org.jdesktop.application.TaskMonitor;
+import com.mysql.jdbc.Connection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.Timer;
-import javax.swing.Icon;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.sql.Statement;
-import com.mysql.jdbc.Connection;
-import java.io.File;
+import javax.swing.Icon;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.Timer;
+import org.jdesktop.application.Action;
+import org.jdesktop.application.FrameView;
+import org.jdesktop.application.ResourceMap;
+import org.jdesktop.application.SingleFrameApplication;
+import org.jdesktop.application.TaskMonitor;
 
 /**
  * The application's main frame.
@@ -353,6 +353,7 @@ private void bExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 Connection con = JDBCConnection.getConexion(dbName, dbUser, dbPass);
                 Statement sentencia = con.createStatement();
 
+                //Leer Linea donde estan los nombres de las columnas e ignorar
                 linea=br.readLine();
                 
                 sentencia.executeUpdate("DELETE FROM "+tabla+"");
@@ -362,8 +363,6 @@ private void bExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 while((linea=br.readLine())!=null){
                     if(i%1000 == 0){
                         System.out.println(i);
-                        //error.setText("Datos insertados: "+ i);
-                        
                     }
 
                     while(linea.contains(",,")){
