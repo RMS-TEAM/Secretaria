@@ -1,1114 +1,1103 @@
-CREATE TABLE `AEDocentes` (
-		`Ano` DATE NOT NULL, 
-		`DANE` CHAR(12) NOT NULL, 
-		`ID` INTEGER NOT NULL, 
-		`ii_1` INTEGER, 
-		`ii_2` VARCHAR(32), 
-		`ii_4` INTEGER, 
-		`ii_40` INTEGER, 
-		`ii_41` INTEGER, 
-		`ii_42` INTEGER, 
-		`ii_43` INTEGER, 
-		`ii_44` INTEGER, 
-		`ii_45` INTEGER, 
-		`ii_46` INTEGER, 
-		`ii_47` INTEGER, 
-		`ii_48` INTEGER, 
-		`ii_5` INTEGER, 
-		`ii_50` INTEGER, 
-		`ii_6` INTEGER, 
-		`ii_60` INTEGER, 
-		`ii_61` INTEGER, 
-		`ii_62` INTEGER, 
-		`ii_63` INTEGER, 
-		`ii_64` INTEGER, 
-		`ii_65` INTEGER, 
-		`ii_66` INTEGER, 
-		`ii_67` INTEGER, 
-		`ii_68` INTEGER, 
-		`ii_69` INTEGER, 
-		`ii_600` INTEGER, 
-		`ii_7` INTEGER, 
-		`ii_70` INTEGER, 
-		`ii_71` INTEGER, 
-		`ii_72` INTEGER, 
-		`ii_73` INTEGER, 
-		`ii_74` INTEGER, 
-		`ii_75` INTEGER, 
-		`ii_76` INTEGER, 
-		`ii_77` INTEGER, 
-		`ii_78` INTEGER, 
-		`ii_79` INTEGER, 
-		`ii_700` INTEGER, 
-		`ii_701` INTEGER, 
-		`ii_702` INTEGER, 
-		`ii_703` INTEGER, 
-		`ii_704` INTEGER, 
-		`ii_705` INTEGER, 
-		`ii_706` INTEGER, 
-		`ii_707` INTEGER, 
-		`ii_8` INTEGER, 
-		`ii_9` INTEGER, 
-		`iii_1` INTEGER, 
-		`iii_2` INTEGER, 
-		`iii_3` INTEGER, 
-		`iii_4` INTEGER, 
-		`iii_5` INTEGER, 
-		`iii_6` INTEGER, 
-		`iii_7` INTEGER, 
-		`iii_8` INTEGER, 
-		`iii_9` INTEGER, 
-		`iii_10` INTEGER, 
-		`iii_11` INTEGER, 
-		`iii_12` INTEGER, 
-		`iii_13` INTEGER, 
-		`iii_14` INTEGER, 
-		`iii_15` INTEGER, 
-		`iii_16` INTEGER, 
-		`iii_17` INTEGER, 
-		`iii_18` INTEGER, 
-		`iii_19` INTEGER, 
-		`iii_20` INTEGER, 
-		`iii_21` INTEGER, 
-		`iii_22` INTEGER, 
-		`iii_23` INTEGER, 
-		`iv_1` INTEGER, 
-		`iv_2` INTEGER, 
-		`iv_3` INTEGER, 
-		`iv_4` INTEGER, 
-		`iv_5` INTEGER, 
-		`iv_6` INTEGER, 
-		`iv_7` INTEGER, 
-		`iv_8` INTEGER, 
-		`iv_9` INTEGER, 
-		`iv_10` INTEGER, 
-		`iv_11` INTEGER, 
-		`iv_12` INTEGER, 
-		`iv_13` INTEGER, 
-		`iv_14` INTEGER, 
-		`v_1` INTEGER, 
-		`v_2` INTEGER, 
-		`v_3` INTEGER, 
-		`v_4` INTEGER, 
-		`v_5` INTEGER, 
-		`v_6` INTEGER, 
-		`v_7` INTEGER, 
-		`v_8` INTEGER, 
-		`v_9` INTEGER, 
-		`v_10` INTEGER, 
-		`v_11` INTEGER, 
-		`v_12` INTEGER, 
-		`v_13` INTEGER, 
-		`v_14` INTEGER, 
-		`v_15` INTEGER, 
-		`vi_1` INTEGER, 
-		`vi_2` INTEGER, 
-		`vi_3` INTEGER, 
-		`vi_4` INTEGER, 
-		`vi_5` INTEGER, 
-		`vi_6` INTEGER, 
-		`vi_7` INTEGER, 
-		`vi_8` INTEGER, 
-		`vi_9` INTEGER, 
-		`vi_10` INTEGER, 
-		`vi_11` INTEGER, 
-		`vi_12` INTEGER, 
-		`vi_13` INTEGER, 
-		`vii_1` INTEGER, 
-		`vii_2` INTEGER
-	)
-	
-	;
-
-CREATE TABLE `AEDocentes1` (
-		`Ano` DATE NOT NULL, 
-		`Comunicacion` DOUBLE, 
-		`Participacion` DOUBLE, 
-		`SeguridadRes` DOUBLE, 
-		`DANE` CHAR(12) NOT NULL, 
-		`EAcademicas` DOUBLE, 
-		`VII_d` DOUBLE, 
-		`AEscolar` DOUBLE
-	)
-	
-	;
-
-CREATE TABLE `AEEstudiantes` (
-		`Ano` DATE NOT NULL, 
-		`DANE` CHAR(12) NOT NULL, 
-		`ID` INTEGER NOT NULL, 
-		`ii_1` DATE, 
-		`ii_2` INTEGER, 
-		`iii_1` INTEGER, 
-		`iii_2` INTEGER, 
-		`iii_3` INTEGER, 
-		`iii_4` INTEGER, 
-		`iii_5` INTEGER, 
-		`iii_6` INTEGER, 
-		`iii_7` INTEGER, 
-		`iii_8` INTEGER, 
-		`iii_9` INTEGER, 
-		`iv_1` INTEGER, 
-		`iv_2` INTEGER, 
-		`iv_3` INTEGER, 
-		`iv_4` INTEGER, 
-		`iv_5` INTEGER, 
-		`iv_6` INTEGER, 
-		`iv_7` INTEGER, 
-		`iv_8` INTEGER, 
-		`iv_9` INTEGER, 
-		`v_1` INTEGER, 
-		`v_2` INTEGER, 
-		`v_3` INTEGER, 
-		`v_4` INTEGER, 
-		`v_5` INTEGER, 
-		`v_6` INTEGER, 
-		`v_7` INTEGER, 
-		`v_8` INTEGER, 
-		`v_9` INTEGER, 
-		`v_10` INTEGER, 
-		`v_11_a` INTEGER, 
-		`v_11_b` INTEGER, 
-		`v_11_c` INTEGER, 
-		`v_11_d` INTEGER, 
-		`v_12` INTEGER, 
-		`v_13` INTEGER, 
-		`v_14` INTEGER, 
-		`v_15` INTEGER, 
-		`vi_1` INTEGER, 
-		`vi_2` INTEGER, 
-		`vi_3` INTEGER, 
-		`vi_4` INTEGER, 
-		`vi_5` INTEGER, 
-		`vi_6` INTEGER, 
-		`vi_7` INTEGER, 
-		`vi_9` INTEGER, 
-		`vi_10` INTEGER, 
-		`vi_11` INTEGER, 
-		`vi_12` INTEGER, 
-		`vi_13` INTEGER, 
-		`vi_14` INTEGER, 
-		`vi_15` INTEGER, 
-		`vi_16` INTEGER, 
-		`vi_17` INTEGER, 
-		`vi_18` INTEGER, 
-		`vii_1` INTEGER
-	)
-	
-	;
-
-CREATE TABLE `AEEstudiantes1` (
-		`Ano` DATE NOT NULL, 
-		`Comunicacion` DOUBLE, 
-		`Participacion` DOUBLE, 
-		`SeguridadRes` DOUBLE, 
-		`DANE` CHAR(12) NOT NULL, 
-		`EAcademicas` DOUBLE, 
-		`VII_e` DOUBLE, 
-		`AEscolar` DOUBLE
-	)
-	
-	;
-
-CREATE TABLE `AEPadres` (
-		`Ano` DATE NOT NULL, 
-		`ID` INTEGER NOT NULL, 
-		`ii1` INTEGER, 
-		`ii2_hijo_a___1_grado_escolar` INTEGER, 
-		`hijo_a___1_jornada` INTEGER, 
-		`hijo_a___2_grado_escolar` INTEGER, 
-		`hijo_a___2_jornada` INTEGER, 
-		`hijo_a___3_grado_escolar` INTEGER, 
-		`hijo_a___3_jornada` INTEGER, 
-		`hijo_a___4_grado_escolar` INTEGER, 
-		`hijo_a___4_jornada` INTEGER, 
-		`hijo_a___5_grado_escolar` INTEGER, 
-		`hijo_a___5_jornada` INTEGER, 
-		`hijo_a___6_grado_escolar` INTEGER, 
-		`hijo_a___6_jornada` INTEGER, 
-		`hijo_a___7_grado_escolar` INTEGER, 
-		`hijo_a___7_jornada` INTEGER, 
-		`hijo_a___8_grado_escolar` INTEGER, 
-		`hijo_a___8_jornada` INTEGER, 
-		`iii_1` INTEGER, 
-		`iii_2` INTEGER, 
-		`iii_3` INTEGER, 
-		`iii_4` INTEGER, 
-		`iii_5` INTEGER, 
-		`iii_6` INTEGER, 
-		`iii_7` INTEGER, 
-		`iii_8` INTEGER, 
-		`iii_9` INTEGER, 
-		`iv_1` INTEGER, 
-		`iv_2` INTEGER, 
-		`iv_3` INTEGER, 
-		`iv_4` INTEGER, 
-		`iv_5` INTEGER, 
-		`iv_6` INTEGER, 
-		`iv_7` INTEGER, 
-		`iv_8` INTEGER, 
-		`iv_9` INTEGER, 
-		`iv_10` CHAR(30), 
-		`iv_11` INTEGER, 
-		`iv_12` INTEGER, 
-		`v_1` INTEGER, 
-		`v_2` INTEGER, 
-		`v_3` INTEGER, 
-		`v_4` INTEGER, 
-		`v_5` INTEGER, 
-		`v_6` INTEGER, 
-		`v_7` INTEGER, 
-		`v_8` INTEGER, 
-		`v_9` INTEGER, 
-		`vi_1` INTEGER, 
-		`vi_2` INTEGER, 
-		`vi_3` INTEGER, 
-		`vi_4` INTEGER, 
-		`vi_5` INTEGER, 
-		`vi_6` INTEGER, 
-		`vi_7` INTEGER, 
-		`vi_8` INTEGER, 
-		`vi_9` INTEGER, 
-		`vi_10` INTEGER, 
-		`vi_11` INTEGER, 
-		`vii_1` INTEGER, 
-		`vii_2` INTEGER, 
-		`vii_20` INTEGER, 
-		`vii_21` INTEGER, 
-		`vii_22` INTEGER, 
-		`vii_23` INTEGER, 
-		`vii_24` INTEGER, 
-		`vii_25` INTEGER, 
-		`vii_26` INTEGER, 
-		`vii_27` INTEGER, 
-		`DANE` CHAR(12) NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `AEPadres1` (
-		`Ano` DATE NOT NULL, 
-		`Comunicación` DOUBLE, 
-		`Participación` DOUBLE, 
-		`SeguridadRes` DOUBLE, 
-		`DANE` CHAR(12) NOT NULL, 
-		`EAcademicas` DOUBLE, 
-		`VII_p` DOUBLE, 
-		`AEscolar` DOUBLE
-	)
-	
-	;
-
-CREATE TABLE `AmbienteEscolar` (
-		`Ano` DATE NOT NULL, 
-		`EAcademicas` DOUBLE, 
-		`Comunicacion` DOUBLE, 
-		`Participacion` DOUBLE, 
-		`SeguridadRespeto` DOUBLE, 
-		`DANE` CHAR(12) NOT NULL, 
-		`AmbienteEscolar` DOUBLE, 
-		`VII_Total` DOUBLE
-	)
-	
-	;
-
-CREATE TABLE `Aprobación` (
-		`Año` DATE NOT NULL, 
-		`Porcentaje Aprobación` DOUBLE, 
-		`Grado` CHAR(5) NOT NULL, 
-		`DANE` CHAR(12) NOT NULL, 
-		`Código Sede` CHAR(5) NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Clusters` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Cluster` INTEGER
-	)
-	
-	;
-
-CREATE TABLE `DANE-ICFES` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Código ICFES` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Departamentos` (
-		`Código Departamento` CHAR(5) NOT NULL, 
-		`Nombre` CHAR(5)
-	)
-	
-	;
-
-CREATE TABLE `Edad Saber Censal` (
-		`DANE` CHAR(12) NOT NULL, 
-		`cod_prueba` INTEGER NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`ID` INTEGER NOT NULL, 
-		`Grado` CHAR(5) NOT NULL, 
-		`Semestre` CHAR(5) NOT NULL, 
-		`Edad` INTEGER
-	)
-	
-	;
-
-CREATE TABLE `Extraedad Oficial` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`Extraedad` INTEGER, 
-		`Número de Estudiantes` INTEGER, 
-		`rtextra` DOUBLE, 
-		`Grado` CHAR(5) NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Extraedad Saber` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`Extraedad` INTEGER, 
-		`Número de Estudiantes` INTEGER, 
-		`rtextra` DOUBLE, 
-		`Grado` CHAR(5) NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Indicadores Imputados` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`l5r` DOUBLE, 
-		`m5r` DOUBLE, 
-		`cn5r` DOUBLE, 
-		`l9r` DOUBLE, 
-		`m9r` DOUBLE, 
-		`cn9r` DOUBLE, 
-		`rango1_l5r` INTEGER, 
-		`rango2_l5r` INTEGER, 
-		`rango3_l5r` INTEGER, 
-		`rango4_l5r` INTEGER, 
-		`rango5_l5r` INTEGER, 
-		`rango6_l5r` INTEGER, 
-		`rango1_m5r` INTEGER, 
-		`rango2_m5r` INTEGER, 
-		`rango3_m5r` INTEGER, 
-		`rango4_m5r` INTEGER, 
-		`rango5_m5r` INTEGER, 
-		`rango6_m5r` INTEGER, 
-		`rango1_l9r` INTEGER, 
-		`rango2_l9r` INTEGER, 
-		`rango3_l9r` INTEGER, 
-		`rango4_l9r` INTEGER, 
-		`rango5_l9r` INTEGER, 
-		`rango6_l9r` INTEGER, 
-		`rango1_m9r` INTEGER, 
-		`rango2_m9r` INTEGER, 
-		`rango3_m9r` INTEGER, 
-		`rango4_m9r` INTEGER, 
-		`rango5_m9r` INTEGER, 
-		`rango6_m9r` INTEGER, 
-		`insuficiente_m9` INTEGER, 
-		`minimo_m9` INTEGER, 
-		`satisfactorio_m9` INTEGER, 
-		`avanzado_m9` INTEGER, 
-		`insuficiente_m5` INTEGER, 
-		`minimo_m5` INTEGER, 
-		`satisfactorio_m5` INTEGER, 
-		`avanzado_m5` INTEGER, 
-		`insuficiente_l9` INTEGER, 
-		`minimo_l9` INTEGER, 
-		`satisfactorio_l9` INTEGER, 
-		`avanzado_l9` INTEGER, 
-		`insuficiente_l5` INTEGER, 
-		`minimo_l5` INTEGER, 
-		`satisfactorio_l5` INTEGER, 
-		`avanzado_l5` INTEGER, 
-		`l5_03` DOUBLE, 
-		`m5_03` DOUBLE, 
-		`l9_03` DOUBLE, 
-		`m9_03` DOUBLE, 
-		`tema_matematica_07` DOUBLE, 
-		`tema_lenguaje_07` DOUBLE, 
-		`mat11_bajo_2007` INTEGER, 
-		`mat11_medio_2007` INTEGER, 
-		`mat11_alto_2007` INTEGER, 
-		`len11_bajo_2007` INTEGER, 
-		`len11_medio_2007` INTEGER, 
-		`len11_alto_2007` INTEGER, 
-		`estu_consecnum` INTEGER, 
-		`prmat_bajo_07_p` DOUBLE, 
-		`prmat_medio_07_p` DOUBLE, 
-		`prmat_alto_07_p` DOUBLE, 
-		`prlen_bajo_07_p` DOUBLE, 
-		`prlen_medio_07_p` DOUBLE, 
-		`prlen_alto_07_p` DOUBLE, 
-		`tema_lenguaje_10` DOUBLE, 
-		`tema_matematica_10` DOUBLE, 
-		`mat11_bajo_2010` INTEGER, 
-		`mat11_medio_2010` INTEGER, 
-		`mat11_alto_2010` INTEGER, 
-		`len11_bajo_2010` INTEGER, 
-		`len11_medio_2010` INTEGER, 
-		`len11_alto_2010` INTEGER, 
-		`prmat_bajo_10_p` DOUBLE, 
-		`prmat_medio_10_p` DOUBLE, 
-		`prmat_alto_10_p` DOUBLE, 
-		`prlen_bajo_10_p` DOUBLE, 
-		`prlen_medio_10_p` DOUBLE, 
-		`prlen_alto_10_p` DOUBLE, 
-		`aprobación5` DOUBLE, 
-		`aprobación9` DOUBLE, 
-		`aprobación11a` DOUBLE, 
-		`aprobación11t` DOUBLE, 
-		`Extraedad` INTEGER, 
-		`n` INTEGER, 
-		`rtextra` DOUBLE, 
-		`orden_lenguaje5_09` INTEGER, 
-		`orden_matematica5_09` INTEGER, 
-		`orden_lenguaje9_09` INTEGER, 
-		`orden_matematica9_09` INTEGER, 
-		`orden_lenguaje11_07` INTEGER, 
-		`orden_matematica11_07` INTEGER, 
-		`orden_lenguaje11_10` INTEGER, 
-		`orden_matematica11_10` INTEGER, 
-		`orden_lenguaje5_03` INTEGER, 
-		`orden_matematica5_03` INTEGER, 
-		`orden_lenguaje9_03` INTEGER, 
-		`orden_matematica9_03` INTEGER, 
-		`diferencia_lenguaje_5` INTEGER, 
-		`diferencia_matematica_5` INTEGER, 
-		`diferencia_lenguaje_9` INTEGER, 
-		`diferencia_matematica_9` INTEGER, 
-		`diferencia_lenguaje_11` INTEGER, 
-		`diferencia_matematica_11` INTEGER, 
-		`Progresolen5` DOUBLE, 
-		`Progresolen9` DOUBLE, 
-		`Progresolen11` DOUBLE, 
-		`Progresomat5` DOUBLE, 
-		`Progresomat9` DOUBLE, 
-		`Progresomat11` DOUBLE, 
-		`indicadorsin5ni9` DOUBLE, 
-		`totalmedianas11` DOUBLE, 
-		`avanzado_m9a` INTEGER, 
-		`avanzado_m5a` INTEGER, 
-		`avanzado_l9a` INTEGER, 
-		`avanzado_l5a` INTEGER, 
-		`avanzado_m9b` INTEGER, 
-		`avanzado_m5b` INTEGER, 
-		`avanzado_l9b` INTEGER, 
-		`avanzado_l5b` INTEGER, 
-		`apro11mean` DOUBLE, 
-		`totalavanzados` INTEGER, 
-		`tema_matematicaa` DOUBLE, 
-		`tema_matematica_da` DOUBLE, 
-		`tema_lenguajea` DOUBLE, 
-		`tema_lenguaje_da` DOUBLE, 
-		`prlen_alto_07a` DOUBLE, 
-		`prmat_alto_07a` DOUBLE, 
-		`prlen_alto_10a` DOUBLE, 
-		`prmat_alto_10a` DOUBLE, 
-		`tema_matematicab` DOUBLE, 
-		`tema_matematica_db` DOUBLE, 
-		`tema_lenguajeb` DOUBLE, 
-		`tema_lenguaje_db` DOUBLE, 
-		`prlen_alto_07b` DOUBLE, 
-		`prmat_alto_07b` DOUBLE, 
-		`prlen_alto_10b` DOUBLE, 
-		`prmat_alto_10b` DOUBLE, 
-		`TemaMatematica07` DOUBLE, 
-		`TemaLenguaje07` DOUBLE, 
-		`prmatalto07` DOUBLE, 
-		`prlenalto07` DOUBLE, 
-		`TemaLenguaje10` DOUBLE, 
-		`TemaMatematica10` DOUBLE, 
-		`prmatalto10` DOUBLE, 
-		`prlenalto10` DOUBLE, 
-		`Avanzadom9` INTEGER, 
-		`Avanzadom5` INTEGER, 
-		`Avanzadol9` INTEGER, 
-		`Avanzadol5` INTEGER, 
-		`Aprobacion5` DOUBLE, 
-		`Aprobacion9` DOUBLE, 
-		`Rextraedad` DOUBLE, 
-		`ProgresoLen5-final` DOUBLE, 
-		`ProgresoLen9-final` DOUBLE, 
-		`ProgresoMat5-final` DOUBLE, 
-		`ProgresoMat9-final` DOUBLE, 
-		`ProgresoLen11-final` DOUBLE, 
-		`ProgresoMat11-final` DOUBLE
-	)
-	
-	;
-
-CREATE TABLE `Indice Aprendizaje Eficiencia` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`l5r` DOUBLE, 
-		`m5r` DOUBLE, 
-		`cn5r` DOUBLE, 
-		`l9r` DOUBLE, 
-		`m9r` DOUBLE, 
-		`cn9r` DOUBLE, 
-		`rango1_l5r` INTEGER, 
-		`rango2_l5r` INTEGER, 
-		`rango3_l5r` INTEGER, 
-		`rango4_l5r` INTEGER, 
-		`rango5_l5r` INTEGER, 
-		`rango6_l5r` INTEGER, 
-		`rango1_m5r` INTEGER, 
-		`rango2_m5r` INTEGER, 
-		`rango3_m5r` INTEGER, 
-		`rango4_m5r` INTEGER, 
-		`rango5_m5r` INTEGER, 
-		`rango6_m5r` INTEGER, 
-		`rango1_l9r` INTEGER, 
-		`rango2_l9r` INTEGER, 
-		`rango3_l9r` INTEGER, 
-		`rango4_l9r` INTEGER, 
-		`rango5_l9r` INTEGER, 
-		`rango6_l9r` INTEGER, 
-		`rango1_m9r` INTEGER, 
-		`rango2_m9r` INTEGER, 
-		`rango3_m9r` INTEGER, 
-		`rango4_m9r` INTEGER, 
-		`rango5_m9r` INTEGER, 
-		`rango6_m9r` INTEGER, 
-		`insuficiente_m9` INTEGER, 
-		`minimo_m9` INTEGER, 
-		`satisfactorio_m9` INTEGER, 
-		`avanzado_m9` INTEGER, 
-		`insuficiente_m5` INTEGER, 
-		`minimo_m5` INTEGER, 
-		`satisfactorio_m5` INTEGER, 
-		`avanzado_m5` INTEGER, 
-		`insuficiente_l9` INTEGER, 
-		`minimo_l9` INTEGER, 
-		`satisfactorio_l9` INTEGER, 
-		`avanzado_l9` INTEGER, 
-		`insuficiente_l5` INTEGER, 
-		`minimo_l5` INTEGER, 
-		`satisfactorio_l5` INTEGER, 
-		`avanzado_l5` INTEGER, 
-		`l5_03` DOUBLE, 
-		`m5_03` DOUBLE, 
-		`l9_03` DOUBLE, 
-		`m9_03` DOUBLE, 
-		`tema_matematica_07` DOUBLE, 
-		`tema_lenguaje_07` DOUBLE, 
-		`mat11_bajo_2007` INTEGER, 
-		`mat11_medio_2007` INTEGER, 
-		`mat11_alto_2007` INTEGER, 
-		`len11_bajo_2007` INTEGER, 
-		`len11_medio_2007` INTEGER, 
-		`len11_alto_2007` INTEGER, 
-		`estu_consecnum` INTEGER, 
-		`prmat_bajo_07_p` DOUBLE, 
-		`prmat_medio_07_p` DOUBLE, 
-		`prmat_alto_07_p` DOUBLE, 
-		`prlen_bajo_07_p` DOUBLE, 
-		`prlen_medio_07_p` DOUBLE, 
-		`prlen_alto_07_p` DOUBLE, 
-		`tema_lenguaje_10` DOUBLE, 
-		`tema_matematica_10` DOUBLE, 
-		`mat11_bajo_2010` INTEGER, 
-		`mat11_medio_2010` INTEGER, 
-		`mat11_alto_2010` INTEGER, 
-		`len11_bajo_2010` INTEGER, 
-		`len11_medio_2010` INTEGER, 
-		`len11_alto_2010` INTEGER, 
-		`prmat_bajo_10_p` DOUBLE, 
-		`prmat_medio_10_p` DOUBLE, 
-		`prmat_alto_10_p` DOUBLE, 
-		`prlen_bajo_10_p` DOUBLE, 
-		`prlen_medio_10_p` DOUBLE, 
-		`prlen_alto_10_p` DOUBLE, 
-		`aprobación5` DOUBLE, 
-		`aprobación9` DOUBLE, 
-		`aprobación11a` DOUBLE, 
-		`aprobación11t` DOUBLE, 
-		`Extraedad` INTEGER, 
-		`n` INTEGER, 
-		`rtextra` DOUBLE, 
-		`orden_lenguaje5_09` INTEGER, 
-		`orden_matematica5_09` INTEGER, 
-		`orden_lenguaje9_09` INTEGER, 
-		`orden_matematica9_09` INTEGER, 
-		`orden_lenguaje11_07` INTEGER, 
-		`orden_matematica11_07` INTEGER, 
-		`orden_lenguaje11_10` INTEGER, 
-		`orden_matematica11_10` INTEGER, 
-		`orden_lenguaje5_03` INTEGER, 
-		`orden_matematica5_03` INTEGER, 
-		`orden_lenguaje9_03` INTEGER, 
-		`orden_matematica9_03` INTEGER, 
-		`diferencia_lenguaje_5` INTEGER, 
-		`diferencia_matematica_5` INTEGER, 
-		`diferencia_lenguaje_9` INTEGER, 
-		`diferencia_matematica_9` INTEGER, 
-		`diferencia_lenguaje_11` INTEGER, 
-		`diferencia_matematica_11` INTEGER, 
-		`Progresolen5` DOUBLE, 
-		`Progresolen9` DOUBLE, 
-		`Progresolen11` DOUBLE, 
-		`Progresomat5` DOUBLE, 
-		`Progresomat9` DOUBLE, 
-		`Progresomat11` DOUBLE
-	)
-	
-	;
-
-CREATE TABLE `InstitucionEducativa` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Nombre corto` VARCHAR(30), 
-		`Nombre` CHAR(5), 
-		`Comuna_ie` INTEGER, 
-		`Núcleo` INTEGER, 
-		`Direccion` DOUBLE, 
-		`Telefono` DOUBLE, 
-		`Fax` DOUBLE, 
-		`Nombre Director` DOUBLE, 
-		`Calendario` DOUBLE, 
-		`Genero Población` CHAR(5), 
-		`Código Naturaleza` CHAR(5) NOT NULL, 
-		`Código Zona` CHAR(5) NOT NULL, 
-		`Código Departamento` CHAR(5) NOT NULL, 
-		`Código Municipio` CHAR(5) NOT NULL, 
-		`Código Jornada` CHAR(5) NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Jornadas` (
-		`Código Jornada` CHAR(5) NOT NULL, 
-		`Jornada` CHAR(5)
-	)
-	
-	;
-
-CREATE TABLE `Municipios` (
-		`Código Municipio` CHAR(5) NOT NULL, 
-		`Nombre` VARCHAR(40)
-	)
-	
-	;
-
-CREATE TABLE `Naturalezas` (
-		`Código Naturaleza` CHAR(5) NOT NULL, 
-		`Naturaleza` CHAR(5)
-	)
-	
-	;
-
-CREATE TABLE `Notas` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`Nota` VARCHAR(255)
-	)
-	
-	;
-
-CREATE TABLE `Olimpiadas` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`Total Matemáticas` INTEGER, 
-		`Total Lenguaje` INTEGER, 
-		`Grado` INTEGER NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Opciones Educativas` (
-		`Código Opción Educativa` CHAR(5) NOT NULL, 
-		`Opción Educativa` CHAR(5)
-	)
-	
-	;
-
-CREATE TABLE `Pesos` (
-		`ID` CHAR(5) NOT NULL, 
-		`ExpectativasAcademicas` DOUBLE, 
-		`Comunicacion` DOUBLE, 
-		`Participacion` DOUBLE, 
-		`SeguridadRespeto` DOUBLE, 
-		`TemaMatematica07` DOUBLE, 
-		`TemaLenguaje07` DOUBLE, 
-		`prmatalto07` DOUBLE, 
-		`prlenalto07` DOUBLE, 
-		`TemaLenguaje10` DOUBLE, 
-		`TemaMatematica10` DOUBLE, 
-		`prmatalto10` DOUBLE, 
-		`prlenalto10` DOUBLE, 
-		`Avanzadom9` DOUBLE, 
-		`Avanzadom5` DOUBLE, 
-		`Avanzadol9` DOUBLE, 
-		`Avanzadol5` DOUBLE, 
-		`Aprobacion5` DOUBLE, 
-		`Aprobacion9` DOUBLE, 
-		`Rextraedad` DOUBLE, 
-		`ProgresoLen5` DOUBLE, 
-		`ProgresoLen9` DOUBLE, 
-		`ProgresoMat5` DOUBLE, 
-		`ProgresoMat9` DOUBLE, 
-		`ProgresoLen11` DOUBLE, 
-		`ProgresoMat11` DOUBLE
-	)
-	
-	;
-
-CREATE TABLE `Proporción Estrato` (
-		`Proporción estrato 1` DOUBLE, 
-		`Proporción estrato 6` DOUBLE, 
-		`Proposción estrato 2` DOUBLE, 
-		`Proporción estrato 3` DOUBLE, 
-		`Proporción estrato 4` DOUBLE, 
-		`Proporción estrato 5` DOUBLE, 
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` CHAR(5) NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Pruebas` (
-		`cod_prueba` INTEGER NOT NULL, 
-		`Prueba` VARCHAR(30), 
-		`Usada` INTEGER
-	)
-	
-	;
-
-CREATE TABLE `Saber Censal` (
-		`Año` CHAR(5) NOT NULL, 
-		`DANE` CHAR(12) NOT NULL, 
-		`Valor` CHAR(5), 
-		`ID` CHAR(5) NOT NULL, 
-		`Grado` CHAR(5) NOT NULL, 
-		`Semestre` CHAR(5) NOT NULL, 
-		`cod_prueba` INTEGER NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Saber` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Año` DATE NOT NULL, 
-		`Grado` INTEGER NOT NULL, 
-		`Jornada` CHAR(5), 
-		`Mediana` DOUBLE, 
-		`Porcentaje Bajo` CHAR(5), 
-		`Porcentaje Medio` CHAR(5), 
-		`Porcentaje Alto` CHAR(5), 
-		`cod_prueba` INTEGER NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Sede` (
-		`DANE` CHAR(12) NOT NULL, 
-		`Código Sede` CHAR(5) NOT NULL
-	)
-	
-	;
-
-CREATE TABLE `Zonas` (
-		`Código Zona` CHAR(5) NOT NULL, 
-		`Zona` CHAR(5)
-	)
-	
-	;
-
-ALTER TABLE `AEDocentes` ADD CONSTRAINT `AEDocentes_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Ano`, 
-	 `ID`);
-
-ALTER TABLE `AEDocentes1` ADD CONSTRAINT `AEPadres1_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Ano`);
-
-ALTER TABLE `AEEstudiantes` ADD CONSTRAINT `AEEstudiantes_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Ano`, 
-	 `ID`);
-
-ALTER TABLE `AEEstudiantes1` ADD CONSTRAINT `AEPadres1_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Ano`);
-
-ALTER TABLE `AEPadres` ADD CONSTRAINT `AEPadres_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Ano`, 
-	 `ID`);
-
-ALTER TABLE `AEPadres1` ADD CONSTRAINT `AEPadres1_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Ano`);
-
-ALTER TABLE `AmbienteEscolar` ADD CONSTRAINT `Expectativas Padres_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Ano`);
-
-ALTER TABLE `Aprobación` ADD CONSTRAINT `Aprobación_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Código Sede`, 
-	 `Año`, 
-	 `Grado`);
-
-ALTER TABLE `Clusters` ADD CONSTRAINT `Clulsters_PK` PRIMARY KEY
-	(`DANE`);
-
-ALTER TABLE `DANE-ICFES` ADD CONSTRAINT `DANE-ICFES_PK` PRIMARY KEY
-	(`Código ICFES`, 
-	 `Año`);
-
-ALTER TABLE `Departamentos` ADD CONSTRAINT `Departamentos_PK` PRIMARY KEY
-	(`Código Departamento`);
-
-ALTER TABLE `Edad Saber Censal` ADD CONSTRAINT `Edad Saber Censal_PK` PRIMARY KEY
-	(`DANE`, 
-	 `cod_prueba`, 
-	 `Año`, 
-	 `ID`, 
-	 `Grado`, 
-	 `Semestre`);
-
-ALTER TABLE `Extraedad Oficial` ADD CONSTRAINT `Extraedad_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Año`, 
-	 `Grado`);
-
-ALTER TABLE `Extraedad Saber` ADD CONSTRAINT `Extraedad_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Año`, 
-	 `Grado`);
-
-ALTER TABLE `Indicadores Imputados` ADD CONSTRAINT `Indice Aprendizaje Eficiencia_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Año`);
-
-ALTER TABLE `Indice Aprendizaje Eficiencia` ADD CONSTRAINT `Indice Aprendizaje Eficiencia_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Año`);
-
-ALTER TABLE `InstitucionEducativa` ADD CONSTRAINT `Institución Educativa_PK` PRIMARY KEY
-	(`DANE`);
-
-ALTER TABLE `Jornadas` ADD CONSTRAINT `Jornadas_PK` PRIMARY KEY
-	(`Código Jornada`);
-
-ALTER TABLE `Municipios` ADD CONSTRAINT `Municipios_PK` PRIMARY KEY
-	(`Código Municipio`);
-
-ALTER TABLE `Naturalezas` ADD CONSTRAINT `Naturaleza_PK` PRIMARY KEY
-	(`Código Naturaleza`);
-
-ALTER TABLE `Notas` ADD CONSTRAINT `Notas_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Año`);
-
-ALTER TABLE `Olimpiadas` ADD CONSTRAINT `Olimpiadas_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Año`, 
-	 `Grado`);
-
-ALTER TABLE `Opciones Educativas` ADD CONSTRAINT `Opciones Educativas_PK` PRIMARY KEY
-	(`Código Opción Educativa`);
-
-ALTER TABLE `Pesos` ADD CONSTRAINT `Pesos_PK` PRIMARY KEY
-	(`ID`);
-
-ALTER TABLE `Proporción Estrato` ADD CONSTRAINT `Proporción Estrato_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Año`);
-
-ALTER TABLE `Pruebas` ADD CONSTRAINT `Prueba_PK` PRIMARY KEY
-	(`cod_prueba`);
-
-ALTER TABLE `Saber Censal` ADD CONSTRAINT `Saber Censal_PK` PRIMARY KEY
-	(`DANE`, 
-	 `cod_prueba`, 
-	 `Año`, 
-	 `ID`, 
-	 `Grado`, 
-	 `Semestre`);
-
-ALTER TABLE `Saber` ADD CONSTRAINT `Saber 5 y 9_PK` PRIMARY KEY
-	(`DANE`, 
-	 `cod_prueba`, 
-	 `Año`, 
-	 `Grado`);
-
-ALTER TABLE `Sede` ADD CONSTRAINT `Sede_PK` PRIMARY KEY
-	(`DANE`, 
-	 `Código Sede`);
-
-ALTER TABLE `Zonas` ADD CONSTRAINT `Zonas_PK` PRIMARY KEY
-	(`Código Zona`);
-
-ALTER TABLE `AEDocentes1` ADD CONSTRAINT `AEDocentes1_InstitucionEducativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `AEEstudiantes1` ADD CONSTRAINT `AEEstudiantes1_InstitucionEducativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `AEPadres1` ADD CONSTRAINT `AEPadres1_InstitucionEducativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `AmbienteEscolar` ADD CONSTRAINT `Expectativas Institución Educativa_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Aprobación` ADD CONSTRAINT `Aprobación_Sede_FK` FOREIGN KEY
-	(`DANE`, 
-	 `Código Sede`)
-	REFERENCES `Sede`
-	(`DANE`, 
-	 `Código Sede`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Clusters` ADD CONSTRAINT `Clulsters_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `DANE-ICFES` ADD CONSTRAINT `DANE-ICFES_Institución Educativa_FK` FOREIGN KEY
-	(`Código ICFES`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Edad Saber Censal` ADD CONSTRAINT `Edad Saber Censal_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Edad Saber Censal` ADD CONSTRAINT `Edad Saber Censal_Pruebas_FK` FOREIGN KEY
-	(`cod_prueba`)
-	REFERENCES `Pruebas`
-	(`cod_prueba`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Extraedad Oficial` ADD CONSTRAINT `Extraedad Oficial_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Extraedad Oficial` ADD CONSTRAINT `Extraedad_Oficial_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Extraedad Saber` ADD CONSTRAINT `Extraedad_Saber_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Indicadores Imputados` ADD CONSTRAINT `Indicadores Imputados_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Indice Aprendizaje Eficiencia` ADD CONSTRAINT `Indice Aprendizaje Eficiencia_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `InstitucionEducativa` ADD CONSTRAINT `Institución Educativa_Departamentos_FK` FOREIGN KEY
-	(`Código Departamento`)
-	REFERENCES `Departamentos`
-	(`Código Departamento`)
-	ON DELETE RESTRICT;
-
-ALTER TABLE `InstitucionEducativa` ADD CONSTRAINT `Institución Educativa_Jornadas_FK` FOREIGN KEY
-	(`Código Jornada`)
-	REFERENCES `Jornadas`
-	(`Código Jornada`)
-	ON DELETE RESTRICT;
-
-ALTER TABLE `InstitucionEducativa` ADD CONSTRAINT `Institución Educativa_Municipios_FK` FOREIGN KEY
-	(`Código Municipio`)
-	REFERENCES `Municipios`
-	(`Código Municipio`)
-	ON DELETE RESTRICT;
-
-ALTER TABLE `InstitucionEducativa` ADD CONSTRAINT `Institución Educativa_Naturalezas_FK` FOREIGN KEY
-	(`Código Naturaleza`)
-	REFERENCES `Naturalezas`
-	(`Código Naturaleza`)
-	ON DELETE RESTRICT;
-
-ALTER TABLE `InstitucionEducativa` ADD CONSTRAINT `Institución Educativa_Zonas_FK` FOREIGN KEY
-	(`Código Zona`)
-	REFERENCES `Zonas`
-	(`Código Zona`)
-	ON DELETE RESTRICT;
-
-ALTER TABLE `Notas` ADD CONSTRAINT `Notas_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Olimpiadas` ADD CONSTRAINT `Olimpiadas_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Proporción Estrato` ADD CONSTRAINT `Proporción Estrato_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Saber Censal` ADD CONSTRAINT `Saber Censal_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Saber Censal` ADD CONSTRAINT `Saber Censal_Pruebas_FK` FOREIGN KEY
-	(`cod_prueba`)
-	REFERENCES `Pruebas`
-	(`cod_prueba`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Saber` ADD CONSTRAINT `Saber 5 y 9_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Saber` ADD CONSTRAINT `Saber_Pruebas_FK` FOREIGN KEY
-	(`cod_prueba`)
-	REFERENCES `Pruebas`
-	(`cod_prueba`)
-	ON DELETE CASCADE;
-
-ALTER TABLE `Sede` ADD CONSTRAINT `Sede_Institución Educativa_FK` FOREIGN KEY
-	(`DANE`)
-	REFERENCES `InstitucionEducativa`
-	(`DANE`)
-	ON DELETE RESTRICT;
-
+-- phpMyAdmin SQL Dump
+-- version 3.5.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 27, 2013 at 03:59 PM
+-- Server version: 5.5.25a
+-- PHP Version: 5.4.4
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `Secretaria`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aedocentes`
+--
+
+CREATE TABLE IF NOT EXISTS `aedocentes` (
+  `Ano` date NOT NULL,
+  `DANE` int(20) NOT NULL,
+  `ID` int(20) NOT NULL AUTO_INCREMENT,
+  `ii_2` varchar(32) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `ii_4` int(11) DEFAULT NULL,
+  `ii_40` int(11) DEFAULT NULL,
+  `ii_41` int(11) DEFAULT NULL,
+  `ii_42` int(11) DEFAULT NULL,
+  `ii_43` int(11) DEFAULT NULL,
+  `ii_44` int(11) DEFAULT NULL,
+  `ii_45` int(11) DEFAULT NULL,
+  `ii_46` int(11) DEFAULT NULL,
+  `ii_47` int(11) DEFAULT NULL,
+  `ii_48` int(11) DEFAULT NULL,
+  `ii_60` int(11) DEFAULT NULL,
+  `ii_61` int(11) DEFAULT NULL,
+  `ii_62` int(11) DEFAULT NULL,
+  `ii_63` int(11) DEFAULT NULL,
+  `ii_64` int(11) DEFAULT NULL,
+  `ii_65` int(11) DEFAULT NULL,
+  `ii_66` int(11) DEFAULT NULL,
+  `ii_67` int(11) DEFAULT NULL,
+  `ii_68` int(11) DEFAULT NULL,
+  `ii_69` int(11) DEFAULT NULL,
+  `ii_600` int(11) DEFAULT NULL,
+  `ii_70` int(11) DEFAULT NULL,
+  `ii_71` int(11) DEFAULT NULL,
+  `ii_72` int(11) DEFAULT NULL,
+  `ii_73` int(11) DEFAULT NULL,
+  `ii_74` int(11) DEFAULT NULL,
+  `ii_75` int(11) DEFAULT NULL,
+  `ii_76` int(11) DEFAULT NULL,
+  `ii_77` int(11) DEFAULT NULL,
+  `ii_78` int(11) DEFAULT NULL,
+  `ii_79` int(11) DEFAULT NULL,
+  `ii_700` int(11) DEFAULT NULL,
+  `ii_701` int(11) DEFAULT NULL,
+  `ii_702` int(11) DEFAULT NULL,
+  `ii_703` int(11) DEFAULT NULL,
+  `ii_704` int(11) DEFAULT NULL,
+  `ii_705` int(11) DEFAULT NULL,
+  `ii_706` int(11) DEFAULT NULL,
+  `ii_707` int(11) DEFAULT NULL,
+  `iii_1` int(11) DEFAULT NULL,
+  `iii_2` int(11) DEFAULT NULL,
+  `iii_3` int(11) DEFAULT NULL,
+  `iii_4` int(11) DEFAULT NULL,
+  `iii_5` int(11) DEFAULT NULL,
+  `iii_6` int(11) DEFAULT NULL,
+  `iii_7` int(11) DEFAULT NULL,
+  `iii_8` int(11) DEFAULT NULL,
+  `iii_9` int(11) DEFAULT NULL,
+  `iii_10` int(11) DEFAULT NULL,
+  `iii_11` int(11) DEFAULT NULL,
+  `iii_12` int(11) DEFAULT NULL,
+  `iii_13` int(11) DEFAULT NULL,
+  `iii_14` int(11) DEFAULT NULL,
+  `iii_15` int(11) DEFAULT NULL,
+  `iii_16` int(11) DEFAULT NULL,
+  `iii_17` int(11) DEFAULT NULL,
+  `iii_18` int(11) DEFAULT NULL,
+  `iii_19` int(11) DEFAULT NULL,
+  `iii_20` int(11) DEFAULT NULL,
+  `iii_21` int(11) DEFAULT NULL,
+  `iii_22` int(11) DEFAULT NULL,
+  `iii_23` int(11) DEFAULT NULL,
+  `iv_1` int(11) DEFAULT NULL,
+  `iv_2` int(11) DEFAULT NULL,
+  `iv_3` int(11) DEFAULT NULL,
+  `iv_4` int(11) DEFAULT NULL,
+  `iv_5` int(11) DEFAULT NULL,
+  `iv_6` int(11) DEFAULT NULL,
+  `iv_7` int(11) DEFAULT NULL,
+  `iv_8` int(11) DEFAULT NULL,
+  `iv_9` int(11) DEFAULT NULL,
+  `iv_10` int(11) DEFAULT NULL,
+  `iv_11` int(11) DEFAULT NULL,
+  `iv_12` int(11) DEFAULT NULL,
+  `iv_13` int(11) DEFAULT NULL,
+  `iv_14` int(11) DEFAULT NULL,
+  `v_1` int(11) DEFAULT NULL,
+  `v_2` int(11) DEFAULT NULL,
+  `v_3` int(11) DEFAULT NULL,
+  `v_4` int(11) DEFAULT NULL,
+  `v_5` int(11) DEFAULT NULL,
+  `v_6` int(11) DEFAULT NULL,
+  `v_7` int(11) DEFAULT NULL,
+  `v_8` int(11) DEFAULT NULL,
+  `v_9` int(11) DEFAULT NULL,
+  `v_10` int(11) DEFAULT NULL,
+  `v_11` int(11) DEFAULT NULL,
+  `v_12` int(11) DEFAULT NULL,
+  `v_13` int(11) DEFAULT NULL,
+  `v_14` int(11) DEFAULT NULL,
+  `v_15` int(11) DEFAULT NULL,
+  `vi_1` int(11) DEFAULT NULL,
+  `vi_2` int(11) DEFAULT NULL,
+  `vi_3` int(11) DEFAULT NULL,
+  `vi_4` int(11) DEFAULT NULL,
+  `vi_5` int(11) DEFAULT NULL,
+  `vi_6` int(11) DEFAULT NULL,
+  `vi_7` int(11) DEFAULT NULL,
+  `vi_8` int(11) DEFAULT NULL,
+  `vi_9` int(11) DEFAULT NULL,
+  `vi_10` int(11) DEFAULT NULL,
+  `vi_11` int(11) DEFAULT NULL,
+  `vi_12` int(11) DEFAULT NULL,
+  `vi_13` int(11) DEFAULT NULL,
+  `vii_1` int(11) DEFAULT NULL,
+  `vii_2` int(11) DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Ano`,`ID`),
+  KEY `ID` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aedocentes1`
+--
+
+CREATE TABLE IF NOT EXISTS `aedocentes1` (
+  `DANE` int(20) NOT NULL,
+  `Ano` date NOT NULL,
+  `ComunicacionDocentes` double DEFAULT NULL,
+  `ParticipacionDocentes` double DEFAULT NULL,
+  `SeguridadResDocentes` double DEFAULT NULL,
+  `EAcademicasDocentes` double DEFAULT NULL,
+  `VII_d` double DEFAULT NULL,
+  `AEscolarDocentes` double DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Ano`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aeestudiantes`
+--
+
+CREATE TABLE IF NOT EXISTS `aeestudiantes` (
+  `Ano` date NOT NULL,
+  `DANE` int(20) NOT NULL,
+  `ID` int(20) NOT NULL AUTO_INCREMENT,
+  `ii_1` date DEFAULT NULL,
+  `ii_2` int(11) DEFAULT NULL,
+  `iii_1` int(11) DEFAULT NULL,
+  `iii_2` int(11) DEFAULT NULL,
+  `iii_3` int(11) DEFAULT NULL,
+  `iii_4` int(11) DEFAULT NULL,
+  `iii_5` int(11) DEFAULT NULL,
+  `iii_6` int(11) DEFAULT NULL,
+  `iii_7` int(11) DEFAULT NULL,
+  `iii_8` int(11) DEFAULT NULL,
+  `iii_9` int(11) DEFAULT NULL,
+  `iv_1` int(11) DEFAULT NULL,
+  `iv_2` int(11) DEFAULT NULL,
+  `iv_3` int(11) DEFAULT NULL,
+  `iv_4` int(11) DEFAULT NULL,
+  `iv_5` int(11) DEFAULT NULL,
+  `iv_6` int(11) DEFAULT NULL,
+  `iv_7` int(11) DEFAULT NULL,
+  `iv_8` int(11) DEFAULT NULL,
+  `iv_9` int(11) DEFAULT NULL,
+  `v_1` int(11) DEFAULT NULL,
+  `v_2` int(11) DEFAULT NULL,
+  `v_3` int(11) DEFAULT NULL,
+  `v_4` int(11) DEFAULT NULL,
+  `v_5` int(11) DEFAULT NULL,
+  `v_6` int(11) DEFAULT NULL,
+  `v_7` int(11) DEFAULT NULL,
+  `v_8` int(11) DEFAULT NULL,
+  `v_9` int(11) DEFAULT NULL,
+  `v_10` int(11) DEFAULT NULL,
+  `v_11_a` int(11) DEFAULT NULL,
+  `v_11_b` int(11) DEFAULT NULL,
+  `v_11_c` int(11) DEFAULT NULL,
+  `v_11_d` int(11) DEFAULT NULL,
+  `v_12` int(11) DEFAULT NULL,
+  `v_13` int(11) DEFAULT NULL,
+  `v_14` int(11) DEFAULT NULL,
+  `v_15` int(11) DEFAULT NULL,
+  `vi_1` int(11) DEFAULT NULL,
+  `vi_2` int(11) DEFAULT NULL,
+  `vi_3` int(11) DEFAULT NULL,
+  `vi_4` int(11) DEFAULT NULL,
+  `vi_5` int(11) DEFAULT NULL,
+  `vi_6` int(11) DEFAULT NULL,
+  `vi_7` int(11) DEFAULT NULL,
+  `vi_9` int(11) DEFAULT NULL,
+  `vi_10` int(11) DEFAULT NULL,
+  `vi_11` int(11) DEFAULT NULL,
+  `vi_12` int(11) DEFAULT NULL,
+  `vi_13` int(11) DEFAULT NULL,
+  `vi_14` int(11) DEFAULT NULL,
+  `vi_15` int(11) DEFAULT NULL,
+  `vi_16` int(11) DEFAULT NULL,
+  `vi_17` int(11) DEFAULT NULL,
+  `vi_18` int(11) DEFAULT NULL,
+  `vii_1` int(11) DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Ano`,`ID`),
+  KEY `ID` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aeestudiantes1`
+--
+
+CREATE TABLE IF NOT EXISTS `aeestudiantes1` (
+  `DANE` int(20) NOT NULL,
+  `Ano` date NOT NULL,
+  `ComunicacionEstudiantes` double DEFAULT NULL,
+  `ParticipacionEstudiantes` double DEFAULT NULL,
+  `SeguridadResEstudiantes` double DEFAULT NULL,
+  `EAcademicasEstudiantes` double DEFAULT NULL,
+  `VII_e` double DEFAULT NULL,
+  `AEscolarEstudiantes` double DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Ano`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aepadres`
+--
+
+CREATE TABLE IF NOT EXISTS `aepadres` (
+  `Ano` date NOT NULL,
+  `DANE` int(20) NOT NULL,
+  `ID` int(20) NOT NULL AUTO_INCREMENT,
+  `ii1` int(11) DEFAULT NULL,
+  `ii2_hijo_a___1_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___1_jornada` int(11) DEFAULT NULL,
+  `hijo_a___2_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___2_jornada` int(11) DEFAULT NULL,
+  `hijo_a___3_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___3_jornada` int(11) DEFAULT NULL,
+  `hijo_a___4_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___4_jornada` int(11) DEFAULT NULL,
+  `hijo_a___5_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___5_jornada` int(11) DEFAULT NULL,
+  `hijo_a___6_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___6_jornada` int(11) DEFAULT NULL,
+  `hijo_a___7_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___7_jornada` int(11) DEFAULT NULL,
+  `hijo_a___8_grado_escolar` int(11) DEFAULT NULL,
+  `hijo_a___8_jornada` int(11) DEFAULT NULL,
+  `iii_1` int(11) DEFAULT NULL,
+  `iii_2` int(11) DEFAULT NULL,
+  `iii_3` int(11) DEFAULT NULL,
+  `iii_4` int(11) DEFAULT NULL,
+  `iii_5` int(11) DEFAULT NULL,
+  `iii_6` int(11) DEFAULT NULL,
+  `iii_7` int(11) DEFAULT NULL,
+  `iii_8` int(11) DEFAULT NULL,
+  `iii_9` int(11) DEFAULT NULL,
+  `iv_1` int(11) DEFAULT NULL,
+  `iv_2` int(11) DEFAULT NULL,
+  `iv_3` int(11) DEFAULT NULL,
+  `iv_4` int(11) DEFAULT NULL,
+  `iv_5` int(11) DEFAULT NULL,
+  `iv_6` int(11) DEFAULT NULL,
+  `iv_7` int(11) DEFAULT NULL,
+  `iv_8` int(11) DEFAULT NULL,
+  `iv_9` int(11) DEFAULT NULL,
+  `iv_10` int(30) DEFAULT NULL,
+  `iv_11` int(11) DEFAULT NULL,
+  `iv_12` int(11) DEFAULT NULL,
+  `v_1` int(11) DEFAULT NULL,
+  `v_2` int(11) DEFAULT NULL,
+  `v_3` int(11) DEFAULT NULL,
+  `v_4` int(11) DEFAULT NULL,
+  `v_5` int(11) DEFAULT NULL,
+  `v_6` int(11) DEFAULT NULL,
+  `v_7` int(11) DEFAULT NULL,
+  `v_8` int(11) DEFAULT NULL,
+  `v_9` int(11) DEFAULT NULL,
+  `vi_1` int(11) DEFAULT NULL,
+  `vi_2` int(11) DEFAULT NULL,
+  `vi_3` int(11) DEFAULT NULL,
+  `vi_4` int(11) DEFAULT NULL,
+  `vi_5` int(11) DEFAULT NULL,
+  `vi_6` int(11) DEFAULT NULL,
+  `vi_7` int(11) DEFAULT NULL,
+  `vi_8` int(11) DEFAULT NULL,
+  `vi_9` int(11) DEFAULT NULL,
+  `vi_10` int(11) DEFAULT NULL,
+  `vi_11` int(11) DEFAULT NULL,
+  `vii_1` int(11) DEFAULT NULL,
+  `vii_2` int(11) DEFAULT NULL,
+  `vii_20` int(11) DEFAULT NULL,
+  `vii_21` int(11) DEFAULT NULL,
+  `vii_22` int(11) DEFAULT NULL,
+  `vii_23` int(11) DEFAULT NULL,
+  `vii_24` int(11) DEFAULT NULL,
+  `vii_25` int(11) DEFAULT NULL,
+  `vii_26` int(11) DEFAULT NULL,
+  `vii_27` int(11) DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Ano`,`ID`),
+  KEY `ID` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aepadres1`
+--
+
+CREATE TABLE IF NOT EXISTS `aepadres1` (
+  `DANE` int(20) NOT NULL,
+  `Ano` date NOT NULL,
+  `ComunicacionPadres` double DEFAULT NULL,
+  `ParticipacionPadres` double DEFAULT NULL,
+  `SeguridadResPadres` double DEFAULT NULL,
+  `EAcademicasPadres` double DEFAULT NULL,
+  `VII_p` double DEFAULT NULL,
+  `AEscolarPadres` double DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Ano`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ambienteescolar`
+--
+
+CREATE TABLE IF NOT EXISTS `ambienteescolar` (
+  `DANE` int(20) NOT NULL,
+  `Ano` date NOT NULL,
+  `EAcademicas` double DEFAULT NULL,
+  `Comunicacion` double DEFAULT NULL,
+  `Participacion` double DEFAULT NULL,
+  `SeguridadRespeto` double DEFAULT NULL,
+  `AmbienteEscolar` double DEFAULT NULL,
+  `VII_Total` double DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Ano`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aprobación`
+--
+
+CREATE TABLE IF NOT EXISTS `aprobación` (
+  `Año` date NOT NULL,
+  `Porcentaje Aprobación` double DEFAULT NULL,
+  `Grado` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Código Sede` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`DANE`,`Código Sede`,`Año`,`Grado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clusters`
+--
+
+CREATE TABLE IF NOT EXISTS `clusters` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Cluster` int(11) DEFAULT NULL,
+  PRIMARY KEY (`DANE`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dane-icfes`
+--
+
+CREATE TABLE IF NOT EXISTS `dane-icfes` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Código ICFES` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  PRIMARY KEY (`Código ICFES`,`Año`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departamentos`
+--
+
+CREATE TABLE IF NOT EXISTS `departamentos` (
+  `Código Departamento` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Nombre` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`Código Departamento`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `edad saber censal`
+--
+
+CREATE TABLE IF NOT EXISTS `edad saber censal` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `cod_prueba` int(11) NOT NULL,
+  `Año` date NOT NULL,
+  `ID` int(11) NOT NULL,
+  `Grado` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Semestre` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Edad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`cod_prueba`,`Año`,`ID`,`Grado`,`Semestre`),
+  KEY `Edad Saber Censal_Pruebas_FK` (`cod_prueba`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extraedad oficial`
+--
+
+CREATE TABLE IF NOT EXISTS `extraedad oficial` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  `Extraedad` int(11) DEFAULT NULL,
+  `Número de Estudiantes` int(11) DEFAULT NULL,
+  `rtextra` double DEFAULT NULL,
+  `Grado` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`DANE`,`Año`,`Grado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extraedad saber`
+--
+
+CREATE TABLE IF NOT EXISTS `extraedad saber` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  `Extraedad` int(11) DEFAULT NULL,
+  `Número de Estudiantes` int(11) DEFAULT NULL,
+  `rtextra` double DEFAULT NULL,
+  `Grado` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`DANE`,`Año`,`Grado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `indicadores imputados`
+--
+
+CREATE TABLE IF NOT EXISTS `indicadores imputados` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  `l5r` double DEFAULT NULL,
+  `m5r` double DEFAULT NULL,
+  `cn5r` double DEFAULT NULL,
+  `l9r` double DEFAULT NULL,
+  `m9r` double DEFAULT NULL,
+  `cn9r` double DEFAULT NULL,
+  `rango1_l5r` int(11) DEFAULT NULL,
+  `rango2_l5r` int(11) DEFAULT NULL,
+  `rango3_l5r` int(11) DEFAULT NULL,
+  `rango4_l5r` int(11) DEFAULT NULL,
+  `rango5_l5r` int(11) DEFAULT NULL,
+  `rango6_l5r` int(11) DEFAULT NULL,
+  `rango1_m5r` int(11) DEFAULT NULL,
+  `rango2_m5r` int(11) DEFAULT NULL,
+  `rango3_m5r` int(11) DEFAULT NULL,
+  `rango4_m5r` int(11) DEFAULT NULL,
+  `rango5_m5r` int(11) DEFAULT NULL,
+  `rango6_m5r` int(11) DEFAULT NULL,
+  `rango1_l9r` int(11) DEFAULT NULL,
+  `rango2_l9r` int(11) DEFAULT NULL,
+  `rango3_l9r` int(11) DEFAULT NULL,
+  `rango4_l9r` int(11) DEFAULT NULL,
+  `rango5_l9r` int(11) DEFAULT NULL,
+  `rango6_l9r` int(11) DEFAULT NULL,
+  `rango1_m9r` int(11) DEFAULT NULL,
+  `rango2_m9r` int(11) DEFAULT NULL,
+  `rango3_m9r` int(11) DEFAULT NULL,
+  `rango4_m9r` int(11) DEFAULT NULL,
+  `rango5_m9r` int(11) DEFAULT NULL,
+  `rango6_m9r` int(11) DEFAULT NULL,
+  `insuficiente_m9` int(11) DEFAULT NULL,
+  `minimo_m9` int(11) DEFAULT NULL,
+  `satisfactorio_m9` int(11) DEFAULT NULL,
+  `avanzado_m9` int(11) DEFAULT NULL,
+  `insuficiente_m5` int(11) DEFAULT NULL,
+  `minimo_m5` int(11) DEFAULT NULL,
+  `satisfactorio_m5` int(11) DEFAULT NULL,
+  `avanzado_m5` int(11) DEFAULT NULL,
+  `insuficiente_l9` int(11) DEFAULT NULL,
+  `minimo_l9` int(11) DEFAULT NULL,
+  `satisfactorio_l9` int(11) DEFAULT NULL,
+  `avanzado_l9` int(11) DEFAULT NULL,
+  `insuficiente_l5` int(11) DEFAULT NULL,
+  `minimo_l5` int(11) DEFAULT NULL,
+  `satisfactorio_l5` int(11) DEFAULT NULL,
+  `avanzado_l5` int(11) DEFAULT NULL,
+  `l5_03` double DEFAULT NULL,
+  `m5_03` double DEFAULT NULL,
+  `l9_03` double DEFAULT NULL,
+  `m9_03` double DEFAULT NULL,
+  `tema_matematica_07` double DEFAULT NULL,
+  `tema_lenguaje_07` double DEFAULT NULL,
+  `mat11_bajo_2007` int(11) DEFAULT NULL,
+  `mat11_medio_2007` int(11) DEFAULT NULL,
+  `mat11_alto_2007` int(11) DEFAULT NULL,
+  `len11_bajo_2007` int(11) DEFAULT NULL,
+  `len11_medio_2007` int(11) DEFAULT NULL,
+  `len11_alto_2007` int(11) DEFAULT NULL,
+  `estu_consecnum` int(11) DEFAULT NULL,
+  `prmat_bajo_07_p` double DEFAULT NULL,
+  `prmat_medio_07_p` double DEFAULT NULL,
+  `prmat_alto_07_p` double DEFAULT NULL,
+  `prlen_bajo_07_p` double DEFAULT NULL,
+  `prlen_medio_07_p` double DEFAULT NULL,
+  `prlen_alto_07_p` double DEFAULT NULL,
+  `tema_lenguaje_10` double DEFAULT NULL,
+  `tema_matematica_10` double DEFAULT NULL,
+  `mat11_bajo_2010` int(11) DEFAULT NULL,
+  `mat11_medio_2010` int(11) DEFAULT NULL,
+  `mat11_alto_2010` int(11) DEFAULT NULL,
+  `len11_bajo_2010` int(11) DEFAULT NULL,
+  `len11_medio_2010` int(11) DEFAULT NULL,
+  `len11_alto_2010` int(11) DEFAULT NULL,
+  `prmat_bajo_10_p` double DEFAULT NULL,
+  `prmat_medio_10_p` double DEFAULT NULL,
+  `prmat_alto_10_p` double DEFAULT NULL,
+  `prlen_bajo_10_p` double DEFAULT NULL,
+  `prlen_medio_10_p` double DEFAULT NULL,
+  `prlen_alto_10_p` double DEFAULT NULL,
+  `aprobación5` double DEFAULT NULL,
+  `aprobación9` double DEFAULT NULL,
+  `aprobación11a` double DEFAULT NULL,
+  `aprobación11t` double DEFAULT NULL,
+  `Extraedad` int(11) DEFAULT NULL,
+  `n` int(11) DEFAULT NULL,
+  `rtextra` double DEFAULT NULL,
+  `orden_lenguaje5_09` int(11) DEFAULT NULL,
+  `orden_matematica5_09` int(11) DEFAULT NULL,
+  `orden_lenguaje9_09` int(11) DEFAULT NULL,
+  `orden_matematica9_09` int(11) DEFAULT NULL,
+  `orden_lenguaje11_07` int(11) DEFAULT NULL,
+  `orden_matematica11_07` int(11) DEFAULT NULL,
+  `orden_lenguaje11_10` int(11) DEFAULT NULL,
+  `orden_matematica11_10` int(11) DEFAULT NULL,
+  `orden_lenguaje5_03` int(11) DEFAULT NULL,
+  `orden_matematica5_03` int(11) DEFAULT NULL,
+  `orden_lenguaje9_03` int(11) DEFAULT NULL,
+  `orden_matematica9_03` int(11) DEFAULT NULL,
+  `diferencia_lenguaje_5` int(11) DEFAULT NULL,
+  `diferencia_matematica_5` int(11) DEFAULT NULL,
+  `diferencia_lenguaje_9` int(11) DEFAULT NULL,
+  `diferencia_matematica_9` int(11) DEFAULT NULL,
+  `diferencia_lenguaje_11` int(11) DEFAULT NULL,
+  `diferencia_matematica_11` int(11) DEFAULT NULL,
+  `Progresolen5` double DEFAULT NULL,
+  `Progresolen9` double DEFAULT NULL,
+  `Progresolen11` double DEFAULT NULL,
+  `Progresomat5` double DEFAULT NULL,
+  `Progresomat9` double DEFAULT NULL,
+  `Progresomat11` double DEFAULT NULL,
+  `indicadorsin5ni9` double DEFAULT NULL,
+  `totalmedianas11` double DEFAULT NULL,
+  `avanzado_m9a` int(11) DEFAULT NULL,
+  `avanzado_m5a` int(11) DEFAULT NULL,
+  `avanzado_l9a` int(11) DEFAULT NULL,
+  `avanzado_l5a` int(11) DEFAULT NULL,
+  `avanzado_m9b` int(11) DEFAULT NULL,
+  `avanzado_m5b` int(11) DEFAULT NULL,
+  `avanzado_l9b` int(11) DEFAULT NULL,
+  `avanzado_l5b` int(11) DEFAULT NULL,
+  `apro11mean` double DEFAULT NULL,
+  `totalavanzados` int(11) DEFAULT NULL,
+  `tema_matematicaa` double DEFAULT NULL,
+  `tema_matematica_da` double DEFAULT NULL,
+  `tema_lenguajea` double DEFAULT NULL,
+  `tema_lenguaje_da` double DEFAULT NULL,
+  `prlen_alto_07a` double DEFAULT NULL,
+  `prmat_alto_07a` double DEFAULT NULL,
+  `prlen_alto_10a` double DEFAULT NULL,
+  `prmat_alto_10a` double DEFAULT NULL,
+  `tema_matematicab` double DEFAULT NULL,
+  `tema_matematica_db` double DEFAULT NULL,
+  `tema_lenguajeb` double DEFAULT NULL,
+  `tema_lenguaje_db` double DEFAULT NULL,
+  `prlen_alto_07b` double DEFAULT NULL,
+  `prmat_alto_07b` double DEFAULT NULL,
+  `prlen_alto_10b` double DEFAULT NULL,
+  `prmat_alto_10b` double DEFAULT NULL,
+  `TemaMatematica07` double DEFAULT NULL,
+  `TemaLenguaje07` double DEFAULT NULL,
+  `prmatalto07` double DEFAULT NULL,
+  `prlenalto07` double DEFAULT NULL,
+  `TemaLenguaje10` double DEFAULT NULL,
+  `TemaMatematica10` double DEFAULT NULL,
+  `prmatalto10` double DEFAULT NULL,
+  `prlenalto10` double DEFAULT NULL,
+  `Avanzadom9` int(11) DEFAULT NULL,
+  `Avanzadom5` int(11) DEFAULT NULL,
+  `Avanzadol9` int(11) DEFAULT NULL,
+  `Avanzadol5` int(11) DEFAULT NULL,
+  `Aprobacion5` double DEFAULT NULL,
+  `Aprobacion9` double DEFAULT NULL,
+  `Rextraedad` double DEFAULT NULL,
+  `ProgresoLen5-final` double DEFAULT NULL,
+  `ProgresoLen9-final` double DEFAULT NULL,
+  `ProgresoMat5-final` double DEFAULT NULL,
+  `ProgresoMat9-final` double DEFAULT NULL,
+  `ProgresoLen11-final` double DEFAULT NULL,
+  `ProgresoMat11-final` double DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Año`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `indice aprendizaje eficiencia`
+--
+
+CREATE TABLE IF NOT EXISTS `indice aprendizaje eficiencia` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  `l5r` double DEFAULT NULL,
+  `m5r` double DEFAULT NULL,
+  `cn5r` double DEFAULT NULL,
+  `l9r` double DEFAULT NULL,
+  `m9r` double DEFAULT NULL,
+  `cn9r` double DEFAULT NULL,
+  `rango1_l5r` int(11) DEFAULT NULL,
+  `rango2_l5r` int(11) DEFAULT NULL,
+  `rango3_l5r` int(11) DEFAULT NULL,
+  `rango4_l5r` int(11) DEFAULT NULL,
+  `rango5_l5r` int(11) DEFAULT NULL,
+  `rango6_l5r` int(11) DEFAULT NULL,
+  `rango1_m5r` int(11) DEFAULT NULL,
+  `rango2_m5r` int(11) DEFAULT NULL,
+  `rango3_m5r` int(11) DEFAULT NULL,
+  `rango4_m5r` int(11) DEFAULT NULL,
+  `rango5_m5r` int(11) DEFAULT NULL,
+  `rango6_m5r` int(11) DEFAULT NULL,
+  `rango1_l9r` int(11) DEFAULT NULL,
+  `rango2_l9r` int(11) DEFAULT NULL,
+  `rango3_l9r` int(11) DEFAULT NULL,
+  `rango4_l9r` int(11) DEFAULT NULL,
+  `rango5_l9r` int(11) DEFAULT NULL,
+  `rango6_l9r` int(11) DEFAULT NULL,
+  `rango1_m9r` int(11) DEFAULT NULL,
+  `rango2_m9r` int(11) DEFAULT NULL,
+  `rango3_m9r` int(11) DEFAULT NULL,
+  `rango4_m9r` int(11) DEFAULT NULL,
+  `rango5_m9r` int(11) DEFAULT NULL,
+  `rango6_m9r` int(11) DEFAULT NULL,
+  `insuficiente_m9` int(11) DEFAULT NULL,
+  `minimo_m9` int(11) DEFAULT NULL,
+  `satisfactorio_m9` int(11) DEFAULT NULL,
+  `avanzado_m9` int(11) DEFAULT NULL,
+  `insuficiente_m5` int(11) DEFAULT NULL,
+  `minimo_m5` int(11) DEFAULT NULL,
+  `satisfactorio_m5` int(11) DEFAULT NULL,
+  `avanzado_m5` int(11) DEFAULT NULL,
+  `insuficiente_l9` int(11) DEFAULT NULL,
+  `minimo_l9` int(11) DEFAULT NULL,
+  `satisfactorio_l9` int(11) DEFAULT NULL,
+  `avanzado_l9` int(11) DEFAULT NULL,
+  `insuficiente_l5` int(11) DEFAULT NULL,
+  `minimo_l5` int(11) DEFAULT NULL,
+  `satisfactorio_l5` int(11) DEFAULT NULL,
+  `avanzado_l5` int(11) DEFAULT NULL,
+  `l5_03` double DEFAULT NULL,
+  `m5_03` double DEFAULT NULL,
+  `l9_03` double DEFAULT NULL,
+  `m9_03` double DEFAULT NULL,
+  `tema_matematica_07` double DEFAULT NULL,
+  `tema_lenguaje_07` double DEFAULT NULL,
+  `mat11_bajo_2007` int(11) DEFAULT NULL,
+  `mat11_medio_2007` int(11) DEFAULT NULL,
+  `mat11_alto_2007` int(11) DEFAULT NULL,
+  `len11_bajo_2007` int(11) DEFAULT NULL,
+  `len11_medio_2007` int(11) DEFAULT NULL,
+  `len11_alto_2007` int(11) DEFAULT NULL,
+  `estu_consecnum` int(11) DEFAULT NULL,
+  `prmat_bajo_07_p` double DEFAULT NULL,
+  `prmat_medio_07_p` double DEFAULT NULL,
+  `prmat_alto_07_p` double DEFAULT NULL,
+  `prlen_bajo_07_p` double DEFAULT NULL,
+  `prlen_medio_07_p` double DEFAULT NULL,
+  `prlen_alto_07_p` double DEFAULT NULL,
+  `tema_lenguaje_10` double DEFAULT NULL,
+  `tema_matematica_10` double DEFAULT NULL,
+  `mat11_bajo_2010` int(11) DEFAULT NULL,
+  `mat11_medio_2010` int(11) DEFAULT NULL,
+  `mat11_alto_2010` int(11) DEFAULT NULL,
+  `len11_bajo_2010` int(11) DEFAULT NULL,
+  `len11_medio_2010` int(11) DEFAULT NULL,
+  `len11_alto_2010` int(11) DEFAULT NULL,
+  `prmat_bajo_10_p` double DEFAULT NULL,
+  `prmat_medio_10_p` double DEFAULT NULL,
+  `prmat_alto_10_p` double DEFAULT NULL,
+  `prlen_bajo_10_p` double DEFAULT NULL,
+  `prlen_medio_10_p` double DEFAULT NULL,
+  `prlen_alto_10_p` double DEFAULT NULL,
+  `aprobación5` double DEFAULT NULL,
+  `aprobación9` double DEFAULT NULL,
+  `aprobación11a` double DEFAULT NULL,
+  `aprobación11t` double DEFAULT NULL,
+  `Extraedad` int(11) DEFAULT NULL,
+  `n` int(11) DEFAULT NULL,
+  `rtextra` double DEFAULT NULL,
+  `orden_lenguaje5_09` int(11) DEFAULT NULL,
+  `orden_matematica5_09` int(11) DEFAULT NULL,
+  `orden_lenguaje9_09` int(11) DEFAULT NULL,
+  `orden_matematica9_09` int(11) DEFAULT NULL,
+  `orden_lenguaje11_07` int(11) DEFAULT NULL,
+  `orden_matematica11_07` int(11) DEFAULT NULL,
+  `orden_lenguaje11_10` int(11) DEFAULT NULL,
+  `orden_matematica11_10` int(11) DEFAULT NULL,
+  `orden_lenguaje5_03` int(11) DEFAULT NULL,
+  `orden_matematica5_03` int(11) DEFAULT NULL,
+  `orden_lenguaje9_03` int(11) DEFAULT NULL,
+  `orden_matematica9_03` int(11) DEFAULT NULL,
+  `diferencia_lenguaje_5` int(11) DEFAULT NULL,
+  `diferencia_matematica_5` int(11) DEFAULT NULL,
+  `diferencia_lenguaje_9` int(11) DEFAULT NULL,
+  `diferencia_matematica_9` int(11) DEFAULT NULL,
+  `diferencia_lenguaje_11` int(11) DEFAULT NULL,
+  `diferencia_matematica_11` int(11) DEFAULT NULL,
+  `Progresolen5` double DEFAULT NULL,
+  `Progresolen9` double DEFAULT NULL,
+  `Progresolen11` double DEFAULT NULL,
+  `Progresomat5` double DEFAULT NULL,
+  `Progresomat9` double DEFAULT NULL,
+  `Progresomat11` double DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Año`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `institucioneducativa`
+--
+
+CREATE TABLE IF NOT EXISTS `institucioneducativa` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Nombre corto` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Nombre` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Comuna_ie` int(11) DEFAULT NULL,
+  `Núcleo` int(11) DEFAULT NULL,
+  `Direccion` double DEFAULT NULL,
+  `Telefono` double DEFAULT NULL,
+  `Fax` double DEFAULT NULL,
+  `Nombre Director` double DEFAULT NULL,
+  `Calendario` double DEFAULT NULL,
+  `Genero Población` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Código Naturaleza` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Código Zona` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Código Departamento` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Código Municipio` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Código Jornada` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`DANE`),
+  KEY `Institución Educativa_Departamentos_FK` (`Código Departamento`),
+  KEY `Institución Educativa_Jornadas_FK` (`Código Jornada`),
+  KEY `Institución Educativa_Municipios_FK` (`Código Municipio`),
+  KEY `Institución Educativa_Naturalezas_FK` (`Código Naturaleza`),
+  KEY `Institución Educativa_Zonas_FK` (`Código Zona`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jornadas`
+--
+
+CREATE TABLE IF NOT EXISTS `jornadas` (
+  `Código Jornada` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Jornada` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`Código Jornada`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `municipios`
+--
+
+CREATE TABLE IF NOT EXISTS `municipios` (
+  `Código Municipio` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Nombre` varchar(40) COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`Código Municipio`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `naturalezas`
+--
+
+CREATE TABLE IF NOT EXISTS `naturalezas` (
+  `Código Naturaleza` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Naturaleza` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`Código Naturaleza`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notas`
+--
+
+CREATE TABLE IF NOT EXISTS `notas` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  `Nota` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`DANE`,`Año`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `olimpiadas`
+--
+
+CREATE TABLE IF NOT EXISTS `olimpiadas` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  `Total Matemáticas` int(11) DEFAULT NULL,
+  `Total Lenguaje` int(11) DEFAULT NULL,
+  `Grado` int(11) NOT NULL,
+  PRIMARY KEY (`DANE`,`Año`,`Grado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `opciones educativas`
+--
+
+CREATE TABLE IF NOT EXISTS `opciones educativas` (
+  `Código Opción Educativa` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Opción Educativa` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`Código Opción Educativa`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesos`
+--
+
+CREATE TABLE IF NOT EXISTS `pesos` (
+  `ID` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `ExpectativasAcademicas` double DEFAULT NULL,
+  `Comunicacion` double DEFAULT NULL,
+  `Participacion` double DEFAULT NULL,
+  `SeguridadRespeto` double DEFAULT NULL,
+  `TemaMatematica07` double DEFAULT NULL,
+  `TemaLenguaje07` double DEFAULT NULL,
+  `prmatalto07` double DEFAULT NULL,
+  `prlenalto07` double DEFAULT NULL,
+  `TemaLenguaje10` double DEFAULT NULL,
+  `TemaMatematica10` double DEFAULT NULL,
+  `prmatalto10` double DEFAULT NULL,
+  `prlenalto10` double DEFAULT NULL,
+  `Avanzadom9` double DEFAULT NULL,
+  `Avanzadom5` double DEFAULT NULL,
+  `Avanzadol9` double DEFAULT NULL,
+  `Avanzadol5` double DEFAULT NULL,
+  `Aprobacion5` double DEFAULT NULL,
+  `Aprobacion9` double DEFAULT NULL,
+  `Rextraedad` double DEFAULT NULL,
+  `ProgresoLen5` double DEFAULT NULL,
+  `ProgresoLen9` double DEFAULT NULL,
+  `ProgresoMat5` double DEFAULT NULL,
+  `ProgresoMat9` double DEFAULT NULL,
+  `ProgresoLen11` double DEFAULT NULL,
+  `ProgresoMat11` double DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `proporción estrato`
+--
+
+CREATE TABLE IF NOT EXISTS `proporción estrato` (
+  `Proporción estrato 1` double DEFAULT NULL,
+  `Proporción estrato 6` double DEFAULT NULL,
+  `Proposción estrato 2` double DEFAULT NULL,
+  `Proporción estrato 3` double DEFAULT NULL,
+  `Proporción estrato 4` double DEFAULT NULL,
+  `Proporción estrato 5` double DEFAULT NULL,
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`DANE`,`Año`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pruebas`
+--
+
+CREATE TABLE IF NOT EXISTS `pruebas` (
+  `cod_prueba` int(11) NOT NULL,
+  `Prueba` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Usada` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cod_prueba`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `saber`
+--
+
+CREATE TABLE IF NOT EXISTS `saber` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Año` date NOT NULL,
+  `Grado` int(11) NOT NULL,
+  `Jornada` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Mediana` double DEFAULT NULL,
+  `Porcentaje Bajo` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Porcentaje Medio` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `Porcentaje Alto` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cod_prueba` int(11) NOT NULL,
+  PRIMARY KEY (`DANE`,`cod_prueba`,`Año`,`Grado`),
+  KEY `Saber_Pruebas_FK` (`cod_prueba`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `saber censal`
+--
+
+CREATE TABLE IF NOT EXISTS `saber censal` (
+  `Año` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Valor` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `ID` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Grado` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Semestre` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `cod_prueba` int(11) NOT NULL,
+  PRIMARY KEY (`DANE`,`cod_prueba`,`Año`,`ID`,`Grado`,`Semestre`),
+  KEY `Saber Censal_Pruebas_FK` (`cod_prueba`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sede`
+--
+
+CREATE TABLE IF NOT EXISTS `sede` (
+  `DANE` char(12) COLLATE latin1_spanish_ci NOT NULL,
+  `Código Sede` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  PRIMARY KEY (`DANE`,`Código Sede`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zonas`
+--
+
+CREATE TABLE IF NOT EXISTS `zonas` (
+  `Código Zona` char(5) COLLATE latin1_spanish_ci NOT NULL,
+  `Zona` char(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`Código Zona`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `aprobación`
+--
+ALTER TABLE `aprobación`
+  ADD CONSTRAINT `Aprobación_Sede_FK` FOREIGN KEY (`DANE`, `Código Sede`) REFERENCES `sede` (`DANE`, `Código Sede`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `clusters`
+--
+ALTER TABLE `clusters`
+  ADD CONSTRAINT `Clulsters_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `dane-icfes`
+--
+ALTER TABLE `dane-icfes`
+  ADD CONSTRAINT `DANE-ICFES_Institución Educativa_FK` FOREIGN KEY (`Código ICFES`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `edad saber censal`
+--
+ALTER TABLE `edad saber censal`
+  ADD CONSTRAINT `Edad Saber Censal_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Edad Saber Censal_Pruebas_FK` FOREIGN KEY (`cod_prueba`) REFERENCES `pruebas` (`cod_prueba`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `extraedad oficial`
+--
+ALTER TABLE `extraedad oficial`
+  ADD CONSTRAINT `Extraedad Oficial_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Extraedad_Oficial_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `extraedad saber`
+--
+ALTER TABLE `extraedad saber`
+  ADD CONSTRAINT `Extraedad_Saber_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `indicadores imputados`
+--
+ALTER TABLE `indicadores imputados`
+  ADD CONSTRAINT `Indicadores Imputados_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `indice aprendizaje eficiencia`
+--
+ALTER TABLE `indice aprendizaje eficiencia`
+  ADD CONSTRAINT `Indice Aprendizaje Eficiencia_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `institucioneducativa`
+--
+ALTER TABLE `institucioneducativa`
+  ADD CONSTRAINT `Institución Educativa_Departamentos_FK` FOREIGN KEY (`Código Departamento`) REFERENCES `departamentos` (`Código Departamento`),
+  ADD CONSTRAINT `Institución Educativa_Jornadas_FK` FOREIGN KEY (`Código Jornada`) REFERENCES `jornadas` (`Código Jornada`),
+  ADD CONSTRAINT `Institución Educativa_Municipios_FK` FOREIGN KEY (`Código Municipio`) REFERENCES `municipios` (`Código Municipio`),
+  ADD CONSTRAINT `Institución Educativa_Naturalezas_FK` FOREIGN KEY (`Código Naturaleza`) REFERENCES `naturalezas` (`Código Naturaleza`),
+  ADD CONSTRAINT `Institución Educativa_Zonas_FK` FOREIGN KEY (`Código Zona`) REFERENCES `zonas` (`Código Zona`);
+
+--
+-- Constraints for table `notas`
+--
+ALTER TABLE `notas`
+  ADD CONSTRAINT `Notas_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `olimpiadas`
+--
+ALTER TABLE `olimpiadas`
+  ADD CONSTRAINT `Olimpiadas_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `proporción estrato`
+--
+ALTER TABLE `proporción estrato`
+  ADD CONSTRAINT `Proporción Estrato_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `saber`
+--
+ALTER TABLE `saber`
+  ADD CONSTRAINT `Saber 5 y 9_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Saber_Pruebas_FK` FOREIGN KEY (`cod_prueba`) REFERENCES `pruebas` (`cod_prueba`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `saber censal`
+--
+ALTER TABLE `saber censal`
+  ADD CONSTRAINT `Saber Censal_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Saber Censal_Pruebas_FK` FOREIGN KEY (`cod_prueba`) REFERENCES `pruebas` (`cod_prueba`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `sede`
+--
+ALTER TABLE `sede`
+  ADD CONSTRAINT `Sede_Institución Educativa_FK` FOREIGN KEY (`DANE`) REFERENCES `institucioneducativa` (`DANE`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
