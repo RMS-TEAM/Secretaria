@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 27, 2013 at 03:59 PM
+-- Generation Time: Mar 27, 2013 at 04:03 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `aedocentes` (
   `DANE` int(20) NOT NULL,
   `ID` int(20) NOT NULL AUTO_INCREMENT,
   `ii_2` varchar(32) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `ii_4` int(11) DEFAULT NULL,
   `ii_40` int(11) DEFAULT NULL,
   `ii_41` int(11) DEFAULT NULL,
   `ii_42` int(11) DEFAULT NULL,
