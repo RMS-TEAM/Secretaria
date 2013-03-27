@@ -1,10 +1,10 @@
 DROP FUNCTION IF EXISTS func_rowmean;
 
 DELIMITER //
-CREATE FUNCTION func_rowmean (uno DECIMAL(8,5), dos DECIMAL(8,5), tres DECIMAL(8,5))
-    RETURNS DECIMAL(8,5)
+CREATE FUNCTION func_rowmean (uno DECIMAL, dos DECIMAL, tres DECIMAL)
+    RETURNS DECIMAL
 BEGIN
-	DECLARE numero DECIMAL(8,5);
+	DECLARE numero DECIMAL;
 
 	IF `uno` IS NULL AND `dos` IS NULL THEN
 		SET numero = tres;
